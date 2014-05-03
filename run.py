@@ -1,4 +1,4 @@
 #!/usr/bin/env python
 
-from site import blog
+from app import *
 app.run(debug = True)
