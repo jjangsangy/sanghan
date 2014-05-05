@@ -5,7 +5,6 @@ from __future__ import unicode_literals
 AUTHOR = 'Sang Han'
 SITENAME = 'Sang Han'
 SITEURL = 'http://sanghan.me'
-SITESUBTITLE = 'photographer, amateur programmer, engineer'
 EMAIL_ADDR = 'jjangsangy@gmail.com'
 
 TIMEZONE = 'America/Los_Angeles'
@@ -23,26 +22,34 @@ ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/{slug}/index.html'
 
 THEME = './themes/bootstrap'
 BOOTSTRAP_THEME = 'spacelab'
+DISPLAY_CATEGORIES_ON_SIDEBAR = False
+DISPLAY_TAGS_ON_SIDEBAR = False
+DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
 MARKUP = ('rst', 'md', 'ipynb')
 PLUGIN_PATH = 'plugins'
-PLUGINS = ['gravatar', 'sitemap', 'disqus_static']
+PLUGINS = ['disqus_static']
+PYGMENTS_STYLE = 'solarizedlight'
 
 GITHUB_USER = 'jjangsangy'
 GITHUB_SKIP_FORK = True
 GITHUB_REPO_COUNT = 5
-GITHUB_SHOW_USER_LINK = False
+GITHUB_SHOW_USER_LINK = True
 DISQUS_SITENAME = 'sanghan'
 DISQUS_SECRET_KEY = 'iQIq5Ra2Fx2kBnGbhUZ1sNjkhwpewkz5fSRsWUgZFTGj4BIZsqmixUAszepZXQ8I'
 DISQUS_PUBLIC_KEY = 'JyNWL1mdpLOuqzbh5RZ3HfkzvKLYsElIMBLMTYv6k7HltM0RQKQnQfMBiLNbdV3K'
 
+MENUITEMS = (('.photography', 'http://sanghanphotography.com'),)
+
 # Blogroll
-LINKS =  (('Photography', 'http://sanghanphotography.com'),
-         ('Website', 'http://sanghan.me'),)
+# LINKS =  (('Photography', 'http://sanghanphotography.com'),
+#          ('Website', 'http://sanghan.me'),)
 
 # Social widget
 SOCIAL = (('Github', 'http://github.com/jjangsangy'),
          ('Facebook', 'http://facebook.com/jjangsangy'),
-         ('LinkedIn', 'https://www.linkedin.com/pub/sang-han/40/9a8/323')
+         ('LinkedIn', 'https://www.linkedin.com/pub/sang-han/40/9a8/323'),
+         ('Tumblr', 'http://jjangsangy.tumblr.com'),
+         ('Pinterest', 'http://pinterest.com/jjangsangy')
          ,)
 
 # Uncomment following line if you want document-relative URLs when developing
