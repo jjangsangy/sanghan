@@ -25,10 +25,16 @@ LINKS =  (('Photography', 'http://sanghanphotography.com'),
 
 # Social widget
 SOCIAL = (('github', 'http://github.com/jjangsangy'),
-         ('facebook', 'http://facebook.com/jjangsangy')
+         ('facebook', 'http://facebook.com/jjangsangy'),
+         ('linkedin', 'https://www.linkedin.com/pub/sang-han/40/9a8/323')
          ,)
 
 DEFAULT_PAGINATION = 10
+
+GITHUB_USER = 'jjangsangy'
+GITHUB_SKIP_FORK = True
+GITHUB_REPO_COUNT = 5
+GITHUB_SHOW_USER_LINK = False
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
