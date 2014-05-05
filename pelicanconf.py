@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = 'Sang Han'
 SITENAME = 'Sang Han'
 SITEURL = 'http://sanghan.me'
+SITESUBTITLE = 'photographer, amateur programmer, engineer'
 EMAIL_ADDR = 'jjangsangy@gmail.com'
 
 TIMEZONE = 'America/Los_Angeles'
@@ -24,11 +25,15 @@ THEME = './themes/bootstrap'
 BOOTSTRAP_THEME = 'spacelab'
 MARKUP = ('rst', 'md', 'ipynb')
 PLUGIN_PATH = 'plugins'
+PLUGINS = ['gravatar', 'sitemap', 'disqus_static']
 
 GITHUB_USER = 'jjangsangy'
 GITHUB_SKIP_FORK = True
 GITHUB_REPO_COUNT = 5
 GITHUB_SHOW_USER_LINK = False
+DISQUS_SITENAME = 'sanghan'
+DISQUS_SECRET_KEY = 'iQIq5Ra2Fx2kBnGbhUZ1sNjkhwpewkz5fSRsWUgZFTGj4BIZsqmixUAszepZXQ8I'
+DISQUS_PUBLIC_KEY = 'JyNWL1mdpLOuqzbh5RZ3HfkzvKLYsElIMBLMTYv6k7HltM0RQKQnQfMBiLNbdV3K'
 
 # Blogroll
 LINKS =  (('Photography', 'http://sanghanphotography.com'),
