@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Sang Han</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/all.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-05-05T23:24:00-07:00</updated><entry><title>Digital Universe</title><link href="http://sanghan.me/blog/2014/05/digital_universe/" rel="alternate"></link><updated>2014-05-05T23:24:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-05-05:blog/2014/05/digital_universe/</id><summary type="html">&lt;pre class="literal-block"&gt;
-&amp;quot;In the digital universe, there are two kinds of bits:
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Sang Han</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/all.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-05-05T23:24:00-07:00</updated><entry><title>Digital Universe</title><link href="http://sanghan.me/blog/2014/05/digital_universe/" rel="alternate"></link><updated>2014-05-05T23:24:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-05-05:blog/2014/05/digital_universe/</id><summary type="html">&lt;!--  --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;In the digital universe, there are two kinds of bits:
 bits that represent structures (differences in space)
 and bits that represent sequence (differences in time).
 Digital computers - as formalized by Alan Turing, and
 developed by John von Neumann - are devices that translate
-between these two species of bits according to definite rules.&amp;quot;
-
--- George Dyson: Turing's Cathedral
-&lt;/pre&gt;
+between these two species of bits according to definite rules.&amp;quot;&lt;/p&gt;
+&lt;p class="attribution"&gt;&amp;mdash;George Dyson: Turing's Cathedral&lt;/p&gt;
+&lt;/blockquote&gt;
 </summary></entry></feed>
