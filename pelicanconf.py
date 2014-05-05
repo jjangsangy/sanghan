@@ -7,7 +7,7 @@ SITENAME = 'Sang Han'
 SITEURL = 'http://sanghan.me'
 EMAIL_ADDR = 'jjangsangy@gmail.com'
 
-TIMEZONE = 'America/Los Angeles'
+TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = u'en'
 DATE_FORMATS = {'en': '%a, %d %b %Y'}
 STATIC_PATHS = ['images']
