@@ -139,70 +139,19 @@ developed by John von Neumann - are devices that translate
 between these two species of bits according to definite rules."</p>
 <p class="attribution">—George Dyson: Turing's Cathedral</p>
 </blockquote>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/jjangsangy/Projects/sanghan/content/digital_universe.rst</tt>, line 21)</p>
-<p>Content block expected for the "code-block" directive; none found.</p>
-<pre class="literal-block">
-.. code-block:: python
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask.ext.sandboy</span> <span class="kn">import</span> <span class="n">Sandboy</span>
 
-</pre>
-</div>
-<dl class="docutils">
-<dt>def translator(source, target, phrase):</dt>
-<dd><p class="first">'''
-Returns the url encoded string that will be pushed to the translation
-server for parsing.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name"></col>
-<col class="field-body"></col>
-<tbody valign="top">
-<tr class="field"><th class="field-name">param source:</th><td class="field-body">Language code for translation source</td>
-</tr>
-<tr class="field"><th class="field-name">type source:</th><td class="field-body">str</td>
-</tr>
-<tr class="field"><th class="field-name">param target:</th><td class="field-body">Language code that source will be translate into</td>
-</tr>
-<tr class="field"><th class="field-name">type target:</th><td class="field-body">str</td>
-</tr>
-<tr class="field"><th class="field-name">param phrase:</th><td class="field-body">Text body string that will be url encoded and translated</td>
-</tr>
-<tr class="field"><th class="field-name">type phrase:</th><td class="field-body">str</td>
-</tr>
-<tr class="field"><th class="field-name">returns:</th><td class="field-body">url</td>
-</tr>
-<tr class="field"><th class="field-name">rtype:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
-<p>List of acceptable language codes for source and target languages
-can be found as a JSON file in the etc directory.</p>
-<p>Some source languages are limited in scope of the possible target languages
-that are available.</p>
-<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">translate</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">translator</span><span class="p">(</span><span class="s">'en'</span><span class="p">,</span> <span class="s">'zh-TW'</span><span class="p">,</span> <span class="s">'Hello World!'</span><span class="p">)</span>
-    <span class="s">'你好世界！'</span>
+<span class="kn">from</span> <span class="nn">models</span> <span class="kn">import</span> <span class="n">Machine</span><span class="p">,</span> <span class="n">Cloud</span><span class="p">,</span> <span class="n">db</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s">'SQLALCHEMY_DATABASE_URI'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'sqlite:///db.sqlite3'</span>
+<span class="n">db</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>
+<span class="n">sandboy</span> <span class="o">=</span> <span class="n">Sandboy</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="p">[</span><span class="n">Cloud</span><span class="p">,</span> <span class="n">Machine</span><span class="p">])</span>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
-<p>'''
-base = '<a class="reference external" href="http://translate.google.com/translate_a/t">http://translate.google.com/translate_a/t</a>'
-params = urlencode({</p>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/Users/jjangsangy/Projects/sanghan/content/digital_universe.rst</tt>, line 52)</p>
-Unexpected indentation.</div>
-<blockquote>
-'client': 'webapp',
-'ie': 'utf-8',
-'oe': 'utf-8',
-'sl': source,
-'tl': target,
-'q': phrase</blockquote>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/Users/jjangsangy/Projects/sanghan/content/digital_universe.rst</tt>, line 58)</p>
-Block quote ends without a blank line; unexpected unindent.</div>
-<p class="last">})
-url = '?'.join([base, params])
-return url</p>
-</dd>
-</dl>
 
             </div>
             <!-- /.entry-content -->
