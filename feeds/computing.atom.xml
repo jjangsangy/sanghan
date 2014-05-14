@@ -9,4 +9,68 @@ developed by John von Neumann - are devices that translate
 between these two species of bits according to definite rules."&lt;/p&gt;
 &lt;p class="attribution"&gt;—George Dyson: Turing's Cathedral&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;tt class="docutils"&gt;/Users/jjangsangy/Projects/sanghan/content/digital_universe.rst&lt;/tt&gt;, line 21)&lt;/p&gt;
+&lt;p&gt;Content block expected for the "code-block" directive; none found.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+.. code-block:: python
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;def translator(source, target, phrase):&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;'''
+Returns the url encoded string that will be pushed to the translation
+server for parsing.&lt;/p&gt;
+&lt;table class="docutils field-list" frame="void" rules="none"&gt;
+&lt;col class="field-name"&gt;&lt;/col&gt;
+&lt;col class="field-body"&gt;&lt;/col&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;param source:&lt;/th&gt;&lt;td class="field-body"&gt;Language code for translation source&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;type source:&lt;/th&gt;&lt;td class="field-body"&gt;str&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;param target:&lt;/th&gt;&lt;td class="field-body"&gt;Language code that source will be translate into&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;type target:&lt;/th&gt;&lt;td class="field-body"&gt;str&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;param phrase:&lt;/th&gt;&lt;td class="field-body"&gt;Text body string that will be url encoded and translated&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;type phrase:&lt;/th&gt;&lt;td class="field-body"&gt;str&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;returns:&lt;/th&gt;&lt;td class="field-body"&gt;url&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="field"&gt;&lt;th class="field-name"&gt;rtype:&lt;/th&gt;&lt;td class="field-body"&gt;str&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;List of acceptable language codes for source and target languages
+can be found as a JSON file in the etc directory.&lt;/p&gt;
+&lt;p&gt;Some source languages are limited in scope of the possible target languages
+that are available.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;translate&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;translator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'en'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'zh-TW'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'Hello World!'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="s"&gt;'你好世界！'&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;'''
+base = '&lt;a class="reference external" href="http://translate.google.com/translate_a/t"&gt;http://translate.google.com/translate_a/t&lt;/a&gt;'
+params = urlencode({&lt;/p&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: ERROR/3 (&lt;tt class="docutils"&gt;/Users/jjangsangy/Projects/sanghan/content/digital_universe.rst&lt;/tt&gt;, line 52)&lt;/p&gt;
+Unexpected indentation.&lt;/div&gt;
+&lt;blockquote&gt;
+'client': 'webapp',
+'ie': 'utf-8',
+'oe': 'utf-8',
+'sl': source,
+'tl': target,
+'q': phrase&lt;/blockquote&gt;
+&lt;div class="system-message"&gt;
+&lt;p class="system-message-title"&gt;System Message: WARNING/2 (&lt;tt class="docutils"&gt;/Users/jjangsangy/Projects/sanghan/content/digital_universe.rst&lt;/tt&gt;, line 58)&lt;/p&gt;
+Block quote ends without a blank line; unexpected unindent.&lt;/div&gt;
+&lt;p class="last"&gt;})
+url = '?'.join([base, params])
+return url&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
 </summary><category term="alan"></category><category term="turing"></category><category term="dyson"></category><category term="computing"></category></entry></feed>
