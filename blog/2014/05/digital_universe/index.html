@@ -25,7 +25,7 @@
                 <meta property="article:author" content="Sang Han" />
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.spacelab.min.css" type="text/css"/>
+        <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.sanghan.min.css" type="text/css"/>
     <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
@@ -52,9 +52,6 @@ Sang Han            </a>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                     <li><a href="http://sanghanphotography.com">.photography</a></li>
-                         <li><a href="http://sanghan.me/pages/about.html">
-                             About Me
-                          </a></li>
                          <li><a href="http://sanghan.me/pages/projects.html">
                              Projects
                           </a></li>
@@ -64,9 +61,15 @@ Sang Han            </a>
                          <li><a href="http://sanghan.me/pages/tools.html">
                              Tools
                           </a></li>
-                        <li class="active">
-                            <a href="http://sanghan.me/category/computing.html">Computing</a>
-                        </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                                <li class="active">
+                                    <a href="http://sanghan.me/category/computing.html">Computing</a>
+                                </li>
+                    </ul>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
@@ -75,6 +78,19 @@ Sang Han            </a>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
+
+<style>
+    .container-full{
+        height: 640px;
+        min-height:100%;
+        background:center no-repeat fixed url('/img/bird.jpg');
+}
+</style>
+
+<section class="container-full" id="topimage">
+<div class="page-header text-center">
+</div>
+</section>
 
 <div class="container">
     <div class="row">
@@ -214,10 +230,7 @@ between these two species of bits according to definite rules."</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2014 Sang Han
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-10">&copy; 2014 Sang Han         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>
    </div>
