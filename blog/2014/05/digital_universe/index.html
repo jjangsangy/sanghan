@@ -71,9 +71,6 @@ Sang Han            </a>
                                 <li >
                                     <a href="http://sanghan.me/category/answer.html">Answer</a>
                                 </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/books.html">Books</a>
-                                </li>
                                 <li class="active">
                                     <a href="http://sanghan.me/category/computing.html">Computing</a>
                                 </li>
@@ -82,12 +79,6 @@ Sang Han            </a>
                                 </li>
                                 <li >
                                     <a href="http://sanghan.me/category/misc.html">Misc</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/photo.html">Photo</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/photography.html">Photography</a>
                                 </li>
                                 <li >
                                     <a href="http://sanghan.me/category/text.html">Text</a>
@@ -155,15 +146,15 @@ Sang Han            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <!--  -->
+                <!-- -->
 <blockquote>
-<p>&quot;In the digital universe, there are two kinds of bits:
+<p>"In the digital universe, there are two kinds of bits:
 bits that represent structures (differences in space)
 and bits that represent sequence (differences in time).
 Digital computers - as formalized by Alan Turing, and
 developed by John von Neumann - are devices that translate
-between these two species of bits according to definite rules.&quot;</p>
-<p class="attribution">&mdash;George Dyson: Turing's Cathedral</p>
+between these two species of bits according to definite rules."</p>
+<p class="attribution">—George Dyson: Turing's Cathedral</p>
 </blockquote>
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -172,7 +163,7 @@ between these two species of bits according to definite rules.&quot;</p>
 <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_table</span>
 
 <span class="k">def</span> <span class="nf">header</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">dat</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">'rt'</span><span class="p">)</span> <span class="k">as</span> <span class="n">dat</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">dat</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
@@ -182,31 +173,31 @@ between these two species of bits according to definite rules.&quot;</p>
             <span class="n">data</span><span class="p">,</span>
             <span class="n">skiprows</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
             <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-            <span class="n">comment</span><span class="o">=</span><span class="s">&#39;*&#39;</span><span class="p">,</span>
-            <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;toptemp&#39;</span><span class="p">,</span> <span class="s">&#39;bottemp&#39;</span><span class="p">,</span> <span class="s">&#39;chpress&#39;</span><span class="p">,</span> <span class="s">&#39;membpress&#39;</span><span class="p">,</span> <span class="s">&#39;force&#39;</span><span class="p">])</span>
+            <span class="n">comment</span><span class="o">=</span><span class="s">'*'</span><span class="p">,</span>
+            <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s">'toptemp'</span><span class="p">,</span> <span class="s">'bottemp'</span><span class="p">,</span> <span class="s">'chpress'</span><span class="p">,</span> <span class="s">'membpress'</span><span class="p">,</span> <span class="s">'force'</span><span class="p">])</span>
 
-    <span class="n">name</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&#39;.dat&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&#39;lid bond&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">&#39;basebond&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'.dat'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'/'</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'lid bond'</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'basebond'</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
     <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
-        <span class="n">df</span><span class="p">[</span><span class="n">param</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;line&#39;</span><span class="p">,</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">param</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'line'</span><span class="p">,</span>
                        <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">iteration</span><span class="p">],</span>
                        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">28</span><span class="p">),</span>
                        <span class="n">title</span><span class="o">=</span><span class="n">param</span><span class="p">,</span>
                        <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-        <span class="n">axes</span><span class="p">[</span><span class="n">iteration</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">&#39;{date}: {time}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="s">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">year</span><span class="p">])),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">iteration</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">&#39;{var} vs time&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">var</span><span class="o">=</span><span class="n">param</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">iteration</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'{date}: {time}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">year</span><span class="p">])),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">iteration</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'{var} vs time'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">var</span><span class="o">=</span><span class="n">param</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
         <span class="n">axes</span><span class="p">[</span><span class="n">iteration</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">iteration</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">iteration</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="s">''</span><span class="p">)</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">&#39;{year} {month}_{day}_{name}.png&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="o">=</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="o">=</span><span class="n">day</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'{year} {month}_{day}_{name}.png'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="o">=</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="o">=</span><span class="n">day</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">))</span>
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;file {0} does not exist</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'file {0} does not exist</span><span class="se">\n</span><span class="s">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">main</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
@@ -280,23 +271,23 @@ between these two species of bits according to definite rules.&quot;</p>
                             </a>
                         </li>
                         <li class="list-group-item">
-                            <a href="http://sanghan.me/blog/2011/12/2011-12-22-super-freakonomics-imho/">
-                                Super Freakonomics IMHO
+                            <a href="http://sanghan.me/blog/2011/06/2011-06-26-san-deezy/">
+                                San Deezy
                             </a>
                         </li>
                         <li class="list-group-item">
-                            <a href="http://sanghan.me/blog/2011/12/2011-12-16-sometimes-portland-does-sushi-right-taken-with/">
-                                Photo
+                            <a href="http://sanghan.me/blog/2011/06/2011-06-17-photography-rant-1/">
+                                Photography Rant #1
                             </a>
                         </li>
                         <li class="list-group-item">
-                            <a href="http://sanghan.me/blog/2011/12/2011-12-15-reunited-with-my-old-baby-taken-with-instagram/">
-                                Photo
+                            <a href="http://sanghan.me/blog/2011/06/2011-06-14-open-mind/">
+                                Open Mind
                             </a>
                         </li>
                         <li class="list-group-item">
-                            <a href="http://sanghan.me/blog/2011/12/2011-12-13-its-up/">
-                                It's UP!
+                            <a href="http://sanghan.me/blog/2011/06/2011-06-12-things-on-my-mind/">
+                                Things on My Mind
                             </a>
                         </li>
                     </ul>
