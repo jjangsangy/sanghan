@@ -1,0 +1,37 @@
+Get Up
+######
+:date: 2010-11-30 02:25:52
+:author: jjangsangy
+:category: text
+:slug: 2010-11-30-get-up
+
+This is your life.
+
+
+
+.. raw:: html
+
+   </p>
+
+Do you succumb to transgressions, or do you put up a fight.
+
+
+
+.. raw:: html
+
+   </p>
+
+It is only after falling down, that you learn how to get back up.
+
+
+
+.. raw:: html
+
+   </p>
+
+So get up already.
+
+.. raw:: html
+
+   </p>
+

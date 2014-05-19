@@ -1,0 +1,14 @@
+Photo
+#####
+:date: 2010-08-23 03:59:15
+:author: jjangsangy
+:category: photo
+:slug: 2010-08-23-photo
+
+|image0|
+
+.. raw:: html
+
+   </p>
+
+.. |image0| image:: {filename}/img/tumblr/tumblr_l7lqirBsBy1qbyrn_1280.jpg

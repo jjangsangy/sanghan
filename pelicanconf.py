@@ -2,6 +2,12 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+import sys
+import os
+from os.path import abspath
+
+sys.path.append(abspath(os.curdir))
+
 AUTHOR = 'Sang Han'
 SITENAME = 'Sang Han'
 SITEURL = 'http://sanghan.me'
@@ -11,8 +17,7 @@ TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = u'en'
 DATE_FORMATS = {'en': '%a, %d %b %Y'}
 LOCALE = 'en_US'
-DEFAULT_PAGINATION = 10
-SEARCH_BOX = True
+DEFAULT_PAGINATION = 5
 
 STATIC_PATHS = ['img', 'extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
@@ -20,20 +25,25 @@ OUTPUT_PATH = 'output'
 ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{slug}/'
 ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/{slug}/index.html'
 
-THEME = './themes/bootstrap'
-BOOTSTRAP_THEME = 'spacelab'
+THEME = 'themes/bootstrap'
+BOOTSTRAP_THEME='sanghan'
 DISPLAY_CATEGORIES_ON_SIDEBAR = False
 DISPLAY_TAGS_ON_SIDEBAR = False
 DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
+
+TYPOGRIFY = True
 MARKUP = ('rst', 'md', 'ipynb')
-PLUGIN_PATH = 'plugins'
-PLUGINS = ['disqus_static']
+PLUGIN_PATH = ['plugins']
+PLUGINS = ['disqus_static', 'better_figures_and_images']
 PYGMENTS_STYLE = 'solarizedlight'
+RESPONSIVE_IMAGES = True
+HEADER_IMAGE = "bird.jpg"
 
 GITHUB_USER = 'jjangsangy'
 GITHUB_SKIP_FORK = True
 GITHUB_REPO_COUNT = 5
 GITHUB_SHOW_USER_LINK = True
+
 DISQUS_SITENAME = 'sanghan'
 DISQUS_SECRET_KEY = 'iQIq5Ra2Fx2kBnGbhUZ1sNjkhwpewkz5fSRsWUgZFTGj4BIZsqmixUAszepZXQ8I'
 DISQUS_PUBLIC_KEY = 'JyNWL1mdpLOuqzbh5RZ3HfkzvKLYsElIMBLMTYv6k7HltM0RQKQnQfMBiLNbdV3K'
