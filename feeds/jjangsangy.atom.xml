@@ -430,17 +430,16 @@ to play a game I’ve chosen for them. I’ve given them some guidelines to
 read as well as a test of their understanding. &lt;strong&gt;They both read over the
 paragraph below, but strangely, this is what Jenny see’s.&lt;/strong&gt;&lt;/p&gt;
 &lt;!-- --&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;Xxx game xxx xx played xx two, three xx four players, xxx additional&lt;/div&gt;
-&lt;div class="line"&gt;rules xxxx xxx solo and four-player partnership xxxx. Each player&lt;/div&gt;
-&lt;div class="line"&gt;xxx x rack xx six randomly-chosen tiles xxxxx xxx concealed xxxx xxx&lt;/div&gt;
-&lt;div class="line"&gt;other players. Xxx board xx xxxx made xx xx x xxxxx xx hexagons,&lt;/div&gt;
-&lt;div class="line"&gt;xxxx xxx two outermost rings xxxxxx for three xxx four-player games&lt;/div&gt;
-&lt;div class="line"&gt;. Xxx rules xxxxx xxxx xxx youngest player takes xxx first&lt;/div&gt;
-&lt;div class="line"&gt;turn, although xxxxx multiple games xxx played xx xx common practice&lt;/div&gt;
-&lt;div class="line"&gt;xxx xxx first turn xx rotate clockwise around xxx board xx&lt;/div&gt;
-&lt;div class="line"&gt;subsequent xxxxx.&lt;/div&gt;
-&lt;/div&gt;
+&lt;blockquote&gt;
+Xxx game xxx xx played xx two, three xx four players, xxx additional
+rules xxxx xxx solo and four-player partnership xxxx. Each player
+xxx x rack xx six randomly-chosen tiles xxxxx xxx concealed xxxx xxx
+other players. Xxx board xx xxxx made xx xx x xxxxx xx hexagons,
+xxxx xxx two outermost rings xxxxxx for three xxx four-player games
+. Xxx rules xxxxx xxxx xxx youngest player takes xxx first
+turn, although xxxxx multiple games xxx played xx xx common practice
+xxx xxx first turn xx rotate clockwise around xxx board xx
+subsequent xxxxx.&lt;/blockquote&gt;
 &lt;p&gt;Reading the description of the game, they start to take the test as follows.&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;How many players are allowed to play the game?&lt;/li&gt;
