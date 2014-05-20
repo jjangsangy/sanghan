@@ -1,8 +1,8 @@
-Apartment Photoshoot
-####################
+Isabel Apartment Photoshoot
+###########################
 :date: 2010-06-15 18:59:52
 :author: jjangsangy
-:category: text
+:category: Photography
 :slug: 2010-06-15-apartment-photoshoot
 
 It's been a while since I've done some \*chika chika\* with my camera.
@@ -11,72 +11,24 @@ final exams. Here is a sample of a photoshoot for Isabel and
 her apartment mates. They were the cutest 4 girls ever, and its always
 fun to take pictures when everyone else is enjoying the experience!
 
-
-
-.. raw:: html
-
-   </p>
-
 |image0|
-
-
-
-.. raw:: html
-
-   </p>
 
 |image1|
 
-
-
-.. raw:: html
-
-   </p>
-
 |image2|
-
-
-
-.. raw:: html
-
-   </p>
 
 |image3|
 
-
-
-.. raw:: html
-
-   </p>
-
 |image4|
-
-
-
-.. raw:: html
-
-   </p>
 
 |image5|
 
-
-
-.. raw:: html
-
-   </p>
-
 |image6|
 
-
-
-.. raw:: html
-
-   </p>
-
-.. |image0| image:: http://dl.dropbox.com/u/2489110/Isabel%20Apartment%20Photoshoot/20100611%20-%20_MG_7805.jpg
-.. |image1| image:: http://dl.dropbox.com/u/2489110/Isabel%20Apartment%20Photoshoot/20100611%20-%20_MG_7826.jpg
-.. |image2| image:: http://dl.dropbox.com/u/2489110/Isabel%20Apartment%20Photoshoot/20100611%20-%20_MG_8003.jpg
-.. |image3| image:: http://dl.dropbox.com/u/2489110/Isabel%20Apartment%20Photoshoot/20100611%20-%20_MG_8009.jpg
-.. |image4| image:: http://dl.dropbox.com/u/2489110/Isabel%20Apartment%20Photoshoot/20100611%20-%20_MG_8023.jpg
-.. |image5| image:: http://dl.dropbox.com/u/2489110/Isabel%20Apartment%20Photoshoot/20100611%20-%20_MG_8110.jpg
-.. |image6| image:: http://dl.dropbox.com/u/2489110/Isabel%20Apartment%20Photoshoot/20100611%20-%20_MG_8231.jpg
+.. |image0| image:: {filename}/img/tumblr/20100611-_MG_7805.jpg
+.. |image1| image:: {filename}/img/tumblr/20100611-_MG_7826.jpg
+.. |image2| image:: {filename}/img/tumblr/20100611-_MG_8003.jpg
+.. |image3| image:: {filename}/img/tumblr/20100611-_MG_8009.jpg
+.. |image4| image:: {filename}/img/tumblr/20100611-_MG_8023.jpg
+.. |image5| image:: {filename}/img/tumblr/20100611-_MG_8110.jpg
+.. |image6| image:: {filename}/img/tumblr/20100611-_MG_8231.jpg

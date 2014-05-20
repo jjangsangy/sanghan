@@ -5,7 +5,7 @@ Rainy Days
 :category: text
 :slug: 2011-03-14-rainy-days
 
-::
+..
 
     雨點下眼睛風雨在這裡
     足以不能看到一直往前

@@ -41,5 +41,5 @@ Steve Kay (Dept of Biological Sciences Dean)
 
 .. |image0| image:: {filename}/img/tumblr/tumblr_lcv50aETBX1qbyrnao1_1280.jpg
 .. |image1| image:: {filename}/img/tumblr/tumblr_lcv50aETBX1qbyrnao2_1280.jpg
-.. |image2| image:: {filename}/img/tumblr/tumblr_lcv50aETBX1qbyrna03_1280.jpg
-.. |image3| image:: {filename}/img/tumblr/tumblr_lcv50aETBX1qbyrna04_1280.jpg
+.. |image2| image:: {filename}/img/tumblr/tumblr_lcv50aETBX1qbyrnao3_1280.jpg
+.. |image3| image:: {filename}/img/tumblr/tumblr_lcv50aETBX1qbyrnao4_1280.jpg

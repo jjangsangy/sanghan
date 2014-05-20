@@ -1,5 +1,5 @@
-Photo
-#####
+Summer Days
+###########
 :date: 2010-08-03 07:28:00
 :author: jjangsangy
 :category: photo
@@ -17,12 +17,8 @@ Photo
 
 Summa Dayz
 
-.. raw:: html
-
-   </p>
-
-.. |image0| image:: {filename}/img/tumblr/tumblr_l6kyusbT1C1qbyrn_1280.jpg
-.. |image1| image:: {filename}/img/tumblr/tumblr_l6kyusbT1C1qbyrn_1280.jpg
-.. |image2| image:: {filename}/img/tumblr/tumblr_l6kyusbT1C1qbyrn_1280.jpg
-.. |image3| image:: {filename}/img/tumblr/tumblr_l6kyusbT1C1qbyrn_1280.jpg
-.. |image4| image:: {filename}/img/tumblr/tumblr_l6kyusbT1C1qbyrn_1280.jpg
+.. |image0| image:: {filename}/img/tumblr/tumblr_l6kyusbT1C1qbyrnao1_1280.jpg
+.. |image1| image:: {filename}/img/tumblr/tumblr_l6kyusbT1C1qbyrnao2_1280.jpg
+.. |image2| image:: {filename}/img/tumblr/tumblr_l6kyusbT1C1qbyrnao3_1280.jpg
+.. |image3| image:: {filename}/img/tumblr/tumblr_l6kyusbT1C1qbyrnao4_1280.jpg
+.. |image4| image:: {filename}/img/tumblr/tumblr_l6kyusbT1C1qbyrnao5_1280.jpg

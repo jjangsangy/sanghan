@@ -1,5 +1,5 @@
-Photo
-#####
+One Year
+#########
 :date: 2010-12-18 11:40:00
 :author: jjangsangy
 :category: photo
@@ -28,10 +28,6 @@ Photo
 It's been exactly one year since I picked up my first DSLR and started
 learning about photography. I've come a long way since then, here are
 some highlights from 2010.
-
-.. raw:: html
-
-   </p>
 
 .. |image0| image:: {filename}/img/tumblr/tumblr_ldn2nd7ywA1qbyrna01_1280.jpg
 .. |image1| image:: {filename}/img/tumblr/tumblr_ldn2nd7ywA1qbyrna02_1280.jpg
