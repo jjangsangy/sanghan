@@ -119,63 +119,141 @@ developed by John von Neumann - are devices that translate
 between these two species of bits according to definite rules."</p>
 <p class="attribution">—George Dyson: Turing’s Cathedral</p>
 </blockquote>
-<div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<div class="highlight"><pre><span class="c">#!/usr/bin/env bash</span>
+usage<span class="o">()</span> <span class="o">{</span> cat <span class="s">&lt;&lt;- DOCUMENT</span>
 
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="s">    $PROGNAME [-h] [-t] [-k key] [-l login] [server]</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_table</span>
+<span class="s">    Utility for automatically exporting ssh keys into remote servers for authentication.</span>
+<span class="s">    Checks $HOME/.ssh for id_rsa.pub or id_dsa.pub and appends them into</span>
+<span class="s">    the authorized_keys of remote host</span>
 
-<span class="k">def</span> <span class="nf">header</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">'rt'</span><span class="p">)</span> <span class="k">as</span> <span class="n">dat</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">dat</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span>
+<span class="s">    AUTHOR:     Sang Han</span>
+<span class="s">    COMPANY:    Calient Technologies</span>
+<span class="s">    YEAR:       2013</span>
+<span class="s">    VERSION:    2.3</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="c"># Header containing date of log creation</span>
-    <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="n">header</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-    <span class="c"># Pandas read table into DataFrame</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">read_table</span><span class="p">(</span>
-            <span class="n">data</span><span class="p">,</span>
-            <span class="n">skiprows</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
-            <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-            <span class="n">comment</span><span class="o">=</span><span class="s">'*'</span><span class="p">,</span>
-            <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s">'topTemp'</span><span class="p">,</span> <span class="s">'botTemp'</span><span class="p">,</span> <span class="s">'chPress'</span><span class="p">,</span> <span class="s">'MembPress'</span><span class="p">,</span> <span class="s">'Force'</span><span class="p">])</span>
-
-    <span class="c"># Filename Parsing</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'.DAT'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'/'</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'Lid Bond'</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'BaseBond'</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-
-    <span class="c"># Create the matplotlib figure</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
-
-    <span class="c"># Fill figure with data</span>
-    <span class="k">for</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
-        <span class="n">df</span><span class="p">[</span><span class="n">param</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'line'</span><span class="p">,</span>
-                       <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">iteration</span><span class="p">],</span>
-                       <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">28</span><span class="p">),</span>
-                       <span class="n">title</span><span class="o">=</span><span class="n">param</span><span class="p">,</span>
-                       <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-        <span class="c"># Prettyfy and format figure x/y axis</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">iteration</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'{date}: {time}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">year</span><span class="p">])),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">iteration</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'{var} vs Time'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">var</span><span class="o">=</span><span class="n">param</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">iteration</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-        <span class="n">axes</span><span class="p">[</span><span class="n">iteration</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="s">''</span><span class="p">)</span>
-
-    <span class="c"># Save the plot with filename</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'{year} {month}_{day}_{name}.png'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="o">=</span><span class="n">month</span><span class="p">,</span><span class="n">day</span><span class="o">=</span><span class="n">day</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">))</span>
+<span class="s">    -h [help]</span>
+<span class="s">        Outputs usage directions</span>
+<span class="s">    -t [test]</span>
+<span class="s">        Runs unit tests</span>
+<span class="s">    -k [key]</span>
+<span class="s">        Specify your own public key located in $HOME/.ssh directory</span>
+<span class="s">    -l [login]</span>
+<span class="s">        Specify user login credentials</span>
 
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
-    <span class="c"># Check if file exists input as argv[1]</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'file {0} does not exist</span><span class="se">\n</span><span class="s">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="s">    DOCUMENT</span>
+    <span class="nb">exit </span>0
+<span class="o">}</span>
 
-    <span class="c"># Entry Point</span>
-    <span class="n">main</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c"># Global Variables</span>
+<span class="nv">PROGNAME</span><span class="o">=</span><span class="s2">"$(basename "</span><span class="nv">$0</span><span class="s2">")"</span>
+
+<span class="k">function </span>error_exit<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">printf</span> <span class="s2">"ERROR due to %s"</span>  <span class="s2">"${1:-"</span>Unknown Error<span class="s2">"}"</span>
+    <span class="nb">exit </span>1
+<span class="o">}</span>
+
+<span class="k">function </span>test_names<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">printf</span> <span class="s2">"\$KEY is %s\n"</span> <span class="s2">"${KEY[i]}"</span>
+    <span class="nb">printf</span> <span class="s2">"\$PUBKEY is %s\n"</span> <span class="s2">"${PUBKEY[i]}"</span>
+    <span class="nb">printf</span> <span class="s2">"\$LOGIN_USER is %s\n"</span> <span class="s2">"${LOGIN_USER}"</span>
+    <span class="nb">printf</span> <span class="s2">"\$SERVER is %s\n"</span> <span class="s2">"${SERVER}"</span>
+    <span class="nb">printf</span> <span class="s2">"\n"</span>
+<span class="o">}</span>
+
+<span class="k">function </span>install_keys<span class="o">()</span> <span class="o">{</span>
+    <span class="c"># Reads the public key file with cat and then logs into ssh server</span>
+    <span class="c"># and appends the public key file at the end of the authorized_key file</span>
+    <span class="c"># within $HOME</span>
+    cat &lt; <span class="s2">"${PUBKEY[i]}"</span> | <span class="se">\</span>
+        ssh -l <span class="s2">"$LOGIN_USER"</span> <span class="s2">"$SERVER"</span> <span class="s2">"\</span>
+<span class="s2">            if [ -d ~/.ssh ]; then \</span>
+<span class="s2">                cat &gt;&gt; ~/.ssh/authorized_keys; \</span>
+<span class="s2">            else \</span>
+<span class="s2">                mkdir ~/.ssh; \</span>
+<span class="s2">                cat &gt;&gt; ~/.ssh/authorized_keys; \</span>
+<span class="s2">            fi"</span>
+<span class="o">}</span>
+
+<span class="k">function </span>check_keys<span class="o">()</span> <span class="o">{</span>
+    <span class="c"># Checks $HOME/.ssh directory for default keys</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$HOME</span>/.ssh/*.pub <span class="o">]]</span>; <span class="k">then</span>
+<span class="k">        return</span>
+<span class="k">    else</span>
+<span class="k">        </span>error_exit <span class="s2">"missing ssh public keys"</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="k">function </span>check_auth<span class="o">()</span> <span class="o">{</span>
+    <span class="c"># Checks if proper credentials have been given as $1. After credential has</span>
+    <span class="c"># been checked, will read and bind the variable.</span>
+    <span class="nb">local </span><span class="nv">CREDENTIAL</span><span class="o">=</span><span class="nv">$1</span>
+    <span class="k">if</span> <span class="o">[[</span> ! <span class="k">${</span><span class="p">!CREDENTIAL</span><span class="k">}</span> <span class="o">]]</span>; <span class="k">then</span>
+<span class="k">        </span><span class="nb">read</span> -p <span class="s2">"${CREDENTIAL}:  "</span> <span class="s2">"${CREDENTIAL}"</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="k">function </span>check_server<span class="o">()</span> <span class="o">{</span>
+    <span class="nv">SERVER</span><span class="o">=</span><span class="nv">$1</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="s2">"$SERVER"</span> <span class="o">=</span>~ @ <span class="o">]]</span>; <span class="k">then</span>
+<span class="k">        </span><span class="nv">LOGIN_USER</span><span class="o">=</span><span class="k">${</span><span class="nv">SERVER</span><span class="p">%@*</span><span class="k">}</span>
+        <span class="nv">SERVER</span><span class="o">=</span><span class="k">${</span><span class="nv">SERVER</span><span class="p">#*@</span><span class="k">}</span>
+        <span class="k">return</span>
+<span class="k">    fi</span>
+<span class="o">}</span>
+
+main<span class="o">()</span> <span class="o">{</span>
+    <span class="c"># Declare default key files to find if user does not specify</span>
+    <span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$KEY</span> <span class="o">]]</span>; <span class="k">then </span><span class="nb">declare</span> -a <span class="nv">KEY</span><span class="o">=(</span><span class="s2">"id_rsa"</span> <span class="s2">"id_dsa"</span><span class="o">)</span>; <span class="k">fi</span>
+
+<span class="k">    for</span> <span class="o">((</span> <span class="nv">i</span><span class="o">=</span>0; i&lt;<span class="k">${#</span><span class="nv">KEY</span><span class="p">[@]</span><span class="k">}</span>; i+<span class="o">=</span>1 <span class="o">))</span>; <span class="k">do</span>
+        <span class="c"># Path to key file</span>
+        <span class="nb">local </span>PUBKEY<span class="o">[</span>i<span class="o">]=</span><span class="nv">$HOME</span>/.ssh/<span class="k">${</span><span class="nv">KEY</span><span class="p">[i]</span><span class="k">}</span>.pub
+
+        <span class="c"># Unit Test runs every iteration</span>
+        <span class="k">if</span> <span class="o">((</span><span class="nv">TEST</span><span class="o">==</span>1<span class="o">))</span>; <span class="k">then</span>
+<span class="k">            </span>test_names
+            <span class="k">return</span>
+<span class="k">        fi</span>
+
+        <span class="c"># Gather necessary login credentials</span>
+        <span class="k">if</span> <span class="o">[[</span> -r <span class="s2">"${PUBKEY[i]}"</span> <span class="o">]]</span>; <span class="k">then</span>
+<span class="k">            </span>check_auth LOGIN_USER
+            check_auth SERVER
+            install_keys <span class="o">&amp;&amp;</span> <span class="nb">break</span>
+<span class="nb">        </span><span class="k">fi</span>
+<span class="k">    done</span>
+<span class="o">}</span>
+
+<span class="c"># Option Parsing</span>
+<span class="nb">declare</span> -i <span class="nv">TEST</span><span class="o">=</span>0
+<span class="k">while </span><span class="nb">getopts</span> <span class="s2">":k:l:th"</span> OPTION; <span class="k">do</span>
+<span class="k">    case</span> <span class="nv">$OPTION</span> in
+        h<span class="o">)</span> usage
+            ;;
+        k<span class="o">)</span> <span class="nv">KEY</span><span class="o">=</span><span class="nv">$OPTARG</span>
+             ;;
+        t<span class="o">)</span> <span class="nv">TEST</span><span class="o">=</span>1
+              ;;
+        l<span class="o">)</span> <span class="nv">LOGIN_USER</span><span class="o">=</span><span class="nv">$OPTARG</span>
+             ;;
+        ?<span class="o">)</span> <span class="o">{</span> <span class="nb">echo</span> <span class="s2">"Invalid option: -${OPTARG}"</span>; usage; <span class="o">}</span> &gt;&amp;2
+             <span class="nb">exit </span>1
+             ;;
+    <span class="k">esac</span>
+<span class="k">done</span>
+<span class="k">    </span><span class="nb">shift</span> <span class="k">$((</span>OPTIND-1<span class="k">))</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">"$0"</span> <span class="o">==</span> <span class="s2">"${BASH_SOURCE}"</span> <span class="o">]]</span>; <span class="k">then</span>
+
+    <span class="c"># Validate user input</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$# </span><span class="o">=</span> 1 <span class="o">]]</span>; <span class="k">then </span>check_server <span class="s2">"$1"</span>; <span class="k">fi</span>
+<span class="k">    </span>check_keys
+
+    main
+<span class="k">fi</span>
 </pre></div>
 </body></html>
                     <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2014/05/digital_universe/">more ...</a>
