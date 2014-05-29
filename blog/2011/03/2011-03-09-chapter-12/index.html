@@ -1,7 +1,8 @@
-<!DOCTYPE html ng-app>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml">
+      xmlns:fb="https://www.facebook.com/2008/fbml"
+      ng-app="blogApp">
 <head>
     <title>Chapter 12 - Sang Han</title>
     <!-- Using the latest rendering mode for IE -->
@@ -19,20 +20,21 @@
                 <meta property="article:section" content="text" />
                 <meta property="article:author" content="Sang Han" />
 
-    <!-- Bootstrap -->
         <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.sanghan.min.css" type="text/css"/>
-    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
 
+    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+
+
         <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
+
     <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
+        <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
 
         <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Sang Han ATOM Feed"/>
 
         <link rel="icon" href="/img/favicon.ico">
-
-
 </head>
 <body>
 
@@ -46,27 +48,47 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="http://sanghan.me/" class="navbar-brand">
-Sang Han            </a>
+                    <i class="fa fa-flask pull-center fa-border"></i>
+                    Sang Han
+            </a>
         </div>
+
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                    <li><a href="http://sanghanphotography.com">.photography</a></li>
-                         <li><a href="http://sanghan.me/pages/about.html">
-                             About&nbsp;Me
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/projects.html">
-                             Projects
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/resume.html">
-                             Resume
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/tools.html">
-                             Tools
-                          </a></li>
+                    <li>
+                        <a href="http://sanghanphotography.com">
+                        <i class="fa fa-camera-retro"></i>
+                        <span class="icon-label">Photography</span>
+                        </a>
+                    </li>
 
+                <!-- Pages -->
+                         <li>
+                             <a href="http://sanghan.me/pages/about.html">
+                                     <i class="fa fa-beer"></i>
+                                     <span class="icon-label">About&nbsp;Me</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/projects.html">
+                                     <i class="fa fa-code"></i>
+                                     <span class="icon-label">Projects</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/tools.html">
+                                     <i class="fa fa-wrench"></i>
+                                     <span class="icon-label">Tools</span>
+                             </a>
+                         </li>
+
+                <!-- Categories Dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Categories
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
                                 <li >
                                     <a href="http://sanghan.me/category/computing.html">Computing</a>
                                 </li>
@@ -78,9 +100,15 @@ Sang Han            </a>
                                 </li>
                     </ul>
                 </li>
-            </ul>
+
+            <!-- Archives -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+                <li>
+                    <a href="http://sanghan.me/archives.html">
+                        <i class="fa fa-th-list"></i>
+                        <span class="icon-label">Archives</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -118,11 +146,11 @@ Sang Han            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <html><body><p>Chapter 12 of my <span class="caps">CHEM</span> 127 textbook starts off with. "The chemical bond
-is at the heart of chemistry. The essence of chemistry is bonds".</p>
-<p>Maybe I’m starting to enjoy this class. Too bad the last lecture is tomorrow.</p>
-<p><img alt="image0" src="/img/0321615042.jpg" style="width: 493px; height: auto; max-width: 100%;"/></p>
-</body></html>
+                <p>Chapter 12 of my <span class="caps">CHEM</span> 127 textbook starts off with. &quot;The chemical bond
+is at the heart of chemistry. The essence of chemistry is&nbsp;bonds&quot;.</p>
+<p>Maybe I&#8217;m starting to enjoy this class. Too bad the last lecture is&nbsp;tomorrow.</p>
+<p><img alt="image0" src="/img/0321615042.jpg" /></p>
+
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -238,16 +266,14 @@ is at the heart of chemistry. The essence of chemistry is bonds".</p>
       </div>
    </div>
 </footer>
-<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+<script type="text/javascript" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/static/js/app.js"></script>
 
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://sanghan.me/theme/js/respond.min.js"></script>
-
-<!-- AngularJS -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">

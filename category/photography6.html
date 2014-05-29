@@ -1,7 +1,8 @@
-<!DOCTYPE html ng-app>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml">
+      xmlns:fb="https://www.facebook.com/2008/fbml"
+      ng-app="blogApp">
 <head>
     <title>Photography - Sang Han</title>
     <!-- Using the latest rendering mode for IE -->
@@ -16,20 +17,21 @@
             <meta property="og:url" content="http://sanghan.me"/>
             <meta property="og:description" content="Sang Han"/>
 
-    <!-- Bootstrap -->
         <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.sanghan.min.css" type="text/css"/>
-    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
 
+    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+
+
         <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
+
     <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
+        <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
 
         <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Sang Han ATOM Feed"/>
 
         <link rel="icon" href="/img/favicon.ico">
-
-
 </head>
 <body>
 
@@ -43,27 +45,47 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="http://sanghan.me/" class="navbar-brand">
-Sang Han            </a>
+                    <i class="fa fa-flask pull-center fa-border"></i>
+                    Sang Han
+            </a>
         </div>
+
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                    <li><a href="http://sanghanphotography.com">.photography</a></li>
-                         <li><a href="http://sanghan.me/pages/about.html">
-                             About&nbsp;Me
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/projects.html">
-                             Projects
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/resume.html">
-                             Resume
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/tools.html">
-                             Tools
-                          </a></li>
+                    <li>
+                        <a href="http://sanghanphotography.com">
+                        <i class="fa fa-camera-retro"></i>
+                        <span class="icon-label">Photography</span>
+                        </a>
+                    </li>
 
+                <!-- Pages -->
+                         <li>
+                             <a href="http://sanghan.me/pages/about.html">
+                                     <i class="fa fa-beer"></i>
+                                     <span class="icon-label">About&nbsp;Me</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/projects.html">
+                                     <i class="fa fa-code"></i>
+                                     <span class="icon-label">Projects</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/tools.html">
+                                     <i class="fa fa-wrench"></i>
+                                     <span class="icon-label">Tools</span>
+                             </a>
+                         </li>
+
+                <!-- Categories Dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Categories
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
                                 <li >
                                     <a href="http://sanghan.me/category/computing.html">Computing</a>
                                 </li>
@@ -75,9 +97,15 @@ Sang Han            </a>
                                 </li>
                     </ul>
                 </li>
-            </ul>
+
+            <!-- Archives -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+                <li>
+                    <a href="http://sanghan.me/archives.html">
+                        <i class="fa fa-th-list"></i>
+                        <span class="icon-label">Archives</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -97,7 +125,7 @@ Sang Han            </a>
 
             <article>
                 <h2><a href="http://sanghan.me/blog/2010/12/2010-12-13-there-is-a-quaint-little-dessert-place-in-san/">Extraordinary&nbsp;Desserts</a></h2>
-                <div class="summary"><html><body><p></p>
+                <div class="summary"><p></p>
 <p></p>
 <p></p>
 <p></p>
@@ -105,15 +133,18 @@ Sang Han            </a>
 <p>There is a quaint little dessert place in San Diego called Extraordinary
 Desserts. Quite the namesake, it’s been a place I’ve been wanting to go
 back to since freshman year. As you can see, it is quite Extraordinary.</p>
-</body></html>
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="Extraordinary&nbsp;Desserts" src="http://sanghan.me/img/tumblr/tumblr_lddh4bikD21qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2010/12/2010-12-13-there-is-a-quaint-little-dessert-place-in-san/">more ...</a>
+
+                        <p><img alt="Extraordinary&nbsp;Desserts" src="http://sanghan.me/img/tumblr/tumblr_lddh4bikD21qbyrnao1_1280.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2010/12/2010-12-13-there-is-a-quaint-little-dessert-place-in-san/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2010/12/2010-12-03-nobel-laureates-and-such-studying-during-10th/">Nobel Laureates and&nbsp;Such</a></h2>
-                <div class="summary"><html><body><p></p>
+                <div class="summary"><p></p>
 <p></p>
 <p></p>
 <p></p>
@@ -125,15 +156,18 @@ chance to spend time and photograph some pretty distinguished faculty.
 Listening to their stories, and to see where they are gives me a hope at
 what is to come. Of course, most of us aren’t likely to to achieve
 anything like a nobel prize. But we can all dream big.</p>
-<p>Peoples names are captioned in order ...</p></body></html>
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="Nobel Laureates and&nbsp;Such" src="http://sanghan.me/img/tumblr/tumblr_lcv50aETBX1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2010/12/2010-12-03-nobel-laureates-and-such-studying-during-10th/">more ...</a>
+<p>Peoples names are captioned in order ...</p>
+                        <p><img alt="Nobel Laureates and&nbsp;Such" src="http://sanghan.me/img/tumblr/tumblr_lcv50aETBX1qbyrnao1_1280.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2010/12/2010-12-03-nobel-laureates-and-such-studying-during-10th/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2010/11/2010-11-26-philanthro-productions-pencils-of-promise/">Philanthro: Pencils of&nbsp;Promise</a></h2>
-                <div class="summary"><html><body><p></p>
+                <div class="summary"><p></p>
 <p></p>
 <p></p>
 <p></p>
@@ -142,38 +176,47 @@ anything like a nobel prize. But we can all dream big.</p>
 <p></p>
 <p>Philanthro Productions - Pencils of Promise (<span class="caps">POP</span>!)</p>
 <p>Downtown San Diego W Hotel</p>
-</body></html>
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="Philanthro: Pencils of&nbsp;Promise" src="http://sanghan.me/img/tumblr/tumblr_lcilkngztA1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2010/11/2010-11-26-philanthro-productions-pencils-of-promise/">more ...</a>
+
+                        <p><img alt="Philanthro: Pencils of&nbsp;Promise" src="http://sanghan.me/img/tumblr/tumblr_lcilkngztA1qbyrnao1_1280.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2010/11/2010-11-26-philanthro-productions-pencils-of-promise/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2010/11/2010-11-07-more-pictures-from-julian/">More From&nbsp;Julian</a></h2>
-                <div class="summary"><html><body><p></p>
+                <div class="summary"><p></p>
 <p></p>
 <p></p>
 <p></p>
 <p></p>
 <p></p>
 <p>More pictures from Julian</p>
-</body></html>
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="More From&nbsp;Julian" src="http://sanghan.me/img/tumblr/tumblr_lbjxsx9jlq1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2010/11/2010-11-07-more-pictures-from-julian/">more ...</a>
+
+                        <p><img alt="More From&nbsp;Julian" src="http://sanghan.me/img/tumblr/tumblr_lbjxsx9jlq1qbyrnao1_1280.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2010/11/2010-11-07-more-pictures-from-julian/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2010/11/2010-11-07-excerpt-from-todays-trip-to-julian-the-pies-were/">Trip to&nbsp;Julian</a></h2>
-                <div class="summary"><html><body><p></p>
+                <div class="summary"><p></p>
 <p></p>
 <p></p>
 <p></p>
 <p>Excerpt from today’s trip to Julian. The pies were well worth it, and
 the time was well spent!</p>
-</body></html>
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="Trip to&nbsp;Julian" src="http://sanghan.me/img/tumblr/tumblr_lbi680dWax1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2010/11/2010-11-07-excerpt-from-todays-trip-to-julian-the-pies-were/">more ...</a>
+
+                        <p><img alt="Trip to&nbsp;Julian" src="http://sanghan.me/img/tumblr/tumblr_lbi680dWax1qbyrnao1_1280.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2010/11/2010-11-07-excerpt-from-todays-trip-to-julian-the-pies-were/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
@@ -263,16 +306,14 @@ the time was well spent!</p>
       </div>
    </div>
 </footer>
-<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+<script type="text/javascript" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/static/js/app.js"></script>
 
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://sanghan.me/theme/js/respond.min.js"></script>
-
-<!-- AngularJS -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">

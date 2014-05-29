@@ -1,7 +1,8 @@
-<!DOCTYPE html ng-app>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml">
+      xmlns:fb="https://www.facebook.com/2008/fbml"
+      ng-app="blogApp">
 <head>
     <title>Sang Han</title>
     <!-- Using the latest rendering mode for IE -->
@@ -16,20 +17,21 @@
             <meta property="og:url" content="http://sanghan.me"/>
             <meta property="og:description" content="Sang Han"/>
 
-    <!-- Bootstrap -->
         <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.sanghan.min.css" type="text/css"/>
-    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
 
+    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+
+
         <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
+
     <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
+        <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
 
         <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Sang Han ATOM Feed"/>
 
         <link rel="icon" href="/img/favicon.ico">
-
-
 </head>
 <body>
 
@@ -43,27 +45,47 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="http://sanghan.me/" class="navbar-brand">
-Sang Han            </a>
+                    <i class="fa fa-flask pull-center fa-border"></i>
+                    Sang Han
+            </a>
         </div>
+
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                    <li><a href="http://sanghanphotography.com">.photography</a></li>
-                         <li><a href="http://sanghan.me/pages/about.html">
-                             About&nbsp;Me
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/projects.html">
-                             Projects
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/resume.html">
-                             Resume
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/tools.html">
-                             Tools
-                          </a></li>
+                    <li>
+                        <a href="http://sanghanphotography.com">
+                        <i class="fa fa-camera-retro"></i>
+                        <span class="icon-label">Photography</span>
+                        </a>
+                    </li>
 
+                <!-- Pages -->
+                         <li>
+                             <a href="http://sanghan.me/pages/about.html">
+                                     <i class="fa fa-beer"></i>
+                                     <span class="icon-label">About&nbsp;Me</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/projects.html">
+                                     <i class="fa fa-code"></i>
+                                     <span class="icon-label">Projects</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/tools.html">
+                                     <i class="fa fa-wrench"></i>
+                                     <span class="icon-label">Tools</span>
+                             </a>
+                         </li>
+
+                <!-- Categories Dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Categories
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
                                 <li >
                                     <a href="http://sanghan.me/category/computing.html">Computing</a>
                                 </li>
@@ -75,9 +97,15 @@ Sang Han            </a>
                                 </li>
                     </ul>
                 </li>
-            </ul>
+
+            <!-- Archives -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+                <li>
+                    <a href="http://sanghan.me/archives.html">
+                        <i class="fa fa-th-list"></i>
+                        <span class="icon-label">Archives</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -97,26 +125,31 @@ Sang Han            </a>
 
             <article>
                 <h2><a href="http://sanghan.me/blog/2014/05/digital_universe/">Digital&nbsp;Universe</a></h2>
-                <div class="summary"><!-- --><html><body><blockquote>
-<p>"In the digital universe, there are two kinds of bits:
+                <div class="summary"><!--  -->
+<blockquote>
+<p>&quot;In the digital universe, there are two kinds of bits:
 bits that represent structures (differences in space)
 and bits that represent sequence (differences in time).
 Digital computers - as formalized by Alan Turing, and
 developed by John von Neumann - are devices that translate
-between these two species of bits according to definite rules."</p>
-<p class="attribution">—George Dyson: Turing’s Cathedral</p>
+between these two species of bits according to definite&nbsp;rules.&quot;</p>
+<p class="attribution">&mdash;George Dyson: Turing&#8217;s&nbsp;Cathedral</p>
 </blockquote>
-<p>I’ve always wanted to learn to program, so I’m teaching myself.
-In a way, I’ve started this blog as a way to keep track of my progress and to
-share it with everyone else.</p>
-</body></html>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2014/05/digital_universe/">more ...</a>
+<p>I&#8217;ve always wanted to learn to program, so I&#8217;m teaching myself.
+In a way, I&#8217;ve started this blog as a way to keep track of my progress and to
+share it with everyone&nbsp;else.</p>
+
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/05/digital_universe/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2012/03/amber/">Amber</a></h2>
-                <div class="summary"><!-- --><html><body><p>Before photography, I was a chemist.
+                <div class="summary"><!--  -->
+<p>Before photography, I was a chemist.
 I worked at <span class="caps">GNF</span> No
 Before photography, I was a chemist.
 I worked at <span class="caps">GNF</span> Novartis doing medicinal chemistry.
@@ -125,44 +158,54 @@ chemistry. These days I am still in good contact with the people I met,
 and worked with. Soon after I had left, word had spread to Yefen,
 and she had become interested in getting a family portrait with her very young
 1 year old daughter Amber. Of course, I was happy to oblige
-and Yifen and I started to contact ...</p></body></html></!-->
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="Amber" src="http://sanghan.me/img/amber/amber01.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2012/03/amber/">more ...</a>
+and Yifen and I started to contact ...</p></!-->
+                        <p><img alt="Amber" src="http://sanghan.me/img/amber/amber01.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2012/03/amber/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/11/2011-11-18-photography-website/">Photography&nbsp;Website</a></h2>
-                <div class="summary"><html><body><p>So it’s been almost a week designing and coding for my new photography
+                <div class="summary"><p>So it’s been almost a week designing and coding for my new photography
 website. Can’t wait till I can finally release it to the public.</p>
 <p>Be ready, because we will be live soon!</p>
 <p></p>
-</body></html>
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="Photography&nbsp;Website" src="/img/sanghanphotography.png" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/11/2011-11-18-photography-website/">more ...</a>
+
+                        <p><img alt="Photography&nbsp;Website" src="/img/sanghanphotography.png" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/11/2011-11-18-photography-website/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/11/johnathana_and_chelsea/">Johnathan and&nbsp;Chelsea</a></h2>
-                <div class="summary"><!-- --><html><body><p>Johnathan <span class="amp">&amp;</span> Chelsea are both good friends of mine.
+                <div class="summary"><!--  -->
+<p>Johnathan <span class="amp">&amp;</span> Chelsea are both good friends of mine.
 I actually knew both of them individually, before and after they became an item.
 Johnathan and I have worked together through several student organizations
 and were both officers of <span class="caps">UCSD</span> Photography club.
 Johnathan however, specializes in videography,
 and that is where our differences will probably lie.
 Chelsea and I met through many close friends,
-and I can reminisce of many great times while we were still students.</p>
+and I can reminisce of many great times while we were still&nbsp;students.</p>
 <p>This photoshoot in particular was a meaningful one.
-It was one of the ways I could say thanks to all the great times that we ...</p></body></html></!-->
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="Johnathan and&nbsp;Chelsea" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_1.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/11/johnathana_and_chelsea/">more ...</a>
+It was one of the ways I could say thanks to all the great times that we ...</p></!-->
+                        <p><img alt="Johnathan and&nbsp;Chelsea" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_1.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/11/johnathana_and_chelsea/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/11/2011-11-02-highlights-of-the-san-diego-asian-film-festival/">San Diego Asian Film&nbsp;Festival</a></h2>
-                <div class="summary"><html><body><p></p>
+                <div class="summary"><p></p>
 <p></p>
 <p></p>
 <p></p>
@@ -176,9 +219,12 @@ Taiwan543 magazine. It was such a great experience, got to hang out with
 some famous maybe even infamous stars and got some coverage on some
 exclusive events. Never thought that photography would be able to take
 me to so many new places and help me meet new people.</p>
-</body></html>
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="San Diego Asian Film&nbsp;Festival" src="http://sanghan.me/img/tumblr/tumblr_lu0z8qGSph1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/11/2011-11-02-highlights-of-the-san-diego-asian-film-festival/">more ...</a>
+
+                        <p><img alt="San Diego Asian Film&nbsp;Festival" src="http://sanghan.me/img/tumblr/tumblr_lu0z8qGSph1qbyrnao1_1280.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/11/2011-11-02-highlights-of-the-san-diego-asian-film-festival/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
@@ -268,16 +314,14 @@ me to so many new places and help me meet new people.</p>
       </div>
    </div>
 </footer>
-<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+<script type="text/javascript" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/static/js/app.js"></script>
 
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://sanghan.me/theme/js/respond.min.js"></script>
-
-<!-- AngularJS -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">

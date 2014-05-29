@@ -1,7 +1,8 @@
-<!DOCTYPE html ng-app>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml">
+      xmlns:fb="https://www.facebook.com/2008/fbml"
+      ng-app="blogApp">
 <head>
     <title>Johnathan and Chelsea - Sang Han</title>
     <!-- Using the latest rendering mode for IE -->
@@ -14,25 +15,26 @@
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Johnathan and Chelsea"/>
             <meta property="og:url" content="http://sanghan.me/blog/2011/11/johnathana_and_chelsea/"/>
-            <meta property="og:description" content="Johnathan &amp; Chelsea are both good friends of mine. I actually knew both of them individually, before and after they became an item. Johnathan and I have worked together through several student organizations and were both officers of UCSD Photography club. Johnathan however, specializes in videography, and that is where our differences will probably lie. Chelsea and I met through many close friends, and I can reminisce of many great times while we were still students. This photoshoot in particular was a meaningful one. It was one of the ways I could say thanks to all the great times that we ..."/>
+            <meta property="og:description" content="Johnathan &amp; Chelsea are both good friends of mine. I actually knew both of them individually, before and after they became an item. Johnathan and I have worked together through several student organizations and were both officers of UCSD Photography club. Johnathan however, specializes in videography, and that is where our differences will probably lie. Chelsea and I met through many close friends, and I can reminisce of many great times while we were still students. This photoshoot in particular was a meaningful one. It was one of the ways I could say thanks to all the great times that we ..."/>
             <meta property="article:published_time" content="2011-11-11" />
                 <meta property="article:section" content="Photography" />
                 <meta property="article:author" content="Sang Han" />
 
-    <!-- Bootstrap -->
         <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.sanghan.min.css" type="text/css"/>
-    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
 
+    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+
+
         <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
+
     <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
+        <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
 
         <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Sang Han ATOM Feed"/>
 
         <link rel="icon" href="/img/favicon.ico">
-
-
 </head>
 <body>
 
@@ -46,27 +48,47 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="http://sanghan.me/" class="navbar-brand">
-Sang Han            </a>
+                    <i class="fa fa-flask pull-center fa-border"></i>
+                    Sang Han
+            </a>
         </div>
+
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                    <li><a href="http://sanghanphotography.com">.photography</a></li>
-                         <li><a href="http://sanghan.me/pages/about.html">
-                             About&nbsp;Me
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/projects.html">
-                             Projects
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/resume.html">
-                             Resume
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/tools.html">
-                             Tools
-                          </a></li>
+                    <li>
+                        <a href="http://sanghanphotography.com">
+                        <i class="fa fa-camera-retro"></i>
+                        <span class="icon-label">Photography</span>
+                        </a>
+                    </li>
 
+                <!-- Pages -->
+                         <li>
+                             <a href="http://sanghan.me/pages/about.html">
+                                     <i class="fa fa-beer"></i>
+                                     <span class="icon-label">About&nbsp;Me</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/projects.html">
+                                     <i class="fa fa-code"></i>
+                                     <span class="icon-label">Projects</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/tools.html">
+                                     <i class="fa fa-wrench"></i>
+                                     <span class="icon-label">Tools</span>
+                             </a>
+                         </li>
+
+                <!-- Categories Dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Categories
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
                                 <li >
                                     <a href="http://sanghan.me/category/computing.html">Computing</a>
                                 </li>
@@ -78,9 +100,15 @@ Sang Han            </a>
                                 </li>
                     </ul>
                 </li>
-            </ul>
+
+            <!-- Archives -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+                <li>
+                    <a href="http://sanghan.me/archives.html">
+                        <i class="fa fa-th-list"></i>
+                        <span class="icon-label">Archives</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -118,31 +146,32 @@ Sang Han            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <!-- --><html><body><p>Johnathan <span class="amp">&amp;</span> Chelsea are both good friends of mine.
+                <!--  -->
+<p>Johnathan <span class="amp">&amp;</span> Chelsea are both good friends of mine.
 I actually knew both of them individually, before and after they became an item.
 Johnathan and I have worked together through several student organizations
 and were both officers of <span class="caps">UCSD</span> Photography club.
 Johnathan however, specializes in videography,
 and that is where our differences will probably lie.
 Chelsea and I met through many close friends,
-and I can reminisce of many great times while we were still students.</p>
+and I can reminisce of many great times while we were still&nbsp;students.</p>
 <p>This photoshoot in particular was a meaningful one.
 It was one of the ways I could say thanks to all the great times that we
 all had shared as friends, and also, in wishing the best of opportunities
 as we all finished the last years of college and pursue our own separate paths.
-It’s a nostalgic and bittersweet feeling to see friends move on,
+It&#8217;s a nostalgic and bittersweet feeling to see friends move on,
 together and on their own dreams and ambitions. As a photographer,
 I can share my goodbyes and goodwills with at least a picture
-and maybe less than a thousand words.</p>
-<p><img alt="image01" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_1.jpg" style="width: 1024px; height: auto; max-width: 100%;"/></p>
-<p><img alt="image02" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_2.jpg" style="width: 1024px; height: auto; max-width: 100%;"/></p>
-<p><img alt="image03" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_3.jpg" style="width: 1024px; height: auto; max-width: 100%;"/></p>
-<p><img alt="image04" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_4.jpg" style="width: 1024px; height: auto; max-width: 100%;"/></p>
-<p><img alt="image05" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_5.jpg" style="width: 1024px; height: auto; max-width: 100%;"/></p>
-<p><img alt="image06" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_6.jpg" style="width: 1024px; height: auto; max-width: 100%;"/></p>
-<p><img alt="image08" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_8.jpg" style="width: 1024px; height: auto; max-width: 100%;"/></p>
-<p><img alt="image09" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_9.jpg" style="width: 1024px; height: auto; max-width: 100%;"/></p>
-</body></html>
+and maybe less than a thousand&nbsp;words.</p>
+<p><img alt="image01" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_1.jpg" /></p>
+<p><img alt="image02" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_2.jpg" /></p>
+<p><img alt="image03" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_3.jpg" /></p>
+<p><img alt="image04" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_4.jpg" /></p>
+<p><img alt="image05" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_5.jpg" /></p>
+<p><img alt="image06" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_6.jpg" /></p>
+<p><img alt="image08" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_8.jpg" /></p>
+<p><img alt="image09" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_9.jpg" /></p>
+
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -258,16 +287,14 @@ and maybe less than a thousand words.</p>
       </div>
    </div>
 </footer>
-<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+<script type="text/javascript" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/static/js/app.js"></script>
 
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://sanghan.me/theme/js/respond.min.js"></script>
-
-<!-- AngularJS -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">

@@ -1,7 +1,8 @@
-<!DOCTYPE html ng-app>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml">
+      xmlns:fb="https://www.facebook.com/2008/fbml"
+      ng-app="blogApp">
 <head>
     <title>Tools - Sang Han</title>
     <!-- Using the latest rendering mode for IE -->
@@ -15,20 +16,21 @@
             <meta property="og:title" content="Tools"/>
             <meta property="og:url" content="http://sanghan.me/pages/tools.html"/>
 
-    <!-- Bootstrap -->
         <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.sanghan.min.css" type="text/css"/>
-    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
 
+    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+
+
         <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
+
     <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
+        <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
 
         <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Sang Han ATOM Feed"/>
 
         <link rel="icon" href="/img/favicon.ico">
-
-
 </head>
 <body>
 
@@ -42,27 +44,47 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="http://sanghan.me/" class="navbar-brand">
-Sang Han            </a>
+                    <i class="fa fa-flask pull-center fa-border"></i>
+                    Sang Han
+            </a>
         </div>
+
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                    <li><a href="http://sanghanphotography.com">.photography</a></li>
-                         <li><a href="http://sanghan.me/pages/about.html">
-                             About&nbsp;Me
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/projects.html">
-                             Projects
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/resume.html">
-                             Resume
-                          </a></li>
-                         <li class="active"><a href="http://sanghan.me/pages/tools.html">
-                             Tools
-                          </a></li>
+                    <li>
+                        <a href="http://sanghanphotography.com">
+                        <i class="fa fa-camera-retro"></i>
+                        <span class="icon-label">Photography</span>
+                        </a>
+                    </li>
 
+                <!-- Pages -->
+                         <li>
+                             <a href="http://sanghan.me/pages/about.html">
+                                     <i class="fa fa-beer"></i>
+                                     <span class="icon-label">About&nbsp;Me</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/projects.html">
+                                     <i class="fa fa-code"></i>
+                                     <span class="icon-label">Projects</span>
+                             </a>
+                         </li>
+                         <li class="active">
+                             <a href="http://sanghan.me/pages/tools.html">
+                                     <i class="fa fa-wrench"></i>
+                                     <span class="icon-label">Tools</span>
+                             </a>
+                         </li>
+
+                <!-- Categories Dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Categories
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
                                 <li >
                                     <a href="http://sanghan.me/category/computing.html">Computing</a>
                                 </li>
@@ -74,9 +96,15 @@ Sang Han            </a>
                                 </li>
                     </ul>
                 </li>
-            </ul>
+
+            <!-- Archives -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+                <li>
+                    <a href="http://sanghan.me/archives.html">
+                        <i class="fa fa-th-list"></i>
+                        <span class="icon-label">Archives</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -98,12 +126,13 @@ Sang Han            </a>
         <h1 class="entry-title">Tools</h1>
         
         <div class="entry-content">
-            <!-- --><html><body><blockquote>
-<p>"Like the craftsman, expect to add to your toolbox regularly.
-Always be on the lookout for better ways of doing things."</p>
-<p class="attribution">—The Pragmatic Programmer</p>
+            <!--  -->
+<blockquote>
+<p>&quot;Like the craftsman, expect to add to your toolbox regularly.
+Always be on the lookout for better ways of doing&nbsp;things.&quot;</p>
+<p class="attribution">&mdash;The Pragmatic&nbsp;Programmer</p>
 </blockquote>
-</body></html>
+
         </div>
     </section>
         </div>
@@ -186,16 +215,14 @@ Always be on the lookout for better ways of doing things."</p>
       </div>
    </div>
 </footer>
-<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+<script type="text/javascript" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/static/js/app.js"></script>
 
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://sanghan.me/theme/js/respond.min.js"></script>
-
-<!-- AngularJS -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">

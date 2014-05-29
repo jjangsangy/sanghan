@@ -1,7 +1,8 @@
-<!DOCTYPE html ng-app>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml">
+      xmlns:fb="https://www.facebook.com/2008/fbml"
+      ng-app="blogApp">
 <head>
     <title>Articles by Sang Han - Sang Han</title>
     <!-- Using the latest rendering mode for IE -->
@@ -16,20 +17,21 @@
             <meta property="og:url" content="http://sanghan.me"/>
             <meta property="og:description" content="Sang Han"/>
 
-    <!-- Bootstrap -->
         <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.sanghan.min.css" type="text/css"/>
-    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
 
+    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+
+
         <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
+
     <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
+        <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
 
         <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Sang Han ATOM Feed"/>
 
         <link rel="icon" href="/img/favicon.ico">
-
-
 </head>
 <body>
 
@@ -43,27 +45,47 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="http://sanghan.me/" class="navbar-brand">
-Sang Han            </a>
+                    <i class="fa fa-flask pull-center fa-border"></i>
+                    Sang Han
+            </a>
         </div>
+
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                    <li><a href="http://sanghanphotography.com">.photography</a></li>
-                         <li><a href="http://sanghan.me/pages/about.html">
-                             About&nbsp;Me
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/projects.html">
-                             Projects
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/resume.html">
-                             Resume
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/tools.html">
-                             Tools
-                          </a></li>
+                    <li>
+                        <a href="http://sanghanphotography.com">
+                        <i class="fa fa-camera-retro"></i>
+                        <span class="icon-label">Photography</span>
+                        </a>
+                    </li>
 
+                <!-- Pages -->
+                         <li>
+                             <a href="http://sanghan.me/pages/about.html">
+                                     <i class="fa fa-beer"></i>
+                                     <span class="icon-label">About&nbsp;Me</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/projects.html">
+                                     <i class="fa fa-code"></i>
+                                     <span class="icon-label">Projects</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/tools.html">
+                                     <i class="fa fa-wrench"></i>
+                                     <span class="icon-label">Tools</span>
+                             </a>
+                         </li>
+
+                <!-- Categories Dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Categories
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
                                 <li >
                                     <a href="http://sanghan.me/category/computing.html">Computing</a>
                                 </li>
@@ -75,9 +97,15 @@ Sang Han            </a>
                                 </li>
                     </ul>
                 </li>
-            </ul>
+
+            <!-- Archives -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+                <li>
+                    <a href="http://sanghan.me/archives.html">
+                        <i class="fa fa-th-list"></i>
+                        <span class="icon-label">Archives</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -97,7 +125,7 @@ Sang Han            </a>
 
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/05/2011-05-04-clara-chungs-loveprint-minitour-ft-division/">Clara Chung&#8217;s Loveprint&nbsp;Mini-Tour</a></h2>
-                <div class="summary"><html><body><p></p>
+                <div class="summary"><p></p>
 <p></p>
 <p></p>
 <p></p>
@@ -106,61 +134,77 @@ Sang Han            </a>
 <p><strong>Clara Chung’s Loveprint Minitour ft. Division Sound @ <span class="caps">UCSD</span>’s The Loft</strong></p>
 <p>Let me introduce to you Division Sound a local San Diego band who opened
 a stellar night.</p>
-</body></html>
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="Clara Chung&#8217;s Loveprint&nbsp;Mini-Tour" src="http://sanghan.me/img/tumblr/tumblr_lkpd4is9ya1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/05/2011-05-04-clara-chungs-loveprint-minitour-ft-division/">more ...</a>
+
+                        <p><img alt="Clara Chung&#8217;s Loveprint&nbsp;Mini-Tour" src="http://sanghan.me/img/tumblr/tumblr_lkpd4is9ya1qbyrnao1_1280.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/05/2011-05-04-clara-chungs-loveprint-minitour-ft-division/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/04/2011-04-20-journeys/">Journeys</a></h2>
-                <div class="summary"><html><body><p>So looking back at these 4 years, I reminisce.</p>
+                <div class="summary"><p>So looking back at these 4 years, I&nbsp;reminisce.</p>
 <p>Each person traverses a path laid out by their circumstance, made their
 own completely separate and unique experience. Recounting, as for only a
 wisp of time we share in a casual encounter. Listening to stories of how
-we got here and where we wish to go. I’ve realized, for a moment, we all
-share in this same space. But soon we will depart as life’s natural
-trajectory unfolds a bittersweet departure.</p>
-<p><strong>But <span class="caps">WOW</span>, I have had an amazing experience sharing this time with you!</strong></p>
-</body></html>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/04/2011-04-20-journeys/">more ...</a>
+we got here and where we wish to go. I&#8217;ve realized, for a moment, we all
+share in this same space. But soon we will depart as life&#8217;s natural
+trajectory unfolds a bittersweet&nbsp;departure.</p>
+<p><strong>But <span class="caps">WOW</span>, I have had an amazing experience sharing this time with&nbsp;you!</strong></p>
+
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/04/2011-04-20-journeys/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/04/2011-04-13-problem-of-pain/">Problem of&nbsp;Pain</a></h2>
-                <div class="summary"><html><body><p>The reason why pain exists, is to teach the meaning of joy. For those
-who know much pain, also understand happiness.</p>
-</body></html>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/04/2011-04-13-problem-of-pain/">more ...</a>
+                <div class="summary"><p>The reason why pain exists, is to teach the meaning of joy. For those
+who know much pain, also understand&nbsp;happiness.</p>
+
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/04/2011-04-13-problem-of-pain/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/04/2011-04-01-a-look-from-up-above-right-as-the-sun-came-up/">Skyline</a></h2>
-                <div class="summary"><html><body><p></p>
+                <div class="summary"><p></p>
 <p></p>
 <p></p>
 <p></p>
 <p>A look from up above, right as the sun came up before my <span class="caps">8AM</span> final
 during finals week.</p>
-</body></html>
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="Skyline" src="http://sanghan.me/img/tumblr/tumblr_lj02pizpJc1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/04/2011-04-01-a-look-from-up-above-right-as-the-sun-came-up/">more ...</a>
+
+                        <p><img alt="Skyline" src="http://sanghan.me/img/tumblr/tumblr_lj02pizpJc1qbyrnao1_1280.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/04/2011-04-01-a-look-from-up-above-right-as-the-sun-came-up/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/03/2011-03-14-rainy-days/">Rainy&nbsp;Days</a></h2>
-                <div class="summary"><!-- --><html><body><blockquote>
-<p>雨點下眼睛風雨在這裡 足以不能看到一直往前</p>
+                <div class="summary"><!--  -->
+<blockquote>
+<p>雨點下眼睛風雨在這裡&nbsp;足以不能看到一直往前</p>
 <p>Rainy Days 我只有你
-Fade Away 我的感覺</p>
-<p>我難過又過錯 妳到死的錯過</p>
-<p>別人不能明白閔 把故事复述一遍</p>
+Fade Away&nbsp;我的感覺</p>
+<p>我難過又過錯&nbsp;妳到死的錯過</p>
+<p>別人不能明白閔&nbsp;把故事复述一遍</p>
 </blockquote>
-</body></html>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/03/2011-03-14-rainy-days/">more ...</a>
+
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/03/2011-03-14-rainy-days/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
@@ -250,16 +294,14 @@ Fade Away 我的感覺</p>
       </div>
    </div>
 </footer>
-<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+<script type="text/javascript" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/static/js/app.js"></script>
 
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://sanghan.me/theme/js/respond.min.js"></script>
-
-<!-- AngularJS -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">

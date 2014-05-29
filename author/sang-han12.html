@@ -1,7 +1,8 @@
-<!DOCTYPE html ng-app>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml">
+      xmlns:fb="https://www.facebook.com/2008/fbml"
+      ng-app="blogApp">
 <head>
     <title>Articles by Sang Han - Sang Han</title>
     <!-- Using the latest rendering mode for IE -->
@@ -16,20 +17,21 @@
             <meta property="og:url" content="http://sanghan.me"/>
             <meta property="og:description" content="Sang Han"/>
 
-    <!-- Bootstrap -->
         <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.sanghan.min.css" type="text/css"/>
-    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
 
+    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+
+
         <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
+
     <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
+        <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
 
         <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Sang Han ATOM Feed"/>
 
         <link rel="icon" href="/img/favicon.ico">
-
-
 </head>
 <body>
 
@@ -43,27 +45,47 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="http://sanghan.me/" class="navbar-brand">
-Sang Han            </a>
+                    <i class="fa fa-flask pull-center fa-border"></i>
+                    Sang Han
+            </a>
         </div>
+
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                    <li><a href="http://sanghanphotography.com">.photography</a></li>
-                         <li><a href="http://sanghan.me/pages/about.html">
-                             About&nbsp;Me
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/projects.html">
-                             Projects
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/resume.html">
-                             Resume
-                          </a></li>
-                         <li><a href="http://sanghan.me/pages/tools.html">
-                             Tools
-                          </a></li>
+                    <li>
+                        <a href="http://sanghanphotography.com">
+                        <i class="fa fa-camera-retro"></i>
+                        <span class="icon-label">Photography</span>
+                        </a>
+                    </li>
 
+                <!-- Pages -->
+                         <li>
+                             <a href="http://sanghan.me/pages/about.html">
+                                     <i class="fa fa-beer"></i>
+                                     <span class="icon-label">About&nbsp;Me</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/projects.html">
+                                     <i class="fa fa-code"></i>
+                                     <span class="icon-label">Projects</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/tools.html">
+                                     <i class="fa fa-wrench"></i>
+                                     <span class="icon-label">Tools</span>
+                             </a>
+                         </li>
+
+                <!-- Categories Dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Categories
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
                                 <li >
                                     <a href="http://sanghan.me/category/computing.html">Computing</a>
                                 </li>
@@ -75,9 +97,15 @@ Sang Han            </a>
                                 </li>
                     </ul>
                 </li>
-            </ul>
+
+            <!-- Archives -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+                <li>
+                    <a href="http://sanghan.me/archives.html">
+                        <i class="fa fa-th-list"></i>
+                        <span class="icon-label">Archives</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -97,18 +125,21 @@ Sang Han            </a>
 
             <article>
                 <h2><a href="http://sanghan.me/blog/2010/06/2010-06-29-near-pioneer-courthouse-square-in-downtown/">Portland, Pioneer&nbsp;Courthouse</a></h2>
-                <div class="summary"><html><body><p></p>
+                <div class="summary"><p></p>
 <p>Near Pioneer Courthouse Square in Downtown Portland. Every time I see
 it, It makes me want to travel the world!</p>
-</body></html>
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="Portland, Pioneer&nbsp;Courthouse" src="http://sanghan.me/img/tumblr/tumblr_l4rtflzLky1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2010/06/2010-06-29-near-pioneer-courthouse-square-in-downtown/">more ...</a>
+
+                        <p><img alt="Portland, Pioneer&nbsp;Courthouse" src="http://sanghan.me/img/tumblr/tumblr_l4rtflzLky1qbyrnao1_1280.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2010/06/2010-06-29-near-pioneer-courthouse-square-in-downtown/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2010/06/2010-06-26-gasworks-hdr-so-i-spent-a-lot-of-time-this/">Gasworks <span class="caps">HDR</span></a></h2>
-                <div class="summary"><html><body><p></p>
+                <div class="summary"><p></p>
 <p>Gasworks <span class="caps">HDR</span></p>
 <p>So I spent a lot of time this summer reading up on different photography
 techniques. One in particular which I have always wanted to be good at
@@ -117,23 +148,29 @@ that I felt was good enough to show to anyone else.</p>
 <p>For people who don’t know what <span class="caps">HDR</span> is, it stands for High Dynamic Range.
 <span class="caps">HDR</span> takes multiple pictures with different exposures (brightnesses), so
 that it can capture all the dark and light areas of an image and merges
-them into a single image ...</p></body></html>
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="Gasworks <span class="caps">HDR</span>" src="http://sanghan.me/img/tumblr/tumblr_l4mfa09L8T1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2010/06/2010-06-26-gasworks-hdr-so-i-spent-a-lot-of-time-this/">more ...</a>
+them into a single image ...</p>
+                        <p><img alt="Gasworks <span class="caps">HDR</span>" src="http://sanghan.me/img/tumblr/tumblr_l4mfa09L8T1qbyrnao1_1280.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2010/06/2010-06-26-gasworks-hdr-so-i-spent-a-lot-of-time-this/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2010/06/2010-06-24-seattle/">Seattle</a></h2>
-                <div class="summary"><html><body><p>Had an awesome time in Washington. Pictures to come soon!</p>
-</body></html>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2010/06/2010-06-24-seattle/">more ...</a>
+                <div class="summary"><p>Had an awesome time in Washington. Pictures to come&nbsp;soon!</p>
+</p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2010/06/2010-06-24-seattle/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2010/06/2010-06-15-apartment-photoshoot/">Isabel Apartment&nbsp;Photoshoot</a></h2>
-                <div class="summary"><html><body><p>It’s been a while since I’ve done some *chika chika* with my camera.
+                <div class="summary"><p>It’s been a while since I’ve done some *chika chika* with my camera.
 It was really nice to get back into photography after a hectic week of
 final exams. Here is a sample of a photoshoot for Isabel and
 her apartment mates. They were the cutest 4 girls ever, and its always
@@ -145,19 +182,25 @@ fun to take pictures when everyone else is enjoying the experience!</p>
 <p></p>
 <p></p>
 <p></p>
-</body></html>
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="Isabel Apartment&nbsp;Photoshoot" src="http://sanghan.me/img/tumblr/20100611-_MG_7805.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2010/06/2010-06-15-apartment-photoshoot/">more ...</a>
+
+                        <p><img alt="Isabel Apartment&nbsp;Photoshoot" src="http://sanghan.me/img/tumblr/20100611-_MG_7805.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2010/06/2010-06-15-apartment-photoshoot/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2010/06/2010-06-06-right-before-he-jump-round-house-kicked-me-in-the/">Round House&nbsp;Kick!</a></h2>
-                <div class="summary"><html><body><p></p>
+                <div class="summary"><p></p>
 <p>Right before he jump round house kicked me in the face!</p>
-</body></html>
-                    <p><img style="width:1024px; height:auto; max-width:100%;" alt="Round House&nbsp;Kick!" src="http://sanghan.me/img/tumblr/tumblr_l3lf2iGiWG1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2010/06/2010-06-06-right-before-he-jump-round-house-kicked-me-in-the/">more ...</a>
+
+                        <p><img alt="Round House&nbsp;Kick!" src="http://sanghan.me/img/tumblr/tumblr_l3lf2iGiWG1qbyrnao1_1280.jpg" /></p>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2010/06/2010-06-06-right-before-he-jump-round-house-kicked-me-in-the/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More!</span>
+                    </a>
                 </div>
             </article>
             <hr/>
@@ -247,16 +290,14 @@ fun to take pictures when everyone else is enjoying the experience!</p>
       </div>
    </div>
 </footer>
-<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+<script type="text/javascript" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.min.js"></script>
+<script type="text/javascript" src="http://sanghan.me/static/js/app.js"></script>
 
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://sanghan.me/theme/js/respond.min.js"></script>
-
-<!-- AngularJS -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">
