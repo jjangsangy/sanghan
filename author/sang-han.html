@@ -138,7 +138,37 @@ piece of patch of space they own to hang their tools and work in&nbsp;peace.</p>
 <span class="lineno">  4</span> <span class="s">    $PROGNAME [-h] [-t] [-k key] [-l login] [server]</span>
 <span class="lineno">  5</span> 
 <span class="lineno">  6</span> <span class="s">    Utility for automatically exporting ssh keys into remote servers for authentication.</span>
-<span class="lineno">  7</span> <span class="s">    Checks $HOME/.ssh for id_rsa.pub ...</span></pre></div>
+<span class="lineno">  7</span> <span class="s">    Checks $HOME/.ssh for id_rsa.pub or id_dsa.pub and appends them into</span>
+<span class="lineno">  8</span> <span class="s">    the authorized_keys of remote host</span>
+<span class="lineno">  9</span> 
+<span class="lineno"> 10</span> <span class="s">    AUTHOR:     Sang Han</span>
+<span class="lineno"> 11</span> <span class="s">    YEAR:       2013</span>
+<span class="lineno"> 12</span> <span class="s">    VERSION:    2.3</span>
+<span class="lineno"> 13</span> 
+<span class="lineno"> 14</span> <span class="s">    -h [help]</span>
+<span class="lineno"> 15</span> <span class="s">        Outputs usage directions</span>
+<span class="lineno"> 16</span> <span class="s">    -t [test]</span>
+<span class="lineno"> 17</span> <span class="s">        Runs unit tests</span>
+<span class="lineno"> 18</span> <span class="s">    -k [key]</span>
+<span class="lineno"> 19</span> <span class="s">        Specify your own public key located in $HOME/.ssh directory</span>
+<span class="lineno"> 20</span> <span class="s">    -l [login]</span>
+<span class="lineno"> 21</span> <span class="s">        Specify user login credentials</span>
+<span class="lineno"> 22</span> 
+<span class="lineno"> 23</span> 
+<span class="lineno"> 24</span> <span class="s">    DOCUMENT</span>
+<span class="lineno"> 25</span>     <span class="nb">exit </span>0
+<span class="lineno"> 26</span> <span class="o">}</span>
+<span class="lineno"> 27</span> 
+<span class="lineno"> 28</span> <span class="c"># Global Variables</span>
+<span class="lineno"> 29</span> <span class="nv">PROGNAME</span><span class="o">=</span><span class="s2">&quot;$(basename &quot;</span><span class="nv">$0</span><span class="s2">&quot;)&quot;</span>
+<span class="lineno"> 30</span> 
+<span class="lineno"> 31</span> <span class="k">function </span>error_exit<span class="o">()</span> <span class="o">{</span>
+<span class="lineno"> 32</span>     <span class="nb">printf</span> <span class="s2">&quot;ERROR due to %s&quot;</span>  <span class="s2">&quot;${1:-&quot;</span>Unknown Error<span class="s2">&quot;}&quot;</span>
+<span class="lineno"> 33</span>     <span class="nb">exit </span>1
+<span class="lineno"> 34</span> <span class="o">}</span>
+<span class="lineno"> 35</span> 
+<span class="lineno"> 36</span> <span class="k">function </span>test_names<span class="o">()</span> <span class="o">{</span>
+<span class="lineno"> 37 ...</span></pre></div>
                     <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/05/my-first-program/">
                         <i class="fa fa-book"></i>
                         <span class="icon-label">Read More!</span>
@@ -181,7 +211,17 @@ chemistry. These days I am still in good contact with the people I met,
 and worked with. Soon after I had left, word had spread to Yefen,
 and she had become interested in getting a family portrait with her very young
 1 year old daughter Amber. Of course, I was happy to oblige
-and Yifen and I started to contact ...</p></!-->
+and Yifen and I started to contact each&nbsp;other.</p>
+<p>These days with the advent of cheap digital <span class="caps">SLR</span> cameras,
+it has become difficult to find the best photograph. Amber is Yifen&#8217;s daughter,
+and she is one of the cutest and happiest babies
+I have had the chance to capture in still.
+However photographing children is a completely different story.
+Sometimes they&#8217;re unresponsive and unintuitive to the camera facing them.
+Sometimes they just want to play, and are difficult to approach strangers.
+I was up to the challenge, and utilizing in conjunction my very broken
+Mandarin Chinese and babytalk,
+I wanted to capture the happy relationship ...</p></!-->
                         <p><img alt="Amber" src="http://sanghan.me/img/amber/amber01.jpg" /></p>
                     <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2012/03/amber/">
                         <i class="fa fa-book"></i>
@@ -207,7 +247,7 @@ website. Can’t wait till I can finally release it to the public.</p>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/11/johnathana_and_chelsea/">Johnathan and&nbsp;Chelsea</a></h2>
-                <div class="summary"><!--  -->
+                <div class="summary"><!-- -->
 <p>Johnathan <span class="amp">&amp;</span> Chelsea are both good friends of mine.
 I actually knew both of them individually, before and after they became an item.
 Johnathan and I have worked together through several student organizations
@@ -215,9 +255,24 @@ and were both officers of <span class="caps">UCSD</span> Photography club.
 Johnathan however, specializes in videography,
 and that is where our differences will probably lie.
 Chelsea and I met through many close friends,
-and I can reminisce of many great times while we were still&nbsp;students.</p>
+and I can reminisce of many great times while we were still students.</p>
 <p>This photoshoot in particular was a meaningful one.
-It was one of the ways I could say thanks to all the great times that we ...</p></!-->
+It was one of the ways I could say thanks to all the great times that we
+all had shared as friends, and also, in wishing the best of opportunities
+as we all finished the last years of college and pursue our own separate paths.
+It’s a nostalgic and bittersweet feeling to see friends move on,
+together and on their own dreams and ambitions. As a photographer,
+I can share my goodbyes and goodwills with at least a picture
+and maybe less than a thousand words.</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
                         <p><img alt="Johnathan and&nbsp;Chelsea" src="http://sanghan.me/img/johnathan_chelsea/johnathan_chelsea_1.jpg" /></p>
                     <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/11/johnathana_and_chelsea/">
                         <i class="fa fa-book"></i>
