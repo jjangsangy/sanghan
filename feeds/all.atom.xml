@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Sang Han</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/all.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-05-29T00:00:00-07:00</updated><entry><title>ssh-copy</title><link href="http://sanghan.me/blog/2014/05/my-first-program/" rel="alternate"></link><updated>2014-05-29T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-05-29:blog/2014/05/my-first-program/</id><summary type="html">&lt;p&gt;I have a love hate relationship with the unix terminal. For many who write software
 the shell is a dark abyss of programs past and write off it&amp;#8217;s presence as
-mere tradition. For others, the terminal window is more of a door, which provides
-access into a personal region of space nobody else knows, so that we can work in
-peace without being&amp;nbsp;bothered.&lt;/p&gt;
+a relic of tradition. For others, the terminal is a gate into a small quiet
+piece of patch of space they own to hang their tools and work in&amp;nbsp;peace.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="lineno"&gt;  1&lt;/span&gt; &lt;span class="c"&gt;#!/usr/bin/env bash&lt;/span&gt;
 &lt;span class="lineno"&gt;  2&lt;/span&gt; usage&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; cat &lt;span class="s"&gt;&amp;lt;&amp;lt;- DOCUMENT&lt;/span&gt;
 &lt;span class="lineno"&gt;  3&lt;/span&gt; 
