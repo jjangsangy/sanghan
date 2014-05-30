@@ -1,273 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sang Han</title><link>http://sanghan.me/</link><description>Things I Make</description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 29 May 2014 00:00:00 -0700</lastBuildDate><item><title>My First Program ssh-copy</title><link>http://sanghan.me/blog/2014/05/my-first-program/</link><description>&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 20
- 21
- 22
- 23
- 24
- 25
- 26
- 27
- 28
- 29
- 30
- 31
- 32
- 33
- 34
- 35
- 36
- 37
- 38
- 39
- 40
- 41
- 42
- 43
- 44
- 45
- 46
- 47
- 48
- 49
- 50
- 51
- 52
- 53
- 54
- 55
- 56
- 57
- 58
- 59
- 60
- 61
- 62
- 63
- 64
- 65
- 66
- 67
- 68
- 69
- 70
- 71
- 72
- 73
- 74
- 75
- 76
- 77
- 78
- 79
- 80
- 81
- 82
- 83
- 84
- 85
- 86
- 87
- 88
- 89
- 90
- 91
- 92
- 93
- 94
- 95
- 96
- 97
- 98
- 99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/env bash&lt;/span&gt;
-usage&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; cat &lt;span class="s"&gt;&amp;lt;&amp;lt;- DOCUMENT&lt;/span&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sang Han</title><link>http://sanghan.me/</link><description>Things I Make</description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 29 May 2014 00:00:00 -0700</lastBuildDate><item><title>My First Program ssh-copy</title><link>http://sanghan.me/blog/2014/05/my-first-program/</link><description>&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="c"&gt;#!/usr/bin/env bash&lt;/span&gt;
+ usage&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; cat &lt;span class="s"&gt;&amp;lt;&amp;lt;- DOCUMENT&lt;/span&gt;
 
-&lt;span class="s"&gt;    $PROGNAME [-h] [-t] [-k key] [-l login] [server]&lt;/span&gt;
+&lt;span class="s"&gt;     $PROGNAME [-h] [-t] [-k key] [-l login] [server]&lt;/span&gt;
 
-&lt;span class="s"&gt;    Utility for automatically exporting ssh keys into remote servers for authentication.&lt;/span&gt;
-&lt;span class="s"&gt;    Checks $HOME/.ssh for id_rsa.pub or id_dsa.pub and appends them into&lt;/span&gt;
-&lt;span class="s"&gt;    the authorized_keys of remote host&lt;/span&gt;
+&lt;span class="s"&gt;     Utility for automatically exporting ssh keys into remote servers for authentication.&lt;/span&gt;
+&lt;span class="s"&gt;     Checks $HOME/.ssh for id_rsa.pub or id_dsa.pub and appends them into&lt;/span&gt;
+&lt;span class="s"&gt;     the authorized_keys of remote host&lt;/span&gt;
 
-&lt;span class="s"&gt;    AUTHOR:     Sang Han&lt;/span&gt;
-&lt;span class="s"&gt;    YEAR:       2013&lt;/span&gt;
-&lt;span class="s"&gt;    VERSION:    2.3&lt;/span&gt;
+&lt;span class="s"&gt;     AUTHOR:     Sang Han&lt;/span&gt;
+&lt;span class="s"&gt;     YEAR:       2013&lt;/span&gt;
+&lt;span class="s"&gt;     VERSION:    2.3&lt;/span&gt;
 
-&lt;span class="s"&gt;    -h [help]&lt;/span&gt;
-&lt;span class="s"&gt;        Outputs usage directions&lt;/span&gt;
-&lt;span class="s"&gt;    -t [test]&lt;/span&gt;
-&lt;span class="s"&gt;        Runs unit tests&lt;/span&gt;
-&lt;span class="s"&gt;    -k [key]&lt;/span&gt;
-&lt;span class="s"&gt;        Specify your own public key located in $HOME/.ssh directory&lt;/span&gt;
-&lt;span class="s"&gt;    -l [login]&lt;/span&gt;
-&lt;span class="s"&gt;        Specify user login credentials&lt;/span&gt;
+&lt;span class="s"&gt;     -h [help]&lt;/span&gt;
+&lt;span class="s"&gt;         Outputs usage directions&lt;/span&gt;
+&lt;span class="s"&gt;     -t [test]&lt;/span&gt;
+&lt;span class="s"&gt;         Runs unit tests&lt;/span&gt;
+&lt;span class="s"&gt;     -k [key]&lt;/span&gt;
+&lt;span class="s"&gt;         Specify your own public key located in $HOME/.ssh directory&lt;/span&gt;
+&lt;span class="s"&gt;     -l [login]&lt;/span&gt;
+&lt;span class="s"&gt;         Specify user login credentials&lt;/span&gt;
 
 
-&lt;span class="s"&gt;    DOCUMENT&lt;/span&gt;
-    &lt;span class="nb"&gt;exit &lt;/span&gt;0
-&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="s"&gt;     DOCUMENT&lt;/span&gt;
+     &lt;span class="nb"&gt;exit &lt;/span&gt;0
+ &lt;span class="o"&gt;}&lt;/span&gt;
 
-&lt;span class="c"&gt;# Global Variables&lt;/span&gt;
-&lt;span class="nv"&gt;PROGNAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$(basename &amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;)&amp;quot;&lt;/span&gt;
+ &lt;span class="c"&gt;# Global Variables&lt;/span&gt;
+ &lt;span class="nv"&gt;PROGNAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$(basename &amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;)&amp;quot;&lt;/span&gt;
 
-&lt;span class="k"&gt;function &lt;/span&gt;error_exit&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ERROR due to %s&amp;quot;&lt;/span&gt;  &lt;span class="s2"&gt;&amp;quot;${1:-&amp;quot;&lt;/span&gt;Unknown Error&lt;span class="s2"&gt;&amp;quot;}&amp;quot;&lt;/span&gt;
-    &lt;span class="nb"&gt;exit &lt;/span&gt;1
-&lt;span class="o"&gt;}&lt;/span&gt;
+ &lt;span class="k"&gt;function &lt;/span&gt;error_exit&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ERROR due to %s&amp;quot;&lt;/span&gt;  &lt;span class="s2"&gt;&amp;quot;${1:-&amp;quot;&lt;/span&gt;Unknown Error&lt;span class="s2"&gt;&amp;quot;}&amp;quot;&lt;/span&gt;
+     &lt;span class="nb"&gt;exit &lt;/span&gt;1
+ &lt;span class="o"&gt;}&lt;/span&gt;
 
-&lt;span class="k"&gt;function &lt;/span&gt;test_names&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\$KEY is %s\n&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;${KEY[i]}&amp;quot;&lt;/span&gt;
-    &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\$PUBKEY is %s\n&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;${PUBKEY[i]}&amp;quot;&lt;/span&gt;
-    &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\$LOGIN_USER is %s\n&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;${LOGIN_USER}&amp;quot;&lt;/span&gt;
-    &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\$SERVER is %s\n&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;${SERVER}&amp;quot;&lt;/span&gt;
-    &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+ &lt;span class="k"&gt;function &lt;/span&gt;test_names&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\$KEY is %s\n&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;${KEY[i]}&amp;quot;&lt;/span&gt;
+     &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\$PUBKEY is %s\n&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;${PUBKEY[i]}&amp;quot;&lt;/span&gt;
+     &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\$LOGIN_USER is %s\n&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;${LOGIN_USER}&amp;quot;&lt;/span&gt;
+     &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\$SERVER is %s\n&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;${SERVER}&amp;quot;&lt;/span&gt;
+     &lt;span class="nb"&gt;printf&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
 
-&lt;span class="k"&gt;function &lt;/span&gt;install_keys&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="c"&gt;# Reads the public key file with cat and then logs into ssh server&lt;/span&gt;
-    &lt;span class="c"&gt;# and appends the public key file at the end of the authorized_key file&lt;/span&gt;
-    &lt;span class="c"&gt;# within $HOME&lt;/span&gt;
-    cat &amp;lt; &lt;span class="s2"&gt;&amp;quot;${PUBKEY[i]}&amp;quot;&lt;/span&gt; | &lt;span class="se"&gt;\&lt;/span&gt;
-        ssh -l &lt;span class="s2"&gt;&amp;quot;$LOGIN_USER&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$SERVER&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\&lt;/span&gt;
-&lt;span class="s2"&gt;            if [ -d ~/.ssh ]; then \&lt;/span&gt;
-&lt;span class="s2"&gt;                cat &amp;gt;&amp;gt; ~/.ssh/authorized_keys; \&lt;/span&gt;
-&lt;span class="s2"&gt;            else \&lt;/span&gt;
-&lt;span class="s2"&gt;                mkdir ~/.ssh; \&lt;/span&gt;
-&lt;span class="s2"&gt;                cat &amp;gt;&amp;gt; ~/.ssh/authorized_keys; \&lt;/span&gt;
-&lt;span class="s2"&gt;            fi&amp;quot;&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+ &lt;span class="k"&gt;function &lt;/span&gt;install_keys&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="c"&gt;# Reads the public key file with cat and then logs into ssh server&lt;/span&gt;
+     &lt;span class="c"&gt;# and appends the public key file at the end of the authorized_key file&lt;/span&gt;
+     &lt;span class="c"&gt;# within $HOME&lt;/span&gt;
+     cat &amp;lt; &lt;span class="s2"&gt;&amp;quot;${PUBKEY[i]}&amp;quot;&lt;/span&gt; | &lt;span class="se"&gt;\&lt;/span&gt;
+         ssh -l &lt;span class="s2"&gt;&amp;quot;$LOGIN_USER&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$SERVER&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\&lt;/span&gt;
+&lt;span class="s2"&gt;             if [ -d ~/.ssh ]; then \&lt;/span&gt;
+&lt;span class="s2"&gt;                 cat &amp;gt;&amp;gt; ~/.ssh/authorized_keys; \&lt;/span&gt;
+&lt;span class="s2"&gt;             else \&lt;/span&gt;
+&lt;span class="s2"&gt;                 mkdir ~/.ssh; \&lt;/span&gt;
+&lt;span class="s2"&gt;                 cat &amp;gt;&amp;gt; ~/.ssh/authorized_keys; \&lt;/span&gt;
+&lt;span class="s2"&gt;             fi&amp;quot;&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
 
-&lt;span class="k"&gt;function &lt;/span&gt;check_keys&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="c"&gt;# Checks $HOME/.ssh directory for default keys&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.ssh/*.pub &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
-&lt;span class="k"&gt;        return&lt;/span&gt;
-&lt;span class="k"&gt;    else&lt;/span&gt;
-&lt;span class="k"&gt;        &lt;/span&gt;error_exit &lt;span class="s2"&gt;&amp;quot;missing ssh public keys&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;fi&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+ &lt;span class="k"&gt;function &lt;/span&gt;check_keys&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="c"&gt;# Checks $HOME/.ssh directory for default keys&lt;/span&gt;
+     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.ssh/*.pub &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="k"&gt;         return&lt;/span&gt;
+&lt;span class="k"&gt;     else&lt;/span&gt;
+&lt;span class="k"&gt;         &lt;/span&gt;error_exit &lt;span class="s2"&gt;&amp;quot;missing ssh public keys&amp;quot;&lt;/span&gt;
+     &lt;span class="k"&gt;fi&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
 
-&lt;span class="k"&gt;function &lt;/span&gt;check_auth&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="c"&gt;# Checks if proper credentials have been given as $1. After credential has&lt;/span&gt;
-    &lt;span class="c"&gt;# been checked, will read and bind the variable.&lt;/span&gt;
-    &lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;CREDENTIAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; ! &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="p"&gt;!CREDENTIAL&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
-&lt;span class="k"&gt;        &lt;/span&gt;&lt;span class="nb"&gt;read&lt;/span&gt; -p &lt;span class="s2"&gt;&amp;quot;${CREDENTIAL}:  &amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;${CREDENTIAL}&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;fi&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+ &lt;span class="k"&gt;function &lt;/span&gt;check_auth&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="c"&gt;# Checks if proper credentials have been given as $1. After credential has&lt;/span&gt;
+     &lt;span class="c"&gt;# been checked, will read and bind the variable.&lt;/span&gt;
+     &lt;span class="nb"&gt;local &lt;/span&gt;&lt;span class="nv"&gt;CREDENTIAL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;
+     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; ! &lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="p"&gt;!CREDENTIAL&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="k"&gt;         &lt;/span&gt;&lt;span class="nb"&gt;read&lt;/span&gt; -p &lt;span class="s2"&gt;&amp;quot;${CREDENTIAL}:  &amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;${CREDENTIAL}&amp;quot;&lt;/span&gt;
+     &lt;span class="k"&gt;fi&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
 
-&lt;span class="k"&gt;function &lt;/span&gt;check_server&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="nv"&gt;SERVER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$SERVER&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;~ @ &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
-&lt;span class="k"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;LOGIN_USER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;SERVER&lt;/span&gt;&lt;span class="p"&gt;%@*&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;
-        &lt;span class="nv"&gt;SERVER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;SERVER&lt;/span&gt;&lt;span class="p"&gt;#*@&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt;
-&lt;span class="k"&gt;    fi&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+ &lt;span class="k"&gt;function &lt;/span&gt;check_server&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="nv"&gt;SERVER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;
+     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$SERVER&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;~ @ &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="k"&gt;         &lt;/span&gt;&lt;span class="nv"&gt;LOGIN_USER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;SERVER&lt;/span&gt;&lt;span class="p"&gt;%@*&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;
+         &lt;span class="nv"&gt;SERVER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;SERVER&lt;/span&gt;&lt;span class="p"&gt;#*@&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;
+         &lt;span class="k"&gt;return&lt;/span&gt;
+&lt;span class="k"&gt;     fi&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
 
-main&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="c"&gt;# Declare default key files to find if user does not specify&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; -z &lt;span class="nv"&gt;$KEY&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then &lt;/span&gt;&lt;span class="nb"&gt;declare&lt;/span&gt; -a &lt;span class="nv"&gt;KEY&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;id_rsa&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;id_dsa&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;; &lt;span class="k"&gt;fi&lt;/span&gt;
+ main&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="c"&gt;# Declare default key files to find if user does not specify&lt;/span&gt;
+     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; -z &lt;span class="nv"&gt;$KEY&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then &lt;/span&gt;&lt;span class="nb"&gt;declare&lt;/span&gt; -a &lt;span class="nv"&gt;KEY&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;id_rsa&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;id_dsa&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;; &lt;span class="k"&gt;fi&lt;/span&gt;
 
-&lt;span class="k"&gt;    for&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0; i&amp;lt;&lt;span class="k"&gt;${#&lt;/span&gt;&lt;span class="nv"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;[@]&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;; i+&lt;span class="o"&gt;=&lt;/span&gt;1 &lt;span class="o"&gt;))&lt;/span&gt;; &lt;span class="k"&gt;do&lt;/span&gt;
-        &lt;span class="c"&gt;# Path to key file&lt;/span&gt;
-        &lt;span class="nb"&gt;local &lt;/span&gt;PUBKEY&lt;span class="o"&gt;[&lt;/span&gt;i&lt;span class="o"&gt;]=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.ssh/&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;[i]&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;.pub
+&lt;span class="k"&gt;     for&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt; &lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0; i&amp;lt;&lt;span class="k"&gt;${#&lt;/span&gt;&lt;span class="nv"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;[@]&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;; i+&lt;span class="o"&gt;=&lt;/span&gt;1 &lt;span class="o"&gt;))&lt;/span&gt;; &lt;span class="k"&gt;do&lt;/span&gt;
+         &lt;span class="c"&gt;# Path to key file&lt;/span&gt;
+         &lt;span class="nb"&gt;local &lt;/span&gt;PUBKEY&lt;span class="o"&gt;[&lt;/span&gt;i&lt;span class="o"&gt;]=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.ssh/&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;[i]&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;.pub
 
-        &lt;span class="c"&gt;# Unit Test runs every iteration&lt;/span&gt;
-        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;TEST&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;1&lt;span class="o"&gt;))&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
-&lt;span class="k"&gt;            &lt;/span&gt;test_names
-            &lt;span class="k"&gt;return&lt;/span&gt;
-&lt;span class="k"&gt;        fi&lt;/span&gt;
+         &lt;span class="c"&gt;# Unit Test runs every iteration&lt;/span&gt;
+         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;TEST&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;1&lt;span class="o"&gt;))&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="k"&gt;             &lt;/span&gt;test_names
+             &lt;span class="k"&gt;return&lt;/span&gt;
+&lt;span class="k"&gt;         fi&lt;/span&gt;
 
-        &lt;span class="c"&gt;# Gather necessary login credentials&lt;/span&gt;
-        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; -r &lt;span class="s2"&gt;&amp;quot;${PUBKEY[i]}&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
-&lt;span class="k"&gt;            &lt;/span&gt;check_auth LOGIN_USER
-            check_auth SERVER
-            install_keys &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;break&lt;/span&gt;
-&lt;span class="nb"&gt;        &lt;/span&gt;&lt;span class="k"&gt;fi&lt;/span&gt;
-&lt;span class="k"&gt;    done&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+         &lt;span class="c"&gt;# Gather necessary login credentials&lt;/span&gt;
+         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; -r &lt;span class="s2"&gt;&amp;quot;${PUBKEY[i]}&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="k"&gt;             &lt;/span&gt;check_auth LOGIN_USER
+             check_auth SERVER
+             install_keys &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;break&lt;/span&gt;
+&lt;span class="nb"&gt;         &lt;/span&gt;&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="k"&gt;     done&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
 
-&lt;span class="c"&gt;# Option Parsing&lt;/span&gt;
-&lt;span class="nb"&gt;declare&lt;/span&gt; -i &lt;span class="nv"&gt;TEST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
-&lt;span class="k"&gt;while &lt;/span&gt;&lt;span class="nb"&gt;getopts&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;:k:l:th&amp;quot;&lt;/span&gt; OPTION; &lt;span class="k"&gt;do&lt;/span&gt;
-&lt;span class="k"&gt;    case&lt;/span&gt; &lt;span class="nv"&gt;$OPTION&lt;/span&gt; in
-        h&lt;span class="o"&gt;)&lt;/span&gt; usage
-            ;;
-        k&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;KEY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$OPTARG&lt;/span&gt;
+ &lt;span class="c"&gt;# Option Parsing&lt;/span&gt;
+ &lt;span class="nb"&gt;declare&lt;/span&gt; -i &lt;span class="nv"&gt;TEST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0
+ &lt;span class="k"&gt;while &lt;/span&gt;&lt;span class="nb"&gt;getopts&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;:k:l:th&amp;quot;&lt;/span&gt; OPTION; &lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="k"&gt;     case&lt;/span&gt; &lt;span class="nv"&gt;$OPTION&lt;/span&gt; in
+         h&lt;span class="o"&gt;)&lt;/span&gt; usage
              ;;
-        t&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;TEST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+         k&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;KEY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$OPTARG&lt;/span&gt;
               ;;
-        l&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;LOGIN_USER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$OPTARG&lt;/span&gt;
-             ;;
-        ?&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Invalid option: -${OPTARG}&amp;quot;&lt;/span&gt;; usage; &lt;span class="o"&gt;}&lt;/span&gt; &amp;gt;&amp;amp;2
-             &lt;span class="nb"&gt;exit &lt;/span&gt;1
-             ;;
-    &lt;span class="k"&gt;esac&lt;/span&gt;
-&lt;span class="k"&gt;done&lt;/span&gt;
-&lt;span class="k"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;shift&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt;OPTIND-1&lt;span class="k"&gt;))&lt;/span&gt;
+         t&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;TEST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1
+               ;;
+         l&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;LOGIN_USER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$OPTARG&lt;/span&gt;
+              ;;
+         ?&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Invalid option: -${OPTARG}&amp;quot;&lt;/span&gt;; usage; &lt;span class="o"&gt;}&lt;/span&gt; &amp;gt;&amp;amp;2
+              &lt;span class="nb"&gt;exit &lt;/span&gt;1
+              ;;
+     &lt;span class="k"&gt;esac&lt;/span&gt;
+&lt;span class="k"&gt; done&lt;/span&gt;
+&lt;span class="k"&gt;     &lt;/span&gt;&lt;span class="nb"&gt;shift&lt;/span&gt; &lt;span class="k"&gt;$((&lt;/span&gt;OPTIND-1&lt;span class="k"&gt;))&lt;/span&gt;
 
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$0&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;${BASH_SOURCE}&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
+ &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;$0&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;${BASH_SOURCE}&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
 
-    &lt;span class="c"&gt;# Validate user input&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="nv"&gt;$# &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; 1 &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then &lt;/span&gt;check_server &lt;span class="s2"&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;; &lt;span class="k"&gt;fi&lt;/span&gt;
-&lt;span class="k"&gt;    &lt;/span&gt;check_keys
+     &lt;span class="c"&gt;# Validate user input&lt;/span&gt;
+     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="nv"&gt;$# &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; 1 &lt;span class="o"&gt;]]&lt;/span&gt;; &lt;span class="k"&gt;then &lt;/span&gt;check_server &lt;span class="s2"&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;; &lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="k"&gt;     &lt;/span&gt;check_keys
 
-    main
-&lt;span class="k"&gt;fi&lt;/span&gt;
+     main
+ &lt;span class="k"&gt;fi&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Thu, 29 May 2014 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2014-05-29:blog/2014/05/my-first-program/</guid></item><item><title>Digital Universe</title><link>http://sanghan.me/blog/2014/05/digital_universe/</link><description>&lt;!--  --&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Thu, 29 May 2014 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2014-05-29:blog/2014/05/my-first-program/</guid></item><item><title>Digital Universe</title><link>http://sanghan.me/blog/2014/05/digital_universe/</link><description>&lt;!--  --&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;quot;In the digital universe, there are two kinds of bits:
 bits that represent structures (differences in space)
