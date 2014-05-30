@@ -127,28 +127,28 @@
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://sanghan.me/blog/2014/05/my-first-program/">My First Program <cite>ssh-copy</cite></a></h2>
-                <div class="summary"><div class="highlight"><pre><span class="lineno">  1</span>  <span class="c">#!/usr/bin/env bash</span>
-<span class="lineno">  2</span>  usage<span class="o">()</span> <span class="o">{</span> cat <span class="s">&lt;&lt;- DOCUMENT</span>
+                <h2><a href="http://sanghan.me/blog/2014/05/my-first-program/">ssh-copy</a></h2>
+                <div class="summary"><p>About a year&nbsp;ago</p>
+<div class="highlight"><pre><span class="lineno">  1</span> <span class="c">#!/usr/bin/env bash</span>
+<span class="lineno">  2</span> usage<span class="o">()</span> <span class="o">{</span> cat <span class="s">&lt;&lt;- DOCUMENT</span>
 <span class="lineno">  3</span> 
-<span class="lineno">  4</span> <span class="s">     $PROGNAME [-h] [-t] [-k key] [-l login] [server]</span>
+<span class="lineno">  4</span> <span class="s">    $PROGNAME [-h] [-t] [-k key] [-l login] [server]</span>
 <span class="lineno">  5</span> 
-<span class="lineno">  6</span> <span class="s">     Utility for automatically exporting ssh keys into remote servers for authentication.</span>
-<span class="lineno">  7</span> <span class="s">     Checks $HOME/.ssh for id_rsa.pub or id_dsa.pub and appends them into</span>
-<span class="lineno">  8</span> <span class="s">     the authorized_keys of remote host</span>
+<span class="lineno">  6</span> <span class="s">    Utility for automatically exporting ssh keys into remote servers for authentication.</span>
+<span class="lineno">  7</span> <span class="s">    Checks $HOME/.ssh for id_rsa.pub or id_dsa.pub and appends them into</span>
+<span class="lineno">  8</span> <span class="s">    the authorized_keys of remote host</span>
 <span class="lineno">  9</span> 
-<span class="lineno"> 10</span> <span class="s">     AUTHOR:     Sang Han</span>
-<span class="lineno"> 11</span> <span class="s">     YEAR:       2013</span>
-<span class="lineno"> 12</span> <span class="s">     VERSION:    2.3</span>
+<span class="lineno"> 10</span> <span class="s">    AUTHOR:     Sang Han</span>
+<span class="lineno"> 11</span> <span class="s">    YEAR:       2013</span>
+<span class="lineno"> 12</span> <span class="s">    VERSION:    2.3</span>
 <span class="lineno"> 13</span> 
-<span class="lineno"> 14</span> <span class="s">     -h [help]</span>
-<span class="lineno"> 15</span> <span class="s">         Outputs usage directions</span>
-<span class="lineno"> 16</span> <span class="s">     -t [test]</span>
-<span class="lineno"> 17</span> <span class="s">         Runs unit tests</span>
-<span class="lineno"> 18</span> <span class="s">     -k [key]</span>
-<span class="lineno"> 19</span> <span class="s">         Specify your own public key located in $HOME/.ssh directory</span>
-<span class="lineno"> 20</span> <span class="s">     -l [login]</span>
-<span class="lineno"> 21</span> <span class="s">         Specify user login ...</span></pre></div>
+<span class="lineno"> 14</span> <span class="s">    -h [help]</span>
+<span class="lineno"> 15</span> <span class="s">        Outputs usage directions</span>
+<span class="lineno"> 16</span> <span class="s">    -t [test]</span>
+<span class="lineno"> 17</span> <span class="s">        Runs unit tests</span>
+<span class="lineno"> 18</span> <span class="s">    -k [key]</span>
+<span class="lineno"> 19</span> <span class="s">        Specify your own public key located in $HOME/.ssh directory</span>
+<span class="lineno"> 20</span> <span class="s">    -l [login ...</span></pre></div>
                     <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/05/my-first-program/">
                         <i class="fa fa-book"></i>
                         <span class="icon-label">Read More!</span>
@@ -187,7 +187,7 @@
                     <ul class="list-group" id="recentposts">
                         <li class="list-group-item">
                             <a href="http://sanghan.me/blog/2014/05/my-first-program/">
-                                My First Program <cite>ssh-copy</cite>
+                                ssh-copy
                             </a>
                         </li>
                     </ul>
