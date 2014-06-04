@@ -9,6 +9,8 @@ from os.path import abspath
 sys.path.append(abspath(os.curdir))
 
 AUTHOR = 'Sang Han'
+SINGLE_AUTHOR = True
+SITESUBTITLE = 'Things I Make'
 SITENAME = 'Sang Han'
 SITEURL = 'http://sanghan.me'
 EMAIL_ADDR = 'jjangsangy@gmail.com'
@@ -19,7 +21,7 @@ DATE_FORMATS = {'en': '%a, %d %b %Y'}
 LOCALE = 'en_US'
 DEFAULT_PAGINATION = 5
 
-STATIC_PATHS = ['img', 'extra/CNAME']
+STATIC_PATHS = ['img', 'extra/CNAME', 'static']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 OUTPUT_PATH = 'output'
 ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{slug}/'
@@ -33,22 +35,25 @@ DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
 
 TYPOGRIFY = True
 MARKUP = ('rst', 'md', 'ipynb')
-PLUGIN_PATH = ['plugins']
-PLUGINS = [u'better_figures_and_images', u'disqus_static']
+CUSTOM_CSS = ('static/css/site.css')
+
+PLUGIN_PATH = [u'plugins']
+PLUGINS = [u'disqus_static', u'representative_image', u'pelican_youtube']
 PYGMENTS_STYLE = 'solarizedlight'
 RESPONSIVE_IMAGES = True
 HEADER_IMAGE = "bird.jpg"
+SUMMARY_MAX_LENGTH = 200
+DISPLAY_CATEGORY_IN_BREADCRUMBS = True
+USE_PAGER = True
+FAVICON = '/img/favicon.ico'
+PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
 
 GITHUB_USER = 'jjangsangy'
 GITHUB_SKIP_FORK = True
-GITHUB_REPO_COUNT = 5
+GITHUB_REPO_COUNT = 10
 GITHUB_SHOW_USER_LINK = True
 
-DISQUS_SITENAME = 'sanghan'
-DISQUS_SECRET_KEY = 'iQIq5Ra2Fx2kBnGbhUZ1sNjkhwpewkz5fSRsWUgZFTGj4BIZsqmixUAszepZXQ8I'
-DISQUS_PUBLIC_KEY = 'JyNWL1mdpLOuqzbh5RZ3HfkzvKLYsElIMBLMTYv6k7HltM0RQKQnQfMBiLNbdV3K'
-
-MENUITEMS = (('.photography', 'http://sanghanphotography.com'),)
+MENUITEMS = (('Photography', 'http://sanghanphotography.com'),)
 
 # Blogroll
 # LINKS =  (('Photography', 'http://sanghanphotography.com'),

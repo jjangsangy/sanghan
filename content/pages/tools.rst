@@ -5,6 +5,7 @@ Tools
 :date: 2014-05-05 23:24
 :tags: tools
 :slug: tools
+:icon: fa-wrench
 
 ..
 

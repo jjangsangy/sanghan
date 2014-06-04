@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
+from __future__ import unicode_literals
+
 import sys
 import os
 from os.path import abspath
@@ -15,12 +17,12 @@ from pelicanconf import *
 SITEURL = 'http://sanghan.me'
 RELATIVE_URLS = False
 
+DISQUS_SITENAME = u'sanghan'
+DISQUS_SECRET_KEY = u'iQIq5Ra2Fx2kBnGbhUZ1sNjkhwpewkz5fSRsWUgZFTGj4BIZsqmixUAszepZXQ8I'
+DISQUS_PUBLIC_KEY = u'JyNWL1mdpLOuqzbh5RZ3HfkzvKLYsElIMBLMTYv6k7HltM0RQKQnQfMBiLNbdV3K'
+
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+GOOGLE_ANALYTICS = u'UA-51412306-1'
 
 DELETE_OUTPUT_DIRECTORY = True
-
-# Following items are often useful when publishing
-
-#DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
