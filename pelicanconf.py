@@ -21,8 +21,16 @@ DATE_FORMATS = {'en': '%a, %d %b %Y'}
 LOCALE = 'en_US'
 DEFAULT_PAGINATION = 5
 
-STATIC_PATHS = ['img', 'extra/CNAME', 'static']
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+STATIC_PATHS = [
+    'img',
+    'extra/CNAME',
+    'extra/robots.txt',
+    'static'
+]
+EXTRA_PATH_METADATA = {
+    'extra/CNAME': {'path': 'CNAME'},
+    'extra/robots.txt': {'path': 'robots.txt'}
+}
 OUTPUT_PATH = 'output'
 ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{slug}/'
 ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/{slug}/index.html'
