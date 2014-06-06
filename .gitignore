@@ -42,11 +42,11 @@ Icon*
 # }}}
 
 # Generated files/folders {{{
-cache/
-output/
-docs/
-dist/
-build/
+cache/**
+output/**
+docs/**
+dist/**
+build/**
 *egg-info
 *.whl
 .env
