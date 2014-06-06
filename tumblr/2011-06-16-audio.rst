@@ -1,0 +1,20 @@
+Audio
+#####
+:date: 2011-06-16 21:00:00
+:author: jjangsangy
+:category: audio
+:tags: soulboy, khalil fong, 方大同，南音，
+:slug: 2011-06-16-audio
+
+`via <None>`__
+
+不知道為甚麼，但是今天的歌是南音
+
+
+
+
+
+.. code:: reply-text
+
+    作曲:方大同
+

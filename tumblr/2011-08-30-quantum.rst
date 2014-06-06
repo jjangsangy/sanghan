@@ -1,0 +1,10 @@
+Quantum
+#######
+:date: 2011-08-30 01:46:15
+:author: jjangsangy
+:category: text
+:slug: 2011-08-30-quantum
+
+|image0|\ For some reason, this picture makes a lot of sense.
+
+.. |image0| image:: http://img1.humorsharing.com//public/files/posts/images/3201/picture-mixture-013.jpg

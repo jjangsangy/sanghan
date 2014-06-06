@@ -1,0 +1,10 @@
+Photo
+#####
+:date: 2010-08-23 03:59:15
+:author: jjangsangy
+:category: photo
+:slug: 2010-08-23-photo
+
+|image0|
+
+.. |image0| image:: http://www.tumblr.com/photo/1280/jjangsangy/997681801/1/tumblr_l7lqirBsBy1qbyrna

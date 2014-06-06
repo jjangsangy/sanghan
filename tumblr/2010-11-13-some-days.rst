@@ -1,0 +1,9 @@
+Some Days
+#########
+:date: 2010-11-13 02:30:27
+:author: jjangsangy
+:category: text
+:slug: 2010-11-13-some-days
+
+Some days, I wake up ready to take the world. Some days, it takes the
+world to wake up.

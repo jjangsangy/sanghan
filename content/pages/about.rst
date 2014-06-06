@@ -7,8 +7,8 @@ About Me
 :icon: fa-beer
 :slug: about
 
-
-Hi I'm Sang Han, and here is some stuff about me.
+Hi I'm Sang Han!
+----------------
 
 I like photography
 

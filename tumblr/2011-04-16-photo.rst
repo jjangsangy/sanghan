@@ -1,0 +1,23 @@
+Photo
+#####
+:date: 2011-04-16 02:34:27
+:author: jjangsangy
+:category: photo
+:slug: 2011-04-16-photo
+
+|image0|
+
+|image1|
+
+|image2|
+
+|image3|
+
+也許是因為的朋友
+
+
+
+.. |image0| image:: http://37.media.tumblr.com/tumblr_ljqnxirhB71qbyrnao1_1280.jpg
+.. |image1| image:: http://37.media.tumblr.com/tumblr_ljqnxirhB71qbyrnao2_1280.jpg
+.. |image2| image:: http://37.media.tumblr.com/tumblr_ljqnxirhB71qbyrnao3_1280.jpg
+.. |image3| image:: http://38.media.tumblr.com/tumblr_ljqnxirhB71qbyrnao4_1280.jpg

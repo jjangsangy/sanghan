@@ -32,21 +32,22 @@ BOOTSTRAP_THEME='sanghan'
 DISPLAY_CATEGORIES_ON_SIDEBAR = False
 DISPLAY_TAGS_ON_SIDEBAR = False
 DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
+DISPLAY_ARTICLE_INFO = True
 
 TYPOGRIFY = True
 MARKUP = ('rst', 'md', 'ipynb')
 CUSTOM_CSS = ('static/css/site.css')
 
-PLUGIN_PATH = [u'plugins']
-PLUGINS = [u'disqus_static', u'representative_image', u'pelican_youtube']
-PYGMENTS_STYLE = 'solarizedlight'
-RESPONSIVE_IMAGES = True
+PLUGIN_PATH = ['plugins']
+PLUGINS = ['disqus_static', 'representative_image', 'pelican_youtube']
 HEADER_IMAGE = "bird.jpg"
 SUMMARY_MAX_LENGTH = 200
+DISPLAY_BREADCRUMBS= True
 DISPLAY_CATEGORY_IN_BREADCRUMBS = True
 USE_PAGER = True
-FAVICON = '/img/favicon.ico'
+FAVICON = 'hv'
 PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
+PYGMENTS_STYLE = 'solarizedlight'
 
 GITHUB_USER = 'jjangsangy'
 GITHUB_SKIP_FORK = True

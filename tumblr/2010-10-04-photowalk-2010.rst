@@ -1,0 +1,18 @@
+Photo
+#####
+:date: 2010-10-04 10:31:52
+:author: jjangsangy
+:category: photo
+:slug: 2010-10-04-photowalk-2010
+
+|image0|
+
+|image1|
+
+|image2|
+
+Photowalk 2010
+
+.. |image0| image:: http://www.tumblr.com/photo/1280/jjangsangy/1243319618/1/tumblr_l9s0p4A8yo1qbyrna
+.. |image1| image:: http://www.tumblr.com/photo/1280/jjangsangy/1243319618/2/tumblr_l9s0p4A8yo1qbyrna
+.. |image2| image:: http://www.tumblr.com/photo/1280/jjangsangy/1243319618/3/tumblr_l9s0p4A8yo1qbyrna

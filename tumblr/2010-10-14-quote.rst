@@ -1,0 +1,12 @@
+Quote
+#####
+:date: 2010-10-14 12:34:00
+:author: jjangsangy
+:category: quote
+:slug: 2010-10-14-quote
+
+讀過小說裡面人家等待，更習慣等待。
+
+—
+
+
