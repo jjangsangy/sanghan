@@ -14,15 +14,14 @@
 
 @media (max-width: 768px) {
     #bg {
-    height: 320px;
-  }
+        height: 320px;
+    }
 }
 
 
 #bg {
     @include background-image("/img/bird.jpg");
-    padding-top: 320px;
-    padding-bottom: 320px;
+    height: 640px;
     @include background-sizing;
 }
 
