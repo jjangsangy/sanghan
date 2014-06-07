@@ -11,7 +11,7 @@
        -webkit-background-size: cover;
        -moz-background-size: cover;
        -o-background-size: cover;
-    border: 0px;
+    padding: 0;
 }
 
 img {
