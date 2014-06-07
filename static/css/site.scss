@@ -9,7 +9,7 @@
     $url,
     $position: no-repeat top fixed) {
     max-width: 100%;
-    background: url($url) $position
+    background: url($url) $position;
 }
 
 #bg {
