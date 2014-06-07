@@ -41,7 +41,7 @@ img {
     }
 }
 
-@media (max-width: 768px) and (orientation: portrait) {
+@media (max-width: 768px), (orientation: portrait) {
     #bg {
         @include background-image("/img/bird-640.jpg");
         height: 480px;
