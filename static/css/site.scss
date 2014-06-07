@@ -43,6 +43,7 @@ img {
 
 @media (max-width: 768px) {
     #bg {
+        @include background-image("/img/bird-640.jpg");
         height: 320px;
     }
 }
