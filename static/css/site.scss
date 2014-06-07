@@ -12,13 +12,10 @@
     background: url($url) $position;
 }
 
-html,body {
-    height: 100%;
-    padding-top: 50px;
-}
 #bg {
     @include background-image("/img/bird.jpg");
     height: 640px;
+    padding-top: 0px;
     @include background-sizing;
 }
 
