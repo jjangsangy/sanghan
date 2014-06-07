@@ -1,3 +1,6 @@
+body {
+  padding-bottom: 70px; }
+
 #bg {
   max-width: 100%;
   background: url("/img/bird.jpg") no-repeat top fixed;
