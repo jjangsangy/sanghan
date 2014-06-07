@@ -400,6 +400,16 @@ seek it out and eventually close on it, so that we can know what is&nbsp;real.</
 <script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
 
+<script>
+$(window).scroll(function() {
+  if ($(document).scrollTop() > 50) {
+    $('nav').addClass('shrink');
+  } else {
+    $('nav').removeClass('shrink');
+  }
+});
+</script>
+
 
     <!-- GitHub JS -->
     <script type="text/javascript">

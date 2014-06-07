@@ -224,6 +224,16 @@ website. Can’t wait till I can finally release it to the public.</p>
 <script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
 
+<script>
+$(window).scroll(function() {
+  if ($(document).scrollTop() > 50) {
+    $('nav').addClass('shrink');
+  } else {
+    $('nav').removeClass('shrink');
+  }
+});
+</script>
+
 
     <!-- GitHub JS -->
     <script type="text/javascript">
