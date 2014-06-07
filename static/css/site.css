@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+  padding-top: 50px; }
+
 #bg {
   max-width: 100%;
   background: url("/img/bird.jpg") no-repeat top fixed;
