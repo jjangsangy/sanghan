@@ -1,12 +1,12 @@
 #bg {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   max-width: 100%;
   background: url("/img/bird.jpg") no-repeat center fixed;
   padding-top: 320px;
-  padding-bottom: 320px; }
+  padding-bottom: 320px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 img {
   display: block;
