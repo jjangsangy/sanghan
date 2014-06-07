@@ -4,7 +4,6 @@
          -o-background-size: $size;
             background-size: $size;
 }
-
 @mixin background-image(
     $url,
     $position: no-repeat center fixed) {
