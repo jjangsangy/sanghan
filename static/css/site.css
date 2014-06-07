@@ -1,3 +1,6 @@
+@media (max-width: 768px) {
+  #bg {
+    height: 320px; } }
 #bg {
   max-width: 100%;
   background: url("/img/bird.jpg") no-repeat center fixed;
