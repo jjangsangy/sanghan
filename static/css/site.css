@@ -1,40 +1,35 @@
-/*
-Syntax error: Invalid CSS after "...kground-sizing;": expected selector or at-rule, was "}"
-        on line 17 of content/static/css/site.scss
+#bg {
+  max-width: 100%;
+  background: url("/img/bird.jpg") no-repeat top fixed;
+  height: 640px;
+  padding-top: 0px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
-12:     background: url($url) $position;
-13: }
-14: 
-15:     @include background-image("/img/bird.jpg");
-16:     @include background-sizing;
-17: }
-18: 
-19: img {
-20:     display: block;
-21:     width: 1024px;
-22:     max-width: 100% !important;
+img {
+  display: block;
+  width: 1024px;
+  max-width: 100% !important;
+  height: auto; }
 
-Backtrace:
-content/static/css/site.scss:17
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:1312:in `expected'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:1248:in `expected'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:42:in `parse'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/lib/sass/engine.rb:409:in `_to_tree'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/lib/sass/engine.rb:274:in `render'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:378:in `update_stylesheet'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:186:in `each'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:357:in `on_file_changed'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:250:in `block in watch'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-/Users/jjangsangy/.rvm/gems/ruby-2.1.1/gems/sass-3.3.8/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"...kground-sizing;\": expected selector or at-rule, was \"}\"\A         on line 17 of content/static/css/site.scss\A \A 12:     background: url($url) $position;\A 13: }\A 14: \A 15:     @include background-image(\"/img/bird.jpg\");\A 16:     @include background-sizing;\A 17: }\A 18: \A 19: img {\A 20:     display: block;\A 21:     width: 1024px;\A 22:     max-width: 100% !important;"; }
+.youtube {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden; }
+  .youtube iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+@media (max-width: 768px), handheld and (orientation: landscape) {
+  #bg {
+    max-width: 100%;
+    background: url("/img/bird-640.jpg") no-repeat top fixed;
+    background-position: center top;
+    height: 480px; } }

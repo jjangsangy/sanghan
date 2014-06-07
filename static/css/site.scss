@@ -10,6 +10,9 @@
     $position: no-repeat top fixed) {
     max-width: 100%;
     background: url($url) $position;
+}
+
+#bg {
     @include background-image("/img/bird.jpg");
     height: 640px;
     padding-top: 0px;
