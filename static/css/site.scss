@@ -7,13 +7,9 @@
 
 @mixin background-image(
     $url,
-    $repeat: no-repeat,
-    $position: static) {
+    $position: no-repeat center fixed) {
     max-width: 100%;
-    background-repeat: $repeat;
-    background-position: $position;
-    background-image: url($url);
-
+    background: url($url) $position
 }
 
 #bg {
@@ -21,7 +17,6 @@
     @include background-image("/img/bird.jpg");
     padding-top: 320px;
     padding-bottom: 320px;
-    height: 100%;
 }
 
 img {
