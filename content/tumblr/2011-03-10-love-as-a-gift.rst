@@ -8,7 +8,7 @@ Love as a Gift
 
     But the proper aim of giving is to put the recipient in a state where
     she no longer needs our gift. Thus a heavy task is laid upon this
-    gift.**It must work towards it’s own abdication.** We must aim at
+    gift.It must work towards it’s own abdication. We must aim at
     making ourselves superfluous.
 
     --Clive Staples Lewis
