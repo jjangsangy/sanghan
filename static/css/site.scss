@@ -13,8 +13,8 @@
 }
 
 #bg {
-    @include background-image("/img/bird.jpg");
     height: 640px;
+    @include background-image("/img/bird.jpg");
     @include background-sizing;
 }
 
@@ -31,7 +31,6 @@ img {
     padding-top: 35px;
     height: 0;
     overflow: hidden;
-
     iframe {
         position: absolute;
         top:0;
@@ -41,6 +40,7 @@ img {
     }
 }
 
+// For Handheld Devices with small screen sizes
 @media (max-width: 768px), handheld and (orientation: landscape) {
     #bg {
         @include background-image("/img/bird-640.jpg");
