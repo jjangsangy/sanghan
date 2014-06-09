@@ -3,7 +3,6 @@ Johnathan and Chelsea
 =====================
 
 :date:     2011-11-11
-:category: Photography
 :slug:     johnathana_and_chelsea
 
 ..

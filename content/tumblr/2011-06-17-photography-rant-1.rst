@@ -2,15 +2,16 @@ Photography Rant #1
 ###################
 :date: 2011-06-17 06:05:00
 :aurhor: Sang Han
-:category: Photography
 :tags: photography, rant, image, composition
 :slug: 2011-06-17-photography-rant-1
+
+..
 
 Everyone learns to take good pictures by first taking bad ones. But we
 first have to understand that creating the image which puts absolution
 to the moment is somewhat of an arduous task. And in fact, most photos
 fail to come close to meet this somewhat abstract criterion for a
-**Good** Photo.
+Good Photo.
 
 Although understanding this, most people will never admit to a bad
 photo. They come up with cleaver reasonings to vindicate a shot and thus

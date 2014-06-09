@@ -2,10 +2,9 @@ Isabel Apartment Photoshoot
 ###########################
 :date: 2010-06-15 18:59:52
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-06-15-apartment-photoshoot
 
-It's been a while since I've done some \*chika chika\* with my camera.
+It's been a while since I've done some *chika chika* with my camera.
 It was really nice to get back into photography after a hectic week of
 final exams. Here is a sample of a photoshoot for Isabel and
 her apartment mates. They were the cutest 4 girls ever, and its always

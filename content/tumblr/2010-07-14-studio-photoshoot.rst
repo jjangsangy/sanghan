@@ -2,8 +2,10 @@ In the Studio
 #############
 :date: 2010-07-14 03:44:00
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-07-14-studio-photoshoot
+
+**UCSD Photography Club**
+**Fashion Photoshoot**
 
 |image0|
 
@@ -12,8 +14,6 @@ In the Studio
 |image2|
 
 |image3|
-
-Studio Photoshoot
 
 .. |image0| image:: {filename}/img/tumblr/tumblr_l5jn5wFtoV1qbyrnao1_1280.jpg
 .. |image1| image:: {filename}/img/tumblr/tumblr_l5jn5wFtoV1qbyrnao2_1280.jpg

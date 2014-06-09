@@ -2,8 +2,9 @@ More From Julian
 ################
 :date: 2010-11-07 21:55:45
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-11-07-more-pictures-from-julian
+
+More pictures from Julian
 
 |image0|
 
@@ -16,8 +17,6 @@ More From Julian
 |image4|
 
 |image5|
-
-More pictures from Julian
 
 .. |image0| image:: {filename}/img/tumblr/tumblr_lbjxsx9jlq1qbyrnao1_1280.jpg
 .. |image1| image:: {filename}/img/tumblr/tumblr_lbjxsx9jlq1qbyrnao2_1280.jpg

@@ -1,8 +1,7 @@
-Giving Up
-#########
+Not Giving Up
+#############
 :date: 2010-11-28 11:34:53
 :aurhor: Sang Han
-:category: writing
 :slug: 2010-11-28-giving-up
 
 ..

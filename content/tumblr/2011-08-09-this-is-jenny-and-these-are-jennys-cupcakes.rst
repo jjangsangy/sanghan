@@ -2,8 +2,13 @@ Jennywennycakes
 ###############
 :date: 2011-08-09 23:39:44
 :aurhor: Sang Han
-:category: photography
 :slug: 2011-08-09-this-is-jenny-and-these-are-jennys-cupcakes
+
+This is Jenny, and these are Jenny's cupcakes
+
+She is a medicinal chemist who I work with at GNF Novartis. Today is
+going to be her last day, because Jenny, is going to start her own
+business making pastries.
 
 |image0|
 
@@ -16,12 +21,6 @@ Jennywennycakes
 |image4|
 
 |image5|
-
-This is Jenny, and these are Jenny's cupcakes
-
-She is a medicinal chemist who I work with at GNF Novartis. Today is
-going to be her last day, because Jenny, is going to start her own
-business making pastries.
 
 .. |image0| image:: {filename}/img/tumblr/tumblr_lpp96aThNj1qbyrnao1_1280.jpg
 .. |image1| image:: {filename}/img/tumblr/tumblr_lpp96aThNj1qbyrnao2_1280.jpg

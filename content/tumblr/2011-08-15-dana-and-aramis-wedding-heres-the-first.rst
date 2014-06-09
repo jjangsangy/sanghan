@@ -2,9 +2,12 @@ Dana and Aramis' Wedding
 ########################
 :date: 2011-08-15 03:37:00
 :aurhor: Sang Han
-:category: Photography
 :tags: Weddings, San Diego, Photography, Sang Han, Dana and Aramis, Rowing Club
 :slug: 2011-08-15-dana-and-aramis-wedding-heres-the-first
+
+**Dana And Aramis' Wedding**
+
+Here's the first wedding that I'll upload online. Hope you like them!
 
 |image0|
 
@@ -25,10 +28,6 @@ Dana and Aramis' Wedding
 |image8|
 
 |image9|
-
-Dana And Aramis' Wedding
-
-Here's the first wedding that I'll upload online. Hope you like them!
 
 .. |image0| image:: {filename}/img/tumblr/tumblr_lpyti1bqUu1qbyrnao1_1280.jpg
 .. |image1| image:: {filename}/img/tumblr/tumblr_lpyti1bqUu1qbyrnao2_1280.jpg

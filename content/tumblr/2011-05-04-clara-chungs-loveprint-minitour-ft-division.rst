@@ -2,8 +2,12 @@ Clara Chung's Loveprint Mini-Tour
 #################################
 :date: 2011-05-04 20:17:00
 :aurhor: Sang Han
-:category: Photography
 :slug: 2011-05-04-clara-chungs-loveprint-minitour-ft-division
+
+**Clara Chung's Loveprint Minitour ft. Division Sound @ UCSD's The Loft**
+
+Let me introduce to you Division Sound a local San Diego band who opened
+a stellar night.
 
 |image0|
 
@@ -16,11 +20,6 @@ Clara Chung's Loveprint Mini-Tour
 |image4|
 
 |image5|
-
-**Clara Chung's Loveprint Minitour ft. Division Sound @ UCSD's The Loft**
-
-Let me introduce to you Division Sound a local San Diego band who opened
-a stellar night.
 
 .. |image0| image:: {filename}/img/tumblr/tumblr_lkpd4is9ya1qbyrnao1_1280.jpg
 .. |image1| image:: {filename}/img/tumblr/tumblr_lkpd4is9ya1qbyrnao2_1280.jpg

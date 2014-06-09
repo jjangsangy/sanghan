@@ -2,7 +2,6 @@ Rainy Days
 ##########
 :date: 2011-03-14 13:04:47
 :aurhor: Sang Han
-:category: writing
 :slug: 2011-03-14-rainy-days
 
 ..

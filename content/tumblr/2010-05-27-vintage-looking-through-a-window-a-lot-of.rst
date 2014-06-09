@@ -2,7 +2,6 @@ Looking Through a Window
 ########################
 :date: 2010-05-27 02:04:00
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-05-27-vintage-looking-through-a-window-a-lot-of
 
 A lot of photographers are remnants of the days of film; and a lot of

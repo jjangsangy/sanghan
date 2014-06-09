@@ -2,7 +2,6 @@ Love as a Gift
 ##############
 :date: 2011-03-10 21:02:00
 :aurhor: Sang Han
-:category: writing
 :slug: 2011-03-10-love-as-a-gift
 
 ..

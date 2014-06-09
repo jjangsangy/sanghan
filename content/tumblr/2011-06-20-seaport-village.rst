@@ -2,9 +2,10 @@ Seaport Village
 ###############
 :date: 2011-06-20 14:32:52
 :aurhor: Sang Han
-:category: Photography
 :tags: Seaport Village, San Diego, Pier, Photography, Sang Han
 :slug: 2011-06-20-seaport-village
+
+**Seaport Village**
 
 |image0|
 
@@ -17,8 +18,6 @@ Seaport Village
 |image4|
 
 |image5|
-
-Seaport Village
 
 .. |image0| image:: {filename}/img/tumblr/tumblr_ln3yizQocN1qbyrnao1_1280.jpg
 .. |image1| image:: {filename}/img/tumblr/tumblr_ln3yizQocN1qbyrnao2_1280.jpg

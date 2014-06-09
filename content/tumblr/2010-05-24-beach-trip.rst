@@ -2,8 +2,9 @@ TASA Beach Trip
 ###############
 :date: 2010-05-24 06:54:00
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-05-24-beach-trip
+
+**Beach Trip**
 
 Spent the weekend at a beach house with people from TASA. Although, the
 house was further from the beach than my apartment, it was a lot of fun.

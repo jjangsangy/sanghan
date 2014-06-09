@@ -1,22 +1,9 @@
-Wushu Concept Photoshoot Feat. Melvin Hsieh
+Low Key Wushu Photoshoot
 ###########################################
 :date: 2011-07-11 02:38:09
 :aurhor: Sang Han
-:category: Photography
 :tags: Melvin Hsieh, Photoshoot, Wushu, UCSD, Gilman, Sword, Photography, Low Key
 :slug: 2011-07-11-wushu-concept-photoshoot-2-melvin-hseih-low
-
-|image0|
-
-|image1|
-
-|image2|
-
-|image3|
-
-|image4|
-
-|image5|
 
 **Wushu Concept Photoshoot #2 - Melvin Hseih (Low Key)**
 
@@ -30,6 +17,18 @@ key shots were definitely harder to take and edit, mostly due to
 balancing the 3 flashes appropriately. But in the end, I think we ended
 up with some great material. Thanks a lot to Melvin Hsieh for modeling
 for me, and Filbert Banh for assisting with lighting.
+
+|image0|
+
+|image1|
+
+|image2|
+
+|image3|
+
+|image4|
+
+|image5|
 
 .. |image0| image:: {filename}/img/tumblr/tumblr_lo5xfoDxVN1qbyrnao1_1280.jpg
 .. |image1| image:: {filename}/img/tumblr/tumblr_lo5xfoDxVN1qbyrnao2_1280.jpg

@@ -2,7 +2,6 @@ Hawaii Club Lu'au
 #################
 :date: 2010-05-11 16:58:06
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-05-11-hawaii-club-luau
 
 This was a lot of fun. Free food and dancing women, what else could a

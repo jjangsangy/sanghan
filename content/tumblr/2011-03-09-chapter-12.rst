@@ -2,7 +2,6 @@ Chapter 12
 ##########
 :date: 2011-03-09 00:47:00
 :aurhor: Sang Han
-:category: writing
 :slug: 2011-03-09-chapter-12
 
 Chapter 12 of my CHEM 127 textbook starts off with. "The chemical bond

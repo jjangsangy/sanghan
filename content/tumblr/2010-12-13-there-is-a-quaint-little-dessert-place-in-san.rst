@@ -2,7 +2,6 @@ Extraordinary Desserts
 ######################
 :date: 2010-12-13 07:16:00
 :aurhor: Sang Han
-:category: Photography
 :tags: san diego,, extraordinary desserts, cakes
 :slug: 2010-12-13-there-is-a-quaint-little-dessert-place-in-san
 

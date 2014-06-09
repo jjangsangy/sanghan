@@ -2,10 +2,9 @@ La Jolla Shores
 ###############
 :date: 2010-05-19 14:54:07
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-05-19-la-jolla-shores-4-28
 
-La Jolla Shores
+**La Jolla Shores**
 
 |image0|
 

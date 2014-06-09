@@ -2,8 +2,9 @@ Fireworks!
 ##########
 :date: 2010-07-05 16:46:58
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-07-05-worst-fireworks-show-ever-but-other-than-that-it
+
+**Fourth of July**
 
 |image0|
 

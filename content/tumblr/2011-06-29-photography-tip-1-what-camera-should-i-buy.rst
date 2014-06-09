@@ -2,7 +2,6 @@ Photography Tip #1 - What Camera Should I Buy?
 ##############################################
 :date: 2011-06-29 01:29:00
 :aurhor: Sang Han
-:category: Photography
 :tags: Camera, Photography Tips, Tutorial, Canon AE-1
 :slug: 2011-06-29-photography-tip-1-what-camera-should-i-buy
 

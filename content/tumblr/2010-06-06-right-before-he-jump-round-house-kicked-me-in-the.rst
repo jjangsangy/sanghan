@@ -2,11 +2,9 @@ Round House Kick!
 #################
 :date: 2010-06-06 05:37:00
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-06-06-right-before-he-jump-round-house-kicked-me-in-the
 
-NUUUUUUUU
----------
+**NUUUUUUUU**
 
 |image0|
 

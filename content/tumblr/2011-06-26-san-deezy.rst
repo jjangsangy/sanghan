@@ -2,7 +2,6 @@ San Deezy
 #########
 :date: 2011-06-26 00:28:58
 :aurhor: Sang Han
-:category: writing
 :slug: 2011-06-26-san-deezy
 
 Coming back to San Diego in the morning. Whoever is still around, I'd

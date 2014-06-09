@@ -2,7 +2,6 @@ Honyin & Tony Photoshoot
 ########################
 :date: 2011-02-21 17:57:30
 :author: Sang Han
-:category: Photography
 :slug: 2011-02-21-honyin-tony-photoshoot-teaser
 
 |image0|

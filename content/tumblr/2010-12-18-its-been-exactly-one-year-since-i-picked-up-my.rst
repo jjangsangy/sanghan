@@ -1,8 +1,7 @@
-One Year
-#########
+One Year Mark
+#############
 :date: 2010-12-18 11:40:00
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-12-18-its-been-exactly-one-year-since-i-picked-up-my
 
 It's been exactly one year since I picked up my first DSLR and started

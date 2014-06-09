@@ -2,8 +2,19 @@ San Diego Asian Film Festival
 #############################
 :date: 2011-11-02 01:50:00
 :aurhor: Sang Han
-:category: photography
 :slug: 2011-11-02-highlights-of-the-san-diego-asian-film-festival
+
+**2011: San Diego Asian Film Festival (SDAFF)**
+
+I got the great opportunity to shoot as a press photographer for
+`Taipei543`_, a culture blog and magazine started by UCSD alumni.
+It was such a great experience, got to hang out with
+some famous maybe even infamous stars and got some coverage on some
+exclusive events. Never thought that photography would be able to take
+me to so many new places and help me meet new people.
+
+_`Taipei543`:
+    http://taipei543.com/
 
 |image0|
 
@@ -20,14 +31,6 @@ San Diego Asian Film Festival
 |image6|
 
 |image7|
-
-Highlights of the San Diego Asian Film Festival
-
-I got the great opportunity to shoot as a press photographer for
-Taiwan543 magazine. It was such a great experience, got to hang out with
-some famous maybe even infamous stars and got some coverage on some
-exclusive events. Never thought that photography would be able to take
-me to so many new places and help me meet new people.
 
 .. |image0| image:: {filename}/img/tumblr/tumblr_lu0z8qGSph1qbyrnao1_1280.jpg
 .. |image1| image:: {filename}/img/tumblr/tumblr_lu0z8qGSph1qbyrnao2_1280.jpg

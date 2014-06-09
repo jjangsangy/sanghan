@@ -2,9 +2,10 @@ Photography Tip #3 - White Balance (Color Temperature)
 ######################################################
 :date: 2011-07-18 21:30:00
 :aurhor: Sang Han
-:category: Photography
 :tags: Color Balance, Color Temperature, Custom, Photography, Tips, WB, White Balance, Sang Han
 :slug: 2011-07-18-photography-tip-3-white-balance-color-temperature
+
+..
 
 So here is a slightly technical tip which will help **ALMOST ANYONE**
 improve their photos. This does not **only** effect people who use

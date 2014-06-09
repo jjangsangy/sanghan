@@ -2,7 +2,6 @@ Experimental Flash
 ##################
 :date: 2010-12-24 06:18:40
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-12-24-wanted-to-try-out-some-experimental-flash
 
 Wanted to try out some experimental flash photography and processing.

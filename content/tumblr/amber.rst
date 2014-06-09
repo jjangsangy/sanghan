@@ -3,7 +3,6 @@ Amber
 =====
 
 :date:      2012-03-21 23:24
-:category:  Photography
 :author:    Sang Han
 
 ..

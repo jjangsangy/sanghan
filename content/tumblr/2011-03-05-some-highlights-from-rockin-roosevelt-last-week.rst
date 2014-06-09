@@ -1,9 +1,10 @@
 Rockin Roosevelt Highlights
-######################################
+###########################
 :date: 2011-03-05 10:21:00
 :aurhor: Sang Han
-:category: Photography
 :slug: 2011-03-05-some-highlights-from-rockin-roosevelt-last-week
+
+**Elenore Roosevelt College: Rockin' Roosevelt Concert**
 
 |image0|
 

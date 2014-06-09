@@ -2,13 +2,13 @@ Open Mind
 #########
 :date: 2011-06-14 03:57:03
 :aurhor: Sang Han
-:category: writing
 :slug: 2011-06-14-open-mind
 
-The purpose of an open mind is the same as of an open mouth, it's meant
-to close on something. An open mind in pursuit of the truth, needs to
-seek it out and eventually close on it, so that we can know what is
-real.
+..
 
-I hate people who say that they're just "open minded" to refute an
-argument. So open in fact, that maybe their brain will fall out.
+    The purpose of an open mind is the same as of an open mouth, it's meant
+    to close on something. An open mind in pursuit of the truth, needs to
+    seek it out and eventually close on it, so that we can know what is
+    real.
+
+    -- G.K. Chesterton

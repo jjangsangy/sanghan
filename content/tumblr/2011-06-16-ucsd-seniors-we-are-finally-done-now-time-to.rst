@@ -2,9 +2,13 @@ Graduation
 ##########
 :date: 2011-06-16 21:42:00
 :aurhor: Sang Han
-:category: Photography
 :tags: UCSD, Graduation, 2011, Seniors, ERC
 :slug: 2011-06-16-ucsd-seniors-we-are-finally-done-now-time-to
+
+**Class of 2011: University of California San Diego**
+
+I've graduated! Time has flown by so fast. Very excited to see
+what opputinities and events will happen next.
 
 |image0|
 
@@ -17,8 +21,6 @@ Graduation
 |image4|
 
 |image5|
-
-UCSD Seniors! We are finally done! Now time to move on to something new!
 
 .. |image0| image:: {filename}/img/tumblr/tumblr_lmx3q5TwxP1qbyrnao1_1280.jpg
 .. |image1| image:: {filename}/img/tumblr/tumblr_lmx3q5TwxP1qbyrnao2_1280.jpg

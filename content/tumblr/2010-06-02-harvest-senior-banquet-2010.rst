@@ -2,7 +2,6 @@ Harvest Senior Banquet 2010
 ###########################
 :date: 2010-06-02 07:51:33
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-06-02-harvest-senior-banquet-2010
 
 I feel like smiling faces is what draws me to this type of photography.

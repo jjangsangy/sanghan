@@ -2,7 +2,6 @@ Portland, Pioneer Courthouse
 ############################
 :date: 2010-06-29 03:06:56
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-06-29-near-pioneer-courthouse-square-in-downtown
 
 |pioneer_courthouse|

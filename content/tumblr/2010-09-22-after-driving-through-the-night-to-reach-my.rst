@@ -2,8 +2,9 @@ Driving
 #######
 :date: 2010-09-22 15:40:44
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-09-22-after-driving-through-the-night-to-reach-my
+
+**On the Road: Going to Texas**
 
 After driving through the night to reach my destination, I started to
 see the peak of sunlight come from the horizon. I immediately stopped my

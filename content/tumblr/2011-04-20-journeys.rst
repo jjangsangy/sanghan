@@ -2,7 +2,6 @@ Journeys
 ########
 :date: 2011-04-20 03:13:00
 :aurhor: Sang Han
-:category: writing
 :slug: 2011-04-20-journeys
 
 So looking back at these 4 years, I reminisce.

@@ -1,15 +1,10 @@
-Philanthro: Pencils of Promise
-##############################
+Philanthro: Pencils of Promise (POP!)
+######################################
 :date: 2010-11-26 15:07:00
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-11-26-philanthro-productions-pencils-of-promise
 
-Philanthro Productions - Pencils of Promise (POP!)
---------------------------------------------------
-
-Downtown San Diego W Hotel
-
+**Philanthro Productions: Downtown San Diego W Hotel**
 
 |image0|
 

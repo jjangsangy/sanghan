@@ -1,0 +1,50 @@
+@mixin background-sizing($size: cover) {
+    -webkit-background-size: $size;
+       -moz-background-size: $size;
+         -o-background-size: $size;
+            background-size: $size;
+}
+
+@mixin background-image(
+    $url,
+    $position: no-repeat top fixed) {
+    max-width: 100%;
+    background: url($url) $position;
+}
+
+#bg {
+    @include background-image("/img/bird.jpg");
+    height: 640px;
+    @include background-sizing;
+}
+
+img {
+    display: block;
+    width: 1024px;
+    max-width: 100% !important;
+    height: auto;
+}
+
+.youtube {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+
+    iframe {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px), handheld and (orientation: landscape) {
+    #bg {
+        @include background-image("/img/bird-640.jpg");
+        background-position: center top;
+        height: 480px;
+    }
+}

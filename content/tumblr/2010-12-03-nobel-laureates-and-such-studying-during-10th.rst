@@ -2,7 +2,6 @@ Nobel Laureates and Such
 ########################
 :date: 2010-12-03 09:38:00
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-12-03-nobel-laureates-and-such-studying-during-10th
 
 Studying during 10th week is pretty demoralizing. Sometimes it's hard to
@@ -21,9 +20,9 @@ Peoples names are captioned in order they appear.
 | George Feher (Physics Professor)
 | George Negi (Physics Professor)
 
-Peter Preuss (University of California Regent, Preuss School Founder)
+| Peter Preuss (University of California Regent, Preuss School Founder)
 
-Steve Kay (Dept of Biological Sciences Dean)
+| Steve Kay (Dept of Biological Sciences Dean)
 
 | Marye Anne Fox (UCSD Chancellor, 2010 National Medal of Science)
 | Susumu Tonegawa (Professor, Nobel Prize in Physiology and Medicine

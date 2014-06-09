@@ -2,7 +2,6 @@ Justin & Joyce
 ##############
 :date: 2010-05-17 03:17:00
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-05-17-justin-joyce
 
 Meet Justin and Joyce, a couple of whom I had the honor of

@@ -1,14 +1,14 @@
-UTA Casino Night
-################
+UTA Casino Semi-Formal
+######################
 :date: 2010-04-19 03:50:00
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-04-19-uta-casino-night
 
-Luminescence
-------------
+Hypnotique 魅影
+----------------
+**United Taiwanese Association 2010**
 
-|uta_luminescence|
+|hypnotique|
 
 I got to do some events photography this weekend for the United
 Taiwanese Association's Casino Night dance. It was a lot of fun. Met a
@@ -41,7 +41,7 @@ Never thought that this hobby would turn out to be so consuming or
 satisfying. I still have a lot to learn, which makes me even more
 excited. I love telling stories with a camera.
 
-.. |uta_luminescence| image:: {filename}/img/tumblr/2009_uta_luminescence.jpg
+.. |hypnotique| image:: {filename}/img/tumblr/2010_uta_hypnotique.jpg
 
 .. |image0| image:: {filename}/img/tumblr/MG_3401.jpg
 .. |image1| image:: {filename}/img/tumblr/MG_3736.jpg

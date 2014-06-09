@@ -2,7 +2,6 @@ Quynh and Amelia's Post Graduation Photoshoot
 #############################################
 :date: 2011-09-12 19:34:00
 :aurhor: Sang Han
-:category: photography
 :slug: 2011-09-12-quynh-and-amelias-post-graduation-photoshoot
 
 |image0|

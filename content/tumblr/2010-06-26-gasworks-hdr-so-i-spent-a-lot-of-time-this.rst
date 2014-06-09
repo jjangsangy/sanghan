@@ -2,10 +2,9 @@ Gasworks HDR
 ############################
 :date: 2010-06-26 05:13:12
 :aurhor: Sang Han
-:category: Photography
 :slug: 2010-06-26-gasworks-hdr-so-i-spent-a-lot-of-time-this
 
-Gasworks HDR
+**Gasworks HDR**
 
 So I spent a lot of time this summer reading up on different photography
 techniques. One in particular which I have always wanted to be good at

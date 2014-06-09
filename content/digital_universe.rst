@@ -4,8 +4,8 @@ Digital Universe
 
 :date: 2014-05-05 23:24
 :tags: alan, turing, dyson, computing
-:category: computing
 :slug: digital_universe
+:category: Quote
 
 ..
 
@@ -17,7 +17,3 @@ Digital Universe
     between these two species of bits according to definite rules."
 
     -- George Dyson: Turing's Cathedral
-
-I've always wanted to learn to program, so I'm teaching myself.
-In a way, I've started this blog as a way to keep track of my progress and to
-share it with everyone else.
