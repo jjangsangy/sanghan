@@ -21,7 +21,8 @@ so thats what I went&amp;nbsp;with.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="so-how-does-it-work"&gt;
 &lt;h2&gt;So How does it&amp;nbsp;Work?&lt;/h2&gt;
-&lt;p&gt;A generator is basically some arbitrary code that will output more arbitrary&amp;nbsp;code.&lt;/p&gt;
+&lt;blockquote class="pull-quote"&gt;
+A generator is basically some arbitrary code that will output more arbitrary code.&lt;/blockquote&gt;
 &lt;p&gt;In this case of pelican, it will take my articles written in the reStructuredText
 markup and then generate &lt;span class="caps"&gt;HTML&lt;/span&gt; and &lt;span class="caps"&gt;CSS&lt;/span&gt; output. Sounds simple enough&amp;nbsp;right?&lt;/p&gt;
 &lt;p&gt;Pelican utilized metadata that the user supplies in the form of a configuration file
