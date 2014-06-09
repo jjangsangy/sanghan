@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>My Photoelectric Blog</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/programming.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-06-09T00:00:00-07:00</updated><entry><title>Pelican: A Blogging Engine Written in Python</title><link href="http://sanghan.me/blog/2014/06/pelican_blog/" rel="alternate"></link><updated>2014-06-09T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-09:blog/2014/06/pelican_blog/</id><summary type="html"></summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>My Photoelectric Blog</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/programming.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-06-09T00:00:00-07:00</updated><entry><title>Pelican: A Blogging Engine Written in Python</title><link href="http://sanghan.me/blog/2014/06/pelican_blog/" rel="alternate"></link><updated>2014-06-09T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-09:blog/2014/06/pelican_blog/</id><summary type="html">&lt;p&gt;There are many static site generators out there.
+The most famous and notable being, &lt;span class="target" id="jekyll"&gt;Jekyll&lt;/span&gt; and &lt;span class="target" id="octopress"&gt;Octopress&lt;/span&gt;&lt;/p&gt;
+&lt;!-- `Jekyll`_::
+http://jekyllrb.com --&gt;
+&lt;!-- `Octopress`_::
+http://octopress.org --&gt;
+</summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry></feed>
