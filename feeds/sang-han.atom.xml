@@ -10,6 +10,17 @@ fantastically well, is because Pelican is written in Python, and therefore
 support the reStructuredText markup by default. I&amp;#8217;ve looked into Jekyll and
 Octopress, as well as many other similar generators, and not many support
 anything other as&amp;nbsp;Markdown.&lt;/p&gt;
+&lt;p&gt;One of my primary forcuses of blogging is so that I can also use it as
+a platform for learning more about programming. I don&amp;#8217;t program in ruby
+so, I wanted to go with an all Python&amp;nbsp;solution.&lt;/p&gt;
+&lt;div class="section" id="enter-pelican"&gt;
+&lt;h2&gt;Enter&amp;nbsp;Pelican&lt;/h2&gt;
+&lt;p&gt;So Pelican became my blogging engine of choice.
+There are a couple other generators written on top of
+Python like &lt;cite&gt;Hyde &amp;lt;http://ringce.com/hyde&amp;gt;&lt;/cite&gt;
+and &lt;cite&gt;Nicola &amp;lt;http://getnikola.com&amp;gt;&lt;/cite&gt;, but it seemed like Pelican was
+better supported and documented of the batch, so thats what I went&amp;nbsp;with.&lt;/p&gt;
+&lt;/div&gt;
 </summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry><entry><title>2NE1 - 너 아님 안돼 (Gotta Be You)</title><link href="http://sanghan.me/gotta_be_you-ko.html" rel="alternate"></link><updated>2014-05-21T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-05-21:gotta_be_you-ko.html</id><summary type="html">&lt;p&gt;&lt;div class="youtube" align="center"&gt;&lt;iframe width="420" height="315" src="https://www.youtube.com/embed/zdKTgwffmdo" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 I&amp;#8217;m the one that needs to apologize&amp;#8230;
