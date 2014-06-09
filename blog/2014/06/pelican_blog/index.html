@@ -198,27 +198,45 @@ located at the root of the project directory. This configuration file helps
 Pelican figure out some user specific details that are necessary in order to
 build the webpage, very similar to how Sphinx generates&nbsp;documentation.</p>
 <p>Here is a snippet of how this blog&#8217;s configuration file&nbsp;looks.</p>
-<div class="highlight"><pre><span class="lineno"> 1</span>  <span class="c">#!/usr/bin/env python</span>
-<span class="lineno"> 2</span>  <span class="c"># -*- coding: utf-8 -*- #</span>
-<span class="lineno"> 3</span>  <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
-<span class="lineno"> 4</span> 
-<span class="lineno"> 5</span> <span class="kn">import</span> <span class="nn">sys</span>
-<span class="lineno"> 6</span> <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">abspath</span><span class="p">,</span> <span class="n">curdir</span>
-<span class="lineno"> 7</span> 
-<span class="lineno"> 8</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="n">curdir</span><span class="p">))</span>
-<span class="lineno"> 9</span> 
-<span class="lineno">10</span> <span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">&#39;Sang Han&#39;</span>
-<span class="lineno">11</span> <span class="n">SINGLE_AUTHOR</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="lineno">12</span> <span class="n">SITENAME</span> <span class="o">=</span> <span class="s">&#39;My Photoelectric Blog&#39;</span>
-<span class="lineno">13</span> <span class="n">SITEURL</span> <span class="o">=</span> <span class="s">&#39;http://sanghan.me&#39;</span>
-<span class="lineno">14</span> <span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span>
-<span class="lineno">15</span>     <span class="s">&#39;img&#39;</span><span class="p">,</span>
-<span class="lineno">16</span>     <span class="s">&#39;extra/CNAME&#39;</span><span class="p">,</span>
-<span class="lineno">17</span>     <span class="s">&#39;extra/robots.txt&#39;</span><span class="p">,</span>
-<span class="lineno">18</span>     <span class="s">&#39;static&#39;</span><span class="p">,</span>
-<span class="lineno">19</span> <span class="p">]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre> <span class="c">#!/usr/bin/env python</span>
+ <span class="c"># -*- coding: utf-8 -*- #</span>
+ <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">abspath</span><span class="p">,</span> <span class="n">curdir</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="n">curdir</span><span class="p">))</span>
+
+<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">&#39;Sang Han&#39;</span>
+<span class="n">SINGLE_AUTHOR</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">SITENAME</span> <span class="o">=</span> <span class="s">&#39;My Photoelectric Blog&#39;</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">&#39;http://sanghan.me&#39;</span>
+<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&#39;img&#39;</span><span class="p">,</span>
+    <span class="s">&#39;extra/CNAME&#39;</span><span class="p">,</span>
+    <span class="s">&#39;extra/robots.txt&#39;</span><span class="p">,</span>
+    <span class="s">&#39;static&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
-<p>As you can see, the syntax is just Python. The first block
+</td></tr></table><p>As you can see, the syntax is just Python. The first block
 is just a shebang line specifying the default python
 interpreter. We then append the current directory into the
 Python <span class="caps">PATH</span> and then start filling out some global variables which
