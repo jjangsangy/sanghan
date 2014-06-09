@@ -19,6 +19,57 @@ There are a couple other generators written with Python like
 but it seemed like Pelican was better supported and documented of the batch,
 so thats what I went&amp;nbsp;with.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class="section" id="so-how-does-it-work"&gt;
+&lt;h2&gt;So How does it&amp;nbsp;Work?&lt;/h2&gt;
+&lt;p&gt;A generator is basically some arbitrary code that will output more arbitrary&amp;nbsp;code.&lt;/p&gt;
+&lt;p&gt;In this case of pelican, it will take my articles written in the reStructuredText
+markup and then generate &lt;span class="caps"&gt;HTML&lt;/span&gt; and &lt;span class="caps"&gt;CSS&lt;/span&gt; output. Sounds simple enough&amp;nbsp;right?&lt;/p&gt;
+&lt;p&gt;Pelican utilized metadata that the user supplies in the form of a configuration file
+located at the root of the project directory. This configuration file helps
+Pelican figure out some user specific details that are necessary in order to
+build the webpage, very similar to how Sphinx generates documentation.
+Here is a snippet of how this blog&amp;#8217;s configuration file&amp;nbsp;looks.&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
+ &lt;span class="c"&gt;# -*- coding: utf-8 -*- #&lt;/span&gt;
+ &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;unicode_literals&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;os.path&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;abspath&lt;/span&gt;
+
+&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;abspath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;curdir&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="n"&gt;AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Sang Han&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;SINGLE_AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;My Photoelectric Blog&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;http://sanghan.me&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+    &lt;span class="s"&gt;&amp;#39;img&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s"&gt;&amp;#39;extra/CNAME&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s"&gt;&amp;#39;extra/robots.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s"&gt;&amp;#39;static&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Mon, 09 Jun 2014 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2014-06-09:blog/2014/06/pelican_blog/</guid><category>Python</category><category>Programming</category><category>Blog</category></item><item><title>2NE1 - 너 아님 안돼 (Gotta Be You)</title><link>http://sanghan.me/gotta_be_you-ko.html</link><description>&lt;p&gt;&lt;div class="youtube" align="center"&gt;&lt;iframe width="420" height="315" src="https://www.youtube.com/embed/zdKTgwffmdo" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 I&amp;#8217;m the one that needs to apologize&amp;#8230;
