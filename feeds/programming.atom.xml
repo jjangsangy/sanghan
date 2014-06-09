@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>My Photoelectric Blog</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/programming.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-06-09T00:00:00-07:00</updated><entry><title>Pelican: A Blogging Engine Written in Python</title><link href="http://sanghan.me/blog/2014/06/pelican_blog/" rel="alternate"></link><updated>2014-06-09T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-09:blog/2014/06/pelican_blog/</id><summary type="html">&lt;p&gt;There are many static site generators out&amp;nbsp;there.&lt;/p&gt;
 &lt;p&gt;The most famous and well known being,
 &lt;a class="reference external" href="http://jekyllrb.com"&gt;Jekyll&lt;/a&gt; and &lt;a class="reference external" href="http://octopress.org"&gt;Octopress&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;However, both of these are pretty similar blogging enginese. Jekyll is
-used by Github Pages as the default generator, while Octopress is
-a framework for Jekyll geared specifically for blogging. However, the reason why
-I decided to use Pelican over both, is because Pelican is written in Python,
-and therefore support the reStructuredText markup by default and
+&lt;p&gt;Jekyll is used by Github Pages as the default generator,
+while Octopress is a framework for Jekyll geared specifically for blogging.
+However, the reason why I decided to use Pelican over both,
+is because Pelican is written in Python, and therefore support the
+reStructuredText markup by default and
 is a language I feel comfortable in case I need to get down and fix the
 engine. One of my primary forcuses of blogging is so that I can also use it as
 a platform for learning more about programming. I don&amp;#8217;t program in ruby
