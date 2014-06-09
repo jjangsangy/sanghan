@@ -24,12 +24,13 @@ so thats what I went&amp;nbsp;with.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 A generator is basically some arbitrary code that will output more arbitrary code.&lt;/blockquote&gt;
 &lt;p&gt;In this case of pelican, it will take my articles written in the reStructuredText
-markup and then generate &lt;span class="caps"&gt;HTML&lt;/span&gt; and &lt;span class="caps"&gt;CSS&lt;/span&gt; output. Sounds simple enough&amp;nbsp;right?&lt;/p&gt;
+markup and then generate &lt;span class="caps"&gt;HTML&lt;/span&gt; and &lt;span class="caps"&gt;CSS&lt;/span&gt; based on the Jinja2 templating&amp;nbsp;engine.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sounds simple enough&amp;nbsp;right?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Pelican utilized metadata that the user supplies in the form of a configuration file
 located at the root of the project directory. This configuration file helps
 Pelican figure out some user specific details that are necessary in order to
-build the webpage, very similar to how Sphinx generates documentation.
-Here is a snippet of how this blog&amp;#8217;s configuration file&amp;nbsp;looks.&lt;/p&gt;
+build the webpage, very similar to how Sphinx generates&amp;nbsp;documentation.&lt;/p&gt;
+&lt;p&gt;Here is a snippet of how this blog&amp;#8217;s configuration file&amp;nbsp;looks.&lt;/p&gt;
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
  2
  3
@@ -70,5 +71,10 @@ Here is a snippet of how this blog&amp;#8217;s configuration file&amp;nbsp;looks
     &lt;span class="s"&gt;&amp;#39;static&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;As you can see, the syntax is just Python. The first block
+is just a shebang line specifying the default python
+interpreter. We then append the current directory into the
+Python &lt;span class="caps"&gt;PATH&lt;/span&gt; and then start filling out some global variables which
+Pelican will use later to generate the&amp;nbsp;blog.&lt;/p&gt;
+&lt;/div&gt;
 </summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry></feed>
