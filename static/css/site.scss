@@ -12,11 +12,6 @@
     background: url($url) $position;
 }
 
-nav a {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-
 #bg {
     @include background-image("/img/bird.jpg");
     height: 640px;
