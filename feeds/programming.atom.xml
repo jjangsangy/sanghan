@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>My Photoelectric Blog</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/programming.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-06-09T00:00:00-07:00</updated><entry><title>Pelican: A Blogging Engine Written in Python</title><link href="http://sanghan.me/blog/2014/06/pelican_blog/" rel="alternate"></link><updated>2014-06-09T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-09:blog/2014/06/pelican_blog/</id><summary type="html">&lt;p&gt;There are many static site generators out there.
-The most famous and notable being, &lt;a class="reference external" href="http://jekyllrb.com"&gt;Jekyll&lt;/a&gt;
-and &lt;a class="reference external" href="http://octopress.org"&gt;Octopress&lt;/a&gt;&lt;/p&gt;
+The most well known and famous most likely being,
+&lt;a class="reference external" href="http://jekyllrb.com"&gt;Jekyll&lt;/a&gt; and &lt;a class="reference external" href="http://octopress.org"&gt;Octopress&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;However, both of these are pretty similar blogging enginese. Jekyll is
+used by Github Pages as the default site generator, while Octopress is
+a framework designed for&amp;nbsp;blogging.&lt;/p&gt;
 </summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry></feed>
