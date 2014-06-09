@@ -42,6 +42,7 @@ Icon*
 # }}}
 
 # Generated files/folders {{{
+.sass-cache/**
 cache/**
 output/**
 docs/**
