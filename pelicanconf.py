@@ -11,7 +11,8 @@ sys.path.append(abspath(os.curdir))
 AUTHOR = 'Sang Han'
 SINGLE_AUTHOR = True
 SITESUBTITLE = 'Things I Make'
-SITENAME = 'Sang Han'
+SITENAME = 'My Photoelectric Blog'
+
 SITEURL = 'http://sanghan.me'
 EMAIL_ADDR = 'jjangsangy@gmail.com'
 
@@ -52,7 +53,7 @@ CUSTOM_CSS = ('static/css/site.css')
 PLUGIN_PATH = ['plugins']
 PLUGINS = ['disqus_static', 'representative_image', 'pelican_youtube']
 HEADER_IMAGE = "bird.jpg"
-SUMMARY_MAX_LENGTH = 200
+SUMMARY_MAX_LENGTH = 100
 DISPLAY_BREADCRUMBS= True
 DISPLAY_CATEGORY_IN_BREADCRUMBS = True
 USE_PAGER = True

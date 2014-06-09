@@ -13,3 +13,58 @@ Tools
     Always be on the lookout for better ways of doing things."
 
     -- The Pragmatic Programmer
+
+Here are some of my tools.
+
+Photography
+-----------
+:Camera:
+  Fuji X100s
+
+|fuji|
+
+There was a time when I used to be quite a gearhead. A list of all my
+previous photography gear would include, a Canon 5D Classic,
+an amazing affordable full-frame camera body. Some lenses include
+the Canon EF 35mm f/2.0 and the nifty-fifty Canon EF 50mm f/1.8II.
+A couple years ago, I've decided to put all this gear behind, and haven't
+really looked back since. The Fuji does a magnificent job albeit
+having an APS-C sized sensor, there is something I do miss about full-frame
+that I'll just have to live with.
+
+Hardware
+--------
+:Computer: Macbook Pro 13-inch, Mid 2012
+:Processor: 2.5 GHz Intel Core i5
+:Memory: 8GB 1600 MHz DDR3
+:Storage: 256GB Samsung 830 Series SSD
+
+|macbook|
+
+I do all my photography and programming on my Macbook Pro.
+I've customized it with more RAM and added a solid state disk replacing the
+optical tray. OS X is a surprisingly good enviornment for programming
+since it was built upon a variant of BSD and is fully POSIX compliant.
+
+Programming Languages
+----------------------
+:Languages:
+  Python,
+  C89,
+  Shell Languages (Bash, Awk, Sed)
+
+This entire blog was written in ReStructuredText which is what
+the Python language uses as it's internal documentation language.
+Pelican is a static site generator written in Python for generating
+static sites. It uses the powerful Jinja2 templating system that
+is used by Flask as it's main templating language. This whole blog
+is generated statically into their web components like HTML, CSS and Javascript
+and then uploaded to github pages, where it is hosted. The advantages
+to creating a blog in this way are many, but something I won't go into.
+
+Maybe in another blog entry.
+
+
+.. |fuji| image:: {filename}/img/fuji-x100s.jpg
+.. |macbook| image:: {filename}/img/macbook.jpeg
+
