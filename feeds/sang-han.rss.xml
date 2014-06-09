@@ -15,7 +15,7 @@ so, I wanted to go with an all Python&amp;nbsp;solution.&lt;/p&gt;
 &lt;h2&gt;Enter&amp;nbsp;Pelican&lt;/h2&gt;
 &lt;p&gt;So Pelican became my blogging engine of choice.
 There are a couple other generators written with Python like
-&lt;cite&gt;Hyde &amp;lt;http://ringce.com/hyde&amp;gt;&lt;/cite&gt; and &lt;cite&gt;Nicola &amp;lt;http://getnikola.com&amp;gt;&lt;/cite&gt;,
+&lt;a class="reference external" href="http://ringce.com/hyde"&gt;Hyde&lt;/a&gt; and &lt;a class="reference external" href="http://getnikola.com"&gt;Nicola&lt;/a&gt;,
 but it seemed like Pelican was better supported and documented of the batch,
 so thats what I went&amp;nbsp;with.&lt;/p&gt;
 &lt;/div&gt;
