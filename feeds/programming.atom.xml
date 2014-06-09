@@ -4,5 +4,10 @@ The most well known and famous most likely being,
 &lt;a class="reference external" href="http://jekyllrb.com"&gt;Jekyll&lt;/a&gt; and &lt;a class="reference external" href="http://octopress.org"&gt;Octopress&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;However, both of these are pretty similar blogging enginese. Jekyll is
 used by Github Pages as the default site generator, while Octopress is
-a framework designed for&amp;nbsp;blogging.&lt;/p&gt;
+a framework geared specifically for blogging. However, the reason why
+I decided to use Pelican over both of these options doing the job
+fantastically well, is because Pelican is written in Python, and therefore
+support the reStructuredText markup by default. I&amp;#8217;ve looked into Jekyll and
+Octopress, as well as many other similar generators, and not many support
+anything other as&amp;nbsp;Markdown.&lt;/p&gt;
 </summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry></feed>

@@ -4,7 +4,12 @@ The most well known and famous most likely being,
 &lt;a class="reference external" href="http://jekyllrb.com"&gt;Jekyll&lt;/a&gt; and &lt;a class="reference external" href="http://octopress.org"&gt;Octopress&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;However, both of these are pretty similar blogging enginese. Jekyll is
 used by Github Pages as the default site generator, while Octopress is
-a framework designed for&amp;nbsp;blogging.&lt;/p&gt;
+a framework geared specifically for blogging. However, the reason why
+I decided to use Pelican over both of these options doing the job
+fantastically well, is because Pelican is written in Python, and therefore
+support the reStructuredText markup by default. I&amp;#8217;ve looked into Jekyll and
+Octopress, as well as many other similar generators, and not many support
+anything other as&amp;nbsp;Markdown.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Mon, 09 Jun 2014 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2014-06-09:blog/2014/06/pelican_blog/</guid><category>Python</category><category>Programming</category><category>Blog</category></item><item><title>2NE1 - 너 아님 안돼 (Gotta Be You)</title><link>http://sanghan.me/gotta_be_you-ko.html</link><description>&lt;p&gt;&lt;div class="youtube" align="center"&gt;&lt;iframe width="420" height="315" src="https://www.youtube.com/embed/zdKTgwffmdo" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 I&amp;#8217;m the one that needs to apologize&amp;#8230;
