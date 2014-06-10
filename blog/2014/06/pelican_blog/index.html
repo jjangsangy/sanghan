@@ -200,26 +200,26 @@ located at the root of the project directory. This configuration file helps
 Pelican figure out some user specific details that are necessary in order to
 build the webpage, very similar to how Sphinx generates&nbsp;documentation.</p>
 <p>Here is a snippet of how this blog&#8217;s configuration file&nbsp;looks.</p>
-<pre class="code python literal-block">
- <span class="c">#!/usr/bin/env python</span>
- <span class="c"># -*- coding: utf-8 -*- #</span>
- <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+<pre class="literal-block">
+ #!/usr/bin/env python
+ # -*- coding: utf-8 -*- #
+ from __future__ import unicode_literals
 
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">abspath</span><span class="p">,</span> <span class="n">curdir</span>
+import sys
+from os.path import abspath, curdir
 
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="n">curdir</span><span class="p">))</span>
+sys.path.append(abspath(curdir))
 
-<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">'Sang Han'</span>
-<span class="n">SINGLE_AUTHOR</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">SITENAME</span> <span class="o">=</span> <span class="s">'My Photoelectric Blog'</span>
-<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">'http://sanghan.me'</span>
-<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s">'img'</span><span class="p">,</span>
-    <span class="s">'extra/CNAME'</span><span class="p">,</span>
-    <span class="s">'extra/robots.txt'</span><span class="p">,</span>
-    <span class="s">'static'</span><span class="p">,</span>
-<span class="p">]</span>
+AUTHOR = 'Sang Han'
+SINGLE_AUTHOR = True
+SITENAME = 'My Photoelectric Blog'
+SITEURL = 'http://sanghan.me'
+STATIC_PATHS = [
+    'img',
+    'extra/CNAME',
+    'extra/robots.txt',
+    'static',
+]
 </pre>
 <p>As you can see, the syntax is just Python. The first block
 is just a shebang line specifying the default python
