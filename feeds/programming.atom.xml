@@ -31,25 +31,25 @@ located at the root of the project directory. This configuration file helps
 Pelican figure out some user specific details that are necessary in order to
 build the webpage, very similar to how Sphinx generates&amp;nbsp;documentation.&lt;/p&gt;
 &lt;p&gt;Here is a snippet of how this blog&amp;#8217;s configuration file&amp;nbsp;looks.&lt;/p&gt;
- &lt;span class="language-c"&gt;#!/usr/bin/env python&lt;/span&gt;
- &lt;span class="language-c"&gt;# -*- coding: utf-8 -*- #&lt;/span&gt;
- &lt;span class="language-kn"&gt;from&lt;/span&gt; &lt;span class="language-nn"&gt;__future__&lt;/span&gt; &lt;span class="language-kn"&gt;import&lt;/span&gt; &lt;span class="language-n"&gt;unicode_literals&lt;/span&gt;
+&lt;span class="language-pythonc"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;span class="language-pythonc"&gt;# -*- coding: utf-8 -*- #&lt;/span&gt;
+&lt;span class="language-pythonkn"&gt;from&lt;/span&gt; &lt;span class="language-pythonnn"&gt;__future__&lt;/span&gt; &lt;span class="language-pythonkn"&gt;import&lt;/span&gt; &lt;span class="language-pythonn"&gt;unicode_literals&lt;/span&gt;
 
-&lt;span class="language-kn"&gt;import&lt;/span&gt; &lt;span class="language-nn"&gt;sys&lt;/span&gt;
-&lt;span class="language-kn"&gt;from&lt;/span&gt; &lt;span class="language-nn"&gt;os.path&lt;/span&gt; &lt;span class="language-kn"&gt;import&lt;/span&gt; &lt;span class="language-n"&gt;abspath&lt;/span&gt;&lt;span class="language-p"&gt;,&lt;/span&gt; &lt;span class="language-n"&gt;curdir&lt;/span&gt;
+&lt;span class="language-pythonkn"&gt;import&lt;/span&gt; &lt;span class="language-pythonnn"&gt;sys&lt;/span&gt;
+&lt;span class="language-pythonkn"&gt;from&lt;/span&gt; &lt;span class="language-pythonnn"&gt;os.path&lt;/span&gt; &lt;span class="language-pythonkn"&gt;import&lt;/span&gt; &lt;span class="language-pythonn"&gt;abspath&lt;/span&gt;&lt;span class="language-pythonp"&gt;,&lt;/span&gt; &lt;span class="language-pythonn"&gt;curdir&lt;/span&gt;
 
-&lt;span class="language-n"&gt;sys&lt;/span&gt;&lt;span class="language-o"&gt;.&lt;/span&gt;&lt;span class="language-n"&gt;path&lt;/span&gt;&lt;span class="language-o"&gt;.&lt;/span&gt;&lt;span class="language-n"&gt;append&lt;/span&gt;&lt;span class="language-p"&gt;(&lt;/span&gt;&lt;span class="language-n"&gt;abspath&lt;/span&gt;&lt;span class="language-p"&gt;(&lt;/span&gt;&lt;span class="language-n"&gt;curdir&lt;/span&gt;&lt;span class="language-p"&gt;))&lt;/span&gt;
+&lt;span class="language-pythonn"&gt;sys&lt;/span&gt;&lt;span class="language-pythono"&gt;.&lt;/span&gt;&lt;span class="language-pythonn"&gt;path&lt;/span&gt;&lt;span class="language-pythono"&gt;.&lt;/span&gt;&lt;span class="language-pythonn"&gt;append&lt;/span&gt;&lt;span class="language-pythonp"&gt;(&lt;/span&gt;&lt;span class="language-pythonn"&gt;abspath&lt;/span&gt;&lt;span class="language-pythonp"&gt;(&lt;/span&gt;&lt;span class="language-pythonn"&gt;curdir&lt;/span&gt;&lt;span class="language-pythonp"&gt;))&lt;/span&gt;
 
-&lt;span class="language-n"&gt;&lt;span class="caps"&gt;AUTHOR&lt;/span&gt;&lt;/span&gt; &lt;span class="language-o"&gt;=&lt;/span&gt; &lt;span class="language-s"&gt;&amp;#39;Sang Han&amp;#39;&lt;/span&gt;
-&lt;span class="language-n"&gt;SINGLE_AUTHOR&lt;/span&gt; &lt;span class="language-o"&gt;=&lt;/span&gt; &lt;span class="language-bp"&gt;True&lt;/span&gt;
-&lt;span class="language-n"&gt;&lt;span class="caps"&gt;SITENAME&lt;/span&gt;&lt;/span&gt; &lt;span class="language-o"&gt;=&lt;/span&gt; &lt;span class="language-s"&gt;&amp;#39;My Photoelectric Blog&amp;#39;&lt;/span&gt;
-&lt;span class="language-n"&gt;&lt;span class="caps"&gt;SITEURL&lt;/span&gt;&lt;/span&gt; &lt;span class="language-o"&gt;=&lt;/span&gt; &lt;span class="language-s"&gt;&amp;#39;http://sanghan.me&amp;#39;&lt;/span&gt;
-&lt;span class="language-n"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="language-o"&gt;=&lt;/span&gt; &lt;span class="language-p"&gt;[&lt;/span&gt;
-    &lt;span class="language-s"&gt;&amp;#39;img&amp;#39;&lt;/span&gt;&lt;span class="language-p"&gt;,&lt;/span&gt;
-    &lt;span class="language-s"&gt;&amp;#39;extra/&lt;span class="caps"&gt;CNAME&lt;/span&gt;&amp;#39;&lt;/span&gt;&lt;span class="language-p"&gt;,&lt;/span&gt;
-    &lt;span class="language-s"&gt;&amp;#39;extra/robots.txt&amp;#39;&lt;/span&gt;&lt;span class="language-p"&gt;,&lt;/span&gt;
-    &lt;span class="language-s"&gt;&amp;#39;static&amp;#39;&lt;/span&gt;&lt;span class="language-p"&gt;,&lt;/span&gt;
-&lt;span class="language-p"&gt;]&lt;/span&gt;
+&lt;span class="language-pythonn"&gt;&lt;span class="caps"&gt;AUTHOR&lt;/span&gt;&lt;/span&gt; &lt;span class="language-pythono"&gt;=&lt;/span&gt; &lt;span class="language-pythons"&gt;&amp;#39;Sang Han&amp;#39;&lt;/span&gt;
+&lt;span class="language-pythonn"&gt;SINGLE_AUTHOR&lt;/span&gt; &lt;span class="language-pythono"&gt;=&lt;/span&gt; &lt;span class="language-pythonbp"&gt;True&lt;/span&gt;
+&lt;span class="language-pythonn"&gt;&lt;span class="caps"&gt;SITENAME&lt;/span&gt;&lt;/span&gt; &lt;span class="language-pythono"&gt;=&lt;/span&gt; &lt;span class="language-pythons"&gt;&amp;#39;My Photoelectric Blog&amp;#39;&lt;/span&gt;
+&lt;span class="language-pythonn"&gt;&lt;span class="caps"&gt;SITEURL&lt;/span&gt;&lt;/span&gt; &lt;span class="language-pythono"&gt;=&lt;/span&gt; &lt;span class="language-pythons"&gt;&amp;#39;http://sanghan.me&amp;#39;&lt;/span&gt;
+&lt;span class="language-pythonn"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="language-pythono"&gt;=&lt;/span&gt; &lt;span class="language-pythonp"&gt;[&lt;/span&gt;
+  &lt;span class="language-pythons"&gt;&amp;#39;img&amp;#39;&lt;/span&gt;&lt;span class="language-pythonp"&gt;,&lt;/span&gt;
+  &lt;span class="language-pythons"&gt;&amp;#39;extra/&lt;span class="caps"&gt;CNAME&lt;/span&gt;&amp;#39;&lt;/span&gt;&lt;span class="language-pythonp"&gt;,&lt;/span&gt;
+  &lt;span class="language-pythons"&gt;&amp;#39;extra/robots.txt&amp;#39;&lt;/span&gt;&lt;span class="language-pythonp"&gt;,&lt;/span&gt;
+  &lt;span class="language-pythons"&gt;&amp;#39;static&amp;#39;&lt;/span&gt;&lt;span class="language-pythonp"&gt;,&lt;/span&gt;
+&lt;span class="language-pythonp"&gt;]&lt;/span&gt;
 &lt;p&gt;As you can see, the syntax is just Python. The first block
 is just a shebang line specifying the default python
 interpreter. We then append the current directory into the

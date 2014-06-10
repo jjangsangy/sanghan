@@ -200,25 +200,25 @@ located at the root of the project directory. This configuration file helps
 Pelican figure out some user specific details that are necessary in order to
 build the webpage, very similar to how Sphinx generates&nbsp;documentation.</p>
 <p>Here is a snippet of how this blog&#8217;s configuration file&nbsp;looks.</p>
- <span class="language-c">#!/usr/bin/env python</span>
- <span class="language-c"># -*- coding: utf-8 -*- #</span>
- <span class="language-kn">from</span> <span class="language-nn">__future__</span> <span class="language-kn">import</span> <span class="language-n">unicode_literals</span>
+<span class="language-pythonc">#!/usr/bin/env python</span>
+<span class="language-pythonc"># -*- coding: utf-8 -*- #</span>
+<span class="language-pythonkn">from</span> <span class="language-pythonnn">__future__</span> <span class="language-pythonkn">import</span> <span class="language-pythonn">unicode_literals</span>
 
-<span class="language-kn">import</span> <span class="language-nn">sys</span>
-<span class="language-kn">from</span> <span class="language-nn">os.path</span> <span class="language-kn">import</span> <span class="language-n">abspath</span><span class="language-p">,</span> <span class="language-n">curdir</span>
+<span class="language-pythonkn">import</span> <span class="language-pythonnn">sys</span>
+<span class="language-pythonkn">from</span> <span class="language-pythonnn">os.path</span> <span class="language-pythonkn">import</span> <span class="language-pythonn">abspath</span><span class="language-pythonp">,</span> <span class="language-pythonn">curdir</span>
 
-<span class="language-n">sys</span><span class="language-o">.</span><span class="language-n">path</span><span class="language-o">.</span><span class="language-n">append</span><span class="language-p">(</span><span class="language-n">abspath</span><span class="language-p">(</span><span class="language-n">curdir</span><span class="language-p">))</span>
+<span class="language-pythonn">sys</span><span class="language-pythono">.</span><span class="language-pythonn">path</span><span class="language-pythono">.</span><span class="language-pythonn">append</span><span class="language-pythonp">(</span><span class="language-pythonn">abspath</span><span class="language-pythonp">(</span><span class="language-pythonn">curdir</span><span class="language-pythonp">))</span>
 
-<span class="language-n"><span class="caps">AUTHOR</span></span> <span class="language-o">=</span> <span class="language-s">&#39;Sang Han&#39;</span>
-<span class="language-n">SINGLE_AUTHOR</span> <span class="language-o">=</span> <span class="language-bp">True</span>
-<span class="language-n"><span class="caps">SITENAME</span></span> <span class="language-o">=</span> <span class="language-s">&#39;My Photoelectric Blog&#39;</span>
-<span class="language-n"><span class="caps">SITEURL</span></span> <span class="language-o">=</span> <span class="language-s">&#39;http://sanghan.me&#39;</span>
-<span class="language-n">STATIC_PATHS</span> <span class="language-o">=</span> <span class="language-p">[</span>
-    <span class="language-s">&#39;img&#39;</span><span class="language-p">,</span>
-    <span class="language-s">&#39;extra/<span class="caps">CNAME</span>&#39;</span><span class="language-p">,</span>
-    <span class="language-s">&#39;extra/robots.txt&#39;</span><span class="language-p">,</span>
-    <span class="language-s">&#39;static&#39;</span><span class="language-p">,</span>
-<span class="language-p">]</span>
+<span class="language-pythonn"><span class="caps">AUTHOR</span></span> <span class="language-pythono">=</span> <span class="language-pythons">&#39;Sang Han&#39;</span>
+<span class="language-pythonn">SINGLE_AUTHOR</span> <span class="language-pythono">=</span> <span class="language-pythonbp">True</span>
+<span class="language-pythonn"><span class="caps">SITENAME</span></span> <span class="language-pythono">=</span> <span class="language-pythons">&#39;My Photoelectric Blog&#39;</span>
+<span class="language-pythonn"><span class="caps">SITEURL</span></span> <span class="language-pythono">=</span> <span class="language-pythons">&#39;http://sanghan.me&#39;</span>
+<span class="language-pythonn">STATIC_PATHS</span> <span class="language-pythono">=</span> <span class="language-pythonp">[</span>
+  <span class="language-pythons">&#39;img&#39;</span><span class="language-pythonp">,</span>
+  <span class="language-pythons">&#39;extra/<span class="caps">CNAME</span>&#39;</span><span class="language-pythonp">,</span>
+  <span class="language-pythons">&#39;extra/robots.txt&#39;</span><span class="language-pythonp">,</span>
+  <span class="language-pythons">&#39;static&#39;</span><span class="language-pythonp">,</span>
+<span class="language-pythonp">]</span>
 <p>As you can see, the syntax is just Python. The first block
 is just a shebang line specifying the default python
 interpreter. We then append the current directory into the
