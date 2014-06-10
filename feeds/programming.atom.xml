@@ -83,7 +83,7 @@ Pelican will use later to generate the&amp;nbsp;blog.&lt;/p&gt;
       border-radius: 4px; }
   .swift {background-color: #&lt;span class="caps"&gt;FDF6E3&lt;/span&gt;}
 &lt;/style&gt;
-&lt;div class="swift"&gt;
+&lt;div style="background-color:#fdf6e3"&gt;
 &lt;code&gt;
 &lt;p class="p1"&gt;// Sang&amp;nbsp;Han&lt;/p&gt;
 &lt;p class="p1"&gt;// An implementation of a bubble party/bubble sort written in&amp;nbsp;swift&lt;/p&gt;
