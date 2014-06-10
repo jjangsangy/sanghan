@@ -33,3 +33,9 @@ img {
     background: url("/img/bird-640.jpg") no-repeat top fixed;
     background-position: center top;
     height: 480px; } }
+@media (min-width: 1200px) {
+  #bg {
+    max-width: 100%;
+    background: url("/img/bird-full.jpg") no-repeat top fixed;
+    background-position: center top;
+    height: 1028px; } }

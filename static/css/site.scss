@@ -50,3 +50,11 @@ img {
         height: 480px;
     }
 }
+
+@media (min-width: 1200px) {
+    #bg {
+        @include background-image("/img/bird-full.jpg");
+        background-position: center top;
+        height: 1028px;
+    }
+}
