@@ -51,5 +51,5 @@ img {
 }
 
 @media (min-width: 1200px) {
-    #bg {@include background-image("/img/bird-full.jpg", $vheight: 1028px);}}
+    #bg {@include background-image("/img/bird-full.jpg", $vheight: 920px);}}
 
