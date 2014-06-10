@@ -13,7 +13,7 @@ img {
   height: auto; }
   img :default {
     width: 1024px;
-    align: center; }
+    align: middle; }
 
 .youtube {
   position: relative;
