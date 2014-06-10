@@ -12,7 +12,8 @@ img {
   max-width: 100% !important;
   height: auto; }
   img :default {
-    width: 1024px; }
+    width: 1024px;
+    align: center; }
 
 .youtube {
   position: relative;
