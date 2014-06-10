@@ -69,8 +69,8 @@ Pelican will use later to generate the&amp;nbsp;blog.&lt;/p&gt;
   span.s3 {color: #29a198}
   span.s4 {color: #839496}
   span.s5 {color: #6c71c4}
-  p {background-color: #&lt;span class="caps"&gt;FFFFCC&lt;/span&gt;;}
 &lt;/style&gt;
+&lt;code&gt;
 &lt;p class="p1"&gt;// Sang&amp;nbsp;Han&lt;/p&gt;
 &lt;p class="p1"&gt;// An implementation of a bubble party/bubble sort written in&amp;nbsp;swift&lt;/p&gt;
 &lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;
@@ -121,7 +121,8 @@ Pelican will use later to generate the&amp;nbsp;blog.&lt;/p&gt;
 &lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;return&lt;/span&gt;&amp;nbsp;sexyPeople&lt;/p&gt;
 &lt;p class="p3"&gt;}&lt;/p&gt;
 &lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p class="p6"&gt;&lt;span class="s1"&gt;println&lt;/span&gt;&lt;span class="s4"&gt;(&lt;/span&gt;bubbleParty&lt;span class="s4"&gt;(&lt;/span&gt;randomPeople&lt;span class="s4"&gt;(&lt;/span&gt;100&lt;span class="s4"&gt;)))&lt;/span&gt;&lt;/p&gt;</summary><category term="Apple"></category><category term="Languages"></category><category term="WWDC"></category></entry><entry><title>2NE1 - 너 아님 안돼 (Gotta Be You)</title><link href="http://sanghan.me/gotta_be_you-ko.html" rel="alternate"></link><updated>2014-05-21T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-05-21:gotta_be_you-ko.html</id><summary type="html">&lt;p&gt;&lt;div class="youtube" align="center"&gt;&lt;iframe width="420" height="315" src="https://www.youtube.com/embed/zdKTgwffmdo" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p class="p6"&gt;&lt;span class="s1"&gt;println&lt;/span&gt;&lt;span class="s4"&gt;(&lt;/span&gt;bubbleParty&lt;span class="s4"&gt;(&lt;/span&gt;randomPeople&lt;span class="s4"&gt;(&lt;/span&gt;100&lt;span class="s4"&gt;)))&lt;/span&gt;&lt;/p&gt;
+&lt;/code&gt;</summary><category term="Apple"></category><category term="Languages"></category><category term="WWDC"></category></entry><entry><title>2NE1 - 너 아님 안돼 (Gotta Be You)</title><link href="http://sanghan.me/gotta_be_you-ko.html" rel="alternate"></link><updated>2014-05-21T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-05-21:gotta_be_you-ko.html</id><summary type="html">&lt;p&gt;&lt;div class="youtube" align="center"&gt;&lt;iframe width="420" height="315" src="https://www.youtube.com/embed/zdKTgwffmdo" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 I&amp;#8217;m the one that needs to apologize&amp;#8230;
 I want to make things better&lt;/blockquote&gt;
