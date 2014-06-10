@@ -48,28 +48,28 @@ build the webpage, very similar to how Sphinx generates documentation.
 
 Here is a snippet of how this blog's configuration file looks.
 
+
 .. code-block:: python
-   :linenos: none
 
     #!/usr/bin/env python
     # -*- coding: utf-8 -*- #
     from __future__ import unicode_literals
 
-   import sys
-   from os.path import abspath, curdir
+    import sys
+    from os.path import abspath, curdir
 
-   sys.path.append(abspath(curdir))
+    sys.path.append(abspath(curdir))
 
-   AUTHOR = 'Sang Han'
-   SINGLE_AUTHOR = True
-   SITENAME = 'My Photoelectric Blog'
-   SITEURL = 'http://sanghan.me'
-   STATIC_PATHS = [
-       'img',
-       'extra/CNAME',
-       'extra/robots.txt',
-       'static',
-   ]
+    AUTHOR = 'Sang Han'
+    SINGLE_AUTHOR = True
+    SITENAME = 'My Photoelectric Blog'
+    SITEURL = 'http://sanghan.me'
+    STATIC_PATHS = [
+        'img',
+        'extra/CNAME',
+        'extra/robots.txt',
+        'static',
+    ]
 
 As you can see, the syntax is just Python. The first block
 is just a shebang line specifying the default python

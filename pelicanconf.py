@@ -58,7 +58,9 @@ DISPLAY_BREADCRUMBS= True
 DISPLAY_CATEGORY_IN_BREADCRUMBS = True
 USE_PAGER = True
 FAVICON = 'hv'
-PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
+PYGMENTS_RST_OPTIONS = {
+        'linenos': 'none',
+    }
 PYGMENTS_STYLE = 'solarizedlight'
 
 GITHUB_USER = 'jjangsangy'
