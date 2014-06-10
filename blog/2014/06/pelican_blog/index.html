@@ -200,25 +200,107 @@ located at the root of the project directory. This configuration file helps
 Pelican figure out some user specific details that are necessary in order to
 build the webpage, very similar to how Sphinx generates&nbsp;documentation.</p>
 <p>Here is a snippet of how this blog&#8217;s configuration file&nbsp;looks.</p>
-<span class="language-pythonc">#!/usr/bin/env python</span>
-<span class="language-pythonc"># -*- coding: utf-8 -*- #</span>
-<span class="language-pythonkn">from</span> <span class="language-pythonnn">__future__</span> <span class="language-pythonkn">import</span> <span class="language-pythonn">unicode_literals</span>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
 
-<span class="language-pythonkn">import</span> <span class="language-pythonnn">sys</span>
-<span class="language-pythonkn">from</span> <span class="language-pythonnn">os.path</span> <span class="language-pythonkn">import</span> <span class="language-pythonn">abspath</span><span class="language-pythonp">,</span> <span class="language-pythonn">curdir</span>
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=None">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #<span class="caps">FF0000</span> } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #<span class="caps">BC7A00</span> } /* Comment.Preproc */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #<span class="caps">FF0000</span> } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #<span class="caps">0044DD</span> } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #<span class="caps">BA2121</span> } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #<span class="caps">AA22FF</span> } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #<span class="caps">D2413A</span>; font-weight: bold } /* Name.Exception */
+body .nf { color: #<span class="caps">0000FF</span> } /* Name.Function */
+body .nl { color: #<span class="caps">A0A000</span> } /* Name.Label */
+body .nn { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #<span class="caps">AA22FF</span>; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #<span class="caps">BA2121</span> } /* Literal.String.Backtick */
+body .sc { color: #<span class="caps">BA2121</span> } /* Literal.String.Char */
+body .sd { color: #<span class="caps">BA2121</span>; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #<span class="caps">BA2121</span> } /* Literal.String.Double */
+body .se { color: #<span class="caps">BB6622</span>; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #<span class="caps">BA2121</span> } /* Literal.String.Heredoc */
+body .si { color: #<span class="caps">BB6688</span>; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #<span class="caps">BB6688</span> } /* Literal.String.Regex */
+body .s1 { color: #<span class="caps">BA2121</span> } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
 
-<span class="language-pythonn">sys</span><span class="language-pythono">.</span><span class="language-pythonn">path</span><span class="language-pythono">.</span><span class="language-pythonn">append</span><span class="language-pythonp">(</span><span class="language-pythonn">abspath</span><span class="language-pythonp">(</span><span class="language-pythonn">curdir</span><span class="language-pythonp">))</span>
+  </style>
+</head>
+<body>
+<h2></h2>
 
-<span class="language-pythonn"><span class="caps">AUTHOR</span></span> <span class="language-pythono">=</span> <span class="language-pythons">&#39;Sang Han&#39;</span>
-<span class="language-pythonn">SINGLE_AUTHOR</span> <span class="language-pythono">=</span> <span class="language-pythonbp">True</span>
-<span class="language-pythonn"><span class="caps">SITENAME</span></span> <span class="language-pythono">=</span> <span class="language-pythons">&#39;My Photoelectric Blog&#39;</span>
-<span class="language-pythonn"><span class="caps">SITEURL</span></span> <span class="language-pythono">=</span> <span class="language-pythons">&#39;http://sanghan.me&#39;</span>
-<span class="language-pythonn">STATIC_PATHS</span> <span class="language-pythono">=</span> <span class="language-pythonp">[</span>
-  <span class="language-pythons">&#39;img&#39;</span><span class="language-pythonp">,</span>
-  <span class="language-pythons">&#39;extra/<span class="caps">CNAME</span>&#39;</span><span class="language-pythonp">,</span>
-  <span class="language-pythons">&#39;extra/robots.txt&#39;</span><span class="language-pythonp">,</span>
-  <span class="language-pythons">&#39;static&#39;</span><span class="language-pythonp">,</span>
-<span class="language-pythonp">]</span>
+<div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*- #</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">abspath</span><span class="p">,</span> <span class="n">curdir</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="n">curdir</span><span class="p">))</span>
+
+<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">&#39;Sang Han&#39;</span>
+<span class="n">SINGLE_AUTHOR</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">SITENAME</span> <span class="o">=</span> <span class="s">&#39;My Photoelectric Blog&#39;</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">&#39;http://sanghan.me&#39;</span>
+<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s">&#39;img&#39;</span><span class="p">,</span>
+  <span class="s">&#39;extra/CNAME&#39;</span><span class="p">,</span>
+  <span class="s">&#39;extra/robots.txt&#39;</span><span class="p">,</span>
+  <span class="s">&#39;static&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</body>
+</html>
 <p>As you can see, the syntax is just Python. The first block
 is just a shebang line specifying the default python
 interpreter. We then append the current directory into the
