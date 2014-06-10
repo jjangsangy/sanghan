@@ -70,18 +70,17 @@ Pelican will use later to generate the&amp;nbsp;blog.&lt;/p&gt;
   span.s4 {color: #839496}
   span.s5 {color: #6c71c4}
   code { border: 1px solid #&lt;span class="caps"&gt;CCCCCC&lt;/span&gt;;
-    background: none repeat scroll 0 0 !important;
-    background-color #&lt;span class="caps"&gt;FDF6E3&lt;/span&gt;;
-    color: #657B83;
-    border-radius: 4px;
-    border: 1px solid #&lt;span class="caps"&gt;CCC&lt;/span&gt;;
-    display: block;
-    font-size: 14px;
-    line-height: 1.42857;
-    margin: 0 0 10.5px;
-    padding: 10px;
-    word-break: break-all;
-    word-wrap: break-word; }
+      display: block;
+      padding: 10px;
+      margin: 0 0 10.5px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      word-break: break-all;
+      word-wrap: break-word;
+      color: #7b8a8b;
+      background-color: #ecf0f1;
+      border: 1px solid #cccccc;
+      border-radius: 4px; }
 &lt;/style&gt;
 &lt;code&gt;
 &lt;p class="p1"&gt;// Sang&amp;nbsp;Han&lt;/p&gt;
