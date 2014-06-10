@@ -31,7 +31,8 @@ located at the root of the project directory. This configuration file helps
 Pelican figure out some user specific details that are necessary in order to
 build the webpage, very similar to how Sphinx generates&amp;nbsp;documentation.&lt;/p&gt;
 &lt;p&gt;Here is a snippet of how this blog&amp;#8217;s configuration file&amp;nbsp;looks.&lt;/p&gt;
-&lt;!-- #!/usr/bin/env python
+&lt;pre class="python literal-block"&gt;
+#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
@@ -49,8 +50,9 @@ STATIC_PATHS = [
     'extra/CNAME',
     'extra/robots.txt',
     'static',
-] --&gt;
-&lt;p class="python"&gt;As you can see, the syntax is just Python. The first block
+]
+&lt;/pre&gt;
+&lt;p&gt;As you can see, the syntax is just Python. The first block
 is just a shebang line specifying the default python
 interpreter. We then append the current directory into the
 Python &lt;span class="caps"&gt;PATH&lt;/span&gt; and then start filling out some global variables which
