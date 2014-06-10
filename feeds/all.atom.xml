@@ -57,7 +57,7 @@ interpreter. We then append the current directory into the
 Python &lt;span class="caps"&gt;PATH&lt;/span&gt; and then start filling out some global variables which
 Pelican will use later to generate the&amp;nbsp;blog.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry><entry><title>2NE1 - 너 아님 안돼 (Gotta Be You)</title><link href="http://sanghan.me/gotta_be_you-ko.html" rel="alternate"></link><updated>2014-05-21T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-05-21:gotta_be_you-ko.html</id><summary type="html">&lt;p&gt;&lt;div class="youtube" align="center"&gt;&lt;iframe width="420" height="315" src="https://www.youtube.com/embed/zdKTgwffmdo" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
+</summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry><entry><title>Bubble Sort Written in Swift</title><link href="http://sanghan.me/blog/2014/06/swift_bubble_sort/" rel="alternate"></link><updated>2014-06-04T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-04:blog/2014/06/swift_bubble_sort/</id><summary type="html"></summary><category term=""></category></entry><entry><title>2NE1 - 너 아님 안돼 (Gotta Be You)</title><link href="http://sanghan.me/gotta_be_you-ko.html" rel="alternate"></link><updated>2014-05-21T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-05-21:gotta_be_you-ko.html</id><summary type="html">&lt;p&gt;&lt;div class="youtube" align="center"&gt;&lt;iframe width="420" height="315" src="https://www.youtube.com/embed/zdKTgwffmdo" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 I&amp;#8217;m the one that needs to apologize&amp;#8230;
 I want to make things better&lt;/blockquote&gt;
@@ -254,7 +254,7 @@ still make up the foundations of computation as we know&amp;nbsp;today.&lt;/p&gt
 &lt;p&gt;Afterwards I then made up my mind on trying to learn how to write
 my own computer programs and see where it would lead&amp;nbsp;me.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Since then it&amp;#8217;s been a remarkable&amp;nbsp;year.&lt;/strong&gt;&lt;/p&gt;
-</summary><category term="alan"></category><category term="turing"></category><category term="dyson"></category><category term="computing"></category></entry><entry><title>New Beginnings</title><link href="http://sanghan.me/blog/2014/05/new_beginnings/" rel="alternate"></link><updated>2014-05-04T23:24:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-05-04:blog/2014/05/new_beginnings/</id><summary type="html">&lt;div class="section" id="anything-you-see-below-this-is-old-news"&gt;
+</summary><category term="alan"></category><category term="turing"></category><category term="dyson"></category><category term="computing"></category></entry><entry><title>A New Beginning</title><link href="http://sanghan.me/blog/2014/05/a_new_beginning/" rel="alternate"></link><updated>2014-05-04T23:24:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-05-04:blog/2014/05/a_new_beginning/</id><summary type="html">&lt;div class="section" id="anything-you-see-below-this-is-old-news"&gt;
 &lt;h2&gt;Anything you see below this is old&amp;nbsp;news&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="photoshoot" src="http://sanghan.me/img/photoshoot.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;Around the end of 2011, I stopped blogging. I had created
@@ -285,9 +285,9 @@ didn&amp;#8217;t look&amp;nbsp;back.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 Since then, I&amp;#8217;ve learned a lot. So I&amp;#8217;ve decided to start blogging again.&lt;/blockquote&gt;
 &lt;/div&gt;
-&lt;div class="section" id="my-photoelectric-blog"&gt;
-&lt;h2&gt;My Photoelectric&amp;nbsp;Blog&lt;/h2&gt;
-&lt;p&gt;I&amp;#8217;ve decided to name this blog &amp;#8216;My Photoelectric Blog&amp;#8217;. The reference is to the
+&lt;div class="section" id="a-light-quanta-blog"&gt;
+&lt;h2&gt;A Light Quanta&amp;nbsp;Blog&lt;/h2&gt;
+&lt;p&gt;I&amp;#8217;ve decided to name this blog &amp;#8216;A Quanta of Light&amp;#8217;. The reference is to the
 photoelectric effect, a discovery made by Physicist Max Plank to
 describe the emission of electrons from a metal surface with discrete energies
 associated with their wavelengths.
@@ -300,7 +300,7 @@ and accepted at the time. Much like this blog is a composition of works made
 in the&amp;nbsp;past.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="The Photoelectric Effect" src="http://sanghan.me/img/hv.png" style="width: 250px; height: 250px;" /&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-The equation E = ℎν - ϕ describes the particle nature of light and energy&lt;/blockquote&gt;
+The equation E = ℎ𝜈 - 𝜙 describes the particle nature of light and energy&lt;/blockquote&gt;
 &lt;p&gt;All the content below this was generated from my old tumblr blog. I was able to
 write a program that scraped old posts through the tumblr &lt;span class="caps"&gt;API&lt;/span&gt; and convert
 it into reStructuredText for parsing. This new blog is now generated by
