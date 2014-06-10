@@ -20,7 +20,9 @@
 
 img {
     display: block;
-    width: 1024px;
+    :default {
+        width: 1024px;
+    }
     max-width: 100% !important;
     height: auto;
 }
