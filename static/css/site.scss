@@ -7,13 +7,15 @@
 
 @mixin background-image(
     $url,
-    $position: no-repeat top fixed) {
+    $position: no-repeat top fixed,
+    $vheight: 640px) {
     max-width: 100%;
     background: url($url) $position;
+    background-position: center top;
+    height: $vheight;
 }
 
 #bg {
-    height: 640px;
     @include background-image("/img/bird.jpg");
     @include background-sizing;
 }
@@ -42,19 +44,12 @@ img {
     }
 }
 
-// For Handheld Devices with small screen sizes
 @media (max-width: 768px), handheld and (orientation: landscape) {
     #bg {
-        @include background-image("/img/bird-640.jpg");
-        background-position: center top;
-        height: 480px;
+        @include background-image("/img/bird-640.jpg", $vheight: 480px);
     }
 }
 
 @media (min-width: 1200px) {
-    #bg {
-        @include background-image("/img/bird-full.jpg");
-        background-position: center top;
-        height: 1028px;
-    }
-}
+    #bg {@include background-image("/img/bird-full.jpg", $vheight: 1028px);}}
+
