@@ -78,10 +78,12 @@ Pelican will use later to generate the&amp;nbsp;blog.&lt;/p&gt;
       word-break: break-all;
       word-wrap: break-word;
       color: #7b8a8b;
-      background-color: #ecf0f1;
+      background-color: #&lt;span class="caps"&gt;FDF6E3&lt;/span&gt;;
       border: 1px solid #cccccc;
       border-radius: 4px; }
+  .swift {background-color: #&lt;span class="caps"&gt;FDF6E3&lt;/span&gt;}
 &lt;/style&gt;
+&lt;div class="swift"&gt;
 &lt;code&gt;
 &lt;p class="p1"&gt;// Sang&amp;nbsp;Han&lt;/p&gt;
 &lt;p class="p1"&gt;// An implementation of a bubble party/bubble sort written in&amp;nbsp;swift&lt;/p&gt;
@@ -134,7 +136,8 @@ Pelican will use later to generate the&amp;nbsp;blog.&lt;/p&gt;
 &lt;p class="p3"&gt;}&lt;/p&gt;
 &lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p class="p6"&gt;&lt;span class="s1"&gt;println&lt;/span&gt;&lt;span class="s4"&gt;(&lt;/span&gt;bubbleParty&lt;span class="s4"&gt;(&lt;/span&gt;randomPeople&lt;span class="s4"&gt;(&lt;/span&gt;100&lt;span class="s4"&gt;)))&lt;/span&gt;&lt;/p&gt;
-&lt;/code&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Wed, 04 Jun 2014 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2014-06-04:blog/2014/06/swift_bubble_sort/</guid><category>Apple</category><category>Languages</category><category>WWDC</category></item><item><title>2NE1 - 너 아님 안돼 (Gotta Be You)</title><link>http://sanghan.me/gotta_be_you-ko.html</link><description>&lt;p&gt;&lt;div class="youtube" align="center"&gt;&lt;iframe width="420" height="315" src="https://www.youtube.com/embed/zdKTgwffmdo" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/code&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Wed, 04 Jun 2014 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2014-06-04:blog/2014/06/swift_bubble_sort/</guid><category>Apple</category><category>Languages</category><category>WWDC</category></item><item><title>2NE1 - 너 아님 안돼 (Gotta Be You)</title><link>http://sanghan.me/gotta_be_you-ko.html</link><description>&lt;p&gt;&lt;div class="youtube" align="center"&gt;&lt;iframe width="420" height="315" src="https://www.youtube.com/embed/zdKTgwffmdo" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 I&amp;#8217;m the one that needs to apologize&amp;#8230;
 I want to make things better&lt;/blockquote&gt;
