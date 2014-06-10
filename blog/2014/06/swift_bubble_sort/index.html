@@ -15,7 +15,7 @@
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Bubble Sort Written in Swift"/>
             <meta property="og:url" content="http://sanghan.me/blog/2014/06/swift_bubble_sort/"/>
-            <meta property="og:description" content=""/>
+            <meta property="og:description" content="p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px &#39;DejaVu Sans Mono for Powerline&#39;; color: #586e75} p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px &#39;DejaVu Sans Mono for Powerline&#39;; color: #839496; min-height: 16.0px} p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px &#39;DejaVu Sans Mono for Powerline&#39;; color: #839496} p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px &#39;DejaVu Sans Mono for Powerline&#39;; color: #278bd2} p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14 ..."/>
             <meta property="article:published_time" content="2014-06-04" />
                 <meta property="article:section" content="Programming" />
                 <meta property="article:tag" content="Apple" />
@@ -167,7 +167,70 @@
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <script src="https://gist.github.com/87221a52ecb13f337fb6.js" type="text/javascript"></script>
+                <style type="text/css">
+  p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'DejaVu Sans Mono for Powerline'; color: #586e75}
+  p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'DejaVu Sans Mono for Powerline'; color: #839496; min-height: 16.0px}
+  p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'DejaVu Sans Mono for Powerline'; color: #839496}
+  p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'DejaVu Sans Mono for Powerline'; color: #278bd2}
+  p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'DejaVu Sans Mono for Powerline'; color: #b58901}
+  p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'DejaVu Sans Mono for Powerline'; color: #29a198}
+  span.s1 {color: #859901}
+  span.s2 {color: #b58901}
+  span.s3 {color: #29a198}
+  span.s4 {color: #839496}
+  span.s5 {color: #6c71c4}
+</style>
+<p class="p1">// Sang&nbsp;Han</p>
+<p class="p1">// An implementation of a bubble party/bubble sort written in&nbsp;swift</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="s1">protocol</span> RandomPartyGenerator&nbsp;{</p>
+<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">func</span> random() -&gt; <span class="s1">Double</span></p>
+<p class="p3">}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="s1">class</span> BubblePartyGenerator: <span class="s2">RandomPartyGenerator</span>&nbsp;{</p>
+<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">var</span> lastTime = <span class="s3">42.0</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">let</span> soberietyLevel = <span class="s3">3817.0</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">let</span> someLOLOLOLs = <span class="s3">29573.0</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">let</span> nextDayRegrets = <span class="s3">139968.0</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">func</span> random() -&gt; <span class="s1">Double</span>&nbsp;{</p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span>lastTime<span class="s4"> = ((</span>lastTime<span class="s4"> * </span>soberietyLevel<span class="s4"> + </span>someLOLOLOLs<span class="s4">) % </span>nextDayRegrets<span class="s4">)</span></p>
+<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">return</span><span class="s4"> (</span>lastTime<span class="s4"> / </span>nextDayRegrets<span class="s4">) * </span><span class="s3">100</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p3">}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="s1">func</span> randomPeople(partySize: <span class="s1">Int</span>) -&gt; <span class="s1">Int</span>[]</p>
+<p class="p3">{</p>
+<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">var</span> invites: <span class="s1">Int</span>[] =&nbsp;[]</p>
+<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">let</span><span class="s4"> generator = </span>BubblePartyGenerator<span class="s4">()</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">for</span> <span class="s1">_</span> <span class="s1">in</span> <span class="s3">0</span>..partySize&nbsp;{</p>
+<p class="p3"><span class="Apple-converted-space">        </span>invites.<span class="s1">append</span>(<span class="s1">Int</span>(generator.<span class="s3">random</span>() * <span class="s3">100</span>))</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">return</span>&nbsp;invites</p>
+<p class="p3">}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="s1">func</span> bubbleParty(sexyPeople: <span class="s1">Int</span>[]) -&gt; <span class="s1">Int</span>[]</p>
+<p class="p3">{</p>
+<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">let</span> guestList = sexyPeople.<span class="s5">count</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">var</span> isFlippyFloppy = <span class="s5">true</span></p>
+<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">for</span> theLadies <span class="s1">in</span> <span class="s3">0</span>..guestList&nbsp;{</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span><span class="s1">if</span> isFlippyFloppy&nbsp;{</p>
+<p class="p3"><span class="Apple-converted-space">            </span>isFlippyFloppy = <span class="s5">false</span></p>
+<p class="p3"><span class="Apple-converted-space">            </span><span class="s1">for</span> theHomies <span class="s1">in</span> <span class="s3">0</span>..guestList-theLadies-<span class="s3">1</span>&nbsp;{</p>
+<p class="p1"><span class="s4"><span class="Apple-converted-space">                </span></span>// Ladies to the&nbsp;front</p>
+<p class="p3"><span class="Apple-converted-space">                </span><span class="s1">if</span> (sexyPeople[theHomies] &gt; sexyPeople[theHomies+<span class="s3">1</span>])</p>
+<p class="p3"><span class="Apple-converted-space">                </span>{</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>(sexyPeople[theHomies], sexyPeople[theHomies+<span class="s3">1</span>])&nbsp;=</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>(sexyPeople[theHomies+<span class="s3">1</span>],&nbsp;sexyPeople[theHomies])</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>isFlippyFloppy = <span class="s5">true</span></p>
+<p class="p3"><span class="Apple-converted-space">                </span>}</p>
+<p class="p3"><span class="Apple-converted-space">            </span>}</p>
+<p class="p3"><span class="Apple-converted-space">        </span>}</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">return</span>&nbsp;sexyPeople</p>
+<p class="p3">}</p>
+<p class="p2"><br></p>
+<p class="p6"><span class="s1">println</span><span class="s4">(</span>bubbleParty<span class="s4">(</span>randomPeople<span class="s4">(</span>100<span class="s4">)))</span></p>
             </div>
             <!-- /.entry-content -->
     <hr/>

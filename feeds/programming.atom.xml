@@ -57,4 +57,67 @@ interpreter. We then append the current directory into the
 Python &lt;span class="caps"&gt;PATH&lt;/span&gt; and then start filling out some global variables which
 Pelican will use later to generate the&amp;nbsp;blog.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry><entry><title>Bubble Sort Written in Swift</title><link href="http://sanghan.me/blog/2014/06/swift_bubble_sort/" rel="alternate"></link><updated>2014-06-04T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-04:blog/2014/06/swift_bubble_sort/</id><summary type="html">&lt;script src="https://gist.github.com/87221a52ecb13f337fb6.js" type="text/javascript"&gt;&lt;/script&gt;</summary><category term="Apple"></category><category term="Languages"></category><category term="WWDC"></category></entry></feed>
+</summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry><entry><title>Bubble Sort Written in Swift</title><link href="http://sanghan.me/blog/2014/06/swift_bubble_sort/" rel="alternate"></link><updated>2014-06-04T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-04:blog/2014/06/swift_bubble_sort/</id><summary type="html">&lt;style type="text/css"&gt;
+  p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'DejaVu Sans Mono for Powerline'; color: #586e75}
+  p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'DejaVu Sans Mono for Powerline'; color: #839496; min-height: 16.0px}
+  p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'DejaVu Sans Mono for Powerline'; color: #839496}
+  p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'DejaVu Sans Mono for Powerline'; color: #278bd2}
+  p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'DejaVu Sans Mono for Powerline'; color: #b58901}
+  p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'DejaVu Sans Mono for Powerline'; color: #29a198}
+  span.s1 {color: #859901}
+  span.s2 {color: #b58901}
+  span.s3 {color: #29a198}
+  span.s4 {color: #839496}
+  span.s5 {color: #6c71c4}
+&lt;/style&gt;
+&lt;p class="p1"&gt;// Sang&amp;nbsp;Han&lt;/p&gt;
+&lt;p class="p1"&gt;// An implementation of a bubble party/bubble sort written in&amp;nbsp;swift&lt;/p&gt;
+&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="s1"&gt;protocol&lt;/span&gt; RandomPartyGenerator&amp;nbsp;{&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;func&lt;/span&gt; random() -&amp;gt; &lt;span class="s1"&gt;Double&lt;/span&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;}&lt;/p&gt;
+&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="s1"&gt;class&lt;/span&gt; BubblePartyGenerator: &lt;span class="s2"&gt;RandomPartyGenerator&lt;/span&gt;&amp;nbsp;{&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;var&lt;/span&gt; lastTime = &lt;span class="s3"&gt;42.0&lt;/span&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;let&lt;/span&gt; soberietyLevel = &lt;span class="s3"&gt;3817.0&lt;/span&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;let&lt;/span&gt; someLOLOLOLs = &lt;span class="s3"&gt;29573.0&lt;/span&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;let&lt;/span&gt; nextDayRegrets = &lt;span class="s3"&gt;139968.0&lt;/span&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;func&lt;/span&gt; random() -&amp;gt; &lt;span class="s1"&gt;Double&lt;/span&gt;&amp;nbsp;{&lt;/p&gt;
+&lt;p class="p4"&gt;&lt;span class="s4"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&lt;/span&gt;lastTime&lt;span class="s4"&gt; = ((&lt;/span&gt;lastTime&lt;span class="s4"&gt; * &lt;/span&gt;soberietyLevel&lt;span class="s4"&gt; + &lt;/span&gt;someLOLOLOLs&lt;span class="s4"&gt;) % &lt;/span&gt;nextDayRegrets&lt;span class="s4"&gt;)&lt;/span&gt;&lt;/p&gt;
+&lt;p class="p4"&gt;&lt;span class="s4"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&lt;/span&gt;&lt;span class="s1"&gt;return&lt;/span&gt;&lt;span class="s4"&gt; (&lt;/span&gt;lastTime&lt;span class="s4"&gt; / &lt;/span&gt;nextDayRegrets&lt;span class="s4"&gt;) * &lt;/span&gt;&lt;span class="s3"&gt;100&lt;/span&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;
+&lt;p class="p3"&gt;}&lt;/p&gt;
+&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="s1"&gt;func&lt;/span&gt; randomPeople(partySize: &lt;span class="s1"&gt;Int&lt;/span&gt;) -&amp;gt; &lt;span class="s1"&gt;Int&lt;/span&gt;[]&lt;/p&gt;
+&lt;p class="p3"&gt;{&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;var&lt;/span&gt; invites: &lt;span class="s1"&gt;Int&lt;/span&gt;[] =&amp;nbsp;[]&lt;/p&gt;
+&lt;p class="p5"&gt;&lt;span class="s4"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;/span&gt;&lt;span class="s1"&gt;let&lt;/span&gt;&lt;span class="s4"&gt; generator = &lt;/span&gt;BubblePartyGenerator&lt;span class="s4"&gt;()&lt;/span&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;for&lt;/span&gt; &lt;span class="s1"&gt;_&lt;/span&gt; &lt;span class="s1"&gt;in&lt;/span&gt; &lt;span class="s3"&gt;0&lt;/span&gt;..partySize&amp;nbsp;{&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;invites.&lt;span class="s1"&gt;append&lt;/span&gt;(&lt;span class="s1"&gt;Int&lt;/span&gt;(generator.&lt;span class="s3"&gt;random&lt;/span&gt;() * &lt;span class="s3"&gt;100&lt;/span&gt;))&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;return&lt;/span&gt;&amp;nbsp;invites&lt;/p&gt;
+&lt;p class="p3"&gt;}&lt;/p&gt;
+&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="s1"&gt;func&lt;/span&gt; bubbleParty(sexyPeople: &lt;span class="s1"&gt;Int&lt;/span&gt;[]) -&amp;gt; &lt;span class="s1"&gt;Int&lt;/span&gt;[]&lt;/p&gt;
+&lt;p class="p3"&gt;{&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;let&lt;/span&gt; guestList = sexyPeople.&lt;span class="s5"&gt;count&lt;/span&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;var&lt;/span&gt; isFlippyFloppy = &lt;span class="s5"&gt;true&lt;/span&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;for&lt;/span&gt; theLadies &lt;span class="s1"&gt;in&lt;/span&gt; &lt;span class="s3"&gt;0&lt;/span&gt;..guestList&amp;nbsp;{&lt;/p&gt;
+&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;&lt;span class="s1"&gt;if&lt;/span&gt; isFlippyFloppy&amp;nbsp;{&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;            &lt;/span&gt;isFlippyFloppy = &lt;span class="s5"&gt;false&lt;/span&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;            &lt;/span&gt;&lt;span class="s1"&gt;for&lt;/span&gt; theHomies &lt;span class="s1"&gt;in&lt;/span&gt; &lt;span class="s3"&gt;0&lt;/span&gt;..guestList-theLadies-&lt;span class="s3"&gt;1&lt;/span&gt;&amp;nbsp;{&lt;/p&gt;
+&lt;p class="p1"&gt;&lt;span class="s4"&gt;&lt;span class="Apple-converted-space"&gt;                &lt;/span&gt;&lt;/span&gt;// Ladies to the&amp;nbsp;front&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;                &lt;/span&gt;&lt;span class="s1"&gt;if&lt;/span&gt; (sexyPeople[theHomies] &amp;gt; sexyPeople[theHomies+&lt;span class="s3"&gt;1&lt;/span&gt;])&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;                &lt;/span&gt;{&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;                    &lt;/span&gt;(sexyPeople[theHomies], sexyPeople[theHomies+&lt;span class="s3"&gt;1&lt;/span&gt;])&amp;nbsp;=&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;                        &lt;/span&gt;(sexyPeople[theHomies+&lt;span class="s3"&gt;1&lt;/span&gt;],&amp;nbsp;sexyPeople[theHomies])&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;                    &lt;/span&gt;isFlippyFloppy = &lt;span class="s5"&gt;true&lt;/span&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;                &lt;/span&gt;}&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;            &lt;/span&gt;}&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;        &lt;/span&gt;}&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;}&lt;/p&gt;
+&lt;p class="p3"&gt;&lt;span class="Apple-converted-space"&gt;    &lt;/span&gt;&lt;span class="s1"&gt;return&lt;/span&gt;&amp;nbsp;sexyPeople&lt;/p&gt;
+&lt;p class="p3"&gt;}&lt;/p&gt;
+&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p class="p6"&gt;&lt;span class="s1"&gt;println&lt;/span&gt;&lt;span class="s4"&gt;(&lt;/span&gt;bubbleParty&lt;span class="s4"&gt;(&lt;/span&gt;randomPeople&lt;span class="s4"&gt;(&lt;/span&gt;100&lt;span class="s4"&gt;)))&lt;/span&gt;&lt;/p&gt;</summary><category term="Apple"></category><category term="Languages"></category><category term="WWDC"></category></entry></feed>
