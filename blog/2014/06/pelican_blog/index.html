@@ -26,9 +26,9 @@
         <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.sanghan.min.css" type="text/css"/>
 
     <!-- Syntax Highlighting -->
-    <!-- <link href="http://sanghan.me/static/css/prism.css" rel="stylesheet"> -->
+    <link href="http://sanghan.me/static/css/prism.css" rel="stylesheet">
     <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
-    <link href="http://sanghan.me/theme/css/pygments/native.css" rel="stylesheet">
+    <!-- <link href="http://sanghan.me/theme/css/pygments/native.css" rel="stylesheet"> -->
 
 
         <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
@@ -200,27 +200,30 @@ located at the root of the project directory. This configuration file helps
 Pelican figure out some user specific details that are necessary in order to
 build the webpage, very similar to how Sphinx generates&nbsp;documentation.</p>
 <p>Here is a snippet of how this blog&#8217;s configuration file&nbsp;looks.</p>
-<div class="highlight"><pre> #!/usr/bin/env python
- # -*- coding: utf-8 -*- #
- from __future__ import unicode_literals
+<pre>
+<code class="language-python">
 
-import sys
-from os.path import abspath, curdir
+    #!/usr/bin/env python
+    # -*- coding: utf-8 -*- #
+    from __future__ import unicode_literals
 
-sys.path.append(abspath(curdir))
+   import sys
+   from os.path import abspath, curdir
 
-AUTHOR = &#39;Sang Han&#39;
-SINGLE_AUTHOR = True
-SITENAME = &#39;My Photoelectric Blog&#39;
-SITEURL = &#39;http://sanghan.me&#39;
-STATIC_PATHS = [
-    &#39;img&#39;,
-    &#39;extra/CNAME&#39;,
-    &#39;extra/robots.txt&#39;,
-    &#39;static&#39;,
-]
-</pre></div>
-<p>As you can see, the syntax is just Python. The first block
+   sys.path.append(abspath(curdir))
+
+   AUTHOR = 'Sang Han'
+   SINGLE_AUTHOR = True
+   SITENAME = 'My Photoelectric Blog'
+   SITEURL = 'http://sanghan.me'
+   STATIC_PATHS = [
+       'img',
+       'extra/CNAME',
+       'extra/robots.txt',
+       'static',
+   ]
+</code>
+</pre><p>As you can see, the syntax is just Python. The first block
 is just a shebang line specifying the default python
 interpreter. We then append the current directory into the
 Python <span class="caps">PATH</span> and then start filling out some global variables which
@@ -335,7 +338,7 @@ Pelican will use later to generate the&nbsp;blog.</p>
 <script type="text/javascript" src="http://sanghan.me/theme/js/jquery.min.js"></script>
 <script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
-<!-- <script type="text/javascript" src="http://sanghan.me/static/js/prism.js"></script> -->
+<script type="text/javascript" src="http://sanghan.me/static/js/prism.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">

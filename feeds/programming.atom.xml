@@ -31,27 +31,30 @@ located at the root of the project directory. This configuration file helps
 Pelican figure out some user specific details that are necessary in order to
 build the webpage, very similar to how Sphinx generates&amp;nbsp;documentation.&lt;/p&gt;
 &lt;p&gt;Here is a snippet of how this blog&amp;#8217;s configuration file&amp;nbsp;looks.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt; #!/usr/bin/env python
- # -*- coding: utf-8 -*- #
- from __future__ import unicode_literals
+&lt;pre&gt;
+&lt;code class="language-python"&gt;
 
-import sys
-from os.path import abspath, curdir
+    #!/usr/bin/env python
+    # -*- coding: utf-8 -*- #
+    from __future__ import unicode_literals
 
-sys.path.append(abspath(curdir))
+   import sys
+   from os.path import abspath, curdir
 
-AUTHOR = &amp;#39;Sang Han&amp;#39;
-SINGLE_AUTHOR = True
-SITENAME = &amp;#39;My Photoelectric Blog&amp;#39;
-SITEURL = &amp;#39;http://sanghan.me&amp;#39;
-STATIC_PATHS = [
-    &amp;#39;img&amp;#39;,
-    &amp;#39;extra/CNAME&amp;#39;,
-    &amp;#39;extra/robots.txt&amp;#39;,
-    &amp;#39;static&amp;#39;,
-]
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;As you can see, the syntax is just Python. The first block
+   sys.path.append(abspath(curdir))
+
+   AUTHOR = 'Sang Han'
+   SINGLE_AUTHOR = True
+   SITENAME = 'My Photoelectric Blog'
+   SITEURL = 'http://sanghan.me'
+   STATIC_PATHS = [
+       'img',
+       'extra/CNAME',
+       'extra/robots.txt',
+       'static',
+   ]
+&lt;/code&gt;
+&lt;/pre&gt;&lt;p&gt;As you can see, the syntax is just Python. The first block
 is just a shebang line specifying the default python
 interpreter. We then append the current directory into the
 Python &lt;span class="caps"&gt;PATH&lt;/span&gt; and then start filling out some global variables which
