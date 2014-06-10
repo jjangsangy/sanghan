@@ -70,7 +70,7 @@ Pelican will use later to generate the&amp;nbsp;blog.&lt;/p&gt;
   span.s4 {color: #839496}
   span.s5 {color: #6c71c4}
   code { border: 1px solid #&lt;span class="caps"&gt;CCCCCC&lt;/span&gt;;
-    background: none repeat scroll 0 0 #&lt;span class="caps"&gt;FDF6E3&lt;/span&gt;;
+    background: none repeat scroll 0 0 #&lt;span class="caps"&gt;FDF6E3&lt;/span&gt; !important;
     color: #657B83;
     border-radius: 4px;
     display: block;
