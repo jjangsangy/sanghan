@@ -13,7 +13,7 @@ to the masses and passed it out to Apple Developers packaged in the XCode 6&amp;
 &lt;/div&gt;
 &lt;div class="section" id="modern-safe-and-powerful-choose-two"&gt;
 &lt;h2&gt;Modern, Safe and Powerful? Choose&amp;nbsp;Two&lt;/h2&gt;
-&lt;p&gt;In an earlier &lt;a class="reference external" href="./blog/2014/06/swift_program_is_swift_except_when_its_not/index.html"&gt;post&lt;/a&gt;, I decided to write a fun bubble sort as
+&lt;p&gt;In an earlier &lt;a class="reference external" href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/index.html"&gt;post&lt;/a&gt;, I decided to write a fun bubble sort as
 an algorithmic &amp;quot;Hello World&amp;quot;. But there was only once issue,
 &lt;strong&gt;It was super slow&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /&gt;&lt;/p&gt;
