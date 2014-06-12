@@ -148,12 +148,6 @@
                 <div class="summary"><p></p>
 <p>This past <span class="caps">WWDC</span> Apple revealed a brand new programming language called <a class="reference external" href="&lt;https://developer.apple.com/swift/&gt;">Swift</a>
 to the masses and passed it out to Apple Developers packaged in the XCode 6 Beta.</p>
-<div class="section" id="modern-safe-and-powerful-choose-two">
-<h2>Modern, Safe and Powerful? Choose Two</h2>
-<p>I’ll have to preface this first by saying Swift is still a language
-on training wheels and many of the language optomizations and details
-will likely be worked out before the official release.</p>
-</div>
 <div class="section" id="language-features">
 <h2>Language Features</h2>
 <ul class="simple">
@@ -163,10 +157,20 @@ will likely be worked out before the official release.</p>
 <li>First-Class Functions and Closures</li>
 </ul>
 </div>
-<div class="section" id="functions-now-just-named-closures">
-<h2>Functions: Now Just Named Closures</h2>
-<div class="highlight"><pre><span class="n">let</span> <span class="n">strings</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">.</span><span class="n">map</span> <span class="p">{</span>
-    <span class="p">(</span><span class="kt">var</span> <span class="n">number ...</span></pre></div></div>
+<div class="section" id="modern-safe-and-powerful-choose-two">
+<h2>Modern, Safe and Powerful? Choose Two</h2>
+<p>In an earlier <a class="reference external" href="{filename}/blog/2014/06/swift_bubble_sort">post</a>, I decided to write a fun bubble sort as
+an algorithmic "Hello World". But there was only once issue,
+<strong>It was super slow</strong>.</p>
+<p></p>
+<div class="section" id="swift-version">
+<h3>Swift Version</h3>
+<div class="highlight"><pre><span class="n">import</span> <span class="n">Cocoa</span>
+
+<span class="n">func</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="n">CLong</span><span class="p">[])</span> <span class="p">-&gt;</span> <span class="n">CLong</span><span class="p">[]</span>
+<span class="p">{</span>
+    <span class="n">let</span> <span class="n">length</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">count</span>
+    <span class="kt">var</span> <span class="n">count</span><span class="p">:</span> <span class="n">CLong</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span> <span class="n">CLong ...</span></pre></div></div></div>
                         <p><img src="http://sanghan.me/img/swift.jpg" /></p>
                     <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
                         <i class="fa fa-book"></i>
