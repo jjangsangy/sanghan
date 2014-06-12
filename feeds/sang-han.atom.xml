@@ -7,6 +7,16 @@ to the masses and passed it out to Apple Developers packaged in the XCode 6&amp;
 &lt;p&gt;I&amp;#8217;ll have to preface this first by saying Swift is still a language
 on training wheels and many of the language optomizations and details
 will likely be worked out before the official&amp;nbsp;release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="language-features"&gt;
+&lt;h2&gt;Language&amp;nbsp;Features&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Type&amp;nbsp;Inferencing&lt;/li&gt;
+&lt;li&gt;Optionals&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="functions-now-just-named-closures"&gt;
+&lt;h2&gt;Functions: Now Just Named&amp;nbsp;Closures&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </summary><category term="Apple"></category><category term="Programming Language"></category><category term="Benchmarks"></category><category term="Bubble Sort"></category></entry><entry><title>Pelican: A Blogging Engine Written in Python</title><link href="http://sanghan.me/blog/2014/06/pelican_blog/" rel="alternate"></link><updated>2014-06-09T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-09:blog/2014/06/pelican_blog/</id><summary type="html">&lt;p&gt;There are many static site generators out&amp;nbsp;there.&lt;/p&gt;
