@@ -148,84 +148,43 @@
     
 </footer><!-- /.post-info -->                    </div>
                 </h3>
-                <div class="summary"><p class="first last"><style type="text/css">
-  p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font-size: 12.0px; font-family: Menlo,Monaco,Consolas,"Courier New",monospace; color: #586e75}
-  p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font-size: 12.0px; font-family: Menlo,Monaco,Consolas,"Courier New",monospace; color: #839496; min-height: 16.0px}
-  p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font-size: 12.0px; font-family: Menlo,Monaco,Consolas,"Courier New",monospace; color: #839496}
-  p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font-size: 12.0px; font-family: Menlo,Monaco,Consolas,"Courier New",monospace; color: #278bd2}
-  p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font-size: 12.0px; font-family: Menlo,Monaco,Consolas,"Courier New",monospace; color: #b58901}
-  p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font-size: 12.0px; font-family: Menlo,Monaco,Consolas,"Courier New",monospace; color: #29a198}
-  span.s1 {color: #859901}
-  span.s2 {color: #b58901}
-  span.s3 {color: #29a198}
-  span.s4 {color: #839496}
-  span.s5 {color: #6c71c4}
-  div.swift { border: 1px solid #<span class="caps">CCCCCC</span>;
-      display: block;
-      padding: 10px;
-      margin: 0 0 10.5px;
-      font-size: 14px;
-      line-height: 1.42857143;
-      word-break: break-all;
-      word-wrap: break-word;
-      color: #7b8a8b;
-      border: 1px solid #cccccc;
-      border-radius: 4px; }
-</style>
-<div class="swift" style="background-color: #fdf6e3">
-<p class="p1">// Sang&nbsp;Han</p>
-<p class="p1">// An implementation of a bubble party/bubble sort written in&nbsp;swift</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="s1">protocol</span> RandomPartyGenerator&nbsp;{</p>
-<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">func</span> random() -&gt; <span class="s1">Double</span></p>
-<p class="p3">}</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="s1">class</span> BubblePartyGenerator: <span class="s2">RandomPartyGenerator</span>&nbsp;{</p>
-<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">var</span> lastTime = <span class="s3">42.0</span></p>
-<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">let</span> soberietyLevel = <span class="s3">3817.0</span></p>
-<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">let</span> someLOLOLOLs = <span class="s3">29573.0</span></p>
-<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">let</span> nextDayRegrets = <span class="s3">139968.0</span></p>
-<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">func</span> random() -&gt; <span class="s1">Double</span>&nbsp;{</p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span>lastTime<span class="s4"> = ((</span>lastTime<span class="s4"> * </span>soberietyLevel<span class="s4"> + </span>someLOLOLOLs<span class="s4">) % </span>nextDayRegrets<span class="s4">)</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">return</span><span class="s4"> (</span>lastTime<span class="s4"> / </span>nextDayRegrets<span class="s4">) * </span><span class="s3">100</span></p>
-<p class="p3"><span class="Apple-converted-space">    </span>}</p>
-<p class="p3">}</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="s1">func</span> randomPeople(partySize: <span class="s1">Int</span>) -&gt; <span class="s1">Int</span>[]</p>
-<p class="p3">{</p>
-<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">var</span> invites: <span class="s1">Int</span>[] =&nbsp;[]</p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">let</span><span class="s4"> generator = </span>BubblePartyGenerator<span class="s4">()</span></p>
-<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">for</span> <span class="s1">_</span> <span class="s1">in</span> <span class="s3">0</span>..partySize&nbsp;{</p>
-<p class="p3"><span class="Apple-converted-space">        </span>invites.<span class="s1">append</span>(<span class="s1">Int</span>(generator.<span class="s3">random</span>() * <span class="s3">100</span>))</p>
-<p class="p3"><span class="Apple-converted-space">    </span>}</p>
-<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">return</span>&nbsp;invites</p>
-<p class="p3">}</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="s1">func</span> bubbleParty(sexyPeople: <span class="s1">Int</span>[]) -&gt; <span class="s1">Int</span>[]</p>
-<p class="p3">{</p>
-<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">let</span> guestList = sexyPeople.<span class="s5">count</span></p>
-<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">var</span> isFlippyFloppy = <span class="s5">true</span></p>
-<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">for</span> theLadies <span class="s1">in</span> <span class="s3">0</span>..guestList&nbsp;{</p>
-<p class="p2"><br></p>
-<p class="p3"><span class="Apple-converted-space">        </span><span class="s1">if</span> isFlippyFloppy&nbsp;{</p>
-<p class="p3"><span class="Apple-converted-space">            </span>isFlippyFloppy = <span class="s5">false</span></p>
-<p class="p3"><span class="Apple-converted-space">            </span><span class="s1">for</span> theHomies <span class="s1">in</span> <span class="s3">0</span>..guestList-theLadies-<span class="s3">1</span>&nbsp;{</p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">                </span></span>// Ladies to the&nbsp;front</p>
-<p class="p3"><span class="Apple-converted-space">                </span><span class="s1">if</span> (sexyPeople[theHomies] &gt; sexyPeople[theHomies+<span class="s3">1</span>])</p>
-<p class="p3"><span class="Apple-converted-space">                </span>{</p>
-<p class="p3"><span class="Apple-converted-space">                    </span>(sexyPeople[theHomies], sexyPeople[theHomies+<span class="s3">1</span>])&nbsp;=</p>
-<p class="p3"><span class="Apple-converted-space">                        </span>(sexyPeople[theHomies+<span class="s3">1</span>],&nbsp;sexyPeople[theHomies])</p>
-<p class="p3"><span class="Apple-converted-space">                    </span>isFlippyFloppy = <span class="s5">true</span></p>
-<p class="p3"><span class="Apple-converted-space">                </span>}</p>
-<p class="p3"><span class="Apple-converted-space">            </span>}</p>
-<p class="p3"><span class="Apple-converted-space">        </span>}</p>
-<p class="p3"><span class="Apple-converted-space">    </span>}</p>
-<p class="p3"><span class="Apple-converted-space">    </span><span class="s1">return</span>&nbsp;sexyPeople</p>
-<p class="p3">}</p>
-<p class="p2"><br></p>
-<p class="p6"><span class="s1">println</span><span class="s4">(</span>bubbleParty<span class="s4">(</span>randomPeople<span class="s4">(</span>100<span class="s4">)))</span></p>
-</div></p>
+                <div class="summary"><div class="highlight"><pre><span class="c1">// Sang Han</span>
+<span class="c1">// An implementation of a bubble party/bubble sort written in swift</span>
 
+<span class="n">protocol</span> <span class="n">RandomPartyGenerator</span> <span class="p">{</span>
+    <span class="n">func</span> <span class="nf">random</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">Double</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">BubblePartyGenerator</span><span class="p">:</span> <span class="n">RandomPartyGenerator</span> <span class="p">{</span>
+    <span class="kt">var</span> <span class="n">lastTime</span> <span class="p">=</span> <span class="m">42.0</span>
+    <span class="n">let</span> <span class="n">soberietyLevel</span> <span class="p">=</span> <span class="m">3877.0</span>
+    <span class="n">let</span> <span class="n">someLOLOLOLs</span> <span class="p">=</span> <span class="m">29573.0</span>
+    <span class="n">let</span> <span class="n">nextDayRegrets</span> <span class="p">=</span> <span class="m">139968.0</span>
+    <span class="n">func</span> <span class="nf">random</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">Double</span> <span class="p">{</span>
+        <span class="n">lastTime</span> <span class="p">=</span> <span class="p">((</span><span class="n">lastTime</span> <span class="p">*</span> <span class="n">soberietyLevel</span> <span class="p">+</span> <span class="n">someLOLOLOLs</span><span class="p">)</span> <span class="p">%</span> <span class="n">nextDayRegrets</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">lastTime</span> <span class="p">/</span> <span class="n">nextDayRegrets</span><span class="p">)</span> <span class="p">*</span> <span class="m">100</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">func</span> <span class="nf">randomPeople</span><span class="p">(</span><span class="n">partySize</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Int</span><span class="p">[]</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">invites</span><span class="p">:</span> <span class="n">Int</span><span class="p">[]</span> <span class="p">=</span> <span class="p">[]</span>
+    <span class="n">let</span> <span class="n">generator</span> <span class="p">=</span> <span class="n">BubblePartyGenerator</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="n">partySize</span> <span class="p">{</span>
+        <span class="n">invites</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">Int</span><span class="p">(</span><span class="n">generator</span><span class="p">.</span><span class="n">random</span><span class="p">()</span> <span class="p">*</span> <span class="m">100</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">invites</span>
+<span class="p">}</span>
+
+<span class="n">func</span> <span class="nf">bubbleParty</span><span class="p">(</span><span class="n">sexyPeople</span><span class="p">:</span> <span class="n">Int</span><span class="p">[])</span> <span class="p">-&gt;</span> <span class="n">Int</span><span class="p">[]</span>
+<span class="p">{</span>
+    <span class="n">let</span> <span class="n">guestList</span> <span class="p">=</span> <span class="n">sexyPeople</span><span class="p">.</span><span class="n">count</span>
+    <span class="kt">var</span> <span class="n">isFlippyFloppy</span> <span class="p">=</span> <span class="k">true</span>
+    <span class="k">for</span> <span class="n">theLadies</span> <span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="n">guestList</span> <span class="p">{</span>
+
+        <span class="k">if</span> <span class="n">isFlippyFloppy</span> <span class="p">{</span>
+            <span class="n">isFlippyFloppy</span> <span class="p">=</span> <span class="k">false</span>
+            <span class="k">for</span> <span class="n">theHomies</span> <span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="n">guestList</span><span class="p">-</span><span class="n">theLadies ...</span></pre></div>
                     <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/06/swift_bubble_sort/">
                         <i class="fa fa-book"></i>
                         <span class="icon-label">Read More....</span>
