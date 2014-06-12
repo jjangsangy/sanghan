@@ -220,7 +220,6 @@ But there was only one issue, It was super slow.</blockquote>
 <h3>C&nbsp;Version</h3>
 <div class="highlight"><pre><span class="cp">#include &lt;stdio.h&gt;</span>
 <span class="cp">#include &lt;stdlib.h&gt;</span>
-<span class="cp">#include &lt;time.h&gt;</span>
 
 <span class="kt">void</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="kt">long</span> <span class="n">list</span><span class="p">[],</span> <span class="kt">long</span> <span class="n">n</span><span class="p">)</span>
 <span class="p">{</span>
@@ -243,7 +242,7 @@ But there was only one issue, It was super slow.</blockquote>
     <span class="kt">long</span> <span class="n">array</span><span class="p">[</span><span class="n">problem_size</span><span class="p">];</span>
     <span class="kt">long</span> <span class="n">count</span><span class="p">;</span>
 
-    <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+    <span class="n">sranddev</span><span class="p">();</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">problem_size</span><span class="p">;</span> <span class="n">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="n">problem_size</span><span class="p">;</span>
     <span class="p">}</span>
