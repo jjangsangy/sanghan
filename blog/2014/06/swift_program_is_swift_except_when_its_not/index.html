@@ -15,7 +15,7 @@
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Swift Program is Swift, Except When it’s Not"/>
             <meta property="og:url" content="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/"/>
-            <meta property="og:description" content="This past WWDC Apple revealed a brand new programming language called Swift to the masses and passed it out to Apple Developers packaged in the XCode 6 Beta. Modern, Safe and Powerful? Choose Two I’ll have to preface this first by saying Swift is still a language on training wheels and many of the language optomizations and details will likely be worked out before the official release. Language Features Type Inferencing Optionals Functions: Now Just Named Closures"/>
+            <meta property="og:description" content="This past WWDC Apple revealed a brand new programming language called Swift to the masses and passed it out to Apple Developers packaged in the XCode 6 Beta. Modern, Safe and Powerful? Choose Two I’ll have to preface this first by saying Swift is still a language on training wheels and many of the language optomizations and details will likely be worked out before the official release. Language Features Type Inferencing and Automatic Reference Counting (ARC) Optional Bindings and Generic Functions Integration with Objective-C First-Class Functions and Closures Functions: Now Just Named Closures let strings = numbers.map { (var number ..."/>
             <meta property="article:published_time" content="2014-06-11" />
                 <meta property="article:section" content="Programming" />
                 <meta property="article:tag" content="Apple" />
@@ -176,12 +176,24 @@ will likely be worked out before the official&nbsp;release.</p>
 <div class="section" id="language-features">
 <h2>Language&nbsp;Features</h2>
 <ul class="simple">
-<li>Type&nbsp;Inferencing</li>
-<li>Optionals</li>
+<li>Type Inferencing and Automatic Reference Counting (<span class="caps">ARC</span>)</li>
+<li>Optional Bindings and Generic&nbsp;Functions</li>
+<li>Integration with&nbsp;Objective-C</li>
+<li>First-Class Functions and&nbsp;Closures</li>
 </ul>
 </div>
 <div class="section" id="functions-now-just-named-closures">
 <h2>Functions: Now Just Named&nbsp;Closures</h2>
+<div class="highlight"><pre><span class="n">let</span> <span class="n">strings</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">.</span><span class="n">map</span> <span class="p">{</span>
+    <span class="p">(</span><span class="kt">var</span> <span class="n">number</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">String</span> <span class="k">in</span>
+    <span class="kt">var</span> <span class="n">output</span> <span class="p">=</span> <span class="s">&quot;&quot;</span>
+    <span class="k">while</span> <span class="n">number</span> <span class="p">&gt;</span> <span class="m">0</span> <span class="p">{</span>
+        <span class="n">output</span> <span class="p">=</span> <span class="n">digitNames</span><span class="p">[</span><span class="n">number</span> <span class="p">%</span> <span class="m">10</span><span class="p">]!</span> <span class="p">+</span> <span class="n">output</span>
+        <span class="n">number</span> <span class="p">/=</span> <span class="m">10</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">output</span>
+<span class="p">}</span>
+</pre></div>
 <p><img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /></p>
 </div>
 
