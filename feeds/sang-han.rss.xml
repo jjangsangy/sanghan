@@ -15,9 +15,8 @@ to the masses and passed it out to Apple Developers packaged in the XCode 6&amp;
 &lt;h2&gt;Modern, Safe and Powerful? Choose&amp;nbsp;Two&lt;/h2&gt;
 &lt;p&gt;In an earlier &lt;a class="reference external" href="http://sanghan.me/blog/2014/06/swift_bubble_sort/index.html"&gt;post&lt;/a&gt;, I decided to write a fun bubble sort as
 an algorithmic &amp;quot;Hello&amp;nbsp;World&amp;quot;.&lt;/p&gt;
-&lt;div class="line-block"&gt;
-&lt;div class="line"&gt;But there was only once issue, It was super slow.&lt;/div&gt;
-&lt;/div&gt;
+&lt;blockquote class="pull-quote"&gt;
+But there was only once issue, It was super slow.&lt;/blockquote&gt;
 &lt;p&gt;&lt;img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /&gt;&lt;/p&gt;
 &lt;div class="section" id="swift-version"&gt;
 &lt;h3&gt;Swift&amp;nbsp;Version&lt;/h3&gt;
