@@ -130,8 +130,31 @@ Swift Program is Swift, It even beats C by a non-trivial margin in these tests.&
 &lt;/div&gt;
 &lt;div class="section" id="modern-safe-and-powerful-choose-2"&gt;
 &lt;h2&gt;Modern, Safe and Powerful: Choose&amp;nbsp;2&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;However, one caveat to these tests is that during compilation we used the [-Ofast] flag like&amp;nbsp;so.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;According to a post on &lt;a class="reference external" href="http://stackoverflow.com/questions/24101718/swift-performance-sorting-arrays"&gt;Stacked&amp;nbsp;Overflow&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote class="pull-quote"&gt;
+However, -Ofast changes the semantics of the language a lot — in my testing,
+it disabled the checks for integer overflows and array indexing overflows.
+For example, with -Ofast the following Swift code runs silently
+without crashing (and prints out some garbage):&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;let&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="m"&gt;10000000&lt;/span&gt;
+&lt;span class="n"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;*&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;*&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;*&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;*&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;let&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;[](&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;repeatedValue&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;!--  --&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;With -Ofast I get pretty much what I would expect.
+The relevant part is a loop with 5 machine language&amp;nbsp;instructions.&lt;/li&gt;
+&lt;li&gt;With -O3 I get something that was beyond my wildest imagination.
+The inner loop spans 88 lines of assembly code.
+I did not try to understand all of it, but the most suspicious parts are 13 invocations of
+callq _swift_retain&amp;quot; and another 13 invocations of &amp;quot;callq _swift_release&amp;quot;.
+That is, 26 subroutine calls in the inner&amp;nbsp;loop!&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Wed, 11 Jun 2014 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2014-06-11:blog/2014/06/swift_program_is_swift_except_when_its_not/</guid><category>Apple</category><category>Programming Language</category><category>Benchmarks</category><category>Bubble Sort</category></item><item><title>Pelican: A Blogging Engine Written in Python</title><link>http://sanghan.me/blog/2014/06/pelican_blog/</link><description>&lt;p&gt;There are many static site generators out&amp;nbsp;there.&lt;/p&gt;
 &lt;p&gt;The most famous and well known being,

@@ -301,8 +301,31 @@ Swift Program is Swift, It even beats C by a non-trivial margin in these tests.<
 </div>
 <div class="section" id="modern-safe-and-powerful-choose-2">
 <h2>Modern, Safe and Powerful: Choose&nbsp;2</h2>
-<blockquote>
-<img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /></blockquote>
+<p><img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /></p>
+<p>However, one caveat to these tests is that during compilation we used the [-Ofast] flag like&nbsp;so.</p>
+<div class="highlight"><pre>xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort
+</pre></div>
+<p>According to a post on <a class="reference external" href="http://stackoverflow.com/questions/24101718/swift-performance-sorting-arrays">Stacked&nbsp;Overflow</a></p>
+<blockquote class="pull-quote">
+However, -Ofast changes the semantics of the language a lot — in my testing,
+it disabled the checks for integer overflows and array indexing overflows.
+For example, with -Ofast the following Swift code runs silently
+without crashing (and prints out some garbage):</blockquote>
+<div class="highlight"><pre><span class="n">let</span> <span class="n">n</span> <span class="p">=</span> <span class="m">10000000</span>
+<span class="n">println</span><span class="p">(</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">)</span>
+<span class="n">let</span> <span class="n">x</span> <span class="p">=</span> <span class="n">Int</span><span class="p">[](</span><span class="n">count</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span> <span class="n">repeatedValue</span><span class="p">:</span> <span class="m">10</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+</pre></div>
+<!--  -->
+<ul class="simple">
+<li>With -Ofast I get pretty much what I would expect.
+The relevant part is a loop with 5 machine language&nbsp;instructions.</li>
+<li>With -O3 I get something that was beyond my wildest imagination.
+The inner loop spans 88 lines of assembly code.
+I did not try to understand all of it, but the most suspicious parts are 13 invocations of
+callq _swift_retain&quot; and another 13 invocations of &quot;callq _swift_release&quot;.
+That is, 26 subroutine calls in the inner&nbsp;loop!</li>
+</ul>
 </div>
 
             </div>
