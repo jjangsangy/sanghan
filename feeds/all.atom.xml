@@ -16,7 +16,11 @@ characteristics. Many of the underlying optimization still have some kinks to
 work&amp;nbsp;through.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 And by kinks, I mean some big fixes&lt;/blockquote&gt;
-&lt;p&gt;Here are a couple examples of Bubble Sort written out in C, Python and&amp;nbsp;Swift.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="benchmarks"&gt;
+&lt;h2&gt;Benchmarks&lt;/h2&gt;
+&lt;blockquote class="pull-quote"&gt;
+Here are a couple examples of Bubble Sort written out in C, Python and Swift.&lt;/blockquote&gt;
 &lt;div class="section" id="swift-version"&gt;
 &lt;h3&gt;Swift&amp;nbsp;Version&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="lineno"&gt; 1&lt;/span&gt;  &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Cocoa&lt;/span&gt;
