@@ -120,16 +120,16 @@ And by kinks, I mean some big fixes&lt;/blockquote&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="section" id="fast-swift"&gt;
-&lt;h2&gt;Fast&amp;nbsp;Swift&lt;/h2&gt;
+&lt;div class="section" id="fast-swift-swift-vs-c-vs-pypy"&gt;
+&lt;h2&gt;Fast Swift: Swift vs C vs&amp;nbsp;PyPy&lt;/h2&gt;
 &lt;div class="plotly"&gt;
     &lt;iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/" width="100%" height="100%"&gt;&lt;/iframe&gt;
 &lt;/div&gt;&lt;!--  --&gt;
 &lt;blockquote class="pull-quote"&gt;
 Swift Program is Swift, It even beats C by a non-trivial margin in these tests.&lt;/blockquote&gt;
 &lt;/div&gt;
-&lt;div class="section" id="slow-swift"&gt;
-&lt;h2&gt;Slow&amp;nbsp;Swift&lt;/h2&gt;
+&lt;div class="section" id="slow-swift-swift-ofast-vs-swift-o3-vs-cpython"&gt;
+&lt;h2&gt;Slow Swift: Swift [-Ofast] vs Swift[-O3] vs&amp;nbsp;CPython&lt;/h2&gt;
 &lt;p&gt;One caveat however, is we used the [-Ofast] flag during compilation of the swift binaries like&amp;nbsp;so.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort
 &lt;/pre&gt;&lt;/div&gt;
@@ -144,6 +144,12 @@ It can yield significant high-performance wins from the compiler&lt;/blockquote&
 different picture than the one we started&amp;nbsp;with&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;xcrun --sdk macosx swift -O3 -o bubble_sort.swift bubble_sort
 &lt;/pre&gt;&lt;/div&gt;
+&lt;div class="note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
+&lt;p class="last"&gt;In order to save time, I&amp;#8217;ve changed the problem sizes to be
+multiples of 1k rather than 10k, so that tests could
+finish reasonibly quick. Other than that nothing has&amp;nbsp;changed.&lt;/p&gt;
+&lt;/div&gt;
 &lt;div class="plotly"&gt;
     &lt;iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/" width="100%" height="100%"&gt;&lt;/iframe&gt;
 &lt;/div&gt;&lt;/div&gt;

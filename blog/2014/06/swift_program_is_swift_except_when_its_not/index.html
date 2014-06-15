@@ -291,16 +291,16 @@ And by kinks, I mean some big fixes</blockquote>
 </pre></div>
 </div>
 </div>
-<div class="section" id="fast-swift">
-<h2>Fast&nbsp;Swift</h2>
+<div class="section" id="fast-swift-swift-vs-c-vs-pypy">
+<h2>Fast Swift: Swift vs C vs&nbsp;PyPy</h2>
 <div class="plotly">
     <iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/" width="100%" height="100%"></iframe>
 </div><!--  -->
 <blockquote class="pull-quote">
 Swift Program is Swift, It even beats C by a non-trivial margin in these tests.</blockquote>
 </div>
-<div class="section" id="slow-swift">
-<h2>Slow&nbsp;Swift</h2>
+<div class="section" id="slow-swift-swift-ofast-vs-swift-o3-vs-cpython">
+<h2>Slow Swift: Swift [-Ofast] vs Swift[-O3] vs&nbsp;CPython</h2>
 <p>One caveat however, is we used the [-Ofast] flag during compilation of the swift binaries like&nbsp;so.</p>
 <div class="highlight"><pre>xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort
 </pre></div>
@@ -315,6 +315,12 @@ It can yield significant high-performance wins from the compiler</blockquote>
 different picture than the one we started&nbsp;with</p>
 <div class="highlight"><pre>xcrun --sdk macosx swift -O3 -o bubble_sort.swift bubble_sort
 </pre></div>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to save time, I&#8217;ve changed the problem sizes to be
+multiples of 1k rather than 10k, so that tests could
+finish reasonibly quick. Other than that nothing has&nbsp;changed.</p>
+</div>
 <div class="plotly">
     <iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/" width="100%" height="100%"></iframe>
 </div></div>
