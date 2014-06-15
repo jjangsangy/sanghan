@@ -28,6 +28,19 @@ img {
     width: 100%;
     height: 100%; }
 
+.plotly {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden; }
+  .plotly iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
 @media (max-width: 768px), handheld and (orientation: landscape) {
   #bg {
     max-width: 100%;

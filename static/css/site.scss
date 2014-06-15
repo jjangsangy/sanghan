@@ -15,6 +15,23 @@
     height: $vheight;
 }
 
+@mixin figure($name) {
+    .#{$name} {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 35px;
+        height: 0;
+        overflow: hidden;
+        iframe {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
 #bg {
     @include background-image("/img/bird.jpg");
     @include background-sizing;
@@ -29,20 +46,9 @@ img {
     height: auto;
 }
 
-.youtube {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 35px;
-    height: 0;
-    overflow: hidden;
-    iframe {
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
+@include figure("youtube");
+@include figure("plotly");
+
 
 @media (max-width: 768px), handheld and (orientation: landscape) {
     #bg {
