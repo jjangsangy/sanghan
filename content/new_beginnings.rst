@@ -15,7 +15,8 @@ Around the end of 2011, I stopped blogging. I had created
 a photography website using wordpress and was trying to
 make a living as any recent graduate would. I chose photography
 because I was good at it, and I had experience shooting with
-some _`professional photographers` in the san diego area.
+some `professional photographers <http://nathanielkamphotography.com>`_
+in the san diego area.
 
 .. pull-quote::
 
@@ -48,8 +49,8 @@ didn't look back.
 
     Since then, I've learned a lot. So I've decided to start blogging again.
 
-A Light Quanta Blog
--------------------
+A Light Quantized Blog
+----------------------
 
 I've decided to name this blog 'A Quanta of Light'. The reference is to the
 photoelectric effect, a discovery made by Physicist Max Plank to
@@ -82,14 +83,10 @@ cool features in a later post.
 
    But I'm excited to start blogging again, and I hope you follow along!
 
-.. `professional photographers`_::
-   http://www.nathanielkamphotography.com
+.. |photoshoot| image:: {filename}/img/photoshoot.jpg
+   :width: 480px
 
-.. |photoshoot| image::
-   {filename}/img/photoshoot.jpg
-
-.. |chemistry| image::
-   {filename}/img/chemistry.jpg
+.. |chemistry| image:: {filename}/img/chemistry.jpg
 
 .. |hv| image:: {filename}/img/hv.png
    :height: 250px

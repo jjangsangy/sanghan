@@ -46,25 +46,12 @@ I've customized it with more RAM and added a solid state disk replacing the
 optical tray. OS X is a surprisingly good enviornment for programming
 since it was built upon a variant of BSD and is fully POSIX compliant.
 
-Programming Languages
-----------------------
-:Languages:
-  Python,
-  C89,
-  Shell Languages (Bash, Awk, Sed)
-
-This entire blog was written in ReStructuredText which is what
-the Python language uses as it's internal documentation language.
-Pelican is a static site generator written in Python for generating
-static sites. It uses the powerful Jinja2 templating system that
-is used by Flask as it's main templating language. This whole blog
-is generated statically into their web components like HTML, CSS and Javascript
-and then uploaded to github pages, where it is hosted. The advantages
-to creating a blog in this way are many, but something I won't go into.
-
-Maybe in another blog entry.
-
-
 .. |fuji| image:: {filename}/img/fuji-x100s.jpg
 .. |macbook| image:: {filename}/img/macbook.jpeg
 
+Text Editors
+-------------
+
+Heres my .vimrc file
+
+.. gist:: 26b629904a4c529c922b

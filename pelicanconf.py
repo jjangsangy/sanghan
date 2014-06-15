@@ -10,8 +10,7 @@ sys.path.append(abspath(os.curdir))
 
 AUTHOR = 'Sang Han'
 SINGLE_AUTHOR = True
-SITESUBTITLE = 'Things I Make'
-SITENAME = 'My Photoelectric Blog'
+SITENAME = 'LightQuanta'
 
 SITEURL = 'http://sanghan.me'
 EMAIL_ADDR = 'jjangsangy@gmail.com'
@@ -51,7 +50,12 @@ MARKUP = ('rst', 'md', 'ipynb')
 CUSTOM_CSS = ('static/css/site.css')
 
 PLUGIN_PATH = ['plugins']
-PLUGINS = ['disqus_static', 'representative_image', 'pelican_youtube']
+PLUGINS = [
+    'disqus_static',
+    'representative_image',
+    'pelican_youtube',
+    'gist',
+]
 HEADER_IMAGE = "bird.jpg"
 SUMMARY_MAX_LENGTH = 100
 DISPLAY_BREADCRUMBS= True
@@ -68,7 +72,7 @@ GITHUB_SKIP_FORK = True
 GITHUB_REPO_COUNT = 10
 GITHUB_SHOW_USER_LINK = True
 
-MENUITEMS = (('Photography', 'http://sanghanphotography.com'),)
+# MENUITEMS = (('Photography', 'http://sanghanphotography.com'),)
 
 # Blogroll
 # LINKS =  (('Photography', 'http://sanghanphotography.com'),

@@ -7,44 +7,57 @@
 
 @mixin background-image(
     $url,
-    $position: no-repeat top fixed) {
+    $position: no-repeat top fixed,
+    $vheight: 640px) {
     max-width: 100%;
     background: url($url) $position;
+    background-position: center top;
+    height: $vheight;
+}
+
+@mixin figure($name) {
+    .#{$name} {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 35px;
+        height: 0;
+        overflow: hidden;
+        iframe {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            max-width: 100%
+            max-height: 100%
+        }
+    }
 }
 
 #bg {
-    height: 640px;
     @include background-image("/img/bird.jpg");
     @include background-sizing;
 }
 
 img {
     display: block;
-    width: 1024px;
+    :default {
+        width: 1024px;
+    }
     max-width: 100% !important;
     height: auto;
 }
 
-.youtube {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 35px;
-    height: 0;
-    overflow: hidden;
-    iframe {
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+@include figure("youtube");
+@include figure("plotly");
+
+
+@media (max-width: 768px), handheld and (orientation: landscape) {
+    #bg {
+        @include background-image("/img/bird-640.jpg", $vheight: 480px);
     }
 }
 
-// For Handheld Devices with small screen sizes
-@media (max-width: 768px), handheld and (orientation: landscape) {
-    #bg {
-        @include background-image("/img/bird-640.jpg");
-        background-position: center top;
-        height: 480px;
-    }
-}
+@media (min-width: 1200px) {
+    #bg {@include background-image("/img/bird-full.jpg", $vheight: 920px);}}
+

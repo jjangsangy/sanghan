@@ -42,6 +42,8 @@ my own computer programs and see where it would lead me.
 **Since then it's been a remarkable year.**
 
 .. |turings_cathedral| image:: {filename}/img/turings_cathedral.jpg
+   :width: 420px
+   :alt: Turing's Cathedral
 
 .. _Turing's Cathedral:
    http://www.amazon.com/Turings-Cathedral-Origins-Digital-Universe/dp/1400075998

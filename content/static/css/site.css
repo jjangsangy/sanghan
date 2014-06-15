@@ -1,34 +1,45 @@
 #bg {
   max-width: 100%;
   background: url("/img/bird.jpg") no-repeat top fixed;
+  background-position: center top;
   height: 640px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-}
+  background-size: cover; }
 
 img {
   display: block;
-  width: 1024px;
   max-width: 100% !important;
-  height: auto;
-}
+  height: auto; }
+  img :default {
+    width: 1024px; }
 
 .youtube {
   position: relative;
   padding-bottom: 56.25%;
   padding-top: 35px;
   height: 0;
-  overflow: hidden;
-}
+  overflow: hidden; }
   .youtube iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-}
+    height: 100%; }
+
+.plotly {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden; }
+  .plotly iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
 
 @media (max-width: 768px), handheld and (orientation: landscape) {
   #bg {
@@ -36,3 +47,9 @@ img {
     background: url("/img/bird-640.jpg") no-repeat top fixed;
     background-position: center top;
     height: 480px; } }
+@media (min-width: 1200px) {
+  #bg {
+    max-width: 100%;
+    background: url("/img/bird-full.jpg") no-repeat top fixed;
+    background-position: center top;
+    height: 920px; } }
