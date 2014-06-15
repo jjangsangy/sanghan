@@ -10,6 +10,14 @@ to the masses and passed it out to Apple Developers packaged in the XCode 6&amp;
 &lt;li&gt;Integration with&amp;nbsp;Objective-C&lt;/li&gt;
 &lt;li&gt;First-Class Functions and&amp;nbsp;Closures&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;My initial impressions were pretty high. However, after some quick benchmarking
+examples, those feelings later matured to an understanding of it&amp;#8217;s &amp;quot;beta&amp;quot;
+characteristics. Many of the underlying optomizations still have some kinks to
+work&amp;nbsp;through.&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;And by kinks, I mean some big fixes&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Here are a couple examples of Bubble Sort written out in C, Python and&amp;nbsp;Swift.&lt;/p&gt;
 &lt;div class="section" id="swift-version"&gt;
 &lt;h3&gt;Swift&amp;nbsp;Version&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="lineno"&gt; 1&lt;/span&gt;  &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Cocoa&lt;/span&gt;
@@ -117,7 +125,12 @@ to the masses and passed it out to Apple Developers packaged in the XCode 6&amp;
 &lt;h2&gt;Results&lt;/h2&gt;
 &lt;div class="plotly"&gt;
     &lt;iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/" width="100%" height="100%"&gt;&lt;/iframe&gt;
-&lt;/div&lt;p&gt;&lt;img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /&gt;&lt;/p&gt;
+&lt;/div&lt;!--  --&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Swift Program is Swift, It even beats C by a non-trivial margin in these tests.&lt;/div&gt;
+&lt;div class="line"&gt;&lt;br /&gt;&lt;/div&gt;
+&lt;div class="line"&gt;&lt;img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 </summary><category term="Apple"></category><category term="Programming Language"></category><category term="Benchmarks"></category><category term="Bubble Sort"></category></entry><entry><title>Pelican: A Blogging Engine Written in Python</title><link href="http://sanghan.me/blog/2014/06/pelican_blog/" rel="alternate"></link><updated>2014-06-09T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-09:blog/2014/06/pelican_blog/</id><summary type="html">&lt;p&gt;There are many static site generators out&amp;nbsp;there.&lt;/p&gt;
 &lt;p&gt;The most famous and well known being,

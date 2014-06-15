@@ -15,7 +15,7 @@
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Swift Program is Swift, Except When it’s Not"/>
             <meta property="og:url" content="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/"/>
-            <meta property="og:description" content="This past WWDC Apple revealed a brand new programming language called Swift to the masses and passed it out to Apple Developers packaged in the XCode 6 Beta. Language Features Type Inferencing and Automatic Reference Counting (ARC) Optional Bindings and Generic Functions Integration with Objective-C First-Class Functions and Closures Swift Version 1 import Cocoa 2 3 func bubbleSort(list: Int[]) -&gt; Int[] 4 { 5 let length = list.count 6 var count: Int 7 var pos: Int 8 9 for (count = 0; count &lt; length-1; count++) { 10 for (pos = 0; pos &lt; (length-count-1); pos++) { 11 if (list[pos] &gt; list[pos+1 ..."/>
+            <meta property="og:description" content="This past WWDC Apple revealed a brand new programming language called Swift to the masses and passed it out to Apple Developers packaged in the XCode 6 Beta. Language Features Type Inferencing and Automatic Reference Counting (ARC) Optional Bindings and Generic Functions Integration with Objective-C First-Class Functions and Closures My initial impressions were pretty high. However, after some quick benchmarking examples, those feelings later matured to an understanding of it’s &#34;beta&#34; characteristics. Many of the underlying optomizations still have some kinks to work through. And by kinks, I mean some big fixes Here are a couple examples of Bubble ..."/>
             <meta property="article:published_time" content="2014-06-11" />
                 <meta property="article:section" content="Programming" />
                 <meta property="article:tag" content="Apple" />
@@ -181,6 +181,14 @@ to the masses and passed it out to Apple Developers packaged in the XCode 6&nbsp
 <li>Integration with&nbsp;Objective-C</li>
 <li>First-Class Functions and&nbsp;Closures</li>
 </ul>
+<p>My initial impressions were pretty high. However, after some quick benchmarking
+examples, those feelings later matured to an understanding of it&#8217;s &quot;beta&quot;
+characteristics. Many of the underlying optomizations still have some kinks to
+work&nbsp;through.</p>
+<div class="line-block">
+<div class="line">And by kinks, I mean some big fixes</div>
+</div>
+<p>Here are a couple examples of Bubble Sort written out in C, Python and&nbsp;Swift.</p>
 <div class="section" id="swift-version">
 <h3>Swift&nbsp;Version</h3>
 <div class="highlight"><pre><span class="lineno"> 1</span>  <span class="n">import</span> <span class="n">Cocoa</span>
@@ -288,7 +296,12 @@ to the masses and passed it out to Apple Developers packaged in the XCode 6&nbsp
 <h2>Results</h2>
 <div class="plotly">
     <iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/" width="100%" height="100%"></iframe>
-</div<p><img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /></p>
+</div<!--  -->
+<div class="line-block">
+<div class="line">Swift Program is Swift, It even beats C by a non-trivial margin in these tests.</div>
+<div class="line"><br /></div>
+<div class="line"><img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /></div>
+</div>
 </div>
 
             </div>

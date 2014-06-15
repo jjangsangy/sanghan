@@ -159,19 +159,14 @@ to the masses and passed it out to Apple Developers packaged in the XCode 6 Bet
 <li>Integration with Objective-C</li>
 <li>First-Class Functions and Closures</li>
 </ul>
-<div class="section" id="swift-version">
-<h3>Swift Version</h3>
-<div class="highlight"><pre><span class="lineno"> 1</span>  <span class="n">import</span> <span class="n">Cocoa</span>
-<span class="lineno"> 2</span> 
-<span class="lineno"> 3</span>  <span class="n">func</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="n">Int</span><span class="p">[])</span> <span class="p">-&gt;</span> <span class="n">Int</span><span class="p">[]</span>
-<span class="lineno"> 4</span>  <span class="p">{</span>
-<span class="lineno"> 5</span>      <span class="n">let</span> <span class="n">length</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">count</span>
-<span class="lineno"> 6</span>      <span class="kt">var</span> <span class="n">count</span><span class="p">:</span> <span class="n">Int</span>
-<span class="lineno"> 7</span>      <span class="kt">var</span> <span class="n">pos</span><span class="p">:</span> <span class="n">Int</span>
-<span class="lineno"> 8</span> 
-<span class="lineno"> 9</span>      <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">count</span> <span class="p">&lt;</span> <span class="n">length</span><span class="p">-</span><span class="m">1</span><span class="p">;</span> <span class="n">count</span><span class="p">++)</span> <span class="p">{</span>
-<span class="lineno">10</span>          <span class="k">for</span> <span class="p">(</span><span class="n">pos</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">pos</span> <span class="p">&lt;</span> <span class="p">(</span><span class="n">length</span><span class="p">-</span><span class="n">count</span><span class="p">-</span><span class="m">1</span><span class="p">);</span> <span class="n">pos</span><span class="p">++)</span> <span class="p">{</span>
-<span class="lineno">11</span>              <span class="k">if</span> <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="p">&gt;</span> <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">+</span><span class="m">1 ...</span></pre></div></div></div>
+<p>My initial impressions were pretty high. However, after some quick benchmarking
+examples, those feelings later matured to an understanding of it’s "beta"
+characteristics. Many of the underlying optomizations still have some kinks to
+work through.</p>
+<div class="line-block">
+<div class="line">And by kinks, I mean some big fixes</div>
+</div>
+<p>Here are a couple examples of Bubble ...</p></div>
                         <p><img src="http://sanghan.me/img/swift.jpg" /></p>
                     <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
                         <i class="fa fa-book"></i>
