@@ -15,7 +15,7 @@
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Swift Program is Swift, Except When it’s Not"/>
             <meta property="og:url" content="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/"/>
-            <meta property="og:description" content="This past WWDC Apple revealed a brand new programming language called Swift to the masses and passed it out to Apple Developers packaged in the XCode 6 Beta. Language Features Type Inferencing and Automatic Reference Counting (ARC) Optional Bindings and Generic Functions Integration with Objective-C First-Class Functions and Closures My initial impressions were pretty high. However, after some quick benchmarking examples, those feelings later matured to an understanding of it’s &#34;beta&#34; characteristics. Many of the underlying optomizations still have some kinks to work through. And by kinks, I mean some big fixes Here are a couple examples of Bubble ..."/>
+            <meta property="og:description" content="This past WWDC Apple revealed a brand new programming language called Swift to the masses and passed it out to Apple Developers packaged in the XCode 6 Beta. Language Features Type Inferencing and Automatic Reference Counting (ARC) Optional Bindings and Generic Functions Integration with Objective-C First-Class Functions and Closures My initial impressions were pretty high. However, after some quick benchmarking examples, those feelings later matured to an understanding of it’s &#34;beta&#34; characteristics. Many of the underlying optimization still have some kinks to work through. And by kinks, I mean some big fixes Here are a couple examples of Bubble ..."/>
             <meta property="article:published_time" content="2014-06-11" />
                 <meta property="article:section" content="Programming" />
                 <meta property="article:tag" content="Apple" />
@@ -183,7 +183,7 @@ to the masses and passed it out to Apple Developers packaged in the XCode 6&nbsp
 </ul>
 <p>My initial impressions were pretty high. However, after some quick benchmarking
 examples, those feelings later matured to an understanding of it&#8217;s &quot;beta&quot;
-characteristics. Many of the underlying optomizations still have some kinks to
+characteristics. Many of the underlying optimization still have some kinks to
 work&nbsp;through.</p>
 <blockquote class="pull-quote">
 And by kinks, I mean some big fixes</blockquote>
@@ -291,20 +291,36 @@ And by kinks, I mean some big fixes</blockquote>
 </pre></div>
 </div>
 </div>
-<div class="section" id="results">
-<h2>Results</h2>
+<div class="section" id="fast-swift">
+<h2>Fast&nbsp;Swift</h2>
 <div class="plotly">
     <iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/" width="100%" height="100%"></iframe>
 </div><!--  -->
 <blockquote class="pull-quote">
 Swift Program is Swift, It even beats C by a non-trivial margin in these tests.</blockquote>
 </div>
+<div class="section" id="slow-swift">
+<h2>Slow&nbsp;Swift</h2>
+<p>One caveat however, is we used the [-Ofast] flag during compilation of the swift binaries like&nbsp;so.</p>
+<div class="highlight"><pre>xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort
+</pre></div>
+<p>According to Apple&#8217;s official documentation in the XCode 5.0 release&nbsp;notes:</p>
+<blockquote class="pull-quote">
+A new optimization level -Ofast, available in <span class="caps">LLVM</span>, enables aggressive optimizations.
+-Ofast relaxes some conservative restrictions,
+mostly for floating-point operations,
+that are safe for most code.
+It can yield significant high-performance wins from the compiler</blockquote>
+<p>If we were to run the same code with normal compiler optimizations we start to see a completely
+different picture than the one we started&nbsp;with</p>
+<div class="highlight"><pre>xcrun --sdk macosx swift -O3 -o bubble_sort.swift bubble_sort
+</pre></div>
+<div class="plotly">
+    <iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/" width="100%" height="100%"></iframe>
+</div></div>
 <div class="section" id="modern-safe-and-powerful-choose-2">
 <h2>Modern, Safe and Powerful: Choose&nbsp;2</h2>
 <p><img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /></p>
-<p>However, one caveat to these tests is that during compilation we used the [-Ofast] flag like&nbsp;so.</p>
-<div class="highlight"><pre>xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort
-</pre></div>
 <p>According to a post on <a class="reference external" href="http://stackoverflow.com/questions/24101718/swift-performance-sorting-arrays">Stacked&nbsp;Overflow</a></p>
 <blockquote class="pull-quote">
 However, -Ofast changes the semantics of the language a lot — in my testing,

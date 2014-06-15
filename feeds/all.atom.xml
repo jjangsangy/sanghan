@@ -12,7 +12,7 @@ to the masses and passed it out to Apple Developers packaged in the XCode 6&amp;
 &lt;/ul&gt;
 &lt;p&gt;My initial impressions were pretty high. However, after some quick benchmarking
 examples, those feelings later matured to an understanding of it&amp;#8217;s &amp;quot;beta&amp;quot;
-characteristics. Many of the underlying optomizations still have some kinks to
+characteristics. Many of the underlying optimization still have some kinks to
 work&amp;nbsp;through.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 And by kinks, I mean some big fixes&lt;/blockquote&gt;
@@ -120,20 +120,36 @@ And by kinks, I mean some big fixes&lt;/blockquote&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="section" id="results"&gt;
-&lt;h2&gt;Results&lt;/h2&gt;
+&lt;div class="section" id="fast-swift"&gt;
+&lt;h2&gt;Fast&amp;nbsp;Swift&lt;/h2&gt;
 &lt;div class="plotly"&gt;
     &lt;iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/" width="100%" height="100%"&gt;&lt;/iframe&gt;
 &lt;/div&gt;&lt;!--  --&gt;
 &lt;blockquote class="pull-quote"&gt;
 Swift Program is Swift, It even beats C by a non-trivial margin in these tests.&lt;/blockquote&gt;
 &lt;/div&gt;
+&lt;div class="section" id="slow-swift"&gt;
+&lt;h2&gt;Slow&amp;nbsp;Swift&lt;/h2&gt;
+&lt;p&gt;One caveat however, is we used the [-Ofast] flag during compilation of the swift binaries like&amp;nbsp;so.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;According to Apple&amp;#8217;s official documentation in the XCode 5.0 release&amp;nbsp;notes:&lt;/p&gt;
+&lt;blockquote class="pull-quote"&gt;
+A new optimization level -Ofast, available in &lt;span class="caps"&gt;LLVM&lt;/span&gt;, enables aggressive optimizations.
+-Ofast relaxes some conservative restrictions,
+mostly for floating-point operations,
+that are safe for most code.
+It can yield significant high-performance wins from the compiler&lt;/blockquote&gt;
+&lt;p&gt;If we were to run the same code with normal compiler optimizations we start to see a completely
+different picture than the one we started&amp;nbsp;with&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;xcrun --sdk macosx swift -O3 -o bubble_sort.swift bubble_sort
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="plotly"&gt;
+    &lt;iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/" width="100%" height="100%"&gt;&lt;/iframe&gt;
+&lt;/div&gt;&lt;/div&gt;
 &lt;div class="section" id="modern-safe-and-powerful-choose-2"&gt;
 &lt;h2&gt;Modern, Safe and Powerful: Choose&amp;nbsp;2&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;However, one caveat to these tests is that during compilation we used the [-Ofast] flag like&amp;nbsp;so.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort
-&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;According to a post on &lt;a class="reference external" href="http://stackoverflow.com/questions/24101718/swift-performance-sorting-arrays"&gt;Stacked&amp;nbsp;Overflow&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 However, -Ofast changes the semantics of the language a lot — in my testing,
