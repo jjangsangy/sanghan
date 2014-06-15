@@ -2,7 +2,7 @@ os:
     - osx
 language: python
 env:
-    - CC=clang CXX=clang++
+    - CC=clang CXX=clang++ LC_ALL="en_US.utf8"
 compiler:
     - clang
 python:
