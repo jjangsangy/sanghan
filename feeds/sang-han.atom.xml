@@ -124,7 +124,7 @@ But there was only one issue, It was super slow.&lt;/blockquote&gt;
 &lt;div class="section" id="performance"&gt;
 &lt;h2&gt;Performance&lt;/h2&gt;
 &lt;div class="plotly"&gt;
-    &lt;iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/800/600" width="100%" height="100%"&gt;&lt;/iframe&gt;
+    &lt;iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/1028/680" width="100%" height="100%"&gt;&lt;/iframe&gt;
 &lt;/div&lt;/div&gt;
 </summary><category term="Apple"></category><category term="Programming Language"></category><category term="Benchmarks"></category><category term="Bubble Sort"></category></entry><entry><title>Pelican: A Blogging Engine Written in Python</title><link href="http://sanghan.me/blog/2014/06/pelican_blog/" rel="alternate"></link><updated>2014-06-09T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-09:blog/2014/06/pelican_blog/</id><summary type="html">&lt;p&gt;There are many static site generators out&amp;nbsp;there.&lt;/p&gt;
 &lt;p&gt;The most famous and well known being,
