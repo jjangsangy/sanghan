@@ -48,6 +48,7 @@ output/**
 docs/**
 dist/**
 build/**
+env/**
 *egg-info
 *.whl
 .env
