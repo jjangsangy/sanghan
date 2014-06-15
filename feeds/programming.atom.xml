@@ -126,9 +126,12 @@ And by kinks, I mean some big fixes&lt;/blockquote&gt;
     &lt;iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/" width="100%" height="100%"&gt;&lt;/iframe&gt;
 &lt;/div&gt;&lt;!--  --&gt;
 &lt;blockquote class="pull-quote"&gt;
-&lt;p&gt;Swift Program is Swift, It even beats C by a non-trivial margin in these&amp;nbsp;tests.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+Swift Program is Swift, It even beats C by a non-trivial margin in these tests.&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="modern-safe-and-powerful-choose-2"&gt;
+&lt;h2&gt;Modern, Safe and Powerful: Choose&amp;nbsp;2&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /&gt;&lt;/blockquote&gt;
 &lt;/div&gt;
 </summary><category term="Apple"></category><category term="Programming Language"></category><category term="Benchmarks"></category><category term="Bubble Sort"></category></entry><entry><title>Pelican: A Blogging Engine Written in Python</title><link href="http://sanghan.me/blog/2014/06/pelican_blog/" rel="alternate"></link><updated>2014-06-09T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-09:blog/2014/06/pelican_blog/</id><summary type="html">&lt;p&gt;There are many static site generators out&amp;nbsp;there.&lt;/p&gt;
 &lt;p&gt;The most famous and well known being,
