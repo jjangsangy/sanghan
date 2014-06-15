@@ -2,15 +2,17 @@ os:
     - osx
 language: python
 env:
-    - CC="clang"
-    - CXX="clang++"
+    - CC=clang CXX=clang++
 compiler:
     - "clang"
 python:
     - "3.4"
 before_install:
+    - echo $TRAVIS_OS_NAME
+    - pip install disqus-python
     - git clone https://github.com/getpelican/pelican-plugins.git plugins
     - ln -s $(pwd)/plugins/disqus_static/disqus_static.py $(pwd)/plugins/disqus_static.py
+      cat $(pwd)/plugins
 install:
     - pip install -r requirements.txt
 script:
