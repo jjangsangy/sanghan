@@ -18,7 +18,7 @@ def images_extraction(instance):
             i.extract()
         if len(images) > 0:
             # set _summary field which is based on metadata. summary field is only based on article's content and not settable
-            instance._summary = unicode(soup)
+            instance._summary = str(soup)
         
         # If there are no image in summary, look for it in the content body
         if not representativeImage:

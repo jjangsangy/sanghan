@@ -36,7 +36,7 @@ ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{slug}/'
 ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/{slug}/index.html'
 
 THEME = 'themes/bootstrap'
-BOOTSTRAP_THEME='sanghan'
+BOOTSTRAP_THEME='flatly'
 DISPLAY_CATEGORIES_ON_SIDEBAR = False
 DISPLAY_TAGS_ON_SIDEBAR = False
 DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
@@ -71,6 +71,10 @@ GITHUB_USER = 'jjangsangy'
 GITHUB_SKIP_FORK = True
 GITHUB_REPO_COUNT = 10
 GITHUB_SHOW_USER_LINK = True
+
+DISQUS_SITENAME = 'sanghan'
+DISQUS_SECRET_KEY = 'iQIq5Ra2Fx2kBnGbhUZ1sNjkhwpewkz5fSRsWUgZFTGj4BIZsqmixUAszepZXQ8I'
+DISQUS_PUBLIC_KEY = 'JyNWL1mdpLOuqzbh5RZ3HfkzvKLYsElIMBLMTYv6k7HltM0RQKQnQfMBiLNbdV3K'
 
 # MENUITEMS = (('Photography', 'http://sanghanphotography.com'),)
 
