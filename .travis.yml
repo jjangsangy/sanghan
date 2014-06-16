@@ -16,4 +16,6 @@ install:
     - python setup.py install
     - cd ..
 script:
-    - make html
+    python plugins/representative_image/test_representative_image.py
+    cd disqus && nosetests && cd ..
+

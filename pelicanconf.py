@@ -49,12 +49,12 @@ TYPOGRIFY = True
 MARKUP = ('rst', 'md', 'ipynb')
 CUSTOM_CSS = ('static/css/site.css')
 
-PLUGIN_PATH = ['plugins']
+PLUGIN_PATH = ['plugins','plugins/pelican_gist']
 PLUGINS = [
-    'disqus_static',
-    'representative_image',
-    'pelican_youtube',
-    'gist',
+    'disqus_static.disqus_static',
+    'representative_image.representative_image',
+    'pelican_youtube.youtube',
+    'gist'
 ]
 HEADER_IMAGE = "bird.jpg"
 SUMMARY_MAX_LENGTH = 100
