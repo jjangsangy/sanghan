@@ -11,6 +11,7 @@ before_install:
 install:
     - pip install -r requirements.txt
     - git clone https://github.com/jjangsangy/disqus-python.git disqus
+    - pip install -r disqus/requirements.txt
     - python disqus/setup.py install
 script:
     - make html
