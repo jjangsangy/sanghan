@@ -2,7 +2,7 @@ os:
     - osx
 language: python
 env:
-    - CC=clang CXX=clang++ LC_ALL="en_US.utf8"
+    - CC=clang
 compiler:
     - clang
 python:
@@ -16,6 +16,7 @@ install:
     - python setup.py install
     - cd ..
 script:
-    python plugins/representative_image/test_representative_image.py
-    cd disqus && nosetests && cd ..
-
+    - python plugins/representative_image/test_representative_image.py
+    - cd disqus
+    - nosetests
+    - cd ..
