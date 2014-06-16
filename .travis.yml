@@ -8,8 +8,9 @@ compiler:
 python:
     - "3.4"
 before_install:
-    - pip install disqus-python
 install:
     - pip install -r requirements.txt
+    - git clone https://github.com/jjangsangy/disqus-python.git disqus
+    - python disqus/setup.py install
 script:
     - make html
