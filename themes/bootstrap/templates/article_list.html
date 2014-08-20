@@ -9,20 +9,13 @@
                         {% include "includes/article_info.html" %}
                     </div>
                 {% endif %}
-                {% if  article.featured_image %}
-                    <img src="{{ article.featured_image }}">
-                {% endif %}
                 <div class="summary">{{ article.summary }}
                     {% include 'includes/comment_count.html' %}
-                    <a class="btn btn-primary btn-block btn-sm" href="{{ SITEURL }}/{{ article.url }}">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
+                    <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">Read More...</a>
                 </div>
             </article>
             <hr/>
         {% endfor %}
     {% endif %}
 
-    {% include 'includes/pagination.html' %}
 {% endblock content %}

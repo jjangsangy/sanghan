@@ -26,7 +26,7 @@ def images_extraction(instance):
             imageTag = soup.find('img')
             if imageTag:
                 representativeImage = imageTag['src']
-        
+
         # Set the attribute to content instance
         instance.featured_image = representativeImage
 
