@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml"
-      >
+<html lang="en"
+>
 <head>
     <title>rant - LightQuanta</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width initial-scale=1>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="http://sanghan.me/img/hv.png" rel="icon">
+
+
+    <meta name="author" content="Sang Han" />
+    <meta name="keywords" content="rant" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="LightQuanta" />
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="LightQuanta"/>
-            <meta property="og:url" content="http://sanghan.me"/>
-            <meta property="og:description" content="LightQuanta"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="LightQuanta"/>
+        <meta property="og:url" content="http://sanghan.me"/>
+        <meta property="og:description" content="LightQuanta"/>
 
+
+    <!-- Bootstrap -->
         <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.flatly.min.css" type="text/css"/>
-
-    <!-- Syntax Highlighting -->
     <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
+
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
-
-
         <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
-
     <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
         <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
 
         <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="LightQuanta ATOM Feed"/>
 
-        <link rel="icon" href="/img/hv.ico">
-        <link rel="apple-touch-icon-precomposed" href="/img/hv-152.png">
 </head>
 <body>
 
@@ -47,86 +48,74 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="http://sanghan.me/" class="navbar-brand">
-                    <i class="fa fa-flask pull-center fa-border"></i>
-                    LightQuanta
+
+<i class="fa fa-flask pull-center fa-border"></i>
+                LightQuanta
             </a>
         </div>
-
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
 
-                <!-- Pages -->
                          <li>
                              <a href="http://sanghan.me/pages/about.html">
-                                     <i class="fa fa-beer"></i>
-                                     <span class="icon-label">About&nbsp;Me</span>
+                             <i class="fa fa-beer"></i>
+                             <span class="icon-label">About&nbsp;Me</span>
                              </a>
                          </li>
                          <li>
                              <a href="http://sanghan.me/pages/projects.html">
-                                     <i class="fa fa-code"></i>
-                                     <span class="icon-label">Projects</span>
+                             <i class="fa fa-code"></i>
+                             <span class="icon-label">Projects</span>
                              </a>
                          </li>
                          <li>
                              <a href="http://sanghan.me/pages/skills.html">
-                                     <i class="fa fa-graduation-cap"></i>
-                                     <span class="icon-label">Skills</span>
+                             <i class="fa fa-graduation-cap"></i>
+                             <span class="icon-label">Skills</span>
                              </a>
                          </li>
                          <li>
                              <a href="http://sanghan.me/pages/tools.html">
-                                     <i class="fa fa-wrench"></i>
-                                     <span class="icon-label">Tools</span>
+                             <i class="fa fa-wrench"></i>
+                             <span class="icon-label">Tools</span>
                              </a>
                          </li>
 
-                <!-- Categories Dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Categories
-                        <b class="caret"></b>
-                    </a>
+                <!--Dropdown Categories-->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu">
-                                <li >
-                                    <a href="http://sanghan.me/category/articles.html">Articles</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/music.html">Music</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/programming.html">Programming</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/quotes.html">Quotes</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/tumblr.html">Tumblr</a>
-                                </li>
+                        <li >
+                        <a href="http://sanghan.me/category/articles.html">Articles</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/music.html">Music</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/programming.html">Programming</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/quotes.html">Quotes</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/tumblr.html">Tumblr</a></li>
                     </ul>
-                </li>
+                    </li>
 
-            <!-- Archives -->
-                <!-- <ul class="nav navbar-nav navbar-right"> -->
-                <!--     <li> -->
-                <!--         <a href="http://sanghan.me/archives.html"> -->
-                <!--             <i class="fa fa-th-list"></i> -->
-                <!--             <span class="icon-label">Archives</span> -->
-                <!--         </a> -->
-                <!--     </li> -->
-                <!-- </ul> -->
+
+<!-- Disabled
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+</ul>
+-->
+
         </div>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
 
-    <div class="container-full full-width">
-        <div id=bg class=hero-unit></div>
-    </div>
+<div class="container-full full-width">
+    <div id="bg" class="hero-unit"></div>
+</div>
 
 <div class="container">
     <div class="row">
-            <div class="col-sm-9">
+        <div class="col-sm-9">
     <ol class="breadcrumb">
         <li><a href="http://sanghan.me" title="LightQuanta"><i class="fa fa-home fa-lg"></i></a></li>
         <li><a href="http://sanghan.me/" title="Tags">Tags</a></li>
@@ -135,12 +124,11 @@
 
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/06/2011-06-17-photography-rant-1/">Photography Rant&nbsp;#1</a></h2>
-                </h3>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-06-17T06:05:00"> Fri, 17 Jun 2011</time>
+        <i class="fa fa-calendar"></i><time datetime="2011-06-17T06:05:00-07:00"> Fri, 17 Jun 2011</time>
     </span>
 
 
@@ -155,7 +143,6 @@
 	<a href="http://sanghan.me/tag/composition.html">composition</a>
     
 </footer><!-- /.post-info -->                    </div>
-                </h3>
                 <div class="summary"><!--  -->
 <p>Everyone learns to take good pictures by first taking bad ones. But we
 first have to understand that creating the image which puts absolution
@@ -165,15 +152,13 @@ fail to come close to meet this somewhat abstract criterion for a&nbsp;Good&nbsp
 photo. They come up with cleaver reasonings to vindicate a shot and thus
 first place a primal block on their chance of learning from their
 mistakes. Working with some of these people, I&#8217;ve heard some pretty ...</p></!-->
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/06/2011-06-17-photography-rant-1/">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
+                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/06/2011-06-17-photography-rant-1/">Read More...</a>
                 </div>
             </article>
             <hr/>
 
-        </div>
+    </div>
+
         <div class="col-sm-3 well well-sm" id="sidebar">
 
 <aside>
@@ -214,18 +199,24 @@ mistakes. Working with some of these people, I&#8217;ve heard some pretty ...</p
 </aside>        </div>
     </div>
 </div>
+
 <footer>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2011 Sang Han         </div>
+         <div class="col-xs-10">&copy; 2011 LightQuanta
+            &middot; Sang Han         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>
    </div>
 </footer>
-<script type="text/javascript" src="http://sanghan.me/theme/js/jquery.min.js"></script>
-<script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
+<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://sanghan.me/theme/js/respond.min.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">
@@ -281,5 +272,4 @@ mistakes. Working with some of these people, I&#8217;ve heard some pretty ...</p
     </script>
     <!-- End Google Analytics Code -->
 </body>
-
 </html>

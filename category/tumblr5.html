@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml"
-      >
+<html lang="en"
+>
 <head>
     <title>tumblr - LightQuanta</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width initial-scale=1>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="http://sanghan.me/img/hv.png" rel="icon">
+
+
+    <meta name="author" content="Sang Han" />
+    <meta name="keywords" content="tumblr" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="LightQuanta" />
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="LightQuanta"/>
-            <meta property="og:url" content="http://sanghan.me"/>
-            <meta property="og:description" content="LightQuanta"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="LightQuanta"/>
+        <meta property="og:url" content="http://sanghan.me"/>
+        <meta property="og:description" content="LightQuanta"/>
 
+
+    <!-- Bootstrap -->
         <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.flatly.min.css" type="text/css"/>
-
-    <!-- Syntax Highlighting -->
     <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
+
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
-
-
         <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
-
     <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
         <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
 
         <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="LightQuanta ATOM Feed"/>
 
-        <link rel="icon" href="/img/hv.ico">
-        <link rel="apple-touch-icon-precomposed" href="/img/hv-152.png">
 </head>
 <body>
 
@@ -47,86 +48,74 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="http://sanghan.me/" class="navbar-brand">
-                    <i class="fa fa-flask pull-center fa-border"></i>
-                    LightQuanta
+
+<i class="fa fa-flask pull-center fa-border"></i>
+                LightQuanta
             </a>
         </div>
-
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
 
-                <!-- Pages -->
                          <li>
                              <a href="http://sanghan.me/pages/about.html">
-                                     <i class="fa fa-beer"></i>
-                                     <span class="icon-label">About&nbsp;Me</span>
+                             <i class="fa fa-beer"></i>
+                             <span class="icon-label">About&nbsp;Me</span>
                              </a>
                          </li>
                          <li>
                              <a href="http://sanghan.me/pages/projects.html">
-                                     <i class="fa fa-code"></i>
-                                     <span class="icon-label">Projects</span>
+                             <i class="fa fa-code"></i>
+                             <span class="icon-label">Projects</span>
                              </a>
                          </li>
                          <li>
                              <a href="http://sanghan.me/pages/skills.html">
-                                     <i class="fa fa-graduation-cap"></i>
-                                     <span class="icon-label">Skills</span>
+                             <i class="fa fa-graduation-cap"></i>
+                             <span class="icon-label">Skills</span>
                              </a>
                          </li>
                          <li>
                              <a href="http://sanghan.me/pages/tools.html">
-                                     <i class="fa fa-wrench"></i>
-                                     <span class="icon-label">Tools</span>
+                             <i class="fa fa-wrench"></i>
+                             <span class="icon-label">Tools</span>
                              </a>
                          </li>
 
-                <!-- Categories Dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Categories
-                        <b class="caret"></b>
-                    </a>
+                <!--Dropdown Categories-->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu">
-                                <li >
-                                    <a href="http://sanghan.me/category/articles.html">Articles</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/music.html">Music</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/programming.html">Programming</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/quotes.html">Quotes</a>
-                                </li>
-                                <li class="active">
-                                    <a href="http://sanghan.me/category/tumblr.html">Tumblr</a>
-                                </li>
+                        <li >
+                        <a href="http://sanghan.me/category/articles.html">Articles</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/music.html">Music</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/programming.html">Programming</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/quotes.html">Quotes</a></li>
+                        <li  class="active" >
+                        <a href="http://sanghan.me/category/tumblr.html">Tumblr</a></li>
                     </ul>
-                </li>
+                    </li>
 
-            <!-- Archives -->
-                <!-- <ul class="nav navbar-nav navbar-right"> -->
-                <!--     <li> -->
-                <!--         <a href="http://sanghan.me/archives.html"> -->
-                <!--             <i class="fa fa-th-list"></i> -->
-                <!--             <span class="icon-label">Archives</span> -->
-                <!--         </a> -->
-                <!--     </li> -->
-                <!-- </ul> -->
+
+<!-- Disabled
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+</ul>
+-->
+
         </div>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
 
-    <div class="container-full full-width">
-        <div id=bg class=hero-unit></div>
-    </div>
+<div class="container-full full-width">
+    <div id="bg" class="hero-unit"></div>
+</div>
 
 <div class="container">
     <div class="row">
-            <div class="col-sm-9">
+        <div class="col-sm-9">
     <ol class="breadcrumb">
         <li><a href="http://sanghan.me" title="LightQuanta"><i class="fa fa-home fa-lg"></i></a></li>
         <li><a href="http://sanghan.me/" title="LightQuanta Categories">Categories</a></li>
@@ -135,19 +124,17 @@
 
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/04/2011-04-20-journeys/">Journeys</a></h2>
-                </h3>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-04-20T03:13:00"> Wed, 20 Apr 2011</time>
+        <i class="fa fa-calendar"></i><time datetime="2011-04-20T03:13:00-07:00"> Wed, 20 Apr 2011</time>
     </span>
 
 
 
     
 </footer><!-- /.post-info -->                    </div>
-                </h3>
                 <div class="summary"><p>So looking back at these 4 years, I&nbsp;reminisce.</p>
 <p>Each person traverses a path laid out by their circumstance, made their
 own completely separate and unique experience. Recounting, as for only a
@@ -157,55 +144,45 @@ share in this same space. But soon we will depart as life&#8217;s natural
 trajectory unfolds a bittersweet&nbsp;departure.</p>
 <p><strong>But <span class="caps">WOW</span>, I have had an amazing experience sharing this time with&nbsp;you!</strong></p>
 
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/04/2011-04-20-journeys/">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
+                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/04/2011-04-20-journeys/">Read More...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/04/2011-04-13-problem-of-pain/">Problem of&nbsp;Pain</a></h2>
-                </h3>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-04-13T04:07:21"> Wed, 13 Apr 2011</time>
+        <i class="fa fa-calendar"></i><time datetime="2011-04-13T04:07:21-07:00"> Wed, 13 Apr 2011</time>
     </span>
 
 
 
     
 </footer><!-- /.post-info -->                    </div>
-                </h3>
                 <div class="summary"><!--  -->
 <blockquote>
 The reason why pain exists, is to teach the meaning of joy. For those
 who know much pain, also understand happiness.</blockquote>
 
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/04/2011-04-13-problem-of-pain/">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
+                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/04/2011-04-13-problem-of-pain/">Read More...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/04/2011-04-01-a-look-from-up-above-right-as-the-sun-came-up/">Skyline</a></h2>
-                </h3>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-04-01T17:58:00"> Fri, 01 Apr 2011</time>
+        <i class="fa fa-calendar"></i><time datetime="2011-04-01T17:58:00-07:00"> Fri, 01 Apr 2011</time>
     </span>
 
 
 
     
 </footer><!-- /.post-info -->                    </div>
-                </h3>
                 <div class="summary"><p>A look from up above, right as the sun came up before my <span class="caps">8AM</span> final
 during finals week.</p>
 <p></p>
@@ -213,29 +190,23 @@ during finals week.</p>
 <p></p>
 <p></p>
 
-                        <p><img src="http://sanghan.me/img/tumblr/tumblr_lj02pizpJc1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/04/2011-04-01-a-look-from-up-above-right-as-the-sun-came-up/">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
+                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/04/2011-04-01-a-look-from-up-above-right-as-the-sun-came-up/">Read More...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/03/2011-03-14-rainy-days/">Rainy&nbsp;Days</a></h2>
-                </h3>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-03-14T13:04:47"> Mon, 14 Mar 2011</time>
+        <i class="fa fa-calendar"></i><time datetime="2011-03-14T13:04:47-07:00"> Mon, 14 Mar 2011</time>
     </span>
 
 
 
     
 </footer><!-- /.post-info -->                    </div>
-                </h3>
                 <div class="summary"><!--  -->
 <blockquote>
 <p>雨點下眼睛風雨在這裡&nbsp;足以不能看到一直往前</p>
@@ -245,28 +216,23 @@ Fade Away&nbsp;我的感覺</p>
 <p>別人不能明白閔&nbsp;把故事复述一遍</p>
 </blockquote>
 
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/03/2011-03-14-rainy-days/">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
+                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/03/2011-03-14-rainy-days/">Read More...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/03/2011-03-10-love-as-a-gift/">Love as a&nbsp;Gift</a></h2>
-                </h3>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-03-10T21:02:00"> Thu, 10 Mar 2011</time>
+        <i class="fa fa-calendar"></i><time datetime="2011-03-10T21:02:00-08:00"> Thu, 10 Mar 2011</time>
     </span>
 
 
 
     
 </footer><!-- /.post-info -->                    </div>
-                </h3>
                 <div class="summary"><!--  -->
 <blockquote>
 <p>But the proper aim of giving is to put the recipient in a state where
@@ -276,20 +242,13 @@ making ourselves&nbsp;superfluous.</p>
 <p class="attribution">&mdash;Clive Staples&nbsp;Lewis</p>
 </blockquote>
 
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/03/2011-03-10-love-as-a-gift/">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
+                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/03/2011-03-10-love-as-a-gift/">Read More...</a>
                 </div>
             </article>
             <hr/>
 
-        <ul class="pager">
-                <li class="previous"><a href="http://sanghan.me/category/tumblr4.html">&larr; Newer</a></li>
-                <li class="next"><a
-                        href="http://sanghan.me/category/tumblr6.html">Older &rarr;</a></li>
-        </ul>
-        </div>
+    </div>
+
         <div class="col-sm-3 well well-sm" id="sidebar">
 
 <aside>
@@ -350,18 +309,24 @@ making ourselves&nbsp;superfluous.</p>
 </aside>        </div>
     </div>
 </div>
+
 <footer>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2012 Sang Han         </div>
+         <div class="col-xs-10">&copy; 2012 LightQuanta
+            &middot; Sang Han         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>
    </div>
 </footer>
-<script type="text/javascript" src="http://sanghan.me/theme/js/jquery.min.js"></script>
-<script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
+<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://sanghan.me/theme/js/respond.min.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">
@@ -417,5 +382,4 @@ making ourselves&nbsp;superfluous.</p>
     </script>
     <!-- End Google Analytics Code -->
 </body>
-
 </html>

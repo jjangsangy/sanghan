@@ -1,46 +1,36 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml"
-      >
+<html lang="en"
+>
 <head>
-    <title>Swift: Modern, Safe and Powerful, Choose 2 - LightQuanta</title>
+    <title>Swift Program is Swift, Except When it’s Not - LightQuanta</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width initial-scale=1>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Open Graph tags -->
-        <meta property="og:site_name" content="LightQuanta" />
-            <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Swift: Modern, Safe and Powerful, Choose 2"/>
-            <meta property="og:url" content="http://sanghan.me/blog/2014/06/swift_modern_safe_powerful/"/>
-            <meta property="og:description" content="This past WWDC Apple revealed a brand new programming language called Swift to the masses and passed it out to Apple Developers packaged in the XCode 6 Beta. Language Features Type Inferencing and Automatic Reference Counting (ARC) Optional Bindings and Generic Functions Integration with Objective-C First-Class Functions and Closures My initial impressions were pretty high. However, after some quick benchmarking examples, those feelings later matured to an understanding of it’s &#34;beta&#34; characteristics. Many of the underlying optimization still have some kinks to work through. And by kinks, I mean some big fixes Benchmarks Here are a couple examples of ..."/>
-            <meta property="article:published_time" content="2014-06-11" />
-                <meta property="article:section" content="Programming" />
-                <meta property="article:tag" content="Apple" />
-                <meta property="article:tag" content="Programming Language" />
-                <meta property="article:tag" content="Benchmarks" />
-                <meta property="article:tag" content="Bubble Sort" />
-                <meta property="article:author" content="Sang Han" />
 
+    <link href="http://sanghan.me/img/hv.png" rel="icon">
+
+<link rel="canonical" href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
+
+        <meta name="author" content="Sang Han" />
+        <meta name="keywords" content="Apple,Programming Language,Benchmarks,Bubble Sort" />
+        <meta name="description" content="This past WWDC Apple revealed a brand new programming language called Swift to the masses and passed it out to Apple Developers packaged in the XCode 6 Beta. Language Features Type Inferencing and Automatic Reference Counting (ARC) Optional Bindings and Generic Functions Integration with Objective-C First-Class Functions and Closures My initial impressions were pretty high. However, after some quick benchmarking examples, those feelings later matured to an understanding of it’s &#34;beta&#34; characteristics. Many of the underlying optimization still have some kinks to work through. And by kinks, I mean some big fixes Benchmarks Here are a couple examples of ..." />
+
+
+
+    <!-- Bootstrap -->
         <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.flatly.min.css" type="text/css"/>
-
-    <!-- Syntax Highlighting -->
     <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
+
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
-
-
         <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
-
     <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
         <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
 
         <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="LightQuanta ATOM Feed"/>
 
-        <link rel="icon" href="/img/hv.ico">
-        <link rel="apple-touch-icon-precomposed" href="/img/hv-152.png">
 </head>
 <body>
 
@@ -54,97 +44,88 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="http://sanghan.me/" class="navbar-brand">
-                    <i class="fa fa-flask pull-center fa-border"></i>
-                    LightQuanta
+
+<i class="fa fa-flask pull-center fa-border"></i>
+                LightQuanta
             </a>
         </div>
-
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
 
-                <!-- Pages -->
                          <li>
                              <a href="http://sanghan.me/pages/about.html">
-                                     <i class="fa fa-beer"></i>
-                                     <span class="icon-label">About&nbsp;Me</span>
+                             <i class="fa fa-beer"></i>
+                             <span class="icon-label">About&nbsp;Me</span>
                              </a>
                          </li>
                          <li>
                              <a href="http://sanghan.me/pages/projects.html">
-                                     <i class="fa fa-code"></i>
-                                     <span class="icon-label">Projects</span>
+                             <i class="fa fa-code"></i>
+                             <span class="icon-label">Projects</span>
                              </a>
                          </li>
                          <li>
                              <a href="http://sanghan.me/pages/skills.html">
-                                     <i class="fa fa-graduation-cap"></i>
-                                     <span class="icon-label">Skills</span>
+                             <i class="fa fa-graduation-cap"></i>
+                             <span class="icon-label">Skills</span>
                              </a>
                          </li>
                          <li>
                              <a href="http://sanghan.me/pages/tools.html">
-                                     <i class="fa fa-wrench"></i>
-                                     <span class="icon-label">Tools</span>
+                             <i class="fa fa-wrench"></i>
+                             <span class="icon-label">Tools</span>
                              </a>
                          </li>
 
-                <!-- Categories Dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Categories
-                        <b class="caret"></b>
-                    </a>
+                <!--Dropdown Categories-->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu">
-                                <li >
-                                    <a href="http://sanghan.me/category/articles.html">Articles</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/music.html">Music</a>
-                                </li>
-                                <li class="active">
-                                    <a href="http://sanghan.me/category/programming.html">Programming</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/quotes.html">Quotes</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/tumblr.html">Tumblr</a>
-                                </li>
+                        <li >
+                        <a href="http://sanghan.me/category/articles.html">Articles</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/music.html">Music</a></li>
+                        <li  class="active" >
+                        <a href="http://sanghan.me/category/programming.html">Programming</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/quotes.html">Quotes</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/tumblr.html">Tumblr</a></li>
                     </ul>
-                </li>
+                    </li>
 
-            <!-- Archives -->
-                <!-- <ul class="nav navbar-nav navbar-right"> -->
-                <!--     <li> -->
-                <!--         <a href="http://sanghan.me/archives.html"> -->
-                <!--             <i class="fa fa-th-list"></i> -->
-                <!--             <span class="icon-label">Archives</span> -->
-                <!--         </a> -->
-                <!--     </li> -->
-                <!-- </ul> -->
+
+<!-- Disabled
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+</ul>
+-->
+
         </div>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
 
+<div class="container-full full-width">
+    <div id="bg" class="hero-unit"></div>
+</div>
 
 <div class="container">
     <div class="row">
-            <div class="col-sm-9">
+        <div class="col-sm-9">
             <ol class="breadcrumb">
                 <li><a href="http://sanghan.me" title="LightQuanta"><i class="fa fa-home fa-lg"></i></a></li>
                 <li><a href="http://sanghan.me/category/programming.html" title="Programming">Programming</a></li>
-                <li class="active">Swift: Modern, Safe and Powerful, Choose&nbsp;2</li>
+                <li class="active">Swift Program is Swift, Except When it&#8217;s&nbsp;Not</li>
             </ol>
 
     <section id="content">
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://sanghan.me/blog/2014/06/swift_modern_safe_powerful/"
+                    <a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/"
                        rel="bookmark"
-                       title="Permalink to Swift: Modern, Safe and Powerful, Choose 2">
-                        Swift: Modern, Safe and Powerful, Choose&nbsp;2
+                       title="Permalink to Swift Program is Swift, Except When it’s Not">
+                        Swift Program is Swift, Except When it&#8217;s&nbsp;Not
                     </a>
                 </h1>
             </header>
@@ -154,7 +135,7 @@
 <footer class="post-info">
     <span class="label label-primary">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-06-11T00:00:00"> Wed, 11 Jun 2014</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-06-11T00:00:00-07:00"> Wed, 11 Jun 2014</time>
     </span>
 
 
@@ -330,7 +311,11 @@ finish reasonibly quick. Other than that nothing has&nbsp;changed.</p>
 </div>
 <div class="plotly">
     <iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/84/" width="100%" height="100%"></iframe>
-</div><p>According to a post on <a class="reference external" href="http://stackoverflow.com/questions/24101718/swift-performance-sorting-arrays">Stacked&nbsp;Overflow</a></p>
+</div></div>
+<div class="section" id="modern-safe-and-powerful-choose-2">
+<h2>Modern, Safe and Powerful: Choose&nbsp;2</h2>
+<p><img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /></p>
+<p>According to a post on <a class="reference external" href="http://stackoverflow.com/questions/24101718/swift-performance-sorting-arrays">Stacked&nbsp;Overflow</a></p>
 <blockquote class="pull-quote">
 However, -Ofast changes the semantics of the language a lot — in my testing,
 it disabled the checks for integer overflows and array indexing overflows.
@@ -364,8 +349,8 @@ That is, 26 subroutine calls in the inner&nbsp;loop!</li>
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'sanghan'; // required: replace example with your forum shortname
 
-                    var disqus_identifier = 'swift_modern_safe_powerful';
-                var disqus_url = 'http://sanghan.me/blog/2014/06/swift_modern_safe_powerful/';
+                    var disqus_identifier = 'swift_program_is_swift_except_when_its_not';
+                var disqus_url = 'http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/';
 
             var disqus_config = function () {
                 this.language = "en";
@@ -388,7 +373,8 @@ That is, 26 subroutine calls in the inner&nbsp;loop!</li>
         </article>
     </section>
 
-        </div>
+    </div>
+
         <div class="col-sm-3 well well-sm" id="sidebar">
 
 <aside>
@@ -407,8 +393,8 @@ That is, 26 subroutine calls in the inner&nbsp;loop!</li>
                 <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                     <ul class="list-group" id="recentposts">
                         <li class="list-group-item">
-                            <a href="http://sanghan.me/blog/2014/06/swift_modern_safe_powerful/">
-                                Swift: Modern, Safe and Powerful, Choose&nbsp;2
+                            <a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
+                                Swift Program is Swift, Except When it&#8217;s&nbsp;Not
                             </a>
                         </li>
                         <li class="list-group-item">
@@ -449,18 +435,24 @@ That is, 26 subroutine calls in the inner&nbsp;loop!</li>
 </aside>        </div>
     </div>
 </div>
+
 <footer>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2014 Sang Han         </div>
+         <div class="col-xs-10">&copy; 2014 LightQuanta
+            &middot; Sang Han         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>
    </div>
 </footer>
-<script type="text/javascript" src="http://sanghan.me/theme/js/jquery.min.js"></script>
-<script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
+<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://sanghan.me/theme/js/respond.min.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">
@@ -516,5 +508,4 @@ That is, 26 subroutine calls in the inner&nbsp;loop!</li>
     </script>
     <!-- End Google Analytics Code -->
 </body>
-
 </html>

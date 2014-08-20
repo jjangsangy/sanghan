@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml"
-      >
+<html lang="en"
+>
 <head>
     <title>photography - LightQuanta</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width initial-scale=1>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="http://sanghan.me/img/hv.png" rel="icon">
+
+
+    <meta name="author" content="Sang Han" />
+    <meta name="keywords" content="photography" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="LightQuanta" />
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="LightQuanta"/>
-            <meta property="og:url" content="http://sanghan.me"/>
-            <meta property="og:description" content="LightQuanta"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="LightQuanta"/>
+        <meta property="og:url" content="http://sanghan.me"/>
+        <meta property="og:description" content="LightQuanta"/>
 
+
+    <!-- Bootstrap -->
         <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.flatly.min.css" type="text/css"/>
-
-    <!-- Syntax Highlighting -->
     <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
+
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
-
-
         <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
-
     <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
         <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
 
         <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="LightQuanta ATOM Feed"/>
 
-        <link rel="icon" href="/img/hv.ico">
-        <link rel="apple-touch-icon-precomposed" href="/img/hv-152.png">
 </head>
 <body>
 
@@ -47,86 +48,74 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="http://sanghan.me/" class="navbar-brand">
-                    <i class="fa fa-flask pull-center fa-border"></i>
-                    LightQuanta
+
+<i class="fa fa-flask pull-center fa-border"></i>
+                LightQuanta
             </a>
         </div>
-
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
 
-                <!-- Pages -->
                          <li>
                              <a href="http://sanghan.me/pages/about.html">
-                                     <i class="fa fa-beer"></i>
-                                     <span class="icon-label">About&nbsp;Me</span>
+                             <i class="fa fa-beer"></i>
+                             <span class="icon-label">About&nbsp;Me</span>
                              </a>
                          </li>
                          <li>
                              <a href="http://sanghan.me/pages/projects.html">
-                                     <i class="fa fa-code"></i>
-                                     <span class="icon-label">Projects</span>
+                             <i class="fa fa-code"></i>
+                             <span class="icon-label">Projects</span>
                              </a>
                          </li>
                          <li>
                              <a href="http://sanghan.me/pages/skills.html">
-                                     <i class="fa fa-graduation-cap"></i>
-                                     <span class="icon-label">Skills</span>
+                             <i class="fa fa-graduation-cap"></i>
+                             <span class="icon-label">Skills</span>
                              </a>
                          </li>
                          <li>
                              <a href="http://sanghan.me/pages/tools.html">
-                                     <i class="fa fa-wrench"></i>
-                                     <span class="icon-label">Tools</span>
+                             <i class="fa fa-wrench"></i>
+                             <span class="icon-label">Tools</span>
                              </a>
                          </li>
 
-                <!-- Categories Dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Categories
-                        <b class="caret"></b>
-                    </a>
+                <!--Dropdown Categories-->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu">
-                                <li >
-                                    <a href="http://sanghan.me/category/articles.html">Articles</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/music.html">Music</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/programming.html">Programming</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/quotes.html">Quotes</a>
-                                </li>
-                                <li >
-                                    <a href="http://sanghan.me/category/tumblr.html">Tumblr</a>
-                                </li>
+                        <li >
+                        <a href="http://sanghan.me/category/articles.html">Articles</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/music.html">Music</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/programming.html">Programming</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/quotes.html">Quotes</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/tumblr.html">Tumblr</a></li>
                     </ul>
-                </li>
+                    </li>
 
-            <!-- Archives -->
-                <!-- <ul class="nav navbar-nav navbar-right"> -->
-                <!--     <li> -->
-                <!--         <a href="http://sanghan.me/archives.html"> -->
-                <!--             <i class="fa fa-th-list"></i> -->
-                <!--             <span class="icon-label">Archives</span> -->
-                <!--         </a> -->
-                <!--     </li> -->
-                <!-- </ul> -->
+
+<!-- Disabled
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+</ul>
+-->
+
         </div>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
 
-    <div class="container-full full-width">
-        <div id=bg class=hero-unit></div>
-    </div>
+<div class="container-full full-width">
+    <div id="bg" class="hero-unit"></div>
+</div>
 
 <div class="container">
     <div class="row">
-            <div class="col-sm-9">
+        <div class="col-sm-9">
     <ol class="breadcrumb">
         <li><a href="http://sanghan.me" title="LightQuanta"><i class="fa fa-home fa-lg"></i></a></li>
         <li><a href="http://sanghan.me/" title="Tags">Tags</a></li>
@@ -135,12 +124,11 @@
 
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/11/2011-11-18-photography-website/">Photography&nbsp;Website</a></h2>
-                </h3>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-11-18T13:44:00"> Fri, 18 Nov 2011</time>
+        <i class="fa fa-calendar"></i><time datetime="2011-11-18T13:44:00-08:00"> Fri, 18 Nov 2011</time>
     </span>
 
 
@@ -161,29 +149,23 @@
 	<a href="http://sanghan.me/tag/san-diego.html">San Diego</a>
     
 </footer><!-- /.post-info -->                    </div>
-                </h3>
                 <div class="summary"><p><strong>Website Development</strong></p>
 <p>So it’s been almost a week designing and coding for my new photography
 website. Can’t wait till I can finally release it to the public.</p>
 <p>Be ready, because we will be live soon!</p>
 <p></p>
 
-                        <p><img src="http://sanghan.me/img/sanghanphotography.png" /></p>
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/11/2011-11-18-photography-website/">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
+                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/11/2011-11-18-photography-website/">Read More...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/08/2011-08-15-dana-and-aramis-wedding-heres-the-first/">Dana and Aramis&#8217;&nbsp;Wedding</a></h2>
-                </h3>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-08-15T03:37:00"> Mon, 15 Aug 2011</time>
+        <i class="fa fa-calendar"></i><time datetime="2011-08-15T03:37:00-07:00"> Mon, 15 Aug 2011</time>
     </span>
 
 
@@ -202,7 +184,6 @@ website. Can’t wait till I can finally release it to the public.</p>
 	<a href="http://sanghan.me/tag/rowing-club.html">Rowing Club</a>
     
 </footer><!-- /.post-info -->                    </div>
-                </h3>
                 <div class="summary"><p><strong>Dana And Aramis’ Wedding</strong></p>
 <p>Here’s the first wedding that I’ll upload online. Hope you like them!</p>
 <p></p>
@@ -216,22 +197,17 @@ website. Can’t wait till I can finally release it to the public.</p>
 <p></p>
 <p></p>
 
-                        <p><img src="http://sanghan.me/img/tumblr/tumblr_lpyti1bqUu1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/08/2011-08-15-dana-and-aramis-wedding-heres-the-first/">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
+                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/08/2011-08-15-dana-and-aramis-wedding-heres-the-first/">Read More...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/07/2011-07-18-photography-tip-3-white-balance-color-temperature/">Photography Tip #3 - White Balance (Color&nbsp;Temperature)</a></h2>
-                </h3>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-07-18T21:30:00"> Mon, 18 Jul 2011</time>
+        <i class="fa fa-calendar"></i><time datetime="2011-07-18T21:30:00-07:00"> Mon, 18 Jul 2011</time>
     </span>
 
 
@@ -254,7 +230,6 @@ website. Can’t wait till I can finally release it to the public.</p>
 	<a href="http://sanghan.me/tag/sang-han.html">Sang Han</a>
     
 </footer><!-- /.post-info -->                    </div>
-                </h3>
                 <div class="summary"><!-- -->
 <p>So here is a slightly technical tip which will help <strong><span class="caps">ALMOST</span> <span class="caps">ANYONE</span></strong>
 improve their photos. This does not <strong>only</strong> effect people who use
@@ -268,22 +243,17 @@ of this picture.</p>
 <p>Now it makes sense. You’ll probably say, the color is wrong. But more
 precisely, it was a problem with white balance or color temperature.
 Most <span class="caps">DSLR</span>’s which can shoot ...</p><!--!---->
-                        <p><img src="/img/20101028_MG_7908.jpg" /></p>
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/07/2011-07-18-photography-tip-3-white-balance-color-temperature/">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
+                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/07/2011-07-18-photography-tip-3-white-balance-color-temperature/">Read More...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/07/2011-07-11-wushu-concept-photoshoot-2-melvin-hseih-low/">Low Key Wushu&nbsp;Photoshoot</a></h2>
-                </h3>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-07-11T02:38:09"> Mon, 11 Jul 2011</time>
+        <i class="fa fa-calendar"></i><time datetime="2011-07-11T02:38:09-07:00"> Mon, 11 Jul 2011</time>
     </span>
 
 
@@ -306,7 +276,6 @@ Most <span class="caps">DSLR</span>’s which can shoot ...</p><!--!---->
 	<a href="http://sanghan.me/tag/low-key.html">Low Key</a>
     
 </footer><!-- /.post-info -->                    </div>
-                </h3>
                 <div class="summary"><p><strong>Wushu Concept Photoshoot #2 - Melvin Hseih (Low&nbsp;Key)</strong></p>
 <p>So here is the second part of the photoshoot, finally finished
 processing and uploading. We shot this on the top floor of the Gilman
@@ -316,22 +285,17 @@ people, and #2 so that we could get some high key shots with some
 ambient lighting and low key shots with a 3 point flash setup. The low
 key shots were definitely harder to take and edit, mostly due to
 balancing ...</p>
-                        <p><img src="http://sanghan.me/img/tumblr/tumblr_lo5xfoDxVN1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/07/2011-07-11-wushu-concept-photoshoot-2-melvin-hseih-low/">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
+                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/07/2011-07-11-wushu-concept-photoshoot-2-melvin-hseih-low/">Read More...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="http://sanghan.me/blog/2011/06/2011-06-20-seaport-village/">Seaport&nbsp;Village</a></h2>
-                </h3>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-06-20T14:32:52"> Mon, 20 Jun 2011</time>
+        <i class="fa fa-calendar"></i><time datetime="2011-06-20T14:32:52-07:00"> Mon, 20 Jun 2011</time>
     </span>
 
 
@@ -348,7 +312,6 @@ balancing ...</p>
 	<a href="http://sanghan.me/tag/sang-han.html">Sang Han</a>
     
 </footer><!-- /.post-info -->                    </div>
-                </h3>
                 <div class="summary"><p><strong>Seaport Village</strong></p>
 <p></p>
 <p></p>
@@ -357,21 +320,13 @@ balancing ...</p>
 <p></p>
 <p></p>
 
-                        <p><img src="http://sanghan.me/img/tumblr/tumblr_ln3yizQocN1qbyrnao1_1280.jpg" /></p>
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/06/2011-06-20-seaport-village/">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
+                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2011/06/2011-06-20-seaport-village/">Read More...</a>
                 </div>
             </article>
             <hr/>
 
-        <ul class="pager">
-                <li class="previous disabled"><a href="#">&larr; Newer</a></li>
-                <li class="next"><a
-                        href="http://sanghan.me/tag/photography2.html">Older &rarr;</a></li>
-        </ul>
-        </div>
+    </div>
+
         <div class="col-sm-3 well well-sm" id="sidebar">
 
 <aside>
@@ -432,18 +387,24 @@ balancing ...</p>
 </aside>        </div>
     </div>
 </div>
+
 <footer>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2011 Sang Han         </div>
+         <div class="col-xs-10">&copy; 2011 LightQuanta
+            &middot; Sang Han         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>
    </div>
 </footer>
-<script type="text/javascript" src="http://sanghan.me/theme/js/jquery.min.js"></script>
-<script type="text/javascript" src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="http://sanghan.me/theme/js/respond.min.js"></script>
+<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://sanghan.me/theme/js/respond.min.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">
@@ -499,5 +460,4 @@ balancing ...</p>
     </script>
     <!-- End Google Analytics Code -->
 </body>
-
 </html>
