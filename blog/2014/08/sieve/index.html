@@ -238,24 +238,21 @@ True
 </div>
 <div class="section" id="performance-testing">
 <h3>Performance&nbsp;Testing</h3>
-<div class="highlight"><pre><span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_sieve&#39;</span><span class="p">):</span>
-    <span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_sieve&#39;</span><span class="p">):</span>
+        <span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">set_sieve</span><span class="p">:</span> <span class="mf">0.735</span> <span class="n">sec</span>
+
+ <span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_factor_sieve&#39;</span><span class="p">):</span>
+         <span class="n">set_factor_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+
+ <span class="n">set_factor_sieve</span><span class="p">:</span> <span class="mf">0.587</span> <span class="n">sec</span>
+
+ <span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;numpy&#39;</span><span class="p">):</span>
+         <span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+
+ <span class="n">numpy</span><span class="p">:</span> <span class="mf">0.008</span> <span class="n">sec</span>
 </pre></div>
-<pre class="literal-block">
-set_sieve: 0.735 sec
-</pre>
-<div class="highlight"><pre><span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_factor_sieve&#39;</span><span class="p">):</span>
-    <span class="n">set_factor_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-</pre></div>
-<pre class="literal-block">
-set_factor_sieve: 0.587 sec
-</pre>
-<div class="highlight"><pre><span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;numpy&#39;</span><span class="p">):</span>
-    <span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-</pre></div>
-<pre class="literal-block">
-numpy: 0.008 sec
-</pre>
 </div>
 </div>
 
