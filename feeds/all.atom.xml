@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/all.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-08-29T00:00:00-07:00</updated><entry><title>Prime Sieve Implementations in Python</title><link href="http://sanghan.me/blog/2014/08/sieve/" rel="alternate"></link><updated>2014-08-29T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-08-29:blog/2014/08/sieve/</id><summary type="html">&lt;div class="section" id="original-sieve-unoptimized"&gt;
 &lt;h2&gt;Original Sieve:&amp;nbsp;Unoptimized&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_prime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_prime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;span class="sd"&gt;    Find all the primes by perfoming modulo&lt;/span&gt;
 &lt;span class="sd"&gt;    between all possible values.&lt;/span&gt;
