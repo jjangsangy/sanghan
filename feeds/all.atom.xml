@@ -1,121 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/all.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-08-29T00:00:00-07:00</updated><entry><title>Prime Sieve Implementations in Python</title><link href="http://sanghan.me/blog/2014/08/sieve/" rel="alternate"></link><updated>2014-08-29T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-08-29:blog/2014/08/sieve/</id><summary type="html">&lt;div class="section" id="sieve"&gt;
 &lt;h2&gt;Sieve&lt;/h2&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="k"&gt;pass&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="sets-unordered-collections"&gt;
 &lt;h2&gt;Sets: Unordered&amp;nbsp;Collections&lt;/h2&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;set_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;
-    Sets are unordered, but hashable collections which offer optimizations
-    for membership testing at O(1) time complexity.
-    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;set_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    Sets are unordered, but hashable collections which offer optimizations&lt;/span&gt;
+&lt;span class="sd"&gt;    for membership testing at O(1) time complexity.&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
     &lt;span class="n"&gt;primes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
         &lt;span class="n"&gt;primes&lt;/span&gt; &lt;span class="o"&gt;-=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;primes&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="sets-optimized-insertion"&gt;
 &lt;h2&gt;Sets Optimized&amp;nbsp;Insertion&lt;/h2&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;set_insertion_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;
-    Further optimized set implementation by performing insertion over deletion
-    which utilizes constant time nature of hashable collections.
-    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;set_insertion_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    Further optimized set implementation by performing insertion over deletion&lt;/span&gt;
+&lt;span class="sd"&gt;    which utilizes constant time nature of hashable collections.&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
     &lt;span class="n"&gt;factors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;factors&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
             &lt;span class="n"&gt;factors&lt;/span&gt; &lt;span class="o"&gt;|=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;factors&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="numpy"&gt;
 &lt;h2&gt;Numpy&lt;/h2&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;np_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;
-    Numpy n-dimmensional array data-structures are continguous strides of memory with
-    fixed width statically typed elements. Ndarrys provide random access to array elements
-    unlike pythons built-in lists which are dynamically allocated doubly linked-lists.
-    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    Numpy n-dimmensional array data-structures are continguous strides of memory with&lt;/span&gt;
+&lt;span class="sd"&gt;    fixed width statically typed elements. Ndarrys provide random access to array elements&lt;/span&gt;
+&lt;span class="sd"&gt;    unlike pythons built-in lists which are dynamically allocated doubly linked-lists.&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
     &lt;span class="n"&gt;primes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;uint32&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
             &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nonzero&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="testing"&gt;
 &lt;h3&gt;Testing&lt;/h3&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;check_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;check_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;any&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;prime&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
             &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
-&lt;/pre&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="n"&gt;check_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;check_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;pre class="literal-block"&gt;
 True
 &lt;/pre&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="n"&gt;check_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;set_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;check_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;set_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;pre class="literal-block"&gt;
 True
 &lt;/pre&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="n"&gt;check_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;set_insertion_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;check_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;set_insertion_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;pre class="literal-block"&gt;
 True
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="a-timer"&gt;
 &lt;h3&gt;A&amp;nbsp;Timer&lt;/h3&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;contextlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;contextmanager&lt;/span&gt;
 
-&lt;span class="nd"&gt;&amp;#64;contextmanager&lt;/span&gt;
+&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="k"&gt;yield&lt;/span&gt;
     &lt;span class="k"&gt;finally&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'{label}: {time:03.3f} sec'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;{label}: {time:03.3f} sec&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="performance-testing"&gt;
 &lt;h3&gt;Performance&amp;nbsp;Testing&lt;/h3&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'set_sieve'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;set_sieve&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;set_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;pre class="literal-block"&gt;
 set_sieve: 0.735 sec
 &lt;/pre&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'set_factor_sieve'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;set_factor_sieve&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;set_factor_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;pre class="literal-block"&gt;
 set_factor_sieve: 0.587 sec
 &lt;/pre&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'numpy'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;numpy&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;np_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;pre class="literal-block"&gt;
 numpy: 0.008 sec
 &lt;/pre&gt;

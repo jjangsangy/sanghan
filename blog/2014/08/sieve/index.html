@@ -151,121 +151,109 @@
                 </div>
                 <div class="section" id="sieve">
 <h2>Sieve</h2>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
     <span class="k">pass</span>
-</pre>
+</pre></div>
 </div>
 <div class="section" id="sets-unordered-collections">
 <h2>Sets: Unordered&nbsp;Collections</h2>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">set_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;
-    Sets are unordered, but hashable collections which offer optimizations
-    for membership testing at O(1) time complexity.
-    &quot;&quot;&quot;</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">set_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Sets are unordered, but hashable collections which offer optimizations</span>
+<span class="sd">    for membership testing at O(1) time complexity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">primes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
         <span class="n">primes</span> <span class="o">-=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">primes</span>
-</pre>
+</pre></div>
 </div>
 <div class="section" id="sets-optimized-insertion">
 <h2>Sets Optimized&nbsp;Insertion</h2>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;
-    Further optimized set implementation by performing insertion over deletion
-    which utilizes constant time nature of hashable collections.
-    &quot;&quot;&quot;</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Further optimized set implementation by performing insertion over deletion</span>
+<span class="sd">    which utilizes constant time nature of hashable collections.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">factors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
         <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
             <span class="n">factors</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
     <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="n">factors</span>
-</pre>
+</pre></div>
 </div>
 <div class="section" id="numpy">
 <h2>Numpy</h2>
-<pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">np_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;
-    Numpy n-dimmensional array data-structures are continguous strides of memory with
-    fixed width statically typed elements. Ndarrys provide random access to array elements
-    unlike pythons built-in lists which are dynamically allocated doubly linked-lists.
-    &quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Numpy n-dimmensional array data-structures are continguous strides of memory with</span>
+<span class="sd">    fixed width statically typed elements. Ndarrys provide random access to array elements</span>
+<span class="sd">    unlike pythons built-in lists which are dynamically allocated doubly linked-lists.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">primes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
             <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">::</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">primes</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
-</pre>
+</pre></div>
 <div class="section" id="testing">
 <h3>Testing</h3>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">check_primes</span><span class="p">(</span><span class="n">primes</span><span class="p">:</span> <span class="nb">iter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">check_primes</span><span class="p">(</span><span class="n">primes</span><span class="p">:</span> <span class="nb">iter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">prime</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">prime</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">prime</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">False</span>
     <span class="k">return</span> <span class="bp">True</span>
-</pre>
-<pre class="code python literal-block">
-<span class="n">check_primes</span><span class="p">(</span><span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
-</pre>
+</pre></div>
+<div class="highlight"><pre><span class="n">check_primes</span><span class="p">(</span><span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
 <pre class="literal-block">
 True
 </pre>
-<pre class="code python literal-block">
-<span class="n">check_primes</span><span class="p">(</span><span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
-</pre>
+<div class="highlight"><pre><span class="n">check_primes</span><span class="p">(</span><span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
 <pre class="literal-block">
 True
 </pre>
-<pre class="code python literal-block">
-<span class="n">check_primes</span><span class="p">(</span><span class="n">set_insertion_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
-</pre>
+<div class="highlight"><pre><span class="n">check_primes</span><span class="p">(</span><span class="n">set_insertion_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
 <pre class="literal-block">
 True
 </pre>
 </div>
 <div class="section" id="a-timer">
 <h3>A&nbsp;Timer</h3>
-<pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
 
-<span class="nd">&#64;contextmanager</span>
+<span class="nd">@contextmanager</span>
 <span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">label</span><span class="p">):</span>
     <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">yield</span>
     <span class="k">finally</span><span class="p">:</span>
         <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'{label}: {time:03.3f} sec'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">))</span>
-</pre>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;{label}: {time:03.3f} sec&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">))</span>
+</pre></div>
 </div>
 <div class="section" id="performance-testing">
 <h3>Performance&nbsp;Testing</h3>
-<pre class="code python literal-block">
-<span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">'set_sieve'</span><span class="p">):</span>
+<div class="highlight"><pre><span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_sieve&#39;</span><span class="p">):</span>
     <span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-</pre>
+</pre></div>
 <pre class="literal-block">
 set_sieve: 0.735 sec
 </pre>
-<pre class="code python literal-block">
-<span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">'set_factor_sieve'</span><span class="p">):</span>
+<div class="highlight"><pre><span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_factor_sieve&#39;</span><span class="p">):</span>
     <span class="n">set_factor_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-</pre>
+</pre></div>
 <pre class="literal-block">
 set_factor_sieve: 0.587 sec
 </pre>
-<pre class="code python literal-block">
-<span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">'numpy'</span><span class="p">):</span>
+<div class="highlight"><pre><span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;numpy&#39;</span><span class="p">):</span>
     <span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-</pre>
+</pre></div>
 <pre class="literal-block">
 numpy: 0.008 sec
 </pre>

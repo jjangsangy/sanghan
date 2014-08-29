@@ -137,36 +137,33 @@
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><div class="section" id="sieve">
 <h2>Sieve</h2>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
     <span class="k">pass</span>
-</pre>
+</pre></div>
 </div>
 <div class="section" id="sets-unordered-collections">
 <h2>Sets: Unordered&nbsp;Collections</h2>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">set_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;
-    Sets are unordered, but hashable collections which offer optimizations
-    for membership testing at O(1) time complexity.
-    &quot;&quot;&quot;</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">set_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Sets are unordered, but hashable collections which offer optimizations</span>
+<span class="sd">    for membership testing at O(1) time complexity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">primes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
         <span class="n">primes</span> <span class="o">-=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">primes</span>
-</pre>
+</pre></div>
 </div>
 <div class="section" id="sets-optimized-insertion">
 <h2>Sets Optimized&nbsp;Insertion</h2>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;
-    Further optimized set implementation by performing insertion over deletion
-    which utilizes constant time nature of hashable collections.
-    &quot;&quot;&quot;</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Further optimized set implementation by performing insertion over deletion</span>
+<span class="sd">    which utilizes constant time nature of hashable collections.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">factors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factors ...</span></pre></div>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factors ...</span></pre></div></div>
                     <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/08/sieve/">
                         <i class="fa fa-book"></i>
                         <span class="icon-label">Read More....</span>
