@@ -14,8 +14,8 @@
 <link rel="canonical" href="http://sanghan.me/blog/2014/08/sieve/">
 
         <meta name="author" content="Sang Han" />
-        <meta name="keywords" content="Python,Programming,Blog" />
-        <meta name="description" content="Sieve def sieve(n: int) -&gt; list: pass Sets: Unordered Collections def set_sieve(n: int) -&gt; set: &#34;&#34;&#34; Sets are unordered, but hashable collections which offer optimizations for membership testing at O(1) time complexity. &#34;&#34;&#34; primes = set(range(2, n+1)) for i in range(2,int(n**0.5+1)): primes -= set(range(i*i, n+1, i)) return primes Sets Optimized Insertion def set_insertion_sieve(n: int) -&gt; set: &#34;&#34;&#34; Further optimized set implementation by performing insertion over deletion which utilizes constant time nature of hashable collections. &#34;&#34;&#34; factors = set() for i in range(2,int(n**0.5+1)): if i not in factors ..." />
+        <meta name="keywords" content="Python" />
+        <meta name="description" content="Sieve def sieve(n: int) -&gt; list: pass Sets: Unordered Collections def set_sieve(n: int) -&gt; set: &#34;&#34;&#34; Sets are unordered, but hashable collections which offer optimizations for membership testing at O(1) time complexity. &#34;&#34;&#34; primes = set(range(2, n+1)) for i in range(2,int(n**0.5+1)): primes -= set(range(i*i, n+1, i)) return primes Sets Optimized Insertion def set_insertion_sieve(n: int) -&gt; set: &#34;&#34;&#34; Further optimized set implementation by performing insertion over deletion utilizing constant time nature of hashable collections. &#34;&#34;&#34; factors = set() for i in range(2,int(n**0.5+1)): if i not in factors: factors ..." />
 
 
 
@@ -142,10 +142,6 @@
 
 <span class="label label-success">Tags</span>
 	<a href="http://sanghan.me/tag/python.html">Python</a>
-        /
-	<a href="http://sanghan.me/tag/programming.html">Programming</a>
-        /
-	<a href="http://sanghan.me/tag/blog.html">Blog</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -159,8 +155,9 @@
 <h2>Sets: Unordered&nbsp;Collections</h2>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">set_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Sets are unordered, but hashable collections which offer optimizations</span>
-<span class="sd">    for membership testing at O(1) time complexity.</span>
+<span class="sd">    Sets are unordered, but hashable collections</span>
+<span class="sd">    which offer optimizations for membership testing</span>
+<span class="sd">    at O(1) time complexity.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">primes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
@@ -172,8 +169,9 @@
 <h2>Sets Optimized&nbsp;Insertion</h2>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Further optimized set implementation by performing insertion over deletion</span>
-<span class="sd">    which utilizes constant time nature of hashable collections.</span>
+<span class="sd">    Further optimized set implementation by</span>
+<span class="sd">    performing insertion over deletion utilizing</span>
+<span class="sd">    constant time nature of hashable collections.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">factors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
@@ -188,9 +186,10 @@
 
 <span class="k">def</span> <span class="nf">np_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Numpy n-dimmensional array data-structures are continguous strides of memory with</span>
-<span class="sd">    fixed width statically typed elements. Ndarrys provide random access to array elements</span>
-<span class="sd">    unlike pythons built-in lists which are dynamically allocated doubly linked-lists.</span>
+<span class="sd">    Numpy n-dimmensional array are continguous strides</span>
+<span class="sd">    of memory with fixed width statically typed elements.</span>
+<span class="sd">    Ndarrys are a  random access data-structure unlike</span>
+<span class="sd">    pythons built-in doubly linked-lists.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">primes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">):</span>
@@ -200,23 +199,23 @@
 </pre></div>
 <div class="section" id="testing">
 <h3>Testing</h3>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">check_primes</span><span class="p">(</span><span class="n">primes</span><span class="p">:</span> <span class="nb">iter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">all_primes</span><span class="p">(</span><span class="n">primes</span><span class="p">:</span> <span class="nb">iter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">prime</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">prime</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">prime</span><span class="p">)):</span>
             <span class="k">return</span> <span class="bp">False</span>
     <span class="k">return</span> <span class="bp">True</span>
 </pre></div>
-<div class="highlight"><pre><span class="n">check_primes</span><span class="p">(</span><span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight"><pre><span class="n">all_primes</span><span class="p">(</span><span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 <pre class="literal-block">
 True
 </pre>
-<div class="highlight"><pre><span class="n">check_primes</span><span class="p">(</span><span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight"><pre><span class="n">all_primes</span><span class="p">(</span><span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 <pre class="literal-block">
 True
 </pre>
-<div class="highlight"><pre><span class="n">check_primes</span><span class="p">(</span><span class="n">set_insertion_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight"><pre><span class="n">all_primes</span><span class="p">(</span><span class="n">set_insertion_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 <pre class="literal-block">
 True
