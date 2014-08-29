@@ -219,6 +219,26 @@
 </div>
 <div class="section" id="comparison-with-c">
 <h2>Comparison with&nbsp;C</h2>
+<div class="highlight"><pre><span class="kt">void</span> <span class="nf">sieve</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">primes</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+
+    <span class="c1">// Fill array with 1&#39;s</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="c1">// Enumerate through multiples</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="p">;</span> <span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// Print remaining</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d prime = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">++</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+
+<span class="p">}</span>
+</pre></div>
 <div class="section" id="testing">
 <h3>Testing</h3>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">all_primes</span><span class="p">(</span><span class="n">primes</span><span class="p">:</span> <span class="nb">iter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
@@ -261,8 +281,8 @@
 
 <span class="n">set_sieve</span><span class="p">:</span> <span class="mf">0.735</span> <span class="n">sec</span>
 </pre></div>
-<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_factor_sieve&#39;</span><span class="p">):</span>
-        <span class="n">set_factor_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_insertion_sieve&#39;</span><span class="p">):</span>
+        <span class="n">set_insertion_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
 
 <span class="n">set_factor_sieve</span><span class="p">:</span> <span class="mf">0.587</span> <span class="n">sec</span>
 </pre></div>
