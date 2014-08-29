@@ -123,6 +123,61 @@
     </ol>
 
             <article>
+                <h2><a href="http://sanghan.me/blog/2014/08/sieve/">Prime Sieve Implementations in&nbsp;Python</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-primary">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-08-29T00:00:00-07:00"> Fri, 29 Aug 2014</time>
+    </span>
+
+
+
+<span class="label label-success">Tags</span>
+	<a href="http://sanghan.me/tag/python.html">Python</a>
+        /
+	<a href="http://sanghan.me/tag/programming.html">Programming</a>
+        /
+	<a href="http://sanghan.me/tag/blog.html">Blog</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><div class="section" id="sieve">
+<h2>Sieve</h2>
+<pre class="code python literal-block">
+<span class="k">def</span> <span class="nf">sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre>
+</div>
+<div class="section" id="sets-unordered-collections">
+<h2>Sets: Unordered&nbsp;Collections</h2>
+<pre class="code python literal-block">
+<span class="k">def</span> <span class="nf">set_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;
+    Sets are unordered, but hashable collections which offer optimizations
+    for membership testing at O(1) time complexity.
+    &quot;&quot;&quot;</span>
+    <span class="n">primes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+        <span class="n">primes</span> <span class="o">-=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">primes</span>
+</pre>
+</div>
+<div class="section" id="sets-optimized-insertion">
+<h2>Sets Optimized&nbsp;Insertion</h2>
+<pre class="code python literal-block">
+<span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;
+    Further optimized set implementation by performing insertion over deletion
+    which utilizes constant time nature of hashable collections.
+    &quot;&quot;&quot;</span>
+    <span class="n">factors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factors ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2014/08/sieve/">Read More...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://sanghan.me/blog/2014/06/pelican_blog/">Pelican: A Blogging Engine Written in&nbsp;Python</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -176,6 +231,11 @@ a ...</p>
 
                 <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                     <ul class="list-group" id="recentposts">
+                        <li class="list-group-item">
+                            <a href="http://sanghan.me/blog/2014/08/sieve/">
+                                Prime Sieve Implementations in&nbsp;Python
+                            </a>
+                        </li>
                         <li class="list-group-item">
                             <a href="http://sanghan.me/blog/2014/06/pelican_blog/">
                                 Pelican: A Blogging Engine Written in&nbsp;Python
