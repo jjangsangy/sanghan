@@ -205,21 +205,15 @@
             <span class="k">return</span> <span class="bp">False</span>
     <span class="k">return</span> <span class="bp">True</span>
 </pre></div>
-<div class="highlight"><pre><span class="n">all_primes</span><span class="p">(</span><span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">all_primes</span><span class="p">(</span><span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+<span class="bp">True</span>
 </pre></div>
-<pre class="literal-block">
-True
-</pre>
-<div class="highlight"><pre><span class="n">all_primes</span><span class="p">(</span><span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">all_primes</span><span class="p">(</span><span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+<span class="bp">True</span>
 </pre></div>
-<pre class="literal-block">
-True
-</pre>
-<div class="highlight"><pre><span class="n">all_primes</span><span class="p">(</span><span class="n">set_insertion_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">all_primes</span><span class="p">(</span><span class="n">set_insertion_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+<span class="bp">True</span>
 </pre></div>
-<pre class="literal-block">
-True
-</pre>
 </div>
 <div class="section" id="a-timer">
 <h3>A&nbsp;Timer</h3>
@@ -233,25 +227,24 @@ True
         <span class="k">yield</span>
     <span class="k">finally</span><span class="p">:</span>
         <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&#39;{label}: {time:03.3f} sec&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;{label}: {time:03.3f} sec&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span>
+    <span class="p">)</span>
 </pre></div>
 </div>
 <div class="section" id="performance-testing">
 <h3>Performance&nbsp;Testing</h3>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_sieve&#39;</span><span class="p">):</span>
-        <span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-
+       <span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">set_sieve</span><span class="p">:</span> <span class="mf">0.735</span> <span class="n">sec</span>
 
- <span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_factor_sieve&#39;</span><span class="p">):</span>
-         <span class="n">set_factor_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_factor_sieve&#39;</span><span class="p">):</span>
+        <span class="n">set_factor_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">set_factor_sieve</span><span class="p">:</span> <span class="mf">0.587</span> <span class="n">sec</span>
 
- <span class="n">set_factor_sieve</span><span class="p">:</span> <span class="mf">0.587</span> <span class="n">sec</span>
-
- <span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;numpy&#39;</span><span class="p">):</span>
-         <span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-
- <span class="n">numpy</span><span class="p">:</span> <span class="mf">0.008</span> <span class="n">sec</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;numpy&#39;</span><span class="p">):</span>
+        <span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">numpy</span><span class="p">:</span> <span class="mf">0.008</span> <span class="n">sec</span>
 </pre></div>
 </div>
 </div>
