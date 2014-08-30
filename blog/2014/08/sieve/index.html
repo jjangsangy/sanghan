@@ -15,7 +15,7 @@
 
         <meta name="author" content="Sang Han" />
         <meta name="keywords" content="Python" />
-        <meta name="description" content="Recently, I’ve been working through Project Euler problems in order to improve my core programming skills. More likely it’s just an excuse to play around and code some easy programs, but lately the harder problems have been challenging in a way that requires an efficient algorithm to solve in a managable amount of time and space. Original Sieve: Unoptimized def is_prime(n: int) -&gt; list: &#34;&#34;&#34; Find all the primes by perfoming modulo between all possible values. 2 &lt; x &lt; n &#34;&#34;&#34; for i in range(2, n+1): if n % i == 0: return False return True def sieve(n: int) -&gt; list ..." />
+        <meta name="description" content="Recently, I’ve been working through Project Euler problems in order to improve my core programming skills. More likely it’s just an excuse to play around and code some easy programs, but lately the harder problems have been challenging in a way that requires an efficient algorithm to solve in a managable amount of time and space. One of those problems that seem to recur requires an understanding efficiently calculating and testing for prime numbers. One of the more simple and yet efficient solutions are sieves algorithms, the most famous likely being The Sieve of Eratosthenes. Simply, rather than ..." />
 
 
 
@@ -150,6 +150,12 @@ to improve my core programming skills. More likely it&#8217;s just an excuse
 to play around and code some easy programs, but lately the harder problems
 have been challenging in a way that requires an efficient algorithm
 to solve in a managable amount of time and&nbsp;space.</p>
+<p>One of those problems that seem to recur requires an understanding efficiently
+calculating and testing for prime numbers. One of the more simple and yet
+efficient solutions are sieves algorithms, the most famous likely being
+<a class="reference external" href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">The Sieve of Eratosthenes</a>. Simply, rather than computing all the permutations
+of factorizing a value, you start a list of all values and sieve away
+all multiples and eventually end up with a lit of only non-factorable&nbsp;units</p>
 <div class="section" id="original-sieve-unoptimized">
 <h2>Original Sieve:&nbsp;Unoptimized</h2>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
