@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LightQuanta</title><link>http://sanghan.me/</link><description></description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 29 Aug 2014 00:00:00 -0700</lastBuildDate><item><title>Prime Sieve Implementations in Python</title><link>http://sanghan.me/blog/2014/08/sieve/</link><description>&lt;div class="section" id="original-sieve-unoptimized"&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LightQuanta</title><link>http://sanghan.me/</link><description></description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 29 Aug 2014 00:00:00 -0700</lastBuildDate><item><title>Prime Sieves and Python Data Structures</title><link>http://sanghan.me/blog/2014/08/sieve/</link><description>&lt;p&gt;Recently, I&amp;#8217;ve been working through &lt;a class="reference external" href="https://projecteuler.net"&gt;Project Euler&lt;/a&gt; problems in order
+to improve my core programming skills. More likely it&amp;#8217;s just an excuse
+to play around and code some easy programs, but lately the harder problems
+have been challenging in a way that requires an efficient algorithm
+to solve in a managable amount of time and&amp;nbsp;space.&lt;/p&gt;
+&lt;div class="section" id="original-sieve-unoptimized"&gt;
 &lt;h2&gt;Original Sieve:&amp;nbsp;Unoptimized&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_prime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;

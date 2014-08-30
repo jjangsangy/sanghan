@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>Prime Sieve Implementations in Python - LightQuanta</title>
+    <title>Prime Sieves and Python Data Structures - LightQuanta</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
 
         <meta name="author" content="Sang Han" />
         <meta name="keywords" content="Python" />
-        <meta name="description" content="Original Sieve: Unoptimized def is_prime(n: int) -&gt; list: &#34;&#34;&#34; Find all the primes by perfoming modulo between all possible values. 2 &lt; x &lt; n &#34;&#34;&#34; for i in range(2, n+1): if n % i == 0: return False return True def sieve(n: int) -&gt; list: &#34;&#34;&#34; Sieve away and only primes are left. &#34;&#34;&#34; primes = 2*[False] + (n-1)*[True] for i in range(2, n+1): if not is_prime(i): for j in range(i*i, n+1, i): primes[j] = False return [prime for prime, check in enumerate(primes) if check] Sets: Unordered Collections def set_sieve(n: int) -&gt; set: &#34;&#34;&#34; Sets are unordered, but ..." />
+        <meta name="description" content="Recently, I’ve been working through Project Euler problems in order to improve my core programming skills. More likely it’s just an excuse to play around and code some easy programs, but lately the harder problems have been challenging in a way that requires an efficient algorithm to solve in a managable amount of time and space. Original Sieve: Unoptimized def is_prime(n: int) -&gt; list: &#34;&#34;&#34; Find all the primes by perfoming modulo between all possible values. 2 &lt; x &lt; n &#34;&#34;&#34; for i in range(2, n+1): if n % i == 0: return False return True def sieve(n: int) -&gt; list ..." />
 
 
 
@@ -115,7 +115,7 @@
             <ol class="breadcrumb">
                 <li><a href="http://sanghan.me" title="LightQuanta"><i class="fa fa-home fa-lg"></i></a></li>
                 <li><a href="http://sanghan.me/category/programming.html" title="Programming">Programming</a></li>
-                <li class="active">Prime Sieve Implementations in&nbsp;Python</li>
+                <li class="active">Prime Sieves and Python Data&nbsp;Structures</li>
             </ol>
 
     <section id="content">
@@ -124,8 +124,8 @@
                 <h1>
                     <a href="http://sanghan.me/blog/2014/08/sieve/"
                        rel="bookmark"
-                       title="Permalink to Prime Sieve Implementations in Python">
-                        Prime Sieve Implementations in&nbsp;Python
+                       title="Permalink to Prime Sieves and Python Data Structures">
+                        Prime Sieves and Python Data&nbsp;Structures
                     </a>
                 </h1>
             </header>
@@ -145,7 +145,12 @@
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div class="section" id="original-sieve-unoptimized">
+                <p>Recently, I&#8217;ve been working through <a class="reference external" href="https://projecteuler.net">Project Euler</a> problems in order
+to improve my core programming skills. More likely it&#8217;s just an excuse
+to play around and code some easy programs, but lately the harder problems
+have been challenging in a way that requires an efficient algorithm
+to solve in a managable amount of time and&nbsp;space.</p>
+<div class="section" id="original-sieve-unoptimized">
 <h2>Original Sieve:&nbsp;Unoptimized</h2>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -350,7 +355,7 @@
                     <ul class="list-group" id="recentposts">
                         <li class="list-group-item">
                             <a href="http://sanghan.me/blog/2014/08/sieve/">
-                                Prime Sieve Implementations in&nbsp;Python
+                                Prime Sieves and Python Data&nbsp;Structures
                             </a>
                         </li>
                         <li class="list-group-item">
