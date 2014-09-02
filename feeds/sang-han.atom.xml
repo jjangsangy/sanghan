@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/sang-han.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-08-29T00:00:00-07:00</updated><entry><title>Prime Sieves and Python Data Structures</title><link href="http://sanghan.me/blog/2014/08/sieve/" rel="alternate"></link><updated>2014-08-29T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-08-29:blog/2014/08/sieve/</id><summary type="html">&lt;p&gt;Recently, I&amp;#8217;ve been working through &lt;a class="reference external" href="https://projecteuler.net"&gt;Project Euler&lt;/a&gt; problems in order
-to improve my core programming skills. More likely it&amp;#8217;s just an excuse
-to play around and code some easy programs, but lately the harder problems
-have been challenging in a way that requires an efficient algorithm
-to solve in a managable amount of time and&amp;nbsp;space.&lt;/p&gt;
-&lt;p&gt;One of those problems that seem to recur requires an understanding efficiently
-calculating and testing for prime numbers. One of the more simple and yet
-efficient solutions are sieves algorithms, the most famous likely being
-&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes"&gt;The Sieve of Eratosthenes&lt;/a&gt;. Simply, rather than computing all the permutations
-of factorizing a value, you start a list of all values and sieve away
-all multiples and eventually end up with a lit of only non-factorable&amp;nbsp;units&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/sang-han.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-08-29T00:00:00-07:00</updated><entry><title>Prime Sieves and Python Data Structures</title><link href="http://sanghan.me/blog/2014/08/sieve/" rel="alternate"></link><updated>2014-08-29T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-08-29:blog/2014/08/sieve/</id><summary type="html">&lt;p&gt;Recently, I’ve been working through &lt;a class="reference external" href="https://projecteuler.net"&gt;Project Euler&lt;/a&gt; problems
+in order to improve my core programming&amp;nbsp;skills.&lt;/p&gt;
+&lt;p&gt;One of those problems that seem to recur requires an
+understanding efficiently calculating and testing for prime numbers.
+&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes"&gt;The Sieve of Eratosthenes&lt;/a&gt; is a simple yet time efficient algorithm
+for finding all the primes below a certain limit and can be shown to
+have a time complexity of&amp;nbsp;$mathcal{O}((nlog{}n)(log{}log{}n))$.&lt;/p&gt;
+&lt;p&gt;Unfortunately, this solution starts to become less
+viable for larger problem sets, since it requires a table of all
+values in memory, and so the space complexity grows in
+the order of&amp;nbsp;$mathcal{O}(n)$.&lt;/p&gt;
 &lt;div class="section" id="original-sieve-unoptimized"&gt;
 &lt;h2&gt;Original Sieve:&amp;nbsp;Unoptimized&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_prime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;

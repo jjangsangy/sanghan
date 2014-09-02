@@ -15,7 +15,7 @@
 
         <meta name="author" content="Sang Han" />
         <meta name="keywords" content="Python" />
-        <meta name="description" content="Recently, I’ve been working through Project Euler problems in order to improve my core programming skills. More likely it’s just an excuse to play around and code some easy programs, but lately the harder problems have been challenging in a way that requires an efficient algorithm to solve in a managable amount of time and space. One of those problems that seem to recur requires an understanding efficiently calculating and testing for prime numbers. One of the more simple and yet efficient solutions are sieves algorithms, the most famous likely being The Sieve of Eratosthenes. Simply, rather than ..." />
+        <meta name="description" content="Recently, I’ve been working through Project Euler problems in order to improve my core programming skills. One of those problems that seem to recur requires an understanding efficiently calculating and testing for prime numbers. The Sieve of Eratosthenes is a simple yet time efficient algorithm for finding all the primes below a certain limit and can be shown to have a time complexity of $mathcal{O}((nlog{}n)(log{}log{}n))$. Unfortunately, this solution starts to become less viable for larger problem sets, since it requires a table of all values in memory, and so the space complexity grows ..." />
 
 
 
@@ -145,17 +145,17 @@
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>Recently, I&#8217;ve been working through <a class="reference external" href="https://projecteuler.net">Project Euler</a> problems in order
-to improve my core programming skills. More likely it&#8217;s just an excuse
-to play around and code some easy programs, but lately the harder problems
-have been challenging in a way that requires an efficient algorithm
-to solve in a managable amount of time and&nbsp;space.</p>
-<p>One of those problems that seem to recur requires an understanding efficiently
-calculating and testing for prime numbers. One of the more simple and yet
-efficient solutions are sieves algorithms, the most famous likely being
-<a class="reference external" href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">The Sieve of Eratosthenes</a>. Simply, rather than computing all the permutations
-of factorizing a value, you start a list of all values and sieve away
-all multiples and eventually end up with a lit of only non-factorable&nbsp;units</p>
+                <p>Recently, I’ve been working through <a class="reference external" href="https://projecteuler.net">Project Euler</a> problems
+in order to improve my core programming&nbsp;skills.</p>
+<p>One of those problems that seem to recur requires an
+understanding efficiently calculating and testing for prime numbers.
+<a class="reference external" href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">The Sieve of Eratosthenes</a> is a simple yet time efficient algorithm
+for finding all the primes below a certain limit and can be shown to
+have a time complexity of&nbsp;$mathcal{O}((nlog{}n)(log{}log{}n))$.</p>
+<p>Unfortunately, this solution starts to become less
+viable for larger problem sets, since it requires a table of all
+values in memory, and so the space complexity grows in
+the order of&nbsp;$mathcal{O}(n)$.</p>
 <div class="section" id="original-sieve-unoptimized">
 <h2>Original Sieve:&nbsp;Unoptimized</h2>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
