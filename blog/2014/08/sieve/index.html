@@ -238,8 +238,8 @@ the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</
 
 <span class="p">}</span>
 </pre></div>
-<div class="section" id="testing">
-<h3>Testing</h3>
+<div class="section" id="testing-for-primality">
+<h3>Testing for&nbsp;Primality</h3>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">all_primes</span><span class="p">(</span><span class="n">primes</span><span class="p">:</span> <span class="nb">iter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">prime</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">prime</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">prime</span><span class="p">)):</span>
