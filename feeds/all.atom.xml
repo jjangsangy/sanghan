@@ -5,11 +5,11 @@ in order to improve my core programming&amp;nbsp;skills.&lt;/p&gt;
 understanding efficiently calculating and testing for prime numbers.
 &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes"&gt;The Sieve of Eratosthenes&lt;/a&gt; is a simple yet time efficient algorithm
 for finding all the primes below a certain limit and can be shown to
-have a time complexity of&amp;nbsp;$mathcal{O}((nlog{}n)(log{}log{}n))$.&lt;/p&gt;
+have a time complexity of &lt;cite&gt;mathcal{O}((nlog{}n)(log{}log{}n))$&lt;/cite&gt;.&lt;/p&gt;
 &lt;p&gt;Unfortunately, this solution starts to become less
 viable for larger problem sets, since it requires a table of all
 values in memory, and so the space complexity grows in
-the order of&amp;nbsp;$mathcal{O}(n)$.&lt;/p&gt;
+the order of &lt;cite&gt;mathcal{O}(n)&lt;/cite&gt;.&lt;/p&gt;
 &lt;div class="section" id="original-sieve-unoptimized"&gt;
 &lt;h2&gt;Original Sieve:&amp;nbsp;Unoptimized&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_prime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
