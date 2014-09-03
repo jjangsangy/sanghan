@@ -10,7 +10,7 @@ have a time complexity of &lt;span class="formula"&gt;&lt;span class="scriptfont
 viable for larger problem sets, since it requires a table of all
 values in memory, and so the space complexity grows in
 the order of &lt;span class="formula"&gt;&lt;span class="scriptfont"&gt;O&lt;/span&gt;(&lt;i&gt;n&lt;/i&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="sieve" src="http://sanghan.me/img/Sieve_of_Eratosthenes_animation.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="sieve" src="http://sanghan.me/img/sieve.jpg" /&gt;&lt;/p&gt;
 &lt;div class="section" id="original-sieve"&gt;
 &lt;h2&gt;Original&amp;nbsp;Sieve&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
