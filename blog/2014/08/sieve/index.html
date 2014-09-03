@@ -165,144 +165,144 @@ have a time complexity of <span class="formula"><span class="scriptfont">O</span
 viable for larger problem sets, since it requires a table of all
 values in memory, and so the space complexity grows in
 the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</span>. In order to deal with memory issues
-there are a set of Sieve algorithms called <cite>segmented sieves</cite> which
+there are a set of Sieve algorithms called <code>segmented sieves</code> which
 cut up the problem into smaller&nbsp;subsets.</p>
 <p><img alt="sieve" src="http://sanghan.me/img/sieve.jpg" /></p>
 </div>
 <div class="section" id="python-sieve">
 <h2>Python&nbsp;Sieve</h2>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Sieve away and only primes are left.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">primes</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">[</span><span class="bp">False</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">[</span><span class="bp">True</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
-            <span class="n">primes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">prime</span> <span class="k">for</span> <span class="n">prime</span><span class="p">,</span> <span class="n">check</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span> <span class="k">if</span> <span class="n">check</span><span class="p">]</span>
-</pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-3"><span class="sd">    Sieve away and only primes are left.</span>
+</span><span id="line-4"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-5">    <span class="n">primes</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">[</span><span class="bp">False</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">[</span><span class="bp">True</span><span class="p">]</span>
+</span><span id="line-6">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+</span><span id="line-7">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+</span><span id="line-8">            <span class="n">primes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+</span><span id="line-9">    <span class="k">return</span> <span class="p">[</span><span class="n">prime</span> <span class="k">for</span> <span class="n">prime</span><span class="p">,</span> <span class="n">check</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span> <span class="k">if</span> <span class="n">check</span><span class="p">]</span>
+</span></pre></div>
 </div>
 <div class="section" id="sets-unordered-collections">
 <h2>Sets: Unordered&nbsp;Collections</h2>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">set_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Sets are unordered, but hashable collections</span>
-<span class="sd">    which offer optimizations for membership testing</span>
-<span class="sd">    at O(1) time complexity.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">primes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
-        <span class="n">primes</span> <span class="o">-=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">primes</span>
-</pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">set_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-3"><span class="sd">    Sets are unordered, but hashable collections</span>
+</span><span id="line-4"><span class="sd">    which offer optimizations for membership testing</span>
+</span><span id="line-5"><span class="sd">    at O(1) time complexity.</span>
+</span><span id="line-6"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-7">    <span class="n">primes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+</span><span id="line-8">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+</span><span id="line-9">        <span class="n">primes</span> <span class="o">-=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+</span><span id="line-10">    <span class="k">return</span> <span class="n">primes</span>
+</span></pre></div>
 </div>
 <div class="section" id="sets-optimized-insertion">
 <h2>Sets Optimized&nbsp;Insertion</h2>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Further optimized set implementation by</span>
-<span class="sd">    performing insertion over deletion utilizing</span>
-<span class="sd">    constant time nature of hashable collections.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">factors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
-            <span class="n">factors</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
-    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="n">factors</span>
-</pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-3"><span class="sd">    Further optimized set implementation by</span>
+</span><span id="line-4"><span class="sd">    performing insertion over deletion utilizing</span>
+</span><span id="line-5"><span class="sd">    constant time nature of hashable collections.</span>
+</span><span id="line-6"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-7">    <span class="n">factors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span><span id="line-8">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+</span><span id="line-9">        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
+</span><span id="line-10">            <span class="n">factors</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+</span><span id="line-11">    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="n">factors</span>
+</span></pre></div>
 </div>
 <div class="section" id="numpy">
 <h2>Numpy</h2>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-
-<span class="k">def</span> <span class="nf">np_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Numpy n-dimmensional array are continguous strides</span>
-<span class="sd">    of memory with fixed width statically typed elements.</span>
-<span class="sd">    Ndarrys are a  random access data-structure unlike</span>
-<span class="sd">    pythons built-in doubly linked-lists.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">primes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
-            <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">::</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">primes</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
-</pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="k">def</span> <span class="nf">np_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+</span><span id="line-4">    <span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-5"><span class="sd">    Numpy n-dimmensional array are continguous strides</span>
+</span><span id="line-6"><span class="sd">    of memory with fixed width statically typed elements.</span>
+</span><span id="line-7"><span class="sd">    Ndarrys are a  random access data-structure unlike</span>
+</span><span id="line-8"><span class="sd">    pythons built-in doubly linked-lists.</span>
+</span><span id="line-9"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-10">    <span class="n">primes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
+</span><span id="line-11">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">):</span>
+</span><span id="line-12">        <span class="k">if</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span><span id="line-13">            <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">::</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+</span><span id="line-14">    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">primes</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
+</span></pre></div>
 </div>
 <div class="section" id="comparison-with-c">
 <h2>Comparison with&nbsp;C</h2>
-<div class="highlight"><pre><span class="kt">void</span> <span class="nf">sieve</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">primes</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-
-    <span class="c1">// Fill array with 1&#39;s</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-
-    <span class="c1">// Enumerate through multiples</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-            <span class="k">for</span> <span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="p">;</span> <span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-                <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-    <span class="c1">// Print remaining</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d prime = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">++</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
-
-<span class="p">}</span>
-</pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="kt">void</span> <span class="nf">sieve</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">primes</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-2">    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="line-3">
+</span><span id="line-4">    <span class="c1">// Fill array with 1&#39;s</span>
+</span><span id="line-5">    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="line-6">        <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span id="line-7">
+</span><span id="line-8">    <span class="c1">// Enumerate through multiples</span>
+</span><span id="line-9">    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="line-10">        <span class="k">if</span> <span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span><span id="line-11">            <span class="k">for</span> <span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="p">;</span> <span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span><span id="line-12">                <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span id="line-13">
+</span><span id="line-14">    <span class="c1">// Print remaining</span>
+</span><span id="line-15">    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">limit</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="line-16">        <span class="k">if</span> <span class="p">(</span><span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span><span id="line-17">            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d prime = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">++</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span><span id="line-18">
+</span><span id="line-19"><span class="p">}</span>
+</span></pre></div>
 <div class="section" id="testing-for-primality">
 <h3>Testing for&nbsp;Primality</h3>
-<div class="highlight"><pre><span class="k">def</span> <span class="nf">all_primes</span><span class="p">(</span><span class="n">primes</span><span class="p">:</span> <span class="nb">iter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">prime</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">prime</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">prime</span><span class="p">)):</span>
-            <span class="k">return</span> <span class="bp">False</span>
-    <span class="k">return</span> <span class="bp">True</span>
-</pre></div>
-<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">all_primes</span><span class="p">(</span><span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
-<span class="bp">True</span>
-</pre></div>
-<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">all_primes</span><span class="p">(</span><span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
-<span class="bp">True</span>
-</pre></div>
-<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">all_primes</span><span class="p">(</span><span class="n">set_insertion_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
-<span class="bp">True</span>
-</pre></div>
+<div class="highlight"><pre><span id="line--1"> <span class="k">def</span> <span class="nf">all_primes</span><span class="p">(</span><span class="n">primes</span><span class="p">:</span> <span class="nb">iter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="line--2">     <span class="k">for</span> <span class="n">prime</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">:</span>
+</span><span id="line--3">         <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">prime</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">prime</span><span class="p">)):</span>
+</span><span id="line--4">             <span class="k">return</span> <span class="bp">False</span>
+</span><span id="line--5">     <span class="k">return</span> <span class="bp">True</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="n">all_primes</span><span class="p">(</span><span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+</span><span id="line-2"><span class="bp">True</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="n">all_primes</span><span class="p">(</span><span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+</span><span id="line-2"><span class="bp">True</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="n">all_primes</span><span class="p">(</span><span class="n">set_insertion_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+</span><span id="line-2"><span class="bp">True</span>
+</span></pre></div>
 </div>
 <div class="section" id="a-timer">
 <h3>A&nbsp;Timer</h3>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
-
-<span class="nd">@contextmanager</span>
-<span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">label</span><span class="p">):</span>
-    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">yield</span>
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&#39;{label}: {time:03.3f} sec&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-        <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span>
-    <span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">time</span>
+</span><span id="line-2"><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="nd">@contextmanager</span>
+</span><span id="line-5"><span class="k">def</span> <span class="nf">timer</span><span class="p">(</span><span class="n">label</span><span class="p">):</span>
+</span><span id="line-6">    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span><span id="line-7">    <span class="k">try</span><span class="p">:</span>
+</span><span id="line-8">        <span class="k">yield</span>
+</span><span id="line-9">    <span class="k">finally</span><span class="p">:</span>
+</span><span id="line-10">        <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span><span id="line-11">    <span class="k">print</span><span class="p">(</span><span class="s">&#39;{label}: {time:03.3f} sec&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+</span><span id="line-12">        <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span>
+</span><span id="line-13">    <span class="p">)</span>
+</span></pre></div>
 </div>
 <div class="section" id="performance-testing">
 <h3>Performance&nbsp;Testing</h3>
-<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_sieve&#39;</span><span class="p">):</span>
-        <span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-
-<span class="n">set_sieve</span><span class="p">:</span> <span class="mf">0.735</span> <span class="n">sec</span>
-</pre></div>
-<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_insertion_sieve&#39;</span><span class="p">):</span>
-        <span class="n">set_insertion_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-
-<span class="n">set_factor_sieve</span><span class="p">:</span> <span class="mf">0.587</span> <span class="n">sec</span>
-</pre></div>
-<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;numpy&#39;</span><span class="p">):</span>
-        <span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-
-<span class="n">numpy</span><span class="p">:</span> <span class="mf">0.008</span> <span class="n">sec</span>
-</pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_sieve&#39;</span><span class="p">):</span>
+</span><span id="line-2">        <span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="n">set_sieve</span><span class="p">:</span> <span class="mf">0.735</span> <span class="n">sec</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_insertion_sieve&#39;</span><span class="p">):</span>
+</span><span id="line-2">        <span class="n">set_insertion_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="n">set_factor_sieve</span><span class="p">:</span> <span class="mf">0.587</span> <span class="n">sec</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;numpy&#39;</span><span class="p">):</span>
+</span><span id="line-2">        <span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="n">numpy</span><span class="p">:</span> <span class="mf">0.008</span> <span class="n">sec</span>
+</span></pre></div>
 </div>
 </div>
 

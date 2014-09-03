@@ -175,105 +175,105 @@ And by kinks, I mean some big fixes</blockquote>
 Here are a couple examples of Bubble Sort written out in C, Python and Swift.</blockquote>
 <div class="section" id="swift-bubble-sort">
 <h3>Swift Bubble&nbsp;Sort</h3>
-<div class="highlight"><pre><span class="lineno"> 1</span>  <span class="n">import</span> <span class="n">Cocoa</span>
-<span class="lineno"> 2</span> 
-<span class="lineno"> 3</span>  <span class="n">func</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="n">Int</span><span class="p">[])</span> <span class="p">-&gt;</span> <span class="n">Int</span><span class="p">[]</span>
-<span class="lineno"> 4</span>  <span class="p">{</span>
-<span class="lineno"> 5</span>      <span class="n">let</span> <span class="n">length</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">count</span>
-<span class="lineno"> 6</span>      <span class="kt">var</span> <span class="n">count</span><span class="p">:</span> <span class="n">Int</span>
-<span class="lineno"> 7</span>      <span class="kt">var</span> <span class="n">pos</span><span class="p">:</span> <span class="n">Int</span>
-<span class="lineno"> 8</span> 
-<span class="lineno"> 9</span>      <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">count</span> <span class="p">&lt;</span> <span class="n">length</span><span class="p">-</span><span class="m">1</span><span class="p">;</span> <span class="n">count</span><span class="p">++)</span> <span class="p">{</span>
-<span class="lineno">10</span>          <span class="k">for</span> <span class="p">(</span><span class="n">pos</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">pos</span> <span class="p">&lt;</span> <span class="p">(</span><span class="n">length</span><span class="p">-</span><span class="n">count</span><span class="p">-</span><span class="m">1</span><span class="p">);</span> <span class="n">pos</span><span class="p">++)</span> <span class="p">{</span>
-<span class="lineno">11</span>              <span class="k">if</span> <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="p">&gt;</span> <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">+</span><span class="m">1</span><span class="p">])</span> <span class="p">{</span>
-<span class="lineno">12</span>                  <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">],</span> <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">+</span><span class="m">1</span><span class="p">])</span> <span class="p">=</span>
-<span class="lineno">13</span>                      <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">+</span><span class="m">1</span><span class="p">],</span> <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">])</span>
-<span class="lineno">14</span>              <span class="p">}</span>
-<span class="lineno">15</span>          <span class="p">}</span>
-<span class="lineno">16</span>      <span class="p">}</span>
-<span class="lineno">17</span>      <span class="k">return</span> <span class="n">list</span>
-<span class="lineno">18</span>  <span class="p">}</span>
-<span class="lineno">19</span> 
-<span class="lineno">20</span>  <span class="n">func</span> <span class="nf">sortMain</span><span class="p">(</span><span class="n">problem_size</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Int</span><span class="p">[]</span>
-<span class="lineno">21</span>  <span class="p">{</span>
-<span class="lineno">22</span>      <span class="kt">var</span> <span class="n">array</span><span class="p">:</span> <span class="n">Int</span><span class="p">[]</span> <span class="p">=</span> <span class="p">[]</span>
-<span class="lineno">23</span> 
-<span class="lineno">24</span>      <span class="n">srandomdev</span><span class="p">()</span>
-<span class="lineno">25</span>      <span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="n">problem_size</span> <span class="p">{</span>
-<span class="lineno">26</span>          <span class="n">array</span> <span class="p">+=</span> <span class="p">(</span><span class="n">random</span><span class="p">()</span> <span class="p">%</span> <span class="n">problem_size</span><span class="p">)</span>
-<span class="lineno">27</span>      <span class="p">}</span>
-<span class="lineno">28</span>      <span class="k">return</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-<span class="lineno">29</span>  <span class="p">}</span>
-</pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="n">import</span> <span class="n">Cocoa</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="n">func</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="n">Int</span><span class="p">[])</span> <span class="p">-&gt;</span> <span class="n">Int</span><span class="p">[]</span>
+</span><span id="line-4"><span class="p">{</span>
+</span><span id="line-5">    <span class="n">let</span> <span class="n">length</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">count</span>
+</span><span id="line-6">    <span class="kt">var</span> <span class="n">count</span><span class="p">:</span> <span class="n">Int</span>
+</span><span id="line-7">    <span class="kt">var</span> <span class="n">pos</span><span class="p">:</span> <span class="n">Int</span>
+</span><span id="line-8">
+</span><span id="line-9">    <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">count</span> <span class="p">&lt;</span> <span class="n">length</span><span class="p">-</span><span class="m">1</span><span class="p">;</span> <span class="n">count</span><span class="p">++)</span> <span class="p">{</span>
+</span><span id="line-10">        <span class="k">for</span> <span class="p">(</span><span class="n">pos</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">pos</span> <span class="p">&lt;</span> <span class="p">(</span><span class="n">length</span><span class="p">-</span><span class="n">count</span><span class="p">-</span><span class="m">1</span><span class="p">);</span> <span class="n">pos</span><span class="p">++)</span> <span class="p">{</span>
+</span><span id="line-11">            <span class="k">if</span> <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="p">&gt;</span> <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">+</span><span class="m">1</span><span class="p">])</span> <span class="p">{</span>
+</span><span id="line-12">                <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">],</span> <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">+</span><span class="m">1</span><span class="p">])</span> <span class="p">=</span>
+</span><span id="line-13">                    <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">+</span><span class="m">1</span><span class="p">],</span> <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">])</span>
+</span><span id="line-14">            <span class="p">}</span>
+</span><span id="line-15">        <span class="p">}</span>
+</span><span id="line-16">    <span class="p">}</span>
+</span><span id="line-17">    <span class="k">return</span> <span class="n">list</span>
+</span><span id="line-18"><span class="p">}</span>
+</span><span id="line-19">
+</span><span id="line-20"><span class="n">func</span> <span class="nf">sortMain</span><span class="p">(</span><span class="n">problem_size</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Int</span><span class="p">[]</span>
+</span><span id="line-21"><span class="p">{</span>
+</span><span id="line-22">    <span class="kt">var</span> <span class="n">array</span><span class="p">:</span> <span class="n">Int</span><span class="p">[]</span> <span class="p">=</span> <span class="p">[]</span>
+</span><span id="line-23">
+</span><span id="line-24">    <span class="n">srandomdev</span><span class="p">()</span>
+</span><span id="line-25">    <span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="n">problem_size</span> <span class="p">{</span>
+</span><span id="line-26">        <span class="n">array</span> <span class="p">+=</span> <span class="p">(</span><span class="n">random</span><span class="p">()</span> <span class="p">%</span> <span class="n">problem_size</span><span class="p">)</span>
+</span><span id="line-27">    <span class="p">}</span>
+</span><span id="line-28">    <span class="k">return</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+</span><span id="line-29"><span class="p">}</span>
+</span></pre></div>
 </div>
 <div class="section" id="c-bubble-sort">
 <h3>C Bubble&nbsp;Sort</h3>
-<div class="highlight"><pre><span class="lineno"> 1</span>  <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
-<span class="lineno"> 2</span>  <span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">stdlib</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
-<span class="lineno"> 3</span> 
-<span class="lineno"> 4</span>  <span class="kt">void</span> <span class="n">bubble_sort</span><span class="p">(</span><span class="kt">long</span> <span class="n">list</span><span class="p">[],</span> <span class="kt">long</span> <span class="n">n</span><span class="p">)</span>
-<span class="lineno"> 5</span>  <span class="p">{</span>
-<span class="lineno"> 6</span>      <span class="kt">long</span> <span class="n">count</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">temp</span><span class="p">;</span>
-<span class="lineno"> 7</span>      <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="n">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno"> 8</span>          <span class="k">for</span> <span class="p">(</span><span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">pos</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="n">pos</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno"> 9</span>              <span class="k">if</span> <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
-<span class="lineno">10</span>              <span class="p">{</span>
-<span class="lineno">11</span>                  <span class="n">temp</span>        <span class="o">=</span>   <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">];</span>
-<span class="lineno">12</span>                  <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>   <span class="o">=</span>   <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
-<span class="lineno">13</span>                  <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span>   <span class="n">temp</span><span class="p">;</span>
-<span class="lineno">14</span>              <span class="p">}</span>
-<span class="lineno">15</span>          <span class="p">}</span>
-<span class="lineno">16</span>      <span class="p">}</span>
-<span class="lineno">17</span>  <span class="p">}</span>
-<span class="lineno">18</span> 
-<span class="lineno">19</span>  <span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-<span class="lineno">20</span>  <span class="p">{</span>
-<span class="lineno">21</span>      <span class="kt">long</span> <span class="n">problem_size</span> <span class="o">=</span> <span class="n">strtoul</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
-<span class="lineno">22</span>      <span class="kt">long</span> <span class="n">array</span><span class="p">[</span><span class="n">problem_size</span><span class="p">];</span>
-<span class="lineno">23</span>      <span class="kt">long</span> <span class="n">count</span><span class="p">;</span>
-<span class="lineno">24</span> 
-<span class="lineno">25</span>      <span class="n">sranddev</span><span class="p">();</span>
-<span class="lineno">26</span>      <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">problem_size</span><span class="p">;</span> <span class="n">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno">27</span>          <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="n">problem_size</span><span class="p">;</span>
-<span class="lineno">28</span>      <span class="p">}</span>
-<span class="lineno">29</span> 
-<span class="lineno">30</span>      <span class="n">bubble_sort</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">problem_size</span><span class="p">);</span>
-<span class="lineno">31</span> 
-<span class="lineno">32</span>      <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">problem_size</span><span class="p">;</span> <span class="n">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno">33</span>          <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%ld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]);</span>
-<span class="lineno">34</span>      <span class="p">}</span>
-<span class="lineno">35</span>      <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="lineno">36</span>  <span class="p">}</span>
-</pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span id="line-2"><span class="cp">#include &lt;stdlib.h&gt;</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="kt">void</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="kt">long</span> <span class="n">list</span><span class="p">[],</span> <span class="kt">long</span> <span class="n">n</span><span class="p">)</span>
+</span><span id="line-5"><span class="p">{</span>
+</span><span id="line-6">    <span class="kt">long</span> <span class="n">count</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">temp</span><span class="p">;</span>
+</span><span id="line-7">    <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="n">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-8">        <span class="k">for</span> <span class="p">(</span><span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">pos</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="n">pos</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-9">            <span class="k">if</span> <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="line-10">            <span class="p">{</span>
+</span><span id="line-11">                <span class="n">temp</span>        <span class="o">=</span>   <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">];</span>
+</span><span id="line-12">                <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>   <span class="o">=</span>   <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+</span><span id="line-13">                <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span>   <span class="n">temp</span><span class="p">;</span>
+</span><span id="line-14">            <span class="p">}</span>
+</span><span id="line-15">        <span class="p">}</span>
+</span><span id="line-16">    <span class="p">}</span>
+</span><span id="line-17"><span class="p">}</span>
+</span><span id="line-18">
+</span><span id="line-19"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span><span id="line-20"><span class="p">{</span>
+</span><span id="line-21">    <span class="kt">long</span> <span class="n">problem_size</span> <span class="o">=</span> <span class="n">strtoul</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</span><span id="line-22">    <span class="kt">long</span> <span class="n">array</span><span class="p">[</span><span class="n">problem_size</span><span class="p">];</span>
+</span><span id="line-23">    <span class="kt">long</span> <span class="n">count</span><span class="p">;</span>
+</span><span id="line-24">
+</span><span id="line-25">    <span class="n">sranddev</span><span class="p">();</span>
+</span><span id="line-26">    <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">problem_size</span><span class="p">;</span> <span class="n">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-27">        <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="n">problem_size</span><span class="p">;</span>
+</span><span id="line-28">    <span class="p">}</span>
+</span><span id="line-29">
+</span><span id="line-30">    <span class="n">bubble_sort</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">problem_size</span><span class="p">);</span>
+</span><span id="line-31">
+</span><span id="line-32">    <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">problem_size</span><span class="p">;</span> <span class="n">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-33">        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%ld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]);</span>
+</span><span id="line-34">    <span class="p">}</span>
+</span><span id="line-35">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span id="line-36"><span class="p">}</span>
+</span></pre></div>
 </div>
 <div class="section" id="python-bubble-sort">
 <h3>Python Bubble&nbsp;Sort</h3>
-<div class="highlight"><pre><span class="lineno"> 1</span>  <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
-<span class="lineno"> 2</span>  <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="lineno"> 3</span> 
-<span class="lineno"> 4</span>  <span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">a_list</span><span class="p">:</span> <span class="n">Int</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&gt;</span><span class="p">):</span> <span class="o">-&gt;</span> <span class="n">Int</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&gt;</span>
-<span class="lineno"> 5</span>      <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
-<span class="lineno"> 6</span> 
-<span class="lineno"> 7</span>      <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-<span class="lineno"> 8</span>          <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span><span class="o">-</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-<span class="lineno"> 9</span>              <span class="k">if</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
-<span class="lineno">10</span>                  <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="p">],</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> \
-<span class="lineno">11</span>                  <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
-<span class="lineno">12</span>      <span class="k">return</span> <span class="n">a_list</span>
-<span class="lineno">13</span> 
-<span class="lineno">14</span>  <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="o">-&gt;</span> <span class="n">Int</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&gt;</span>
-<span class="lineno">15</span>      <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-<span class="lineno">16</span>          <span class="n">problem_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="lineno">17</span>      <span class="k">else</span><span class="p">:</span>
-<span class="lineno">18</span>          <span class="n">problem_size</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="lineno">19</span>      <span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">problem_size</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">problem_size</span><span class="p">)]</span>
-<span class="lineno">20</span> 
-<span class="lineno">21</span>      <span class="k">return</span> <span class="n">bubble_sort</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-<span class="lineno">22</span> 
-<span class="lineno">23</span> 
-<span class="lineno">24</span>  <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="lineno">25</span>      <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">))</span>
-</pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+</span><span id="line-2"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">a_list</span><span class="p">:</span> <span class="n">Int</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&gt;</span><span class="p">):</span> <span class="o">-&gt;</span> <span class="n">Int</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&gt;</span>
+</span><span id="line-5">    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+</span><span id="line-6">
+</span><span id="line-7">    <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+</span><span id="line-8">        <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span><span class="o">-</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="line-9">            <span class="k">if</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+</span><span id="line-10">                <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="p">],</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> \
+</span><span id="line-11">                <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
+</span><span id="line-12">    <span class="k">return</span> <span class="n">a_list</span>
+</span><span id="line-13">
+</span><span id="line-14"><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="o">-&gt;</span> <span class="n">Int</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&gt;</span>
+</span><span id="line-15">    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="line-16">        <span class="n">problem_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="line-17">    <span class="k">else</span><span class="p">:</span>
+</span><span id="line-18">        <span class="n">problem_size</span> <span class="o">=</span> <span class="mi">10000</span>
+</span><span id="line-19">    <span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">problem_size</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">problem_size</span><span class="p">)]</span>
+</span><span id="line-20">
+</span><span id="line-21">    <span class="k">return</span> <span class="n">bubble_sort</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+</span><span id="line-22">
+</span><span id="line-23">
+</span><span id="line-24"><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span id="line-25">    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">))</span>
+</span></pre></div>
 </div>
 </div>
 <div class="section" id="fast-swift">
@@ -290,8 +290,7 @@ Swift Program is Swift, It even beats C by a non-trivial margin in these tests.<
 <blockquote class="pull-quote">
 Swift [-Ofast] vs Swift[-O3] vs CPython</blockquote>
 <p>One caveat however, is we used the [-Ofast] flag during compilation of the swift binaries like&nbsp;so.</p>
-<div class="highlight"><pre>xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort
-</pre></div>
+<p><code>xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort</code></p>
 <p>According to Apple&#8217;s official documentation in the XCode 5.0 release&nbsp;notes:</p>
 <blockquote class="pull-quote">
 A new optimization level -Ofast, available in <span class="caps">LLVM</span>, enables aggressive optimizations.
@@ -301,8 +300,7 @@ that are safe for most code.
 It can yield significant high-performance wins from the compiler</blockquote>
 <p>If we were to run the same code with normal compiler optimizations we start to see a completely
 different picture than the one we started&nbsp;with</p>
-<div class="highlight"><pre>xcrun --sdk macosx swift -O3 -o bubble_sort.swift bubble_sort
-</pre></div>
+<p><code>xcrun --sdk macosx swift -O3 -o bubble_sort.swift bubble_sort</code></p>
 <div class="note">
 <p class="first admonition-title">Note</p>
 <p class="last">In order to save time, I&#8217;ve changed the problem sizes to be
@@ -321,11 +319,11 @@ However, -Ofast changes the semantics of the language a lot — in my testing,
 it disabled the checks for integer overflows and array indexing overflows.
 For example, with -Ofast the following Swift code runs silently
 without crashing (and prints out some garbage):</blockquote>
-<div class="highlight"><pre><span class="n">let</span> <span class="n">n</span> <span class="p">=</span> <span class="m">10000000</span>
-<span class="n">println</span><span class="p">(</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">)</span>
-<span class="n">let</span> <span class="n">x</span> <span class="p">=</span> <span class="n">Int</span><span class="p">[](</span><span class="n">count</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span> <span class="n">repeatedValue</span><span class="p">:</span> <span class="m">10</span><span class="p">)</span>
-<span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
-</pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="n">let</span> <span class="n">n</span> <span class="p">=</span> <span class="m">10000000</span>
+</span><span id="line-2"><span class="n">println</span><span class="p">(</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">)</span>
+</span><span id="line-3"><span class="n">let</span> <span class="n">x</span> <span class="p">=</span> <span class="n">Int</span><span class="p">[](</span><span class="n">count</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span> <span class="n">repeatedValue</span><span class="p">:</span> <span class="m">10</span><span class="p">)</span>
+</span><span id="line-4"><span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+</span></pre></div>
 <!--  -->
 <ul class="simple">
 <li>With -Ofast I get pretty much what I would expect.

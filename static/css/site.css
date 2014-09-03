@@ -59,3 +59,23 @@ img {
     background: url("/img/bird-full.jpg") no-repeat top fixed;
     background-position: center top;
     height: 920px; } }
+pre {
+  counter-reset: linenumbers; }
+
+.highlight pre > span:before {
+  font-size: .9em;
+  color: #aaa;
+  content: counter(linenumbers);
+  counter-increment: linenumbers;
+  left: -3.2ex;
+  position: absolute;
+  text-align: right;
+  width: 2.5ex;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/*# sourceMappingURL=site.css.map */
