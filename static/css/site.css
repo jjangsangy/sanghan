@@ -11,7 +11,9 @@
 img {
   display: block;
   max-width: 100% !important;
-  height: auto; }
+  height: auto;
+  margin-left: auto;
+  margin-right: auto; }
   img :default {
     width: 1024px; }
 
