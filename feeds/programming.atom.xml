@@ -7,10 +7,8 @@ algorithm that comes to mind is &lt;a class="reference external" href="http://en
 The Sieve, is one of many prime sieves, and is a simple yet time efficient algorithm
 for finding all the primes below a certain limit. It can be shown to
 have a time complexity of &lt;span class="formula"&gt;&lt;span class="scriptfont"&gt;O&lt;/span&gt;(&lt;i&gt;n&lt;/i&gt;loglog&lt;i&gt;n&lt;/i&gt;)&lt;/span&gt;.&lt;/p&gt;
-&lt;blockquote class="pull-quote"&gt;
-So How does it work?&lt;/blockquote&gt;
-&lt;div class="section" id="algorithm"&gt;
-&lt;h2&gt;Algorithm&lt;/h2&gt;
+&lt;div class="section" id="the-algorithm"&gt;
+&lt;h2&gt;The&amp;nbsp;Algorithm&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;Make a table one entry for every number &lt;span class="formula"&gt;2 ≤ &lt;i&gt;n&lt;/i&gt; ≤ &lt;i&gt;limit&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;Starting at 2, cross out all multiples of 2, not counting 2&amp;nbsp;itself.&lt;/li&gt;
@@ -23,8 +21,8 @@ values in memory, and so the space complexity grows in
 the order of &lt;span class="formula"&gt;&lt;span class="scriptfont"&gt;O&lt;/span&gt;(&lt;i&gt;n&lt;/i&gt;)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="sieve" src="http://sanghan.me/img/sieve.jpg" /&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="original-sieve"&gt;
-&lt;h2&gt;Original&amp;nbsp;Sieve&lt;/h2&gt;
+&lt;div class="section" id="python-sieve"&gt;
+&lt;h2&gt;Python&amp;nbsp;Sieve&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;span class="sd"&gt;    Sieve away and only primes are left.&lt;/span&gt;
