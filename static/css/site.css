@@ -60,28 +60,28 @@ img {
     background-position: center top;
     height: 920px; } }
 pre {
-  counter-reset: linenumbers;
+  counter-reset: line-numbering;
+  border: solid 1px #d9d9d9;
+  padding: 0;
+  margin-bottom: 30px;
+  white-space: pre;
   overflow-x: auto;
   word-break: inherit;
-  word-wrap: inherit;
-  white-space: pre;
-  margin-bottom: 30px;
-  border: solid 1px #d9d9d9; }
+  word-wrap: inherit; }
 
 .highlight pre > span:before {
-  content: counter(linenumbers);
-  counter-increment: linenumbers;
-  width: 25px;
-  font-size: .9em;
-  border-right: 1px solid #dedede;
-  text-align: right;
-  background: inherit;
-  color: #aaa;
-  opacity: 0.7;
+  content: counter(line-numbering);
+  counter-increment: line-numbering;
   padding-right: 1em;
-  margin-right: 1em;
+  /* space after numbers */
+  width: 3em;
+  text-align: right;
+  opacity: 0.7;
   display: inline-block;
-  padding: 1px 8px;
+  color: #aaa;
+  background: #eee;
+  margin-right: 1em;
+  border-right: 1px solid #dedede;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
