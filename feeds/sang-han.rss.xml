@@ -18,7 +18,9 @@ have a time complexity of &lt;span class="formula"&gt;&lt;span class="scriptfont
 &lt;p&gt;Unfortunately, this solution starts to become less
 viable for larger problem sets, since it requires a table of all
 values in memory, and so the space complexity grows in
-the order of &lt;span class="formula"&gt;&lt;span class="scriptfont"&gt;O&lt;/span&gt;(&lt;i&gt;n&lt;/i&gt;)&lt;/span&gt;.&lt;/p&gt;
+the order of &lt;span class="formula"&gt;&lt;span class="scriptfont"&gt;O&lt;/span&gt;(&lt;i&gt;n&lt;/i&gt;)&lt;/span&gt;. In order to deal with memory issues
+there are a set of Sieve algorithms called &lt;cite&gt;segmented sieves&lt;/cite&gt; which
+cut up the problem into smaller&amp;nbsp;subsets.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="sieve" src="http://sanghan.me/img/sieve.jpg" /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="python-sieve"&gt;
