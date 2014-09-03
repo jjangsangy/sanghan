@@ -181,26 +181,26 @@ located at the root of the project directory. This configuration file helps
 Pelican figure out some user specific details that are necessary in order to
 build the webpage, very similar to how Sphinx generates&nbsp;documentation.</p>
 <p>Here is a snippet of how this blog&#8217;s configuration file&nbsp;looks.</p>
-<div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
-<span class="c"># -*- coding: utf-8 -*- #</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">abspath</span><span class="p">,</span> <span class="n">curdir</span>
-
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="n">curdir</span><span class="p">))</span>
-
-<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">&#39;Sang Han&#39;</span>
-<span class="n">SINGLE_AUTHOR</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">SITENAME</span> <span class="o">=</span> <span class="s">&#39;My Photoelectric Blog&#39;</span>
-<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">&#39;http://sanghan.me&#39;</span>
-<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s">&#39;img&#39;</span><span class="p">,</span>
-    <span class="s">&#39;extra/CNAME&#39;</span><span class="p">,</span>
-    <span class="s">&#39;extra/robots.txt&#39;</span><span class="p">,</span>
-    <span class="s">&#39;static&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-</pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="c">#!/usr/bin/env python</span>
+</span><span id="line-2"><span class="c"># -*- coding: utf-8 -*- #</span>
+</span><span id="line-3"><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+</span><span id="line-4">
+</span><span id="line-5"><span class="kn">import</span> <span class="nn">sys</span>
+</span><span id="line-6"><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">abspath</span><span class="p">,</span> <span class="n">curdir</span>
+</span><span id="line-7">
+</span><span id="line-8"><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="n">curdir</span><span class="p">))</span>
+</span><span id="line-9">
+</span><span id="line-10"><span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">&#39;Sang Han&#39;</span>
+</span><span id="line-11"><span class="n">SINGLE_AUTHOR</span> <span class="o">=</span> <span class="bp">True</span>
+</span><span id="line-12"><span class="n">SITENAME</span> <span class="o">=</span> <span class="s">&#39;My Photoelectric Blog&#39;</span>
+</span><span id="line-13"><span class="n">SITEURL</span> <span class="o">=</span> <span class="s">&#39;http://sanghan.me&#39;</span>
+</span><span id="line-14"><span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="line-15">    <span class="s">&#39;img&#39;</span><span class="p">,</span>
+</span><span id="line-16">    <span class="s">&#39;extra/CNAME&#39;</span><span class="p">,</span>
+</span><span id="line-17">    <span class="s">&#39;extra/robots.txt&#39;</span><span class="p">,</span>
+</span><span id="line-18">    <span class="s">&#39;static&#39;</span><span class="p">,</span>
+</span><span id="line-19"><span class="p">]</span>
+</span></pre></div>
 <p>As you can see, the syntax is just Python. The first block
 is just a shebang line specifying the default python
 interpreter. We then append the current directory into the

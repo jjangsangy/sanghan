@@ -68,6 +68,9 @@ img {
 
 pre {
     counter-reset:linenumbers;
+    overflow-x: auto;
+    word-break: inherit;
+    word-wrap: inherit;
 }
 
 .highlight pre > span:before {

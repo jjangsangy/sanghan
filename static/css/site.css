@@ -60,7 +60,10 @@ img {
     background-position: center top;
     height: 920px; } }
 pre {
-  counter-reset: linenumbers; }
+  counter-reset: linenumbers;
+  overflow-x: auto;
+  word-break: inherit;
+  word-wrap: inherit; }
 
 .highlight pre > span:before {
   font-size: .9em;
