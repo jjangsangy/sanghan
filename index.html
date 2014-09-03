@@ -134,15 +134,18 @@
                     <img src="http://sanghan.me/img/sieve.jpg">
                 <div class="summary"><p>Recently, I’ve been working through <a class="reference external" href="https://projecteuler.net">Project Euler</a> problems
 in order to improve my core programming&nbsp;skills.</p>
-<p>One of those problems that seem to recur requires an
-understanding efficiently calculating and testing for prime numbers.
-<a class="reference external" href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">The Sieve of Eratosthenes</a> is a simple yet time efficient algorithm
-for finding all the primes below a certain limit and can be shown to
+<p>One of those recurring problems requires an
+efficiently calculating and testing for prime numbers. The first
+algorithm that comes to mind is <a class="reference external" href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">The Sieve of Eratosthenes</a>.
+The Sieve, is one of many prime sieves, and is a simple yet time efficient algorithm
+for finding all the primes below a certain limit. It can be shown to
 have a time complexity of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>loglog<i>n</i>)</span>.</p>
-<p>Unfortunately, this solution starts to become less
-viable for larger problem sets, since it requires a table of all
-values in memory, and so the space complexity grows in
-the order ...</p>
+<blockquote class="pull-quote">
+So How does it work?</blockquote>
+<div class="section" id="psuedocode">
+<h2>Psuedocode</h2>
+<ol class="arabic simple">
+<li>Make a table one entry for every number between 2 and&nbsp;n ...</li></ol></div>
                     <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/08/sieve/">
                         <i class="fa fa-book"></i>
                         <span class="icon-label">Read More....</span>
