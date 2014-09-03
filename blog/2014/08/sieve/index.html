@@ -15,7 +15,7 @@
 
         <meta name="author" content="Sang Han" />
         <meta name="keywords" content="Python" />
-        <meta name="description" content="Recently, I’ve been working through Project Euler problems in order to improve my core programming skills. One of those recurring problems requires an efficiently calculating and testing for prime numbers. The first algorithm that comes to mind is The Sieve of Eratosthenes. The Sieve, is one of many prime sieves, and is a simple yet time efficient algorithm for finding all the primes below a certain limit. It can be shown to have a time complexity of O(nloglogn). So How does it work? Psuedocode Make a table one entry for every number between 2 and n ..." />
+        <meta name="description" content="Recently, I’ve been working through Project Euler problems in order to improve my core programming skills. One of those recurring problems requires an efficiently calculating and testing for prime numbers. The first algorithm that comes to mind is The Sieve of Eratosthenes. The Sieve, is one of many prime sieves, and is a simple yet time efficient algorithm for finding all the primes below a certain limit. It can be shown to have a time complexity of O(nloglogn). So How does it work? Algorithm Make a table one entry for every number 2 ≤ n ≤ limit Starting ..." />
 
 
 
@@ -155,10 +155,10 @@ for finding all the primes below a certain limit. It can be shown to
 have a time complexity of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>loglog<i>n</i>)</span>.</p>
 <blockquote class="pull-quote">
 So How does it work?</blockquote>
-<div class="section" id="psuedocode">
-<h2>Psuedocode</h2>
+<div class="section" id="algorithm">
+<h2>Algorithm</h2>
 <ol class="arabic simple">
-<li>Make a table one entry for every number between 2 and&nbsp;n</li>
+<li>Make a table one entry for every number <span class="formula">2 ≤ <i>n</i> ≤ <i>limit</i></span></li>
 <li>Starting at 2, cross out all multiples of 2, not counting 2&nbsp;itself.</li>
 <li>Move up to the next number that hasn&#8217;t been crossed&nbsp;out</li>
 <li>Repeat Step 2-3 until finally reaching the upper&nbsp;limit.</li>
@@ -168,8 +168,9 @@ viable for larger problem sets, since it requires a table of all
 values in memory, and so the space complexity grows in
 the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</span>.</p>
 <p><img alt="sieve" src="http://sanghan.me/img/sieve.jpg" /></p>
+</div>
 <div class="section" id="original-sieve">
-<h3>Original&nbsp;Sieve</h3>
+<h2>Original&nbsp;Sieve</h2>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Sieve away and only primes are left.</span>
@@ -182,7 +183,7 @@ the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</
 </pre></div>
 </div>
 <div class="section" id="sets-unordered-collections">
-<h3>Sets: Unordered&nbsp;Collections</h3>
+<h2>Sets: Unordered&nbsp;Collections</h2>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">set_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Sets are unordered, but hashable collections</span>
@@ -196,7 +197,7 @@ the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</
 </pre></div>
 </div>
 <div class="section" id="sets-optimized-insertion">
-<h3>Sets Optimized&nbsp;Insertion</h3>
+<h2>Sets Optimized&nbsp;Insertion</h2>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Further optimized set implementation by</span>
@@ -211,7 +212,7 @@ the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</
 </pre></div>
 </div>
 <div class="section" id="numpy">
-<h3>Numpy</h3>
+<h2>Numpy</h2>
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">np_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
@@ -229,7 +230,7 @@ the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</
 </pre></div>
 </div>
 <div class="section" id="comparison-with-c">
-<h3>Comparison with&nbsp;C</h3>
+<h2>Comparison with&nbsp;C</h2>
 <div class="highlight"><pre><span class="kt">void</span> <span class="nf">sieve</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">primes</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span> <span class="p">{</span>
     <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
 
@@ -251,7 +252,7 @@ the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</
 <span class="p">}</span>
 </pre></div>
 <div class="section" id="testing-for-primality">
-<h4>Testing for&nbsp;Primality</h4>
+<h3>Testing for&nbsp;Primality</h3>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">all_primes</span><span class="p">(</span><span class="n">primes</span><span class="p">:</span> <span class="nb">iter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">prime</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">prime</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">prime</span><span class="p">)):</span>
@@ -269,7 +270,7 @@ the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</
 </pre></div>
 </div>
 <div class="section" id="a-timer">
-<h4>A&nbsp;Timer</h4>
+<h3>A&nbsp;Timer</h3>
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
 
@@ -286,7 +287,7 @@ the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</
 </pre></div>
 </div>
 <div class="section" id="performance-testing">
-<h4>Performance&nbsp;Testing</h4>
+<h3>Performance&nbsp;Testing</h3>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_sieve&#39;</span><span class="p">):</span>
         <span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
 
@@ -302,7 +303,6 @@ the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</
 
 <span class="n">numpy</span><span class="p">:</span> <span class="mf">0.008</span> <span class="n">sec</span>
 </pre></div>
-</div>
 </div>
 </div>
 
