@@ -13,7 +13,8 @@ img {
   max-width: 100% !important;
   height: auto;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  margin-bottom: 1em; }
   img :default {
     width: 1024px; }
 
