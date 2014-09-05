@@ -59,16 +59,9 @@ lack of a list-comprehension for composing the function return value, and the
 second for-loop substituted with the binary &lt;code&gt;-=&lt;/code&gt;, assignment operator which for
 set objects has been overloaded with a &lt;code&gt;difference update&lt;/code&gt; expression, or
 the set mathematical&amp;nbsp;compliment&lt;/p&gt;
-&lt;blockquote class="pull-quote"&gt;
-&lt;table class="docutils field-list" frame="void" rules="none"&gt;
-&lt;col class="field-name" /&gt;
-&lt;col class="field-body" /&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr class="field"&gt;&lt;th class="field-name"&gt;math:&lt;/th&gt;&lt;td class="field-body"&gt;{x|x in A and x notin B}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/blockquote&gt;
+&lt;div class="formula"&gt;
+{&lt;i&gt;x&lt;/i&gt;|&lt;i&gt;x&lt;/i&gt; ∈ &lt;i&gt;A&lt;/i&gt;&lt;i&gt;and&lt;/i&gt;&lt;i&gt;x&lt;/i&gt;∉&lt;i&gt;B&lt;/i&gt;}
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="sets-optimized-insertion"&gt;
 &lt;h2&gt;Sets Optimized&amp;nbsp;Insertion&lt;/h2&gt;
