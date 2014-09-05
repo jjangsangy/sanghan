@@ -5,6 +5,15 @@
             background-size: $size;
 }
 
+@mixin user-selectable($item: none) {
+    -webkit-touch-callout: $item;
+      -webkit-user-select: $item;
+       -khtml-user-select: $item;
+         -moz-user-select: $item;
+          -ms-user-select: $item;
+              user-select: $item;
+}
+
 @mixin background-image(
     $url,
     $position: no-repeat top fixed,
@@ -90,10 +99,5 @@ pre {
     background: #eee;
     margin-right: 1em;
     border-right: 1px solid #dedede;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    @include user-selectable(none);
 }
