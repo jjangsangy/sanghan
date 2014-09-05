@@ -197,27 +197,31 @@ using Python <code>sets()</code>.</p>
 </span><span id="line-8">        <span class="n">primes</span> <span class="o">-=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
 </span><span id="line-9">    <span class="k">return</span> <span class="n">primes</span>
 </span></pre></div>
+<p>The primary difference you see with using <code>sets</code> and <code>lists</code>, is the
+lack of a list-comprehension for composing the function return value, and the
+second for-loop substituted with the binary <code>-=</code>, assignment operator which for
+set objects has been overloaded with a <code>difference update</code> expression, or
+the set mathematical compliment <span class="formula">{<i>x</i>|<i>x</i> ∈ <i>A</i><i>and</i><i>x</i>¬ ∈ <i>B</i>}</span>.</p>
+</div>
+<div class="section" id="sets-optimized-insertion">
+<h2>Sets Optimized&nbsp;Insertion</h2>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-3"><span class="sd">    Performing insertion over deletion utilizing</span>
+</span><span id="line-4"><span class="sd">    constant time nature of hashable collections.</span>
+</span><span id="line-5"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-6">    <span class="n">factors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span><span id="line-7">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+</span><span id="line-8">        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
+</span><span id="line-9">            <span class="n">factors</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+</span><span id="line-10">    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="n">factors</span>
+</span></pre></div>
 <p>Lists are a great general purpose data-structure, and is likely the first
 tool to reach for in the arsenal. However, it&#8217;s generality is also probably
 it&#8217;s main weakness.
 While fundamentally the choice data structure is orthoganal to program
 correctness, it&#8217;s important for real runtime performance to use the best
 tool to fit the&nbsp;job.</p>
-</div>
-<div class="section" id="sets-optimized-insertion">
-<h2>Sets Optimized&nbsp;Insertion</h2>
-<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
-</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-3"><span class="sd">    Optimized set implementation by</span>
-</span><span id="line-4"><span class="sd">    performing insertion over deletion utilizing</span>
-</span><span id="line-5"><span class="sd">    constant time nature of hashable collections.</span>
-</span><span id="line-6"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-7">    <span class="n">factors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-</span><span id="line-8">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
-</span><span id="line-9">        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
-</span><span id="line-10">            <span class="n">factors</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
-</span><span id="line-11">    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="n">factors</span>
-</span></pre></div>
 </div>
 <div class="section" id="numpy">
 <h2>Numpy</h2>
