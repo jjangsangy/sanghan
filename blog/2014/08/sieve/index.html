@@ -180,7 +180,7 @@ the problem into smaller&nbsp;subsets.</p>
 </span><span id="line-7">    <span class="k">return</span> <span class="p">[</span><span class="n">prime</span> <span class="k">for</span> <span class="n">prime</span><span class="p">,</span> <span class="n">check</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span> <span class="k">if</span> <span class="n">check</span><span class="p">]</span>
 </span></pre></div>
 <p>It&#8217;s important to notice we implement <code>lists</code> as the main data structure.
-Although the algorithm requires a table containing all numbers
+Remember although the algorithm requires a table containing all numbers
 up to the value, it gives us the freedom to construct the table using
 whatever the runtime affords. Here is another correct sieve
 using Python <code>sets()</code>.</p>
@@ -198,10 +198,12 @@ using Python <code>sets()</code>.</p>
 </span><span id="line-9">    <span class="k">return</span> <span class="n">primes</span>
 </span></pre></div>
 <p>The primary difference you see with using <code>sets</code> and <code>lists</code>, is the
-lack of a list-comprehension for composing the function return value, and the
-second for-loop substituted with the binary <code>-=</code>, assignment operator which for
-set objects has been overloaded with a <code>difference update</code> expression, or
-the set mathematical compliment <span class="formula">{<i>x</i>|<i>x</i> ∈ <i>A</i><i>and</i><i>x</i>∉<i>B</i>}</span></p>
+lack of a list-comprehension for composing the function return value. Also the
+second for-loop substituted with the binary <code>-=</code>, assignment operator, which for
+set objects has been overloaded with a <code>difference update</code> expression or
+the set mathematical compliment <span class="formula">{<i>x</i>|<i>x</i> ∈ <i>A</i>, <i>x</i>∉<i>B</i>}</span>.
+Sets are a great way represent mathematical operations and carry out membership testing
+on unordered groups of&nbsp;objects.</p>
 </div>
 <div class="section" id="sets-optimized-insertion">
 <h2>Sets Optimized&nbsp;Insertion</h2>

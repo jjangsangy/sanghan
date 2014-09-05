@@ -37,7 +37,7 @@ the problem into smaller&amp;nbsp;subsets.&lt;/p&gt;
 &lt;/span&gt;&lt;span id="line-7"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;prime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;check&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;check&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;It&amp;#8217;s important to notice we implement &lt;code&gt;lists&lt;/code&gt; as the main data structure.
-Although the algorithm requires a table containing all numbers
+Remember although the algorithm requires a table containing all numbers
 up to the value, it gives us the freedom to construct the table using
 whatever the runtime affords. Here is another correct sieve
 using Python &lt;code&gt;sets()&lt;/code&gt;.&lt;/p&gt;
@@ -55,10 +55,12 @@ using Python &lt;code&gt;sets()&lt;/code&gt;.&lt;/p&gt;
 &lt;/span&gt;&lt;span id="line-9"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;primes&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The primary difference you see with using &lt;code&gt;sets&lt;/code&gt; and &lt;code&gt;lists&lt;/code&gt;, is the
-lack of a list-comprehension for composing the function return value, and the
-second for-loop substituted with the binary &lt;code&gt;-=&lt;/code&gt;, assignment operator which for
-set objects has been overloaded with a &lt;code&gt;difference update&lt;/code&gt; expression, or
-the set mathematical compliment &lt;span class="formula"&gt;{&lt;i&gt;x&lt;/i&gt;|&lt;i&gt;x&lt;/i&gt; ∈ &lt;i&gt;A&lt;/i&gt;&lt;i&gt;and&lt;/i&gt;&lt;i&gt;x&lt;/i&gt;∉&lt;i&gt;B&lt;/i&gt;}&lt;/span&gt;&lt;/p&gt;
+lack of a list-comprehension for composing the function return value. Also the
+second for-loop substituted with the binary &lt;code&gt;-=&lt;/code&gt;, assignment operator, which for
+set objects has been overloaded with a &lt;code&gt;difference update&lt;/code&gt; expression or
+the set mathematical compliment &lt;span class="formula"&gt;{&lt;i&gt;x&lt;/i&gt;|&lt;i&gt;x&lt;/i&gt; ∈ &lt;i&gt;A&lt;/i&gt;, &lt;i&gt;x&lt;/i&gt;∉&lt;i&gt;B&lt;/i&gt;}&lt;/span&gt;.
+Sets are a great way represent mathematical operations and carry out membership testing
+on unordered groups of&amp;nbsp;objects.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="sets-optimized-insertion"&gt;
 &lt;h2&gt;Sets Optimized&amp;nbsp;Insertion&lt;/h2&gt;
