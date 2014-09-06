@@ -24,10 +24,13 @@ number to the last integer in memory, the space complexity of sieves generally
 grows in the order of &lt;span class="formula"&gt;&lt;span class="scriptfont"&gt;O&lt;/span&gt;(&lt;i&gt;n&lt;/i&gt;)&lt;/span&gt;. In order to deal with memory issues
 there is a set of Sieve algorithms called &lt;code&gt;segmented sieves&lt;/code&gt; which distribute
 the problem into smaller&amp;nbsp;subsets.&lt;/p&gt;
-&lt;p&gt;Here&amp;#8217;s how it would look in&amp;nbsp;Python.&lt;/p&gt;
+&lt;blockquote class="pull-quote"&gt;
+Here&amp;#8217;s how it would look in Python.&lt;/blockquote&gt;
 &lt;/div&gt;
-&lt;div class="section" id="sieve"&gt;
-&lt;h2&gt;Sieve&lt;/h2&gt;
+&lt;div class="section" id="the-code"&gt;
+&lt;h2&gt;The&amp;nbsp;Code&lt;/h2&gt;
+&lt;div class="section" id="general-case"&gt;
+&lt;h3&gt;General&amp;nbsp;Case&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Sieve away and only primes are left.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;    &lt;span class="n"&gt;primes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -37,33 +40,34 @@ the problem into smaller&amp;nbsp;subsets.&lt;/p&gt;
 &lt;/span&gt;&lt;span id="line-7"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;prime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;check&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;check&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;It&amp;#8217;s important to notice we implement &lt;code&gt;lists&lt;/code&gt; as the main data structure.
-Remember although the algorithm requires a table containing all numbers
-up to the value, it gives us the freedom to construct the table using
-whatever the runtime affords. Here is another correct sieve
-using Python &lt;code&gt;sets()&lt;/code&gt;.&lt;/p&gt;
+Remember although the algorithm requires an in memory table containing,
+we have the freedom to construct it using
+whatever tools the runtime affords. Here is an example of another sieve
+but with it&amp;#8217;s guts swapped with unordered &lt;code&gt;sets&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="sets-unordered-collections"&gt;
-&lt;h2&gt;Sets: Unordered&amp;nbsp;Collections&lt;/h2&gt;
+&lt;h3&gt;Sets: Unordered&amp;nbsp;Collections&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;set_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="sd"&gt;    Sets are unordered, but hashable collections&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="sd"&gt;    which offer optimizations for membership testing.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="sd"&gt;    Sets are mutable, unordered, hash collections which are useful&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="sd"&gt;    for quick membership testing.&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-5"&gt;&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-6"&gt;    &lt;span class="n"&gt;primes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-7"&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-8"&gt;        &lt;span class="n"&gt;primes&lt;/span&gt; &lt;span class="o"&gt;-=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-9"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;primes&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-8"&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-9"&gt;            &lt;span class="n"&gt;primes&lt;/span&gt; &lt;span class="o"&gt;-=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-10"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;primes&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The primary difference you see with using &lt;code&gt;sets&lt;/code&gt; and &lt;code&gt;lists&lt;/code&gt;, is the
 lack of a list-comprehension for composing the function return value. Also the
 second for-loop substituted with the binary &lt;code&gt;-=&lt;/code&gt;, assignment operator, which for
 set objects has been overloaded with a &lt;code&gt;difference update&lt;/code&gt; expression or
-the set mathematical compliment &lt;span class="formula"&gt;{&lt;i&gt;x&lt;/i&gt;|&lt;i&gt;x&lt;/i&gt; ∈ &lt;i&gt;A&lt;/i&gt;, &lt;i&gt;x&lt;/i&gt;∉&lt;i&gt;B&lt;/i&gt;}&lt;/span&gt;.
+the set mathematical compliment &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;|&lt;i&gt;x&lt;/i&gt; ∈ &lt;i&gt;A&lt;/i&gt; ⊂ ∉&lt;i&gt;B&lt;/i&gt;}&lt;/span&gt;.
 Sets are a great way represent mathematical operations and carry out membership testing
 on unordered groups of&amp;nbsp;objects.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="sets-optimized-insertion"&gt;
-&lt;h2&gt;Sets Optimized&amp;nbsp;Insertion&lt;/h2&gt;
+&lt;div class="section" id="insertion-sets"&gt;
+&lt;h3&gt;Insertion&amp;nbsp;Sets:&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;set_insertion_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="sd"&gt;    Performing insertion over deletion utilizing&lt;/span&gt;
@@ -83,7 +87,7 @@ correctness, it&amp;#8217;s important for real runtime performance to use the be
 tool to fit the&amp;nbsp;job.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="numpy"&gt;
-&lt;h2&gt;Numpy&lt;/h2&gt;
+&lt;h3&gt;Numpy&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;np_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -100,35 +104,14 @@ tool to fit the&amp;nbsp;job.&lt;/p&gt;
 &lt;/span&gt;&lt;span id="line-14"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nonzero&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="section" id="comparison-with-c"&gt;
-&lt;h2&gt;Comparison with&amp;nbsp;C&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-3"&gt;
-&lt;/span&gt;&lt;span id="line-4"&gt;    &lt;span class="c1"&gt;// Fill array with 1&amp;#39;s&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-5"&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-6"&gt;        &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-7"&gt;
-&lt;/span&gt;&lt;span id="line-8"&gt;    &lt;span class="c1"&gt;// Enumerate through multiples&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-9"&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-10"&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-11"&gt;            &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-12"&gt;                &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-13"&gt;
-&lt;/span&gt;&lt;span id="line-14"&gt;    &lt;span class="c1"&gt;// Print remaining&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-15"&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;limit&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-16"&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-17"&gt;            &lt;span class="n"&gt;printf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;%d prime = %d&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-18"&gt;
-&lt;/span&gt;&lt;span id="line-19"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="section" id="testing-for-primality"&gt;
-&lt;h3&gt;Testing for&amp;nbsp;Primality&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line--1"&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;all_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line--2"&gt;     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line--3"&gt;         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;any&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;prime&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line--4"&gt;             &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line--5"&gt;     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;h2&gt;Testing for&amp;nbsp;Primality&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;all_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;any&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;prime&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;all_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="bp"&gt;True&lt;/span&gt;
@@ -141,7 +124,7 @@ tool to fit the&amp;nbsp;job.&lt;/p&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="a-timer"&gt;
-&lt;h3&gt;A&amp;nbsp;Timer&lt;/h3&gt;
+&lt;h2&gt;A&amp;nbsp;Timer&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;contextlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;contextmanager&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;
@@ -158,7 +141,7 @@ tool to fit the&amp;nbsp;job.&lt;/p&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="performance-testing"&gt;
-&lt;h3&gt;Performance&amp;nbsp;Testing&lt;/h3&gt;
+&lt;h2&gt;Performance&amp;nbsp;Testing&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;set_sieve&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;        &lt;span class="n"&gt;set_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;
@@ -174,7 +157,6 @@ tool to fit the&amp;nbsp;job.&lt;/p&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;
 &lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.008&lt;/span&gt; &lt;span class="n"&gt;sec&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 </summary><category term="Python"></category></entry><entry><title>Swift Program is Swift, Except When it’s Not</title><link href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/" rel="alternate"></link><updated>2014-06-11T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-11:blog/2014/06/swift_program_is_swift_except_when_its_not/</id><summary type="html">&lt;p&gt;&lt;img alt="swift" src="http://sanghan.me/img/swift.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;This past &lt;span class="caps"&gt;WWDC&lt;/span&gt; Apple revealed a brand new programming language called &lt;a class="reference external" href="https://developer.apple.com/swift/"&gt;Swift&lt;/a&gt;
