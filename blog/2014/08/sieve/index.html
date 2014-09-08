@@ -241,17 +241,23 @@ tool to fit the&nbsp;job.</p>
 </span><span id="line-2">
 </span><span id="line-3"><span class="k">def</span> <span class="nf">np_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 </span><span id="line-4">    <span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-5"><span class="sd">    Numpy n-dimmensional array are continguous strides</span>
-</span><span id="line-6"><span class="sd">    of memory with fixed width statically typed elements.</span>
-</span><span id="line-7"><span class="sd">    Ndarrys are a  random access data-structure unlike</span>
-</span><span id="line-8"><span class="sd">    pythons built-in doubly linked-lists.</span>
-</span><span id="line-9"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-10">    <span class="n">primes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
-</span><span id="line-11">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">):</span>
-</span><span id="line-12">        <span class="k">if</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
-</span><span id="line-13">            <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">::</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
-</span><span id="line-14">    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">primes</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
+</span><span id="line-5"><span class="sd">    Sieve with it&#39;s guts swapped with numpy</span>
+</span><span id="line-6"><span class="sd">    ndarray</span>
+</span><span id="line-7"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-8">    <span class="n">primes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
+</span><span id="line-9">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">):</span>
+</span><span id="line-10">        <span class="k">if</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span><span id="line-11">            <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">::</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+</span><span id="line-12">    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">primes</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
 </span></pre></div>
+<p>Numpy is a third party package containing fast array based data structures and methods
+for utilizing them. Here we are utilizing numpy&#8217;s n-dimmensional array, which are
+continguous strides of memory with fixed width statically typed elements. In our example
+we are filling up the array with an 8-bit <code>bool</code>. The downside of numpy arrays
+is that they require that each member be of the same data type, unlike <code>lists</code> which
+can be dynamically allocated to fit any data type. The benefit is that we now
+have random access data-structure that can be accessed based on it&#8217;s position
+in memory, without requiring any&nbsp;traversal.</p>
 </div>
 </div>
 <div class="section" id="testing-for-primality">
