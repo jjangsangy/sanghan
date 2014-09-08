@@ -145,6 +145,8 @@ factor, you will find the other one. This reduces the run time to &lt;span class
 &lt;/span&gt;&lt;span id="line-4"&gt;            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-5"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote class="pull-quote"&gt;
+Now lets test to see if our sieves can correctly find the first 100 prime numbers&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;all_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="bp"&gt;True&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
