@@ -445,7 +445,7 @@ build the webpage, very similar to how Sphinx generates&amp;nbsp;documentation.&
 &lt;/span&gt;&lt;span id="line-9"&gt;
 &lt;/span&gt;&lt;span id="line-10"&gt;&lt;span class="n"&gt;AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Sang Han&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-11"&gt;&lt;span class="n"&gt;SINGLE_AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-12"&gt;&lt;span class="n"&gt;SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;My Photoelectric Blog&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-12"&gt;&lt;span class="n"&gt;SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;LightQuanta&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-13"&gt;&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;http://sanghan.me&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-14"&gt;&lt;span class="n"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-15"&gt;    &lt;span class="s"&gt;&amp;#39;img&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
