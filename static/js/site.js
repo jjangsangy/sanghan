@@ -1,6 +1,4 @@
-document.addEventListener("load", pageFullyLoaded, false);
- 
-function pageFullyLoaded(e) {
+$(document).ready(function() {
     $(".mo[style*='STIXGeneral']").each(function() {
         var avenir = $(this).attr("style").replace("STIXGeneral", "AvenirNext");
         return $(this).attr("style", avenir);
@@ -9,4 +7,4 @@ function pageFullyLoaded(e) {
         var avenir = $(this).attr("style").replace("STIXGeneral", "AvenirNext");
         return $(this).attr("style", avenir);
     });
-};
+});
