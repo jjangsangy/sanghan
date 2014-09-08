@@ -133,7 +133,7 @@ Enter: The N-Dimensional Array&lt;/blockquote&gt;
 &lt;p&gt;Numpy is a third party numerical library, containing array based data structures
 and vectorized methods for utilizing them. Here we operate on numpy&amp;#8217;s &lt;code&gt;n-dimmensional array&lt;/code&gt;
 Numpy arrays are fixed strides of memory with statically typed elements. In our example
-we are filling up the array with an &lt;code&gt;8-bit bool&lt;/code&gt;. The downside to using statically
+we are filling up the array with &lt;code&gt;8-bit bools&lt;/code&gt;. The downside to using statically
 typed elements in a dynamically language, is we afford many of the niceties that the Python
 language provides. Everything inside a numpy array must be homogeneously typed, and
 we cannot perform the same types of operations on &lt;code&gt;bools&lt;/code&gt; as we would
