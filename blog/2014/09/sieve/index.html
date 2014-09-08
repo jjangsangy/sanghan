@@ -240,15 +240,10 @@ Then, once all factors have been collected, perform a removal from the universal
 is done at each iteration through the universal set to perform a deletion, whereas for insertion
 only requires checking through a null set containing factors.</p>
 <blockquote class="pull-quote">
-<p>It's possible to know that the size of a set of all factors of <span class="formula"><i>n</i></span> will never be greater
-than</p>
 <p>$$n - \frac{n}{\ln(n)}$$</p>
+<p>It's possible to know based on the <a class="reference external" href="http://en.wikipedia.org/wiki/Prime_number_theorem">prime number theorem</a>, that a
+set of all factors of <span class="formula"><i>n</i></span> will exceed this size.</p>
 </blockquote>
-<blockquote class="pull-quote">
-Due to implementation of <code>sets</code> being primarily <code>hash</code> operations, both
-insertions and deletions are dependent on generating a hash value and can be done
-in <code>constant-time</code> in proportion to <code>problem-size</code> or <code>linear-time</code> in proportion to
-<code>hash-size</code>.</blockquote>
 </div>
 <div class="section" id="insertion-sets">
 <h3>Insertion Sets:</h3>
