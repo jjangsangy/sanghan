@@ -30,7 +30,7 @@ Here&amp;#8217;s how it would look in Python.&lt;/blockquote&gt;
 &lt;div class="section" id="the-code"&gt;
 &lt;h2&gt;The&amp;nbsp;Code&lt;/h2&gt;
 &lt;blockquote class="pull-quote"&gt;
-Note: I&amp;#8217;ve written out the functions using type annotations,
+Note: I&amp;#8217;ve written out the functions using &lt;code&gt;type annotations&lt;/code&gt;,
 which make it easier to understand the type arguments take and
 what types they return. This makes it easier to understand what
 functions are doing, but also has the downside of not being
