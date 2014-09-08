@@ -232,12 +232,12 @@ second for-loop is substituted with one <code>-=</code>, assignment operator, wh
 sets has been operator overloaded with a <code>difference update</code> method or
 the <code>set compliment</code> <span class="formula">∀{<i>x</i>|<span class="text"> x </span> ∈ <span class="text">A : x </span>∉<span class="text"> B</span>}</span></p>
 <p>Utilizing sets provides us a cleaner syntax for algorithms involving math.
-In the previous example, we are first creating
-a set of all values, and iteriatively deleting items from that set. It would
-also be correct to create a <code>set</code> containing the factors, perform
-insertion over all the factors, and then at the end removal of all factors from
-the universal set. This route takes advantage of the fact that insertion
-oprations perform faster than&nbsp;deletions.</p>
+In this example, we are first creating
+a universal set, and iteriatively deleting it&#8217;s factors. It would
+also be correct to create a null set and iteratively collect all factors first.
+At the end, once all factors have been collected, we then perform removal
+from the universal set. This route optimizes membership testing to occur
+primarily with insertion due to insertion operations performing faster than&nbsp;deletions.</p>
 </div>
 <div class="section" id="insertion-sets">
 <h3>Insertion&nbsp;Sets:</h3>
