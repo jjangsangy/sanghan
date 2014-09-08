@@ -137,7 +137,7 @@ language is to forego many of the niceties python has to offer.
 However, the main benefit is random access to
 individual array elements in memory, instantly without&amp;nbsp;traversal.&lt;/p&gt;
 &lt;p&gt;Everything inside a numpy array must be homogenous,
-and to be efficient we must know the exact size of the array beforehand.
+and to be efficient we must know the exact length of the array beforehand.
 This is because the task of extending or contracting an array once initialized
 requires re-copying all elements into a new array of that length.
 We also have to be strict on initializing &lt;code&gt;bools&lt;/code&gt; &lt;code&gt;ints&lt;/code&gt; or &lt;code&gt;floats&lt;/code&gt;
