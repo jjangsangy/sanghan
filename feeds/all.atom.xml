@@ -73,7 +73,7 @@ but with it&amp;#8217;s guts swapped with unordered &lt;code&gt;sets&lt;/code&gt
 lack of a list-comprehension for composing the function return value. Also the
 second for-loop substituted with the binary &lt;code&gt;-=&lt;/code&gt;, assignment operator, which for
 set objects has been overloaded with a &lt;code&gt;difference update&lt;/code&gt; expression or
-the set mathematical compliment &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;|&lt;i&gt;x&lt;/i&gt; ∈ &lt;i&gt;A&lt;/i&gt; ⊂ &lt;i&gt;B&lt;/i&gt;}&lt;/span&gt;.
+the mathematical compliment &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;|&lt;i&gt;x&lt;/i&gt; ∈ &lt;i&gt;A&lt;/i&gt; ⊂ &lt;i&gt;B&lt;/i&gt;}&lt;/span&gt;.
 Sets are a great way represent mathematical operations and carry out membership testing
 on unordered groups of&amp;nbsp;objects.&lt;/p&gt;
 &lt;p&gt;Utilizing sets for mathematical operations allows the code to be easier to read
