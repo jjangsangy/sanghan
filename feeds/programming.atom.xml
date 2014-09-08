@@ -73,8 +73,8 @@ but with it&amp;#8217;s guts swapped with &lt;code&gt;sets&lt;/code&gt;.&lt;/p&g
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In this example, the primary difference with using &lt;code&gt;sets&lt;/code&gt; and &lt;code&gt;lists&lt;/code&gt;, is the
 lack of a list-comprehension for composing the function return value. As well, the
-second for-loop is substituted with one &lt;code&gt;-=&lt;/code&gt;, assignment operator, which for
-sets has been operator overloaded with a &lt;code&gt;difference update&lt;/code&gt; method or
+second for-loop is substituted with one &lt;code&gt;-=&lt;/code&gt;, binary assignment operator, which for
+sets has been overloaded with a &lt;code&gt;difference update&lt;/code&gt; method or
 the mathematical complement &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;|&lt;span class="text"&gt; x &lt;/span&gt; ∈ &lt;span class="text"&gt;A : x &lt;/span&gt;∉&lt;span class="text"&gt; B&lt;/span&gt;}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In this example, we first create a &lt;code&gt;universal set&lt;/code&gt;, and iteriatively delete it&amp;#8217;s factors.
