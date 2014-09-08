@@ -30,11 +30,11 @@ Here&amp;#8217;s how it would look in Python.&lt;/blockquote&gt;
 &lt;div class="section" id="the-code"&gt;
 &lt;h2&gt;The&amp;nbsp;Code&lt;/h2&gt;
 &lt;blockquote class="pull-quote"&gt;
-I&amp;#8217;ve written out the functions using &lt;code&gt;type annotations&lt;/code&gt;,
-which make it easier to understand the type arguments take and
-what types they return. This makes it easier to understand what
-functions are doing, but also has the downside of not being
-compatble with Python 2.&lt;/blockquote&gt;
+I&amp;#8217;ve written out the function definition using &lt;code&gt;type annotations&lt;/code&gt;,
+which make it easier to understand the arguments that a
+function can take and what types they can return.
+This makes it easier to lay out what functions are doing.
+The one downside is not being backward compatble with Python 2.&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="c"&gt;# Type Annotation Prototype&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -105,7 +105,7 @@ tool to reach for in the arsenal. It&amp;#8217;s hard not to overuse or abuse th
 more viable data-structures exists. &lt;a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail"&gt;Maslow&lt;/a&gt; tells us &amp;quot;If the only tool you have is a hammer
 everything looks like a nail&amp;quot;. In Python, the generality of lists and sets are
 probably also their downside. We want to use them for&amp;nbsp;everything.&lt;/p&gt;
-&lt;p&gt;So what is the optimal data structure to perform this&amp;nbsp;calculation?&lt;/p&gt;
+&lt;p&gt;So what is the optimal data structure to perform these&amp;nbsp;calculation?&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="numpy"&gt;
 &lt;h3&gt;Numpy&lt;/h3&gt;
