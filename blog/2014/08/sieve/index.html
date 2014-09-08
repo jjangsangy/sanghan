@@ -277,6 +277,9 @@ factor, you will find the other one. This reduces the run time to <span class="f
 </span><span id="line-4">            <span class="k">return</span> <span class="bp">False</span>
 </span><span id="line-5">    <span class="k">return</span> <span class="bp">True</span>
 </span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="n">all_primes</span><span class="p">(</span><span class="n">sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+</span><span id="line-2"><span class="bp">True</span>
+</span></pre></div>
 <div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="n">all_primes</span><span class="p">(</span><span class="n">np_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
 </span><span id="line-2"><span class="bp">True</span>
 </span></pre></div>
@@ -289,6 +292,14 @@ factor, you will find the other one. This reduces the run time to <span class="f
 </div>
 <div class="section" id="a-timer">
 <h2>A&nbsp;Timer</h2>
+<p>Now that these sieves are indeed correct, lets see how fast they run.
+We will construct a timer taking advantage of what is known as a <code>context manager</code>.
+Basically, a context manager allows us to use the <code>with</code> construct
+and will perform an operation before and after utilizing the <code>__enter__</code>
+and <code>__exit__</code> properties of python object. It&#8217;s possible to create a <code>context manager</code>
+merely by using a decorator from the <code>contextlib</code> module.</p>
+<p>It&#8217;s also possible to use Python&#8217;s built in <code>timeit</code> module, which can deal
+with much more complex and isolated timing&nbsp;instances.</p>
 <div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">time</span>
 </span><span id="line-2"><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
 </span><span id="line-3">
@@ -306,6 +317,14 @@ factor, you will find the other one. This reduces the run time to <span class="f
 </div>
 <div class="section" id="performance-testing">
 <h2>Performance&nbsp;Testing</h2>
+<blockquote class="pull-quote">
+Now lets see how fast our seives can find the first million
+digits.</blockquote>
+<div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;sieve&#39;</span><span class="p">):</span>
+</span><span id="line-2">        <span class="n">sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="n">sieve</span><span class="p">:</span> <span class="mf">0.454</span> <span class="n">sec</span>
+</span></pre></div>
 <div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">timer</span><span class="p">(</span><span class="s">&#39;set_sieve&#39;</span><span class="p">):</span>
 </span><span id="line-2">        <span class="n">set_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
 </span><span id="line-3">

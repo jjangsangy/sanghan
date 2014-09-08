@@ -136,6 +136,9 @@ factor, you will find the other one. This reduces the run time to &lt;span class
 &lt;/span&gt;&lt;span id="line-4"&gt;            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-5"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;all_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;all_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="bp"&gt;True&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -148,6 +151,14 @@ factor, you will find the other one. This reduces the run time to &lt;span class
 &lt;/div&gt;
 &lt;div class="section" id="a-timer"&gt;
 &lt;h2&gt;A&amp;nbsp;Timer&lt;/h2&gt;
+&lt;p&gt;Now that these sieves are indeed correct, lets see how fast they run.
+We will construct a timer taking advantage of what is known as a &lt;code&gt;context manager&lt;/code&gt;.
+Basically, a context manager allows us to use the &lt;code&gt;with&lt;/code&gt; construct
+and will perform an operation before and after utilizing the &lt;code&gt;__enter__&lt;/code&gt;
+and &lt;code&gt;__exit__&lt;/code&gt; properties of python object. It&amp;#8217;s possible to create a &lt;code&gt;context manager&lt;/code&gt;
+merely by using a decorator from the &lt;code&gt;contextlib&lt;/code&gt; module.&lt;/p&gt;
+&lt;p&gt;It&amp;#8217;s also possible to use Python&amp;#8217;s built in &lt;code&gt;timeit&lt;/code&gt; module, which can deal
+with much more complex and isolated timing&amp;nbsp;instances.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;contextlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;contextmanager&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;
@@ -165,6 +176,14 @@ factor, you will find the other one. This reduces the run time to &lt;span class
 &lt;/div&gt;
 &lt;div class="section" id="performance-testing"&gt;
 &lt;h2&gt;Performance&amp;nbsp;Testing&lt;/h2&gt;
+&lt;blockquote class="pull-quote"&gt;
+Now lets see how fast our seives can find the first million
+digits.&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;sieve&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;        &lt;span class="n"&gt;sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="n"&gt;sieve&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.454&lt;/span&gt; &lt;span class="n"&gt;sec&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;set_sieve&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;        &lt;span class="n"&gt;set_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;
