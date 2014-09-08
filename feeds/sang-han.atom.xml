@@ -106,7 +106,7 @@ and is likely the first tool to reach for in the arsenal.
 It&amp;#8217;s hard not to overuse or abuse them, when other more viable data-structures&amp;nbsp;exists.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail"&gt;Maslow&lt;/a&gt; tells&amp;nbsp;us&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-&lt;p&gt;&lt;em&gt;If the only tool you have is a hammer everything looks like a&amp;nbsp;nail.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&amp;quot;If the only tool you have is a hammer everything looks like a&amp;nbsp;nail.&amp;quot;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;The Psychology of Science&amp;nbsp;(1964)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;In Python, the generality of lists and sets are
