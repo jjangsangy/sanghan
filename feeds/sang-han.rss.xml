@@ -155,7 +155,7 @@ factor, you will find the other one. This reduces the run time to &lt;span class
 We will construct a timer taking advantage of what is known as a &lt;code&gt;context manager&lt;/code&gt;.
 Basically, a context manager allows us to use the &lt;code&gt;with&lt;/code&gt; construct
 and will perform an operation before and after utilizing the &lt;code&gt;__enter__&lt;/code&gt;
-and &lt;code&gt;__exit__&lt;/code&gt; properties of python object. It&amp;#8217;s possible to create a &lt;code&gt;context manager&lt;/code&gt;
+and &lt;code&gt;__exit__&lt;/code&gt; properties of python object. It&amp;#8217;s possible to create a context manager
 merely by using a decorator from the &lt;code&gt;contextlib&lt;/code&gt; module.&lt;/p&gt;
 &lt;p&gt;It&amp;#8217;s also possible to use Python&amp;#8217;s built in &lt;code&gt;timeit&lt;/code&gt; module, which can deal
 with much more complex and isolated timing&amp;nbsp;instances.&lt;/p&gt;
