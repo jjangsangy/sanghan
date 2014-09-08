@@ -130,8 +130,8 @@ Enter: The N-Dimensional Array&lt;/blockquote&gt;
 &lt;/span&gt;&lt;span id="line-11"&gt;            &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-12"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nonzero&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;Numpy&lt;/code&gt; is a third party numerical library, containing array based data structures
-and vectorized methods for utilizing them. Here operate on numpy&amp;#8217;s &lt;code&gt;n-dimmensional array&lt;/code&gt;
+&lt;p&gt;Numpy is a third party numerical library, containing array based data structures
+and vectorized methods for utilizing them. Here we operate on numpy&amp;#8217;s &lt;code&gt;n-dimmensional array&lt;/code&gt;
 Numpy arrays are fixed strides of memory with statically typed elements. In our example
 we are filling up the array with an &lt;code&gt;8-bit bool&lt;/code&gt;. The downside to using statically
 typed elements in a dynamically language, is we afford many of the niceties that the Python
