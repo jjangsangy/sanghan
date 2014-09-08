@@ -140,8 +140,8 @@ individual array elements in memory, instantly without&amp;nbsp;traversal.&lt;/p
 and to be efficient we must know the exact length of the array beforehand.
 This is because the task of extending or contracting an array once initialized
 requires re-copying all elements into a new array of that length.
-We also have to be strict on initializing &lt;code&gt;bools&lt;/code&gt; &lt;code&gt;ints&lt;/code&gt; or &lt;code&gt;floats&lt;/code&gt;
-with proper &lt;code&gt;fixed-width sizes&lt;/code&gt; in&amp;nbsp;memory.&lt;/p&gt;
+We also have to be strict when initializing &lt;code&gt;bools&lt;/code&gt; &lt;code&gt;ints&lt;/code&gt; and &lt;code&gt;floats&lt;/code&gt;
+with proper &lt;code&gt;fixed-widths&lt;/code&gt; for memory&amp;nbsp;allocation.&lt;/p&gt;
 &lt;p&gt;In our example we are filling up an array with &lt;code&gt;8-bit bools&lt;/code&gt; all set
 to &lt;code&gt;True&lt;/code&gt;. We then iterate through
 an array of factors set to &lt;code&gt;32-bit unsigned integers&lt;/code&gt;, and allocate
