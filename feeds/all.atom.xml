@@ -73,7 +73,7 @@ but with it&amp;#8217;s guts swapped with &lt;code&gt;sets&lt;/code&gt;.&lt;/p&g
 lack of a list-comprehension for composing the function return value. As well, the
 second for-loop is substituted with one &lt;code&gt;-=&lt;/code&gt;, assignment operator, which for
 sets has been operator overloaded with a &lt;code&gt;difference update&lt;/code&gt; method or
-the &lt;code&gt;set compliment&lt;/code&gt; &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;|&lt;span class="text"&gt; x &lt;/span&gt; ∈ &lt;span class="text"&gt;A : x&lt;/span&gt;∉&lt;span class="text"&gt; B&lt;/span&gt;}&lt;/span&gt;&lt;/p&gt;
+the &lt;code&gt;set compliment&lt;/code&gt; &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;|&lt;span class="text"&gt; x &lt;/span&gt; ∈ &lt;span class="text"&gt;A : x &lt;/span&gt;∉&lt;span class="text"&gt; B&lt;/span&gt;}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In the previous example, we are first creating
 a set of all values, and iteriatively deleting items from that set. It would
