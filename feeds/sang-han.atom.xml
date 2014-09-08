@@ -109,9 +109,10 @@ that best fits the&amp;nbsp;job.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Lists and sets are great general purpose data-structure,
 and is likely the first tool to reach for when presented with a problem.
-However, the generality and utility of these data-structures are probably
-also our downfall when a better suited data-structure is also&amp;nbsp;available.&lt;/p&gt;
-&lt;p&gt;So what is the optimal data structure to perform these&amp;nbsp;calculation?&lt;/p&gt;
+However, their generality and utility are also likely our
+downfall when better suited tools are also&amp;nbsp;available.&lt;/p&gt;
+&lt;blockquote class="pull-quote"&gt;
+So what is the most optimal data structure to perform these calculation?&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="enter-the-array"&gt;
 &lt;h3&gt;Enter: The&amp;nbsp;Array&lt;/h3&gt;
