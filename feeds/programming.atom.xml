@@ -85,8 +85,8 @@ This optimization takes into account that, membership testing must be done at ea
 iteration through the universal set to perform a deletion, whereas for insertion
 only requires checking through the null&amp;nbsp;set.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-Due to implementation of &lt;code&gt;sets&lt;/code&gt; being primarily &lt;code&gt;hash-table&lt;/code&gt; operations, both
-insertions and deletions are dependent on generating a hash value and can be done
+Due to implementation of &lt;code&gt;sets&lt;/code&gt; being primarily &lt;code&gt;hash table&lt;/code&gt; operations, both
+insertions and deletions are dependent on generating a &lt;code&gt;hash value&lt;/code&gt; and can be done
 in &lt;code&gt;constant-time&lt;/code&gt; in proportion to problem-size or &lt;code&gt;linear-time&lt;/code&gt; in proportion to
 hash-size.&lt;/blockquote&gt;
 &lt;/div&gt;
