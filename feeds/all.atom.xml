@@ -137,7 +137,7 @@ However, the benefit is random access to each array element based on
 it&amp;#8217;s position in memory without&amp;nbsp;traversal.&lt;/p&gt;
 &lt;p&gt;In our example we are filling up the array with &lt;code&gt;8-bit bools&lt;/code&gt; all set
 to &lt;code&gt;True&lt;/code&gt;, or &lt;code&gt;1&lt;/code&gt; in this case. We then iterate through an array
-of &lt;cite&gt;32-bit unsigned integers&lt;/cite&gt;, and sieve the multiples set as &lt;code&gt;False&lt;/code&gt;, or &lt;code&gt;0&lt;/code&gt;.
+of &lt;code&gt;32-bit unsigned integers&lt;/code&gt;, and sieve the multiples set as &lt;code&gt;False&lt;/code&gt;, or &lt;code&gt;0&lt;/code&gt;.
 Finally, we return all non-zero from the boolean array from 2 to the end which are
 still &lt;code&gt;True&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
