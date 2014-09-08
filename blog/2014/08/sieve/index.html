@@ -206,6 +206,14 @@ set objects has been overloaded with a <code>difference update</code> expression
 the set mathematical compliment <span class="formula">∀{<i>x</i>|<i>x</i> ∈ <i>A</i> ⊂ <i>B</i>}</span>.
 Sets are a great way represent mathematical operations and carry out membership testing
 on unordered groups of&nbsp;objects.</p>
+<p>Utilizing sets for mathematical operations allows the code to be easier to read
+and understand. It also provides us a mechanism of understanding algorithms
+in cleaner syntax. For instance, in the previous example, we are first creating
+a set of all values, and iteriatively deleting items from that set. It would
+also be correct to create a <code>set</code> containing the factors, and then perform
+insertion over all the factors into it. This takes advantage of the fact that
+set insertions perform better than set deletions due to not needing to
+perform a&nbsp;traversal.</p>
 </div>
 <div class="section" id="insertion-sets">
 <h3>Insertion&nbsp;Sets:</h3>
