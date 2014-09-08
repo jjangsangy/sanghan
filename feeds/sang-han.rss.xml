@@ -88,7 +88,7 @@ only requires checking through the null&amp;nbsp;set.&lt;/p&gt;
 Due to implementation of &lt;code&gt;sets&lt;/code&gt; being primarily hash-table operations, both
 insertions and deletions are dependent on generating hash values and can be done
 in constant time in proportion to problem-size or linear-time in proportion to
-hash.&lt;/blockquote&gt;
+hash-size.&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="insertion-sets"&gt;
 &lt;h3&gt;Insertion&amp;nbsp;Sets:&lt;/h3&gt;
