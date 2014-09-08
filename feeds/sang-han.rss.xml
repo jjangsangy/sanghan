@@ -106,8 +106,9 @@ and is likely the first tool to reach for in the arsenal.
 It&amp;#8217;s hard not to overuse or abuse them, when other more viable data-structures&amp;nbsp;exists.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail"&gt;Maslow&lt;/a&gt; tells&amp;nbsp;us&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-&lt;em&gt;If the only tool you have is a hammer everything looks like a nail.&lt;/em&gt;
-Maslow - The Psychology of Science&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;If the only tool you have is a hammer everything looks like a&amp;nbsp;nail.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Maslow - The Psychology of&amp;nbsp;Science&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;In Python, the generality of lists and sets are
 probably also their downside, since they are useful for so many&amp;nbsp;things.&lt;/p&gt;
 &lt;p&gt;So what is the optimal data structure to perform these&amp;nbsp;calculation?&lt;/p&gt;
