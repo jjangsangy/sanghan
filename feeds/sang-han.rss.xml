@@ -182,7 +182,7 @@ Now lets test to see if our sieves can correctly find the first 100 prime number
 &lt;p&gt;Now knowing that our implementations are correct, lets see how fast they run.
 We will construct a timer taking advantage of what is known as a &lt;code&gt;context manager&lt;/code&gt;.
 Basically, a context manager allows us to use the &lt;code&gt;with&lt;/code&gt; construct
-and will perform an operation before and overloading the &lt;code&gt;__enter__&lt;/code&gt;
+and will perform an operation before and after by overloading the &lt;code&gt;__enter__&lt;/code&gt;
 and &lt;code&gt;__exit__&lt;/code&gt; methods of python object. We can create a context manager
 merely by using a decorator from the &lt;code&gt;contextlib&lt;/code&gt; module.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
