@@ -149,7 +149,8 @@ it&amp;#8217;s multiples as &lt;code&gt;False&lt;/code&gt;. Finally, we return a
 boolean array from 2 to the end which are still &lt;code&gt;True&lt;/code&gt;. However, unlike slicing
 python lists which generates a whole new copy from the original, slicing numpy arrays
 returns is an in-memory view and is a much cheaper operation. Therefore, the
-vector operation &lt;code&gt;primes[i*i::i]&lt;/code&gt; is actually pretty fast and memory&amp;nbsp;efficient.&lt;/p&gt;
+vector operation &lt;code&gt;primes[i*i::i]&lt;/code&gt; is just an in-memory view of the &lt;code&gt;primes&lt;/code&gt; array
+requiring no indirection or memory allocation to&amp;nbsp;construct.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="testing-for-primality"&gt;
