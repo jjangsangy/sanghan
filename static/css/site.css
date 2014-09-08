@@ -67,7 +67,8 @@ pre {
   counter-reset: line-numbering;
   border: solid 1px #d9d9d9;
   padding: 0;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   white-space: pre;
   overflow-x: auto;
   word-break: inherit;
@@ -92,5 +93,3 @@ pre {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-
-/*# sourceMappingURL=site.css.map */
