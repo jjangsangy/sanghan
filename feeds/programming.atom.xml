@@ -146,9 +146,10 @@ with proper &lt;code&gt;fixed-widths&lt;/code&gt; for memory&amp;nbsp;allocation
 to &lt;code&gt;True&lt;/code&gt;. We then iterate through
 an array of factors set to &lt;code&gt;32-bit unsigned integers&lt;/code&gt;, and allocate
 it&amp;#8217;s multiples as &lt;code&gt;False&lt;/code&gt;. Finally, we return all values from the
-boolean array from 2 to the end which are still &lt;code&gt;True&lt;/code&gt;. Unlike slicing
-python lists which generates a new copy of the original, slicing numpy arrays
-returns is an in-memory view and is a much cheaper&amp;nbsp;operation.&lt;/p&gt;
+boolean array from 2 to the end which are still &lt;code&gt;True&lt;/code&gt;. However, unlike slicing
+python lists which generates a whole new copy from the original, slicing numpy arrays
+returns is an in-memory view and is a much cheaper operation. Therefore, the
+vector operation &lt;code&gt;primes[i*i::i]&lt;/code&gt; is actually pretty fast and memory&amp;nbsp;efficient.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="testing-for-primality"&gt;
