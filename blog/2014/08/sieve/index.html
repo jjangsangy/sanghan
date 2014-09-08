@@ -282,9 +282,11 @@ in memory, without requiring any&nbsp;traversal.</p>
 <p>So now that we&#8217;ve written the sieve in a bunch of different ways. How do we know that
 each way is indeed&nbsp;correct.</p>
 <p>The most obvious way to figure if a number&#8217;s prime, is to try dividing the number
-by all the numbers between <span class="formula">2 ≤ <i>n</i> ≤ <i>n</i> − 1</span>. One optimization would be
-to only factor these numbers up to <span class="formula">2 ≤ <i>n</i> ≤ <span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>n</i></span><span class="ignored">)</span></span></span>. This is
-due to the fact that if <span class="formula"><i>n</i> = <i>p</i> × <i>q</i></span>, either p or q must be less than or equal
+by all the numbers between <span class="formula">2 ≤ <i>n</i> ≤ <i>n</i> − 1</span>.</p>
+<blockquote class="pull-quote">
+One optimization would be
+to only factor these numbers up to <span class="formula">2 ≤ <i>n</i> ≤ <span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>n</i></span><span class="ignored">)</span></span></span>.</blockquote>
+<p>This is possible because if <span class="formula"><i>n</i> = <i>p</i> × <i>q</i></span>, either p or q must be less than or equal
 to <span class="formula"><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>n</i></span><span class="ignored">)</span></span></span>, or their product is greater than n. If you check possible factors
 up to <span class="formula"><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>n</i></span><span class="ignored">)</span></span></span>, you will find the smaller factors, and when you divide n by that
 factor, you will find the other one. This reduces the run time to <span class="formula"><span class="scriptfont">O</span>(<span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>n</i></span><span class="ignored">)</span></span>)</span>.</p>
