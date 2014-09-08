@@ -306,11 +306,9 @@ Now lets test to see if our sieves can correctly find the first 100 prime number
 <p>Now that these sieves are indeed correct, lets see how fast they run.
 We will construct a timer taking advantage of what is known as a <code>context manager</code>.
 Basically, a context manager allows us to use the <code>with</code> construct
-and will perform an operation before and after utilizing the <code>__enter__</code>
-and <code>__exit__</code> properties of python object. It&#8217;s possible to create a context manager
+and will perform an operation before and overloading the <code>__enter__</code>
+and <code>__exit__</code> methods of python object. We can create a context manager
 merely by using a decorator from the <code>contextlib</code> module.</p>
-<p>It&#8217;s also possible to use Python&#8217;s built in <code>timeit</code> module, which can deal
-with much more complex and isolated timing&nbsp;instances.</p>
 <div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">time</span>
 </span><span id="line-2"><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
 </span><span id="line-3">
@@ -325,6 +323,9 @@ with much more complex and isolated timing&nbsp;instances.</p>
 </span><span id="line-12">        <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span>
 </span><span id="line-13">    <span class="p">)</span>
 </span></pre></div>
+<blockquote class="pull-quote">
+It&#8217;s also possible to use Python&#8217;s built in <code>timeit</code> module, which can deal
+with much more complex and isolated timing instances.</blockquote>
 </div>
 <div class="section" id="performance-testing">
 <h2>Performance&nbsp;Testing</h2>
