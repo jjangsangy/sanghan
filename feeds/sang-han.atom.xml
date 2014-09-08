@@ -179,7 +179,7 @@ Now lets test to see if our sieves can correctly find the first 100 prime number
 &lt;/div&gt;
 &lt;div class="section" id="a-timer"&gt;
 &lt;h2&gt;A&amp;nbsp;Timer&lt;/h2&gt;
-&lt;p&gt;Now that these sieves are indeed correct, lets see how fast they run.
+&lt;p&gt;Now knowing that our implementations are correct, lets see how fast they run.
 We will construct a timer taking advantage of what is known as a &lt;code&gt;context manager&lt;/code&gt;.
 Basically, a context manager allows us to use the &lt;code&gt;with&lt;/code&gt; construct
 and will perform an operation before and overloading the &lt;code&gt;__enter__&lt;/code&gt;
