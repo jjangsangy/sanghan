@@ -36,10 +36,9 @@ Here&amp;#8217;s how it would look in Python.&lt;/blockquote&gt;
 &lt;h2&gt;The&amp;nbsp;Code&lt;/h2&gt;
 &lt;blockquote class="pull-quote"&gt;
 I&amp;#8217;ve written out the function definition using &lt;code&gt;type annotations&lt;/code&gt;,
-which make it easier to understand the arguments that a
-function can take and what types they can return.
-The one downside of using annotations is this language construct is
-not backward compatble with Python 2.&lt;/blockquote&gt;
+which explicitly describe the type of arguments a function take and what
+types they return. This is a great documentation tool built-in, but only
+available for Python 3 and not Python 2.&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="c"&gt;# Type Annotation Prototype&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
