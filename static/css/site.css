@@ -61,7 +61,7 @@ img {
     background-position: center top;
     height: 920px; } }
 span.formula {
-  font-size: 16px; }
+  font-size: 14px; }
 
 pre {
   counter-reset: line-numbering;
@@ -92,3 +92,5 @@ pre {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+/*# sourceMappingURL=site.css.map */
