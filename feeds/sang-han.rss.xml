@@ -84,7 +84,7 @@ Then, once all factors have been collected, perform a removal from the universal
 is done at each iteration through the universal set to perform a deletion, whereas for insertion
 only requires checking through a null set containing factors.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-&lt;p&gt;$$n - \frac{n}{\ln(n)}$$&lt;/p&gt;
+&lt;p&gt;$n - \frac{n}{\ln(n)}$&lt;/p&gt;
 &lt;p&gt;It's possible to know based on the &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Prime_number_theorem"&gt;prime number theorem&lt;/a&gt;, that a
 set of all factors of &lt;span class="formula"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt; will exceed this size.&lt;/p&gt;
 &lt;/blockquote&gt;
