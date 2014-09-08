@@ -134,9 +134,9 @@ Enter: The N-Dimensional Array&lt;/blockquote&gt;
 for utilizing them. Here we are utilizing numpy&amp;#8217;s n-dimmensional array, which are
 continguous strides of memory with fixed width statically typed elements. In our example
 we are filling up the array with an 8-bit &lt;code&gt;bool&lt;/code&gt;. The downside to using statically
-typed units, is we are afford the generality of fitting anything we want.
-Everything inside a &lt;code&gt;numpy array&lt;/code&gt; must be homogeneously typed, which cannot
-be dynamically allocated like &lt;code&gt;lists&lt;/code&gt;. The benefit is that we now
+typed units is we afford the generality of fitting anything we want.
+Everything inside a &lt;code&gt;numpy array&lt;/code&gt; must be homogeneously typed, losing
+the dynamic nature of normal &lt;code&gt;lists&lt;/code&gt;. The benefit is that we now
 have random access data-structure that can be indexed based on it&amp;#8217;s position
 in memory instantly without a&amp;nbsp;traversal.&lt;/p&gt;
 &lt;/div&gt;
