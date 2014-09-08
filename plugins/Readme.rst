@@ -18,9 +18,9 @@ and activating the ones you want in your settings file::
     PLUGIN_PATHS = ['path/to/pelican-plugins']
     PLUGINS = ['assets', 'sitemap', 'gravatar']
 
-``PLUGIN_PATH`` can be a path relative to your settings file or an absolute path.
+``PLUGIN_PATHS`` can be a path relative to your settings file or an absolute path.
 
-Alternatively, if plugins are in an importable path, you can omit ``PLUGIN_PATH``
+Alternatively, if plugins are in an importable path, you can omit ``PLUGIN_PATHS``
 and list them::
 
     PLUGINS = ['assets', 'sitemap', 'gravatar']
@@ -101,6 +101,8 @@ PDF generator             Automatically exports RST articles and pages as PDF fi
 Pelican-flickr            Brings your Flickr photos & sets into your static website
 
 Pelican Gist tag          Easily embed GitHub Gists in your Pelican articles
+
+Pelican Page Order        Adds a ``page_order`` attribute to all pages if one is not defined.
 
 Pelican comment system    Allows you to add static comments to your articles
 

@@ -38,7 +38,6 @@ Swift Bubble Sort
 ~~~~~~~~~~~~~~~~~
 
 .. code-block:: csharp
-   :linenos: inline
 
     import Cocoa
 
@@ -73,7 +72,6 @@ Swift Bubble Sort
 C Bubble Sort
 ~~~~~~~~~~~~~
 .. code-block:: c
-   :linenos: inline
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -115,7 +113,6 @@ C Bubble Sort
 Python Bubble Sort
 ~~~~~~~~~~~~~~~~~~~
 .. code-block:: python
-   :linenos: inline
 
     import os, sys
     from random import randint
@@ -167,9 +164,7 @@ Slow Swift:
 
 One caveat however, is we used the [-Ofast] flag during compilation of the swift binaries like so.
 
-.. code-block:: sh
-
-    xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort
+:code:`xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort`
 
 According to Apple's official documentation in the XCode 5.0 release notes:
 
@@ -184,9 +179,7 @@ According to Apple's official documentation in the XCode 5.0 release notes:
 If we were to run the same code with normal compiler optimizations we start to see a completely
 different picture than the one we started with
 
-.. code-block:: sh
-
-   xcrun --sdk macosx swift -O3 -o bubble_sort.swift bubble_sort
+:code:`xcrun --sdk macosx swift -O3 -o bubble_sort.swift bubble_sort`
 
 .. note::
 

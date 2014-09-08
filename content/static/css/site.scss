@@ -5,6 +5,15 @@
             background-size: $size;
 }
 
+@mixin user-selectable($item: none) {
+    -webkit-touch-callout: $item;
+      -webkit-user-select: $item;
+       -khtml-user-select: $item;
+         -moz-user-select: $item;
+          -ms-user-select: $item;
+              user-select: $item;
+}
+
 @mixin background-image(
     $url,
     $position: no-repeat top fixed,
@@ -28,8 +37,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            max-width: 100%
-            max-height: 100%
+            max-width: 100%;
+            max-height: 100%;
         }
     }
 }
@@ -46,6 +55,9 @@ img {
     }
     max-width: 100% !important;
     height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
 }
 
 @include figure("youtube");
@@ -59,5 +71,37 @@ img {
 }
 
 @media (min-width: 1200px) {
-    #bg {@include background-image("/img/bird-full.jpg", $vheight: 920px);}}
+    #bg {
+        @include background-image("/img/bird-full.jpg", $vheight: 920px);
+    }
+}
 
+span.formula {
+    font-size: 16px;
+}
+
+pre {
+    counter-reset: line-numbering;
+    border: solid 1px #d9d9d9;
+    padding: 0;
+    margin-bottom: 30px;
+    white-space: pre;
+    overflow-x: auto;
+    word-break: inherit;
+    word-wrap: inherit;
+}
+
+.highlight pre > span:before {
+    content: counter(line-numbering);
+    counter-increment: line-numbering;
+    padding-right: 1em; /* space after numbers */
+    width: 3em;
+    text-align: right;
+    opacity: 0.7;
+    display: inline-block;
+    color: #aaa;
+    background: #eee;
+    margin-right: 1em;
+    border-right: 1px solid #dedede;
+    @include user-selectable(none);
+}

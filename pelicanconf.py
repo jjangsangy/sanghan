@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
@@ -21,7 +21,7 @@ TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = 'en'
 DATE_FORMATS = {'en': '%a, %d %b %Y'}
 LOCALE = 'en_US'
-DEFAULT_PAGINATION = 5
+DEFAULT_PAGINATION = 10
 PATH = 'content'
 
 STATIC_PATHS = [
@@ -39,7 +39,7 @@ ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{slug}/'
 ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/{slug}/index.html'
 
 THEME = 'themes/bootstrap'
-BOOTSTRAP_THEME = 'flatly'
+BOOTSTRAP_THEME = 'paper'
 EXTRA_TEMPLATES_PATHS = ['content/templates']
 
 DISPLAY_CATEGORIES_ON_MENU = True
@@ -68,9 +68,8 @@ DISPLAY_BREADCRUMBS= True
 DISPLAY_CATEGORY_IN_BREADCRUMBS = True
 USE_PAGER = False
 FAVICON = 'img/hv.png'
-PYGMENTS_RST_OPTIONS = {
-        'linenos': 'none',
-    }
+
+PYGMENTS_RST_OPTIONS = {'linenos': 'none', 'linespans': 'line'}
 PYGMENTS_STYLE = 'solarizedlight'
 
 GITHUB_USER = 'jjangsangy'
@@ -99,3 +98,7 @@ RELATIVE_URLS = True
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
+
+DISQUS_SITENAME = 'sanghan'
+DISQUS_SECRET_KEY = 'iQIq5Ra2Fx2kBnGbhUZ1sNjkhwpewkz5fSRsWUgZFTGj4BIZsqmixUAszepZXQ8I'
+DISQUS_PUBLIC_KEY = 'JyNWL1mdpLOuqzbh5RZ3HfkzvKLYsElIMBLMTYv6k7HltM0RQKQnQfMBiLNbdV3K'
