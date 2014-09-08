@@ -48,7 +48,7 @@ img {
     max-width: 100%;
     max-height: 100%; }
 
-@media (max-width: 768px), handheld and (orientation: landscape) {
+@media (max-width: 780px), handheld and (orientation: landscape) {
   #bg {
     max-width: 100%;
     background: url("/img/bird-640.jpg") no-repeat top fixed;
