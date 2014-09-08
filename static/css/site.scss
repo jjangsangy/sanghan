@@ -69,7 +69,7 @@ img {
         @include background-image("/img/bird-640.jpg", $vheight: 480px);
     }
     .container {
-        max-width: 768px
+        width: 768px
     }
 }
 
