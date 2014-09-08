@@ -163,9 +163,9 @@ to only check factors up to &lt;span class="formula"&gt;2 ≤ &lt;i&gt;x&lt;
 &lt;p&gt;This optimization is possible because if &lt;span class="formula"&gt;&lt;i&gt;n&lt;/i&gt; = &lt;i&gt;p&lt;/i&gt; × &lt;i&gt;q&lt;/i&gt;&lt;/span&gt;,
 either &lt;span class="formula"&gt;&lt;i&gt;p&lt;/i&gt;&lt;/span&gt; or &lt;span class="formula"&gt;&lt;i&gt;q&lt;/i&gt;&lt;/span&gt; must be less than or equal to &lt;span class="formula"&gt;&lt;span class="sqrt"&gt;&lt;span class="radical"&gt;√&lt;/span&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="root"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
 or else their product is greater than &lt;span class="formula"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;.
-When checking factors up to &lt;span class="formula"&gt;&lt;span class="sqrt"&gt;&lt;span class="radical"&gt;√&lt;/span&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="root"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;,
-we know that for any &lt;span class="formula"&gt;&lt;i&gt;p&lt;/i&gt;&lt;/span&gt; in &lt;span class="formula"&gt;&lt;i&gt;p&lt;/i&gt; × &lt;i&gt;q&lt;/i&gt;&lt;/span&gt; cannot be less than
-&lt;span class="formula"&gt;&lt;i&gt;q&lt;/i&gt;&lt;/span&gt;, therefore need not proceed&amp;nbsp;further.&lt;/p&gt;
+When checking factors up to &lt;span class="formula"&gt;&lt;span class="sqrt"&gt;&lt;span class="radical"&gt;√&lt;/span&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="root"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, we know that for any possible
+factor &lt;span class="formula"&gt;&lt;i&gt;p&lt;/i&gt;&lt;/span&gt; in &lt;span class="formula"&gt;&lt;i&gt;p&lt;/i&gt; × &lt;i&gt;q&lt;/i&gt;&lt;/span&gt; cannot be less than &lt;span class="formula"&gt;&lt;i&gt;q&lt;/i&gt;&lt;/span&gt;,
+therefore has already been checked and we not proceed&amp;nbsp;further.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 This optimization reduces the run time for each factorization
 down to &lt;span class="formula"&gt;&lt;span class="scriptfont"&gt;O&lt;/span&gt;(&lt;span class="sqrt"&gt;&lt;span class="radical"&gt;√&lt;/span&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="root"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;.&lt;/blockquote&gt;
