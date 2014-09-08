@@ -75,12 +75,12 @@ second for-loop is substituted with one &lt;code&gt;-=&lt;/code&gt;, assignment 
 sets has been operator overloaded with a &lt;code&gt;difference update&lt;/code&gt; method or
 the &lt;code&gt;set compliment&lt;/code&gt; &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;|&lt;span class="text"&gt; x &lt;/span&gt; ∈ &lt;span class="text"&gt;A : x &lt;/span&gt;∉&lt;span class="text"&gt; B&lt;/span&gt;}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Utilizing sets provides us a cleaner syntax for algorithms involving math.
-In this example, we are first creating
-a universal set, and iteriatively deleting it&amp;#8217;s factors. It would
-also be correct to create a null set and iteratively collect all factors first.
-At the end, once all factors have been collected, we then perform removal
-from the universal set. This route optimizes membership testing to occur
-primarily with insertion due to insertion operations performing faster than&amp;nbsp;deletions.&lt;/p&gt;
+In this example, we first create a &lt;code&gt;universal set&lt;/code&gt;, and iteriatively delete it&amp;#8217;s factors.
+It would also be correct to construct a &lt;code&gt;null set&lt;/code&gt; and iteratively insert all factors into it.
+Then, once all factors have been collected, perform a final removal from the universal set.
+This route focuses membership testing to occur mostly with insertion rather than deletion.
+And for set objects insertions are better optimized due to their base
+implementation being primarily hash table&amp;nbsp;operations.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="insertion-sets"&gt;
 &lt;h3&gt;Insertion&amp;nbsp;Sets:&lt;/h3&gt;
@@ -97,20 +97,21 @@ primarily with insertion due to insertion operations performing faster than&amp;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;While fundamentally the choice data
 structure is orthoganal to program correctness,
-it&amp;#8217;s important for real runtime performance to use the best
-tool to fit the job. Lists and sets are great general purpose data-structure,
-and is likely the first tool to reach for in the&amp;nbsp;arsenal.&lt;/p&gt;
-&lt;p&gt;However, &lt;a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail"&gt;Maslow&lt;/a&gt; tells&amp;nbsp;us&lt;/p&gt;
+it&amp;#8217;s important for real runtime performance to use the tool
+that best fits the&amp;nbsp;job.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail"&gt;Maslow&lt;/a&gt; tells&amp;nbsp;us&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 &lt;p&gt;&lt;em&gt;&amp;quot;If the only tool you have is a hammer everything looks like a&amp;nbsp;nail.&amp;quot;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;The Psychology of Science&amp;nbsp;(1964)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;In Python, the generality of lists and sets are
-probably also their downside, since they are useful for so many&amp;nbsp;things.&lt;/p&gt;
+&lt;p&gt;Lists and sets are great general purpose data-structure,
+and is likely the first tool to reach for when presented with a problem.
+However, the generality and utility of these data-structures are probably
+also our downfall when a better suited data-structure is also&amp;nbsp;available.&lt;/p&gt;
 &lt;p&gt;So what is the optimal data structure to perform these&amp;nbsp;calculation?&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="numpy"&gt;
-&lt;h3&gt;Numpy&lt;/h3&gt;
+&lt;div class="section" id="numpy-arrays"&gt;
+&lt;h3&gt;Numpy&amp;nbsp;Arrays&lt;/h3&gt;
 &lt;blockquote class="pull-quote"&gt;
 Enter: The Array&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
@@ -130,18 +131,22 @@ Enter: The Array&lt;/blockquote&gt;
 and vectorized methods for utilizing them. Here we operate on numpy&amp;#8217;s &lt;code&gt;n-dimmensional array&lt;/code&gt;.
 Numpy arrays are fixed strides of memory with statically typed elements.
 The downside to statically typed elements within a dynamically language is
-affording many of the niceties that Python provides. Everything inside a
-numpy array must be homogenous, and to be efficient we must know the exact
-size of the array beforehand and minimize the need to extending or contract
-their sizes post-initialization. We also cannot perform the same types of
-operations on &lt;code&gt;bools&lt;/code&gt; as we would on &lt;code&gt;ints&lt;/code&gt; or &lt;code&gt;floats&lt;/code&gt;.
-However, the benefit is random access to each array element based on
-it&amp;#8217;s position in memory without&amp;nbsp;traversal.&lt;/p&gt;
+affording many of the niceties that Python&amp;nbsp;provides.&lt;/p&gt;
+&lt;p&gt;Everything inside a numpy array must be homogenous,
+and to be efficient we must know the exact size of the array beforehand.
+Otherwise the task of extending or contracting an array once initialized
+requires re-copying all elements into a new array of that size.
+We also cannot perform the same types of operations on &lt;code&gt;bools&lt;/code&gt; as we
+would on &lt;code&gt;ints&lt;/code&gt; or &lt;code&gt;floats&lt;/code&gt;.
+The benefit however is random access to each element based on
+it&amp;#8217;s position in memory instantly without&amp;nbsp;traversal.&lt;/p&gt;
 &lt;p&gt;In our example we are filling up the array with &lt;code&gt;8-bit bools&lt;/code&gt; all set
-to &lt;code&gt;True&lt;/code&gt;, or &lt;code&gt;1&lt;/code&gt; in this case. We then iterate through an array
-of &lt;code&gt;32-bit unsigned integers&lt;/code&gt;, and sieve the multiples set as &lt;code&gt;False&lt;/code&gt;, or &lt;code&gt;0&lt;/code&gt;.
-Finally, we return all non-zero from the boolean array from 2 to the end which are
-still &lt;code&gt;True&lt;/code&gt;.&lt;/p&gt;
+to &lt;code&gt;True&lt;/code&gt;, or &lt;code&gt;1&lt;/code&gt;. We then iterate through
+an array of factors set to &lt;code&gt;32-bit unsigned integers&lt;/code&gt;, and and allocate
+it&amp;#8217;s multiples as &lt;code&gt;False&lt;/code&gt;, or &lt;code&gt;0&lt;/code&gt;. Finally, we return all non-zero from the
+boolean array from 2 to the end which are still &lt;code&gt;True&lt;/code&gt;. Unlike slicing
+python lists which generates a new copy of the original, slicing numpy arrays
+returns is an in-memory view and is a much cheaper&amp;nbsp;operation.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="testing-for-primality"&gt;

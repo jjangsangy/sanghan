@@ -232,12 +232,12 @@ second for-loop is substituted with one <code>-=</code>, assignment operator, wh
 sets has been operator overloaded with a <code>difference update</code> method or
 the <code>set compliment</code> <span class="formula">∀{<i>x</i>|<span class="text"> x </span> ∈ <span class="text">A : x </span>∉<span class="text"> B</span>}</span></p>
 <p>Utilizing sets provides us a cleaner syntax for algorithms involving math.
-In this example, we are first creating
-a universal set, and iteriatively deleting it&#8217;s factors. It would
-also be correct to create a null set and iteratively collect all factors first.
-At the end, once all factors have been collected, we then perform removal
-from the universal set. This route optimizes membership testing to occur
-primarily with insertion due to insertion operations performing faster than&nbsp;deletions.</p>
+In this example, we first create a <code>universal set</code>, and iteriatively delete it&#8217;s factors.
+It would also be correct to construct a <code>null set</code> and iteratively insert all factors into it.
+Then, once all factors have been collected, perform a final removal from the universal set.
+This route focuses membership testing to occur mostly with insertion rather than deletion.
+And for set objects insertions are better optimized due to their base
+implementation being primarily hash table&nbsp;operations.</p>
 </div>
 <div class="section" id="insertion-sets">
 <h3>Insertion&nbsp;Sets:</h3>
@@ -254,20 +254,21 @@ primarily with insertion due to insertion operations performing faster than&nbsp
 </span></pre></div>
 <p>While fundamentally the choice data
 structure is orthoganal to program correctness,
-it&#8217;s important for real runtime performance to use the best
-tool to fit the job. Lists and sets are great general purpose data-structure,
-and is likely the first tool to reach for in the&nbsp;arsenal.</p>
-<p>However, <a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail">Maslow</a> tells&nbsp;us</p>
+it&#8217;s important for real runtime performance to use the tool
+that best fits the&nbsp;job.</p>
+<p><a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail">Maslow</a> tells&nbsp;us</p>
 <blockquote class="pull-quote">
 <p><em>&quot;If the only tool you have is a hammer everything looks like a&nbsp;nail.&quot;</em></p>
 <p>The Psychology of Science&nbsp;(1964)</p>
 </blockquote>
-<p>In Python, the generality of lists and sets are
-probably also their downside, since they are useful for so many&nbsp;things.</p>
+<p>Lists and sets are great general purpose data-structure,
+and is likely the first tool to reach for when presented with a problem.
+However, the generality and utility of these data-structures are probably
+also our downfall when a better suited data-structure is also&nbsp;available.</p>
 <p>So what is the optimal data structure to perform these&nbsp;calculation?</p>
 </div>
-<div class="section" id="numpy">
-<h3>Numpy</h3>
+<div class="section" id="numpy-arrays">
+<h3>Numpy&nbsp;Arrays</h3>
 <blockquote class="pull-quote">
 Enter: The Array</blockquote>
 <div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -287,18 +288,22 @@ Enter: The Array</blockquote>
 and vectorized methods for utilizing them. Here we operate on numpy&#8217;s <code>n-dimmensional array</code>.
 Numpy arrays are fixed strides of memory with statically typed elements.
 The downside to statically typed elements within a dynamically language is
-affording many of the niceties that Python provides. Everything inside a
-numpy array must be homogenous, and to be efficient we must know the exact
-size of the array beforehand and minimize the need to extending or contract
-their sizes post-initialization. We also cannot perform the same types of
-operations on <code>bools</code> as we would on <code>ints</code> or <code>floats</code>.
-However, the benefit is random access to each array element based on
-it&#8217;s position in memory without&nbsp;traversal.</p>
+affording many of the niceties that Python&nbsp;provides.</p>
+<p>Everything inside a numpy array must be homogenous,
+and to be efficient we must know the exact size of the array beforehand.
+Otherwise the task of extending or contracting an array once initialized
+requires re-copying all elements into a new array of that size.
+We also cannot perform the same types of operations on <code>bools</code> as we
+would on <code>ints</code> or <code>floats</code>.
+The benefit however is random access to each element based on
+it&#8217;s position in memory instantly without&nbsp;traversal.</p>
 <p>In our example we are filling up the array with <code>8-bit bools</code> all set
-to <code>True</code>, or <code>1</code> in this case. We then iterate through an array
-of <code>32-bit unsigned integers</code>, and sieve the multiples set as <code>False</code>, or <code>0</code>.
-Finally, we return all non-zero from the boolean array from 2 to the end which are
-still <code>True</code>.</p>
+to <code>True</code>, or <code>1</code>. We then iterate through
+an array of factors set to <code>32-bit unsigned integers</code>, and and allocate
+it&#8217;s multiples as <code>False</code>, or <code>0</code>. Finally, we return all non-zero from the
+boolean array from 2 to the end which are still <code>True</code>. Unlike slicing
+python lists which generates a new copy of the original, slicing numpy arrays
+returns is an in-memory view and is a much cheaper&nbsp;operation.</p>
 </div>
 </div>
 <div class="section" id="testing-for-primality">
