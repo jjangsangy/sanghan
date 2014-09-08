@@ -129,13 +129,14 @@ Enter: The Array&lt;/blockquote&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Numpy is a third party numerical library, containing array based data structures
 and vectorized methods for utilizing them. Here we operate on numpy&amp;#8217;s &lt;code&gt;n-dimmensional array&lt;/code&gt;.
-Numpy arrays are fixed strides of memory with statically typed elements. In our example
-we are filling up the array with &lt;code&gt;8-bit bools&lt;/code&gt;. The downside to statically
-typed elements within a dynamically language is affording many of the niceties
-that Python provides. Everything inside a numpy array must be homogeneously, and
-we cannot perform the same types of operations on &lt;code&gt;bools&lt;/code&gt; as we would
-on &lt;code&gt;ints&lt;/code&gt; or &lt;code&gt;floats&lt;/code&gt;. However, the benefit is random access
-to each array element based on it&amp;#8217;s position in memory without&amp;nbsp;traversal.&lt;/p&gt;
+Numpy arrays are fixed strides of memory with statically typed elements.
+The downside to statically typed elements within a dynamically language is
+affording many of the niceties that Python provides. Everything inside a
+numpy array must be homogeneously, and we cannot perform the same types of
+operations on &lt;code&gt;bools&lt;/code&gt; as we would on &lt;code&gt;ints&lt;/code&gt; or &lt;code&gt;floats&lt;/code&gt;.
+In our example we are filling up the array with &lt;code&gt;8-bit bools&lt;/code&gt;.
+However, the benefit is random access to each array element based on
+it&amp;#8217;s position in memory without&amp;nbsp;traversal.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="testing-for-primality"&gt;
