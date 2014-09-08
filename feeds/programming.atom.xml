@@ -144,7 +144,7 @@ into account their types. However, the main benefit is random access to
 individual array elements in memory, instantly without&amp;nbsp;traversal.&lt;/p&gt;
 &lt;p&gt;In our example we are filling up an array with &lt;code&gt;8-bit bools&lt;/code&gt; all set
 to &lt;code&gt;True&lt;/code&gt;. We then iterate through
-an array of factors set to &lt;code&gt;32-bit unsigned integers&lt;/code&gt;, and and allocate
+an array of factors set to &lt;code&gt;32-bit unsigned integers&lt;/code&gt;, and allocate
 it&amp;#8217;s multiples as &lt;code&gt;False&lt;/code&gt;. Finally, we return all values from the
 boolean array from 2 to the end which are still &lt;code&gt;True&lt;/code&gt;. Unlike slicing
 python lists which generates a new copy of the original, slicing numpy arrays
