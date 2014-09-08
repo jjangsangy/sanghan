@@ -226,13 +226,11 @@ but with it&#8217;s guts swapped with <code>sets</code>.</p>
 </span><span id="line-9">            <span class="n">primes</span> <span class="o">-=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
 </span><span id="line-10">    <span class="k">return</span> <span class="n">primes</span>
 </span></pre></div>
-<p>The primary difference you see with using <code>sets</code> and <code>lists</code>, is the
-lack of a list-comprehension for composing the function return value. Also the
-second for-loop substituted with the binary <code>-=</code>, assignment operator, which for
-set objects has been overloaded with a <code>difference update</code> expression or
-the mathematical compliment <span class="formula">∀{<i>x</i>|<i>x</i> ∈ <i>A</i> ⊂ <i>B</i>}</span>.
-Sets are a great way represent mathematical operations and carry out membership testing
-on unordered groups of&nbsp;objects.</p>
+<p>In this example, the primary difference with using <code>sets</code> and <code>lists</code>, is the
+lack of a list-comprehension for composing the function return value. As well, the
+second for-loop is substituted with one <code>-=</code>, assignment operator, which for
+sets has been operator overloaded with a <code>difference update</code> method or
+the mathematical compliment <span class="formula">∀{<i>x</i>|<i>x</i> ∈ <i>A</i> ⊂ <i>B</i>}</span>.</p>
 <p>Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In the previous example, we are first creating
 a set of all values, and iteriatively deleting items from that set. It would
