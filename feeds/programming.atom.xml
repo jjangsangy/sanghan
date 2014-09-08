@@ -27,7 +27,7 @@ viable for larger problem sizes.&lt;/blockquote&gt;
 number to the last integer in memory, the space complexity of sieves generally
 grows in the order of &lt;span class="formula"&gt;&lt;span class="scriptfont"&gt;O&lt;/span&gt;(&lt;i&gt;n&lt;/i&gt;)&lt;/span&gt;. In order to deal with memory issues
 there are sieve algorithms called &lt;code&gt;segmented sieves&lt;/code&gt; which distribute
-the problem into smaller subsets, much like in the way &lt;code&gt;map-reduce&lt;/code&gt; can
+the problem into smaller subsets, much like in the way &lt;code&gt;map reduce&lt;/code&gt; can
 distribute a job to a cluster of&amp;nbsp;servers.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 Here&amp;#8217;s how it would look in Python.&lt;/blockquote&gt;
