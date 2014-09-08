@@ -67,6 +67,10 @@ img {
     width: 1024px;
 }
 
+.pull-quote > span.formula {
+  font-size: 1em;
+}
+
 @media (max-width: 768px), handheld and (orientation: landscape) {
     #bg {
         @include background-image("/img/bird-640.jpg", $vheight: 480px);
