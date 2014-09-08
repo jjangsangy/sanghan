@@ -296,10 +296,9 @@ individual array elements in memory, instantly without&nbsp;traversal.</p>
 <p>Everything inside a numpy array must be homogenous,
 and to be efficient we must know the exact size of the array beforehand.
 This is because the task of extending or contracting an array once initialized
-requires re-copying all elements into a new array of that size.
-We also have to be strict on the operations performed
-on <code>bools</code> <code>ints</code> or <code>floats</code>, always taking
-into account their&nbsp;types.</p>
+requires re-copying all elements into a new array of that length.
+We also have to be strict on initializing <code>bools</code> <code>ints</code> or <code>floats</code>
+with proper <code>fixed-width sizes</code> in&nbsp;memory.</p>
 <p>In our example we are filling up an array with <code>8-bit bools</code> all set
 to <code>True</code>. We then iterate through
 an array of factors set to <code>32-bit unsigned integers</code>, and allocate
