@@ -116,7 +116,7 @@ probably also their downside, since they are useful for so many&amp;nbsp;things.
 &lt;div class="section" id="numpy"&gt;
 &lt;h3&gt;Numpy&lt;/h3&gt;
 &lt;blockquote class="pull-quote"&gt;
-The N-Dimensional Array&lt;/blockquote&gt;
+Enter: The N-Dimensional Array&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;np_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
