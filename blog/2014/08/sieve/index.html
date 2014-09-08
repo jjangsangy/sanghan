@@ -290,9 +290,13 @@ The downside to statically typed elements within a dynamically language is
 affording many of the niceties that Python provides. Everything inside a
 numpy array must be homogeneously, and we cannot perform the same types of
 operations on <code>bools</code> as we would on <code>ints</code> or <code>floats</code>.
-In our example we are filling up the array with <code>8-bit bools</code>.
 However, the benefit is random access to each array element based on
 it&#8217;s position in memory without&nbsp;traversal.</p>
+<p>In our example we are filling up the array with <code>8-bit bools</code> all set
+to <code>True</code>, or <code>1</code> in this case. We then iterate through an array
+of <cite>32-bit unsigned integers</cite>, and sieve the multiples set as <code>False</code>, or <code>0</code>.
+Finally, we return all non-zero from the boolean array from 2 to the end which are
+still <code>True</code>.</p>
 </div>
 </div>
 <div class="section" id="testing-for-primality">
