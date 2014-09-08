@@ -133,15 +133,16 @@ and fast vectorizable methods for numerical operations.
 Here we operate on numpy&amp;#8217;s &lt;code&gt;n-dimmensional arrays&lt;/code&gt;
 which allocate fixed strides of memory containing &lt;code&gt;statically typed&lt;/code&gt; elements.
 The downside of implementing a statically typed subset within a dynamically typed
-language is to forego many of the niceties python has to&amp;nbsp;offer.&lt;/p&gt;
+language is to forego many of the niceties python has to offer.
+However, the main benefit is random access to
+individual array elements in memory, instantly without&amp;nbsp;traversal.&lt;/p&gt;
 &lt;p&gt;Everything inside a numpy array must be homogenous,
 and to be efficient we must know the exact size of the array beforehand.
 This is because the task of extending or contracting an array once initialized
 requires re-copying all elements into a new array of that size.
 We also have to be strict on the operations performed
 on &lt;code&gt;bools&lt;/code&gt; &lt;code&gt;ints&lt;/code&gt; or &lt;code&gt;floats&lt;/code&gt;, always taking
-into account their types. However, the main benefit is random access to
-individual array elements in memory, instantly without&amp;nbsp;traversal.&lt;/p&gt;
+into account their&amp;nbsp;types.&lt;/p&gt;
 &lt;p&gt;In our example we are filling up an array with &lt;code&gt;8-bit bools&lt;/code&gt; all set
 to &lt;code&gt;True&lt;/code&gt;. We then iterate through
 an array of factors set to &lt;code&gt;32-bit unsigned integers&lt;/code&gt;, and allocate
