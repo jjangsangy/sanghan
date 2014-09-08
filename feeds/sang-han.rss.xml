@@ -60,8 +60,8 @@ but with it&amp;#8217;s guts swapped with unordered &lt;code&gt;sets&lt;/code&gt
 &lt;h3&gt;Sets: Unordered&amp;nbsp;Collections&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;set_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="sd"&gt;    Sets are mutable, unordered, hash collections which are useful&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="sd"&gt;    for quick membership testing.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="sd"&gt;    Sets are mutable, unordered, collections which are useful&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="sd"&gt;    for quick membership testing and math operations.&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-5"&gt;&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-6"&gt;    &lt;span class="n"&gt;primes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-7"&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
@@ -76,14 +76,14 @@ set objects has been overloaded with a &lt;code&gt;difference update&lt;/code&gt
 the mathematical compliment &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;|&lt;i&gt;x&lt;/i&gt; ∈ &lt;i&gt;A&lt;/i&gt; ⊂ &lt;i&gt;B&lt;/i&gt;}&lt;/span&gt;.
 Sets are a great way represent mathematical operations and carry out membership testing
 on unordered groups of&amp;nbsp;objects.&lt;/p&gt;
-&lt;p&gt;Utilizing sets for mathematical operations allows the code to be easier to read
-and understand. It also provides us a mechanism of understanding algorithms
-in cleaner syntax. For instance, in the previous example, we are first creating
+&lt;p&gt;Utilizing sets provides us a cleaner syntax for algorithms involving math.
+In the previous example, we are first creating
 a set of all values, and iteriatively deleting items from that set. It would
 also be correct to create a &lt;code&gt;set&lt;/code&gt; containing the factors, and then perform
-insertion over all the factors into it. This takes advantage of the fact that
-set insertions perform better than set deletions due to not needing to
-perform a&amp;nbsp;traversal.&lt;/p&gt;
+insertion over all the factors into it, and finally at the end composiing the
+removal of all factors from the universal set.
+This also takes advantage of the fact that insertion oprations perform
+faster than&amp;nbsp;deletions.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="insertion-sets"&gt;
 &lt;h3&gt;Insertion&amp;nbsp;Sets:&lt;/h3&gt;
