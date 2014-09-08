@@ -73,7 +73,7 @@ but with it&amp;#8217;s guts swapped with &lt;code&gt;sets&lt;/code&gt;.&lt;/p&g
 lack of a list-comprehension for composing the function return value. As well, the
 second for-loop is substituted with one &lt;code&gt;-=&lt;/code&gt;, assignment operator, which for
 sets has been operator overloaded with a &lt;code&gt;difference update&lt;/code&gt; method or
-the mathematical compliment &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;|&lt;i&gt;x&lt;/i&gt; ∈ &lt;i&gt;A&lt;/i&gt; ⊂ &lt;i&gt;B&lt;/i&gt;}&lt;/span&gt;.&lt;/p&gt;
+the mathematical compliment &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;|&lt;i&gt;x&lt;/i&gt; ∈ &lt;i&gt;A&lt;/i&gt;:&lt;i&gt;x&lt;/i&gt;∉&lt;i&gt;B&lt;/i&gt;}&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In the previous example, we are first creating
 a set of all values, and iteriatively deleting items from that set. It would
@@ -99,9 +99,8 @@ oprations perform faster than&amp;nbsp;deletions.&lt;/p&gt;
 structure is orthoganal to program correctness,
 it&amp;#8217;s important for real runtime performance to use the best
 tool to fit the job. Lists and sets are great general purpose data-structure,
-and is likely the first tool to reach for in the arsenal.
-It&amp;#8217;s hard not to overuse or abuse them, when other more viable data-structures&amp;nbsp;exists.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail"&gt;Maslow&lt;/a&gt; tells&amp;nbsp;us&lt;/p&gt;
+and is likely the first tool to reach for in the&amp;nbsp;arsenal.&lt;/p&gt;
+&lt;p&gt;However, &lt;a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail"&gt;Maslow&lt;/a&gt; tells&amp;nbsp;us&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 &lt;p&gt;&lt;em&gt;&amp;quot;If the only tool you have is a hammer everything looks like a&amp;nbsp;nail.&amp;quot;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;The Psychology of Science&amp;nbsp;(1964)&lt;/p&gt;

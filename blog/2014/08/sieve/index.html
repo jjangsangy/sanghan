@@ -230,7 +230,7 @@ but with it&#8217;s guts swapped with <code>sets</code>.</p>
 lack of a list-comprehension for composing the function return value. As well, the
 second for-loop is substituted with one <code>-=</code>, assignment operator, which for
 sets has been operator overloaded with a <code>difference update</code> method or
-the mathematical compliment <span class="formula">∀{<i>x</i>|<i>x</i> ∈ <i>A</i> ⊂ <i>B</i>}</span>.</p>
+the mathematical compliment <span class="formula">∀{<i>x</i>|<i>x</i> ∈ <i>A</i>:<i>x</i>∉<i>B</i>}</span>.</p>
 <p>Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In the previous example, we are first creating
 a set of all values, and iteriatively deleting items from that set. It would
@@ -256,9 +256,8 @@ oprations perform faster than&nbsp;deletions.</p>
 structure is orthoganal to program correctness,
 it&#8217;s important for real runtime performance to use the best
 tool to fit the job. Lists and sets are great general purpose data-structure,
-and is likely the first tool to reach for in the arsenal.
-It&#8217;s hard not to overuse or abuse them, when other more viable data-structures&nbsp;exists.</p>
-<p><a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail">Maslow</a> tells&nbsp;us</p>
+and is likely the first tool to reach for in the&nbsp;arsenal.</p>
+<p>However, <a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail">Maslow</a> tells&nbsp;us</p>
 <blockquote class="pull-quote">
 <p><em>&quot;If the only tool you have is a hammer everything looks like a&nbsp;nail.&quot;</em></p>
 <p>The Psychology of Science&nbsp;(1964)</p>
