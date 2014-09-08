@@ -231,7 +231,7 @@ but with it&#8217;s guts swapped with <code>sets</code>.</p>
 lack of a list-comprehension for composing the function return value. As well, the
 second for-loop is substituted with one <code>-=</code>, binary assignment operator, which for
 sets has been overloaded with a <code>difference update</code> method or
-the mathematical complement <span class="formula">∀{<i>x</i>|<span class="text"> x </span> ∈ <span class="text">A : x </span>∉<span class="text"> B</span>}</span></p>
+the mathematical complement <mathjax>$\forall \{x|\text{ x }\in \text{A : x }\notin\text{ B}\}$</mathjax></p>
 <p>Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In this example, we first create a <code>universal set</code>, and iteriatively delete it&#8217;s factors.
 It would also be correct to construct a <code>null set</code> and iteratively insert all factors first.
@@ -426,7 +426,7 @@ digits.</blockquote>
             "        preview: 'TeX'," +
             "    }, " +
             "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }" +
             "    } " +
             "}); ";
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);

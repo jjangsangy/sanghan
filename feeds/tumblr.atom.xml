@@ -262,7 +262,7 @@ would like me to answer, let me&amp;nbsp;know!&lt;/p&gt;
             "        preview: 'TeX'," +
             "    }, " +
             "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }" +
             "    } " +
             "}); ";
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
