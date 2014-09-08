@@ -159,8 +159,10 @@ have a time complexity of <span class="formula"><span class="scriptfont">O</span
 <p>Visually we can depict each loop removing values from the list
 of real numbers until all that is left are the&nbsp;primes.</p>
 <p><img alt="sieve" src="http://sanghan.me/img/sieve.jpg" /></p>
-<p>Unfortunately, this solution starts to become less
-viable for larger problem sizes. Since it requires a table of every
+<blockquote class="pull-quote">
+Unfortunately, this solution starts to become less
+viable for larger problem sizes.</blockquote>
+<p>Since it requires a table of every
 number to the last integer in memory, the space complexity of sieves generally
 grows in the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</span>. In order to deal with memory issues
 there is a set of Sieve algorithms called <code>segmented sieves</code> which distribute
