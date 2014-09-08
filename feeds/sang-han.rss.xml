@@ -54,7 +54,7 @@ not backward compatble with Python 2.&lt;/blockquote&gt;
 Remember although the algorithm requires an in memory table,
 we have the freedom to construct it using
 whatever tools the runtime affords. Here is an example of another sieve
-but with it&amp;#8217;s guts swapped with unordered &lt;code&gt;sets&lt;/code&gt;.&lt;/p&gt;
+but with it&amp;#8217;s guts swapped with &lt;code&gt;sets&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="sets-unordered-collections"&gt;
 &lt;h3&gt;Sets: Unordered&amp;nbsp;Collections&lt;/h3&gt;
