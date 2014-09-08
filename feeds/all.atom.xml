@@ -60,7 +60,7 @@ but with it&amp;#8217;s guts swapped with &lt;code&gt;sets&lt;/code&gt;.&lt;/p&g
 &lt;h3&gt;Sets: Unordered&amp;nbsp;Collections&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;set_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="sd"&gt;    Sets are mutable, unordered, collections which are useful&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="sd"&gt;    Sets are mutable, unordered collections which are useful&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="sd"&gt;    for quick membership testing and math operations.&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-5"&gt;&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-6"&gt;    &lt;span class="n"&gt;primes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
