@@ -64,7 +64,7 @@ img {
 @include figure("plotly");
 
 
-@media (max-width: 768px), handheld and (orientation: landscape) {
+@media (max-width: 780px), handheld and (orientation: landscape) {
     #bg {
         @include background-image("/img/bird-640.jpg", $vheight: 480px);
     }
