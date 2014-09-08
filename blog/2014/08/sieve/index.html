@@ -15,7 +15,7 @@
 
         <meta name="author" content="Sang Han" />
         <meta name="keywords" content="Python,Prime Numbers,Sieve,Eratosthenes,Numpy,Project Euler,Algorithms,Data Structures" />
-        <meta name="description" content="Recently, I’ve been working through Project Euler problems in order to improve my core programming skills. One of those recurring problems requires an efficiently calculating and testing for prime numbers. The first algorithm that comes to mind is The Sieve of Eratosthenes. The Sieve, is one of many prime sieves, and is a simple yet time efficient algorithm for finding all the primes below a certain limit. It can be shown to have a time complexity of O(nloglogn). The Algorithm Make a table one entry for every number 2 ≤ n ≤ limit Starting at 2, cross out ..." />
+        <meta name="description" content="Recently, I’ve been working through Project Euler in order to improve my core programming skills. One of those recurring problems requires efficiently calculating and testing for prime numbers. The first algorithm that comes to mind is The Sieve of Eratosthenes. The Sieve, is one of many prime sieves, and is a simple yet time efficient algorithm for finding all the primes below a certain limit. The Algorithm Make a table one entry for every number 2 ≤ n ≤ limit Starting at 2, cross out all multiples of 2, not counting 2 itself. Move up to the next number that hasn ..." />
 
 
 
@@ -156,14 +156,13 @@
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>Recently, I’ve been working through <a class="reference external" href="https://projecteuler.net">Project Euler</a> problems
-in order to improve my core programming&nbsp;skills.</p>
-<p>One of those recurring problems requires an
+                <p>Recently, I’ve been working through <a class="reference external" href="https://projecteuler.net">Project Euler</a> in order to improve my
+core programming&nbsp;skills.</p>
+<p>One of those recurring problems requires
 efficiently calculating and testing for prime numbers. The first
 algorithm that comes to mind is <a class="reference external" href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">The Sieve of Eratosthenes</a>.
 The Sieve, is one of many prime sieves, and is a simple yet time efficient algorithm
-for finding all the primes below a certain limit. It can be shown to
-have a time complexity of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>loglog<i>n</i>)</span>.</p>
+for finding all the primes below a certain&nbsp;limit.</p>
 <div class="section" id="the-algorithm">
 <h2>The&nbsp;Algorithm</h2>
 <ol class="arabic simple">
@@ -172,6 +171,9 @@ have a time complexity of <span class="formula"><span class="scriptfont">O</span
 <li>Move up to the next number that hasn&#8217;t been crossed&nbsp;out</li>
 <li>Repeat Step 2-3 up till <span class="formula"><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>n</i></span><span class="ignored">)</span></span></span></li>
 </ol>
+<blockquote class="pull-quote">
+The Sieve of Eratosthenes can be shown to have a time
+complexity of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>loglog<i>n</i>)</span>.</blockquote>
 <p>Visually we can depict each loop removing values from the list
 of real numbers until all that is left are the&nbsp;primes.</p>
 <p><img alt="sieve" src="http://sanghan.me/img/sieve.jpg" /></p>
@@ -181,8 +183,9 @@ viable for larger problem sizes.</blockquote>
 <p>Since it requires a table of every
 number to the last integer in memory, the space complexity of sieves generally
 grows in the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</span>. In order to deal with memory issues
-there is a set of Sieve algorithms called <code>segmented sieves</code> which distribute
-the problem into smaller&nbsp;subsets.</p>
+there are sieve algorithms called <code>segmented sieves</code> which distribute
+the problem into smaller subsets, much like in the way <code>map-reduce</code> can
+distribute a job to a cluster of&nbsp;servers.</p>
 <blockquote class="pull-quote">
 Here&#8217;s how it would look in Python.</blockquote>
 </div>
@@ -237,7 +240,7 @@ It would also be correct to construct a <code>null set</code> and iteratively in
 Then, once all factors have been collected, perform a final removal from the universal set.
 This route focuses membership testing to occur mostly with insertion rather than deletion.
 And for set objects insertions are better optimized due to their base
-implementation being primarily hash table&nbsp;operations.</p>
+implementation being primarily operations on hash&nbsp;tables.</p>
 </div>
 <div class="section" id="insertion-sets">
 <h3>Insertion&nbsp;Sets:</h3>
