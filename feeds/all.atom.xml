@@ -77,11 +77,10 @@ the mathematical compliment &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;
 &lt;p&gt;Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In the previous example, we are first creating
 a set of all values, and iteriatively deleting items from that set. It would
-also be correct to create a &lt;code&gt;set&lt;/code&gt; containing the factors, and then perform
-insertion over all the factors into it, and finally at the end composiing the
-removal of all factors from the universal set.
-This also takes advantage of the fact that insertion oprations perform
-faster than&amp;nbsp;deletions.&lt;/p&gt;
+also be correct to create a &lt;code&gt;set&lt;/code&gt; containing the factors, perform
+insertion over all the factors, and then at the end removal of all factors from
+the universal set. This route takes advantage of the fact that insertion
+oprations perform faster than&amp;nbsp;deletions.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="insertion-sets"&gt;
 &lt;h3&gt;Insertion&amp;nbsp;Sets:&lt;/h3&gt;
@@ -129,13 +128,13 @@ Enter: The Array&lt;/blockquote&gt;
 &lt;/span&gt;&lt;span id="line-12"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nonzero&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Numpy is a third party numerical library, containing array based data structures
-and vectorized methods for utilizing them. Here we operate on numpy&amp;#8217;s &lt;code&gt;n-dimmensional array&lt;/code&gt;
+and vectorized methods for utilizing them. Here we operate on numpy&amp;#8217;s &lt;code&gt;n-dimmensional array&lt;/code&gt;.
 Numpy arrays are fixed strides of memory with statically typed elements. In our example
-we are filling up the array with &lt;code&gt;8-bit bools&lt;/code&gt;. The downside to using statically
-typed elements in a dynamically language, is we afford many of the niceties that the Python
-language provides. Everything inside a numpy array must be homogeneously typed, and
+we are filling up the array with &lt;code&gt;8-bit bools&lt;/code&gt;. The downside to statically
+typed elements within a dynamically language is affording many of the niceties
+that Python provides. Everything inside a numpy array must be homogeneously, and
 we cannot perform the same types of operations on &lt;code&gt;bools&lt;/code&gt; as we would
-on &lt;code&gt;ints&lt;/code&gt; or &lt;code&gt;floats&lt;/code&gt;. However, the benefit is having fast random access
+on &lt;code&gt;ints&lt;/code&gt; or &lt;code&gt;floats&lt;/code&gt;. However, the benefit is random access
 to each array element based on it&amp;#8217;s position in memory without&amp;nbsp;traversal.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;

@@ -234,11 +234,10 @@ the mathematical compliment <span class="formula">∀{<i>x</i>|<i>x</i> ∈ 
 <p>Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In the previous example, we are first creating
 a set of all values, and iteriatively deleting items from that set. It would
-also be correct to create a <code>set</code> containing the factors, and then perform
-insertion over all the factors into it, and finally at the end composiing the
-removal of all factors from the universal set.
-This also takes advantage of the fact that insertion oprations perform
-faster than&nbsp;deletions.</p>
+also be correct to create a <code>set</code> containing the factors, perform
+insertion over all the factors, and then at the end removal of all factors from
+the universal set. This route takes advantage of the fact that insertion
+oprations perform faster than&nbsp;deletions.</p>
 </div>
 <div class="section" id="insertion-sets">
 <h3>Insertion&nbsp;Sets:</h3>
@@ -286,13 +285,13 @@ Enter: The Array</blockquote>
 </span><span id="line-12">    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">primes</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
 </span></pre></div>
 <p>Numpy is a third party numerical library, containing array based data structures
-and vectorized methods for utilizing them. Here we operate on numpy&#8217;s <code>n-dimmensional array</code>
+and vectorized methods for utilizing them. Here we operate on numpy&#8217;s <code>n-dimmensional array</code>.
 Numpy arrays are fixed strides of memory with statically typed elements. In our example
-we are filling up the array with <code>8-bit bools</code>. The downside to using statically
-typed elements in a dynamically language, is we afford many of the niceties that the Python
-language provides. Everything inside a numpy array must be homogeneously typed, and
+we are filling up the array with <code>8-bit bools</code>. The downside to statically
+typed elements within a dynamically language is affording many of the niceties
+that Python provides. Everything inside a numpy array must be homogeneously, and
 we cannot perform the same types of operations on <code>bools</code> as we would
-on <code>ints</code> or <code>floats</code>. However, the benefit is having fast random access
+on <code>ints</code> or <code>floats</code>. However, the benefit is random access
 to each array element based on it&#8217;s position in memory without&nbsp;traversal.</p>
 </div>
 </div>
