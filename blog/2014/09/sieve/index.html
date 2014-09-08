@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>Prime Sieves and Python Data Structures - LightQuanta</title>
+    <title>Prime Sieves and Python Data Structures - LightQuanta</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
 
         <meta name="author" content="Sang Han" />
         <meta name="keywords" content="Python,Prime Numbers,Sieve,Eratosthenes,Numpy,Project Euler,Algorithms,Data Structures" />
-        <meta name="description" content="Recently, I’ve been working through Project Euler in order to improve my core programming skills. One of those recurring problems requires efficiently calculating and testing for prime numbers. The first algorithm that comes to mind is The Sieve of Eratosthenes. The Sieve, is one of many prime sieves, and is a simple yet time efficient algorithm for finding all the primes below a certain limit. The Algorithm Make a table one entry for every number 2 ≤ n ≤ limit Starting at 2, cross out all multiples of 2, not counting 2 itself. Move up to the next number that hasn ..." />
+        <meta name="description" content="Recently, I’ve been working through Project Euler in order to improve my core programming skills. One of those recurring problems requires efficiently calculating and testing for prime numbers. The first algorithm that comes to mind is The Sieve of Eratosthenes. The Sieve, is one of many prime sieves, and is a simple yet time efficient algorithm for finding all the primes below a certain limit. The Algorithm Make a table one entry for every number 2 ≤ n ≤ limit Starting at 2, cross out all multiples of 2, not counting 2 itself. Move up to the next number that hasn ..." />
 
 
 
@@ -24,7 +24,6 @@
     <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
-        <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
         <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
 
@@ -55,7 +54,7 @@
                          <li>
                              <a href="http://sanghan.me/pages/about.html">
                              <i class="fa fa-beer"></i>
-                             <span class="icon-label">About&nbsp;Me</span>
+                             <span class="icon-label">About Me</span>
                              </a>
                          </li>
                          <li>
@@ -110,7 +109,7 @@
             <ol class="breadcrumb">
                 <li><a href="http://sanghan.me" title="LightQuanta"><i class="fa fa-home fa-lg"></i></a></li>
                 <li><a href="http://sanghan.me/category/programming.html" title="Programming">Programming</a></li>
-                <li class="active">Prime Sieves and Python Data&nbsp;Structures</li>
+                <li class="active">Prime Sieves and Python Data Structures</li>
             </ol>
 
     <section id="content">
@@ -119,8 +118,8 @@
                 <h1>
                     <a href="http://sanghan.me/blog/2014/09/sieve/"
                        rel="bookmark"
-                       title="Permalink to Prime Sieves and Python Data Structures">
-                        Prime Sieves and Python Data&nbsp;Structures
+                       title="Permalink to Prime Sieves and Python Data Structures">
+                        Prime Sieves and Python Data Structures
                     </a>
                 </h1>
             </header>
@@ -157,25 +156,25 @@
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p>Recently, I’ve been working through <a class="reference external" href="https://projecteuler.net">Project Euler</a> in order to improve my
-core programming&nbsp;skills.</p>
+core programming skills.</p>
 <p>One of those recurring problems requires
 efficiently calculating and testing for prime numbers. The first
 algorithm that comes to mind is <a class="reference external" href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">The Sieve of Eratosthenes</a>.
 The Sieve, is one of many prime sieves, and is a simple yet time efficient algorithm
-for finding all the primes below a certain&nbsp;limit.</p>
+for finding all the primes below a certain limit.</p>
 <div class="section" id="the-algorithm">
-<h2>The&nbsp;Algorithm</h2>
+<h2>The Algorithm</h2>
 <ol class="arabic simple">
 <li>Make a table one entry for every number <span class="formula">2 ≤ <i>n</i> ≤ <i>limit</i></span></li>
-<li>Starting at 2, cross out all multiples of 2, not counting 2&nbsp;itself.</li>
-<li>Move up to the next number that hasn&#8217;t been crossed&nbsp;out</li>
+<li>Starting at 2, cross out all multiples of 2, not counting 2 itself.</li>
+<li>Move up to the next number that hasn't been crossed out</li>
 <li>Repeat Step 2-3 up till <span class="formula"><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>n</i></span><span class="ignored">)</span></span></span></li>
 </ol>
 <blockquote class="pull-quote">
 The Sieve of Eratosthenes can be shown to have a time
 complexity of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>loglog<i>n</i>)</span>.</blockquote>
 <p>Visually we can depict each loop removing values from the list
-of real numbers until all that is left are the&nbsp;primes.</p>
+of real numbers until all that is left are the primes.</p>
 <p><img alt="sieve" src="http://sanghan.me/img/sieve.jpg" /></p>
 <blockquote class="pull-quote">
 Unfortunately, this solution starts to become less
@@ -185,14 +184,14 @@ number to the last integer in memory, the space complexity of sieves generally
 grows in the order of <span class="formula"><span class="scriptfont">O</span>(<i>n</i>)</span>. In order to deal with memory issues
 there are sieve algorithms called <code>segmented sieves</code> which distribute
 the problem into smaller subsets, much like in the way <code>map reduce</code> can
-distribute a job to a cluster of&nbsp;servers.</p>
+distribute a job to a cluster of servers.</p>
 <blockquote class="pull-quote">
-Here&#8217;s how it would look in Python.</blockquote>
+Here's how it would look in Python.</blockquote>
 </div>
 <div class="section" id="the-code">
-<h2>The&nbsp;Code</h2>
+<h2>The Code</h2>
 <blockquote class="pull-quote">
-I&#8217;ve written out the function definition using <code>type annotations</code>,
+I've written out the function definition using <code>type annotations</code>,
 which explicitly describe the type of arguments a function take and what
 types they return. This is a great documentation tool built-in, but only
 available for Python 3 and not Python 2.</blockquote>
@@ -209,14 +208,14 @@ available for Python 3 and not Python 2.</blockquote>
 </span><span id="line-6">            <span class="n">primes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
 </span><span id="line-7">    <span class="k">return</span> <span class="p">[</span><span class="n">prime</span> <span class="k">for</span> <span class="n">prime</span><span class="p">,</span> <span class="n">checked</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span> <span class="k">if</span> <span class="n">checked</span><span class="p">]</span>
 </span></pre></div>
-<p>It&#8217;s important to notice we implement <code>lists</code> as the main data structure.
+<p>It's important to notice we implement <code>lists</code> as the main data structure.
 Remember although the algorithm requires an in memory table,
 we have the freedom to construct it using
 whatever tools the runtime affords. Here is an example of another sieve
-but with it&#8217;s guts swapped with <code>sets</code>.</p>
+but with it's guts swapped with <code>sets</code>.</p>
 </div>
 <div class="section" id="sets-unordered-collections">
-<h3>Sets: Unordered&nbsp;Collections</h3>
+<h3>Sets: Unordered Collections</h3>
 <div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">set_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
 </span><span id="line-2">    <span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-3"><span class="sd">    Sets are mutable, unordered collections which are useful</span>
@@ -234,12 +233,17 @@ second for-loop is substituted with one <code>-=</code>, binary assignment opera
 sets has been overloaded with a <code>difference update</code> method or
 the mathematical complement <span class="formula">∀{<i>x</i>|<span class="text"> x </span> ∈ <span class="text">A : x </span>∉<span class="text"> B</span>}</span></p>
 <p>Utilizing sets provides us a cleaner syntax for algorithms involving math.
-In this example, we first create a <code>universal set</code>, and iteriatively delete it&#8217;s factors.
+In this example, we first create a <code>universal set</code>, and iteriatively delete it's factors.
 It would also be correct to construct a <code>null set</code> and iteratively insert all factors first.
-Then, once all factors have been collected, perform a removal from the universal set.
-This optimization takes into account that, membership testing must be done at each
-iteration through the universal set to perform a deletion, whereas for insertion
-only requires checking through the null&nbsp;set.</p>
+Then, once all factors have been collected, perform a removal from the universal set.</p>
+<p>This optimization takes into account that originally, membership testing
+is done at each iteration through the universal set to perform a deletion, whereas for insertion
+only requires checking through a null set containing factors.</p>
+<blockquote class="pull-quote">
+<p>It's possible to know that the size of a set of all factors of <span class="formula"><i>n</i></span> will never be greater
+than</p>
+<p>$$n - \frac{n}{\ln(n)}$$</p>
+</blockquote>
 <blockquote class="pull-quote">
 Due to implementation of <code>sets</code> being primarily <code>hash</code> operations, both
 insertions and deletions are dependent on generating a hash value and can be done
@@ -247,7 +251,7 @@ in <code>constant-time</code> in proportion to <code>problem-size</code> or <cod
 <code>hash-size</code>.</blockquote>
 </div>
 <div class="section" id="insertion-sets">
-<h3>Insertion&nbsp;Sets:</h3>
+<h3>Insertion Sets:</h3>
 <div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
 </span><span id="line-2">    <span class="sd">&quot;&quot;&quot;Performing insertion over deletion&quot;&quot;&quot;</span>
 </span><span id="line-3">    <span class="n">factors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -258,22 +262,22 @@ in <code>constant-time</code> in proportion to <code>problem-size</code> or <cod
 </span></pre></div>
 <p>While fundamentally the choice data
 structure is orthoganal to program correctness,
-it&#8217;s important for real runtime performance to use the tool
-that best fits the&nbsp;job.</p>
-<p><a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail">Maslow</a> tells&nbsp;us</p>
+it's important for real runtime performance to use the tool
+that best fits the job.</p>
+<p><a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail">Maslow</a> tells us</p>
 <blockquote class="pull-quote">
-<p><em>&quot;If the only tool you have is a hammer everything looks like a&nbsp;nail.&quot;</em></p>
-<p>The Psychology of Science&nbsp;(1964)</p>
+<p><em>&quot;If the only tool you have is a hammer everything looks like a nail.&quot;</em></p>
+<p>The Psychology of Science (1964)</p>
 </blockquote>
 <p>Lists and sets are great general purpose data-structure,
 and is likely the first tool to reach for when presented with a problem.
 However, their generality and utility are also likely our
-downfall when better suited tools are also&nbsp;available.</p>
+downfall when better suited tools are also available.</p>
 <blockquote class="pull-quote">
 So what is the most optimal data structure to perform these calculation?</blockquote>
 </div>
 <div class="section" id="enter-the-array">
-<h3>Enter: The&nbsp;Array</h3>
+<h3>Enter: The Array</h3>
 <div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="k">def</span> <span class="nf">np_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
@@ -289,35 +293,35 @@ So what is the most optimal data structure to perform these calculation?</blockq
 </span></pre></div>
 <p>Numpy is a third party library containing array based data structures
 and fast vectorizable methods for numerical operations.
-Here we operate on numpy&#8217;s <code>n-dimmensional arrays</code>
+Here we operate on numpy's <code>n-dimmensional arrays</code>
 which allocate fixed strides of memory containing <code>statically typed</code> elements.
 The downside of implementing a statically typed subset within a dynamically typed
 language is to forego many of the niceties python has to offer.
 However, the main benefit is random access to
-individual array elements in memory, instantly without&nbsp;traversal.</p>
+individual array elements in memory, instantly without traversal.</p>
 <p>Everything inside a numpy array must be homogenous,
 and to be efficient we must know the exact length of the array beforehand.
 This is because the task of extending or contracting an array once initialized
 requires re-copying all elements into a new array of new length.
 We also have to be strict when initializing <code>bools</code> <code>ints</code> and <code>floats</code>
-with proper <code>fixed-widths</code> for memory&nbsp;allocation.</p>
+with proper <code>fixed-widths</code> for memory allocation.</p>
 <p>In our example we are filling up an array with <code>8-bit bools</code> all set
 to <code>True</code>. We then iterate through
 an array of factors set to <code>32-bit unsigned integers</code>, and allocate
-it&#8217;s multiples as <code>False</code>. Finally, we return all values from the
+it's multiples as <code>False</code>. Finally, we return all values from the
 boolean array from 2 to the end which are still <code>True</code>. However, unlike slicing
 python lists which generates a whole new copy from the original, slicing numpy arrays
 returns is an in-memory view and is a much cheaper operation. Therefore, the
 vector operation <code>primes[i*i::i]</code> is just an in-memory view of the
 same <code>primes</code> array requiring no more levels of indirection or
-memory allocation to&nbsp;construct.</p>
+memory allocation to construct.</p>
 </div>
 </div>
 <div class="section" id="testing-for-primality">
-<h2>Testing for&nbsp;Primality</h2>
-<p>So now that we&#8217;ve written the sieve in a bunch of different ways. How do we know that
-each way is&nbsp;correct.</p>
-<p>The most obvious way to figure if a number&#8217;s prime, is to try dividing the number
+<h2>Testing for Primality</h2>
+<p>So now that we've written the sieve in a bunch of different ways. How do we know that
+each way is correct.</p>
+<p>The most obvious way to figure if a number's prime, is to try dividing the number
 by all the numbers between <span class="formula">2 ≤ <i>x</i> ≤ <i>n</i> − 1</span>.</p>
 <blockquote class="pull-quote">
 However, one optimization would be
@@ -327,7 +331,7 @@ to only check factors up to <span class="formula">2 ≤ <i>x</i> ≤ <sp
 to <span class="formula"><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>n</i></span><span class="ignored">)</span></span></span> or else their product is greater than <span class="formula"><i>n</i></span>.
 When moving up values of <span class="formula"><i>p</i></span>, we know that for any unique
 factor <span class="formula"><i>p</i></span> cannot be greater than <span class="formula"><i>q</i></span>, therefore computing
-up to <span class="formula"><i>p</i></span> is sufficient and so we need not proceed&nbsp;further.</p>
+up to <span class="formula"><i>p</i></span> is sufficient and so we need not proceed further.</p>
 <blockquote class="pull-quote">
 This optimization reduces the run time for each factorization
 down to <span class="formula"><span class="scriptfont">O</span>(<span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>n</i></span><span class="ignored">)</span></span>)</span>.</blockquote>
@@ -353,7 +357,7 @@ Now lets test to see if our sieves can correctly find the first 100 prime number
 </span></pre></div>
 </div>
 <div class="section" id="a-timer">
-<h2>A&nbsp;Timer</h2>
+<h2>A Timer</h2>
 <p>Now knowing that our implementations are correct, lets see how fast they run.
 We will construct a timer taking advantage of what is known as a <code>context manager</code>.
 Basically, a context manager allows us to use the <code>with</code> construct
@@ -375,11 +379,11 @@ merely by using a decorator from the <code>contextlib</code> module.</p>
 </span><span id="line-13">    <span class="p">)</span>
 </span></pre></div>
 <blockquote class="pull-quote">
-It&#8217;s also possible to use Python&#8217;s built in <code>timeit</code> module, which can deal
+It's also possible to use Python's built in <code>timeit</code> module, which can deal
 with much more complex and isolated timing instances.</blockquote>
 </div>
 <div class="section" id="performance-testing">
-<h2>Performance&nbsp;Testing</h2>
+<h2>Performance Testing</h2>
 <blockquote class="pull-quote">
 Now lets see how fast our seives can find the first million
 digits.</blockquote>
@@ -461,27 +465,27 @@ digits.</blockquote>
                     <ul class="list-group" id="recentposts">
                         <li class="list-group-item">
                             <a href="http://sanghan.me/blog/2014/09/sieve/">
-                                Prime Sieves and Python Data&nbsp;Structures
+                                Prime Sieves and Python Data Structures
                             </a>
                         </li>
                         <li class="list-group-item">
                             <a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
-                                Swift Program is Swift, Except When it&#8217;s&nbsp;Not
+                                Swift Program is Swift, Except When it's Not
                             </a>
                         </li>
                         <li class="list-group-item">
                             <a href="http://sanghan.me/blog/2014/06/pelican_blog/">
-                                Pelican: A Blogging Engine Written in&nbsp;Python
+                                Pelican: A Blogging Engine Written in Python
                             </a>
                         </li>
                         <li class="list-group-item">
                             <a href="http://sanghan.me/blog/2014/06/swift_bubble_sort/">
-                                Swift: Bubble&nbsp;Sort
+                                Swift: Bubble Sort
                             </a>
                         </li>
                         <li class="list-group-item">
                             <a href="http://sanghan.me/blog/2014/05/digital_universe/">
-                                Digital&nbsp;Universe
+                                Digital Universe
                             </a>
                         </li>
                     </ul>

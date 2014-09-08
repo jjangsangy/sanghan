@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/programming.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-09-08T00:00:00-07:00</updated><entry><title>Prime Sieves and Python Data Structures</title><link href="http://sanghan.me/blog/2014/09/sieve/" rel="alternate"></link><updated>2014-09-08T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-09-08:blog/2014/09/sieve/</id><summary type="html">&lt;p&gt;Recently, I’ve been working through &lt;a class="reference external" href="https://projecteuler.net"&gt;Project Euler&lt;/a&gt; in order to improve my
-core programming&amp;nbsp;skills.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/programming.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-09-08T00:00:00-07:00</updated><entry><title>Prime Sieves and Python Data Structures</title><link href="http://sanghan.me/blog/2014/09/sieve/" rel="alternate"></link><updated>2014-09-08T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-09-08:blog/2014/09/sieve/</id><summary type="html">&lt;p&gt;Recently, I’ve been working through &lt;a class="reference external" href="https://projecteuler.net"&gt;Project Euler&lt;/a&gt; in order to improve my
+core programming skills.&lt;/p&gt;
 &lt;p&gt;One of those recurring problems requires
 efficiently calculating and testing for prime numbers. The first
 algorithm that comes to mind is &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes"&gt;The Sieve of Eratosthenes&lt;/a&gt;.
 The Sieve, is one of many prime sieves, and is a simple yet time efficient algorithm
-for finding all the primes below a certain&amp;nbsp;limit.&lt;/p&gt;
+for finding all the primes below a certain limit.&lt;/p&gt;
 &lt;div class="section" id="the-algorithm"&gt;
-&lt;h2&gt;The&amp;nbsp;Algorithm&lt;/h2&gt;
+&lt;h2&gt;The Algorithm&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;Make a table one entry for every number &lt;span class="formula"&gt;2 ≤ &lt;i&gt;n&lt;/i&gt; ≤ &lt;i&gt;limit&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;Starting at 2, cross out all multiples of 2, not counting 2&amp;nbsp;itself.&lt;/li&gt;
-&lt;li&gt;Move up to the next number that hasn&amp;#8217;t been crossed&amp;nbsp;out&lt;/li&gt;
+&lt;li&gt;Starting at 2, cross out all multiples of 2, not counting 2 itself.&lt;/li&gt;
+&lt;li&gt;Move up to the next number that hasn't been crossed out&lt;/li&gt;
 &lt;li&gt;Repeat Step 2-3 up till &lt;span class="formula"&gt;&lt;span class="sqrt"&gt;&lt;span class="radical"&gt;√&lt;/span&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="root"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote class="pull-quote"&gt;
 The Sieve of Eratosthenes can be shown to have a time
 complexity of &lt;span class="formula"&gt;&lt;span class="scriptfont"&gt;O&lt;/span&gt;(&lt;i&gt;n&lt;/i&gt;loglog&lt;i&gt;n&lt;/i&gt;)&lt;/span&gt;.&lt;/blockquote&gt;
 &lt;p&gt;Visually we can depict each loop removing values from the list
-of real numbers until all that is left are the&amp;nbsp;primes.&lt;/p&gt;
+of real numbers until all that is left are the primes.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="sieve" src="http://sanghan.me/img/sieve.jpg" /&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 Unfortunately, this solution starts to become less
@@ -28,14 +28,14 @@ number to the last integer in memory, the space complexity of sieves generally
 grows in the order of &lt;span class="formula"&gt;&lt;span class="scriptfont"&gt;O&lt;/span&gt;(&lt;i&gt;n&lt;/i&gt;)&lt;/span&gt;. In order to deal with memory issues
 there are sieve algorithms called &lt;code&gt;segmented sieves&lt;/code&gt; which distribute
 the problem into smaller subsets, much like in the way &lt;code&gt;map reduce&lt;/code&gt; can
-distribute a job to a cluster of&amp;nbsp;servers.&lt;/p&gt;
+distribute a job to a cluster of servers.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-Here&amp;#8217;s how it would look in Python.&lt;/blockquote&gt;
+Here's how it would look in Python.&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;
-&lt;h2&gt;The&amp;nbsp;Code&lt;/h2&gt;
+&lt;h2&gt;The Code&lt;/h2&gt;
 &lt;blockquote class="pull-quote"&gt;
-I&amp;#8217;ve written out the function definition using &lt;code&gt;type annotations&lt;/code&gt;,
+I've written out the function definition using &lt;code&gt;type annotations&lt;/code&gt;,
 which explicitly describe the type of arguments a function take and what
 types they return. This is a great documentation tool built-in, but only
 available for Python 3 and not Python 2.&lt;/blockquote&gt;
@@ -52,14 +52,14 @@ available for Python 3 and not Python 2.&lt;/blockquote&gt;
 &lt;/span&gt;&lt;span id="line-6"&gt;            &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-7"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;prime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;checked&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;checked&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;It&amp;#8217;s important to notice we implement &lt;code&gt;lists&lt;/code&gt; as the main data structure.
+&lt;p&gt;It's important to notice we implement &lt;code&gt;lists&lt;/code&gt; as the main data structure.
 Remember although the algorithm requires an in memory table,
 we have the freedom to construct it using
 whatever tools the runtime affords. Here is an example of another sieve
-but with it&amp;#8217;s guts swapped with &lt;code&gt;sets&lt;/code&gt;.&lt;/p&gt;
+but with it's guts swapped with &lt;code&gt;sets&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="sets-unordered-collections"&gt;
-&lt;h3&gt;Sets: Unordered&amp;nbsp;Collections&lt;/h3&gt;
+&lt;h3&gt;Sets: Unordered Collections&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;set_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="sd"&gt;    Sets are mutable, unordered collections which are useful&lt;/span&gt;
@@ -77,12 +77,17 @@ second for-loop is substituted with one &lt;code&gt;-=&lt;/code&gt;, binary assi
 sets has been overloaded with a &lt;code&gt;difference update&lt;/code&gt; method or
 the mathematical complement &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;|&lt;span class="text"&gt; x &lt;/span&gt; ∈ &lt;span class="text"&gt;A : x &lt;/span&gt;∉&lt;span class="text"&gt; B&lt;/span&gt;}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Utilizing sets provides us a cleaner syntax for algorithms involving math.
-In this example, we first create a &lt;code&gt;universal set&lt;/code&gt;, and iteriatively delete it&amp;#8217;s factors.
+In this example, we first create a &lt;code&gt;universal set&lt;/code&gt;, and iteriatively delete it's factors.
 It would also be correct to construct a &lt;code&gt;null set&lt;/code&gt; and iteratively insert all factors first.
-Then, once all factors have been collected, perform a removal from the universal set.
-This optimization takes into account that, membership testing must be done at each
-iteration through the universal set to perform a deletion, whereas for insertion
-only requires checking through the null&amp;nbsp;set.&lt;/p&gt;
+Then, once all factors have been collected, perform a removal from the universal set.&lt;/p&gt;
+&lt;p&gt;This optimization takes into account that originally, membership testing
+is done at each iteration through the universal set to perform a deletion, whereas for insertion
+only requires checking through a null set containing factors.&lt;/p&gt;
+&lt;blockquote class="pull-quote"&gt;
+&lt;p&gt;It's possible to know that the size of a set of all factors of &lt;span class="formula"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt; will never be greater
+than&lt;/p&gt;
+&lt;p&gt;$$n - \frac{n}{\ln(n)}$$&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;blockquote class="pull-quote"&gt;
 Due to implementation of &lt;code&gt;sets&lt;/code&gt; being primarily &lt;code&gt;hash&lt;/code&gt; operations, both
 insertions and deletions are dependent on generating a hash value and can be done
@@ -90,7 +95,7 @@ in &lt;code&gt;constant-time&lt;/code&gt; in proportion to &lt;code&gt;problem-s
 &lt;code&gt;hash-size&lt;/code&gt;.&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="insertion-sets"&gt;
-&lt;h3&gt;Insertion&amp;nbsp;Sets:&lt;/h3&gt;
+&lt;h3&gt;Insertion Sets:&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;set_insertion_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Performing insertion over deletion&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;    &lt;span class="n"&gt;factors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -101,22 +106,22 @@ in &lt;code&gt;constant-time&lt;/code&gt; in proportion to &lt;code&gt;problem-s
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;While fundamentally the choice data
 structure is orthoganal to program correctness,
-it&amp;#8217;s important for real runtime performance to use the tool
-that best fits the&amp;nbsp;job.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail"&gt;Maslow&lt;/a&gt; tells&amp;nbsp;us&lt;/p&gt;
+it's important for real runtime performance to use the tool
+that best fits the job.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail"&gt;Maslow&lt;/a&gt; tells us&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-&lt;p&gt;&lt;em&gt;&amp;quot;If the only tool you have is a hammer everything looks like a&amp;nbsp;nail.&amp;quot;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;The Psychology of Science&amp;nbsp;(1964)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&amp;quot;If the only tool you have is a hammer everything looks like a nail.&amp;quot;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The Psychology of Science (1964)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Lists and sets are great general purpose data-structure,
 and is likely the first tool to reach for when presented with a problem.
 However, their generality and utility are also likely our
-downfall when better suited tools are also&amp;nbsp;available.&lt;/p&gt;
+downfall when better suited tools are also available.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 So what is the most optimal data structure to perform these calculation?&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="enter-the-array"&gt;
-&lt;h3&gt;Enter: The&amp;nbsp;Array&lt;/h3&gt;
+&lt;h3&gt;Enter: The Array&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;np_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -132,35 +137,35 @@ So what is the most optimal data structure to perform these calculation?&lt;/blo
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Numpy is a third party library containing array based data structures
 and fast vectorizable methods for numerical operations.
-Here we operate on numpy&amp;#8217;s &lt;code&gt;n-dimmensional arrays&lt;/code&gt;
+Here we operate on numpy's &lt;code&gt;n-dimmensional arrays&lt;/code&gt;
 which allocate fixed strides of memory containing &lt;code&gt;statically typed&lt;/code&gt; elements.
 The downside of implementing a statically typed subset within a dynamically typed
 language is to forego many of the niceties python has to offer.
 However, the main benefit is random access to
-individual array elements in memory, instantly without&amp;nbsp;traversal.&lt;/p&gt;
+individual array elements in memory, instantly without traversal.&lt;/p&gt;
 &lt;p&gt;Everything inside a numpy array must be homogenous,
 and to be efficient we must know the exact length of the array beforehand.
 This is because the task of extending or contracting an array once initialized
 requires re-copying all elements into a new array of new length.
 We also have to be strict when initializing &lt;code&gt;bools&lt;/code&gt; &lt;code&gt;ints&lt;/code&gt; and &lt;code&gt;floats&lt;/code&gt;
-with proper &lt;code&gt;fixed-widths&lt;/code&gt; for memory&amp;nbsp;allocation.&lt;/p&gt;
+with proper &lt;code&gt;fixed-widths&lt;/code&gt; for memory allocation.&lt;/p&gt;
 &lt;p&gt;In our example we are filling up an array with &lt;code&gt;8-bit bools&lt;/code&gt; all set
 to &lt;code&gt;True&lt;/code&gt;. We then iterate through
 an array of factors set to &lt;code&gt;32-bit unsigned integers&lt;/code&gt;, and allocate
-it&amp;#8217;s multiples as &lt;code&gt;False&lt;/code&gt;. Finally, we return all values from the
+it's multiples as &lt;code&gt;False&lt;/code&gt;. Finally, we return all values from the
 boolean array from 2 to the end which are still &lt;code&gt;True&lt;/code&gt;. However, unlike slicing
 python lists which generates a whole new copy from the original, slicing numpy arrays
 returns is an in-memory view and is a much cheaper operation. Therefore, the
 vector operation &lt;code&gt;primes[i*i::i]&lt;/code&gt; is just an in-memory view of the
 same &lt;code&gt;primes&lt;/code&gt; array requiring no more levels of indirection or
-memory allocation to&amp;nbsp;construct.&lt;/p&gt;
+memory allocation to construct.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="testing-for-primality"&gt;
-&lt;h2&gt;Testing for&amp;nbsp;Primality&lt;/h2&gt;
-&lt;p&gt;So now that we&amp;#8217;ve written the sieve in a bunch of different ways. How do we know that
-each way is&amp;nbsp;correct.&lt;/p&gt;
-&lt;p&gt;The most obvious way to figure if a number&amp;#8217;s prime, is to try dividing the number
+&lt;h2&gt;Testing for Primality&lt;/h2&gt;
+&lt;p&gt;So now that we've written the sieve in a bunch of different ways. How do we know that
+each way is correct.&lt;/p&gt;
+&lt;p&gt;The most obvious way to figure if a number's prime, is to try dividing the number
 by all the numbers between &lt;span class="formula"&gt;2 ≤ &lt;i&gt;x&lt;/i&gt; ≤ &lt;i&gt;n&lt;/i&gt; − 1&lt;/span&gt;.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 However, one optimization would be
@@ -170,7 +175,7 @@ to only check factors up to &lt;span class="formula"&gt;2 ≤ &lt;i&gt;x&lt;
 to &lt;span class="formula"&gt;&lt;span class="sqrt"&gt;&lt;span class="radical"&gt;√&lt;/span&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="root"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; or else their product is greater than &lt;span class="formula"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;.
 When moving up values of &lt;span class="formula"&gt;&lt;i&gt;p&lt;/i&gt;&lt;/span&gt;, we know that for any unique
 factor &lt;span class="formula"&gt;&lt;i&gt;p&lt;/i&gt;&lt;/span&gt; cannot be greater than &lt;span class="formula"&gt;&lt;i&gt;q&lt;/i&gt;&lt;/span&gt;, therefore computing
-up to &lt;span class="formula"&gt;&lt;i&gt;p&lt;/i&gt;&lt;/span&gt; is sufficient and so we need not proceed&amp;nbsp;further.&lt;/p&gt;
+up to &lt;span class="formula"&gt;&lt;i&gt;p&lt;/i&gt;&lt;/span&gt; is sufficient and so we need not proceed further.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 This optimization reduces the run time for each factorization
 down to &lt;span class="formula"&gt;&lt;span class="scriptfont"&gt;O&lt;/span&gt;(&lt;span class="sqrt"&gt;&lt;span class="radical"&gt;√&lt;/span&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="root"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;.&lt;/blockquote&gt;
@@ -196,7 +201,7 @@ Now lets test to see if our sieves can correctly find the first 100 prime number
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="a-timer"&gt;
-&lt;h2&gt;A&amp;nbsp;Timer&lt;/h2&gt;
+&lt;h2&gt;A Timer&lt;/h2&gt;
 &lt;p&gt;Now knowing that our implementations are correct, lets see how fast they run.
 We will construct a timer taking advantage of what is known as a &lt;code&gt;context manager&lt;/code&gt;.
 Basically, a context manager allows us to use the &lt;code&gt;with&lt;/code&gt; construct
@@ -218,11 +223,11 @@ merely by using a decorator from the &lt;code&gt;contextlib&lt;/code&gt; module.
 &lt;/span&gt;&lt;span id="line-13"&gt;    &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;blockquote class="pull-quote"&gt;
-It&amp;#8217;s also possible to use Python&amp;#8217;s built in &lt;code&gt;timeit&lt;/code&gt; module, which can deal
+It's also possible to use Python's built in &lt;code&gt;timeit&lt;/code&gt; module, which can deal
 with much more complex and isolated timing instances.&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="performance-testing"&gt;
-&lt;h2&gt;Performance&amp;nbsp;Testing&lt;/h2&gt;
+&lt;h2&gt;Performance Testing&lt;/h2&gt;
 &lt;blockquote class="pull-quote"&gt;
 Now lets see how fast our seives can find the first million
 digits.&lt;/blockquote&gt;
@@ -247,21 +252,21 @@ digits.&lt;/blockquote&gt;
 &lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.008&lt;/span&gt; &lt;span class="n"&gt;sec&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-</summary><category term="Python"></category><category term="Prime Numbers"></category><category term="Sieve"></category><category term="Eratosthenes"></category><category term="Numpy"></category><category term="Project Euler"></category><category term="Algorithms"></category><category term="Data Structures"></category></entry><entry><title>Swift Program is Swift, Except When it’s Not</title><link href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/" rel="alternate"></link><updated>2014-06-11T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-11:blog/2014/06/swift_program_is_swift_except_when_its_not/</id><summary type="html">&lt;p&gt;&lt;img alt="swift" src="http://sanghan.me/img/swift.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;This past &lt;span class="caps"&gt;WWDC&lt;/span&gt; Apple revealed a brand new programming language called &lt;a class="reference external" href="https://developer.apple.com/swift/"&gt;Swift&lt;/a&gt;
-to the masses and passed it out to Apple Developers packaged in the XCode 6&amp;nbsp;Beta.&lt;/p&gt;
+</summary><category term="Python"></category><category term="Prime Numbers"></category><category term="Sieve"></category><category term="Eratosthenes"></category><category term="Numpy"></category><category term="Project Euler"></category><category term="Algorithms"></category><category term="Data Structures"></category></entry><entry><title>Swift Program is Swift, Except When it's Not</title><link href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/" rel="alternate"></link><updated>2014-06-11T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-11:blog/2014/06/swift_program_is_swift_except_when_its_not/</id><summary type="html">&lt;p&gt;&lt;img alt="swift" src="http://sanghan.me/img/swift.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;This past WWDC Apple revealed a brand new programming language called &lt;a class="reference external" href="https://developer.apple.com/swift/"&gt;Swift&lt;/a&gt;
+to the masses and passed it out to Apple Developers packaged in the XCode 6 Beta.&lt;/p&gt;
 &lt;div class="section" id="language-features"&gt;
-&lt;h2&gt;Language&amp;nbsp;Features&lt;/h2&gt;
+&lt;h2&gt;Language Features&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;Type Inferencing and Automatic Reference Counting (&lt;span class="caps"&gt;ARC&lt;/span&gt;)&lt;/li&gt;
-&lt;li&gt;Optional Bindings and Generic&amp;nbsp;Functions&lt;/li&gt;
-&lt;li&gt;Integration with&amp;nbsp;Objective-C&lt;/li&gt;
-&lt;li&gt;First-Class Functions and&amp;nbsp;Closures&lt;/li&gt;
+&lt;li&gt;Type Inferencing and Automatic Reference Counting (ARC)&lt;/li&gt;
+&lt;li&gt;Optional Bindings and Generic Functions&lt;/li&gt;
+&lt;li&gt;Integration with Objective-C&lt;/li&gt;
+&lt;li&gt;First-Class Functions and Closures&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;My initial impressions were pretty high. However, after some quick benchmarking
-examples, those feelings later matured to an understanding of it&amp;#8217;s &amp;quot;beta&amp;quot;
+examples, those feelings later matured to an understanding of it's &amp;quot;beta&amp;quot;
 characteristics. Many of the underlying optimization still have some kinks to
-work&amp;nbsp;through.&lt;/p&gt;
+work through.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 And by kinks, I mean some big fixes&lt;/blockquote&gt;
 &lt;/div&gt;
@@ -270,7 +275,7 @@ And by kinks, I mean some big fixes&lt;/blockquote&gt;
 &lt;blockquote class="pull-quote"&gt;
 Here are a couple examples of Bubble Sort written out in C, Python and Swift.&lt;/blockquote&gt;
 &lt;div class="section" id="swift-bubble-sort"&gt;
-&lt;h3&gt;Swift Bubble&amp;nbsp;Sort&lt;/h3&gt;
+&lt;h3&gt;Swift Bubble Sort&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Cocoa&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="n"&gt;func&lt;/span&gt; &lt;span class="nf"&gt;bubbleSort&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;[])&lt;/span&gt; &lt;span class="p"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;
@@ -303,7 +308,7 @@ Here are a couple examples of Bubble Sort written out in C, Python and Swift.&lt
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="c-bubble-sort"&gt;
-&lt;h3&gt;C Bubble&amp;nbsp;Sort&lt;/h3&gt;
+&lt;h3&gt;C Bubble Sort&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="cp"&gt;#include &amp;lt;stdio.h&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="cp"&gt;#include &amp;lt;stdlib.h&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;
@@ -343,7 +348,7 @@ Here are a couple examples of Bubble Sort written out in C, Python and Swift.&lt
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="python-bubble-sort"&gt;
-&lt;h3&gt;Python Bubble&amp;nbsp;Sort&lt;/h3&gt;
+&lt;h3&gt;Python Bubble Sort&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;randint&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;
@@ -373,7 +378,7 @@ Here are a couple examples of Bubble Sort written out in C, Python and Swift.&lt
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="fast-swift"&gt;
-&lt;h2&gt;Fast&amp;nbsp;Swift:&lt;/h2&gt;
+&lt;h2&gt;Fast Swift:&lt;/h2&gt;
 &lt;blockquote class="pull-quote"&gt;
 Swift vs C vs PyPy&lt;/blockquote&gt;
 &lt;div class="plotly"&gt;
@@ -382,34 +387,34 @@ Swift vs C vs PyPy&lt;/blockquote&gt;
 Swift Program is Swift, It even beats C by a non-trivial margin in these tests.&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="slow-swift"&gt;
-&lt;h2&gt;Slow&amp;nbsp;Swift:&lt;/h2&gt;
+&lt;h2&gt;Slow Swift:&lt;/h2&gt;
 &lt;blockquote class="pull-quote"&gt;
 Swift [-Ofast] vs Swift[-O3] vs CPython&lt;/blockquote&gt;
-&lt;p&gt;One caveat however, is we used the [-Ofast] flag during compilation of the swift binaries like&amp;nbsp;so.&lt;/p&gt;
+&lt;p&gt;One caveat however, is we used the [-Ofast] flag during compilation of the swift binaries like so.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;According to Apple&amp;#8217;s official documentation in the XCode 5.0 release&amp;nbsp;notes:&lt;/p&gt;
+&lt;p&gt;According to Apple's official documentation in the XCode 5.0 release notes:&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-A new optimization level -Ofast, available in &lt;span class="caps"&gt;LLVM&lt;/span&gt;, enables aggressive optimizations.
+A new optimization level -Ofast, available in LLVM, enables aggressive optimizations.
 -Ofast relaxes some conservative restrictions,
 mostly for floating-point operations,
 that are safe for most code.
 It can yield significant high-performance wins from the compiler&lt;/blockquote&gt;
 &lt;p&gt;If we were to run the same code with normal compiler optimizations we start to see a completely
-different picture than the one we started&amp;nbsp;with&lt;/p&gt;
+different picture than the one we started with&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;xcrun --sdk macosx swift -O3 -o bubble_sort.swift bubble_sort&lt;/code&gt;&lt;/p&gt;
 &lt;div class="note"&gt;
 &lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
-&lt;p class="last"&gt;In order to save time, I&amp;#8217;ve changed the problem sizes to be
+&lt;p class="last"&gt;In order to save time, I've changed the problem sizes to be
 multiples of 1k rather than 10k, so that tests could
-finish reasonibly quick. Other than that nothing has&amp;nbsp;changed.&lt;/p&gt;
+finish reasonibly quick. Other than that nothing has changed.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="plotly"&gt;
     &lt;iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/84/" width="100%" height="100%"&gt;&lt;/iframe&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;div class="section" id="modern-safe-and-powerful-choose-2"&gt;
-&lt;h2&gt;Modern, Safe and Powerful: Choose&amp;nbsp;2&lt;/h2&gt;
+&lt;h2&gt;Modern, Safe and Powerful: Choose 2&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /&gt;&lt;/p&gt;
-&lt;p&gt;According to a post on &lt;a class="reference external" href="http://stackoverflow.com/questions/24101718/swift-performance-sorting-arrays"&gt;Stacked&amp;nbsp;Overflow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;According to a post on &lt;a class="reference external" href="http://stackoverflow.com/questions/24101718/swift-performance-sorting-arrays"&gt;Stacked Overflow&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 However, -Ofast changes the semantics of the language a lot — in my testing,
 it disabled the checks for integer overflows and array indexing overflows.
@@ -423,15 +428,15 @@ without crashing (and prints out some garbage):&lt;/blockquote&gt;
 &lt;!--  --&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;With -Ofast I get pretty much what I would expect.
-The relevant part is a loop with 5 machine language&amp;nbsp;instructions.&lt;/li&gt;
+The relevant part is a loop with 5 machine language instructions.&lt;/li&gt;
 &lt;li&gt;With -O3 I get something that was beyond my wildest imagination.
 The inner loop spans 88 lines of assembly code.
 I did not try to understand all of it, but the most suspicious parts are 13 invocations of
 callq _swift_retain&amp;quot; and another 13 invocations of &amp;quot;callq _swift_release&amp;quot;.
-That is, 26 subroutine calls in the inner&amp;nbsp;loop!&lt;/li&gt;
+That is, 26 subroutine calls in the inner loop!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</summary><category term="Apple"></category><category term="Programming Language"></category><category term="Benchmarks"></category><category term="Bubble Sort"></category></entry><entry><title>Pelican: A Blogging Engine Written in Python</title><link href="http://sanghan.me/blog/2014/06/pelican_blog/" rel="alternate"></link><updated>2014-06-09T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-09:blog/2014/06/pelican_blog/</id><summary type="html">&lt;p&gt;There are many static site generators out&amp;nbsp;there.&lt;/p&gt;
+</summary><category term="Apple"></category><category term="Programming Language"></category><category term="Benchmarks"></category><category term="Bubble Sort"></category></entry><entry><title>Pelican: A Blogging Engine Written in Python</title><link href="http://sanghan.me/blog/2014/06/pelican_blog/" rel="alternate"></link><updated>2014-06-09T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-09:blog/2014/06/pelican_blog/</id><summary type="html">&lt;p&gt;There are many static site generators out there.&lt;/p&gt;
 &lt;p&gt;The most famous and well known being,
 &lt;a class="reference external" href="http://jekyllrb.com"&gt;Jekyll&lt;/a&gt; and &lt;a class="reference external" href="http://octopress.org"&gt;Octopress&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Jekyll is used by Github Pages as the default generator,
@@ -441,28 +446,28 @@ is because Pelican is written in Python, and therefore support the
 reStructuredText markup by default and
 is a language I feel comfortable in case I need to get down and fix the
 engine. One of my primary forcuses of blogging is so that I can also use it as
-a platform for learning more about programming. I don&amp;#8217;t program in ruby
-so, I wanted to go with an all Python&amp;nbsp;solution.&lt;/p&gt;
+a platform for learning more about programming. I don't program in ruby
+so, I wanted to go with an all Python solution.&lt;/p&gt;
 &lt;div class="section" id="enter-pelican"&gt;
-&lt;h2&gt;Enter&amp;nbsp;Pelican&lt;/h2&gt;
+&lt;h2&gt;Enter Pelican&lt;/h2&gt;
 &lt;p&gt;So Pelican became my blogging engine of choice.
 There are a couple other generators written with Python like
 &lt;a class="reference external" href="http://ringce.com/hyde"&gt;Hyde&lt;/a&gt; and &lt;a class="reference external" href="http://getnikola.com"&gt;Nicola&lt;/a&gt;,
 but it seemed like Pelican was better supported and documented of the batch,
-so thats what I went&amp;nbsp;with.&lt;/p&gt;
+so thats what I went with.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="so-how-does-it-work"&gt;
-&lt;h2&gt;So How does it&amp;nbsp;Work?&lt;/h2&gt;
+&lt;h2&gt;So How does it Work?&lt;/h2&gt;
 &lt;blockquote class="pull-quote"&gt;
 A generator is basically some arbitrary code that will output more arbitrary code.&lt;/blockquote&gt;
 &lt;p&gt;In this case of pelican, it will take my articles written in the reStructuredText
-markup and then generate &lt;span class="caps"&gt;HTML&lt;/span&gt; and &lt;span class="caps"&gt;CSS&lt;/span&gt; based on the Jinja2 templating&amp;nbsp;engine.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Sounds simple enough&amp;nbsp;right?&lt;/strong&gt;&lt;/p&gt;
+markup and then generate HTML and CSS based on the Jinja2 templating engine.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sounds simple enough right?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Pelican utilized metadata that the user supplies in the form of a configuration file
 located at the root of the project directory. This configuration file helps
 Pelican figure out some user specific details that are necessary in order to
-build the webpage, very similar to how Sphinx generates&amp;nbsp;documentation.&lt;/p&gt;
-&lt;p&gt;Here is a snippet of how this blog&amp;#8217;s configuration file&amp;nbsp;looks.&lt;/p&gt;
+build the webpage, very similar to how Sphinx generates documentation.&lt;/p&gt;
+&lt;p&gt;Here is a snippet of how this blog's configuration file looks.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="c"&gt;# -*- coding: utf-8 -*- #&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;unicode_literals&lt;/span&gt;
@@ -486,10 +491,10 @@ build the webpage, very similar to how Sphinx generates&amp;nbsp;documentation.&
 &lt;p&gt;As you can see, the syntax is just Python. The first block
 is just a shebang line specifying the default python
 interpreter. We then append the current directory into the
-Python &lt;span class="caps"&gt;PATH&lt;/span&gt; and then start filling out some global variables which
-Pelican will use later to generate the&amp;nbsp;blog.&lt;/p&gt;
+Python PATH and then start filling out some global variables which
+Pelican will use later to generate the blog.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry><entry><title>Swift: Bubble Sort</title><link href="http://sanghan.me/blog/2014/06/swift_bubble_sort/" rel="alternate"></link><updated>2014-06-04T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-04:blog/2014/06/swift_bubble_sort/</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="c1"&gt;// Sang Han&lt;/span&gt;
+</summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry><entry><title>Swift: Bubble Sort</title><link href="http://sanghan.me/blog/2014/06/swift_bubble_sort/" rel="alternate"></link><updated>2014-06-04T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-04:blog/2014/06/swift_bubble_sort/</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="c1"&gt;// Sang Han&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="c1"&gt;// An implementation of a bubble party/bubble sort written in swift&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;
 &lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="n"&gt;protocol&lt;/span&gt; &lt;span class="n"&gt;RandomPartyGenerator&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
