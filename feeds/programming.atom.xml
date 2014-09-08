@@ -29,6 +29,16 @@ Here&amp;#8217;s how it would look in Python.&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;
 &lt;h2&gt;The&amp;nbsp;Code&lt;/h2&gt;
+&lt;blockquote class="pull-quote"&gt;
+Note: I&amp;#8217;ve written out the functions using type annotations,
+which make it easier to understand the type arguments take and
+what types they return. This makes it easier to understand what
+functions are doing, but also has the downside of not being
+compatble with Python 2.&lt;/blockquote&gt;
+&lt;!-- code-block::python::
+
+# Type Annotation Prototype
+def foo(x: type) -&gt; type: --&gt;
 &lt;div class="section" id="general-case"&gt;
 &lt;h3&gt;General&amp;nbsp;Case&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
