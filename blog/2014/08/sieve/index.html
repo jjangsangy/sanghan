@@ -288,7 +288,9 @@ and vectorized methods for utilizing them. Here we operate on numpy&#8217;s <cod
 Numpy arrays are fixed strides of memory with statically typed elements.
 The downside to statically typed elements within a dynamically language is
 affording many of the niceties that Python provides. Everything inside a
-numpy array must be homogenous, and we cannot perform the same types of
+numpy array must be homogenous, and to be efficient we must know the exact
+size of the array beforehand and minimize the need to extending or contract
+their sizes post-initialization. We also cannot perform the same types of
 operations on <code>bools</code> as we would on <code>ints</code> or <code>floats</code>.
 However, the benefit is random access to each array element based on
 it&#8217;s position in memory without&nbsp;traversal.</p>
