@@ -170,18 +170,15 @@ Here&#8217;s how it would look in Python.</blockquote>
 </div>
 <div class="section" id="the-code">
 <h2>The&nbsp;Code</h2>
-<div class="note">
-<p class="first admonition-title">Note</p>
-<p class="last">I&#8217;ve written out the functions using <code>type annotations</code>,
+<blockquote class="pull-quote">
+I&#8217;ve written out the functions using <code>type annotations</code>,
 which make it easier to understand the type arguments take and
 what types they return. This makes it easier to understand what
 functions are doing, but also has the downside of not being
-compatble with Python&nbsp;2.</p>
-</div>
-<!-- code-block::python::
-
-# Type Annotation Prototype
-def foo(x: type) -> type: -->
+compatble with Python 2.</blockquote>
+<div class="highlight"><pre><span id="line-1"><span class="c"># Type Annotation Prototype</span>
+</span><span id="line-2"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">:</span>
+</span></pre></div>
 <div class="section" id="general-case">
 <h3>General&nbsp;Case</h3>
 <div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
