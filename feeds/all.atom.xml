@@ -96,15 +96,21 @@ perform a&amp;nbsp;traversal.&lt;/p&gt;
 &lt;/span&gt;&lt;span id="line-9"&gt;            &lt;span class="n"&gt;factors&lt;/span&gt; &lt;span class="o"&gt;|=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-10"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;factors&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Lists are a great general purpose data-structure, and is likely the first
-tool to reach for in the arsenal. However, it&amp;#8217;s generality is also probably
-it&amp;#8217;s main weakness.
-While fundamentally the choice data structure is orthoganal to program
-correctness, it&amp;#8217;s important for real runtime performance to use the best
-tool to fit the&amp;nbsp;job.&lt;/p&gt;
+&lt;p&gt;While fundamentally the choice data
+structure is orthoganal to program correctness,
+it&amp;#8217;s important for real runtime performance to use the best
+tool to fit the job.
+Lists and sets are great general purpose data-structure, and is likely the first
+tool to reach for in the arsenal. It&amp;#8217;s hard not to overuse or abuse them, when other
+more viable data-structures exists. &lt;a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail"&gt;Maslow&lt;/a&gt; tells us &amp;quot;If the only tool you have is a hammer
+everything looks like a nail&amp;quot;. In Python, the generality of lists and sets are
+probably also their downside. We want to use them for&amp;nbsp;everything.&lt;/p&gt;
+&lt;p&gt;So what is the optimal data structure to perform this&amp;nbsp;calculation?&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="numpy"&gt;
 &lt;h3&gt;Numpy&lt;/h3&gt;
+&lt;blockquote class="pull-quote"&gt;
+The N-Dimensional Array&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;np_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
