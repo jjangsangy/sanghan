@@ -306,8 +306,9 @@ it&#8217;s multiples as <code>False</code>. Finally, we return all values from t
 boolean array from 2 to the end which are still <code>True</code>. However, unlike slicing
 python lists which generates a whole new copy from the original, slicing numpy arrays
 returns is an in-memory view and is a much cheaper operation. Therefore, the
-vector operation <code>primes[i*i::i]</code> is just an in-memory view of the <code>primes</code> array
-requiring no indirection or memory allocation to&nbsp;construct.</p>
+vector operation <code>primes[i*i::i]</code> is just an in-memory view of the
+same <code>primes</code> array requiring no more levels of indirection or
+memory allocation to&nbsp;construct.</p>
 </div>
 </div>
 <div class="section" id="testing-for-primality">
