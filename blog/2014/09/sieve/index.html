@@ -236,24 +236,26 @@ sets has been operator overloaded with a <code>difference update</code> method o
 the mathematical complement <span class="formula">∀{<i>x</i>|<span class="text"> x </span> ∈ <span class="text">A : x </span>∉<span class="text"> B</span>}</span></p>
 <p>Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In this example, we first create a <code>universal set</code>, and iteriatively delete it&#8217;s factors.
-It would also be correct to construct a <code>null set</code> and iteratively insert all factors into it.
-Then, once all factors have been collected, perform a final removal from the universal set.
-This route focuses membership testing to occur mostly with insertion rather than deletion.
-And for set objects insertions are better optimized due to their base
-implementation being primarily operations on hash&nbsp;tables.</p>
+It would also be correct to construct a <code>null set</code> and iteratively insert all factors first.
+Then, once all factors have been collected, perform a removal from the universal set.
+This optimization takes into account that, membership testing must be done at each
+iteration through the universal set to perform a deletion, whereas for insertion
+only requires checking through the null&nbsp;set.</p>
+<blockquote class="pull-quote">
+Due to implementation of <code>sets</code> being primarily hash-table operations, both
+insertions and deletions are dependent on generating hash values and can be done
+in constant time in proportion to problem-size or linear-time in proportion to
+hash.</blockquote>
 </div>
 <div class="section" id="insertion-sets">
 <h3>Insertion&nbsp;Sets:</h3>
 <div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
-</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-3"><span class="sd">    Performing insertion over deletion utilizing</span>
-</span><span id="line-4"><span class="sd">    constant time nature of hashable collections.</span>
-</span><span id="line-5"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-6">    <span class="n">factors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-</span><span id="line-7">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
-</span><span id="line-8">        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
-</span><span id="line-9">            <span class="n">factors</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
-</span><span id="line-10">    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="n">factors</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;Performing insertion over deletion&quot;&quot;&quot;</span>
+</span><span id="line-3">    <span class="n">factors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span><span id="line-4">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+</span><span id="line-5">        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
+</span><span id="line-6">            <span class="n">factors</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+</span><span id="line-7">    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="n">factors</span>
 </span></pre></div>
 <p>While fundamentally the choice data
 structure is orthoganal to program correctness,
