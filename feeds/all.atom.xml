@@ -130,15 +130,15 @@ Enter: The N-Dimensional Array&lt;/blockquote&gt;
 &lt;/span&gt;&lt;span id="line-11"&gt;            &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-12"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nonzero&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Numpy is a third party package containing fast array based data structures and methods
-for utilizing them. Here we are utilizing numpy&amp;#8217;s n-dimmensional array, which are
-continguous strides of memory with fixed width statically typed elements. In our example
-we are filling up the array with an 8-bit &lt;code&gt;bool&lt;/code&gt;. The downside to using statically
-typed units is we afford the generality of fitting anything we want.
-Everything inside a &lt;code&gt;numpy array&lt;/code&gt; must be homogeneously typed, losing
-the dynamic nature of normal &lt;code&gt;lists&lt;/code&gt;. The benefit is that we now
-have random access data-structure that can be indexed based on it&amp;#8217;s position
-in memory instantly without a&amp;nbsp;traversal.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Numpy&lt;/code&gt; is a third party numerical library, containing array based data structures
+and vectorized methods for utilizing them. Here operate on numpy&amp;#8217;s &lt;code&gt;n-dimmensional array&lt;/code&gt;
+Numpy arrays are fixed strides of memory with statically typed elements. In our example
+we are filling up the array with an &lt;code&gt;8-bit bool&lt;/code&gt;. The downside to using statically
+typed elements in a dynamically language, is we afford many of the niceties that the Python
+language provides. Everything inside a numpy array must be homogeneously typed, and
+we cannot perform the same types of operations on &lt;code&gt;bools&lt;/code&gt; as we would
+on &lt;code&gt;ints&lt;/code&gt; or &lt;code&gt;floats&lt;/code&gt;. However, the benefit is having fast random access
+to each array element based on it&amp;#8217;s position in memory without&amp;nbsp;traversal.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="testing-for-primality"&gt;
