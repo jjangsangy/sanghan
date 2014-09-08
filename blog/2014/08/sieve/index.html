@@ -233,7 +233,7 @@ but with it&#8217;s guts swapped with <code>sets</code>.</p>
 lack of a list-comprehension for composing the function return value. As well, the
 second for-loop is substituted with one <code>-=</code>, assignment operator, which for
 sets has been operator overloaded with a <code>difference update</code> method or
-the <code>set compliment</code> <span class="formula">∀{<i>x</i>|<span class="text"> x </span> ∈ <span class="text">A : x </span>∉<span class="text"> B</span>}</span></p>
+the mathematical complement <span class="formula">∀{<i>x</i>|<span class="text"> x </span> ∈ <span class="text">A : x </span>∉<span class="text"> B</span>}</span></p>
 <p>Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In this example, we first create a <code>universal set</code>, and iteriatively delete it&#8217;s factors.
 It would also be correct to construct a <code>null set</code> and iteratively insert all factors into it.
@@ -270,10 +270,8 @@ However, the generality and utility of these data-structures are probably
 also our downfall when a better suited data-structure is also&nbsp;available.</p>
 <p>So what is the optimal data structure to perform these&nbsp;calculation?</p>
 </div>
-<div class="section" id="numpy-arrays">
-<h3>Numpy&nbsp;Arrays</h3>
-<blockquote class="pull-quote">
-Enter: The Array</blockquote>
+<div class="section" id="enter-the-array">
+<h3>Enter: The&nbsp;Array</h3>
 <div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="k">def</span> <span class="nf">np_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
@@ -287,23 +285,24 @@ Enter: The Array</blockquote>
 </span><span id="line-11">            <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">::</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
 </span><span id="line-12">    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">primes</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
 </span></pre></div>
-<p>Numpy is a third party numerical library, containing array based data structures
-and vectorized methods for utilizing them. Here we operate on numpy&#8217;s <code>n-dimmensional array</code>.
-Numpy arrays are fixed strides of memory with statically typed elements.
-The downside to statically typed elements within a dynamically language is
-affording many of the niceties that Python&nbsp;provides.</p>
+<p>Numpy is a third party library containing array based data structures
+and fast vectorizable methods for numerical operations.
+Here we operate on numpy&#8217;s <code>n-dimmensional arrays</code>
+which allocate fixed strides of memory containing <code>statically typed</code> elements.
+The downside of implementing a statically typed subset within a dynamically typed
+language is to forego many of the niceties python has to&nbsp;offer.</p>
 <p>Everything inside a numpy array must be homogenous,
 and to be efficient we must know the exact size of the array beforehand.
-Otherwise the task of extending or contracting an array once initialized
+This is because the task of extending or contracting an array once initialized
 requires re-copying all elements into a new array of that size.
-We also cannot perform the same types of operations on <code>bools</code> as we
-would on <code>ints</code> or <code>floats</code>.
-The benefit however is random access to each element based on
-it&#8217;s position in memory instantly without&nbsp;traversal.</p>
-<p>In our example we are filling up the array with <code>8-bit bools</code> all set
-to <code>True</code>, or <code>1</code>. We then iterate through
+We also have to be strict on the operations performed
+on <code>bools</code> <code>ints</code> or <code>floats</code>, always taking
+into account their types. However, the main benefit is random access to
+individual array elements in memory, instantly without&nbsp;traversal.</p>
+<p>In our example we are filling up an array with <code>8-bit bools</code> all set
+to <code>True</code>. We then iterate through
 an array of factors set to <code>32-bit unsigned integers</code>, and and allocate
-it&#8217;s multiples as <code>False</code>, or <code>0</code>. Finally, we return all non-zero from the
+it&#8217;s multiples as <code>False</code>. Finally, we return all values from the
 boolean array from 2 to the end which are still <code>True</code>. Unlike slicing
 python lists which generates a new copy of the original, slicing numpy arrays
 returns is an in-memory view and is a much cheaper&nbsp;operation.</p>
@@ -312,7 +311,7 @@ returns is an in-memory view and is a much cheaper&nbsp;operation.</p>
 <div class="section" id="testing-for-primality">
 <h2>Testing for&nbsp;Primality</h2>
 <p>So now that we&#8217;ve written the sieve in a bunch of different ways. How do we know that
-each way is indeed&nbsp;correct.</p>
+each way is&nbsp;correct.</p>
 <p>The most obvious way to figure if a number&#8217;s prime, is to try dividing the number
 by all the numbers between <span class="formula">2 ≤ <i>x</i> ≤ <i>n</i> − 1</span>.</p>
 <blockquote class="pull-quote">
@@ -351,7 +350,7 @@ Now lets test to see if our sieves can correctly find the first 100 prime number
 We will construct a timer taking advantage of what is known as a <code>context manager</code>.
 Basically, a context manager allows us to use the <code>with</code> construct
 and will perform an operation before and after by overloading the <code>__enter__</code>
-and <code>__exit__</code> methods of python object. We can create a context manager
+and <code>__exit__</code> methods. We can create a context manager
 merely by using a decorator from the <code>contextlib</code> module.</p>
 <div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">time</span>
 </span><span id="line-2"><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>

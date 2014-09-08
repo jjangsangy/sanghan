@@ -76,7 +76,7 @@ but with it&amp;#8217;s guts swapped with &lt;code&gt;sets&lt;/code&gt;.&lt;/p&g
 lack of a list-comprehension for composing the function return value. As well, the
 second for-loop is substituted with one &lt;code&gt;-=&lt;/code&gt;, assignment operator, which for
 sets has been operator overloaded with a &lt;code&gt;difference update&lt;/code&gt; method or
-the &lt;code&gt;set compliment&lt;/code&gt; &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;|&lt;span class="text"&gt; x &lt;/span&gt; ∈ &lt;span class="text"&gt;A : x &lt;/span&gt;∉&lt;span class="text"&gt; B&lt;/span&gt;}&lt;/span&gt;&lt;/p&gt;
+the mathematical complement &lt;span class="formula"&gt;∀{&lt;i&gt;x&lt;/i&gt;|&lt;span class="text"&gt; x &lt;/span&gt; ∈ &lt;span class="text"&gt;A : x &lt;/span&gt;∉&lt;span class="text"&gt; B&lt;/span&gt;}&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In this example, we first create a &lt;code&gt;universal set&lt;/code&gt;, and iteriatively delete it&amp;#8217;s factors.
 It would also be correct to construct a &lt;code&gt;null set&lt;/code&gt; and iteratively insert all factors into it.
@@ -113,10 +113,8 @@ However, the generality and utility of these data-structures are probably
 also our downfall when a better suited data-structure is also&amp;nbsp;available.&lt;/p&gt;
 &lt;p&gt;So what is the optimal data structure to perform these&amp;nbsp;calculation?&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="numpy-arrays"&gt;
-&lt;h3&gt;Numpy&amp;nbsp;Arrays&lt;/h3&gt;
-&lt;blockquote class="pull-quote"&gt;
-Enter: The Array&lt;/blockquote&gt;
+&lt;div class="section" id="enter-the-array"&gt;
+&lt;h3&gt;Enter: The&amp;nbsp;Array&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;np_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -130,23 +128,24 @@ Enter: The Array&lt;/blockquote&gt;
 &lt;/span&gt;&lt;span id="line-11"&gt;            &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-12"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nonzero&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Numpy is a third party numerical library, containing array based data structures
-and vectorized methods for utilizing them. Here we operate on numpy&amp;#8217;s &lt;code&gt;n-dimmensional array&lt;/code&gt;.
-Numpy arrays are fixed strides of memory with statically typed elements.
-The downside to statically typed elements within a dynamically language is
-affording many of the niceties that Python&amp;nbsp;provides.&lt;/p&gt;
+&lt;p&gt;Numpy is a third party library containing array based data structures
+and fast vectorizable methods for numerical operations.
+Here we operate on numpy&amp;#8217;s &lt;code&gt;n-dimmensional arrays&lt;/code&gt;
+which allocate fixed strides of memory containing &lt;code&gt;statically typed&lt;/code&gt; elements.
+The downside of implementing a statically typed subset within a dynamically typed
+language is to forego many of the niceties python has to&amp;nbsp;offer.&lt;/p&gt;
 &lt;p&gt;Everything inside a numpy array must be homogenous,
 and to be efficient we must know the exact size of the array beforehand.
-Otherwise the task of extending or contracting an array once initialized
+This is because the task of extending or contracting an array once initialized
 requires re-copying all elements into a new array of that size.
-We also cannot perform the same types of operations on &lt;code&gt;bools&lt;/code&gt; as we
-would on &lt;code&gt;ints&lt;/code&gt; or &lt;code&gt;floats&lt;/code&gt;.
-The benefit however is random access to each element based on
-it&amp;#8217;s position in memory instantly without&amp;nbsp;traversal.&lt;/p&gt;
-&lt;p&gt;In our example we are filling up the array with &lt;code&gt;8-bit bools&lt;/code&gt; all set
-to &lt;code&gt;True&lt;/code&gt;, or &lt;code&gt;1&lt;/code&gt;. We then iterate through
+We also have to be strict on the operations performed
+on &lt;code&gt;bools&lt;/code&gt; &lt;code&gt;ints&lt;/code&gt; or &lt;code&gt;floats&lt;/code&gt;, always taking
+into account their types. However, the main benefit is random access to
+individual array elements in memory, instantly without&amp;nbsp;traversal.&lt;/p&gt;
+&lt;p&gt;In our example we are filling up an array with &lt;code&gt;8-bit bools&lt;/code&gt; all set
+to &lt;code&gt;True&lt;/code&gt;. We then iterate through
 an array of factors set to &lt;code&gt;32-bit unsigned integers&lt;/code&gt;, and and allocate
-it&amp;#8217;s multiples as &lt;code&gt;False&lt;/code&gt;, or &lt;code&gt;0&lt;/code&gt;. Finally, we return all non-zero from the
+it&amp;#8217;s multiples as &lt;code&gt;False&lt;/code&gt;. Finally, we return all values from the
 boolean array from 2 to the end which are still &lt;code&gt;True&lt;/code&gt;. Unlike slicing
 python lists which generates a new copy of the original, slicing numpy arrays
 returns is an in-memory view and is a much cheaper&amp;nbsp;operation.&lt;/p&gt;
@@ -155,7 +154,7 @@ returns is an in-memory view and is a much cheaper&amp;nbsp;operation.&lt;/p&gt;
 &lt;div class="section" id="testing-for-primality"&gt;
 &lt;h2&gt;Testing for&amp;nbsp;Primality&lt;/h2&gt;
 &lt;p&gt;So now that we&amp;#8217;ve written the sieve in a bunch of different ways. How do we know that
-each way is indeed&amp;nbsp;correct.&lt;/p&gt;
+each way is&amp;nbsp;correct.&lt;/p&gt;
 &lt;p&gt;The most obvious way to figure if a number&amp;#8217;s prime, is to try dividing the number
 by all the numbers between &lt;span class="formula"&gt;2 ≤ &lt;i&gt;x&lt;/i&gt; ≤ &lt;i&gt;n&lt;/i&gt; − 1&lt;/span&gt;.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
@@ -194,7 +193,7 @@ Now lets test to see if our sieves can correctly find the first 100 prime number
 We will construct a timer taking advantage of what is known as a &lt;code&gt;context manager&lt;/code&gt;.
 Basically, a context manager allows us to use the &lt;code&gt;with&lt;/code&gt; construct
 and will perform an operation before and after by overloading the &lt;code&gt;__enter__&lt;/code&gt;
-and &lt;code&gt;__exit__&lt;/code&gt; methods of python object. We can create a context manager
+and &lt;code&gt;__exit__&lt;/code&gt; methods. We can create a context manager
 merely by using a decorator from the &lt;code&gt;contextlib&lt;/code&gt; module.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;contextlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;contextmanager&lt;/span&gt;
