@@ -63,6 +63,9 @@ img {
 @include figure("youtube");
 @include figure("plotly");
 
+.navbar-collapse {
+    width: 1024px;
+}
 
 @media (max-width: 768px), handheld and (orientation: landscape) {
     #bg {
@@ -70,11 +73,6 @@ img {
     }
 }
 
-@media (max-width: 980px) {
-    .navbar-collapse {
-        width: 1024px;
-    }
-}
 
 @media (min-width: 1200px) {
     #bg {
