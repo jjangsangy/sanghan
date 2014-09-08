@@ -56,13 +56,7 @@ img {
     height: 480px; } }
 @media (max-width: 980px) {
   .navbar-collapse {
-    width: 980px; }
-
-  #bg {
-    max-width: 100%;
-    background: url("/img/bird-full.jpg") no-repeat top fixed;
-    background-position: center top;
-    height: 920px; } }
+    width: 1024px; } }
 @media (min-width: 1200px) {
   #bg {
     max-width: 100%;
