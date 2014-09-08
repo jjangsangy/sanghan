@@ -68,8 +68,14 @@ img {
     #bg {
         @include background-image("/img/bird-640.jpg", $vheight: 480px);
     }
-    .container {
-        width: 768px
+}
+
+@media (max-width: 980px) {
+    .navbar-collapse {
+        width: 980px;
+    }
+    #bg {
+        @include background-image("/img/bird-full.jpg", $vheight: 920px);
     }
 }
 
