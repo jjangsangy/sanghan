@@ -239,6 +239,17 @@ Then, once all factors have been collected, perform a removal from the universal
 is done at each iteration through the universal set to perform a deletion, whereas for insertion
 only requires checking through a null set containing&nbsp;factors.</p>
 </div>
+<div class="section" id="insertion-sets">
+<h3>Insertion&nbsp;Sets:</h3>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;Performing insertion over deletion&quot;&quot;&quot;</span>
+</span><span id="line-3">    <span class="n">factors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span><span id="line-4">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+</span><span id="line-5">        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
+</span><span id="line-6">            <span class="n">factors</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+</span><span id="line-7">    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="n">factors</span>
+</span></pre></div>
+</div>
 <div class="section" id="prime-number-theorem">
 <h3>Prime Number&nbsp;Theorem</h3>
 <p><mathjax>$$
@@ -251,17 +262,6 @@ and so is best-case runtime efficiency we can expect to get from this optimizati
 <p><mathjax>$$
 \large \frac{x}{\ln(x))} \thicksim \large\pi(x) \tag{asymtotic}
 $$</mathjax></p>
-</div>
-<div class="section" id="insertion-sets">
-<h3>Insertion&nbsp;Sets:</h3>
-<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">set_insertion_sieve</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">:</span>
-</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;Performing insertion over deletion&quot;&quot;&quot;</span>
-</span><span id="line-3">    <span class="n">factors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-</span><span id="line-4">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
-</span><span id="line-5">        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
-</span><span id="line-6">            <span class="n">factors</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
-</span><span id="line-7">    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="n">factors</span>
-</span></pre></div>
 <p>While fundamentally the choice data
 structure is orthoganal to program correctness,
 it&#8217;s important for real runtime performance to use the tool
