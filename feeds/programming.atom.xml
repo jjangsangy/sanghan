@@ -9,14 +9,14 @@ for finding all the primes below a certain&amp;nbsp;limit.&lt;/p&gt;
 &lt;div class="section" id="the-algorithm"&gt;
 &lt;h2&gt;The&amp;nbsp;Algorithm&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
-&lt;li&gt;Make a table one entry for every number &lt;span class="formula"&gt;2 ≤ &lt;i&gt;n&lt;/i&gt; ≤ &lt;i&gt;limit&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Make a table one entry for every number &lt;cite&gt;&lt;mathjax&gt;$2 \leq n \leq limit$&lt;/mathjax&gt;&lt;/cite&gt;&lt;/li&gt;
 &lt;li&gt;Starting at 2, cross out all multiples of 2, not counting 2&amp;nbsp;itself.&lt;/li&gt;
 &lt;li&gt;Move up to the next number that hasn&amp;#8217;t been crossed&amp;nbsp;out&lt;/li&gt;
-&lt;li&gt;Repeat Step 2-3 up till &lt;span class="formula"&gt;&lt;span class="sqrt"&gt;&lt;span class="radical"&gt;√&lt;/span&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="root"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Repeat Step 2-3 up till &lt;cite&gt;&lt;mathjax&gt;$\sqrt n$&lt;/mathjax&gt;&lt;/cite&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote class="pull-quote"&gt;
 The Sieve of Eratosthenes can be shown to have a time
-complexity of &lt;mathjax&gt;$\mathcal{O}(n\log{}\log{}n)$&lt;/mathjax&gt;.&lt;/blockquote&gt;
+complexity of &lt;mathjax&gt;$\mathcal{O}(n\log{}\log{n})$&lt;/mathjax&gt;.&lt;/blockquote&gt;
 &lt;p&gt;Visually we can depict each loop removing values from the list
 of real numbers until all that is left are the&amp;nbsp;primes.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="sieve" src="http://sanghan.me/img/sieve.jpg" /&gt;&lt;/p&gt;
@@ -25,7 +25,7 @@ Unfortunately, this solution starts to become less
 viable for larger problem sizes.&lt;/blockquote&gt;
 &lt;p&gt;Since it requires a table of every
 number to the last integer in memory, the space complexity of sieves generally
-grows in the order of &lt;mathjax&gt;$\mathcal{O}(n)$&lt;/mathjax&gt;. In order to deal with memory issues
+grows in the order of &lt;cite&gt;&lt;mathjax&gt;$\mathcal{O}(n)$&lt;/mathjax&gt;&lt;/cite&gt;. In order to deal with memory issues
 there are sieve algorithms called &lt;code&gt;segmented sieves&lt;/code&gt; which distribute
 the problem into smaller&amp;nbsp;subsets.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
@@ -82,9 +82,15 @@ Then, once all factors have been collected, perform a removal from the universal
 &lt;p&gt;This optimization takes into account that originally, membership testing
 is done at each iteration through the universal set to perform a deletion, whereas for insertion
 only requires checking through a null set containing&amp;nbsp;factors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="prime-number-theorem"&gt;
+&lt;h3&gt;Prime Number&amp;nbsp;Theorem&lt;/h3&gt;
+&lt;p&gt;&lt;mathjax&gt;$$\begin{align}
+\large\lim_{x\to \infty} \frac{\vartheta(x)}{\frac{x}{\ln(x))}}&amp;amp; = 1&amp;amp;  \large\vartheta(x)&amp;amp; \thicksim \large \frac{x}{\ln(x))}\tag{asymtotic}
+\end{align}$$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 It&amp;#8217;s possible to know based on the &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Prime_number_theorem"&gt;prime number theorem&lt;/a&gt;, that a
-set of all factors of &lt;span class="formula"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt; will not exceed size &lt;mathjax&gt;$n\big(1 - \frac{1}{\ln(n)}\big)$&lt;/mathjax&gt;,
+set of all factors of &lt;mathjax&gt;$n$&lt;/mathjax&gt; will not exceed size &lt;mathjax&gt;$n\big(1 - \frac{1}{\ln(n)}\big)$&lt;/mathjax&gt;,
 and so is best-case runtime efficiency we can expect to get from this optimization.&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="insertion-sets"&gt;
@@ -159,19 +165,19 @@ memory allocation to&amp;nbsp;construct.&lt;/p&gt;
 &lt;p&gt;So now that we&amp;#8217;ve written the sieve in a bunch of different ways. How do we know that
 each way is&amp;nbsp;correct.&lt;/p&gt;
 &lt;p&gt;The most obvious way to figure if a number&amp;#8217;s prime, is to try dividing the number
-by all the numbers between &lt;span class="formula"&gt;2 ≤ &lt;i&gt;x&lt;/i&gt; ≤ &lt;i&gt;n&lt;/i&gt; − 1&lt;/span&gt;.&lt;/p&gt;
+by all the numbers between &lt;mathjax&gt;$2 \leq x \leq n-1$&lt;/mathjax&gt;.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 However, one optimization would be
-to only check factors up to &lt;span class="formula"&gt;2 ≤ &lt;i&gt;x&lt;/i&gt; ≤ &lt;span class="sqrt"&gt;&lt;span class="radical"&gt;√&lt;/span&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="root"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.&lt;/blockquote&gt;
-&lt;p&gt;This optimization is possible because when computing factors of &lt;span class="formula"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt; where
-&lt;span class="formula"&gt;&lt;i&gt;n&lt;/i&gt; = &lt;i&gt;p&lt;/i&gt; × &lt;i&gt;q&lt;/i&gt;&lt;/span&gt;, either &lt;span class="formula"&gt;&lt;i&gt;p&lt;/i&gt;&lt;/span&gt; or &lt;span class="formula"&gt;&lt;i&gt;q&lt;/i&gt;&lt;/span&gt; must be less than or equal
-to &lt;span class="formula"&gt;&lt;span class="sqrt"&gt;&lt;span class="radical"&gt;√&lt;/span&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="root"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; or else their product is greater than &lt;span class="formula"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;.
-When moving up values of &lt;span class="formula"&gt;&lt;i&gt;p&lt;/i&gt;&lt;/span&gt;, we know that for any unique
-factor &lt;span class="formula"&gt;&lt;i&gt;p&lt;/i&gt;&lt;/span&gt; cannot be greater than &lt;span class="formula"&gt;&lt;i&gt;q&lt;/i&gt;&lt;/span&gt;, therefore computing
-up to &lt;span class="formula"&gt;&lt;i&gt;p&lt;/i&gt;&lt;/span&gt; is sufficient and so we need not proceed&amp;nbsp;further.&lt;/p&gt;
+to only check factors up to &lt;mathjax&gt;$2 \leq x \leq \sqrt{n}$&lt;/mathjax&gt;.&lt;/blockquote&gt;
+&lt;p&gt;This optimization is possible because when computing factors of &lt;mathjax&gt;$n$&lt;/mathjax&gt; where
+&lt;mathjax&gt;$n = p \times q$&lt;/mathjax&gt;, either &lt;mathjax&gt;$p$&lt;/mathjax&gt; or &lt;mathjax&gt;$q$&lt;/mathjax&gt; must be less than or equal
+to &lt;mathjax&gt;$\sqrt{n}$&lt;/mathjax&gt; or else their product is greater than &lt;mathjax&gt;$n$&lt;/mathjax&gt;.
+When moving up values of &lt;mathjax&gt;$p$&lt;/mathjax&gt;, we know that for any unique
+factor &lt;mathjax&gt;$p$&lt;/mathjax&gt; cannot be greater than &lt;mathjax&gt;$q$&lt;/mathjax&gt;, therefore computing
+up to &lt;mathjax&gt;$p$&lt;/mathjax&gt; is sufficient and so we need not proceed&amp;nbsp;further.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 This optimization reduces the run time for each factorization
-down to &lt;span class="formula"&gt;&lt;span class="scriptfont"&gt;O&lt;/span&gt;(&lt;span class="sqrt"&gt;&lt;span class="radical"&gt;√&lt;/span&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="root"&gt;&lt;i&gt;n&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;.&lt;/blockquote&gt;
+down to &lt;mathjax&gt;$\mathcal{O}(\sqrt{n})$&lt;/mathjax&gt;.&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;all_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;any&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prime&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;))):&lt;/span&gt;

@@ -15,7 +15,7 @@
 
         <meta name="author" content="Sang Han" />
         <meta name="keywords" content="Python,Prime Numbers,Sieve,Eratosthenes,Numpy,Project Euler,Algorithms,Data Structures" />
-        <meta name="description" content="Recently, I’ve been working through Project Euler in order to improve my core programming skills. One of those recurring problems requires efficiently calculating and testing for prime numbers. The first algorithm that comes to mind is The Sieve of Eratosthenes. The Sieve, is one of many prime sieves, and is a simple yet time efficient algorithm for finding all the primes below a certain limit. The Algorithm Make a table one entry for every number 2 ≤ n ≤ limit Starting at 2, cross out all multiples of 2, not counting 2 itself. Move up to the next number that hasn ..." />
+        <meta name="description" content="Recently, I’ve been working through Project Euler in order to improve my core programming skills. One of those recurring problems requires efficiently calculating and testing for prime numbers. The first algorithm that comes to mind is The Sieve of Eratosthenes. The Sieve, is one of many prime sieves, and is a simple yet time efficient algorithm for finding all the primes below a certain limit. The Algorithm Make a table one entry for every number $2 \leq n \leq limit$ Starting at 2, cross out all multiples of 2, not counting 2 itself. Move up to the next number ... if (!document.getElementById(&#39;mathjaxscript_pelican_#%@#$@#&#39;)) { var mathjaxscript = document.createElement(&#39;script&#39;); mathjaxscript.id = &#39;mathjaxscript_pelican_#%@#$@#&#39;; mathjaxscript.type = &#39;text/javascript&#39;; mathjaxscript.src = &#39;https:&#39; == document.location.protocol ? &#39;https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#39; : &#39;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#39;; mathjaxscript[(window.opera ? &#34;innerHTML&#34; : &#34;text&#34;)] = &#34;MathJax.Hub.Config({&#34; + &#34; config: [&#39;MMLorHTML.js&#39;],&#34; + &#34; TeX: { extensions: [&#39;AMSmath.js&#39;,&#39;AMSsymbols.js&#39;,&#39;noErrors.js&#39;,&#39;noUndefined.js&#39;], equationNumbers: { autoNumber: &#39;AMS&#39; } },&#34; + &#34; jax: [&#39;input/TeX&#39;,&#39;input/MathML&#39;,&#39;output/HTML-CSS&#39;],&#34; + &#34; extensions: [&#39;tex2jax.js&#39;,&#39;mml2jax.js&#39;,&#39;MathMenu.js&#39;,&#39;MathZoom.js&#39;],&#34; + &#34; displayAlign: &#39;center&#39;,&#34; + &#34; displayIndent: &#39;0em&#39;,&#34; + &#34; showMathMenu: false,&#34; + &#34; tex2jax: { &#34; + &#34; inlineMath: [ [&#39;$&#39;,&#39;$&#39;] ], &#34; + &#34; displayMath: [ [&#39;$$&#39;,&#39;$$&#39;] ],&#34; + &#34; processEscapes: true,&#34; + &#34; preview: &#39;TeX&#39;,&#34; + &#34; }, &#34; + &#34; &#39;HTML-CSS&#39;: { &#34; + &#34; styles: { &#39;.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn&#39;: {color: &#39;inherit ! important&#39;} }&#34; + &#34; } &#34; + &#34;}); &#34;; (document.body || document.getElementsByTagName(&#39;head&#39;)[0]).appendChild(mathjaxscript); }" />
 
 
 
@@ -165,14 +165,14 @@ for finding all the primes below a certain&nbsp;limit.</p>
 <div class="section" id="the-algorithm">
 <h2>The&nbsp;Algorithm</h2>
 <ol class="arabic simple">
-<li>Make a table one entry for every number <span class="formula">2 ≤ <i>n</i> ≤ <i>limit</i></span></li>
+<li>Make a table one entry for every number <cite><mathjax>$2 \leq n \leq limit$</mathjax></cite></li>
 <li>Starting at 2, cross out all multiples of 2, not counting 2&nbsp;itself.</li>
 <li>Move up to the next number that hasn&#8217;t been crossed&nbsp;out</li>
-<li>Repeat Step 2-3 up till <span class="formula"><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>n</i></span><span class="ignored">)</span></span></span></li>
+<li>Repeat Step 2-3 up till <cite><mathjax>$\sqrt n$</mathjax></cite></li>
 </ol>
 <blockquote class="pull-quote">
 The Sieve of Eratosthenes can be shown to have a time
-complexity of <mathjax>$\mathcal{O}(n\log{}\log{}n)$</mathjax>.</blockquote>
+complexity of <mathjax>$\mathcal{O}(n\log{}\log{n})$</mathjax>.</blockquote>
 <p>Visually we can depict each loop removing values from the list
 of real numbers until all that is left are the&nbsp;primes.</p>
 <p><img alt="sieve" src="http://sanghan.me/img/sieve.jpg" /></p>
@@ -181,7 +181,7 @@ Unfortunately, this solution starts to become less
 viable for larger problem sizes.</blockquote>
 <p>Since it requires a table of every
 number to the last integer in memory, the space complexity of sieves generally
-grows in the order of <mathjax>$\mathcal{O}(n)$</mathjax>. In order to deal with memory issues
+grows in the order of <cite><mathjax>$\mathcal{O}(n)$</mathjax></cite>. In order to deal with memory issues
 there are sieve algorithms called <code>segmented sieves</code> which distribute
 the problem into smaller&nbsp;subsets.</p>
 <blockquote class="pull-quote">
@@ -238,9 +238,15 @@ Then, once all factors have been collected, perform a removal from the universal
 <p>This optimization takes into account that originally, membership testing
 is done at each iteration through the universal set to perform a deletion, whereas for insertion
 only requires checking through a null set containing&nbsp;factors.</p>
+</div>
+<div class="section" id="prime-number-theorem">
+<h3>Prime Number&nbsp;Theorem</h3>
+<p><mathjax>$$\begin{align}
+\large\lim_{x\to \infty} \frac{\vartheta(x)}{\frac{x}{\ln(x))}}&amp; = 1&amp;  \large\vartheta(x)&amp; \thicksim \large \frac{x}{\ln(x))}\tag{asymtotic}
+\end{align}$$</mathjax></p>
 <blockquote class="pull-quote">
 It&#8217;s possible to know based on the <a class="reference external" href="http://en.wikipedia.org/wiki/Prime_number_theorem">prime number theorem</a>, that a
-set of all factors of <span class="formula"><i>n</i></span> will not exceed size <mathjax>$n\big(1 - \frac{1}{\ln(n)}\big)$</mathjax>,
+set of all factors of <mathjax>$n$</mathjax> will not exceed size <mathjax>$n\big(1 - \frac{1}{\ln(n)}\big)$</mathjax>,
 and so is best-case runtime efficiency we can expect to get from this optimization.</blockquote>
 </div>
 <div class="section" id="insertion-sets">
@@ -315,19 +321,19 @@ memory allocation to&nbsp;construct.</p>
 <p>So now that we&#8217;ve written the sieve in a bunch of different ways. How do we know that
 each way is&nbsp;correct.</p>
 <p>The most obvious way to figure if a number&#8217;s prime, is to try dividing the number
-by all the numbers between <span class="formula">2 ≤ <i>x</i> ≤ <i>n</i> − 1</span>.</p>
+by all the numbers between <mathjax>$2 \leq x \leq n-1$</mathjax>.</p>
 <blockquote class="pull-quote">
 However, one optimization would be
-to only check factors up to <span class="formula">2 ≤ <i>x</i> ≤ <span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>n</i></span><span class="ignored">)</span></span></span>.</blockquote>
-<p>This optimization is possible because when computing factors of <span class="formula"><i>n</i></span> where
-<span class="formula"><i>n</i> = <i>p</i> × <i>q</i></span>, either <span class="formula"><i>p</i></span> or <span class="formula"><i>q</i></span> must be less than or equal
-to <span class="formula"><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>n</i></span><span class="ignored">)</span></span></span> or else their product is greater than <span class="formula"><i>n</i></span>.
-When moving up values of <span class="formula"><i>p</i></span>, we know that for any unique
-factor <span class="formula"><i>p</i></span> cannot be greater than <span class="formula"><i>q</i></span>, therefore computing
-up to <span class="formula"><i>p</i></span> is sufficient and so we need not proceed&nbsp;further.</p>
+to only check factors up to <mathjax>$2 \leq x \leq \sqrt{n}$</mathjax>.</blockquote>
+<p>This optimization is possible because when computing factors of <mathjax>$n$</mathjax> where
+<mathjax>$n = p \times q$</mathjax>, either <mathjax>$p$</mathjax> or <mathjax>$q$</mathjax> must be less than or equal
+to <mathjax>$\sqrt{n}$</mathjax> or else their product is greater than <mathjax>$n$</mathjax>.
+When moving up values of <mathjax>$p$</mathjax>, we know that for any unique
+factor <mathjax>$p$</mathjax> cannot be greater than <mathjax>$q$</mathjax>, therefore computing
+up to <mathjax>$p$</mathjax> is sufficient and so we need not proceed&nbsp;further.</p>
 <blockquote class="pull-quote">
 This optimization reduces the run time for each factorization
-down to <span class="formula"><span class="scriptfont">O</span>(<span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>n</i></span><span class="ignored">)</span></span>)</span>.</blockquote>
+down to <mathjax>$\mathcal{O}(\sqrt{n})$</mathjax>.</blockquote>
 <div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">all_primes</span><span class="p">(</span><span class="n">primes</span><span class="p">:</span> <span class="nb">iter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 </span><span id="line-2">    <span class="k">for</span> <span class="n">prime</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">:</span>
 </span><span id="line-3">        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">prime</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">prime</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))):</span>
