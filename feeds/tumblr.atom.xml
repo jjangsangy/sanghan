@@ -252,7 +252,7 @@ would like me to answer, let me&amp;nbsp;know!&lt;/p&gt;
             "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
             "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
             "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
+            "    displayAlign: 'left'," +
             "    displayIndent: '0em'," +
             "    showMathMenu: false," +
             "    tex2jax: { " +
