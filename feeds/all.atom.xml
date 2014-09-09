@@ -86,7 +86,8 @@ only requires checking through a null set containing&amp;nbsp;factors.&lt;/p&gt;
 &lt;div class="section" id="prime-number-theorem"&gt;
 &lt;h3&gt;Prime Number&amp;nbsp;Theorem&lt;/h3&gt;
 &lt;p&gt;&lt;mathjax&gt;$$\begin{align}
-\large\lim_{x\to \infty} \frac{\vartheta(x)}{\frac{x}{\ln(x))}}&amp;amp; = 1&amp;amp;  \large\vartheta(x)&amp;amp; \thicksim \large \frac{x}{\ln(x))}\tag{asymtotic}
+\large\lim_{x\to \infty} \frac{\vartheta(x)}{\frac{x}{\ln(x))}}&amp;amp; = 1&amp;amp; \\
+\large\vartheta(x)&amp;amp; \thicksim \large \frac{x}{\ln(x))}\tag{asymtotic}
 \end{align}$$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 It&amp;#8217;s possible to know based on the &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Prime_number_theorem"&gt;prime number theorem&lt;/a&gt;, that a
@@ -265,7 +266,7 @@ digits.&lt;/blockquote&gt;
             "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
             "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
             "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'left'," +
+            "    displayAlign: 'center'," +
             "    displayIndent: '0em'," +
             "    showMathMenu: false," +
             "    tex2jax: { " +
@@ -895,7 +896,7 @@ would like me to answer, let me&amp;nbsp;know!&lt;/p&gt;
             "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
             "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
             "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'left'," +
+            "    displayAlign: 'center'," +
             "    displayIndent: '0em'," +
             "    showMathMenu: false," +
             "    tex2jax: { " +
