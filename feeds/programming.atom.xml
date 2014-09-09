@@ -88,13 +88,13 @@ only requires checking through a null set containing&amp;nbsp;factors.&lt;/p&gt;
 &lt;p&gt;&lt;mathjax&gt;$$
 \large\lim_{x\to \infty} \frac{\vartheta(x)}{\frac{x}{\ln(x))}} = 1 \tag{def}
 $$&lt;/mathjax&gt;&lt;/p&gt;
-&lt;p&gt;&lt;mathjax&gt;$$
-\large\vartheta(x)&amp;amp; \thicksim \large \frac{x}{\ln(x))} \tag{asymtotic}
-$$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 It&amp;#8217;s possible to know based on the &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Prime_number_theorem"&gt;prime number theorem&lt;/a&gt;, that a
 set of all factors of &lt;mathjax&gt;$n$&lt;/mathjax&gt; will not exceed size &lt;mathjax&gt;$n\big(1 - \frac{1}{\ln(n)}\big)$&lt;/mathjax&gt;,
 and so is best-case runtime efficiency we can expect to get from this optimization.&lt;/blockquote&gt;
+&lt;p&gt;&lt;mathjax&gt;$$
+\large\vartheta(x) \thicksim \large \frac{x}{\ln(x))} \tag{asymtotic}
+$$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="insertion-sets"&gt;
 &lt;h3&gt;Insertion&amp;nbsp;Sets:&lt;/h3&gt;
