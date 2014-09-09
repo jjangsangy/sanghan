@@ -74,7 +74,7 @@ but with it&amp;#8217;s guts swapped with &lt;code&gt;sets&lt;/code&gt;.&lt;/p&g
 lack of a list-comprehension for composing the function return value. As well, the
 second for-loop is substituted with one &lt;code&gt;-=&lt;/code&gt;, binary assignment operator, which for
 sets has been overloaded with a &lt;code&gt;difference update&lt;/code&gt; method or
-the mathematical complement &lt;mathjax&gt;$\forall \{x|\text{ n }\in \text{A : n }\notin\text{ B}\}$&lt;/mathjax&gt;&lt;/p&gt;
+the mathematical complement &lt;mathjax&gt;$\forall \{n|\text{ n }\in \text{A : n }\notin\text{ B}\}$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;p&gt;Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In this example, we first create a &lt;code&gt;universal set&lt;/code&gt;, and iteriatively delete it&amp;#8217;s factors.
 It would also be correct to construct a &lt;code&gt;null set&lt;/code&gt; and iteratively insert all factors first.
