@@ -111,12 +111,12 @@ non-prime numbers that exist!&lt;/blockquote&gt;
 &lt;p&gt;Early intuition would have biased us about the general abundance of primes
 and non-primes. But the prime number theorem is a basic mathematical relationship
 between the amount of primes and non-primes that exist in the set of real&amp;nbsp;numbers.&lt;/p&gt;
-&lt;p&gt;It&amp;#8217;s basic definition is that as we move across the x-axis of real numbers
-&lt;mathjax&gt;$\pi(x)$&lt;/mathjax&gt; an arbitrary function for number of primes at x, we can expect as
-&lt;mathjax&gt;$x\to \infty$&lt;/mathjax&gt; that &lt;mathjax&gt;$\frac{\pi(x)}{x\frac{x}{\ln(x)}}$&lt;/mathjax&gt; approaches&amp;nbsp;1.&lt;/p&gt;
 &lt;p&gt;&lt;mathjax&gt;$$
 \large\lim_{x\to \infty} \frac{\pi(x)}{\frac{x}{\ln(x))}} = 1 \tag{def}
 $$&lt;/mathjax&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;#8217;s basic definition is that as we move across the x-axis of real numbers
+&lt;mathjax&gt;$\pi(x)$&lt;/mathjax&gt; an arbitrary function for number of primes at x, we can expect as
+&lt;mathjax&gt;$x\to \infty$&lt;/mathjax&gt; that &lt;mathjax&gt;$\frac{\pi(x)}{x\frac{x}{\ln(x)}}$&lt;/mathjax&gt; approaches&amp;nbsp;1.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 It&amp;#8217;s possible to know based on the &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Prime_number_theorem"&gt;prime number theorem&lt;/a&gt;, that a
 set of all factors of &lt;mathjax&gt;$n$&lt;/mathjax&gt; will not exceed size &lt;mathjax&gt;$n\big(1 - \frac{1}{\ln(n)}\big)$&lt;/mathjax&gt;,
