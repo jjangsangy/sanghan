@@ -115,3 +115,7 @@ pre {
     border-right: 1px solid #dedede;
     @include user-selectable(none);
 }
+
+p > code {
+    font-style: italic;
+}

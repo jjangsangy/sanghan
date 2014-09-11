@@ -100,3 +100,6 @@ pre {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+p > code {
+  font-style: italic; }
