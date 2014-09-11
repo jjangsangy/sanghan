@@ -26,10 +26,10 @@ viable for larger problem sizes.&lt;/blockquote&gt;
 &lt;p&gt;Since it requires a table of every
 number to the last integer in memory, the space complexity of sieves generally
 grows in the order of &lt;cite&gt;&lt;mathjax&gt;$\mathcal{O}(n)$&lt;/mathjax&gt;&lt;/cite&gt;. In order to deal with memory issues
-there are sieve algorithms called &lt;code&gt;segmented sieves&lt;/code&gt; which distribute
-the problem into smaller&amp;nbsp;subsets.&lt;/p&gt;
+there are sieve algorithms called &lt;code&gt;segmented sieves&lt;/code&gt; which map and distribute
+the problem into smaller sizes and are computed in&amp;nbsp;parallel.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-Here&amp;#8217;s how it would look in Python.&lt;/blockquote&gt;
+Here&amp;#8217;s how a basic sieve would look in Python.&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-code"&gt;
 &lt;h2&gt;The&amp;nbsp;Code&lt;/h2&gt;
@@ -74,11 +74,11 @@ but with it&amp;#8217;s guts swapped with &lt;code&gt;sets&lt;/code&gt;.&lt;/p&g
 lack of a list-comprehension for composing the function return value. As well, the
 second for-loop is substituted with one &lt;code&gt;-=&lt;/code&gt;, binary assignment operator, which for
 sets has been overloaded with a &lt;code&gt;difference update&lt;/code&gt; method or
-the mathematical complement &lt;mathjax&gt;$\forall \{n|\text{ n }\in \text{A : n }\notin\text{ B}\}$&lt;/mathjax&gt;&lt;/p&gt;
+the mathematical complement &lt;mathjax&gt;$\forall \{\text{n}|\text{ n }\in \text{A : n }\notin\text{ B}\}$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;p&gt;Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In this example, we first create a &lt;code&gt;universal set&lt;/code&gt;, and iteriatively delete it&amp;#8217;s factors.
 It would also be correct to construct a &lt;code&gt;null set&lt;/code&gt; and iteratively insert all factors first.
-Then, once all factors have been collected, perform a removal from the universal&amp;nbsp;set.&lt;/p&gt;
+Once all factors have been collected, perform a removal from the universal&amp;nbsp;set.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="insertion-sets"&gt;
 &lt;h3&gt;Insertion&amp;nbsp;Sets:&lt;/h3&gt;
@@ -90,26 +90,30 @@ Then, once all factors have been collected, perform a removal from the universal
 &lt;/span&gt;&lt;span id="line-6"&gt;            &lt;span class="n"&gt;factors&lt;/span&gt; &lt;span class="o"&gt;|=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-7"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;factors&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The question is, is it really possible characterize a set of operations without
-actually running a single benchmark? For much larger programs, it might not be,
+&lt;/div&gt;
+&lt;div class="section" id="algorithmic-analysis"&gt;
+&lt;h3&gt;Algorithmic&amp;nbsp;Analysis&lt;/h3&gt;
+&lt;p&gt;The question is, is it really possible characterize runtime without
+actually running a single benchmark? For much &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Travelling_salesman_problem"&gt;larger programs&lt;/a&gt;, it might not be,
 but for this isolated case, it&amp;#8217;s possible to make some good&amp;nbsp;predictions.&lt;/p&gt;
 &lt;p&gt;Both &lt;code&gt;set_sieve&lt;/code&gt; and &lt;code&gt;set_insertion_sieve&lt;/code&gt; perform similar operations,
 up until the second iterative block, where &lt;code&gt;set_sieve&lt;/code&gt; generates a range of all
 multiples and removes any members from that range. Whereas in &lt;code&gt;set_insertion_sieve&lt;/code&gt;
 we generate a range of multiples, and adds any values that have not already
-been generated. Because sets operations are primarily implemeneted as hashes, we can assert that
+been generated. Because set operations are primarily implemeneted as hashes, we can assert that
 both set &lt;code&gt;insertion&lt;/code&gt; and set &lt;code&gt;deletion&lt;/code&gt; are contant-time operations in relation to problem-size
 and linear-time operations in relation hash-size. Therefore, it&amp;#8217;s possible that
 either of these soltuions could run faster because with each iteration of &lt;code&gt;set_sieve&lt;/code&gt;
 the hash-size decreases, while &lt;code&gt;set_insertion_sieve&lt;/code&gt; hash size&amp;nbsp;increases.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-Unless, we were to know the proportion of prime numbers vs
-non-prime numbers that exist!&lt;/blockquote&gt;
+It might seem intractable know which is faster
+unless, we were to know the proportion of prime numbers vs
+non-prime numbers.&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="prime-number-theorem"&gt;
 &lt;h3&gt;Prime Number&amp;nbsp;Theorem&lt;/h3&gt;
 &lt;p&gt;Early intuition would have biased us about the general abundance of primes
-and non-primes. But the prime number theorem is a basic mathematical relationship
+and non-primes. But the prime number theorem is a mathematical proof
 between the amount of primes and non-primes that exist in the set of real&amp;nbsp;numbers.&lt;/p&gt;
 &lt;p&gt;&lt;mathjax&gt;$$
 \large\lim_{x\to \infty} \frac{\pi(x)}{\frac{x}{\ln(x))}} = 1 \tag{def}
@@ -119,17 +123,18 @@ $$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;mathjax&gt;$x\to \infty$&lt;/mathjax&gt; that &lt;mathjax&gt;$\pi(x) \to \frac{x}{\ln(x)}$&lt;/mathjax&gt;, and the entire
 expression approaches&amp;nbsp;1.&lt;/p&gt;
 &lt;p&gt;&lt;mathjax&gt;$$
-\large \frac{x}{\ln(x))} \thicksim \large\pi(x) \tag{asymtotic}
+\large \pi(x) \tag{asymtotic} \thicksim \large \frac{x}{\ln(x))}
 $$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;p&gt;From the asymptotic expression, we can also express the function for
 computing all factors of &lt;mathjax&gt;$n$&lt;/mathjax&gt; to then&amp;nbsp;be&lt;/p&gt;
 &lt;p&gt;&lt;mathjax&gt;$$\begin{align}
-\large n - \large \frac{n}{\ln(n)}&amp;amp; \implies \large n\left(1 - \frac{1}{\ln(n)}\right) \tag{factors}
+\large n\left(1 - \frac{1}{\ln(n)}\right) \tag{factors}
 \end{align}$$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 We therefore find that our insertion implementation actually runs in the order
-of &lt;mathjax&gt;$\frac{1}{\ln(n)}$&lt;/mathjax&gt; faster! Therefore becoming insignificant for larger
-problem sets!&lt;/blockquote&gt;
+of &lt;mathjax&gt;$\frac{1}{\ln(n)}$&lt;/mathjax&gt; faster! This shows that &lt;code&gt;set_sieve&lt;/code&gt; is indeed
+faster, but it might be the smallest optimization possible and fundamentally
+converges to the original &lt;code&gt;sieve&lt;/code&gt; speed at larger problem sizes.&lt;/blockquote&gt;
 &lt;p&gt;While fundamentally the choice data
 structure is orthoganal to program correctness,
 it&amp;#8217;s important for real runtime performance to use the tool

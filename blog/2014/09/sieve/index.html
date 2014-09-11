@@ -182,10 +182,10 @@ viable for larger problem sizes.</blockquote>
 <p>Since it requires a table of every
 number to the last integer in memory, the space complexity of sieves generally
 grows in the order of <cite><mathjax>$\mathcal{O}(n)$</mathjax></cite>. In order to deal with memory issues
-there are sieve algorithms called <code>segmented sieves</code> which distribute
-the problem into smaller&nbsp;subsets.</p>
+there are sieve algorithms called <code>segmented sieves</code> which map and distribute
+the problem into smaller sizes and are computed in&nbsp;parallel.</p>
 <blockquote class="pull-quote">
-Here&#8217;s how it would look in Python.</blockquote>
+Here&#8217;s how a basic sieve would look in Python.</blockquote>
 </div>
 <div class="section" id="the-code">
 <h2>The&nbsp;Code</h2>
@@ -230,11 +230,11 @@ but with it&#8217;s guts swapped with <code>sets</code>.</p>
 lack of a list-comprehension for composing the function return value. As well, the
 second for-loop is substituted with one <code>-=</code>, binary assignment operator, which for
 sets has been overloaded with a <code>difference update</code> method or
-the mathematical complement <mathjax>$\forall \{n|\text{ n }\in \text{A : n }\notin\text{ B}\}$</mathjax></p>
+the mathematical complement <mathjax>$\forall \{\text{n}|\text{ n }\in \text{A : n }\notin\text{ B}\}$</mathjax></p>
 <p>Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In this example, we first create a <code>universal set</code>, and iteriatively delete it&#8217;s factors.
 It would also be correct to construct a <code>null set</code> and iteratively insert all factors first.
-Then, once all factors have been collected, perform a removal from the universal&nbsp;set.</p>
+Once all factors have been collected, perform a removal from the universal&nbsp;set.</p>
 </div>
 <div class="section" id="insertion-sets">
 <h3>Insertion&nbsp;Sets:</h3>
@@ -246,26 +246,30 @@ Then, once all factors have been collected, perform a removal from the universal
 </span><span id="line-6">            <span class="n">factors</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
 </span><span id="line-7">    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="n">factors</span>
 </span></pre></div>
-<p>The question is, is it really possible characterize a set of operations without
-actually running a single benchmark? For much larger programs, it might not be,
+</div>
+<div class="section" id="algorithmic-analysis">
+<h3>Algorithmic&nbsp;Analysis</h3>
+<p>The question is, is it really possible characterize runtime without
+actually running a single benchmark? For much <a class="reference external" href="http://en.wikipedia.org/wiki/Travelling_salesman_problem">larger programs</a>, it might not be,
 but for this isolated case, it&#8217;s possible to make some good&nbsp;predictions.</p>
 <p>Both <code>set_sieve</code> and <code>set_insertion_sieve</code> perform similar operations,
 up until the second iterative block, where <code>set_sieve</code> generates a range of all
 multiples and removes any members from that range. Whereas in <code>set_insertion_sieve</code>
 we generate a range of multiples, and adds any values that have not already
-been generated. Because sets operations are primarily implemeneted as hashes, we can assert that
+been generated. Because set operations are primarily implemeneted as hashes, we can assert that
 both set <code>insertion</code> and set <code>deletion</code> are contant-time operations in relation to problem-size
 and linear-time operations in relation hash-size. Therefore, it&#8217;s possible that
 either of these soltuions could run faster because with each iteration of <code>set_sieve</code>
 the hash-size decreases, while <code>set_insertion_sieve</code> hash size&nbsp;increases.</p>
 <blockquote class="pull-quote">
-Unless, we were to know the proportion of prime numbers vs
-non-prime numbers that exist!</blockquote>
+It might seem intractable know which is faster
+unless, we were to know the proportion of prime numbers vs
+non-prime numbers.</blockquote>
 </div>
 <div class="section" id="prime-number-theorem">
 <h3>Prime Number&nbsp;Theorem</h3>
 <p>Early intuition would have biased us about the general abundance of primes
-and non-primes. But the prime number theorem is a basic mathematical relationship
+and non-primes. But the prime number theorem is a mathematical proof
 between the amount of primes and non-primes that exist in the set of real&nbsp;numbers.</p>
 <p><mathjax>$$
 \large\lim_{x\to \infty} \frac{\pi(x)}{\frac{x}{\ln(x))}} = 1 \tag{def}
@@ -275,17 +279,18 @@ $$</mathjax></p>
 <mathjax>$x\to \infty$</mathjax> that <mathjax>$\pi(x) \to \frac{x}{\ln(x)}$</mathjax>, and the entire
 expression approaches&nbsp;1.</p>
 <p><mathjax>$$
-\large \frac{x}{\ln(x))} \thicksim \large\pi(x) \tag{asymtotic}
+\large \pi(x) \tag{asymtotic} \thicksim \large \frac{x}{\ln(x))}
 $$</mathjax></p>
 <p>From the asymptotic expression, we can also express the function for
 computing all factors of <mathjax>$n$</mathjax> to then&nbsp;be</p>
 <p><mathjax>$$\begin{align}
-\large n - \large \frac{n}{\ln(n)}&amp; \implies \large n\left(1 - \frac{1}{\ln(n)}\right) \tag{factors}
+\large n\left(1 - \frac{1}{\ln(n)}\right) \tag{factors}
 \end{align}$$</mathjax></p>
 <blockquote class="pull-quote">
 We therefore find that our insertion implementation actually runs in the order
-of <mathjax>$\frac{1}{\ln(n)}$</mathjax> faster! Therefore becoming insignificant for larger
-problem sets!</blockquote>
+of <mathjax>$\frac{1}{\ln(n)}$</mathjax> faster! This shows that <code>set_sieve</code> is indeed
+faster, but it might be the smallest optimization possible and fundamentally
+converges to the original <code>sieve</code> speed at larger problem sizes.</blockquote>
 <p>While fundamentally the choice data
 structure is orthoganal to program correctness,
 it&#8217;s important for real runtime performance to use the tool
