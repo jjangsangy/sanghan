@@ -252,19 +252,14 @@ Once all factors have been collected, perform a removal from the universal&nbsp;
 <p>The question is, is it really possible characterize runtime without
 actually running a single benchmark? For much <a class="reference external" href="http://en.wikipedia.org/wiki/Travelling_salesman_problem">larger programs</a>, it might not be,
 but for this isolated case, it&#8217;s possible to make some good&nbsp;predictions.</p>
-<p>Both <code>set_sieve</code> and <code>set_insertion_sieve</code> perform similar operations,
-up until the second iterative block, where <code>set_sieve</code> generates a range of all
-multiples and removes any members from that range. Whereas in <code>set_insertion_sieve</code>
-we generate a range of multiples, and adds any values that have not already
-been generated. Because set operations are primarily implemeneted as hashes, we can assert that
+<p>Both <code>set_sieve</code> and <code>set_insertion_sieve</code> perform similar operations
+until the second iterative block. Because set operations are primarily implemeneted as hashes, we can assert that
 both set <code>insertion</code> and set <code>deletion</code> are contant-time operations in relation to problem-size
 and linear-time operations in relation hash-size. Therefore, it&#8217;s possible that
 either of these soltuions could run faster because with each iteration of <code>set_sieve</code>
 the hash-size decreases, while <code>set_insertion_sieve</code> hash size&nbsp;increases.</p>
 <blockquote class="pull-quote">
-It might seem intractable know which is faster
-unless, we were to know the proportion of prime numbers vs
-non-prime numbers.</blockquote>
+But what if we knew the proportion of primes vs non-primes in a series?</blockquote>
 </div>
 <div class="section" id="prime-number-theorem">
 <h3>Prime Number&nbsp;Theorem</h3>

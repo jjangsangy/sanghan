@@ -96,19 +96,14 @@ Once all factors have been collected, perform a removal from the universal&amp;n
 &lt;p&gt;The question is, is it really possible characterize runtime without
 actually running a single benchmark? For much &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Travelling_salesman_problem"&gt;larger programs&lt;/a&gt;, it might not be,
 but for this isolated case, it&amp;#8217;s possible to make some good&amp;nbsp;predictions.&lt;/p&gt;
-&lt;p&gt;Both &lt;code&gt;set_sieve&lt;/code&gt; and &lt;code&gt;set_insertion_sieve&lt;/code&gt; perform similar operations,
-up until the second iterative block, where &lt;code&gt;set_sieve&lt;/code&gt; generates a range of all
-multiples and removes any members from that range. Whereas in &lt;code&gt;set_insertion_sieve&lt;/code&gt;
-we generate a range of multiples, and adds any values that have not already
-been generated. Because set operations are primarily implemeneted as hashes, we can assert that
+&lt;p&gt;Both &lt;code&gt;set_sieve&lt;/code&gt; and &lt;code&gt;set_insertion_sieve&lt;/code&gt; perform similar operations
+until the second iterative block. Because set operations are primarily implemeneted as hashes, we can assert that
 both set &lt;code&gt;insertion&lt;/code&gt; and set &lt;code&gt;deletion&lt;/code&gt; are contant-time operations in relation to problem-size
 and linear-time operations in relation hash-size. Therefore, it&amp;#8217;s possible that
 either of these soltuions could run faster because with each iteration of &lt;code&gt;set_sieve&lt;/code&gt;
 the hash-size decreases, while &lt;code&gt;set_insertion_sieve&lt;/code&gt; hash size&amp;nbsp;increases.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-It might seem intractable know which is faster
-unless, we were to know the proportion of prime numbers vs
-non-prime numbers.&lt;/blockquote&gt;
+But what if we knew the proportion of primes vs non-primes in a series?&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="prime-number-theorem"&gt;
 &lt;h3&gt;Prime Number&amp;nbsp;Theorem&lt;/h3&gt;
