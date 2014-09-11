@@ -109,3 +109,6 @@ blockquote > code {
 
 h1, h2 {
   font-weight: bold; }
+
+a.reference {
+  font-style: italic; }
