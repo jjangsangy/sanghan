@@ -54,7 +54,7 @@
 .highlight pre .mo { color: #2aa198 } /* Literal.Number.Oct */
 .highlight pre .sb { color: #2aa198 } /* Literal.String.Backtick */
 .highlight pre .sc { color: #2aa198 } /* Literal.String.Char */
-.highlight pre .sd { color: #2aa198 } /* Literal.String.Doc */
+.highlight pre .sd { color: #2aa198; font-style: italic } /* Literal.String.Doc */
 .highlight pre .s2 { color: #2aa198 } /* Literal.String.Double */
 .highlight pre .se { color: #cb4b16 } /* Literal.String.Escape */
 .highlight pre .sh { color: #2aa198 } /* Literal.String.Heredoc */
