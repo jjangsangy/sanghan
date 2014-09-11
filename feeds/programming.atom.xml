@@ -135,7 +135,10 @@ We therefore find that our insertion implementation actually runs in the order
 of &lt;mathjax&gt;$\frac{1}{\ln(n)}$&lt;/mathjax&gt; faster! This shows that &lt;code&gt;set_sieve&lt;/code&gt; is indeed
 faster, but it might be the smallest optimization possible and fundamentally
 converges to the original &lt;code&gt;sieve&lt;/code&gt; speed at larger problem sizes.&lt;/blockquote&gt;
-&lt;p&gt;While fundamentally the choice data
+&lt;/div&gt;
+&lt;div class="section" id="data-structures"&gt;
+&lt;h3&gt;Data&amp;nbsp;Structures&lt;/h3&gt;
+&lt;p&gt;While the choice data
 structure is orthoganal to program correctness,
 it&amp;#8217;s important for real runtime performance to use the tool
 that best fits the&amp;nbsp;job.&lt;/p&gt;
