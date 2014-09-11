@@ -103,3 +103,6 @@ pre {
 
 p > code {
   font-style: italic; }
+
+blockquote > code {
+  font-style: italic; }
