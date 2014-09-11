@@ -106,3 +106,6 @@ p > code {
 
 blockquote > code {
   font-style: italic; }
+
+h2 {
+  font-weight: bold; }

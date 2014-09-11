@@ -91,8 +91,9 @@ Once all factors have been collected, perform a removal from the universal&amp;n
 &lt;/span&gt;&lt;span id="line-7"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;factors&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="section" id="algorithmic-analysis"&gt;
-&lt;h3&gt;Algorithmic&amp;nbsp;Analysis&lt;/h3&gt;
+&lt;h2&gt;Algorithmic&amp;nbsp;Analysis&lt;/h2&gt;
 &lt;p&gt;The question is, is it really possible characterize runtime without
 actually running a single benchmark? For much &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Travelling_salesman_problem"&gt;larger programs&lt;/a&gt;, it might not be,
 but for this isolated case, it&amp;#8217;s possible to make some good&amp;nbsp;predictions.&lt;/p&gt;
@@ -104,7 +105,6 @@ either of these soltuions could run faster because with each iteration of &lt;co
 the hash-size decreases, while &lt;code&gt;set_insertion_sieve&lt;/code&gt; hash size&amp;nbsp;increases.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 But what if we knew the proportion of primes vs non-primes in a series?&lt;/blockquote&gt;
-&lt;/div&gt;
 &lt;div class="section" id="prime-number-theorem"&gt;
 &lt;h3&gt;Prime Number&amp;nbsp;Theorem&lt;/h3&gt;
 &lt;p&gt;Early intuition would have biased us about the general abundance of primes
@@ -131,8 +131,9 @@ of &lt;mathjax&gt;$\frac{1}{\ln(n)}$&lt;/mathjax&gt; faster! This shows that &lt
 faster, but it might be the smallest optimization possible and fundamentally
 converges to the original &lt;code&gt;sieve&lt;/code&gt; speed at larger problem sizes.&lt;/blockquote&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="section" id="data-structures"&gt;
-&lt;h3&gt;Data&amp;nbsp;Structures&lt;/h3&gt;
+&lt;h2&gt;Data&amp;nbsp;Structures&lt;/h2&gt;
 &lt;p&gt;While the choice data
 structure is orthoganal to program correctness,
 it&amp;#8217;s important for real runtime performance to use the tool
@@ -148,7 +149,6 @@ However, their generality and utility are also likely our
 downfall when better suited tools are also&amp;nbsp;available.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 So what is the most optimal data structure to perform these calculation?&lt;/blockquote&gt;
-&lt;/div&gt;
 &lt;div class="section" id="enter-the-array"&gt;
 &lt;h3&gt;Enter: The&amp;nbsp;Array&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
@@ -228,9 +228,8 @@ Now lets test to see if our sieves can correctly find the first 100 prime number
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;all_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;set_insertion_sieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="bp"&gt;True&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
 &lt;div class="section" id="a-timer"&gt;
-&lt;h2&gt;A&amp;nbsp;Timer&lt;/h2&gt;
+&lt;h3&gt;A&amp;nbsp;Timer&lt;/h3&gt;
 &lt;p&gt;Now knowing that our implementations are correct, lets see how fast they run.
 We will construct a timer taking advantage of what is known as a &lt;code&gt;context manager&lt;/code&gt;.
 Basically, a context manager allows us to use the &lt;code&gt;with&lt;/code&gt; construct
@@ -256,7 +255,7 @@ It&amp;#8217;s also possible to use Python&amp;#8217;s built in &lt;code&gt;time
 with much more complex and isolated timing instances.&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div class="section" id="performance-testing"&gt;
-&lt;h2&gt;Performance&amp;nbsp;Testing&lt;/h2&gt;
+&lt;h3&gt;Performance&amp;nbsp;Testing&lt;/h3&gt;
 &lt;blockquote class="pull-quote"&gt;
 Now lets see how fast our seives can find the first million
 digits.&lt;/blockquote&gt;
@@ -280,6 +279,7 @@ digits.&lt;/blockquote&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;
 &lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.008&lt;/span&gt; &lt;span class="n"&gt;sec&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;script type= "text/javascript"&gt;
     if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {

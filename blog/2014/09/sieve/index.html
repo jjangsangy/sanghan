@@ -247,8 +247,9 @@ Once all factors have been collected, perform a removal from the universal&nbsp;
 </span><span id="line-7">    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="n">factors</span>
 </span></pre></div>
 </div>
+</div>
 <div class="section" id="algorithmic-analysis">
-<h3>Algorithmic&nbsp;Analysis</h3>
+<h2>Algorithmic&nbsp;Analysis</h2>
 <p>The question is, is it really possible characterize runtime without
 actually running a single benchmark? For much <a class="reference external" href="http://en.wikipedia.org/wiki/Travelling_salesman_problem">larger programs</a>, it might not be,
 but for this isolated case, it&#8217;s possible to make some good&nbsp;predictions.</p>
@@ -260,7 +261,6 @@ either of these soltuions could run faster because with each iteration of <code>
 the hash-size decreases, while <code>set_insertion_sieve</code> hash size&nbsp;increases.</p>
 <blockquote class="pull-quote">
 But what if we knew the proportion of primes vs non-primes in a series?</blockquote>
-</div>
 <div class="section" id="prime-number-theorem">
 <h3>Prime Number&nbsp;Theorem</h3>
 <p>Early intuition would have biased us about the general abundance of primes
@@ -287,8 +287,9 @@ of <mathjax>$\frac{1}{\ln(n)}$</mathjax> faster! This shows that <code>set_sieve
 faster, but it might be the smallest optimization possible and fundamentally
 converges to the original <code>sieve</code> speed at larger problem sizes.</blockquote>
 </div>
+</div>
 <div class="section" id="data-structures">
-<h3>Data&nbsp;Structures</h3>
+<h2>Data&nbsp;Structures</h2>
 <p>While the choice data
 structure is orthoganal to program correctness,
 it&#8217;s important for real runtime performance to use the tool
@@ -304,7 +305,6 @@ However, their generality and utility are also likely our
 downfall when better suited tools are also&nbsp;available.</p>
 <blockquote class="pull-quote">
 So what is the most optimal data structure to perform these calculation?</blockquote>
-</div>
 <div class="section" id="enter-the-array">
 <h3>Enter: The&nbsp;Array</h3>
 <div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -384,9 +384,8 @@ Now lets test to see if our sieves can correctly find the first 100 prime number
 <div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="n">all_primes</span><span class="p">(</span><span class="n">set_insertion_sieve</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
 </span><span id="line-2"><span class="bp">True</span>
 </span></pre></div>
-</div>
 <div class="section" id="a-timer">
-<h2>A&nbsp;Timer</h2>
+<h3>A&nbsp;Timer</h3>
 <p>Now knowing that our implementations are correct, lets see how fast they run.
 We will construct a timer taking advantage of what is known as a <code>context manager</code>.
 Basically, a context manager allows us to use the <code>with</code> construct
@@ -412,7 +411,7 @@ It&#8217;s also possible to use Python&#8217;s built in <code>timeit</code> modu
 with much more complex and isolated timing instances.</blockquote>
 </div>
 <div class="section" id="performance-testing">
-<h2>Performance&nbsp;Testing</h2>
+<h3>Performance&nbsp;Testing</h3>
 <blockquote class="pull-quote">
 Now lets see how fast our seives can find the first million
 digits.</blockquote>
@@ -436,6 +435,7 @@ digits.</blockquote>
 </span><span id="line-3">
 </span><span id="line-4"><span class="n">numpy</span><span class="p">:</span> <span class="mf">0.008</span> <span class="n">sec</span>
 </span></pre></div>
+</div>
 </div>
 <script type= "text/javascript">
     if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
