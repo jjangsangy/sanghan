@@ -115,3 +115,6 @@ a.reference {
 
 div.well-sm, footer.post-info {
   font-size: 14px; }
+
+mathjax {
+  float: center; }
