@@ -101,6 +101,9 @@ pre {
   -ms-user-select: none;
   user-select: none; }
 
+body {
+  padding-top: 0px; }
+
 p > code {
   font-style: italic; }
 
