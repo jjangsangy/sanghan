@@ -101,9 +101,6 @@ pre {
   -ms-user-select: none;
   user-select: none; }
 
-body {
-  padding-top: 0px; }
-
 p > code {
   font-style: italic; }
 
@@ -119,12 +116,9 @@ a.reference {
 div.well-sm, footer.post-info {
   font-size: 14px; }
 
-mathjax {
-  float: center; }
-
 .headroom {
-  -webkit-transition: -webkit-transform 100ms linear;
-  transition: transform 100ms linear; }
+  -webkit-transition: -webkit-transform all 200ms ease-in-out;
+  transition: transform 200ms ease-in-out; }
 
 .headroom--pinned {
   -webkit-transform: translate(0%);
