@@ -126,10 +126,9 @@ computing all factors of &lt;mathjax&gt;$n$&lt;/mathjax&gt; to then&amp;nbsp;be&
 \large\lim_{n\to \infty} n\left(1 - \frac{1}{\ln(n)}\right) \tag{factors}
 \end{align}$$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-We therefore find that our insertion implementation actually runs in the order
-of &lt;mathjax&gt;$\frac{1}{\ln(n)}$&lt;/mathjax&gt; faster! This shows that &lt;code&gt;set_sieve&lt;/code&gt; is indeed
-faster, but it might be the smallest optimization possible and fundamentally
-converges to the original &lt;code&gt;sieve&lt;/code&gt; speed at larger problem sizes.&lt;/blockquote&gt;
+We find insertion actually runs faster by
+of &lt;mathjax&gt;$\frac{1}{\ln(n)}$&lt;/mathjax&gt;!! But this is a tiny optimization and fundamentally
+converges back to the original &lt;code&gt;sieve&lt;/code&gt; speed at larger problem sizes.&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="data-structures"&gt;
