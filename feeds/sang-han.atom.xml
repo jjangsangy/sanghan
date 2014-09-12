@@ -52,9 +52,9 @@ available for Python 3 and not Python 2.&lt;/blockquote&gt;
 &lt;/span&gt;&lt;span id="line-7"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;prime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;checked&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;checked&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;It&amp;#8217;s important to notice we implement &lt;code&gt;lists&lt;/code&gt; as the main data structure.
-Remember although the algorithm requires an in memory table,
-we have the freedom to construct it using
-whatever tools the runtime affords. Here is an example of another sieve
+Although the algorithm requires an in memory table,
+we can construct it using
+any tool. Here is another sieve
 but with it&amp;#8217;s guts swapped with &lt;code&gt;sets&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="sets-unordered-collections"&gt;
@@ -133,19 +133,21 @@ converges back to the original &lt;code&gt;sieve&lt;/code&gt; speed at larger pr
 &lt;/div&gt;
 &lt;div class="section" id="data-structures"&gt;
 &lt;h2&gt;Data&amp;nbsp;Structures&lt;/h2&gt;
-&lt;p&gt;While the choice data
-structure is orthoganal to program correctness,
-it&amp;#8217;s important for real runtime performance to use the tool
-that best fits the&amp;nbsp;job.&lt;/p&gt;
+&lt;p&gt;Lists and sets are general purpose data-structures
+and are useful for solving many different problems.
+However, their general nature cause them to be less useful
+for specialized tasks, or when high performance is&amp;nbsp;needed.&lt;/p&gt;
+&lt;p&gt;It&amp;#8217;s also easy to fall into the trap of using general tools when
+better options are&amp;nbsp;available.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://en.wiktionary.org/wiki/if_all_you_have_is_a_hammer,_everything_looks_like_a_nail"&gt;Maslow&lt;/a&gt; tells&amp;nbsp;us&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 &lt;p&gt;&lt;em&gt;&amp;quot;If the only tool you have is a hammer everything looks like a&amp;nbsp;nail.&amp;quot;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;The Psychology of Science&amp;nbsp;(1964)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Lists and sets are great general purpose data-structure,
-and is likely the first tool to reach for when presented with a problem.
-However, their generality and utility are also likely our
-downfall when better suited tools are also&amp;nbsp;available.&lt;/p&gt;
+&lt;p&gt;While the choice data
+structure is orthoganal to correctness,
+it&amp;#8217;s important to use the best tool
+for the&amp;nbsp;job.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 So what is the most optimal data structure to perform these calculation?&lt;/blockquote&gt;
 &lt;div class="section" id="enter-the-array"&gt;
