@@ -126,8 +126,8 @@ computing all factors of &lt;mathjax&gt;$n$&lt;/mathjax&gt; to then&amp;nbsp;be&
 \large\lim_{n\to \infty} n\left(1 - \frac{1}{\ln(n)}\right) \tag{factors}
 \end{align}$$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-We find insertion actually runs faster by
-of &lt;mathjax&gt;$\frac{1}{\ln(n)}$&lt;/mathjax&gt;!! But this is a tiny optimization and fundamentally
+We find insertion actually runs faster by an order of
+&lt;mathjax&gt;$\frac{1}{\ln(n)}$&lt;/mathjax&gt;!! But this is a diminishing optimization which
 converges back to the original &lt;code&gt;sieve&lt;/code&gt; speed at larger problem sizes.&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;
