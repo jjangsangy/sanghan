@@ -288,7 +288,7 @@ sets for inline&amp;nbsp;operations.&lt;/li&gt;
 &lt;li&gt;As we expected &lt;code&gt;set_insertion_sieve&lt;/code&gt; performed
 better than &lt;code&gt;set_sieve&lt;/code&gt;, but only&amp;nbsp;marginally.&lt;/li&gt;
 &lt;li&gt;Numpy &lt;code&gt;arrays&lt;/code&gt; are fast! They outperform other built in
-data structure by 2 orders of&amp;nbsp;magnitude!&lt;/li&gt;
+data structures by 2 orders of&amp;nbsp;magnitude!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
