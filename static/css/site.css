@@ -120,8 +120,8 @@ mathjax {
   float: center; }
 
 .headroom {
-  -webkit-transition: -webkit-transform 200ms linear;
-  transition: transform 200ms linear; }
+  -webkit-transition: -webkit-transform 100ms linear;
+  transition: transform 100ms linear; }
 
 .headroom--pinned {
   -webkit-transform: translate(0%);
