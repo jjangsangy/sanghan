@@ -140,17 +140,17 @@ mathjax {
     float: center;
 }
 
-.navbar-fixed-top {
+.headroom {
   -webkit-transition: -webkit-transform 200ms linear;
   transition: transform 200ms linear;
 }
 
-.navbar-fixed-top--pinned{
+.headroom--pinned{
   -webkit-transform: translate(0%);
   transform: translate(0%);
 }
 
-.navbar-fixed-top--unpinned{
+.headroom--unpinned{
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
 }
