@@ -254,8 +254,9 @@ merely by using a decorator from the &lt;code&gt;contextlib&lt;/code&gt; module.
 It&amp;#8217;s also possible to use Python&amp;#8217;s built in &lt;code&gt;timeit&lt;/code&gt; module, which can deal
 with much more complex and isolated timing instances.&lt;/blockquote&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 &lt;div class="section" id="some-benchmarks"&gt;
-&lt;h3&gt;Some&amp;nbsp;Benchmarks&lt;/h3&gt;
+&lt;h2&gt;Some&amp;nbsp;Benchmarks&lt;/h2&gt;
 &lt;blockquote class="pull-quote"&gt;
 Now lets see how fast our seives can find the first million
 digits.&lt;/blockquote&gt;
@@ -279,7 +280,6 @@ digits.&lt;/blockquote&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;
 &lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.008&lt;/span&gt; &lt;span class="n"&gt;sec&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
 &lt;div class="section" id="things-to-note"&gt;
 &lt;h3&gt;Things to&amp;nbsp;Note&lt;/h3&gt;
 &lt;ul class="simple"&gt;
