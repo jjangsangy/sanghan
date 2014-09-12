@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LightQuanta</title><link>http://sanghan.me/</link><description></description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 08 Sep 2014 00:00:00 -0700</lastBuildDate><item><title>Prime Sieves and Python Data Structures</title><link>http://sanghan.me/blog/2014/09/sieve/</link><description>&lt;p&gt;Recently, I’ve been working through &lt;a class="reference external" href="https://projecteuler.net"&gt;Project Euler&lt;/a&gt; in order to improve my
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LightQuanta</title><link>http://sanghan.me/</link><description></description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 11 Sep 2014 00:00:00 -0700</lastBuildDate><item><title>Prime Sieves and Python Data Structures</title><link>http://sanghan.me/blog/2014/09/sieve/</link><description>&lt;p&gt;Recently, I’ve been working through &lt;a class="reference external" href="https://projecteuler.net"&gt;Project Euler&lt;/a&gt; in order to improve my
 core programming&amp;nbsp;skills.&lt;/p&gt;
 &lt;p&gt;One of those recurring problems requires
 efficiently calculating and testing for prime numbers. The first
@@ -123,7 +123,7 @@ $$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;p&gt;From the asymptotic expression, we can also express the function for
 computing all factors of &lt;mathjax&gt;$n$&lt;/mathjax&gt; to then&amp;nbsp;be&lt;/p&gt;
 &lt;p&gt;&lt;mathjax&gt;$$\begin{align}
-\large n\left(1 - \frac{1}{\ln(n)}\right) \tag{factors}
+\large\lim_{n\to \infty} n\left(1 - \frac{1}{\ln(n)}\right) \tag{factors}
 \end{align}$$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 We therefore find that our insertion implementation actually runs in the order
@@ -311,7 +311,7 @@ digits.&lt;/blockquote&gt;
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 &lt;/script&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Mon, 08 Sep 2014 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2014-09-08:blog/2014/09/sieve/</guid><category>Python</category><category>Prime Numbers</category><category>Sieve</category><category>Eratosthenes</category><category>Numpy</category><category>Project Euler</category><category>Algorithms</category><category>Data Structures</category></item><item><title>Swift Program is Swift, Except When it's Not</title><link>http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/</link><description>&lt;p&gt;&lt;img alt="swift" src="http://sanghan.me/img/swift.jpg" /&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Thu, 11 Sep 2014 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2014-09-11:blog/2014/09/sieve/</guid><category>Python</category><category>Prime Numbers</category><category>Sieve</category><category>Eratosthenes</category><category>Numpy</category><category>Project Euler</category><category>Algorithms</category><category>Data Structures</category></item><item><title>Swift Program is Swift, Except When it's Not</title><link>http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/</link><description>&lt;p&gt;&lt;img alt="swift" src="http://sanghan.me/img/swift.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;This past &lt;span class="caps"&gt;WWDC&lt;/span&gt; Apple revealed a brand new programming language called &lt;a class="reference external" href="https://developer.apple.com/swift/"&gt;Swift&lt;/a&gt;
 to the masses and passed it out to Apple Developers packaged in the XCode 6&amp;nbsp;Beta.&lt;/p&gt;
 &lt;div class="section" id="language-features"&gt;
