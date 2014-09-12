@@ -413,8 +413,8 @@ merely by using a decorator from the <code>contextlib</code> module.</p>
 It&#8217;s also possible to use Python&#8217;s built in <code>timeit</code> module, which can deal
 with much more complex and isolated timing instances.</blockquote>
 </div>
-<div class="section" id="performance-testing">
-<h3>Performance&nbsp;Testing</h3>
+<div class="section" id="some-benchmarks">
+<h3>Some&nbsp;Benchmarks</h3>
 <blockquote class="pull-quote">
 Now lets see how fast our seives can find the first million
 digits.</blockquote>
@@ -438,6 +438,17 @@ digits.</blockquote>
 </span><span id="line-3">
 </span><span id="line-4"><span class="n">numpy</span><span class="p">:</span> <span class="mf">0.008</span> <span class="n">sec</span>
 </span></pre></div>
+</div>
+<div class="section" id="things-to-note">
+<h3>Things to&nbsp;Note</h3>
+<ul class="simple">
+<li>Overall lists are better optimized than
+sets for inline&nbsp;operations.</li>
+<li>As we expected <code>set_insertion_sieve</code> performed
+better than <code>set_sieve</code>, but only&nbsp;marginally.</li>
+<li>Numpy <code>arrays</code> are fast! They outperform other built in
+data structure by 2 orders of&nbsp;magnitude!</li>
+</ul>
 </div>
 </div>
 <script type= "text/javascript">
