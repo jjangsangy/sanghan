@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Swift Program is Swift, Except When it's Not - LightQuanta</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="http://sanghan.me/img/hv.png" rel="icon">
+
+<link rel="canonical" href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
+
+        <meta name="author" content="Sang Han" />
+        <meta name="keywords" content="Apple,Programming Language,Benchmarks,Bubble Sort" />
+        <meta name="description" content="This past WWDC Apple revealed a brand new programming language called Swift to the masses and passed it out to Apple Developers packaged in the XCode 6 Beta. Language Features Type Inferencing and Automatic Reference Counting (ARC) Optional Bindings and Generic Functions Integration with Objective-C First-Class Functions and Closures My initial impressions were pretty high. However, after some quick benchmarking examples, those feelings later matured to an understanding of it’s &#34;beta&#34; characteristics. Many of the underlying optimization still have some kinks to work through. And by kinks, I mean some big fixes Benchmarks Here are a couple examples of ..." />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.paper.min.css" type="text/css"/>
+    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
+        <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
+
+        <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="LightQuanta ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top headroom" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://sanghan.me/" class="navbar-brand">
+
+                <span class="fa-stack fa-large">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-flask fa-inverse pull-center fa-stack-1x"></i>
+                </span>
+                LightQuanta
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+
+                         <li>
+                             <a href="http://sanghan.me/pages/about.html">
+                             <i class="fa fa-beer"></i>
+                             <span class="icon-label">About Me</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/projects.html">
+                             <i class="fa fa-code"></i>
+                             <span class="icon-label">Projects</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/skills.html">
+                             <i class="fa fa-graduation-cap"></i>
+                             <span class="icon-label">Skills</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/tools.html">
+                             <i class="fa fa-wrench"></i>
+                             <span class="icon-label">Tools</span>
+                             </a>
+                         </li>
+
+                <!--Dropdown Categories-->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li >
+                        <a href="http://sanghan.me/category/articles.html">Articles</a></li>
+                        <li  class="active" >
+                        <a href="http://sanghan.me/category/programming.html">Programming</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/quotes.html">Quotes</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/tumblr.html">Tumblr</a></li>
+                    </ul>
+                    </li>
+
+
+<!-- Disabled
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+</ul>
+-->
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <ol class="breadcrumb">
+                <li><a href="http://sanghan.me" title="LightQuanta"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="http://sanghan.me/category/programming.html" title="Programming">Programming</a></li>
+                <li class="active">Swift Program is Swift, Except When it's Not</li>
+            </ol>
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/"
+                       rel="bookmark"
+                       title="Permalink to Swift Program is Swift, Except When it's Not">
+                        Swift Program is Swift, Except When it's Not
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-primary">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-06-11T00:00:00-07:00"> Wed, 11 Jun 2014</time>
+    </span>
+
+        <span class="label label-success">Category</span>
+        <a href="http://sanghan.me/category/programming.html">Programming</a>
+
+
+<span class="label label-info">Tags</span>
+	<a href="http://sanghan.me/tag/apple.html">Apple</a>
+        /
+	<a href="http://sanghan.me/tag/programming-language.html">Programming Language</a>
+        /
+	<a href="http://sanghan.me/tag/benchmarks.html">Benchmarks</a>
+        /
+	<a href="http://sanghan.me/tag/bubble-sort.html">Bubble Sort</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p><img alt="swift" src="http://sanghan.me/img/swift.jpg" /></p>
+<p>This past <span class="caps">WWDC</span> Apple revealed a brand new programming language called <a class="reference external" href="https://developer.apple.com/swift/">Swift</a>
+to the masses and passed it out to Apple Developers packaged in the XCode 6&nbsp;Beta.</p>
+<div class="section" id="language-features">
+<h2>Language&nbsp;Features</h2>
+<ul class="simple">
+<li>Type Inferencing and Automatic Reference Counting (<span class="caps">ARC</span>)</li>
+<li>Optional Bindings and Generic&nbsp;Functions</li>
+<li>Integration with&nbsp;Objective-C</li>
+<li>First-Class Functions and&nbsp;Closures</li>
+</ul>
+<p>My initial impressions were pretty high. However, after some quick benchmarking
+examples, those feelings later matured to an understanding of it&#8217;s &quot;beta&quot;
+characteristics. Many of the underlying optimization still have some kinks to
+work&nbsp;through.</p>
+<blockquote class="pull-quote">
+And by kinks, I mean some big fixes</blockquote>
+</div>
+<div class="section" id="benchmarks">
+<h2>Benchmarks</h2>
+<blockquote class="pull-quote">
+Here are a couple examples of Bubble Sort written out in C, Python and Swift.</blockquote>
+<div class="section" id="swift-bubble-sort">
+<h3>Swift Bubble&nbsp;Sort</h3>
+<div class="highlight"><pre><span id="line-1"><span class="n">import</span> <span class="n">Cocoa</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="n">func</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="n">Int</span><span class="p">[])</span> <span class="p">-&gt;</span> <span class="n">Int</span><span class="p">[]</span>
+</span><span id="line-4"><span class="p">{</span>
+</span><span id="line-5">    <span class="n">let</span> <span class="n">length</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">count</span>
+</span><span id="line-6">    <span class="kt">var</span> <span class="n">count</span><span class="p">:</span> <span class="n">Int</span>
+</span><span id="line-7">    <span class="kt">var</span> <span class="n">pos</span><span class="p">:</span> <span class="n">Int</span>
+</span><span id="line-8">
+</span><span id="line-9">    <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">count</span> <span class="p">&lt;</span> <span class="n">length</span><span class="p">-</span><span class="m">1</span><span class="p">;</span> <span class="n">count</span><span class="p">++)</span> <span class="p">{</span>
+</span><span id="line-10">        <span class="k">for</span> <span class="p">(</span><span class="n">pos</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">pos</span> <span class="p">&lt;</span> <span class="p">(</span><span class="n">length</span><span class="p">-</span><span class="n">count</span><span class="p">-</span><span class="m">1</span><span class="p">);</span> <span class="n">pos</span><span class="p">++)</span> <span class="p">{</span>
+</span><span id="line-11">            <span class="k">if</span> <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="p">&gt;</span> <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">+</span><span class="m">1</span><span class="p">])</span> <span class="p">{</span>
+</span><span id="line-12">                <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">],</span> <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">+</span><span class="m">1</span><span class="p">])</span> <span class="p">=</span>
+</span><span id="line-13">                    <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">+</span><span class="m">1</span><span class="p">],</span> <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">])</span>
+</span><span id="line-14">            <span class="p">}</span>
+</span><span id="line-15">        <span class="p">}</span>
+</span><span id="line-16">    <span class="p">}</span>
+</span><span id="line-17">    <span class="k">return</span> <span class="n">list</span>
+</span><span id="line-18"><span class="p">}</span>
+</span><span id="line-19">
+</span><span id="line-20"><span class="n">func</span> <span class="nf">sortMain</span><span class="p">(</span><span class="n">problem_size</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">Int</span><span class="p">[]</span>
+</span><span id="line-21"><span class="p">{</span>
+</span><span id="line-22">    <span class="kt">var</span> <span class="n">array</span><span class="p">:</span> <span class="n">Int</span><span class="p">[]</span> <span class="p">=</span> <span class="p">[]</span>
+</span><span id="line-23">
+</span><span id="line-24">    <span class="n">srandomdev</span><span class="p">()</span>
+</span><span id="line-25">    <span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="n">problem_size</span> <span class="p">{</span>
+</span><span id="line-26">        <span class="n">array</span> <span class="p">+=</span> <span class="p">(</span><span class="n">random</span><span class="p">()</span> <span class="p">%</span> <span class="n">problem_size</span><span class="p">)</span>
+</span><span id="line-27">    <span class="p">}</span>
+</span><span id="line-28">    <span class="k">return</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+</span><span id="line-29"><span class="p">}</span>
+</span></pre></div>
+</div>
+<div class="section" id="c-bubble-sort">
+<h3>C Bubble&nbsp;Sort</h3>
+<div class="highlight"><pre><span id="line-1"><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span id="line-2"><span class="cp">#include &lt;stdlib.h&gt;</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="kt">void</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="kt">long</span> <span class="n">list</span><span class="p">[],</span> <span class="kt">long</span> <span class="n">n</span><span class="p">)</span>
+</span><span id="line-5"><span class="p">{</span>
+</span><span id="line-6">    <span class="kt">long</span> <span class="n">count</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">temp</span><span class="p">;</span>
+</span><span id="line-7">    <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="n">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-8">        <span class="k">for</span> <span class="p">(</span><span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">pos</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="n">pos</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-9">            <span class="k">if</span> <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="line-10">            <span class="p">{</span>
+</span><span id="line-11">                <span class="n">temp</span>        <span class="o">=</span>   <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">];</span>
+</span><span id="line-12">                <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>   <span class="o">=</span>   <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+</span><span id="line-13">                <span class="n">list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span>   <span class="n">temp</span><span class="p">;</span>
+</span><span id="line-14">            <span class="p">}</span>
+</span><span id="line-15">        <span class="p">}</span>
+</span><span id="line-16">    <span class="p">}</span>
+</span><span id="line-17"><span class="p">}</span>
+</span><span id="line-18">
+</span><span id="line-19"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span><span id="line-20"><span class="p">{</span>
+</span><span id="line-21">    <span class="kt">long</span> <span class="n">problem_size</span> <span class="o">=</span> <span class="n">strtoul</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</span><span id="line-22">    <span class="kt">long</span> <span class="n">array</span><span class="p">[</span><span class="n">problem_size</span><span class="p">];</span>
+</span><span id="line-23">    <span class="kt">long</span> <span class="n">count</span><span class="p">;</span>
+</span><span id="line-24">
+</span><span id="line-25">    <span class="n">sranddev</span><span class="p">();</span>
+</span><span id="line-26">    <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">problem_size</span><span class="p">;</span> <span class="n">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-27">        <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="n">problem_size</span><span class="p">;</span>
+</span><span id="line-28">    <span class="p">}</span>
+</span><span id="line-29">
+</span><span id="line-30">    <span class="n">bubble_sort</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">problem_size</span><span class="p">);</span>
+</span><span id="line-31">
+</span><span id="line-32">    <span class="k">for</span> <span class="p">(</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">problem_size</span><span class="p">;</span> <span class="n">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-33">        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%ld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]);</span>
+</span><span id="line-34">    <span class="p">}</span>
+</span><span id="line-35">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span id="line-36"><span class="p">}</span>
+</span></pre></div>
+</div>
+<div class="section" id="python-bubble-sort">
+<h3>Python Bubble&nbsp;Sort</h3>
+<div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+</span><span id="line-2"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">a_list</span><span class="p">:</span> <span class="n">Int</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&gt;</span><span class="p">):</span> <span class="o">-&gt;</span> <span class="n">Int</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&gt;</span>
+</span><span id="line-5">    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+</span><span id="line-6">
+</span><span id="line-7">    <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+</span><span id="line-8">        <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span><span class="o">-</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="line-9">            <span class="k">if</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+</span><span id="line-10">                <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="p">],</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> \
+</span><span id="line-11">                <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">a_list</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
+</span><span id="line-12">    <span class="k">return</span> <span class="n">a_list</span>
+</span><span id="line-13">
+</span><span id="line-14"><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="o">-&gt;</span> <span class="n">Int</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&gt;</span>
+</span><span id="line-15">    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="line-16">        <span class="n">problem_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="line-17">    <span class="k">else</span><span class="p">:</span>
+</span><span id="line-18">        <span class="n">problem_size</span> <span class="o">=</span> <span class="mi">10000</span>
+</span><span id="line-19">    <span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">problem_size</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">problem_size</span><span class="p">)]</span>
+</span><span id="line-20">
+</span><span id="line-21">    <span class="k">return</span> <span class="n">bubble_sort</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+</span><span id="line-22">
+</span><span id="line-23">
+</span><span id="line-24"><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span id="line-25">    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">))</span>
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="fast-swift">
+<h2>Fast&nbsp;Swift:</h2>
+<blockquote class="pull-quote">
+Swift vs C vs PyPy</blockquote>
+<div class="plotly">
+    <iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/" width="100%" height="100%"></iframe>
+</div><blockquote class="pull-quote">
+Swift Program is Swift, It even beats C by a non-trivial margin in these tests.</blockquote>
+</div>
+<div class="section" id="slow-swift">
+<h2>Slow&nbsp;Swift:</h2>
+<blockquote class="pull-quote">
+Swift [-Ofast] vs Swift[-O3] vs CPython</blockquote>
+<p>One caveat however, is we used the [-Ofast] flag during compilation of the swift binaries like&nbsp;so.</p>
+<p><code>xcrun --sdk macosx swift -Ofast -o bubble_sort.swift bubble_sort</code></p>
+<p>According to Apple&#8217;s official documentation in the XCode 5.0 release&nbsp;notes:</p>
+<blockquote class="pull-quote">
+A new optimization level -Ofast, available in <span class="caps">LLVM</span>, enables aggressive optimizations.
+-Ofast relaxes some conservative restrictions,
+mostly for floating-point operations,
+that are safe for most code.
+It can yield significant high-performance wins from the compiler</blockquote>
+<p>If we were to run the same code with normal compiler optimizations we start to see a completely
+different picture than the one we started&nbsp;with</p>
+<p><code>xcrun --sdk macosx swift -O3 -o bubble_sort.swift bubble_sort</code></p>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to save time, I&#8217;ve changed the problem sizes to be
+multiples of 1k rather than 10k, so that tests could
+finish reasonibly quick. Other than that nothing has&nbsp;changed.</p>
+</div>
+<div class="plotly">
+    <iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/84/" width="100%" height="100%"></iframe>
+</div></div>
+<div class="section" id="modern-safe-and-powerful-choose-2">
+<h2>Modern, Safe and Powerful: Choose&nbsp;2</h2>
+<p><img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /></p>
+<p>According to a post on <a class="reference external" href="http://stackoverflow.com/questions/24101718/swift-performance-sorting-arrays">Stacked&nbsp;Overflow</a></p>
+<blockquote class="pull-quote">
+However, -Ofast changes the semantics of the language a lot — in my testing,
+it disabled the checks for integer overflows and array indexing overflows.
+For example, with -Ofast the following Swift code runs silently
+without crashing (and prints out some garbage):</blockquote>
+<div class="highlight"><pre><span id="line-1"><span class="n">let</span> <span class="n">n</span> <span class="p">=</span> <span class="m">10000000</span>
+</span><span id="line-2"><span class="n">println</span><span class="p">(</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">)</span>
+</span><span id="line-3"><span class="n">let</span> <span class="n">x</span> <span class="p">=</span> <span class="n">Int</span><span class="p">[](</span><span class="n">count</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span> <span class="n">repeatedValue</span><span class="p">:</span> <span class="m">10</span><span class="p">)</span>
+</span><span id="line-4"><span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+</span></pre></div>
+<!--  -->
+<ul class="simple">
+<li>With -Ofast I get pretty much what I would expect.
+The relevant part is a loop with 5 machine language&nbsp;instructions.</li>
+<li>With -O3 I get something that was beyond my wildest imagination.
+The inner loop spans 88 lines of assembly code.
+I did not try to understand all of it, but the most suspicious parts are 13 invocations of
+callq _swift_retain&quot; and another 13 invocations of &quot;callq _swift_release&quot;.
+That is, 26 subroutine calls in the inner&nbsp;loop!</li>
+</ul>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'sanghan'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'swift_program_is_swift_except_when_its_not';
+                var disqus_url = 'http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+    </div>
+
+        <div class="col-sm-3 well well-sm" id="sidebar">
+
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+                  <ul class="list-group" id="social">
+                    <li class="list-group-item"><a href="http://github.com/jjangsangy"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+                    <li class="list-group-item"><a href="http://facebook.com/jjangsangy"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+                    <li class="list-group-item"><a href="https://www.linkedin.com/pub/sang-han/40/9a8/323"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+                    <li class="list-group-item"><a href="http://jjangsangy.tumblr.com"><i class="fa fa-tumblr-square fa-lg"></i> Tumblr</a></li>
+                    <li class="list-group-item"><a href="http://pinterest.com/jjangsangy"><i class="fa fa-pinterest-square fa-lg"></i> Pinterest</a></li>
+                  </ul>
+                </li>
+
+                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                    <ul class="list-group" id="recentposts">
+                        <li class="list-group-item">
+                            <a href="http://sanghan.me/blog/2014/09/sieve/">
+                                Prime Sieves and Python Data Structures
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
+                                Swift Program is Swift, Except When it's Not
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="http://sanghan.me/blog/2014/06/pelican_blog/">
+                                Pelican: A Blogging Engine Written in Python
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="http://sanghan.me/blog/2014/06/swift_bubble_sort/">
+                                Swift: Bubble Sort
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="http://sanghan.me/blog/2014/05/digital_universe/">
+                                Digital Universe
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+        <div id="gh_repos">
+            <p class="list-group-item">Status updating...</p>
+        </div>
+            <a href="https://github.com/jjangsangy">@jjangsangy</a> on GitHub
+    </li>
+
+        </ul>
+    </section>
+
+</aside>        </div>
+    </div>
+</div>
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 LightQuanta
+            &middot; Sang Han         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://sanghan.me/theme/js/respond.min.js"></script>
+
+    <!-- GitHub JS -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (!window.jXHR) {
+                var jxhr = document.createElement('script');
+                jxhr.type = 'text/javascript';
+                jxhr.src = 'http://sanghan.me/theme/js/jXHR.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(jxhr, s);
+            }
+
+            github.showRepos({
+                user: 'jjangsangy',
+                count: 10,
+                skip_forks: true,
+                target: '#gh_repos'
+            });
+        });
+    </script>
+    <script src="http://sanghan.me/theme/js/github.js" type="text/javascript"></script>
+    <!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'sanghan'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-51412306-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+<!-- Custom site js-->
+<script src="http://sanghan.me/static/js/headroom.min.js"></script>
+<script src="http://sanghan.me/static/js/site.js"></script>
+
+</body>
+</html>
