@@ -127,7 +127,7 @@ computing all factors of &lt;mathjax&gt;$n$&lt;/mathjax&gt; to then&amp;nbsp;be&
 \end{align}$$&lt;/mathjax&gt;&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 We find insertion actually runs faster by an order of
-&lt;mathjax&gt;$\frac{1}{\ln(n)}$&lt;/mathjax&gt;!! But this is a diminishing optimization which
+&lt;mathjax&gt;$\frac{1}{\ln(n)}$&lt;/mathjax&gt;. But this is a diminishing optimization which
 converges back to the original &lt;code&gt;sieve&lt;/code&gt; speed at larger problem sizes.&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -200,9 +200,9 @@ by all the numbers between &lt;mathjax&gt;$2 \leq x \leq n-1$&lt;/mathjax&gt;.&l
 &lt;blockquote class="pull-quote"&gt;
 However, one optimization would be
 to only check factors up to &lt;mathjax&gt;$2 \leq x \leq \sqrt{n}$&lt;/mathjax&gt;.&lt;/blockquote&gt;
-&lt;p&gt;This optimization is possible because when computing factors of &lt;mathjax&gt;$n_{f}$&lt;/mathjax&gt; where
-&lt;mathjax&gt;$n_{f} = p \times q$&lt;/mathjax&gt;, either &lt;mathjax&gt;$p$&lt;/mathjax&gt; or &lt;mathjax&gt;$q$&lt;/mathjax&gt; must be less than or equal
-to &lt;mathjax&gt;$\sqrt{n_{f}}$&lt;/mathjax&gt; or else their product is greater than &lt;mathjax&gt;$n$&lt;/mathjax&gt;.
+&lt;p&gt;This optimization is possible because when computing factors of &lt;mathjax&gt;$n$&lt;/mathjax&gt; where
+&lt;mathjax&gt;$n = p \times q$&lt;/mathjax&gt;, either &lt;mathjax&gt;$p$&lt;/mathjax&gt; or &lt;mathjax&gt;$q$&lt;/mathjax&gt; must be less than or equal
+to &lt;mathjax&gt;$\sqrt{n}$&lt;/mathjax&gt; or else their product is greater than &lt;mathjax&gt;$n$&lt;/mathjax&gt;.
 When moving up values of &lt;mathjax&gt;$p$&lt;/mathjax&gt;, we know that for any unique
 factor &lt;mathjax&gt;$p$&lt;/mathjax&gt; cannot be greater than &lt;mathjax&gt;$q$&lt;/mathjax&gt;, therefore computing
 up to &lt;mathjax&gt;$p$&lt;/mathjax&gt; is sufficient and the program need not proceed&amp;nbsp;further.&lt;/p&gt;

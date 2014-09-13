@@ -286,7 +286,7 @@ computing all factors of <mathjax>$n$</mathjax> to then&nbsp;be</p>
 \end{align}$$</mathjax></p>
 <blockquote class="pull-quote">
 We find insertion actually runs faster by an order of
-<mathjax>$\frac{1}{\ln(n)}$</mathjax>!! But this is a diminishing optimization which
+<mathjax>$\frac{1}{\ln(n)}$</mathjax>. But this is a diminishing optimization which
 converges back to the original <code>sieve</code> speed at larger problem sizes.</blockquote>
 </div>
 </div>
@@ -359,9 +359,9 @@ by all the numbers between <mathjax>$2 \leq x \leq n-1$</mathjax>.</p>
 <blockquote class="pull-quote">
 However, one optimization would be
 to only check factors up to <mathjax>$2 \leq x \leq \sqrt{n}$</mathjax>.</blockquote>
-<p>This optimization is possible because when computing factors of <mathjax>$n_{f}$</mathjax> where
-<mathjax>$n_{f} = p \times q$</mathjax>, either <mathjax>$p$</mathjax> or <mathjax>$q$</mathjax> must be less than or equal
-to <mathjax>$\sqrt{n_{f}}$</mathjax> or else their product is greater than <mathjax>$n$</mathjax>.
+<p>This optimization is possible because when computing factors of <mathjax>$n$</mathjax> where
+<mathjax>$n = p \times q$</mathjax>, either <mathjax>$p$</mathjax> or <mathjax>$q$</mathjax> must be less than or equal
+to <mathjax>$\sqrt{n}$</mathjax> or else their product is greater than <mathjax>$n$</mathjax>.
 When moving up values of <mathjax>$p$</mathjax>, we know that for any unique
 factor <mathjax>$p$</mathjax> cannot be greater than <mathjax>$q$</mathjax>, therefore computing
 up to <mathjax>$p$</mathjax> is sufficient and the program need not proceed&nbsp;further.</p>
