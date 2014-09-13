@@ -205,7 +205,7 @@ to only check factors up to &lt;mathjax&gt;$2 \leq x \leq \sqrt{n}$&lt;/mathjax&
 to &lt;mathjax&gt;$\sqrt{n}$&lt;/mathjax&gt; or else their product is greater than &lt;mathjax&gt;$n$&lt;/mathjax&gt;.
 When moving up values of &lt;mathjax&gt;$p$&lt;/mathjax&gt;, we know that for any unique
 factor &lt;mathjax&gt;$p$&lt;/mathjax&gt; cannot be greater than &lt;mathjax&gt;$q$&lt;/mathjax&gt;, therefore computing
-up to &lt;mathjax&gt;$p$&lt;/mathjax&gt; is sufficient and so we need not proceed&amp;nbsp;further.&lt;/p&gt;
+up to &lt;mathjax&gt;$p$&lt;/mathjax&gt; is sufficient and the program need not proceed&amp;nbsp;further.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 This optimization reduces the run time for each factorization
 down to &lt;mathjax&gt;$\mathcal{O}(\sqrt{n})$&lt;/mathjax&gt;.&lt;/blockquote&gt;
