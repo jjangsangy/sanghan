@@ -619,12 +619,12 @@ Pelican will use later to generate the&amp;nbsp;blog.&lt;/p&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Wed, 04 Jun 2014 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2014-06-04:blog/2014/06/swift_bubble_sort/</guid><category>Apple</category><category>Programming Languages</category><category>WWDC</category></item><item><title>Digital Universe</title><link>http://sanghan.me/blog/2014/05/digital_universe/</link><description>&lt;!--  --&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&amp;quot;In the digital universe, there are two kinds of bits:
+&lt;p&gt;&lt;em&gt;&amp;quot;In the digital universe, there are two kinds of bits:
 bits that represent structures (differences in space)
 and bits that represent sequence (differences in time).
 Digital computers - as formalized by Alan Turing, and
 developed by John von Neumann - are devices that translate
-between these two species of bits according to definite&amp;nbsp;rules.&amp;quot;&lt;/p&gt;
+between these two species of bits according to definite&amp;nbsp;rules.&amp;quot;&lt;/em&gt;&lt;/p&gt;
 &lt;p class="attribution"&gt;&amp;mdash;George Dyson: Turing&amp;#8217;s&amp;nbsp;Cathedral&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;About a year ago, I finished reading &lt;a class="reference external" href="http://www.amazon.com/Turings-Cathedral-Origins-Digital-Universe/dp/1400075998"&gt;Turing&amp;#8217;s Cathedral&lt;/a&gt;.&lt;/p&gt;
