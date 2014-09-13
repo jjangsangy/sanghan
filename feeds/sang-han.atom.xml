@@ -207,7 +207,7 @@ When moving up values of &lt;mathjax&gt;$p$&lt;/mathjax&gt;, we know that for an
 factor &lt;mathjax&gt;$p$&lt;/mathjax&gt; cannot be greater than &lt;mathjax&gt;$q$&lt;/mathjax&gt;, therefore computing
 up to &lt;mathjax&gt;$p$&lt;/mathjax&gt; is sufficient and the program need not proceed&amp;nbsp;further.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
-This optimization reduces the run time for each factorization
+This optimization reduces the run time
 down to &lt;mathjax&gt;$\mathcal{O}(\sqrt{n})$&lt;/mathjax&gt;.&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;all_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
