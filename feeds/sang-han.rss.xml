@@ -99,8 +99,8 @@ actually running a single benchmark? For much &lt;a class="reference external" h
 but for this isolated case, it&amp;#8217;s possible to make some good&amp;nbsp;predictions.&lt;/p&gt;
 &lt;p&gt;Both &lt;code&gt;set_sieve&lt;/code&gt; and &lt;code&gt;set_insertion_sieve&lt;/code&gt; perform similar operations
 until the second iterative block. Because set operations are primarily implemeneted as hashes, we can assert that
-both set &lt;code&gt;insertion&lt;/code&gt; and set &lt;code&gt;deletion&lt;/code&gt; are contant-time operations in relation to problem-size
-and linear-time operations in relation hash-size. Therefore, it&amp;#8217;s possible that
+both set &lt;code&gt;insertion&lt;/code&gt; and set &lt;code&gt;deletion&lt;/code&gt; are &lt;mathjax&gt;$\mathcal{O}(1)$&lt;/mathjax&gt; time operations in relation to problem-size
+and &lt;mathjax&gt;$\mathcal{O}(n)$&lt;/mathjax&gt; time operations in relation hash-size. Therefore, it&amp;#8217;s possible that
 either of these soltuions could run faster because with each iteration of &lt;code&gt;set_sieve&lt;/code&gt;
 the hash-size decreases, while &lt;code&gt;set_insertion_sieve&lt;/code&gt; hash size&amp;nbsp;increases.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
