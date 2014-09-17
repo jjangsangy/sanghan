@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>OS X ssh-copy - LightQuanta</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="http://sanghan.me/img/hv.png" rel="icon">
+
+<link rel="canonical" href="http://sanghan.me/drafts/osx-ssh-copy.html">
+
+        <meta name="author" content="Sang Han" />
+        <meta name="keywords" content="Command Line,bash,shell" />
+        <meta name="description" content="#!/usr/bin/env bash usage() { cat &lt;&lt;- DOCUMENT $PROGNAME [-h] [-t] [-k key] [-l login] [server] Utility for automatically exporting ssh keys into remote servers for authentication. Checks $HOME/.ssh for id_rsa.pub or id_dsa.pub and appends them into the authorized_keys of remote host AUTHOR: Sang Han YEAR: 2013 VERSION: 2.4 -h [help] Outputs usage directions -t [test] Runs unit tests -k [key] Specify your own public key located in $HOME/.ssh directory -l [login] Specify user login credentials DOCUMENT } # Global Variables PROGNAME=&#34;$(basename &#34;$0&#34;)&#34; function error_exit() { printf &#34;ERROR due to %s&#34; &#34;${1:-&#34;Unknown Error&#34;}&#34; exit 1 } function test_variables ..." />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.paper.min.css" type="text/css"/>
+    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
+        <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
+
+        <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="LightQuanta ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top headroom" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://sanghan.me/" class="navbar-brand">
+
+                <span class="fa-stack fa-large">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-flask pull-center fa-stack-1x"></i>
+                </span>
+                LightQuanta
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+
+                         <li>
+                             <a href="http://sanghan.me/pages/about.html">
+                             <i class="fa fa-beer"></i>
+                             <span class="icon-label">About Me</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/projects.html">
+                             <i class="fa fa-code"></i>
+                             <span class="icon-label">Projects</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/skills.html">
+                             <i class="fa fa-graduation-cap"></i>
+                             <span class="icon-label">Skills</span>
+                             </a>
+                         </li>
+                         <li>
+                             <a href="http://sanghan.me/pages/tools.html">
+                             <i class="fa fa-wrench"></i>
+                             <span class="icon-label">Tools</span>
+                             </a>
+                         </li>
+
+                <!--Dropdown Categories-->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li >
+                        <a href="http://sanghan.me/category/articles.html">Articles</a></li>
+                        <li  class="active" >
+                        <a href="http://sanghan.me/category/programming.html">Programming</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/quotes.html">Quotes</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/tumblr.html">Tumblr</a></li>
+                    </ul>
+                    </li>
+
+
+<!-- Disabled
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+</ul>
+-->
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <ol class="breadcrumb">
+                <li><a href="http://sanghan.me" title="LightQuanta"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="http://sanghan.me/category/programming.html" title="Programming">Programming</a></li>
+                <li class="active">OS X ssh-copy</li>
+            </ol>
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://sanghan.me/drafts/osx-ssh-copy.html"
+                       rel="bookmark"
+                       title="Permalink to OS X ssh-copy">
+                        OS X ssh-copy
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-primary">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-09-16T00:00:00-07:00"> Tue, 16 Sep 2014</time>
+    </span>
+
+        <span class="label label-success">Category</span>
+        <a href="http://sanghan.me/category/programming.html">Programming</a>
+
+
+<span class="label label-info">Tags</span>
+	<a href="http://sanghan.me/tag/command-line.html">Command Line</a>
+        /
+	<a href="http://sanghan.me/tag/bash.html">bash</a>
+        /
+	<a href="http://sanghan.me/tag/shell.html">shell</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div class="highlight"><pre><span id="line-1">#!/usr/bin/env bash
+</span><span id="line-2">usage() { cat &lt;&lt;- DOCUMENT
+</span><span id="line-3">
+</span><span id="line-4">    $PROGNAME [-h] [-t] [-k key] [-l login] [server]
+</span><span id="line-5">
+</span><span id="line-6">    Utility for automatically exporting ssh keys into remote servers for authentication.
+</span><span id="line-7">    Checks $HOME/.ssh for id_rsa.pub or id_dsa.pub and appends them into
+</span><span id="line-8">    the authorized_keys of remote host
+</span><span id="line-9">
+</span><span id="line-10">    AUTHOR:     Sang Han
+</span><span id="line-11">    YEAR:       2013
+</span><span id="line-12">    VERSION:    2.4
+</span><span id="line-13">
+</span><span id="line-14">    -h [help]
+</span><span id="line-15">        Outputs usage directions
+</span><span id="line-16">    -t [test]
+</span><span id="line-17">        Runs unit tests
+</span><span id="line-18">    -k [key]
+</span><span id="line-19">        Specify your own public key located in $HOME/.ssh directory
+</span><span id="line-20">    -l [login]
+</span><span id="line-21">        Specify user login credentials
+</span><span id="line-22">
+</span><span id="line-23">
+</span><span id="line-24">    DOCUMENT
+</span><span id="line-25">}
+</span><span id="line-26">
+</span><span id="line-27"># Global Variables
+</span><span id="line-28">PROGNAME=&quot;$(basename &quot;$0&quot;)&quot;
+</span><span id="line-29">
+</span><span id="line-30">function error_exit() {
+</span><span id="line-31">    printf &quot;ERROR due to %s&quot;  &quot;${1:-&quot;Unknown Error&quot;}&quot;
+</span><span id="line-32">    exit 1
+</span><span id="line-33">}
+</span><span id="line-34">
+</span><span id="line-35">function test_variables() {
+</span><span id="line-36">    declare -a variables=(${*})
+</span><span id="line-37">    for var in &quot;${variables[@]}&quot;; do
+</span><span id="line-38">        printf &quot;%30s = %s\n&quot; \
+</span><span id="line-39">            &quot;$(tput setaf 9)\$${var}$(tput sgr0)&quot; \
+</span><span id="line-40">            &quot;$(tput setaf 3)${!var}$(tput sgr0)&quot;
+</span><span id="line-41">    done
+</span><span id="line-42">}
+</span><span id="line-43">
+</span><span id="line-44">function install_keys() {
+</span><span id="line-45">    # Reads the public key file with cat and then logs into ssh server
+</span><span id="line-46">    # and appends the public key file at the end of the authorized_key file
+</span><span id="line-47">    # within $HOME
+</span><span id="line-48">    cat &lt; &quot;${PUBKEY[i]}&quot; | \
+</span><span id="line-49">        ssh -l &quot;$LOGIN_USER&quot; &quot;$SERVER&quot; &quot;\
+</span><span id="line-50">            if [ -d ~/.ssh ]; then \
+</span><span id="line-51">                cat &gt;&gt; ~/.ssh/authorized_keys; \
+</span><span id="line-52">            else \
+</span><span id="line-53">                mkdir ~/.ssh; \
+</span><span id="line-54">                cat &gt;&gt; ~/.ssh/authorized_keys; \
+</span><span id="line-55">            fi&quot;
+</span><span id="line-56">}
+</span><span id="line-57">
+</span><span id="line-58">function check_keys() {
+</span><span id="line-59">    # Checks $HOME/.ssh directory for default keys
+</span><span id="line-60">    if [[ $HOME/.ssh/*.pub ]]; then
+</span><span id="line-61">        return
+</span><span id="line-62">    else
+</span><span id="line-63">        error_exit &quot;missing ssh public keys&quot;
+</span><span id="line-64">    fi
+</span><span id="line-65">}
+</span><span id="line-66">
+</span><span id="line-67">function check_auth() {
+</span><span id="line-68">    # Checks if proper credentials have been given as $1. After credential has
+</span><span id="line-69">    # been checked, will read and bind the variable.
+</span><span id="line-70">    local CREDENTIAL=$1
+</span><span id="line-71">    if [[ ! ${!CREDENTIAL} ]]; then
+</span><span id="line-72">        read -p &quot;${CREDENTIAL}:  &quot; &quot;${CREDENTIAL}&quot;
+</span><span id="line-73">    fi
+</span><span id="line-74">}
+</span><span id="line-75">
+</span><span id="line-76">function check_server() {
+</span><span id="line-77">    SERVER=$1
+</span><span id="line-78">    if [[ &quot;$SERVER&quot; =~ @ ]]; then
+</span><span id="line-79">        LOGIN_USER=${SERVER%@*}
+</span><span id="line-80">        SERVER=${SERVER#*@}
+</span><span id="line-81">        return
+</span><span id="line-82">    fi
+</span><span id="line-83">}
+</span><span id="line-84">
+</span><span id="line-85">main() {
+</span><span id="line-86">    # Default Public Keys
+</span><span id="line-87">    if [ -z $KEY ]; then declare -a KEY=(&quot;id_rsa&quot; &quot;id_dsa&quot;); fi
+</span><span id="line-88">
+</span><span id="line-89">    for (( i=0; i&lt;${#KEY[@]}; i+=1 )); do
+</span><span id="line-90">        local PUBKEY[i]=&quot;$HOME/.ssh/${KEY[i]}.pub&quot;
+</span><span id="line-91">
+</span><span id="line-92">        # Test Keys
+</span><span id="line-93">        if ((TEST==1)); then test_variables KEY[i] PUBKEY[i]; continue; fi
+</span><span id="line-94">
+</span><span id="line-95">        # Gather necessary login credentials
+</span><span id="line-96">        if [[ -r &quot;${PUBKEY[i]}&quot; ]]; then
+</span><span id="line-97">            check_auth LOGIN_USER; check_auth SERVER
+</span><span id="line-98">            install_keys &amp;&amp; break
+</span><span id="line-99">        fi
+</span><span id="line-100">    done
+</span><span id="line-101">}
+</span><span id="line-102">
+</span><span id="line-103"># Option Parsing
+</span><span id="line-104">declare -i TEST=0
+</span><span id="line-105">while getopts &quot;:k:l:th&quot; OPTION; do
+</span><span id="line-106">    case $OPTION in
+</span><span id="line-107">        I) usage
+</span><span id="line-108">           exit 0
+</span><span id="line-109">            ;;
+</span><span id="line-110">        II) KEY=$OPTARG
+</span><span id="line-111">             ;;
+</span><span id="line-112">        III) TEST=1
+</span><span id="line-113">              ;;
+</span><span id="line-114">        IV) LOGIN_USER=$OPTARG
+</span><span id="line-115">             ;;
+</span><span id="line-116">        ?) { echo &quot;Invalid option: -${OPTARG}&quot;; usage; } &gt;&amp;2
+</span><span id="line-117">             exit 1
+</span><span id="line-118">             ;;
+</span><span id="line-119">    esac
+</span><span id="line-120">done
+</span><span id="line-121">    shift $((OPTIND-1))
+</span><span id="line-122">
+</span><span id="line-123">if [[ &quot;$0&quot; == &quot;${BASH_SOURCE}&quot; ]]; then
+</span><span id="line-124">    # Validate user input
+</span><span id="line-125">    if [ $# = 1 ]; then check_server &quot;$1&quot;; fi; check_keys
+</span><span id="line-126">
+</span><span id="line-127">    # Test Globals
+</span><span id="line-128">    if ((TEST==1)); then test_variables SERVER LOGIN_USER; fi
+</span><span id="line-129">
+</span><span id="line-130">    main
+</span><span id="line-131">fi
+</span></pre></div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'sanghan'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'osx-ssh-copy';
+                var disqus_url = 'http://sanghan.me/drafts/osx-ssh-copy.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+    </div>
+
+        <div class="col-sm-3 well well-sm" id="sidebar">
+
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+                  <ul class="list-group" id="social">
+                    <li class="list-group-item"><a href="http://github.com/jjangsangy"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+                    <li class="list-group-item"><a href="http://facebook.com/jjangsangy"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+                    <li class="list-group-item"><a href="https://www.linkedin.com/pub/sang-han/40/9a8/323"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+                    <li class="list-group-item"><a href="http://jjangsangy.tumblr.com"><i class="fa fa-tumblr-square fa-lg"></i> Tumblr</a></li>
+                    <li class="list-group-item"><a href="http://pinterest.com/jjangsangy"><i class="fa fa-pinterest-square fa-lg"></i> Pinterest</a></li>
+                  </ul>
+                </li>
+
+                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                    <ul class="list-group" id="recentposts">
+                        <li class="list-group-item">
+                            <a href="http://sanghan.me/blog/2014/09/sieve/">
+                                Prime Sieves and Python Data Structures
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
+                                Swift Program is Swift, Except When it's Not
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="http://sanghan.me/blog/2014/06/pelican_blog/">
+                                Pelican: A Blogging Engine Written in Python
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="http://sanghan.me/blog/2014/06/swift_bubble_sort/">
+                                Swift: Bubble Sort
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="http://sanghan.me/blog/2014/05/digital_universe/">
+                                Digital Universe
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+        <div id="gh_repos">
+            <p class="list-group-item">Status updating...</p>
+        </div>
+            <a href="https://github.com/jjangsangy">@jjangsangy</a> on GitHub
+    </li>
+
+        </ul>
+    </section>
+
+</aside>        </div>
+    </div>
+</div>
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 LightQuanta
+            &middot; Sang Han         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://sanghan.me/theme/js/respond.min.js"></script>
+
+    <!-- GitHub JS -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (!window.jXHR) {
+                var jxhr = document.createElement('script');
+                jxhr.type = 'text/javascript';
+                jxhr.src = 'http://sanghan.me/theme/js/jXHR.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(jxhr, s);
+            }
+
+            github.showRepos({
+                user: 'jjangsangy',
+                count: 10,
+                skip_forks: true,
+                target: '#gh_repos'
+            });
+        });
+    </script>
+    <script src="http://sanghan.me/theme/js/github.js" type="text/javascript"></script>
+    <!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'sanghan'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-51412306-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+<!-- Custom site js-->
+<script src="http://sanghan.me/static/js/headroom.min.js"></script>
+<script src="http://sanghan.me/static/js/site.js"></script>
+
+</body>
+</html>
