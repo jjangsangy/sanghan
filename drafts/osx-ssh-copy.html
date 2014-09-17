@@ -148,137 +148,137 @@
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div class="highlight"><pre><span id="line-1">#!/usr/bin/env bash
-</span><span id="line-2">usage() { cat &lt;&lt;- DOCUMENT
+                <div class="highlight"><pre><span id="line-1"><span class="c">#!/usr/bin/env bash</span>
+</span><span id="line-2">usage<span class="o">()</span> <span class="o">{</span> cat <span class="s">&lt;&lt;- DOCUMENT</span>
 </span><span id="line-3">
-</span><span id="line-4">    $PROGNAME [-h] [-t] [-k key] [-l login] [server]
+</span><span id="line-4"><span class="s">    $PROGNAME [-h] [-t] [-k key] [-l login] [server]</span>
 </span><span id="line-5">
-</span><span id="line-6">    Utility for automatically exporting ssh keys into remote servers for authentication.
-</span><span id="line-7">    Checks $HOME/.ssh for id_rsa.pub or id_dsa.pub and appends them into
-</span><span id="line-8">    the authorized_keys of remote host
+</span><span id="line-6"><span class="s">    Utility for automatically exporting ssh keys into remote servers for authentication.</span>
+</span><span id="line-7"><span class="s">    Checks $HOME/.ssh for id_rsa.pub or id_dsa.pub and appends them into</span>
+</span><span id="line-8"><span class="s">    the authorized_keys of remote host</span>
 </span><span id="line-9">
-</span><span id="line-10">    AUTHOR:     Sang Han
-</span><span id="line-11">    YEAR:       2013
-</span><span id="line-12">    VERSION:    2.4
+</span><span id="line-10"><span class="s">    AUTHOR:     Sang Han</span>
+</span><span id="line-11"><span class="s">    YEAR:       2013</span>
+</span><span id="line-12"><span class="s">    VERSION:    2.4</span>
 </span><span id="line-13">
-</span><span id="line-14">    -h [help]
-</span><span id="line-15">        Outputs usage directions
-</span><span id="line-16">    -t [test]
-</span><span id="line-17">        Runs unit tests
-</span><span id="line-18">    -k [key]
-</span><span id="line-19">        Specify your own public key located in $HOME/.ssh directory
-</span><span id="line-20">    -l [login]
-</span><span id="line-21">        Specify user login credentials
+</span><span id="line-14"><span class="s">    -h [help]</span>
+</span><span id="line-15"><span class="s">        Outputs usage directions</span>
+</span><span id="line-16"><span class="s">    -t [test]</span>
+</span><span id="line-17"><span class="s">        Runs unit tests</span>
+</span><span id="line-18"><span class="s">    -k [key]</span>
+</span><span id="line-19"><span class="s">        Specify your own public key located in $HOME/.ssh directory</span>
+</span><span id="line-20"><span class="s">    -l [login]</span>
+</span><span id="line-21"><span class="s">        Specify user login credentials</span>
 </span><span id="line-22">
 </span><span id="line-23">
-</span><span id="line-24">    DOCUMENT
-</span><span id="line-25">}
+</span><span id="line-24"><span class="s">    DOCUMENT</span>
+</span><span id="line-25"><span class="o">}</span>
 </span><span id="line-26">
-</span><span id="line-27"># Global Variables
-</span><span id="line-28">PROGNAME=&quot;$(basename &quot;$0&quot;)&quot;
+</span><span id="line-27"><span class="c"># Global Variables</span>
+</span><span id="line-28"><span class="nv">PROGNAME</span><span class="o">=</span><span class="s2">&quot;$(basename &quot;</span><span class="nv">$0</span><span class="s2">&quot;)&quot;</span>
 </span><span id="line-29">
-</span><span id="line-30">function error_exit() {
-</span><span id="line-31">    printf &quot;ERROR due to %s&quot;  &quot;${1:-&quot;Unknown Error&quot;}&quot;
-</span><span id="line-32">    exit 1
-</span><span id="line-33">}
+</span><span id="line-30"><span class="k">function </span>error_exit<span class="o">()</span> <span class="o">{</span>
+</span><span id="line-31">    <span class="nb">printf</span> <span class="s2">&quot;ERROR due to %s&quot;</span>  <span class="s2">&quot;${1:-&quot;</span>Unknown Error<span class="s2">&quot;}&quot;</span>
+</span><span id="line-32">    <span class="nb">exit </span>1
+</span><span id="line-33"><span class="o">}</span>
 </span><span id="line-34">
-</span><span id="line-35">function test_variables() {
-</span><span id="line-36">    declare -a variables=(${*})
-</span><span id="line-37">    for var in &quot;${variables[@]}&quot;; do
-</span><span id="line-38">        printf &quot;%30s = %s\n&quot; \
-</span><span id="line-39">            &quot;$(tput setaf 9)\$${var}$(tput sgr0)&quot; \
-</span><span id="line-40">            &quot;$(tput setaf 3)${!var}$(tput sgr0)&quot;
-</span><span id="line-41">    done
-</span><span id="line-42">}
+</span><span id="line-35"><span class="k">function </span>test_variables<span class="o">()</span> <span class="o">{</span>
+</span><span id="line-36">    <span class="nb">declare</span> -a <span class="nv">variables</span><span class="o">=(</span><span class="k">${</span><span class="p">*</span><span class="k">}</span><span class="o">)</span>
+</span><span id="line-37">    <span class="k">for </span>var in <span class="s2">&quot;${variables[@]}&quot;</span>; <span class="k">do</span>
+</span><span id="line-38"><span class="k">        </span><span class="nb">printf</span> <span class="s2">&quot;%30s = %s\n&quot;</span> <span class="se">\</span>
+</span><span id="line-39">            <span class="s2">&quot;$(tput setaf 9)\$${var}$(tput sgr0)&quot;</span> <span class="se">\</span>
+</span><span id="line-40">            <span class="s2">&quot;$(tput setaf 3)${!var}$(tput sgr0)&quot;</span>
+</span><span id="line-41">    <span class="k">done</span>
+</span><span id="line-42"><span class="o">}</span>
 </span><span id="line-43">
-</span><span id="line-44">function install_keys() {
-</span><span id="line-45">    # Reads the public key file with cat and then logs into ssh server
-</span><span id="line-46">    # and appends the public key file at the end of the authorized_key file
-</span><span id="line-47">    # within $HOME
-</span><span id="line-48">    cat &lt; &quot;${PUBKEY[i]}&quot; | \
-</span><span id="line-49">        ssh -l &quot;$LOGIN_USER&quot; &quot;$SERVER&quot; &quot;\
-</span><span id="line-50">            if [ -d ~/.ssh ]; then \
-</span><span id="line-51">                cat &gt;&gt; ~/.ssh/authorized_keys; \
-</span><span id="line-52">            else \
-</span><span id="line-53">                mkdir ~/.ssh; \
-</span><span id="line-54">                cat &gt;&gt; ~/.ssh/authorized_keys; \
-</span><span id="line-55">            fi&quot;
-</span><span id="line-56">}
+</span><span id="line-44"><span class="k">function </span>install_keys<span class="o">()</span> <span class="o">{</span>
+</span><span id="line-45">    <span class="c"># Reads the public key file with cat and then logs into ssh server</span>
+</span><span id="line-46">    <span class="c"># and appends the public key file at the end of the authorized_key file</span>
+</span><span id="line-47">    <span class="c"># within $HOME</span>
+</span><span id="line-48">    cat &lt; <span class="s2">&quot;${PUBKEY[i]}&quot;</span> | <span class="se">\</span>
+</span><span id="line-49">        ssh -l <span class="s2">&quot;$LOGIN_USER&quot;</span> <span class="s2">&quot;$SERVER&quot;</span> <span class="s2">&quot;\</span>
+</span><span id="line-50"><span class="s2">            if [ -d ~/.ssh ]; then \</span>
+</span><span id="line-51"><span class="s2">                cat &gt;&gt; ~/.ssh/authorized_keys; \</span>
+</span><span id="line-52"><span class="s2">            else \</span>
+</span><span id="line-53"><span class="s2">                mkdir ~/.ssh; \</span>
+</span><span id="line-54"><span class="s2">                cat &gt;&gt; ~/.ssh/authorized_keys; \</span>
+</span><span id="line-55"><span class="s2">            fi&quot;</span>
+</span><span id="line-56"><span class="o">}</span>
 </span><span id="line-57">
-</span><span id="line-58">function check_keys() {
-</span><span id="line-59">    # Checks $HOME/.ssh directory for default keys
-</span><span id="line-60">    if [[ $HOME/.ssh/*.pub ]]; then
-</span><span id="line-61">        return
-</span><span id="line-62">    else
-</span><span id="line-63">        error_exit &quot;missing ssh public keys&quot;
-</span><span id="line-64">    fi
-</span><span id="line-65">}
+</span><span id="line-58"><span class="k">function </span>check_keys<span class="o">()</span> <span class="o">{</span>
+</span><span id="line-59">    <span class="c"># Checks $HOME/.ssh directory for default keys</span>
+</span><span id="line-60">    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$HOME</span>/.ssh/*.pub <span class="o">]]</span>; <span class="k">then</span>
+</span><span id="line-61"><span class="k">        return</span>
+</span><span id="line-62"><span class="k">    else</span>
+</span><span id="line-63"><span class="k">        </span>error_exit <span class="s2">&quot;missing ssh public keys&quot;</span>
+</span><span id="line-64">    <span class="k">fi</span>
+</span><span id="line-65"><span class="o">}</span>
 </span><span id="line-66">
-</span><span id="line-67">function check_auth() {
-</span><span id="line-68">    # Checks if proper credentials have been given as $1. After credential has
-</span><span id="line-69">    # been checked, will read and bind the variable.
-</span><span id="line-70">    local CREDENTIAL=$1
-</span><span id="line-71">    if [[ ! ${!CREDENTIAL} ]]; then
-</span><span id="line-72">        read -p &quot;${CREDENTIAL}:  &quot; &quot;${CREDENTIAL}&quot;
-</span><span id="line-73">    fi
-</span><span id="line-74">}
+</span><span id="line-67"><span class="k">function </span>check_auth<span class="o">()</span> <span class="o">{</span>
+</span><span id="line-68">    <span class="c"># Checks if proper credentials have been given as $1. After credential has</span>
+</span><span id="line-69">    <span class="c"># been checked, will read and bind the variable.</span>
+</span><span id="line-70">    <span class="nb">local </span><span class="nv">CREDENTIAL</span><span class="o">=</span><span class="nv">$1</span>
+</span><span id="line-71">    <span class="k">if</span> <span class="o">[[</span> ! <span class="k">${</span><span class="p">!CREDENTIAL</span><span class="k">}</span> <span class="o">]]</span>; <span class="k">then</span>
+</span><span id="line-72"><span class="k">        </span><span class="nb">read</span> -p <span class="s2">&quot;${CREDENTIAL}:  &quot;</span> <span class="s2">&quot;${CREDENTIAL}&quot;</span>
+</span><span id="line-73">    <span class="k">fi</span>
+</span><span id="line-74"><span class="o">}</span>
 </span><span id="line-75">
-</span><span id="line-76">function check_server() {
-</span><span id="line-77">    SERVER=$1
-</span><span id="line-78">    if [[ &quot;$SERVER&quot; =~ @ ]]; then
-</span><span id="line-79">        LOGIN_USER=${SERVER%@*}
-</span><span id="line-80">        SERVER=${SERVER#*@}
-</span><span id="line-81">        return
-</span><span id="line-82">    fi
-</span><span id="line-83">}
+</span><span id="line-76"><span class="k">function </span>check_server<span class="o">()</span> <span class="o">{</span>
+</span><span id="line-77">    <span class="nv">SERVER</span><span class="o">=</span><span class="nv">$1</span>
+</span><span id="line-78">    <span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;$SERVER&quot;</span> <span class="o">=</span>~ @ <span class="o">]]</span>; <span class="k">then</span>
+</span><span id="line-79"><span class="k">        </span><span class="nv">LOGIN_USER</span><span class="o">=</span><span class="k">${</span><span class="nv">SERVER</span><span class="p">%@*</span><span class="k">}</span>
+</span><span id="line-80">        <span class="nv">SERVER</span><span class="o">=</span><span class="k">${</span><span class="nv">SERVER</span><span class="p">#*@</span><span class="k">}</span>
+</span><span id="line-81">        <span class="k">return</span>
+</span><span id="line-82"><span class="k">    fi</span>
+</span><span id="line-83"><span class="o">}</span>
 </span><span id="line-84">
-</span><span id="line-85">main() {
-</span><span id="line-86">    # Default Public Keys
-</span><span id="line-87">    if [ -z $KEY ]; then declare -a KEY=(&quot;id_rsa&quot; &quot;id_dsa&quot;); fi
+</span><span id="line-85">main<span class="o">()</span> <span class="o">{</span>
+</span><span id="line-86">    <span class="c"># Default Public Keys</span>
+</span><span id="line-87">    <span class="k">if</span> <span class="o">[</span> -z <span class="nv">$KEY</span> <span class="o">]</span>; <span class="k">then </span><span class="nb">declare</span> -a <span class="nv">KEY</span><span class="o">=(</span><span class="s2">&quot;id_rsa&quot;</span> <span class="s2">&quot;id_dsa&quot;</span><span class="o">)</span>; <span class="k">fi</span>
 </span><span id="line-88">
-</span><span id="line-89">    for (( i=0; i&lt;${#KEY[@]}; i+=1 )); do
-</span><span id="line-90">        local PUBKEY[i]=&quot;$HOME/.ssh/${KEY[i]}.pub&quot;
+</span><span id="line-89"><span class="k">    for</span> <span class="o">((</span> <span class="nv">i</span><span class="o">=</span>0; i&lt;<span class="k">${#</span><span class="nv">KEY</span><span class="p">[@]</span><span class="k">}</span>; i+<span class="o">=</span>1 <span class="o">))</span>; <span class="k">do</span>
+</span><span id="line-90"><span class="k">        </span><span class="nb">local </span>PUBKEY<span class="o">[</span>i<span class="o">]=</span><span class="s2">&quot;$HOME/.ssh/${KEY[i]}.pub&quot;</span>
 </span><span id="line-91">
-</span><span id="line-92">        # Test Keys
-</span><span id="line-93">        if ((TEST==1)); then test_variables KEY[i] PUBKEY[i]; continue; fi
+</span><span id="line-92">        <span class="c"># Test Keys</span>
+</span><span id="line-93">        <span class="k">if</span> <span class="o">((</span><span class="nv">TEST</span><span class="o">==</span>1<span class="o">))</span>; <span class="k">then </span>test_variables KEY<span class="o">[</span>i<span class="o">]</span> PUBKEY<span class="o">[</span>i<span class="o">]</span>; <span class="k">continue</span>; <span class="k">fi</span>
 </span><span id="line-94">
-</span><span id="line-95">        # Gather necessary login credentials
-</span><span id="line-96">        if [[ -r &quot;${PUBKEY[i]}&quot; ]]; then
-</span><span id="line-97">            check_auth LOGIN_USER; check_auth SERVER
-</span><span id="line-98">            install_keys &amp;&amp; break
-</span><span id="line-99">        fi
-</span><span id="line-100">    done
-</span><span id="line-101">}
+</span><span id="line-95">        <span class="c"># Gather necessary login credentials</span>
+</span><span id="line-96">        <span class="k">if</span> <span class="o">[[</span> -r <span class="s2">&quot;${PUBKEY[i]}&quot;</span> <span class="o">]]</span>; <span class="k">then</span>
+</span><span id="line-97"><span class="k">            </span>check_auth LOGIN_USER; check_auth SERVER
+</span><span id="line-98">            install_keys <span class="o">&amp;&amp;</span> <span class="nb">break</span>
+</span><span id="line-99"><span class="nb">        </span><span class="k">fi</span>
+</span><span id="line-100"><span class="k">    done</span>
+</span><span id="line-101"><span class="o">}</span>
 </span><span id="line-102">
-</span><span id="line-103"># Option Parsing
-</span><span id="line-104">declare -i TEST=0
-</span><span id="line-105">while getopts &quot;:k:l:th&quot; OPTION; do
-</span><span id="line-106">    case $OPTION in
-</span><span id="line-107">        I) usage
-</span><span id="line-108">           exit 0
+</span><span id="line-103"><span class="c"># Option Parsing</span>
+</span><span id="line-104"><span class="nb">declare</span> -i <span class="nv">TEST</span><span class="o">=</span>0
+</span><span id="line-105"><span class="k">while </span><span class="nb">getopts</span> <span class="s2">&quot;:k:l:th&quot;</span> OPTION; <span class="k">do</span>
+</span><span id="line-106"><span class="k">    case</span> <span class="nv">$OPTION</span> in
+</span><span id="line-107">        I<span class="o">)</span> usage
+</span><span id="line-108">           <span class="nb">exit </span>0
 </span><span id="line-109">            ;;
-</span><span id="line-110">        II) KEY=$OPTARG
+</span><span id="line-110">        II<span class="o">)</span> <span class="nv">KEY</span><span class="o">=</span><span class="nv">$OPTARG</span>
 </span><span id="line-111">             ;;
-</span><span id="line-112">        III) TEST=1
+</span><span id="line-112">        III<span class="o">)</span> <span class="nv">TEST</span><span class="o">=</span>1
 </span><span id="line-113">              ;;
-</span><span id="line-114">        IV) LOGIN_USER=$OPTARG
+</span><span id="line-114">        IV<span class="o">)</span> <span class="nv">LOGIN_USER</span><span class="o">=</span><span class="nv">$OPTARG</span>
 </span><span id="line-115">             ;;
-</span><span id="line-116">        ?) { echo &quot;Invalid option: -${OPTARG}&quot;; usage; } &gt;&amp;2
-</span><span id="line-117">             exit 1
+</span><span id="line-116">        ?<span class="o">)</span> <span class="o">{</span> <span class="nb">echo</span> <span class="s2">&quot;Invalid option: -${OPTARG}&quot;</span>; usage; <span class="o">}</span> &gt;&amp;2
+</span><span id="line-117">             <span class="nb">exit </span>1
 </span><span id="line-118">             ;;
-</span><span id="line-119">    esac
-</span><span id="line-120">done
-</span><span id="line-121">    shift $((OPTIND-1))
+</span><span id="line-119">    <span class="k">esac</span>
+</span><span id="line-120"><span class="k">done</span>
+</span><span id="line-121"><span class="k">    </span><span class="nb">shift</span> <span class="k">$((</span>OPTIND-1<span class="k">))</span>
 </span><span id="line-122">
-</span><span id="line-123">if [[ &quot;$0&quot; == &quot;${BASH_SOURCE}&quot; ]]; then
-</span><span id="line-124">    # Validate user input
-</span><span id="line-125">    if [ $# = 1 ]; then check_server &quot;$1&quot;; fi; check_keys
+</span><span id="line-123"><span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;$0&quot;</span> <span class="o">==</span> <span class="s2">&quot;${BASH_SOURCE}&quot;</span> <span class="o">]]</span>; <span class="k">then</span>
+</span><span id="line-124">    <span class="c"># Validate user input</span>
+</span><span id="line-125">    <span class="k">if</span> <span class="o">[</span> <span class="nv">$# </span><span class="o">=</span> 1 <span class="o">]</span>; <span class="k">then </span>check_server <span class="s2">&quot;$1&quot;</span>; <span class="k">fi</span>; check_keys
 </span><span id="line-126">
-</span><span id="line-127">    # Test Globals
-</span><span id="line-128">    if ((TEST==1)); then test_variables SERVER LOGIN_USER; fi
+</span><span id="line-127">    <span class="c"># Test Globals</span>
+</span><span id="line-128">    <span class="k">if</span> <span class="o">((</span><span class="nv">TEST</span><span class="o">==</span>1<span class="o">))</span>; <span class="k">then </span>test_variables SERVER LOGIN_USER; <span class="k">fi</span>
 </span><span id="line-129">
-</span><span id="line-130">    main
-</span><span id="line-131">fi
+</span><span id="line-130"><span class="k">    </span>main
+</span><span id="line-131"><span class="k">fi</span>
 </span></pre></div>
 
             </div>
