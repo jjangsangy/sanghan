@@ -532,38 +532,64 @@ so thats what I went&amp;nbsp;with.&lt;/p&gt;
 &lt;blockquote class="pull-quote"&gt;
 A generator is basically some arbitrary code that will output more arbitrary code.&lt;/blockquote&gt;
 &lt;p&gt;In this case of pelican, it will take my articles written in the reStructuredText
-markup and then generate &lt;span class="caps"&gt;HTML&lt;/span&gt; and &lt;span class="caps"&gt;CSS&lt;/span&gt; based on the Jinja2 templating&amp;nbsp;engine.&lt;/p&gt;
+markup and then generate &lt;span class="caps"&gt;HTML&lt;/span&gt; and &lt;span class="caps"&gt;CSS&lt;/span&gt; based on the &lt;a class="reference external" href="http://jinja.pocoo.org"&gt;Jinja2&lt;/a&gt; templating&amp;nbsp;engine.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Sounds simple enough&amp;nbsp;right?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Pelican utilized metadata that the user supplies in the form of a configuration file
 located at the root of the project directory. This configuration file helps
 Pelican figure out some user specific details that are necessary in order to
 build the webpage, very similar to how Sphinx generates&amp;nbsp;documentation.&lt;/p&gt;
 &lt;p&gt;Here is a snippet of how this blog&amp;#8217;s configuration file&amp;nbsp;looks.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="c"&gt;#!/usr/bin/env python3&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="c"&gt;# -*- coding: utf-8 -*- #&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;unicode_literals&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-4"&gt;
-&lt;/span&gt;&lt;span id="line-5"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-6"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;os.path&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;abspath&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;curdir&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-7"&gt;
-&lt;/span&gt;&lt;span id="line-8"&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;abspath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;curdir&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-9"&gt;
-&lt;/span&gt;&lt;span id="line-10"&gt;&lt;span class="n"&gt;AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Sang Han&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-11"&gt;&lt;span class="n"&gt;SINGLE_AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-12"&gt;&lt;span class="n"&gt;SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;LightQuanta&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-13"&gt;&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;http://sanghan.me&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-14"&gt;&lt;span class="n"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-15"&gt;    &lt;span class="s"&gt;&amp;#39;img&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-16"&gt;    &lt;span class="s"&gt;&amp;#39;extra/CNAME&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-17"&gt;    &lt;span class="s"&gt;&amp;#39;extra/robots.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-18"&gt;    &lt;span class="s"&gt;&amp;#39;static&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-19"&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;abspath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;curdir&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-6"&gt;
+&lt;/span&gt;&lt;span id="line-7"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-8"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-9"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;os.path&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;abspath&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-10"&gt;
+&lt;/span&gt;&lt;span id="line-11"&gt;&lt;span class="n"&gt;AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Sang Han&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-12"&gt;&lt;span class="n"&gt;SINGLE_AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-13"&gt;&lt;span class="n"&gt;SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;LightQuanta&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-14"&gt;
+&lt;/span&gt;&lt;span id="line-15"&gt;&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;http://sanghan.me&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-16"&gt;&lt;span class="n"&gt;EMAIL_ADDR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;jjangsangy@gmail.com&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-17"&gt;
+&lt;/span&gt;&lt;span id="line-18"&gt;&lt;span class="n"&gt;TIMEZONE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;America/Los_Angeles&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-19"&gt;&lt;span class="n"&gt;DEFAULT_LANG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;en&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-20"&gt;&lt;span class="n"&gt;DATE_FORMATS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;en&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;%a, &lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt; %b %Y&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-21"&gt;&lt;span class="n"&gt;LOCALE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;en_US&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-22"&gt;&lt;span class="n"&gt;DEFAULT_PAGINATION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-23"&gt;&lt;span class="n"&gt;PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;content&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-24"&gt;
+&lt;/span&gt;&lt;span id="line-25"&gt;&lt;span class="n"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-26"&gt;    &lt;span class="s"&gt;&amp;#39;img&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-27"&gt;    &lt;span class="s"&gt;&amp;#39;extra/CNAME&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-28"&gt;    &lt;span class="s"&gt;&amp;#39;extra/robots.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-29"&gt;    &lt;span class="s"&gt;&amp;#39;static&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-30"&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-31"&gt;&lt;span class="n"&gt;EXTRA_PATH_METADATA&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-32"&gt;    &lt;span class="s"&gt;&amp;#39;extra/CNAME&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;CNAME&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-33"&gt;    &lt;span class="s"&gt;&amp;#39;extra/robots.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;robots.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-34"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-35"&gt;&lt;span class="n"&gt;OUTPUT_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;output&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-36"&gt;&lt;span class="n"&gt;ARTICLE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;blog/{date:%Y}/{date:%m}/{slug}/&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-37"&gt;&lt;span class="n"&gt;ARTICLE_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;blog/{date:%Y}/{date:%m}/{slug}/index.html&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;As you can see, the syntax is just Python. The first block
-is just a shebang line specifying the default python
-interpreter. We then append the current directory into the
-Python &lt;span class="caps"&gt;PATH&lt;/span&gt; and then start filling out some global variables which
-Pelican will use later to generate the&amp;nbsp;blog.&lt;/p&gt;
+&lt;!--  --&gt;
+&lt;p&gt;Most of the configuration ends up setting enviornment variables that pelican will then use
+to set up the site. But rather than being one big &lt;code&gt;conf&lt;/code&gt; file, it&amp;#8217;s
+possible there is freedom to run executable&amp;nbsp;code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="templating"&gt;
+&lt;h2&gt;Templating&lt;/h2&gt;
+&lt;p&gt;Above the generator, you have the templating language for laying out your &lt;span class="caps"&gt;HTML&lt;/span&gt;.
+Pelican utilizes the &lt;a class="reference external" href="http://jinja.pocoo.org"&gt;jinja2&lt;/a&gt; templating engine, which also is the main
+engine for &lt;a class="reference external" href="http://flask.pocoo.org"&gt;Flask&lt;/a&gt;, a great Pythonic alternative to the well known &lt;a class="reference external" href="https://www.djangoproject.com"&gt;Django&lt;/a&gt;
+web framework. In fact, anyone with familiarity in a templating language shouldn&amp;#8217;t
+have a problem getting off the ground running in
+building their own site from the ground up with&amp;nbsp;pelican.&lt;/p&gt;
 &lt;/div&gt;
 </summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry><entry><title>Swift: Bubble Sort</title><link href="http://sanghan.me/blog/2014/06/swift_bubble_sort/" rel="alternate"></link><updated>2014-06-04T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-04:blog/2014/06/swift_bubble_sort/</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="c1"&gt;// Sang Han&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="c1"&gt;// An implementation of a bubble party/bubble sort written in swift&lt;/span&gt;
