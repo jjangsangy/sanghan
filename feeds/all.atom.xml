@@ -588,9 +588,12 @@ possible there is freedom to run executable&amp;nbsp;code.&lt;/p&gt;
 &lt;p&gt;Above the generator, you have the templating language for laying out your &lt;span class="caps"&gt;HTML&lt;/span&gt;.
 Pelican utilizes the &lt;a class="reference external" href="http://jinja.pocoo.org"&gt;jinja2&lt;/a&gt; templating engine, which also is the main
 engine for &lt;a class="reference external" href="http://flask.pocoo.org"&gt;Flask&lt;/a&gt;, a great Pythonic alternative to the well known &lt;a class="reference external" href="https://www.djangoproject.com"&gt;Django&lt;/a&gt;
-web framework. In fact, anyone with familiarity in a templating language shouldn&amp;#8217;t
-have a problem getting off the ground running in
-building their own site from the ground up with&amp;nbsp;pelican.&lt;/p&gt;
+web framework. In fact, anyone with familiarity in any templating language should
+feel right at home getting their own site up and running with these&amp;nbsp;tools.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="tooling"&gt;
+&lt;h2&gt;Tooling&lt;/h2&gt;
+&lt;p&gt;Pelican ultimately runs on a &lt;a class="reference external" href="https://github.com/getpelican/pelican.git"&gt;Command Line&amp;nbsp;Interface&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 </summary><category term="Python"></category><category term="Programming"></category><category term="Blog"></category></entry><entry><title>Swift: Bubble Sort</title><link href="http://sanghan.me/blog/2014/06/swift_bubble_sort/" rel="alternate"></link><updated>2014-06-04T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-06-04:blog/2014/06/swift_bubble_sort/</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="c1"&gt;// Sang Han&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="c1"&gt;// An implementation of a bubble party/bubble sort written in swift&lt;/span&gt;
