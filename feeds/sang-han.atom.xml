@@ -191,6 +191,10 @@ same &lt;code&gt;primes&lt;/code&gt; array requiring no more levels of indirecti
 memory allocation to&amp;nbsp;construct.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;div class="section" id="running-the-code"&gt;
+&lt;h2&gt;Running the&amp;nbsp;Code&lt;/h2&gt;
+&lt;iframe src="https://trinket.io/embed/python/7f6f9a989b"
+width="100%" height="550" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
 &lt;div class="section" id="testing-for-primality"&gt;
 &lt;h2&gt;Testing for&amp;nbsp;Primality&lt;/h2&gt;
 &lt;p&gt;So now that we&amp;#8217;ve written the sieve in a bunch of different ways. How do we know that
