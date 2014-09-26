@@ -364,18 +364,6 @@ width="100%" height="550" frameborder="0" marginwidth="0" marginheight="0" allow
 each way is&nbsp;correct.</p>
 <p>The most obvious way to figure if a number&#8217;s prime, is to try dividing the number
 by all the numbers between <mathjax>$2 \leq x \leq n-1$</mathjax>.</p>
-<blockquote class="pull-quote">
-However, one optimization would be
-to only check factors up to <mathjax>$2 \leq x \leq \sqrt{n}$</mathjax>.</blockquote>
-<p>This optimization is possible because when computing factors of <mathjax>$n$</mathjax> where
-<mathjax>$n = p \times q$</mathjax>, either <mathjax>$p$</mathjax> or <mathjax>$q$</mathjax> must be less than or equal
-to <mathjax>$\sqrt{n}$</mathjax> or else their product is greater than <mathjax>$n$</mathjax>.
-When moving up values of <mathjax>$p$</mathjax>, we know that for any unique
-factor <mathjax>$p$</mathjax> cannot be greater than <mathjax>$q$</mathjax>, therefore computing
-up to <mathjax>$p$</mathjax> is sufficient and the program need not proceed&nbsp;further.</p>
-<blockquote class="pull-quote">
-This optimization reduces the run time
-down to <mathjax>$\mathcal{O}(\sqrt{n})$</mathjax>.</blockquote>
 <div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">all_primes</span><span class="p">(</span><span class="n">primes</span><span class="p">:</span> <span class="nb">iter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 </span><span id="line-2">    <span class="k">for</span> <span class="n">prime</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">:</span>
 </span><span id="line-3">        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">prime</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">prime</span><span class="o">**</span><span class="mf">0.5</span><span class="p">))):</span>

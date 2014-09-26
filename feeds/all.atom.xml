@@ -205,18 +205,6 @@ width="100%" height="550" frameborder="0" marginwidth="0" marginheight="0" allow
 each way is&amp;nbsp;correct.&lt;/p&gt;
 &lt;p&gt;The most obvious way to figure if a number&amp;#8217;s prime, is to try dividing the number
 by all the numbers between &lt;mathjax&gt;$2 \leq x \leq n-1$&lt;/mathjax&gt;.&lt;/p&gt;
-&lt;blockquote class="pull-quote"&gt;
-However, one optimization would be
-to only check factors up to &lt;mathjax&gt;$2 \leq x \leq \sqrt{n}$&lt;/mathjax&gt;.&lt;/blockquote&gt;
-&lt;p&gt;This optimization is possible because when computing factors of &lt;mathjax&gt;$n$&lt;/mathjax&gt; where
-&lt;mathjax&gt;$n = p \times q$&lt;/mathjax&gt;, either &lt;mathjax&gt;$p$&lt;/mathjax&gt; or &lt;mathjax&gt;$q$&lt;/mathjax&gt; must be less than or equal
-to &lt;mathjax&gt;$\sqrt{n}$&lt;/mathjax&gt; or else their product is greater than &lt;mathjax&gt;$n$&lt;/mathjax&gt;.
-When moving up values of &lt;mathjax&gt;$p$&lt;/mathjax&gt;, we know that for any unique
-factor &lt;mathjax&gt;$p$&lt;/mathjax&gt; cannot be greater than &lt;mathjax&gt;$q$&lt;/mathjax&gt;, therefore computing
-up to &lt;mathjax&gt;$p$&lt;/mathjax&gt; is sufficient and the program need not proceed&amp;nbsp;further.&lt;/p&gt;
-&lt;blockquote class="pull-quote"&gt;
-This optimization reduces the run time
-down to &lt;mathjax&gt;$\mathcal{O}(\sqrt{n})$&lt;/mathjax&gt;.&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;all_primes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;iter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;primes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;any&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prime&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prime&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;))):&lt;/span&gt;
