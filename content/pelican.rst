@@ -1,10 +1,10 @@
 =============================================
 Pelican: A Blogging Engine Written in Python
 =============================================
-:date: 06-09-14
-:tags: Python, Programming, Blog
-:slug: pelican_blog
-:category: Programming
+:date:      06-09-14
+:tags:      Python, Programming, Blog
+:slug:      pelican_blog
+:category:  Programming
 
 There are many static site generators out there.
 
@@ -29,6 +29,8 @@ There are a couple other generators written with Python like
 but it seemed like Pelican was better supported and documented of the batch,
 so thats what I went with.
 
+|pelican|
+
 So How does it Work?
 ---------------------
 
@@ -37,7 +39,7 @@ So How does it Work?
     A generator is basically some arbitrary code that will output more arbitrary code.
 
 In this case of pelican, it will take my articles written in the reStructuredText
-markup and then generate HTML and CSS based on the Jinja2 templating engine.
+markup and then generate HTML and CSS based on the `Jinja2`_ templating engine.
 
 **Sounds simple enough right?**
 
@@ -51,28 +53,74 @@ Here is a snippet of how this blog's configuration file looks.
 
 .. code-block:: python
 
-    #!/usr/bin/env python
+    #!/usr/bin/env python3
     # -*- coding: utf-8 -*- #
     from __future__ import unicode_literals
 
-    import sys
-    from os.path import abspath, curdir
+    sys.path.append(abspath(os.curdir))
 
-    sys.path.append(abspath(curdir))
+    import sys
+    import os
+    from os.path import abspath
 
     AUTHOR = 'Sang Han'
     SINGLE_AUTHOR = True
-    SITENAME = 'My Photoelectric Blog'
+    SITENAME = 'LightQuanta'
+
     SITEURL = 'http://sanghan.me'
+    EMAIL_ADDR = 'jjangsangy@gmail.com'
+
+    TIMEZONE = 'America/Los_Angeles'
+    DEFAULT_LANG = 'en'
+    DATE_FORMATS = {'en': '%a, %d %b %Y'}
+    LOCALE = 'en_US'
+    DEFAULT_PAGINATION = 7
+    PATH = 'content'
+
     STATIC_PATHS = [
         'img',
         'extra/CNAME',
         'extra/robots.txt',
-        'static',
+        'static'
     ]
+    EXTRA_PATH_METADATA = {
+        'extra/CNAME': {'path': 'CNAME'},
+        'extra/robots.txt': {'path': 'robots.txt'},
+    }
+    OUTPUT_PATH = 'output'
+    ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{slug}/'
+    ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/{slug}/index.html'
 
-As you can see, the syntax is just Python. The first block
-is just a shebang line specifying the default python
-interpreter. We then append the current directory into the
-Python PATH and then start filling out some global variables which
-Pelican will use later to generate the blog.
+..
+
+Most of the configuration ends up setting enviornment variables that pelican will then use
+to set up the site. But rather than being one big :code:`conf` file, it's
+possible there is freedom to run executable code.
+
+Templating
+-----------
+Above the generator, you have the templating language for laying out your HTML.
+Pelican utilizes the `jinja2`_ templating engine, which also is the main
+engine for `Flask`_, a great Pythonic alternative to the well known `Django`_
+web framework. In fact, anyone with familiarity in any templating language should
+feel right at home getting their own site up and running with these tools.
+
+Tooling
+--------
+Pelican ultimately runs on a `Command Line Interface`_
+
+
+.. |pelican| image::
+    {filename}/img/bird-640.jpg
+
+.. _Command Line Interface:
+   https://github.com/getpelican/pelican.git
+
+.. _jinja2:
+    http://jinja.pocoo.org
+
+.. _Flask:
+    http://flask.pocoo.org
+
+.. _Django:
+   https://www.djangoproject.com

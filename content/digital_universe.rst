@@ -9,12 +9,12 @@ Digital Universe
 
 ..
 
-    "In the digital universe, there are two kinds of bits:
+    *"In the digital universe, there are two kinds of bits:
     bits that represent structures (differences in space)
     and bits that represent sequence (differences in time).
     Digital computers - as formalized by Alan Turing, and
     developed by John von Neumann - are devices that translate
-    between these two species of bits according to definite rules."
+    between these two species of bits according to definite rules."*
 
     -- George Dyson: Turing's Cathedral
 
@@ -39,7 +39,9 @@ still make up the foundations of computation as we know today.
 Afterwards I then made up my mind on trying to learn how to write
 my own computer programs and see where it would lead me.
 
-**Since then it's been a remarkable year.**
+.. pull-quote::
+
+    Since then it's been a remarkable year.
 
 .. |turings_cathedral| image:: {filename}/img/turings_cathedral.jpg
    :width: 420px

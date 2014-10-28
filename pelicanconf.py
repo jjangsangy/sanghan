@@ -21,7 +21,7 @@ TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = 'en'
 DATE_FORMATS = {'en': '%a, %d %b %Y'}
 LOCALE = 'en_US'
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 7
 PATH = 'content'
 
 STATIC_PATHS = [
@@ -50,18 +50,25 @@ DISPLAY_ARTICLE_INFO = True
 USE_FOLDER_AS_CATEGORY = True
 DEFAULT_CATEGORY = 'posts'
 DISPLAY_ARTICLE_INFO_ON_INDEX = True
+SHOW_ARTICLE_CATEGORY = True
 
 TYPOGRIFY = True
 MARKUP = ('rst', 'md', 'ipynb')
 CUSTOM_CSS = ('static/css/site.css')
 READERS = {'html': None}
 
-PLUGIN_PATHS = ['plugins', 'plugins/pelican_gist']
+PLUGIN_PATHS = ['plugins','plugins/pelican_gist']
 PLUGINS = [
+    'render_math',
     'representative_image',
     'pelican_youtube.youtube',
-    'pelican_gist'
+    'pelican_gist',
 ]
+MATH = {
+    'auto_insert': True,
+    'show_menu': False,
+    'color':'inherit',
+}
 HEADER_IMAGE = "bird.jpg"
 SUMMARY_MAX_LENGTH = 100
 DISPLAY_BREADCRUMBS= True
@@ -86,6 +93,7 @@ GITHUB_SHOW_USER_LINK = True
 # Social widget
 SOCIAL = (('Github', 'http://github.com/jjangsangy'),
          ('Facebook', 'http://facebook.com/jjangsangy'),
+         ('Twitter', 'https://twitter.com/jjangsangy'),
          ('LinkedIn', 'https://www.linkedin.com/pub/sang-han/40/9a8/323'),
          ('Tumblr', 'http://jjangsangy.tumblr.com'),
          ('Pinterest', 'http://pinterest.com/jjangsangy')

@@ -1,29 +1,29 @@
 ========
 About Me
 ========
-
 :date: 2014-05-05 23:24
 :tags: about
 :icon: fa-beer
 :slug: about
 
 Hi I'm Sang Han
-----------------
-**Welcome to my Photoelectric blog.**
+---------------------
 
-Currently I'm an engineer at `Calient Technologies`_ where I build
-the next generation of photonic switches based on
-`Microelectromechanical Systems`_ (MEMS).
+Welcome LightQuanta!
+~~~~~~~~~~~~~~~~~~~~~
 
-I enjoy photography and programming.
+Here I talk about science, photography and programming.
+
+.. pull-quote::
+
+    "In science, if you know what you are doing, you should not be doing it.
+    In engineering, if you do not know what you are doing,
+    you should not be doing it. Of course, you seldom, if ever,
+    see either pure state."
+
+Richard Hamming: *The Art of Doing Science and Engineering*
 
 |HDR|
-
-.. _Calient Technologies:
-   https://calient.net
-
-.. _Microelectromechanical Systems:
-   http://en.wikipedia.org/wiki/Microelectromechanical_systems
 
 .. |HDR| image:: {filename}/img/hdr.jpg
     :alt: my website

@@ -63,12 +63,20 @@ img {
 @include figure("youtube");
 @include figure("plotly");
 
+.navbar-collapse {
+    width: 1024px;
+}
+
+.pull-quote > span.formula {
+  font-size: 1em;
+}
 
 @media (max-width: 768px), handheld and (orientation: landscape) {
     #bg {
         @include background-image("/img/bird-640.jpg", $vheight: 480px);
     }
 }
+
 
 @media (min-width: 1200px) {
     #bg {
@@ -77,14 +85,16 @@ img {
 }
 
 span.formula {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 pre {
+    font-size: 12px;
     counter-reset: line-numbering;
     border: solid 1px #d9d9d9;
     padding: 0;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     white-space: pre;
     overflow-x: auto;
     word-break: inherit;
@@ -104,4 +114,39 @@ pre {
     margin-right: 1em;
     border-right: 1px solid #dedede;
     @include user-selectable(none);
+}
+
+p > code {
+    font-style: italic;
+}
+
+blockquote > code {
+    font-style: italic;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+a.reference {
+    font-style:italic;
+}
+
+div.well-sm, footer.post-info {
+    font-size: 14px;
+}
+
+.headroom {
+    -webkit-transition:-webkit-transform 200ms linear;
+            transition:transform 200ms linear;
+}
+
+.headroom--pinned{
+    -webkit-transform:translate(0%);
+            transform:translate(0%);
+}
+
+.headroom--unpinned{
+    -webkit-transform:translateY(-100%);
+            transform:translateY(-100%);
 }

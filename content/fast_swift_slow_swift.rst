@@ -149,7 +149,7 @@ Fast Swift:
 .. raw:: html
 
     <div class="plotly">
-        <iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/82/" width="100%" height="100%"></iframe>
+        <iframe id="igraph" style="border:none" src="https://plot.ly/~jjangsangy/85/" width="100%" height="100%"></iframe>
     </div>
 
 .. pull-quote::
