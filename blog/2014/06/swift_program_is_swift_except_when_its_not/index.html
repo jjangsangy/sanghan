@@ -325,10 +325,10 @@ However, -Ofast changes the semantics of the language a lot — in my testing,
 it disabled the checks for integer overflows and array indexing overflows.
 For example, with -Ofast the following Swift code runs silently
 without crashing (and prints out some garbage):</blockquote>
-<div class="highlight"><pre><span id="line-1"><span class="n">let</span> <span class="n">n</span> <span class="p">=</span> <span class="m">10000000</span>
-</span><span id="line-2"><span class="n">println</span><span class="p">(</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">*</span><span class="n">n</span><span class="p">)</span>
-</span><span id="line-3"><span class="n">let</span> <span class="n">x</span> <span class="p">=</span> <span class="n">Int</span><span class="p">[](</span><span class="n">count</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span> <span class="n">repeatedValue</span><span class="p">:</span> <span class="m">10</span><span class="p">)</span>
-</span><span id="line-4"><span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+<div class="highlight"><pre><span id="line-1"><span class="kd">let</span> <span class="nv">n</span> <span class="p">=</span> <span class="mi">10000000</span>
+</span><span id="line-2"><span class="bp">println</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="p">)</span>
+</span><span id="line-3"><span class="kd">let</span> <span class="nv">x</span> <span class="p">=</span> <span class="nb">Int</span><span class="p">[](</span><span class="bp">count</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span> <span class="n">repeatedValue</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
+</span><span id="line-4"><span class="bp">println</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
 </span></pre></div>
 <!--  -->
 <ul class="simple">
