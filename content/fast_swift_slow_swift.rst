@@ -37,36 +37,43 @@ Benchmarks
 Swift Bubble Sort
 ~~~~~~~~~~~~~~~~~
 
-.. code-block:: csharp
+.. code-block:: swift
 
-    import Cocoa
+    import Foundation
 
-    func bubbleSort(list: Int[]) -> Int[]
+    func exchange<T>(inout a: T, inout b: T)
     {
-        let length = list.count
-        var count: Int
-        var pos: Int
+        let tmp = a
+        a = b
+        b = tmp
+    }
 
-        for (count = 0; count < length-1; count++) {
-            for (pos = 0; pos < (length-count-1); pos++) {
-                if (list[pos] > list[pos+1]) {
-                    (list[pos], list[pos+1]) =
-                        (list[pos+1], list[pos])
+    func bubbleSort(inout array: [Int]) -> [Int]
+    {
+        let length = array.count
+
+        var count, pos: Int
+        for (count=0; count<length-1; count++)
+        {
+            for (pos=0; pos<(length-count-1); pos++)
+            {
+                if (array[pos] > array[pos+1]) {
+                    exchange(&array[pos], &array[pos+1])
                 }
             }
         }
-        return list
+        return array
     }
 
-    func sortMain(problem_size: Int) -> Int[]
+    func sortMain(arrayLength: Int) -> [Int]
     {
-        var array: Int[] = []
-
-        srandomdev()
-        for _ in 0..problem_size {
-            array += (random() % problem_size)
+        var array: [Int] = []
+        for _ in 0..<arrayLength {
+            array.append(
+                Int(arc4random_uniform(UInt32(arrayLength*100)))
+            )
         }
-        return bubbleSort(array)
+        return bubbleSort(&array)
     }
 
 C Bubble Sort
@@ -114,31 +121,31 @@ Python Bubble Sort
 ~~~~~~~~~~~~~~~~~~~
 .. code-block:: python
 
-    import os, sys
+
+    import os
+    import sys
+
     from random import randint
 
-    def bubble_sort(a_list: Int<Array>): -> Int<Array>
-        length = len(a_list)
-
+    def bubble_sort(array):
+        length = len(array)
         for count in range(0, length):
             for pos in range(0, length-count-1):
-                if a_list[pos] > a_list[pos + 1]:
-                    a_list[pos], a_list[pos+1] = \
-                    a_list[pos+1], a_list[pos]
-        return a_list
+                if array[pos] > array[pos + 1]:
+                    (array[pos], array[pos+1]) = (array[pos+1], array[pos])
+        return array
 
-    def main(args: Int): -> Int<Array>
-        if (len(args)-1):
-            problem_size = int(args[1])
-        else:
-            problem_size = 10000
-        array = [randint(0, problem_size) for num in range(0, problem_size)]
-
+    def main(array_size):
+        array = [
+            randint(0, array_size)
+                for num in range(0, array_size)
+        ]
         return bubble_sort(array)
 
 
     if __name__ == '__main__':
-        sys.exit(main(sys.argv))
+        sys.exit(main(int(sys.argv[1])))
+
 
 Fast Swift:
 -----------
@@ -209,7 +216,7 @@ According to a post on `Stacked Overflow`_
    For example, with -Ofast the following Swift code runs silently
    without crashing (and prints out some garbage):
 
-.. code-block:: csharp
+.. code-block:: swift
 
     let n = 10000000
     println(n*n*n*n*n)

@@ -28,9 +28,7 @@ It’s okay to get disillusioned. That’s what failure is about. Success is bet
 > Very important: There’s no rush.
 
 Spend time every day coding. No matter how small or simple the application.
-
 Try to automate anything you can, anything where programming can help.
-
 Slowly you'll find your skills developing and being enriched.
 
 ## Quantify Your Progress

@@ -18,15 +18,15 @@ for finding all the primes below a certain limit.
 
 The Algorithm
 -------------
-1. Make a table one entry for every number `$2 \\leq n \\leq limit$`
+1. Make a table one entry for every number :math:`2 \leq n \leq limit`
 2. Starting at 2, cross out all multiples of 2, not counting 2 itself.
 3. Move up to the next number that hasn't been crossed out
-4. Repeat Step 2-3 up till `$\\sqrt n$`
+4. Repeat Step 2-3 up till :math:`\sqrt(n)`
 
 .. pull-quote::
 
     The Sieve of Eratosthenes can be shown to have a time
-    complexity of $\\mathcal{O}(n\\log{}\\log{n})$.
+    complexity of :math:`\mathcal{O}(n\log{}\log{n})`.
 
 
 Visually we can depict each loop removing values from the list
@@ -41,7 +41,7 @@ of real numbers until all that is left are the primes.
 
 Since it requires a table of every
 number to the last integer in memory, the space complexity of sieves generally
-grows in the order of `$\\mathcal{O}(n)$`. In order to deal with memory issues
+grows in the order of :math:`\mathcal{O}(n)`. In order to deal with memory issues
 there are sieve algorithms called :code:`segmented sieves` which map and distribute
 the problem into smaller sizes and are computed in parallel.
 
@@ -114,7 +114,7 @@ In this example, the primary difference with using :code:`sets` and :code:`lists
 lack of a list-comprehension for composing the function return value. As well, the
 second for-loop is substituted with one :code:`-=`, binary assignment operator, which for
 sets has been overloaded with a :code:`difference update` method or
-the mathematical complement $\\forall \\{\\text{n}|\\text{ n }\\in \\text{A : n }\\notin\\text{ B}\\}$
+the mathematical complement :math:`\forall \{\text{n}|\text{ n }\in \text{A : n }\notin\text{ B}\}`
 
 Utilizing sets provides us a cleaner syntax for algorithms involving math.
 In this example, we first create a :code:`universal set`, and iteriatively delete it's factors.
@@ -142,8 +142,8 @@ but for this isolated case, it's possible to make some good predictions.
 
 Both :code:`set_sieve` and :code:`set_insertion_sieve` perform similar operations
 until the second iterative block. Because set operations are primarily implemeneted as hashes, we can assert that
-both set :code:`insertion` and set :code:`deletion` are $\\mathcal{O}(1)$ time operations in relation to problem-size
-and $\\mathcal{O}(n)$ time operations in relation hash-size. Therefore, it's possible that
+both set :code:`insertion` and set :code:`deletion` are :math:`\mathcal{O}(1)` time operations in relation to problem-size
+and :math:`\mathcal{O}(n)` time operations in relation hash-size. Therefore, it's possible that
 either of these soltuions could run faster because with each iteration of :code:`set_sieve`
 the hash-size decreases, while :code:`set_insertion_sieve` hash size increases.
 
@@ -162,16 +162,16 @@ $$
 $$
 
 It's basic definition is that as we move across the x-axis of real numbers
-$\\pi\(x\)$ a function computing number of primes at x, we can expect as
-$\x\\to \\infty$ that $\\pi\(x\) \\to \\frac{x}{\\ln(x)}$, and the entire
+:math:`\pi(x)` a function computing number of primes at x, we can expect as
+:math:`x\to \infty` that :math:`\pi(x) \to \frac{x}{\ln(x)}`, and the entire
 expression approaches 1.
 
 $$
-\\large \\pi\(x\) \\tag{asymtotic} \\thicksim \\large \\frac{x}{\\ln(x))} 
+\\large \\pi\(x\) \\tag{asymtotic} \\thicksim \\large \\frac{x}{\\ln(x))}
 $$
 
 From the asymptotic expression, we can also express the function for
-computing all factors of $n$ to then be
+computing all factors of :math:`n` to then be
 
 $$\\begin{align}
 \\large\\lim_{n\\to \\infty} n\\left(1 - \\frac{1}{\\ln(n)}\\right) \\tag{factors}
@@ -180,7 +180,7 @@ $$\\begin{align}
 .. pull-quote::
 
     We find insertion actually runs faster by an order of
-    $\\frac{1}{\\ln(n)}$. But this is a diminishing optimization which
+    :math:`\frac{1}{\ln(n)}`. But this is a diminishing optimization which
     converges back to the original :code:`sieve` speed at larger problem sizes.
 
 Data Structures
@@ -270,7 +270,7 @@ So now that we've written the sieve in a bunch of different ways. How do we know
 each way is correct.
 
 The most obvious way to figure if a number's prime, is to try dividing the number
-by all the numbers between $2 \\leq x \\leq n-1$.
+by all the numbers between :math:`2 \leq x \leq n-1`.
 
 .. code-block:: python
 

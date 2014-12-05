@@ -7,57 +7,45 @@ Swift: Bubble Sort
 :Tags:      Apple, Programming Languages, WWDC
 
 
-.. code-block:: csharp
+.. code-block:: swift
 
     // Sang Han
     // An implementation of a bubble party/bubble sort written in swift
 
-    protocol RandomPartyGenerator {
-        func random() -> Double
-    }
+    import Foundation
 
-    class BubblePartyGenerator: RandomPartyGenerator {
-        var lastTime = 42.0
-        let soberietyLevel = 3877.0
-        let someLOLOLOLs = 29573.0
-        let nextDayRegrets = 139968.0
-        func random() -> Double {
-            lastTime = ((lastTime * soberietyLevel + someLOLOLOLs) % nextDayRegrets)
-            return (lastTime / nextDayRegrets) * 100
-        }
-    }
-
-    func randomPeople(partySize: Int) -> Int[]
+    func exchange<T>(inout a: T, inout b: T)
     {
-        var invites: Int[] = []
-        let generator = BubblePartyGenerator()
-        for _ in 0..partySize {
-            invites.append(Int(generator.random() * 100))
-        }
-        return invites
+        let tmp = a
+        a = b
+        b = tmp
     }
 
-    func bubbleParty(sexyPeople: Int[]) -> Int[]
+    func bubbleSort(inout array: [Int]) -> [Int]
     {
-        let guestList = sexyPeople.count
-        var isFlippyFloppy = true
-        for theLadies in 0..guestList {
+        let length = array.count
 
-            if isFlippyFloppy {
-                isFlippyFloppy = false
-                for theHomies in 0..guestList-theLadies-1 {
-                    // Ladies to the front
-                    if (sexyPeople[theHomies] > sexyPeople[theHomies+1])
-                    {
-                        (sexyPeople[theHomies], sexyPeople[theHomies+1]) =
-                            (sexyPeople[theHomies+1], sexyPeople[theHomies])
-                        isFlippyFloppy = true
-                    }
+        var count, pos: Int
+        for (count=0; count<length-1; count++)
+        {
+            for (pos=0; pos<(length-count-1); pos++)
+            {
+                if (array[pos] > array[pos+1]) {
+                    exchange(&array[pos], &array[pos+1])
                 }
             }
         }
-        return sexyPeople
+        return array
     }
 
-    println(bubbleParty(randomPeople(100)))
+    func sortMain(arrayLength: Int) -> [Int]
+    {
+        var array: [Int] = []
+        for _ in 0..<arrayLength {
+            array.append(
+                Int(arc4random_uniform(UInt32(arrayLength*100)))
+            )
+        }
+        return bubbleSort(&array)
+    }
 

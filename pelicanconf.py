@@ -30,6 +30,7 @@ STATIC_PATHS = [
     'extra/robots.txt',
     'static'
 ]
+
 EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
     'extra/robots.txt': {'path': 'robots.txt'},
@@ -51,24 +52,23 @@ USE_FOLDER_AS_CATEGORY = True
 DEFAULT_CATEGORY = 'posts'
 DISPLAY_ARTICLE_INFO_ON_INDEX = True
 SHOW_ARTICLE_CATEGORY = True
+LOAD_CONTENT_CACHE = False
 
 TYPOGRIFY = True
+TYPOGRIFY_IGNORE_TAGS = ['math']
 MARKUP = ('rst', 'md', 'ipynb')
 CUSTOM_CSS = ('static/css/site.css')
 READERS = {'html': None}
 
-PLUGIN_PATHS = ['plugins','plugins/pelican_gist']
+PLUGIN_PATHS = ['plugins']
+
 PLUGINS = [
-    'render_math',
     'representative_image',
     'pelican_youtube.youtube',
     'pelican_gist',
+    'render_math',
 ]
-MATH = {
-    'auto_insert': True,
-    'show_menu': False,
-    'color':'inherit',
-}
+
 HEADER_IMAGE = "bird.jpg"
 SUMMARY_MAX_LENGTH = 100
 DISPLAY_BREADCRUMBS= True
@@ -76,13 +76,21 @@ DISPLAY_CATEGORY_IN_BREADCRUMBS = True
 USE_PAGER = False
 FAVICON = 'img/hv.png'
 
-PYGMENTS_RST_OPTIONS = {'linenos': 'none', 'linespans': 'line'}
+PYGMENTS_RST_OPTIONS = {
+    'linenos': 'none',
+    'linespans': 'line'
+}
 PYGMENTS_STYLE = 'solarizedlight'
 
 GITHUB_USER = 'jjangsangy'
 GITHUB_SKIP_FORK = True
 GITHUB_REPO_COUNT = 10
 GITHUB_SHOW_USER_LINK = True
+
+MATH_JAX = {
+    'color':'inherit',
+    'process_escapes': False,
+}
 
 # MENUITEMS = (('Photography', 'http://sanghanphotography.com'),)
 

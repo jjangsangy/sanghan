@@ -12,7 +12,13 @@ Hi I'm Sang Han
 Welcome LightQuanta!
 ~~~~~~~~~~~~~~~~~~~~~
 
-Here I talk about science, photography and programming.
+sanghan.me is a consolidation but incomplete representation of things
+I can articulate and translate into hypertext. In the long term, I hope
+to turn this into a useful website filled with insightful information
+that will be able to bring a fully grown man to tears.
+
+That website has not been written. Hopefully one day with a lot of thinking
+before I fully realize what I'm doing that project will come to fruition.
 
 .. pull-quote::
 
