@@ -116,6 +116,20 @@ pre {
     @include user-selectable(none);
 }
 
+.literal-block {
+    background: #fdf6e3;
+    font-size: 12px;
+    border: solid 1px #d9d9d9;
+    padding: 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    white-space: pre;
+    overflow-x: auto;
+    word-break: inherit;
+    word-wrap: inherit;
+    color: inherit;
+}
+
 p > code {
     font-style: italic;
 }

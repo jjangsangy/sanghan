@@ -28,6 +28,7 @@
     <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+        <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
         <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
 
@@ -57,32 +58,19 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-
-                         <li>
-                             <a href="http://sanghan.me/pages/about.html">
-                             <i class="fa fa-beer"></i>
-                             <span class="icon-label">About Me</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="http://sanghan.me/pages/projects.html">
-                             <i class="fa fa-code"></i>
-                             <span class="icon-label">Projects</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="http://sanghan.me/pages/skills.html">
-                             <i class="fa fa-graduation-cap"></i>
-                             <span class="icon-label">Skills</span>
-                             </a>
-                         </li>
-                         <li>
-                             <a href="http://sanghan.me/pages/tools.html">
-                             <i class="fa fa-wrench"></i>
-                             <span class="icon-label">Tools</span>
-                             </a>
-                         </li>
-
+                        <li><a href="http://sanghan.me/pages/about.html">
+                        <i class="fa fa-beer"></i>
+                        <span class="icon-label">About&nbsp;Me</span></a></li>
+                        <li><a href="http://sanghan.me/pages/projects.html">
+                        <i class="fa fa-code"></i>
+                        <span class="icon-label">Projects</span></a></li>
+                        <li><a href="http://sanghan.me/pages/skills.html">
+                        <i class="fa fa-graduation-cap"></i>
+                        <span class="icon-label">Skills</span></a></li>
+                        <li><a href="http://sanghan.me/pages/tools.html">
+                        <i class="fa fa-wrench"></i>
+                        <span class="icon-label">Tools</span></a></li>
+            <ul class="nav navbar-nav navbar-right">
                 <!--Dropdown Categories-->
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu">
@@ -97,22 +85,25 @@
                     </ul>
                     </li>
 
-
 <!-- Disabled
 <ul class="nav navbar-nav navbar-right">
     <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
 </ul>
 -->
 
+
+
         </div>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
+<!-- Banner -->
 
 <div class="container-full full-width">
     <div id="bg" class="hero-unit"></div>
 </div>
 
+<!-- End Banner -->
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
@@ -123,7 +114,67 @@
     </ol>
 
             <article>
-                <h2><a href="http://sanghan.me/blog/2014/09/sieve/">Prime Sieves and Python Data Structures</a></h2>
+                <h2><a href="http://sanghan.me/blog/2014/12/python_tricks/">Useful Python&nbsp;Tricks</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-primary">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-12-09T00:00:00-08:00"> Tue, 09 Dec 2014</time>
+    </span>
+
+        <span class="label label-success">Category</span>
+        <a href="http://sanghan.me/category/programming.html">Programming</a>
+
+
+<span class="label label-info">Tags</span>
+	<a href="http://sanghan.me/tag/python.html">Python</a>
+        /
+	<a href="http://sanghan.me/tag/programming-languages.html">Programming Languages</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Originally inspired from this
+<a class="reference external" href="http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html">blog</a>
+post. But many have been customized and rewritten into an IPython&nbsp;Notebook.</p>
+<p>Note: Written for Python&nbsp;3</p>
+<div class="section" id="unpacking">
+<h2>1.1:&nbsp;Unpacking</h2>
+<div class="highlight"><pre><span id="line-1"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
+</span><span id="line-4">
+</span><span id="line-5"><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
+</span><span id="line-4"><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</span><span id="line-2"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
+</span><span id="line-3"><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">4</span><span class="p">]</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span>
+</span><span id="line-4"><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<div class="section" id="unpacking-for-swapping-variables">
+<h2>1.2: Unpacking for swapping&nbsp;variables</h2>
+<div class="highlight"><pre><span id="line-1"><span class="n">a</span><span class="p">,</span> <span class="n">b</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+</span><span id="line-2"><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="n">a</span><span class="p">,</span> <span class="n">b</span>
+</span><span id="line-5"><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1 ...</span></span></pre></div></div>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/12/python_tricks/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More....</span>
+                    </a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://sanghan.me/blog/2014/09/sieve/">Prime Sieves and Python Data&nbsp;Structures</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
@@ -163,45 +214,18 @@ for finding all the primes below a certain&nbsp;limit.</p>
 <div class="section" id="the-algorithm">
 <h2>The&nbsp;Algorithm</h2>
 <ol class="arabic simple">
-<li>Make a table one entry for every number <cite><mathjax>$2 \leq n \leq limit$</mathjax></cite></li>
+<li>Make a table one entry for every number <span class="math">\(2 \leq n \leq&nbsp;limit\)</span></li>
 <li>Starting at 2, cross out all multiples of 2, not counting 2&nbsp;itself.</li>
-<li>Move up to the next number ...</li></ol></div><script type= "text/javascript">
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: false," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-</script>
-
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2014/09/sieve/">Read More...</a>
+<li>Move up to the next number ...</li></ol></div>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/09/sieve/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More....</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">Swift Program is Swift, Except When it's Not</a></h2>
+                <h2><a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">Swift Program is Swift, Except When it&#8217;s&nbsp;Not</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
@@ -223,21 +247,21 @@ for finding all the primes below a certain&nbsp;limit.</p>
 	<a href="http://sanghan.me/tag/bubble-sort.html">Bubble Sort</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p></p>
+                <div class="summary"><p><img alt="swift" src="http://sanghan.me/img/swift.jpg" /></p>
 <p>This past <span class="caps">WWDC</span> Apple revealed a brand new programming language called <a class="reference external" href="https://developer.apple.com/swift/">Swift</a>
-to the masses and passed it out to Apple Developers packaged in the XCode 6 Beta.</p>
+to the masses and passed it out to Apple Developers packaged in the XCode 6&nbsp;Beta.</p>
 <div class="section" id="language-features">
-<h2>Language Features</h2>
+<h2>Language&nbsp;Features</h2>
 <ul class="simple">
 <li>Type Inferencing and Automatic Reference Counting (<span class="caps">ARC</span>)</li>
-<li>Optional Bindings and Generic Functions</li>
-<li>Integration with Objective-C</li>
-<li>First-Class Functions and Closures</li>
+<li>Optional Bindings and Generic&nbsp;Functions</li>
+<li>Integration with&nbsp;Objective-C</li>
+<li>First-Class Functions and&nbsp;Closures</li>
 </ul>
 <p>My initial impressions were pretty high. However, after some quick benchmarking
-examples, those feelings later matured to an understanding of it’s "beta"
+examples, those feelings later matured to an understanding of it&#8217;s &quot;beta&quot;
 characteristics. Many of the underlying optimization still have some kinks to
-work through.</p>
+work&nbsp;through.</p>
 <blockquote class="pull-quote">
 And by kinks, I mean some big fixes</blockquote>
 </div>
@@ -245,12 +269,15 @@ And by kinks, I mean some big fixes</blockquote>
 <h2>Benchmarks</h2>
 <blockquote class="pull-quote">
 Here are a couple examples of ...</blockquote></div>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">Read More...</a>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More....</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://sanghan.me/blog/2014/06/pelican_blog/">Pelican: A Blogging Engine Written in Python</a></h2>
+                <h2><a href="http://sanghan.me/blog/2014/06/pelican_blog/">Pelican: A Blogging Engine Written in&nbsp;Python</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
@@ -281,12 +308,15 @@ reStructuredText markup by default and
 is a language I feel comfortable in case I need to get down and fix the
 engine. One of my primary forcuses of blogging is so that I can also use it as
 a ...</p>
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2014/06/pelican_blog/">Read More...</a>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/06/pelican_blog/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More....</span>
+                    </a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://sanghan.me/blog/2014/06/swift_bubble_sort/">Swift: Bubble Sort</a></h2>
+                <h2><a href="http://sanghan.me/blog/2014/06/swift_bubble_sort/">Swift: Bubble&nbsp;Sort</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
@@ -347,53 +377,60 @@ a ...</p>
 </span><span id="line-39"><span class="p">}</span>
 </span></pre></div>
 
-                    <a class="btn btn-default btn-xs" href="http://sanghan.me/blog/2014/06/swift_bubble_sort/">Read More...</a>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/06/swift_bubble_sort/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More....</span>
+                    </a>
                 </div>
             </article>
             <hr/>
 
-    </div>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
 
-        <div class="col-sm-3 well well-sm" id="sidebar">
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="http://github.com/jjangsangy"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+                <li class="list-group-item"><a href="http://facebook.com/jjangsangy"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+                <li class="list-group-item"><a href="https://twitter.com/jjangsangy"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+                <li class="list-group-item"><a href="https://www.linkedin.com/pub/sang-han/40/9a8/323"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+                <li class="list-group-item"><a href="http://jjangsangy.tumblr.com"><i class="fa fa-tumblr-square fa-lg"></i> Tumblr</a></li>
+                <li class="list-group-item"><a href="http://pinterest.com/jjangsangy"><i class="fa fa-pinterest-square fa-lg"></i> Pinterest</a></li>
+              </ul>
+            </li>
 
-<aside>
-    <section>
-        <ul class="list-group list-group-flush">
-                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-                  <ul class="list-group" id="social">
-                    <li class="list-group-item"><a href="http://github.com/jjangsangy"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
-                    <li class="list-group-item"><a href="http://facebook.com/jjangsangy"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
-                    <li class="list-group-item"><a href="https://twitter.com/jjangsangy"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
-                    <li class="list-group-item"><a href="https://www.linkedin.com/pub/sang-han/40/9a8/323"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
-                    <li class="list-group-item"><a href="http://jjangsangy.tumblr.com"><i class="fa fa-tumblr-square fa-lg"></i> Tumblr</a></li>
-                    <li class="list-group-item"><a href="http://pinterest.com/jjangsangy"><i class="fa fa-pinterest-square fa-lg"></i> Pinterest</a></li>
-                  </ul>
-                </li>
-
-                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
-                    <ul class="list-group" id="recentposts">
-                        <li class="list-group-item">
-                            <a href="http://sanghan.me/blog/2014/09/sieve/">
-                                Prime Sieves and Python Data Structures
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
-                                Swift Program is Swift, Except When it's Not
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="http://sanghan.me/blog/2014/06/pelican_blog/">
-                                Pelican: A Blogging Engine Written in Python
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="http://sanghan.me/blog/2014/06/swift_bubble_sort/">
-                                Swift: Bubble Sort
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="http://sanghan.me/blog/2014/12/python_tricks/">
+                            Useful Python&nbsp;Tricks
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://sanghan.me/blog/2014/09/sieve/">
+                            Prime Sieves and Python Data&nbsp;Structures
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
+                            Swift Program is Swift, Except When it&#8217;s&nbsp;Not
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://sanghan.me/blog/2014/06/pelican_blog/">
+                            Pelican: A Blogging Engine Written in&nbsp;Python
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://sanghan.me/blog/2014/06/swift_bubble_sort/">
+                            Swift: Bubble&nbsp;Sort
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
 
 
@@ -403,14 +440,12 @@ a ...</p>
         </div>
             <a href="https://github.com/jjangsangy">@jjangsangy</a> on GitHub
     </li>
-
-        </ul>
-    </section>
-
-</aside>        </div>
+    </ul>
+</section>
+            </aside>
+        </div>
     </div>
 </div>
-
 <footer>
    <div class="container">
       <hr>
@@ -428,6 +463,8 @@ a ...</p>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
 <script src="http://sanghan.me/theme/js/respond.min.js"></script>
+<script src="http://sanghan.me/static/js/headroom.min.js"></script>
+<script src="http://sanghan.me/static/js/site.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">
@@ -482,9 +519,6 @@ a ...</p>
         })();
     </script>
     <!-- End Google Analytics Code -->
-<!-- Custom site js-->
-<script src="http://sanghan.me/static/js/headroom.min.js"></script>
-<script src="http://sanghan.me/static/js/site.js"></script>
 
 </body>
 </html>
