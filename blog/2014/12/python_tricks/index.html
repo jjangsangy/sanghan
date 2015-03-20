@@ -15,13 +15,13 @@
 
         <meta name="author" content="Sang Han" />
         <meta name="keywords" content="Python,Programming Languages" />
-        <meta name="description" content="Originally inspired from this blog post. But many have been customized and rewritten into an IPython Notebook. Note: Written for Python 3 1.1: Unpacking a, b, c = 1, 2, 3 a, b, c (1, 2, 3) a, b, c = [1, 2, 3] a, b, c (1, 2, 3) a, b, c = (2 * i + 1 for i in range(3)) a, b, c (1, 3, 5) a, (b, c), d = [1, (2, 3), 4] a, b, c, d (1, 2, 3, 4) 1.2: Unpacking for swapping variables a, b = 1, 2 a, b = b, a a, b (2, 1 ..." />
+        <meta name="description" content="Originally inspired from this blog post. But many have been customized and rewritten into an IPython Notebook. Note: Written for Python 3 Unpacking a, b, c = 1, 2, 3 a, b, c (1, 2, 3) a, b, c = [1, 2, 3] a, b, c (1, 2, 3) a, b, c = (2 * i + 1 for i in range(3)) a, b, c (1, 3, 5) a, (b, c), d = [1, (2, 3), 4] a, b, c, d (1, 2, 3, 4) Unpacking for swapping variables a, b = 1, 2 a, b = b, a a, b (2, 1) Extended unpacking (Python 3 ..." />
 
         <meta property="og:site_name" content="LightQuanta" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Useful Python Tricks"/>
         <meta property="og:url" content="http://sanghan.me/blog/2014/12/python_tricks/"/>
-        <meta property="og:description" content="Originally inspired from this blog post. But many have been customized and rewritten into an IPython Notebook. Note: Written for Python 3 1.1: Unpacking a, b, c = 1, 2, 3 a, b, c (1, 2, 3) a, b, c = [1, 2, 3] a, b, c (1, 2, 3) a, b, c = (2 * i + 1 for i in range(3)) a, b, c (1, 3, 5) a, (b, c), d = [1, (2, 3), 4] a, b, c, d (1, 2, 3, 4) 1.2: Unpacking for swapping variables a, b = 1, 2 a, b = b, a a, b (2, 1 ..."/>
+        <meta property="og:description" content="Originally inspired from this blog post. But many have been customized and rewritten into an IPython Notebook. Note: Written for Python 3 Unpacking a, b, c = 1, 2, 3 a, b, c (1, 2, 3) a, b, c = [1, 2, 3] a, b, c (1, 2, 3) a, b, c = (2 * i + 1 for i in range(3)) a, b, c (1, 3, 5) a, (b, c), d = [1, (2, 3), 4] a, b, c, d (1, 2, 3, 4) Unpacking for swapping variables a, b = 1, 2 a, b = b, a a, b (2, 1) Extended unpacking (Python 3 ..."/>
         <meta property="article:published_time" content="2014-12-09" />
             <meta property="article:section" content="Programming" />
             <meta property="article:tag" content="Python" />
@@ -152,7 +152,7 @@
 post. But many have been customized and rewritten into an IPython&nbsp;Notebook.</p>
 <p>Note: Written for Python&nbsp;3</p>
 <div class="section" id="unpacking">
-<h2>1.1:&nbsp;Unpacking</h2>
+<h2>Unpacking</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
@@ -175,7 +175,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="unpacking-for-swapping-variables">
-<h2>1.2: Unpacking for swapping&nbsp;variables</h2>
+<h2>Unpacking for swapping&nbsp;variables</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span><span class="p">,</span> <span class="n">b</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
 </span><span id="line-2"><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
 </span><span id="line-3">
@@ -184,7 +184,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="extended-unpacking-python-3-only">
-<h2>1.3: Extended unpacking (Python 3&nbsp;only)</h2>
+<h2>Extended unpacking (Python 3&nbsp;only)</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
@@ -192,7 +192,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="negative-indexing">
-<h2>1.4: Negative&nbsp;indexing</h2>
+<h2>Negative&nbsp;indexing</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
@@ -200,7 +200,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="list-slices-a-start-end">
-<h2>1.5: List slices&nbsp;(a[start:end])</h2>
+<h2>List slices&nbsp;(a[start:end])</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
@@ -208,7 +208,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="list-slices-with-negative-indexing">
-<h2>1.6: List slices with negative&nbsp;indexing</h2>
+<h2>List slices with negative&nbsp;indexing</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
@@ -216,7 +216,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="list-slices-with-step-a-start-end-step">
-<h2>1.7: List slices with step&nbsp;(a[start:end:step])</h2>
+<h2>List slices with step <cite>(a[start:end:step])</cite></h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="n">a</span><span class="p">[::</span><span class="mi">2</span><span class="p">],</span> <span class="n">a</span><span class="p">[::</span><span class="mi">3</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
@@ -224,7 +224,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="list-slices-with-negative-step">
-<h2>1.8: List slices with negative&nbsp;step</h2>
+<h2>List slices with negative&nbsp;step</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
@@ -232,7 +232,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="list-slice-assignment">
-<h2>1.9: List slice&nbsp;assignment</h2>
+<h2>List slice&nbsp;assignment</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </span><span id="line-2"><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>  <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 </span><span id="line-3"><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>  <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
@@ -243,7 +243,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="naming-slices-slice-start-end-step">
-<h2>1.10: Naming slices (slice(start, end,&nbsp;step)</h2>
+<h2>Naming slices <cite>(slice(start, end, step)</cite></h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </span><span id="line-2"><span class="n">LASTTHREE</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
 </span><span id="line-3">
@@ -252,7 +252,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="iterating-over-list-index-and-value-pairs-enumerate">
-<h2>1.11: Iterating over list index and value pairs&nbsp;(enumerate)</h2>
+<h2>Iterating over list index and value pairs&nbsp;(enumerate)</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Hello&#39;</span><span class="p">,</span> <span class="s">&#39;world&#39;</span><span class="p">,</span> <span class="s">&#39;!&#39;</span><span class="p">]</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
@@ -264,7 +264,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="iterating-over-dictionary-key-and-value-pairs-dict-iteritems">
-<h2>1.12: Iterating over dictionary key and value pairs&nbsp;(dict.iteritems)</h2>
+<h2>Iterating over dictionary key and value pairs&nbsp;(dict.iteritems)</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">m</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="c"># Note: Python 2 Use `iteritems`</span>
@@ -278,7 +278,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="zipping-and-unzipping-lists-and-iterables">
-<h2>1.13: Zipping and unzipping lists and&nbsp;iterables</h2>
+<h2>Zipping and unzipping lists and&nbsp;iterables</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span>   <span class="mi">2</span><span class="p">,</span>   <span class="mi">3</span> <span class="p">]</span>
 </span><span id="line-2"><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
 </span><span id="line-3"><span class="n">z</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
@@ -288,7 +288,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="grouping-adjacent-list-items-using-zip">
-<h2>1.14: Grouping adjacent list items using&nbsp;zip</h2>
+<h2>Grouping adjacent list items using&nbsp;zip</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="c"># Using iterators</span>
@@ -319,7 +319,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="sliding-windows-n-grams-using-zip-and-iterators">
-<h2>1.15: Sliding windows <em>(n-grams)</em> using zip and&nbsp;iterators</h2>
+<h2>Sliding windows <em>(n-grams)</em> using zip and&nbsp;iterators</h2>
 <div class="highlight"><pre><span id="line-1"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">islice</span>
 </span><span id="line-2"><span class="k">def</span> <span class="nf">n_grams</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
 </span><span id="line-3">    <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">islice</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
@@ -339,7 +339,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="inverting-a-dictionary-using-zip">
-<h2>1.16: Inverting a dictionary using&nbsp;zip</h2>
+<h2>Inverting a dictionary using&nbsp;zip</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">m</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="c"># Assuming all values are immutable types</span>
@@ -350,7 +350,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="flattening-lists">
-<h2>1.17: Flattening&nbsp;lists:</h2>
+<h2>Flattening&nbsp;lists:</h2>
 <div class="highlight"><pre><span id="line-1"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="c"># Note:</span>
@@ -394,7 +394,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="generator-expressions">
-<h2>1.18: Generator&nbsp;expressions</h2>
+<h2>Generator&nbsp;expressions</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">),</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">),</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">),</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
@@ -402,7 +402,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="dictionary-comprehensions">
-<h2>1.19: Dictionary&nbsp;comprehensions</h2>
+<h2>Dictionary&nbsp;comprehensions</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">m</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)}</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="n">m</span>
@@ -424,7 +424,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="inverting-a-dictionary-using-a-dictionary-comprehension">
-<h2>1.20: Inverting a dictionary using a dictionary&nbsp;comprehension</h2>
+<h2>Inverting a dictionary using a dictionary&nbsp;comprehension</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">m</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
@@ -443,7 +443,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="inheriting-from-namedtuple">
-<h2>1.22: Inheriting from <tt class="docutils literal">namedtuple</tt></h2>
+<h2>Inheriting from <tt class="docutils literal">namedtuple</tt></h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">PointBaseClass</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">&#39;PointBaseClass&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">])</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="n">PointBaseClass</span><span class="p">):</span>
@@ -459,7 +459,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="set-operations">
-<h2>1.23: <tt class="docutils literal">set</tt> operations</h2>
+<h2><tt class="docutils literal">set</tt> operations</h2>
 <div class="highlight"><pre><span id="line-1"><span class="c"># Set Constructor</span>
 </span><span id="line-2"><span class="n">A</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 </span><span id="line-3"><span class="n">B</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -497,7 +497,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="multisets-and-multiset-operations-collections-counter">
-<h2>1.24: Multisets and multiset operations&nbsp;(collections.Counter)</h2>
+<h2>Multisets and multiset operations&nbsp;(collections.Counter)</h2>
 <div class="highlight"><pre><span id="line-1"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="c"># Construct a Counter from a List</span>
@@ -522,7 +522,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span></pre></div>
 </div>
 <div class="section" id="simple-dictionary-trees-autovivification">
-<h2>1.30: Simple Dictionary Trees (<a class="reference external" href="http://en.wikipedia.org/wiki/Autovivification">Autovivification</a>)</h2>
+<h2>Simple Dictionary Trees (<a class="reference external" href="http://en.wikipedia.org/wiki/Autovivification">Autovivification</a>)</h2>
 <div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">json</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
