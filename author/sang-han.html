@@ -158,17 +158,12 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span><span id="line-4"><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<div class="section" id="unpacking-for-swapping-variables">
-<h2>Unpacking for swapping&nbsp;variables</h2>
-<div class="highlight"><pre><span id="line-1"><span class="n">a</span><span class="p">,</span> <span class="n">b</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
-</span><span id="line-2"><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
-</span><span id="line-3">
-</span><span id="line-4"><span class="n">a</span><span class="p">,</span> <span class="n">b</span>
-</span><span id="line-5"><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</span></pre></div>
-</div>
-<div class="section" id="extended-unpacking-python-3-only">
-<h2>Extended unpacking (Python 3 ...</h2></div>
+<div class="section" id="iterating-over-list-index-and-value-pairs-enumerate">
+<h2>Iterating over list index and value pairs&nbsp;(enumerate)</h2>
+<div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Hello&#39;</span><span class="p">,</span> <span class="s">&#39;world&#39;</span><span class="p">,</span> <span class="s">&#39;!&#39;</span><span class="p">]</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+</span><span id="line-4">    <span class="k">print</span><span class="p">(</span><span class="s">&#39;{}: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i ...</span></span></pre></div></div>
                     <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/12/python_tricks/">
                         <i class="fa fa-book"></i>
                         <span class="icon-label">Read More....</span>

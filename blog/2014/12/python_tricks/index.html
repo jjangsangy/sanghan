@@ -15,13 +15,13 @@
 
         <meta name="author" content="Sang Han" />
         <meta name="keywords" content="Python,Programming Languages" />
-        <meta name="description" content="Originally inspired from this blog post. But many have been customized and rewritten into an IPython Notebook. Note: Written for Python 3 Unpacking a, b, c = 1, 2, 3 a, b, c (1, 2, 3) a, b, c = [1, 2, 3] a, b, c (1, 2, 3) a, b, c = (2 * i + 1 for i in range(3)) a, b, c (1, 3, 5) a, (b, c), d = [1, (2, 3), 4] a, b, c, d (1, 2, 3, 4) Unpacking for swapping variables a, b = 1, 2 a, b = b, a a, b (2, 1) Extended unpacking (Python 3 ..." />
+        <meta name="description" content="Originally inspired from this blog post. But many have been customized and rewritten into an IPython Notebook. Note: Written for Python 3 Unpacking a, b, c = 1, 2, 3 a, b, c (1, 2, 3) a, b, c = [1, 2, 3] a, b, c (1, 2, 3) a, b, c = (2 * i + 1 for i in range(3)) a, b, c (1, 3, 5) a, (b, c), d = [1, (2, 3), 4] a, b, c, d (1, 2, 3, 4) Iterating over list index and value pairs (enumerate) a = [&#39;Hello&#39;, &#39;world&#39;, &#39;!&#39;] for i, x in enumerate(a): print(&#39;{}: {}&#39;.format(i ..." />
 
         <meta property="og:site_name" content="LightQuanta" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Useful Python Tricks"/>
         <meta property="og:url" content="http://sanghan.me/blog/2014/12/python_tricks/"/>
-        <meta property="og:description" content="Originally inspired from this blog post. But many have been customized and rewritten into an IPython Notebook. Note: Written for Python 3 Unpacking a, b, c = 1, 2, 3 a, b, c (1, 2, 3) a, b, c = [1, 2, 3] a, b, c (1, 2, 3) a, b, c = (2 * i + 1 for i in range(3)) a, b, c (1, 3, 5) a, (b, c), d = [1, (2, 3), 4] a, b, c, d (1, 2, 3, 4) Unpacking for swapping variables a, b = 1, 2 a, b = b, a a, b (2, 1) Extended unpacking (Python 3 ..."/>
+        <meta property="og:description" content="Originally inspired from this blog post. But many have been customized and rewritten into an IPython Notebook. Note: Written for Python 3 Unpacking a, b, c = 1, 2, 3 a, b, c (1, 2, 3) a, b, c = [1, 2, 3] a, b, c (1, 2, 3) a, b, c = (2 * i + 1 for i in range(3)) a, b, c (1, 3, 5) a, (b, c), d = [1, (2, 3), 4] a, b, c, d (1, 2, 3, 4) Iterating over list index and value pairs (enumerate) a = [&#39;Hello&#39;, &#39;world&#39;, &#39;!&#39;] for i, x in enumerate(a): print(&#39;{}: {}&#39;.format(i ..."/>
         <meta property="article:published_time" content="2014-12-09" />
             <meta property="article:section" content="Programming" />
             <meta property="article:tag" content="Python" />
@@ -174,83 +174,6 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span><span id="line-4"><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<div class="section" id="unpacking-for-swapping-variables">
-<h2>Unpacking for swapping&nbsp;variables</h2>
-<div class="highlight"><pre><span id="line-1"><span class="n">a</span><span class="p">,</span> <span class="n">b</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
-</span><span id="line-2"><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
-</span><span id="line-3">
-</span><span id="line-4"><span class="n">a</span><span class="p">,</span> <span class="n">b</span>
-</span><span id="line-5"><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</span></pre></div>
-</div>
-<div class="section" id="extended-unpacking-python-3-only">
-<h2>Extended unpacking (Python 3&nbsp;only)</h2>
-<div class="highlight"><pre><span id="line-1"><span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</span><span id="line-2">
-</span><span id="line-3"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
-</span><span id="line-4"><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
-</span></pre></div>
-</div>
-<div class="section" id="negative-indexing">
-<h2>Negative&nbsp;indexing</h2>
-<div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-</span><span id="line-2">
-</span><span id="line-3"><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
-</span><span id="line-4"><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-</span></pre></div>
-</div>
-<div class="section" id="list-slices-a-start-end">
-<h2>List slices&nbsp;(a[start:end])</h2>
-<div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-</span><span id="line-2">
-</span><span id="line-3"><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
-</span><span id="line-4"><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-</span></pre></div>
-</div>
-<div class="section" id="list-slices-with-negative-indexing">
-<h2>List slices with negative&nbsp;indexing</h2>
-<div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-</span><span id="line-2">
-</span><span id="line-3"><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-</span><span id="line-4"><span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-</span></pre></div>
-</div>
-<div class="section" id="list-slices-with-step-a-start-end-step">
-<h2>List slices with step <cite>(a[start:end:step])</cite></h2>
-<div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-</span><span id="line-2">
-</span><span id="line-3"><span class="n">a</span><span class="p">[::</span><span class="mi">2</span><span class="p">],</span> <span class="n">a</span><span class="p">[::</span><span class="mi">3</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
-</span><span id="line-4"><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
-</span></pre></div>
-</div>
-<div class="section" id="list-slices-with-negative-step">
-<h2>List slices with negative&nbsp;step</h2>
-<div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-</span><span id="line-2">
-</span><span id="line-3"><span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-</span><span id="line-4"><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-</span></pre></div>
-</div>
-<div class="section" id="list-slice-assignment">
-<h2>List slice&nbsp;assignment</h2>
-<div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</span><span id="line-2"><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>  <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-</span><span id="line-3"><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>  <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-</span><span id="line-4"><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-5">
-</span><span id="line-6"><span class="n">a</span>
-</span><span id="line-7"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</span></pre></div>
-</div>
-<div class="section" id="naming-slices-slice-start-end-step">
-<h2>Naming slices <cite>(slice(start, end, step)</cite></h2>
-<div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</span><span id="line-2"><span class="n">LASTTHREE</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
-</span><span id="line-3">
-</span><span id="line-4"><span class="n">LASTTHREE</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">LASTTHREE</span><span class="p">]</span>
-</span><span id="line-5"><span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-</span></pre></div>
-</div>
 <div class="section" id="iterating-over-list-index-and-value-pairs-enumerate">
 <h2>Iterating over list index and value pairs&nbsp;(enumerate)</h2>
 <div class="highlight"><pre><span id="line-1"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Hello&#39;</span><span class="p">,</span> <span class="s">&#39;world&#39;</span><span class="p">,</span> <span class="s">&#39;!&#39;</span><span class="p">]</span>
@@ -261,20 +184,6 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span><span id="line-6"><span class="mi">0</span><span class="p">:</span> <span class="n">Hello</span>
 </span><span id="line-7"><span class="mi">1</span><span class="p">:</span> <span class="n">world</span>
 </span><span id="line-8"><span class="mi">2</span><span class="p">:</span> <span class="err">!</span>
-</span></pre></div>
-</div>
-<div class="section" id="iterating-over-dictionary-key-and-value-pairs-dict-iteritems">
-<h2>Iterating over dictionary key and value pairs&nbsp;(dict.iteritems)</h2>
-<div class="highlight"><pre><span id="line-1"><span class="n">m</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
-</span><span id="line-2">
-</span><span id="line-3"><span class="c"># Note: Python 2 Use `iteritems`</span>
-</span><span id="line-4"><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-</span><span id="line-5">    <span class="k">print</span><span class="p">(</span><span class="s">&#39;{}: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
-</span><span id="line-6">
-</span><span id="line-7"><span class="n">a</span><span class="p">:</span> <span class="mi">1</span>
-</span><span id="line-8"><span class="n">d</span><span class="p">:</span> <span class="mi">4</span>
-</span><span id="line-9"><span class="n">c</span><span class="p">:</span> <span class="mi">3</span>
-</span><span id="line-10"><span class="n">b</span><span class="p">:</span> <span class="mi">2</span>
 </span></pre></div>
 </div>
 <div class="section" id="zipping-and-unzipping-lists-and-iterables">
@@ -349,35 +258,54 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </span><span id="line-7"><span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s">&#39;d&#39;</span><span class="p">}</span>
 </span></pre></div>
 </div>
-<div class="section" id="flattening-lists">
-<h2>Flattening&nbsp;lists:</h2>
-<div class="highlight"><pre><span id="line-1"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
-</span><span id="line-2">
-</span><span id="line-3"><span class="c"># Note:</span>
-</span><span id="line-4"><span class="c">#      According to Python&#39;s documentation</span>
-</span><span id="line-5"><span class="c">#      `sum`, `chain.from_iterable`</span>
-</span><span id="line-6"><span class="c">#       is the preferred method.</span>
-</span><span id="line-7">
-</span><span id="line-8"><span class="c"># Singly Nested List</span>
-</span><span id="line-9"><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
-</span><span id="line-10">
-</span><span id="line-11"><span class="c"># Using Chain</span>
-</span><span id="line-12"><span class="nb">list</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-</span><span id="line-13">
-</span><span id="line-14"><span class="c"># Using `sum`</span>
-</span><span id="line-15"><span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">[])</span>
-</span><span id="line-16">
-</span><span id="line-17"><span class="c"># Using List Comprehension</span>
-</span><span id="line-18"><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">l</span><span class="p">]</span>
-</span><span id="line-19">
-</span><span id="line-20"><span class="nb">list</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="o">==</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">[])</span> <span class="o">==</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">l</span><span class="p">]</span>
-</span><span id="line-21"><span class="bp">True</span>
+<div class="section" id="list-flattening">
+<h2>List&nbsp;Flattening</h2>
+<div class="highlight"><pre><span id="line-1"><span class="n">nest</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
 </span></pre></div>
-<div class="highlight"><pre><span id="line-1"><span class="c"># Doubly Nested List</span>
-</span><span id="line-2"><span class="n">a</span> <span class="o">=</span> <span class="p">[[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]]</span>
+<p>Using <tt class="docutils literal">chain</tt></p>
+<div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
+</span><span id="line-2"><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">nest</span><span class="p">))</span>
+</span><span id="line-3"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span></pre></div>
+<p>Using <tt class="docutils literal">sum</tt></p>
+<div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nest</span><span class="p">,</span> <span class="p">[])</span>
+</span><span id="line-2"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span></pre></div>
+<p>Using List&nbsp;Comprehensions</p>
+<div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nest</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">n</span><span class="p">]</span>
+</span><span id="line-2"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span></pre></div>
+<p>What the evil voodoo magic is&nbsp;this?!</p>
+<blockquote>
+<p>Better to think of it this&nbsp;way</p>
+<p>Go back to&nbsp;basics</p>
+</blockquote>
+<div class="highlight"><pre><span id="line-1"><span class="c"># Normal List Comp</span>
+</span><span id="line-2"><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nest</span><span class="p">]</span>
+</span><span id="line-3"><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+</span><span id="line-4">
+</span><span id="line-5"><span class="n">List</span> <span class="n">Comp</span> <span class="n">Inside</span> <span class="n">List</span> <span class="n">Comp</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="c"># list comp-inception</span>
+</span><span id="line-2"><span class="o">&gt;&gt;&gt;</span> <span class="p">[[</span><span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nest</span><span class="p">]</span>
+</span><span id="line-3"><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+</span></pre></div>
+<p>Now Split Up&nbsp;Components</p>
+<div class="highlight"><pre><span id="line-1"><span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">n</span><span class="p">]</span>    <span class="o">=&gt;</span> <span class="p">[</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">],</span>  <span class="p">[</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">]</span>
+</span><span id="line-2"><span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nest</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="p">[[</span><span class="n">n</span><span class="p">],</span> <span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="p">[</span><span class="n">n</span><span class="p">]]</span>
+</span></pre></div>
+<p>Map out the&nbsp;Logic</p>
+<div class="highlight"><pre><span id="line-1"><span class="p">[</span><span class="n">Part</span> <span class="n">A</span><span class="p">]</span>   <span class="k">for</span><span class="o">-</span><span class="n">every</span>  <span class="p">[</span><span class="n">Part</span> <span class="n">B</span><span class="p">]</span>
+</span><span id="line-2"><span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nest</span><span class="p">]</span> <span class="k">for</span> <span class="p">[</span><span class="n">l</span> <span class="ow">in</span> <span class="n">n</span><span class="p">]</span>
+</span></pre></div>
+<p>Reduce Final&nbsp;Solution</p>
+<div class="highlight"><pre><span id="line-1"><span class="n">A</span><span class="p">:</span> <span class="n">Get</span> <span class="n">l</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nest</span>
+</span><span id="line-2"><span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nest</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">]</span>
 </span><span id="line-3">
-</span><span id="line-4"><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">l1</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">for</span> <span class="n">l2</span> <span class="ow">in</span> <span class="n">l1</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">l2</span><span class="p">]</span>
-</span><span id="line-5"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</span><span id="line-4"><span class="n">B</span><span class="p">:</span> <span class="k">for</span> <span class="n">every</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">n</span>
+</span><span id="line-5"><span class="p">[</span><span class="n">l</span> <span class="ow">in</span> <span class="n">n</span><span class="p">]</span>          <span class="o">=&gt;</span> <span class="p">[</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">]</span>
+</span><span id="line-6">
+</span><span id="line-7"><span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nest</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">n</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">]</span> <span class="n">X</span> <span class="p">[</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">]</span>
 </span></pre></div>
 <div class="highlight"><pre><span id="line-1"><span class="c"># Random Nested List</span>
 </span><span id="line-2"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]]</span>
