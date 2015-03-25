@@ -1,5 +1,405 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/sang-han.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2014-12-09T00:00:00-08:00</updated><entry><title>Useful Python Tricks</title><link href="http://sanghan.me/blog/2014/12/python_tricks/" rel="alternate"></link><updated>2014-12-09T00:00:00-08:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-12-09:blog/2014/12/python_tricks/</id><summary type="html">&lt;p&gt;Originally inspired from this
+<feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/sang-han.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2015-03-25T00:00:00-07:00</updated><entry><title>Machine Learning Notes</title><link href="http://sanghan.me/blog/2015/03/machine_learning_notes/" rel="alternate"></link><updated>2015-03-25T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-03-25:blog/2015/03/machine_learning_notes/</id><summary type="html">&lt;p&gt;2013 Sang&amp;nbsp;Han&lt;/p&gt;
+&lt;p&gt;A collection of notes and useful articles on numerical&amp;nbsp;algorithms.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ml" src="http://sanghan.me/img/ml.jpg" /&gt;&lt;/p&gt;
+&lt;h1&gt;Definitions&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Markov Chains:&lt;/strong&gt; A special type of &lt;em&gt;stochastic process&lt;/em&gt;. The standard
+definition of a stochastic process is an ordered collection of random&amp;nbsp;variables:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Self-Organized Criticality (&lt;span class="caps"&gt;SOC&lt;/span&gt;)&lt;/strong&gt;: &amp;#8220;Self-Organized” means that from any initial condition, the system tends to move toward a critical state, and stay there, without external control. A system is “critical” if it is in transition between two&amp;nbsp;phases.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Kernel Density Estimation&lt;/strong&gt;: Because fuck&amp;nbsp;histograms.&lt;/p&gt;
+&lt;h3&gt;Regression:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Least&amp;nbsp;Squares&lt;/li&gt;
+&lt;li&gt;Ridge&amp;nbsp;Regression&lt;/li&gt;
+&lt;li&gt;Last Angle&amp;nbsp;Regression&lt;/li&gt;
+&lt;li&gt;Elastic&amp;nbsp;Net&lt;/li&gt;
+&lt;li&gt;Kernel Ridge&amp;nbsp;Regression&lt;/li&gt;
+&lt;li&gt;Support Vector Machines (&lt;span class="caps"&gt;SVR&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Partial Least Squares (&lt;span class="caps"&gt;PLS&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Classification:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Linear Discriminant Analysis (&lt;span class="caps"&gt;LDA&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Basic&amp;nbsp;Perceptron,&lt;/li&gt;
+&lt;li&gt;Elastic&amp;nbsp;Net&lt;/li&gt;
+&lt;li&gt;Logistic Regression&amp;nbsp;(Kernel)&lt;/li&gt;
+&lt;li&gt;Support Vector Machines (&lt;span class="caps"&gt;SVM&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Diagonal&amp;nbsp;Linear&lt;/li&gt;
+&lt;li&gt;Discriminant Analysis (&lt;span class="caps"&gt;DLDA&lt;/span&gt;),&lt;/li&gt;
+&lt;li&gt;Golub&amp;nbsp;Classifier&lt;/li&gt;
+&lt;li&gt;Fisher Discriminant&amp;nbsp;Classifier&lt;/li&gt;
+&lt;li&gt;k-Nearest-Neighbor&lt;/li&gt;
+&lt;li&gt;Classification&amp;nbsp;Tree&lt;/li&gt;
+&lt;li&gt;Maximum Likelihood&amp;nbsp;Classifier&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Clustering:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Hierarchical&amp;nbsp;Clustering&lt;/li&gt;
+&lt;li&gt;Memory-saving&lt;/li&gt;
+&lt;li&gt;Hierarchical&amp;nbsp;Clustering&lt;/li&gt;
+&lt;li&gt;K-m`eans&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Dimensionality&amp;nbsp;Reduction:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fisher Discriminant (&lt;span class="caps"&gt;FDA&lt;/span&gt;),&lt;/li&gt;
+&lt;li&gt;Spectral Regression Discriminant Analysis (&lt;span class="caps"&gt;SRDA&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Principal Component Analysis (&lt;span class="caps"&gt;PCA&lt;/span&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Critical systems demonstrate common&amp;nbsp;behaviors&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Long-tailed distributions of some physical&amp;nbsp;quantities.&lt;/li&gt;
+&lt;li&gt;Fractal&amp;nbsp;geometries:&lt;/li&gt;
+&lt;li&gt;Variations in time that exhibit pink noise or a time series with many frequency components.&lt;ul&gt;
+&lt;li&gt;In white noise, all of the components have equal&amp;nbsp;power.&lt;/li&gt;
+&lt;li&gt;In “pink” noise, low-frequency components have more power than high-frequency&amp;nbsp;components.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Models&lt;/h2&gt;
+&lt;h3&gt;Reductionist:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A reductionist model describes a system by describing its parts and their&amp;nbsp;interactions.&lt;/li&gt;
+&lt;li&gt;When a reductionist model is used as an explanation, it depends on an analogy between the components of the model and the components of the&amp;nbsp;system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Holistic:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Holistic models are more focused on similarities between systems and less interested in analogous&amp;nbsp;parts.&lt;/li&gt;
+&lt;li&gt;Usually fits the simplest model that demonstrates that behavior &lt;em&gt;Optimization&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Agent-Based&amp;nbsp;Models&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Agents that model intelligent behavior, usually with a simple set of&amp;nbsp;rules.&lt;/li&gt;
+&lt;li&gt;Useful for modeling the dynamics of systems that are not in&amp;nbsp;equilibrium.&lt;/li&gt;
+&lt;li&gt;Agent-based models are useful for modeling the dynamics of systems that are not in&amp;nbsp;equilibrium.&lt;/li&gt;
+&lt;li&gt;Particularly useful for understanding relationships between individual decisions and system&amp;nbsp;behavior.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Stochastic Volatility&amp;nbsp;Model:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Models the latent volatility variable, modeled as a stochastic&amp;nbsp;process.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Analysis&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/demotu/BMC/blob/master/notebooks/DetectPeaks.ipynb"&gt;&lt;strong&gt;Detection of peaks in&amp;nbsp;data&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A naiive but simple optimization algorithm and performance&amp;nbsp;analysis.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/demotu/BMC/blob/master/notebooks/DetectOnset.ipynb"&gt;&lt;strong&gt;Detection of onset in&amp;nbsp;data&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Introduces detection of change, using electromyography to model the usage of a threshold potential to signify a change in the&amp;nbsp;enviornment.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/demotu/BMC/blob/master/notebooks/DetectCUSUM.ipynb"&gt;&lt;strong&gt;Detection of changes using the Cumulative Sum (&lt;span class="caps"&gt;CUSUM&lt;/span&gt;)&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Introduces the Cumulative sum (&lt;span class="caps"&gt;CUSUM&lt;/span&gt;)&amp;nbsp;algorithm.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/demotu/BMC/blob/master/notebooks/TimeNormalization.ipynb"&gt;&lt;strong&gt;Time&amp;nbsp;Normalization&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Uses one-dimensional linear interpolation in temporal alignment of cyclic&amp;nbsp;data.&lt;/p&gt;
+&lt;h1&gt;Algorithms&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/markdregan/K-Nearest-Neighbors-with-Dynamic-Time-Warping/blob/master/K_Nearest_Neighbor_Dynamic_Time_Warping.ipynb"&gt;&lt;strong&gt;K Nearest Neighbor Dynamic Time&amp;nbsp;Warping&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;span class="caps"&gt;DTW&lt;/span&gt; algorithm finds the optimum alignment between two sequences of observations by warping the time dimension with certain&amp;nbsp;constraints.&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;DTW&lt;/span&gt; is good for classifying sequences that have different frequences or that are out of&amp;nbsp;phase.&lt;/p&gt;
+&lt;p&gt;When it comes to timeseries classification, 1 Nearest Neighbor (K=1) and Dynamic Timewarping is very difficult to&amp;nbsp;beat.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/urls/raw.github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python/master/04_Gaussians/Gaussians.ipynb"&gt;&lt;strong&gt;Gaussian&amp;nbsp;Probabilities&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Introduces using Gaussians to represent beliefs in the Bayesian sense. Gaussians allow us to implement the algorithms used in the Discrete Bayes Filter to work in continuous&amp;nbsp;domains.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/05_Kalman_Filters.ipynb"&gt;&lt;strong&gt;One Dimensional Kalman&amp;nbsp;Filters&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Implements a Kalman filter by modifying the Discrete Bayesian Filter to use Gaussians. This is a full featured Kalman filter, albeit only useful for 1D&amp;nbsp;problems.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/16_Ensemble_Kalman_Filters.ipynb"&gt;&lt;strong&gt;Ensemble Kalman&amp;nbsp;Filters&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Discusses the ensemble Kalman Filter, which uses a Monte Carlo approach to deal with very large Kalman filter states in nonlinear&amp;nbsp;systems.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter3_MCMC/Chapter3.ipynb"&gt;&lt;strong&gt;Markov Chain Monte&amp;nbsp;Carlo&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thorough explanation of &lt;span class="caps"&gt;MCMC&lt;/span&gt;(Markov Chain Monte Carlo), operates and diagnostic&amp;nbsp;tools.&lt;/p&gt;
+&lt;p&gt;Introduces the PyMCMC library which implements the &lt;span class="caps"&gt;MCMC&lt;/span&gt; exploring algorithm and exends a public &lt;code&gt;Model&lt;/code&gt; class.&lt;/p&gt;
+&lt;p&gt;The Model class has very simple internals: just a list of unobserved variables and a list of factors which go into computing the posterior&amp;nbsp;density.&lt;/p&gt;
+&lt;h1&gt;Digital Signal&amp;nbsp;Processing&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/demotu/BMC/blob/master/notebooks/SignalBasicProperties.ipynb"&gt;&lt;strong&gt;&lt;span class="caps"&gt;DSP&lt;/span&gt; Primer: The State of&amp;nbsp;Determinism&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A brief description about the basic properties of signals. Introduces Nyquist-Shannon Theorem for sampling, and discusses linear systems, issues with quantization and &lt;span class="caps"&gt;RNG&lt;/span&gt;&amp;#8217;s.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/demotu/BMC/blob/master/notebooks/FourierSeries.ipynb"&gt;&lt;strong&gt;Fourier&amp;nbsp;Series&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The original fourier series implemented in&amp;nbsp;Python.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/demotu/BMC/blob/master/notebooks/FFTandPSD.ipynb"&gt;&lt;strong&gt;Fast Fourier Transform and Power Spectral&amp;nbsp;Density&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;FFT&lt;/span&gt; and it&amp;#8217;s application to &lt;span class="caps"&gt;PSD&lt;/span&gt;. Also implements Short-Time Fourier Transform when you just want an&amp;nbsp;estimate.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/demotu/BMC/blob/master/notebooks/DataFiltering.ipynb"&gt;&lt;strong&gt;Data filtering in signal&amp;nbsp;processing&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A thorough introduction to data filtering and the most basic filters typically used in signal&amp;nbsp;processing.&lt;/p&gt;
+&lt;h1&gt;Reproducible academic&amp;nbsp;publications&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://dx.doi.org/10.1016/j.tpb.2014.10.004"&gt;The probability of improvement in Fisher&amp;#8217;s geometric model: a probabilistic&amp;nbsp;approach&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://rspb.royalsocietypublishing.org/content/281/1792/20141025.abstract"&gt;Stress-induced mutagenesis and complex&amp;nbsp;adaptation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.sciencedirect.com/science/article/pii/S1053811914003103"&gt;Automatic segmentation of odor maps in the mouse olfactory bulb using regularized non-negative matrix&amp;nbsp;factorization&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.nature.com/ng/journal/vaop/ncurrent/full/ng.3051.html"&gt;Multi-tiered genomic analysis of head and neck cancer ties &lt;span class="caps"&gt;TP53&lt;/span&gt; mutation to 3p loss, by A. Gross et al. (Nature Genetics&amp;nbsp;2014)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://code.google.com/p/powerlaw/"&gt;powerlaw: a Python package for analysis of heavy-tailed distributions, by J. Alstott et&amp;nbsp;al.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.nature.com/ismej/journal/v7/n3/full/ismej2012123a.html"&gt;Collaborative cloud-enabled tools allow rapid, reproducible biological insights, by B. Ragan-Kelley et&amp;nbsp;al.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://ged.msu.edu/papers/2012-diginorm"&gt;A Reference-Free Algorithm for Computational Normalization of Shotgun Sequencing Data, by &lt;span class="caps"&gt;C.T.&lt;/span&gt; Brown et&amp;nbsp;al.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://arxiv.org/abs/1303.2690"&gt;The kinematics of the Local Group in a cosmological context&lt;/a&gt; by &lt;a href="http://wwwprof.uniandes.edu.co/~je.forero/"&gt;&lt;span class="caps"&gt;J.E.&lt;/span&gt; Forero-Romero et&amp;nbsp;al.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.scientificamerican.com/article.cfm?id=warming-ocean-threatens-sea-life"&gt;Warming Ocean Threatens Sea&amp;nbsp;Life&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/juliangarcia/ews/blob/master/notebook.ipynb"&gt;Extrapolating Weak Selection in Evolutionary&amp;nbsp;Games&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/urls/bitbucket.org/christopher_bonnett/nn_notebook/raw/5e69b55193a229cb2076a2f18e43b45c56e317e0/T-800.ipynb"&gt;Using neural networks to estimate redshift&amp;nbsp;distributions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://dx.doi.org/10.1523/JNEUROSCI.1037-13.2013"&gt;Mechanisms for stable, robust, and adaptive development of orientation maps in the primary visual&amp;nbsp;cortex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/github/cgranade/accelerated-randomized-benchmarking/blob/master/src/model_testing.ipynb"&gt;Accelerated Randomized&amp;nbsp;Benchmarking&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://dx.doi.org/10.1038/nature13178"&gt;Dynamics and associations of microbial community types across the human&amp;nbsp;body&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nbviewer.ipython.org/gist/zsylvester/6040d0015b9b907bc788"&gt;Variations in submarine channel sinuosity as a function of latitude and&amp;nbsp;slope&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.jneurosci.org/content/34/32/10743.short"&gt;Frontoparietal representations of task context support the flexible control of goal directed&amp;nbsp;cognition&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://openresearchsoftware.metajnl.com/article/view/jors.bh"&gt;pyparty: Intuitive Particle Processing in&amp;nbsp;Python&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://biorxiv.org/content/early/2014/12/16/012831"&gt;Indication of family-specific &lt;span class="caps"&gt;DNA&lt;/span&gt; methylation patterns in developing&amp;nbsp;oysters&lt;/a&gt;&lt;/p&gt;</summary><category term="Notes"></category></entry><entry><title>Everything’s An Object, So What?</title><link href="http://sanghan.me/blog/2015/03/object_oriented/" rel="alternate"></link><updated>2015-03-20T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-03-20:blog/2015/03/object_oriented/</id><summary type="html">&lt;p&gt;&lt;img alt="comic" src="{filename}img/languaes.png" /&gt;&lt;/p&gt;
+&lt;p&gt;A look into Python&amp;#8217;s Data Model, what it means to be object&amp;nbsp;oriented.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Normal&amp;nbsp;Methods&lt;/li&gt;
+&lt;li&gt;Class&amp;nbsp;Methods&lt;/li&gt;
+&lt;li&gt;Static&amp;nbsp;Methods&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Defining a method usually look like&amp;nbsp;this&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Pokemon&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    A contrived Pokemon DataModel&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="c"&gt;# Class Attributes owned by the Class&lt;/span&gt;
+    &lt;span class="n"&gt;types&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;fire&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;grass&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;rock&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;electric&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;water&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;level&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="s"&gt;&amp;quot;Instantiate a pokemon with a name, type and level.&amp;quot;&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;types&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;AttributeError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Pokemon not a valid type&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;level&lt;/span&gt;
+
+    &lt;span class="c"&gt;# Normal Method&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;level_up&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;levels&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;levels&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;There are three ways of using methods from a&amp;nbsp;class:&lt;/h1&gt;
+&lt;h2&gt;1. Normal Methods Bound to Class&amp;nbsp;Instances&lt;/h2&gt;
+&lt;p&gt;This is the typical way of calling&amp;nbsp;methods&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s construct instances of Pokemon and and modify it&amp;#8217;s attributes using a normal method&amp;nbsp;call.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;pikachu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Pokemon&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;pikachu&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;electric&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;onyx&lt;/span&gt;    &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Pokemon&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;onyx&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;rock&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# Mutates the instance self.level attribute.&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;pikachu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;level_up&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;pikachu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt;
+&lt;span class="mi"&gt;6&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;level_up()&lt;/code&gt; is a normal method because it requires access to the instances &lt;code&gt;level&lt;/code&gt; attribute&lt;/p&gt;
+&lt;h2&gt;2. Make the method a &lt;a href="https://docs.python.org/2/library/functions.html#classmethod"&gt;class&amp;nbsp;method&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This lets you use attributes of the class without requiring an&amp;nbsp;instance&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s inspect our &lt;code&gt;Pokemon&lt;/code&gt; Class&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c-Singleline"&gt;# Class Attribute&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Pokemon:&lt;/span&gt;
+    ...
+    ...
+
+    &lt;span class="nv"&gt;@classmethod&lt;/span&gt;
+    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;weakness&lt;/span&gt;(&lt;span class="n"&gt;cls&lt;/span&gt;, &lt;span class="n"&gt;pokemon&lt;/span&gt;):
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;cls&lt;/span&gt;.&lt;span class="n"&gt;types&lt;/span&gt;[&lt;span class="n"&gt;cls&lt;/span&gt;.&lt;span class="n"&gt;types&lt;/span&gt;.&lt;span class="nb"&gt;index&lt;/span&gt;(&lt;span class="n"&gt;pokemon&lt;/span&gt;.&lt;span class="n"&gt;type&lt;/span&gt;) - &lt;span class="mi"&gt;1&lt;/span&gt;]
+
+    &lt;span class="nv"&gt;@classmethod&lt;/span&gt;
+    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;effectiveness&lt;/span&gt;(&lt;span class="n"&gt;cls&lt;/span&gt;, &lt;span class="n"&gt;pokemon&lt;/span&gt;):
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;cls&lt;/span&gt;.&lt;span class="n"&gt;types&lt;/span&gt;[&lt;span class="n"&gt;cls&lt;/span&gt;.&lt;span class="n"&gt;type&lt;/span&gt;.&lt;span class="nb"&gt;index&lt;/span&gt;(&lt;span class="n"&gt;pokemon&lt;/span&gt;.&lt;span class="n"&gt;type&lt;/span&gt;) + &lt;span class="mi"&gt;1&lt;/span&gt;]
+
+    &lt;span class="nv"&gt;@staticmethod&lt;/span&gt;
+    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;battle&lt;/span&gt;(&lt;span class="n"&gt;trainer&lt;/span&gt;, &lt;span class="n"&gt;opponent&lt;/span&gt;):
+
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt;.&lt;span class="n"&gt;type&lt;/span&gt; != &lt;span class="n"&gt;trainer&lt;/span&gt;.&lt;span class="n"&gt;get_effective&lt;/span&gt;(&lt;span class="n"&gt;opponent&lt;/span&gt;) &lt;span class="o"&gt;and&lt;/span&gt; \
+           &lt;span class="n"&gt;trainer&lt;/span&gt;.&lt;span class="n"&gt;type&lt;/span&gt; != &lt;span class="n"&gt;trainer&lt;/span&gt;.&lt;span class="n"&gt;get_weakness&lt;/span&gt;(&lt;span class="n"&gt;opponent&lt;/span&gt;):
+            &lt;span class="n"&gt;chances&lt;/span&gt; = &lt;span class="n"&gt;trainer&lt;/span&gt;.&lt;span class="n"&gt;level&lt;/span&gt;
+        &lt;span class="n"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt;.&lt;span class="n"&gt;type&lt;/span&gt; == &lt;span class="n"&gt;trainer&lt;/span&gt;.&lt;span class="n"&gt;get_effective&lt;/span&gt;(&lt;span class="n"&gt;opponent&lt;/span&gt;):
+            &lt;span class="n"&gt;chances&lt;/span&gt; = &lt;span class="n"&gt;trainer&lt;/span&gt;.&lt;span class="n"&gt;level&lt;/span&gt; * &lt;span class="mi"&gt;2&lt;/span&gt;
+        &lt;span class="n"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt;.&lt;span class="n"&gt;type&lt;/span&gt; == &lt;span class="n"&gt;trainer&lt;/span&gt;.&lt;span class="n"&gt;get_weakness&lt;/span&gt;(&lt;span class="n"&gt;opponent&lt;/span&gt;):
+            &lt;span class="n"&gt;chances&lt;/span&gt; = &lt;span class="n"&gt;trainer&lt;/span&gt;.&lt;span class="n"&gt;level&lt;/span&gt; / &lt;span class="mi"&gt;2&lt;/span&gt;
+
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;chances&lt;/span&gt; &amp;gt; &lt;span class="n"&gt;opponent&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="n"&gt;opponent&lt;/span&gt;
+
+
+
+&amp;gt;&amp;gt;&amp;gt; &lt;span class="n"&gt;Pokemon&lt;/span&gt;.&lt;span class="n"&gt;types&lt;/span&gt;
+(&lt;span class="s"&gt;&amp;#39;fire&amp;#39;&lt;/span&gt;, &lt;span class="s"&gt;&amp;#39;grass&amp;#39;&lt;/span&gt;, &lt;span class="s"&gt;&amp;#39;rock&amp;#39;&lt;/span&gt;, &lt;span class="s"&gt;&amp;#39;electric&amp;#39;&lt;/span&gt;, &lt;span class="s"&gt;&amp;#39;water&amp;#39;&lt;/span&gt;)
+
+&lt;span class="c-Singleline"&gt;# Instance has access to Class attributes&lt;/span&gt;
+&amp;gt;&amp;gt;&amp;gt; &lt;span class="n"&gt;pikachu&lt;/span&gt;.&lt;span class="n"&gt;types&lt;/span&gt;
+(&lt;span class="s"&gt;&amp;#39;fire&amp;#39;&lt;/span&gt;, &lt;span class="s"&gt;&amp;#39;grass&amp;#39;&lt;/span&gt;, &lt;span class="s"&gt;&amp;#39;rock&amp;#39;&lt;/span&gt;, &lt;span class="s"&gt;&amp;#39;electric&amp;#39;&lt;/span&gt;, &lt;span class="s"&gt;&amp;#39;water&amp;#39;&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;Pokemon.types&lt;/code&gt; is a class level variable, which means it&amp;#8217;s bound to the class itself.
+&lt;code&gt;pikachu.types&lt;/code&gt; is referencing it&amp;#8217;s parent &lt;code&gt;Pokemon.types&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;A Note on&amp;nbsp;Classmethods:&lt;/strong&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The class method can &lt;span class="caps"&gt;ONLY&lt;/span&gt; access data that every instance of the class has access to.
+  This typically means that it can see the methods belonging to the class, and any variables defined outside of those methods, for&amp;nbsp;example:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;pikachu.type&lt;/code&gt; &lt;strong&gt;(singular type, not types)&lt;/strong&gt; is a variable which belongs only to instances of the &lt;code&gt;Pokemon&lt;/code&gt; class and can only be used when you construct an object of that&amp;nbsp;class.&lt;/p&gt;
+&lt;p&gt;Trying to access &lt;code&gt;type&lt;/code&gt; from it&amp;#8217;s class raises an &lt;code&gt;AttributeError&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&amp;gt;&amp;gt;&amp;gt; Pokemon.type
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+&amp;lt;python-input-2-fff28c0ed2a2&amp;gt; in &amp;lt;module&amp;gt;()
+----&amp;gt; 1 Pokemon.type
+
+AttributeError: type object &amp;#39;Pokemon&amp;#39; has no attribute &amp;#39;type&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;&amp;gt; A class method is oftentimes useful for writing methods which are generalized for a whole class to be applied on&amp;nbsp;instances.&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;# Pikachu is Effective Against
+&amp;gt;&amp;gt;&amp;gt; Pokemon.get_effective(pikachu)
+&amp;#39;water&amp;#39;
+
+# Pikachu is Weak Against
+&amp;gt;&amp;gt;&amp;gt; Pokemon.get_weakness(pikachu)
+&amp;#39;rock&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;3. Make the method a &lt;a href="https://docs.python.org/2/library/functions.html#staticmethod"&gt;static method&lt;/a&gt; and call it as &lt;code&gt;class_instance.method()&lt;/code&gt; or &lt;code&gt;ClassName.method()&lt;/code&gt;.&lt;/h2&gt;
+&lt;p&gt;Static methods are methods bound to a class which cannot access the state or properties of the class.
+   This means they can&amp;#8217;t use any variables belonging to the&amp;nbsp;class.&lt;/p&gt;
+&lt;p&gt;A class method is not a static method and a static method is not a class method because the &lt;code&gt;cls&lt;/code&gt; argument behaves a lot like &lt;code&gt;self&lt;/code&gt; in a normal method.
+That is &lt;code&gt;cls&lt;/code&gt; is automatically assigned a value of &lt;code&gt;ClassType&lt;/code&gt;.
+If you didn&amp;#8217;t specify it with the &lt;code&gt;cls&lt;/code&gt; input then the first argument would be assigned the value of &lt;code&gt;ClassType&lt;/code&gt; (as if it were &lt;code&gt;cls&lt;/code&gt;, since its just the conventional name) and all of the other arguments would be shifted&amp;nbsp;over.&lt;/p&gt;
+&lt;p&gt;The static method isn&amp;#8217;t like this.
+Static methods don&amp;#8217;t have a predefined argument. Static methods can only use variables which were given as arguments or defined inside of the&amp;nbsp;function.&lt;/p&gt;
+&lt;p&gt;For a high level explanation you can think of classes as being a generic object and methods as just regular&amp;nbsp;functions.&lt;/p&gt;
+&lt;p&gt;When you define a method of a class (in the normal way) and instantiate the class into an object, the methods are bound when the object is created and with the first argument being given the object the method belongs to. The regular method is there only when the class is instantiated into an&amp;nbsp;object&lt;/p&gt;
+&lt;p&gt;When you define a class method the function the method is bound to the class, not an object. So it is bound when the class is defined. That means a classmethod is there as soon as the class is defined and stays there for all instances of the&amp;nbsp;class&lt;/p&gt;
+&lt;p&gt;A static method is similar to the class method; it&amp;#8217;s there as soon as the object is defined, however it doesn&amp;#8217;t have any preset values bound to any of its&amp;nbsp;arguments.&lt;/p&gt;
+&lt;p&gt;Each one has its merits and uses but it&amp;#8217;s important to use the most appropriate&amp;nbsp;one.&lt;/p&gt;
+&lt;h2&gt;Rule of&amp;nbsp;Thumb&lt;/h2&gt;
+&lt;p&gt;Doesn&amp;#8217;t require knowing anything about the class or self.
+    &lt;code&gt;staticmethod&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Doesn&amp;#8217;t require knowing anything about self, but references the class
+    &lt;code&gt;classmethod&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Needs needs to know about a particular instance of the class,
+then just create it like a normal method with &lt;code&gt;self&lt;/code&gt; but no&amp;nbsp;decorators.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;bar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;baz&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+       &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;baz&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;baz&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@classmethod&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bar&lt;/span&gt; &lt;span class="c"&gt;# Returns bar&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@classmethod&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;fuz&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;baz&lt;/span&gt; &lt;span class="c"&gt;# Error!&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;A static method is not a bound&amp;nbsp;method&lt;/h1&gt;
+&lt;p&gt;A static method is not a bound&amp;nbsp;method.&lt;/p&gt;
+&lt;p&gt;I need to clarify a few definitions because I&amp;#8217;ve used the term bound rather loosely to mean that it lives in the object namespace, which isn&amp;#8217;t technically correct when referring to&amp;nbsp;methods.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://docs.python.org/3/howto/descriptor.html#static-methods-and-class-methods"&gt;From a high level perspective this link is great&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;m going to go into a very low-level overview of what is going on (to the best of my ability, if I&amp;#8217;m wrong anywhere I&amp;#8217;d love to be&amp;nbsp;corrected).&lt;/p&gt;
+&lt;p&gt;Here are the important&amp;nbsp;points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Everything in Python is an&amp;nbsp;object&lt;/li&gt;
+&lt;li&gt;Every object has a type, identity, and&amp;nbsp;value&lt;/li&gt;
+&lt;li&gt;The type of an object is itself a &lt;a href="https://docs.python.org/3/library/stdtypes.html#bltin-type-objects"&gt;type&lt;/a&gt; and an&amp;nbsp;object.&lt;/li&gt;
+&lt;li&gt;Functions are objects of &lt;a href="https://docs.python.org/3/reference/datamodel.html#objects-values-and-types"&gt;&lt;code&gt;Callable&lt;/code&gt; type&lt;/a&gt;.
+  Classes are also callable and usually return an instance of themselves.
+  Class instances are objects of type &lt;code&gt;ClassName&lt;/code&gt; only callable if the &lt;code&gt;__call__&lt;/code&gt; method is&amp;nbsp;defined.&lt;/li&gt;
+&lt;li&gt;Classes are actually interpreted as instances of type &lt;code&gt;type&lt;/code&gt;, so defining a class is actually an creating an &lt;em&gt;instance&lt;/em&gt; of &lt;a href="https://docs.python.org/3/library/functions.html#type"&gt;&lt;code&gt;type&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following are&amp;nbsp;equivalent:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;X&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="o"&gt;...&lt;/span&gt;     &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="o"&gt;...&lt;/span&gt;
+    &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;X&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;,),&lt;/span&gt; &lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;When Python &amp;#8216;executes&amp;#8217; the class definition it takes everything inside the class definition namespace and uses it for the &amp;#8216;namespace&amp;#8217; dictionary of the&amp;nbsp;type.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Binding (formally) refers to the process of joining a name to a block (a module, function body, or class&amp;nbsp;definition).&lt;/li&gt;
+&lt;li&gt;An instance method is a Callable object which combines a class, a class instance, and a function/callable.
+  An instance method is said to be bound if its &lt;code&gt;__self__&lt;/code&gt; has been set to a class instance and its &lt;code&gt;__func__&lt;/code&gt; property has been set to point to the original function.
+  When the method is called the callable is really returning &lt;code&gt;f.__func__(f.__self__, ...)&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Calling a method, &lt;code&gt;foo&lt;/code&gt;, on an object x of class X is really doing this: &lt;code&gt;X.foo(x, ...)&lt;/code&gt;.
+  Since foo has been bound (when the class was instantiated) to the object x of type&amp;nbsp;X.&lt;/li&gt;
+&lt;li&gt;For class methods the decorator changes &lt;code&gt;__self__&lt;/code&gt; from pointing to an instance to pointing to the class itself, so calling &lt;code&gt;x.foo(...)&lt;/code&gt; or &lt;code&gt;X.foo(...)&lt;/code&gt; is really doing &lt;code&gt;X.foo(X, ...)&lt;/code&gt;.
+  This is done when the class is instantiated (as an instance of&amp;nbsp;type).&lt;/li&gt;
+&lt;li&gt;For static method &lt;code&gt;foo&lt;/code&gt; the decorator prevents the binding of &lt;code&gt;__self__&lt;/code&gt;.
+  So a static method is bound to the module namespace and the @staticmethod decorator is a &lt;a href="https://docs.python.org/3/reference/datamodel.html#implementing-descriptors"&gt;descriptor&lt;/a&gt; which makes the function a &lt;a href="https://docs.python.org/3/reference/datamodel.html#invoking-descriptors"&gt;Direct Callable&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here&amp;#8217;s some sample code which might help demonstrate what I&amp;nbsp;mean:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;(&lt;span class="n"&gt;object&lt;/span&gt;):
+
+    &lt;span class="nv"&gt;@classmethod&lt;/span&gt;
+    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;class_method&lt;/span&gt;(&lt;span class="n"&gt;cls&lt;/span&gt;, &lt;span class="n"&gt;args&lt;/span&gt;):
+        &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;
+
+    &lt;span class="nv"&gt;@staticmethod&lt;/span&gt;
+    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;static_method&lt;/span&gt;(&lt;span class="n"&gt;args&lt;/span&gt;):
+        &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;
+
+    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="k"&gt;method&lt;/span&gt;(&lt;span class="k"&gt;self&lt;/span&gt;, &lt;span class="n"&gt;args&lt;/span&gt;):
+        &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Command&lt;/th&gt;
+&lt;th&gt;Output&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;type(A)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;type&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;type(A())&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;__main__.A&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;type(A())()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;__main__.A at 0x112c22a10&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Creates an instance of class A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;A().class_method&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;bound method type.class_method of &amp;lt;class '__main__.A'&amp;gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;A().static_method&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;function __main__.static_method&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Belongs to global namespace&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;A().method&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;bound method A.method of &amp;lt;__main__.A object at 0x112bfc8d0&amp;gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;A.class_method&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;bound method type.class_method of &amp;lt;class '__main__.A'&amp;gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;same as before&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;A.static_method&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;function __main__.static_method&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Belongs to global namespace&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;A.method&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;unbound method A.method&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Not bound to an instance yet, but has been bound to a class. Calling A.method(A()) works, but only with input of type A or subclassing A.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;You can also add a method to a class like&amp;nbsp;this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;def bar(obj, args):
+    return obj.__name__
+A.foo = classmethod(bar)
+A.bar = bar
+A.baz = staticmethod(baz)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;A.foo&lt;/code&gt;, &lt;code&gt;A.bar&lt;/code&gt;, and &lt;code&gt;A.baz&lt;/code&gt; will behave exactly like the respective methods, which is sometimes useful if you want to use things like partial function application or decorators inside of classes. If you bind a function to an instance, say &lt;code&gt;a=A()&lt;/code&gt;, then it will behave like a regular function in the namespace of &lt;code&gt;a&lt;/code&gt;.&lt;/p&gt;</summary></entry><entry><title>Useful Python Tricks</title><link href="http://sanghan.me/blog/2014/12/python_tricks/" rel="alternate"></link><updated>2014-12-09T00:00:00-08:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-12-09:blog/2014/12/python_tricks/</id><summary type="html">&lt;p&gt;Originally inspired from this
 &lt;a class="reference external" href="http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html"&gt;blog&lt;/a&gt;
 post. But many have been customized and rewritten into an IPython&amp;nbsp;Notebook.&lt;/p&gt;
 &lt;p&gt;Note: Written for Python&amp;nbsp;3&lt;/p&gt;
