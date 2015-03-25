@@ -76,8 +76,6 @@
                         <li >
                         <a href="http://sanghan.me/category/articles.html">Articles</a></li>
                         <li >
-                        <a href="http://sanghan.me/category/posts.html">Posts</a></li>
-                        <li >
                         <a href="http://sanghan.me/category/programming.html">Programming</a></li>
                         <li >
                         <a href="http://sanghan.me/category/quotes.html">Quotes</a></li>
@@ -149,61 +147,6 @@ definition of a stochastic process is an ordered collection of random&nbsp;varia
 <li>Support Vector Machines (<span class="caps">SVR</span>)</li>
 <li>Partial Least Squares (<span class="caps">PLS ...</span></li></ul>
                     <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2015/03/machine_learning_notes/">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://sanghan.me/blog/2015/03/everythings-an-object-so-what-slug-object_oriented-date/">Everything&#8217;s An Object, So What? slug: object_oriented&nbsp;date:</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-primary">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-03-20T00:00:00-07:00"> Fri, 20 Mar 2015</time>
-    </span>
-
-        <span class="label label-success">Category</span>
-        <a href="http://sanghan.me/category/posts.html">posts</a>
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div class="figure">
-<img alt="comic" src="{filename}img/languaes.png" />
-<p class="caption">comic</p>
-</div>
-<p>A look into Python&#8217;s Data Model, what it means to be object&nbsp;oriented.</p>
-<ul class="simple">
-<li>Normal&nbsp;Methods</li>
-<li>Class&nbsp;Methods</li>
-<li>Static&nbsp;Methods</li>
-</ul>
-<p>Defining a method usually look like&nbsp;this</p>
-<div class="highlight"><pre><span id="line-1"><span class="k">class</span> <span class="nc">Pokemon</span><span class="p">:</span>
-</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-3"><span class="sd">    A contrived Pokemon DataModel</span>
-</span><span id="line-4"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-5">    <span class="c"># Class Attributes owned by the Class</span>
-</span><span id="line-6">    <span class="n">types</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;fire&#39;</span><span class="p">,</span> <span class="s">&#39;grass&#39;</span><span class="p">,</span> <span class="s">&#39;rock&#39;</span><span class="p">,</span> <span class="s">&#39;electric&#39;</span><span class="p">,</span> <span class="s">&#39;water&#39;</span><span class="p">)</span>
-</span><span id="line-7">
-</span><span id="line-8">    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
-</span><span id="line-9">        <span class="s">&quot;Instantiate a pokemon with a name, type and level.&quot;</span>
-</span><span id="line-10">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span>  <span class="o">=</span> <span class="n">name</span>
-</span><span id="line-11">        <span class="k">if</span> <span class="nb">type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">types</span><span class="p">:</span>
-</span><span id="line-12">            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&#39;Pokemon not a valid type&#39;</span><span class="p">)</span>
-</span><span id="line-13">        <span class="bp">self</span><span class="o">.</span><span class="n">type</span>  <span class="o">=</span> <span class="nb">type</span>
-</span><span id="line-14">        <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="n">level</span>
-</span><span id="line-15">
-</span><span id="line-16">    <span class="c"># Normal Method</span>
-</span><span id="line-17">    <span class="k">def</span> <span class="nf">level_up</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-</span><span id="line-18">        <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">+=</span> <span class="n">levels</span>
-</span><span id="line-19">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">level</span>
-</span></pre></div>
-<div class="section" id="there-are-three-ways-of-using-methods-from-a-class">
-<h2>There are three ways ...</h2></div>
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2015/03/everythings-an-object-so-what-slug-object_oriented-date/">
                         <i class="fa fa-book"></i>
                         <span class="icon-label">Read More....</span>
                     </a>
@@ -480,6 +423,51 @@ a ...</p>
                 </div>
             </article>
             <hr/>
+            <article>
+                <h2><a href="http://sanghan.me/blog/2014/05/digital_universe/">Digital&nbsp;Universe</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-primary">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-05-05T23:24:00-07:00"> Mon, 05 May 2014</time>
+    </span>
+
+        <span class="label label-success">Category</span>
+        <a href="http://sanghan.me/category/quotes.html">Quotes</a>
+
+
+<span class="label label-info">Tags</span>
+	<a href="http://sanghan.me/tag/alan.html">alan</a>
+        /
+	<a href="http://sanghan.me/tag/turing.html">turing</a>
+        /
+	<a href="http://sanghan.me/tag/dyson.html">dyson</a>
+        /
+	<a href="http://sanghan.me/tag/computing.html">computing</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><!--  -->
+<blockquote>
+<p><em>&quot;In the digital universe, there are two kinds of bits:
+bits that represent structures (differences in space)
+and bits that represent sequence (differences in time).
+Digital computers - as formalized by Alan Turing, and
+developed by John von Neumann - are devices that translate
+between these two species of bits according to definite&nbsp;rules.&quot;</em></p>
+<p class="attribution">&mdash;George Dyson: Turing&#8217;s&nbsp;Cathedral</p>
+</blockquote>
+<p>About a year ago, I finished reading <a class="reference external" href="http://www.amazon.com/Turings-Cathedral-Origins-Digital-Universe/dp/1400075998">Turing&#8217;s Cathedral</a>.</p>
+<p><img alt="Turing's Cathedral" src="http://sanghan.me/img/turings_cathedral.jpg" style="width: 420px;" /></p>
+<p>At that time, my interests were focused towards engineering,
+and I never really crossed paths with programming or computer science.
+Even in my academic life as an undergraduate studying chemistry, the world bound ...</p></!-->
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/05/digital_universe/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More....</span>
+                    </a>
+                </div>
+            </article>
+            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -533,11 +521,6 @@ a ...</p>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://sanghan.me/blog/2015/03/everythings-an-object-so-what-slug-object_oriented-date/">
-                            Everything&#8217;s An Object, So What? slug: object_oriented&nbsp;date:
-                        </a>
-                    </li>
-                    <li class="list-group-item">
                         <a href="http://sanghan.me/blog/2014/12/python_tricks/">
                             Useful Python&nbsp;Tricks
                         </a>
@@ -550,6 +533,11 @@ a ...</p>
                     <li class="list-group-item">
                         <a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
                             Swift Program is Swift, Except When it&#8217;s&nbsp;Not
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://sanghan.me/blog/2014/06/pelican_blog/">
+                            Pelican: A Blogging Engine Written in&nbsp;Python
                         </a>
                     </li>
                 </ul>
