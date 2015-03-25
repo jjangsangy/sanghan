@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>WB - LightQuanta</title>
+    <title>posts - LightQuanta</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -13,7 +13,7 @@
 
 
     <meta name="author" content="Sang Han" />
-    <meta name="keywords" content="WB" />
+    <meta name="keywords" content="posts" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="LightQuanta" />
@@ -76,7 +76,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li >
                         <a href="http://sanghan.me/category/articles.html">Articles</a></li>
-                        <li >
+                        <li  class="active" >
                         <a href="http://sanghan.me/category/posts.html">Posts</a></li>
                         <li >
                         <a href="http://sanghan.me/category/programming.html">Programming</a></li>
@@ -111,55 +111,59 @@
         <div class="col-sm-9">
     <ol class="breadcrumb">
         <li><a href="http://sanghan.me" title="LightQuanta"><i class="fa fa-home fa-lg"></i></a></li>
-        <li><a href="http://sanghan.me/" title="Tags">Tags</a></li>
-        <li class="active">WB</li>
+        <li><a href="http://sanghan.me/" title="LightQuanta Categories">Categories</a></li>
+        <li class="active">posts</li>
     </ol>
 
             <article>
-                <h2><a href="http://sanghan.me/blog/2011/07/2011-07-18-photography-tip-3-white-balance-color-temperature/">Photography Tip #3 - White Balance (Color&nbsp;Temperature)</a></h2>
+                <h2><a href="http://sanghan.me/blog/2015/03/everythings-an-object-so-what-slug-object_oriented-date/">Everything&#8217;s An Object, So What? slug: object_oriented&nbsp;date:</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-07-18T21:30:00-07:00"> Mon, 18 Jul 2011</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-03-20T00:00:00-07:00"> Fri, 20 Mar 2015</time>
     </span>
 
         <span class="label label-success">Category</span>
-        <a href="http://sanghan.me/category/tumblr.html">tumblr</a>
+        <a href="http://sanghan.me/category/posts.html">posts</a>
 
 
-<span class="label label-info">Tags</span>
-	<a href="http://sanghan.me/tag/color-balance.html">Color Balance</a>
-        /
-	<a href="http://sanghan.me/tag/color-temperature.html">Color Temperature</a>
-        /
-	<a href="http://sanghan.me/tag/custom.html">Custom</a>
-        /
-	<a href="http://sanghan.me/tag/photography.html">Photography</a>
-        /
-	<a href="http://sanghan.me/tag/tips.html">Tips</a>
-        /
-	<a href="http://sanghan.me/tag/wb.html">WB</a>
-        /
-	<a href="http://sanghan.me/tag/white-balance.html">White Balance</a>
-        /
-	<a href="http://sanghan.me/tag/sang-han.html">Sang Han</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><!--  -->
-<p>So here is a slightly technical tip which will help <strong><span class="caps">ALMOST</span> <span class="caps">ANYONE</span></strong>
-improve their photos. This does not <strong>only</strong> effect people who use
-expensive camera gear, but in fact, it is more important for those using
-cheaper&nbsp;cameras.</p>
-<p>So here is a picture, can you tell what is wrong with&nbsp;it?</p>
-<p><img alt="image0" src="/img/20101028_MG_7908.jpg" /></p>
-<p>Maybe you don&#8217;t see it yet. But what if I upload the corrected version
-of this&nbsp;picture.</p>
-<p><img alt="image1" src="/img/20101028_MG_7908_corrected.jpg" /></p>
-<p>Now it makes sense. You&#8217;ll probably say, the color is wrong. But more
-precisely, it was a problem with white balance or color temperature.
-Most <span class="caps">DSLR</span>&#8217;s which can shoot ...</p></!-->
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2011/07/2011-07-18-photography-tip-3-white-balance-color-temperature/">
+                <div class="summary"><div class="figure">
+<img alt="comic" src="{filename}img/languaes.png" />
+<p class="caption">comic</p>
+</div>
+<p>A look into Python&#8217;s Data Model, what it means to be object&nbsp;oriented.</p>
+<ul class="simple">
+<li>Normal&nbsp;Methods</li>
+<li>Class&nbsp;Methods</li>
+<li>Static&nbsp;Methods</li>
+</ul>
+<p>Defining a method usually look like&nbsp;this</p>
+<div class="highlight"><pre><span id="line-1"><span class="k">class</span> <span class="nc">Pokemon</span><span class="p">:</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-3"><span class="sd">    A contrived Pokemon DataModel</span>
+</span><span id="line-4"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-5">    <span class="c"># Class Attributes owned by the Class</span>
+</span><span id="line-6">    <span class="n">types</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;fire&#39;</span><span class="p">,</span> <span class="s">&#39;grass&#39;</span><span class="p">,</span> <span class="s">&#39;rock&#39;</span><span class="p">,</span> <span class="s">&#39;electric&#39;</span><span class="p">,</span> <span class="s">&#39;water&#39;</span><span class="p">)</span>
+</span><span id="line-7">
+</span><span id="line-8">    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+</span><span id="line-9">        <span class="s">&quot;Instantiate a pokemon with a name, type and level.&quot;</span>
+</span><span id="line-10">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span>  <span class="o">=</span> <span class="n">name</span>
+</span><span id="line-11">        <span class="k">if</span> <span class="nb">type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">types</span><span class="p">:</span>
+</span><span id="line-12">            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s">&#39;Pokemon not a valid type&#39;</span><span class="p">)</span>
+</span><span id="line-13">        <span class="bp">self</span><span class="o">.</span><span class="n">type</span>  <span class="o">=</span> <span class="nb">type</span>
+</span><span id="line-14">        <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="n">level</span>
+</span><span id="line-15">
+</span><span id="line-16">    <span class="c"># Normal Method</span>
+</span><span id="line-17">    <span class="k">def</span> <span class="nf">level_up</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="line-18">        <span class="bp">self</span><span class="o">.</span><span class="n">level</span> <span class="o">+=</span> <span class="n">levels</span>
+</span><span id="line-19">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">level</span>
+</span></pre></div>
+<div class="section" id="there-are-three-ways-of-using-methods-from-a-class">
+<h2>There are three ways ...</h2></div>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2015/03/everythings-an-object-so-what-slug-object_oriented-date/">
                         <i class="fa fa-book"></i>
                         <span class="icon-label">Read More....</span>
                     </a>
@@ -187,8 +191,8 @@ Most <span class="caps">DSLR</span>&#8217;s which can shoot ...</p></!-->
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://sanghan.me/blog/2011/07/2011-07-18-photography-tip-3-white-balance-color-temperature/">
-                            Photography Tip #3 - White Balance (Color&nbsp;Temperature)
+                        <a href="http://sanghan.me/blog/2015/03/everythings-an-object-so-what-slug-object_oriented-date/">
+                            Everything&#8217;s An Object, So What? slug: object_oriented&nbsp;date:
                         </a>
                     </li>
                 </ul>
@@ -212,7 +216,7 @@ Most <span class="caps">DSLR</span>&#8217;s which can shoot ...</p></!-->
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2011 LightQuanta
+         <div class="col-xs-10">&copy; 2015 LightQuanta
             &middot; Sang Han         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>

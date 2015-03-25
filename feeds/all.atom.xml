@@ -128,7 +128,325 @@ definition of a stochastic process is an ordered collection of random&amp;nbsp;v
 &lt;p&gt;&lt;a href="http://nbviewer.ipython.org/gist/zsylvester/6040d0015b9b907bc788"&gt;Variations in submarine channel sinuosity as a function of latitude and&amp;nbsp;slope&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.jneurosci.org/content/34/32/10743.short"&gt;Frontoparietal representations of task context support the flexible control of goal directed&amp;nbsp;cognition&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://openresearchsoftware.metajnl.com/article/view/jors.bh"&gt;pyparty: Intuitive Particle Processing in&amp;nbsp;Python&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://biorxiv.org/content/early/2014/12/16/012831"&gt;Indication of family-specific &lt;span class="caps"&gt;DNA&lt;/span&gt; methylation patterns in developing&amp;nbsp;oysters&lt;/a&gt;&lt;/p&gt;</summary><category term="Notes"></category></entry><entry><title>Useful Python Tricks</title><link href="http://sanghan.me/blog/2014/12/python_tricks/" rel="alternate"></link><updated>2014-12-09T00:00:00-08:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-12-09:blog/2014/12/python_tricks/</id><summary type="html">&lt;p&gt;Originally inspired from this
+&lt;p&gt;&lt;a href="http://biorxiv.org/content/early/2014/12/16/012831"&gt;Indication of family-specific &lt;span class="caps"&gt;DNA&lt;/span&gt; methylation patterns in developing&amp;nbsp;oysters&lt;/a&gt;&lt;/p&gt;</summary><category term="Notes"></category></entry><entry><title>Everything’s An Object, So What? slug: object_oriented date:</title><link href="http://sanghan.me/blog/2015/03/everythings-an-object-so-what-slug-object_oriented-date/" rel="alternate"></link><updated>2015-03-20T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-03-20:blog/2015/03/everythings-an-object-so-what-slug-object_oriented-date/</id><summary type="html">&lt;div class="figure"&gt;
+&lt;img alt="comic" src="{filename}img/languaes.png" /&gt;
+&lt;p class="caption"&gt;comic&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;A look into Python&amp;#8217;s Data Model, what it means to be object&amp;nbsp;oriented.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Normal&amp;nbsp;Methods&lt;/li&gt;
+&lt;li&gt;Class&amp;nbsp;Methods&lt;/li&gt;
+&lt;li&gt;Static&amp;nbsp;Methods&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Defining a method usually look like&amp;nbsp;this&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Pokemon&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="sd"&gt;    A contrived Pokemon DataModel&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;    &lt;span class="c"&gt;# Class Attributes owned by the Class&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-6"&gt;    &lt;span class="n"&gt;types&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;fire&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;grass&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;rock&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;electric&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;water&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-7"&gt;
+&lt;/span&gt;&lt;span id="line-8"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;level&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-9"&gt;        &lt;span class="s"&gt;&amp;quot;Instantiate a pokemon with a name, type and level.&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-10"&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-11"&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;types&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-12"&gt;            &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;AttributeError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Pokemon not a valid type&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-13"&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-14"&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;level&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-15"&gt;
+&lt;/span&gt;&lt;span id="line-16"&gt;    &lt;span class="c"&gt;# Normal Method&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-17"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;level_up&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;levels&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-18"&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;levels&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-19"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="there-are-three-ways-of-using-methods-from-a-class"&gt;
+&lt;h2&gt;There are three ways of using methods from a&amp;nbsp;class:&lt;/h2&gt;
+&lt;div class="section" id="normal-methods-bound-to-class-instances"&gt;
+&lt;h3&gt;1. Normal Methods Bound to Class&amp;nbsp;Instances&lt;/h3&gt;
+&lt;p&gt;This is the typical way of calling&amp;nbsp;methods&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s construct instances of Pokemon and and modify it&amp;#8217;s attributes
+using a normal method&amp;nbsp;call.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;pikachu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Pokemon&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;pikachu&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;electric&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;onyx&lt;/span&gt;    &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Pokemon&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;onyx&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;rock&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="c"&gt;# Mutates the instance self.level attribute.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;pikachu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;level_up&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-6"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;pikachu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-7"&gt;&lt;span class="mi"&gt;6&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;level_up()&lt;/tt&gt; is a normal method because it requires access to the
+instances &lt;tt class="docutils literal"&gt;level&lt;/tt&gt; attribute&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="make-the-method-a-class-method"&gt;
+&lt;h3&gt;2. Make the method a &lt;a class="reference external" href="https://docs.python.org/2/library/functions.html#classmethod"&gt;class&amp;nbsp;method&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This lets you use attributes of the class without requiring an&amp;nbsp;instance&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s inspect our &lt;tt class="docutils literal"&gt;Pokemon&lt;/tt&gt; Class&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="c"&gt;# Class Attribute&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Pokemon&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;    &lt;span class="o"&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;    &lt;span class="o"&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-6"&gt;
+&lt;/span&gt;&lt;span id="line-7"&gt;    &lt;span class="nd"&gt;@classmethod&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-8"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;weakness&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pokemon&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-9"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;types&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;types&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pokemon&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-10"&gt;
+&lt;/span&gt;&lt;span id="line-11"&gt;    &lt;span class="nd"&gt;@classmethod&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-12"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;effectiveness&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pokemon&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-13"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;types&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pokemon&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-14"&gt;
+&lt;/span&gt;&lt;span id="line-15"&gt;    &lt;span class="nd"&gt;@staticmethod&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-16"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;battle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trainer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;opponent&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-17"&gt;
+&lt;/span&gt;&lt;span id="line-18"&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_effective&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;opponent&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \
+&lt;/span&gt;&lt;span id="line-19"&gt;           &lt;span class="n"&gt;trainer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_weakness&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;opponent&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-20"&gt;            &lt;span class="n"&gt;chances&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-21"&gt;        &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_effective&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;opponent&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-22"&gt;            &lt;span class="n"&gt;chances&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-23"&gt;        &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_weakness&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;opponent&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-24"&gt;            &lt;span class="n"&gt;chances&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;level&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-25"&gt;
+&lt;/span&gt;&lt;span id="line-26"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;trainer&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;chances&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;opponent&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="n"&gt;opponent&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-27"&gt;
+&lt;/span&gt;&lt;span id="line-28"&gt;
+&lt;/span&gt;&lt;span id="line-29"&gt;
+&lt;/span&gt;&lt;span id="line-30"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Pokemon&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;types&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-31"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;fire&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;grass&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;rock&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;electric&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;water&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-32"&gt;
+&lt;/span&gt;&lt;span id="line-33"&gt;&lt;span class="c"&gt;# Instance has access to Class attributes&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-34"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;pikachu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;types&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-35"&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;fire&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;grass&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;rock&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;electric&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;water&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;Pokemon.types&lt;/tt&gt; is a class level variable, which means it&amp;#8217;s bound to
+the class itself. &lt;tt class="docutils literal"&gt;pikachu.types&lt;/tt&gt; is referencing it&amp;#8217;s parent
+&lt;tt class="docutils literal"&gt;Pokemon.types&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="section" id="a-note-on-classmethods"&gt;
+&lt;h4&gt;&lt;strong&gt;A Note on&amp;nbsp;Classmethods:&lt;/strong&gt;&lt;/h4&gt;
+&lt;blockquote&gt;
+The class method can &lt;span class="caps"&gt;ONLY&lt;/span&gt; access data that every instance of the
+class has access to. This typically means that it can see the
+methods belonging to the class, and any variables defined outside of
+those methods, for example:&lt;/blockquote&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;pikachu.type&lt;/tt&gt; &lt;strong&gt;(singular type, not types)&lt;/strong&gt; is a variable which
+belongs only to instances of the &lt;tt class="docutils literal"&gt;Pokemon&lt;/tt&gt; class and can only be used
+when you construct an object of that&amp;nbsp;class.&lt;/p&gt;
+&lt;p&gt;Trying to access &lt;tt class="docutils literal"&gt;type&lt;/tt&gt; from it&amp;#8217;s class raises an &lt;tt class="docutils literal"&gt;AttributeError&lt;/tt&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Pokemon&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="o"&gt;---------------------------------------------------------------------------&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="ne"&gt;AttributeError&lt;/span&gt;                            &lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fff28c0ed2a2&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;&lt;span class="o"&gt;----&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;Pokemon&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-6"&gt;
+&lt;/span&gt;&lt;span id="line-7"&gt;&lt;span class="ne"&gt;AttributeError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Pokemon&amp;#39;&lt;/span&gt; &lt;span class="n"&gt;has&lt;/span&gt; &lt;span class="n"&gt;no&lt;/span&gt; &lt;span class="n"&gt;attribute&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;type&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="a-class-method-is-oftentimes-useful-for-writing-methods-which-are-generalized-for-a-whole-class-to-be-applied-on-instances"&gt;
+&lt;h4&gt;&amp;gt; A class method is oftentimes useful for writing methods which are generalized for a whole class to be applied on&amp;nbsp;instances.&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="c"&gt;# Pikachu is Effective Against&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Pokemon&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_effective&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pikachu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="s"&gt;&amp;#39;water&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;&lt;span class="c"&gt;# Pikachu is Weak Against&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-6"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Pokemon&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_weakness&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pikachu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-7"&gt;&lt;span class="s"&gt;&amp;#39;rock&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="make-the-method-a-static-method-and-call-it-as-class-instance-method-or-classname-method"&gt;
+&lt;h3&gt;3. Make the method a &lt;a class="reference external" href="https://docs.python.org/2/library/functions.html#staticmethod"&gt;static method&lt;/a&gt; and call it as &lt;tt class="docutils literal"&gt;class_instance.method()&lt;/tt&gt; or &lt;tt class="docutils literal"&gt;ClassName.method()&lt;/tt&gt;.&lt;/h3&gt;
+&lt;p&gt;Static methods are methods bound to a class which cannot access the
+state or properties of the class. This means they can&amp;#8217;t use any
+variables belonging to the&amp;nbsp;class.&lt;/p&gt;
+&lt;p&gt;A class method is not a static method and a static method is not a class
+method because the &lt;tt class="docutils literal"&gt;cls&lt;/tt&gt; argument behaves a lot like &lt;tt class="docutils literal"&gt;self&lt;/tt&gt; in a
+normal method. That is &lt;tt class="docutils literal"&gt;cls&lt;/tt&gt; is automatically assigned a value of
+&lt;tt class="docutils literal"&gt;ClassType&lt;/tt&gt;. If you didn&amp;#8217;t specify it with the &lt;tt class="docutils literal"&gt;cls&lt;/tt&gt; input then the
+first argument would be assigned the value of &lt;tt class="docutils literal"&gt;ClassType&lt;/tt&gt; (as if it
+were &lt;tt class="docutils literal"&gt;cls&lt;/tt&gt;, since its just the conventional name) and all of the other
+arguments would be shifted&amp;nbsp;over.&lt;/p&gt;
+&lt;p&gt;The static method isn&amp;#8217;t like this. Static methods don&amp;#8217;t have a
+predefined argument. Static methods can only use variables which were
+given as arguments or defined inside of the&amp;nbsp;function.&lt;/p&gt;
+&lt;p&gt;For a high level explanation you can think of classes as being a generic
+object and methods as just regular&amp;nbsp;functions.&lt;/p&gt;
+&lt;p&gt;When you define a method of a class (in the normal way) and instantiate
+the class into an object, the methods are bound when the object is
+created and with the first argument being given the object the method
+belongs to. The regular method is there only when the class is
+instantiated into an&amp;nbsp;object&lt;/p&gt;
+&lt;p&gt;When you define a class method the function the method is bound to the
+class, not an object. So it is bound when the class is defined. That
+means a classmethod is there as soon as the class is defined and stays
+there for all instances of the&amp;nbsp;class&lt;/p&gt;
+&lt;p&gt;A static method is similar to the class method; it&amp;#8217;s there as soon as
+the object is defined, however it doesn&amp;#8217;t have any preset values bound
+to any of its&amp;nbsp;arguments.&lt;/p&gt;
+&lt;p&gt;Each one has its merits and uses but it&amp;#8217;s important to use the most
+appropriate&amp;nbsp;one.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="rule-of-thumb"&gt;
+&lt;h3&gt;Rule of&amp;nbsp;Thumb&lt;/h3&gt;
+&lt;p&gt;Doesn&amp;#8217;t require knowing anything about the class or self.
+&lt;tt class="docutils literal"&gt;staticmethod&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Doesn&amp;#8217;t require knowing anything about self, but references the class
+&lt;tt class="docutils literal"&gt;classmethod&lt;/tt&gt;&lt;/p&gt;
+&lt;p&gt;Needs needs to know about a particular instance of the class, then just
+create it like a normal method with &lt;tt class="docutils literal"&gt;self&lt;/tt&gt; but no&amp;nbsp;decorators.&lt;/p&gt;
+&lt;hr class="docutils" /&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="n"&gt;bar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;baz&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;       &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;baz&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;baz&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-6"&gt;
+&lt;/span&gt;&lt;span id="line-7"&gt;    &lt;span class="nd"&gt;@classmethod&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-8"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-9"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bar&lt;/span&gt; &lt;span class="c"&gt;# Returns bar&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-10"&gt;
+&lt;/span&gt;&lt;span id="line-11"&gt;    &lt;span class="nd"&gt;@classmethod&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-12"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;fuz&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-13"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;baz&lt;/span&gt; &lt;span class="c"&gt;# Error!&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="a-static-method-is-not-a-bound-method"&gt;
+&lt;h2&gt;A static method is not a bound&amp;nbsp;method&lt;/h2&gt;
+&lt;p&gt;A static method is not a bound&amp;nbsp;method.&lt;/p&gt;
+&lt;p&gt;I need to clarify a few definitions because I&amp;#8217;ve used the term bound
+rather loosely to mean that it lives in the object namespace, which
+isn&amp;#8217;t technically correct when referring to&amp;nbsp;methods.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://docs.python.org/3/howto/descriptor.html#static-methods-and-class-methods"&gt;From a high level perspective this link is
+great&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;m going to go into a very low-level overview of what is going on (to
+the best of my ability, if I&amp;#8217;m wrong anywhere I&amp;#8217;d love to be&amp;nbsp;corrected).&lt;/p&gt;
+&lt;p&gt;Here are the important&amp;nbsp;points:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Everything in Python is an&amp;nbsp;object&lt;/li&gt;
+&lt;li&gt;Every object has a type, identity, and&amp;nbsp;value&lt;/li&gt;
+&lt;li&gt;The type of an object is itself a
+&lt;a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-type-objects"&gt;type&lt;/a&gt;
+and an&amp;nbsp;object.&lt;/li&gt;
+&lt;li&gt;Functions are objects of &lt;tt class="docutils literal"&gt;`Callable&lt;/tt&gt;
+type &amp;lt;&lt;a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#objects-values-and-types"&gt;https://docs.python.org/3/reference/datamodel.html#objects-values-and-types&lt;/a&gt;&amp;gt;`__.
+Classes are also callable and usually return an instance of
+themselves. Class instances are objects of type &lt;tt class="docutils literal"&gt;ClassName&lt;/tt&gt; only
+callable if the &lt;tt class="docutils literal"&gt;__call__&lt;/tt&gt; method is&amp;nbsp;defined.&lt;/li&gt;
+&lt;li&gt;Classes are actually interpreted as instances of type &lt;tt class="docutils literal"&gt;type&lt;/tt&gt;, so
+defining a class is actually an creating an &lt;em&gt;instance&lt;/em&gt; of
+&lt;tt class="docutils literal"&gt;`type&lt;/tt&gt; &amp;lt;&lt;a class="reference external" href="https://docs.python.org/3/library/functions.html#type"&gt;https://docs.python.org/3/library/functions.html#type&lt;/a&gt;&amp;gt;`__.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following are&amp;nbsp;equivalent:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;X&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="o"&gt;...&lt;/span&gt;     &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="o"&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;X&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;X&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;,),&lt;/span&gt; &lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;When Python &amp;#8216;executes&amp;#8217; the class definition it takes everything inside
+the class definition namespace and uses it for the &amp;#8216;namespace&amp;#8217;
+dictionary of the&amp;nbsp;type.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Binding (formally) refers to the process of joining a name to a block
+(a module, function body, or class&amp;nbsp;definition).&lt;/li&gt;
+&lt;li&gt;An instance method is a Callable object which combines a class, a
+class instance, and a function/callable. An instance method is said
+to be bound if its &lt;tt class="docutils literal"&gt;__self__&lt;/tt&gt; has been set to a class instance and
+its &lt;tt class="docutils literal"&gt;__func__&lt;/tt&gt; property has been set to point to the original
+function. When the method is called the callable is really returning
+&lt;tt class="docutils literal"&gt;f.__func__(f.__self__, &lt;span class="pre"&gt;...)&lt;/span&gt;&lt;/tt&gt;.&lt;/li&gt;
+&lt;li&gt;Calling a method, &lt;tt class="docutils literal"&gt;foo&lt;/tt&gt;, on an object x of class X is really doing
+this: &lt;tt class="docutils literal"&gt;X.foo(x, &lt;span class="pre"&gt;...)&lt;/span&gt;&lt;/tt&gt;. Since foo has been bound (when the class was
+instantiated) to the object x of type&amp;nbsp;X.&lt;/li&gt;
+&lt;li&gt;For class methods the decorator changes &lt;tt class="docutils literal"&gt;__self__&lt;/tt&gt; from pointing to
+an instance to pointing to the class itself, so calling
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;x.foo(...)&lt;/span&gt;&lt;/tt&gt; or &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;X.foo(...)&lt;/span&gt;&lt;/tt&gt; is really doing &lt;tt class="docutils literal"&gt;X.foo(X, &lt;span class="pre"&gt;...)&lt;/span&gt;&lt;/tt&gt;.
+This is done when the class is instantiated (as an instance of&amp;nbsp;type).&lt;/li&gt;
+&lt;li&gt;For static method &lt;tt class="docutils literal"&gt;foo&lt;/tt&gt; the decorator prevents the binding of
+&lt;tt class="docutils literal"&gt;__self__&lt;/tt&gt;. So a static method is bound to the module namespace and
+the &amp;#64;staticmethod decorator is a
+&lt;a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#implementing-descriptors"&gt;descriptor&lt;/a&gt;
+which makes the function a &lt;a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#invoking-descriptors"&gt;Direct
+Callable&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here&amp;#8217;s some sample code which might help demonstrate what I&amp;nbsp;mean:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;    &lt;span class="nd"&gt;@classmethod&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;class_method&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-6"&gt;
+&lt;/span&gt;&lt;span id="line-7"&gt;    &lt;span class="nd"&gt;@staticmethod&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-8"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;static_method&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-9"&gt;        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-10"&gt;
+&lt;/span&gt;&lt;span id="line-11"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;method&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-12"&gt;        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then:&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="10%" /&gt;
+&lt;col width="29%" /&gt;
+&lt;col width="61%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;Command&lt;/th&gt;
+&lt;th class="head"&gt;Output&lt;/th&gt;
+&lt;th class="head"&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;&lt;tt class="docutils literal"&gt;type(A)&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;&lt;tt class="docutils literal"&gt;type&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;type(A())&lt;/span&gt;&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;&lt;tt class="docutils literal"&gt;__main__.A&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;type(A())()&lt;/span&gt;&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;&lt;tt class="docutils literal"&gt;&amp;lt;__main__.A at 0x112c22a10&amp;gt;&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;Creates an instance of class A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;A().class_method&lt;/span&gt;&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;&lt;tt class="docutils literal"&gt;&amp;lt;bound method type.class_method of &amp;lt;class &lt;span class="pre"&gt;'__main__.A'&amp;gt;&amp;gt;&lt;/span&gt;&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;A().static_method&lt;/span&gt;&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;&lt;tt class="docutils literal"&gt;&amp;lt;function __main__.static_method&amp;gt;&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;Belongs to global namespace&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;A().method&lt;/span&gt;&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;&lt;tt class="docutils literal"&gt;&amp;lt;bound method A.method of &amp;lt;__main__.A object at 0x112bfc8d0&amp;gt;&amp;gt;&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;tt class="docutils literal"&gt;A.class_method&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;&lt;tt class="docutils literal"&gt;&amp;lt;bound method type.class_method of &amp;lt;class &lt;span class="pre"&gt;'__main__.A'&amp;gt;&amp;gt;&lt;/span&gt;&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;same as before&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;tt class="docutils literal"&gt;A.static_method&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;&lt;tt class="docutils literal"&gt;&amp;lt;function __main__.static_method&amp;gt;&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;Belongs to global namespace&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;tt class="docutils literal"&gt;A.method&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;&lt;tt class="docutils literal"&gt;&amp;lt;unbound method A.method&amp;gt;&lt;/tt&gt;&lt;/td&gt;
+&lt;td&gt;Not bound to an instance yet, but has been bound to a class. Calling A.method(A()) works, but only with input of type A or subclassing A.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;You can also add a method to a class like&amp;nbsp;this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;obj&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;obj&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;classmethod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bar&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;baz&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;staticmethod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;baz&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;A.foo&lt;/tt&gt;, &lt;tt class="docutils literal"&gt;A.bar&lt;/tt&gt;, and &lt;tt class="docutils literal"&gt;A.baz&lt;/tt&gt; will behave exactly like the
+respective methods, which is sometimes useful if you want to use things
+like partial function application or decorators inside of classes. If
+you bind a function to an instance, say &lt;tt class="docutils literal"&gt;a=A()&lt;/tt&gt;, then it will behave
+like a regular function in the namespace of &lt;tt class="docutils literal"&gt;a&lt;/tt&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Useful Python Tricks</title><link href="http://sanghan.me/blog/2014/12/python_tricks/" rel="alternate"></link><updated>2014-12-09T00:00:00-08:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-12-09:blog/2014/12/python_tricks/</id><summary type="html">&lt;p&gt;Originally inspired from this
 &lt;a class="reference external" href="http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html"&gt;blog&lt;/a&gt;
 post. But many have been customized and rewritten into an IPython&amp;nbsp;Notebook.&lt;/p&gt;
 &lt;p&gt;Note: Written for Python&amp;nbsp;3&lt;/p&gt;
