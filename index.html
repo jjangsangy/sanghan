@@ -76,8 +76,6 @@
                         <li >
                         <a href="http://sanghan.me/category/articles.html">Articles</a></li>
                         <li >
-                        <a href="http://sanghan.me/category/life.html">Life</a></li>
-                        <li >
                         <a href="http://sanghan.me/category/programming.html">Programming</a></li>
                         <li >
                         <a href="http://sanghan.me/category/quotes.html">Quotes</a></li>
@@ -110,7 +108,7 @@
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://sanghan.me/blog/2015/05/simple_recommendation_engine/">Simple Python Recommendation&nbsp;Engine</a></h2>
+                <h2><a href="http://sanghan.me/blog/2015/05/recommendation_engine/">The Anatomy of a Recommendation&nbsp;Engine</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-primary">Date</span>
@@ -130,9 +128,7 @@
 	<a href="http://sanghan.me/tag/math.html">Math</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div class="section" id="the-recommendation-problem">
-<h2>The Recommendation&nbsp;Problem</h2>
-<p>Recommenders have been around since at least 1992. Today we see
+                <div class="summary"><p>Recommenders have been around since at least 1992. Today we see
 different flavours of recommenders, deployed across different&nbsp;verticals:</p>
 <ul class="simple">
 <li>Amazon</li>
@@ -142,7 +138,7 @@ different flavours of recommenders, deployed across different&nbsp;verticals:</p
 </ul>
 <p>What exactly do they&nbsp;do?</p>
 <div class="section" id="definitions-from-the-literature">
-<h3>Definitions from the&nbsp;literature</h3>
+<h2>Definitions from the&nbsp;literature</h2>
 <ul class="simple">
 <li><em>In a typical recommender system people provide recommendations as
 inputs, which the system then aggregates and directs to appropriate
@@ -151,8 +147,8 @@ recipients.</em> &#8212; Resnick and Varian,&nbsp;1997</li>
 one another perform filtering by recording their reactions to
 documents they read.</em> &#8212; Goldberg et al,&nbsp;1992</li>
 <li><em>In its most common formulation, the recommendation problem is
-reduced to the problem of estimating ...</em></li></ul></div></div>
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2015/05/simple_recommendation_engine/">
+reduced to the problem of estimating ratings for the ...</em></li></ul></div>
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2015/05/recommendation_engine/">
                         <i class="fa fa-book"></i>
                         <span class="icon-label">Read More....</span>
                     </a>
@@ -194,38 +190,6 @@ definition of a stochastic process is an ordered collection of random&nbsp;varia
 <li>Support Vector Machines (<span class="caps">SVR</span>)</li>
 <li>Partial Least Squares (<span class="caps">PLS ...</span></li></ul>
                     <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2015/03/machine_learning_notes/">
-                        <i class="fa fa-book"></i>
-                        <span class="icon-label">Read More....</span>
-                    </a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://sanghan.me/blog/2015/03/transition/">At The Intersection of Two&nbsp;Worlds</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-primary">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-03-12T00:00:00-07:00"> Thu, 12 Mar 2015</time>
-    </span>
-
-        <span class="label label-success">Category</span>
-        <a href="http://sanghan.me/category/life.html">Life</a>
-
-
-<span class="label label-info">Tags</span>
-	<a href="http://sanghan.me/tag/transition-state.html">transition-state</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div class="section" id="the-summit">
-<h2># The&nbsp;Summit</h2>
-<p>So I&#8217;m sitting here in my room in Oregon.x
-In this past month were what I think some of the most extraordinary
-moments. Moving up the hill we finally see the earth seperate and meet into the sky
-and realize that the end of this story is coming to a&nbsp;near.</p>
-</div>
-
-                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2015/03/transition/">
                         <i class="fa fa-book"></i>
                         <span class="icon-label">Read More....</span>
                     </a>
@@ -433,6 +397,75 @@ a ...</p>
                 </div>
             </article>
             <hr/>
+            <article>
+                <h2><a href="http://sanghan.me/blog/2014/06/swift_bubble_sort/">Swift: Bubble&nbsp;Sort</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-primary">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-06-04T00:00:00-07:00"> Wed, 04 Jun 2014</time>
+    </span>
+
+        <span class="label label-success">Category</span>
+        <a href="http://sanghan.me/category/programming.html">Programming</a>
+
+
+<span class="label label-info">Tags</span>
+	<a href="http://sanghan.me/tag/apple.html">Apple</a>
+        /
+	<a href="http://sanghan.me/tag/programming-languages.html">Programming Languages</a>
+        /
+	<a href="http://sanghan.me/tag/wwdc.html">WWDC</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><div class="highlight"><pre><span id="line-1"><span class="c1">// Sang Han</span>
+</span><span id="line-2"><span class="c1">// An implementation of a bubble party/bubble sort written in swift</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="kd">import</span> <span class="nc">Foundation</span>
+</span><span id="line-5">
+</span><span id="line-6"><span class="kd">func</span> <span class="nf">exchange</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kr">inout</span> <span class="n">a</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="kr">inout</span> <span class="n">b</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span>
+</span><span id="line-7"><span class="p">{</span>
+</span><span id="line-8">    <span class="kd">let</span> <span class="nv">tmp</span> <span class="p">=</span> <span class="n">a</span>
+</span><span id="line-9">    <span class="n">a</span> <span class="p">=</span> <span class="n">b</span>
+</span><span id="line-10">    <span class="n">b</span> <span class="p">=</span> <span class="n">tmp</span>
+</span><span id="line-11"><span class="p">}</span>
+</span><span id="line-12">
+</span><span id="line-13"><span class="kd">func</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="kr">inout</span> <span class="n">array</span><span class="p">:</span> <span class="p">[</span><span class="nb">Int</span><span class="p">])</span> <span class="p">-&gt;</span> <span class="p">[</span><span class="nb">Int</span><span class="p">]</span>
+</span><span id="line-14"><span class="p">{</span>
+</span><span id="line-15">    <span class="kd">let</span> <span class="nv">length</span> <span class="p">=</span> <span class="n">array</span><span class="p">.</span><span class="bp">count</span>
+</span><span id="line-16">
+</span><span id="line-17">    <span class="kd">var</span> <span class="nv">count</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span> <span class="nb">Int</span>
+</span><span id="line-18">    <span class="k">for</span> <span class="p">(</span><span class="bp">count</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span> <span class="bp">count</span><span class="p">&lt;</span><span class="n">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="bp">count</span><span class="o">++</span><span class="p">)</span>
+</span><span id="line-19">    <span class="p">{</span>
+</span><span id="line-20">        <span class="k">for</span> <span class="p">(</span><span class="n">pos</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">pos</span><span class="o">&lt;</span><span class="p">(</span><span class="n">length</span><span class="o">-</span><span class="bp">count</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="n">pos</span><span class="o">++</span><span class="p">)</span>
+</span><span id="line-21">        <span class="p">{</span>
+</span><span id="line-22">            <span class="k">if</span> <span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">array</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+</span><span id="line-23">                <span class="n">exchange</span><span class="p">(&amp;</span><span class="n">array</span><span class="p">[</span><span class="n">pos</span><span class="p">],</span> <span class="p">&amp;</span><span class="n">array</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="line-24">            <span class="p">}</span>
+</span><span id="line-25">        <span class="p">}</span>
+</span><span id="line-26">    <span class="p">}</span>
+</span><span id="line-27">    <span class="k">return</span> <span class="n">array</span>
+</span><span id="line-28"><span class="p">}</span>
+</span><span id="line-29">
+</span><span id="line-30"><span class="kd">func</span> <span class="nf">sortMain</span><span class="p">(</span><span class="n">arrayLength</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="p">[</span><span class="nb">Int</span><span class="p">]</span>
+</span><span id="line-31"><span class="p">{</span>
+</span><span id="line-32">    <span class="kd">var</span> <span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="nb">Int</span><span class="p">]</span> <span class="p">=</span> <span class="p">[]</span>
+</span><span id="line-33">    <span class="k">for</span> <span class="kc">_</span> <span class="k">in</span> <span class="mf">0.</span><span class="p">.&lt;</span><span class="n">arrayLength</span> <span class="p">{</span>
+</span><span id="line-34">        <span class="n">array</span><span class="p">.</span><span class="n">append</span><span class="p">(</span>
+</span><span id="line-35">            <span class="nb">Int</span><span class="p">(</span><span class="n">arc4random_uniform</span><span class="p">(</span><span class="nb">UInt32</span><span class="p">(</span><span class="n">arrayLength</span><span class="o">*</span><span class="mi">100</span><span class="p">)))</span>
+</span><span id="line-36">        <span class="p">)</span>
+</span><span id="line-37">    <span class="p">}</span>
+</span><span id="line-38">    <span class="k">return</span> <span class="n">bubbleSort</span><span class="p">(&amp;</span><span class="n">array</span><span class="p">)</span>
+</span><span id="line-39"><span class="p">}</span>
+</span></pre></div>
+
+                    <a class="btn btn-primary btn-block btn-sm" href="http://sanghan.me/blog/2014/06/swift_bubble_sort/">
+                        <i class="fa fa-book"></i>
+                        <span class="icon-label">Read More....</span>
+                    </a>
+                </div>
+            </article>
+            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -481,18 +514,13 @@ a ...</p>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://sanghan.me/blog/2015/05/simple_recommendation_engine/">
-                            Simple Python Recommendation&nbsp;Engine
+                        <a href="http://sanghan.me/blog/2015/05/recommendation_engine/">
+                            The Anatomy of a Recommendation&nbsp;Engine
                         </a>
                     </li>
                     <li class="list-group-item">
                         <a href="http://sanghan.me/blog/2015/03/machine_learning_notes/">
                             Machine Learning&nbsp;Notes
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://sanghan.me/blog/2015/03/transition/">
-                            At The Intersection of Two&nbsp;Worlds
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -503,6 +531,11 @@ a ...</p>
                     <li class="list-group-item">
                         <a href="http://sanghan.me/blog/2014/09/sieve/">
                             Prime Sieves and Python Data&nbsp;Structures
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
+                            Swift Program is Swift, Except When it&#8217;s&nbsp;Not
                         </a>
                     </li>
                 </ul>
