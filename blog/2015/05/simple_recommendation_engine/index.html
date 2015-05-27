@@ -249,51 +249,47 @@ having to switch to a more domain specific language like&nbsp;R.</em></p>
 <li>aggregation with&nbsp;groupby</li>
 <li>data manipuation via reshape, pivot, slice, merge,&nbsp;join</li>
 </ul>
-<pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-
-<span class="c"># set some print options</span>
-<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">suppress</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">'precision'</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'notebook_repr_html'</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="p">)</span>
-
-<span class="c"># init random gen</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre>
-<pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
-<span class="kn">import</span> <span class="nn">zipfile</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
-<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
-</pre>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">get_dataset</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
-    <span class="n">filename</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-
-    <span class="n">compressed</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="n">compressed</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s">'.'</span><span class="p">,</span> <span class="n">members</span><span class="o">=</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">filename</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">compressed</span><span class="o">.</span><span class="n">infolist</span><span class="p">()</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">i</span><span class="o">.</span><span class="n">filename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'__'</span><span class="p">)])</span>
-    <span class="n">compressed</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-    <span class="n">folder</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s">'.zip'</span><span class="p">)</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">renames</span><span class="p">(</span><span class="n">folder</span> <span class="o">+</span> <span class="s">'/data'</span><span class="p">,</span> <span class="s">'data'</span><span class="p">)</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">renames</span><span class="p">(</span><span class="n">folder</span> <span class="o">+</span> <span class="s">'/exports'</span><span class="p">,</span> <span class="s">'exports'</span><span class="p">)</span>
-
-    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
-</pre>
-<pre class="code python literal-block">
-<span class="n">uri</span> <span class="o">=</span> <span class="s">&quot;http://unatainc.github.io/pycon2015/data/pycon2015_tutorial322.zip&quot;</span>
-
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s">'data/ml-1m'</span><span class="p">):</span>
-    <span class="n">get_dataset</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+</span><span id="line-2"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="c"># set some print options</span>
+</span><span id="line-5"><span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</span><span id="line-6"><span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="line-7"><span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">suppress</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</span><span id="line-8"><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s">&#39;precision&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;notebook_repr_html&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="p">)</span>
+</span><span id="line-9">
+</span><span id="line-10"><span class="c"># init random gen</span>
+</span><span id="line-11"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">os</span>
+</span><span id="line-2"><span class="kn">import</span> <span class="nn">shutil</span>
+</span><span id="line-3"><span class="kn">import</span> <span class="nn">zipfile</span>
+</span><span id="line-4">
+</span><span id="line-5"><span class="k">try</span><span class="p">:</span>
+</span><span id="line-6">    <span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
+</span><span id="line-7"><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+</span><span id="line-8">    <span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">get_dataset</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+</span><span id="line-2">    <span class="n">filename</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="line-3">    <span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+</span><span id="line-4">
+</span><span id="line-5">    <span class="n">compressed</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span><span id="line-6">    <span class="n">compressed</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="n">members</span><span class="o">=</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">filename</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">compressed</span><span class="o">.</span><span class="n">infolist</span><span class="p">()</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">i</span><span class="o">.</span><span class="n">filename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;__&#39;</span><span class="p">)])</span>
+</span><span id="line-7">    <span class="n">compressed</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span id="line-8">
+</span><span id="line-9">    <span class="n">folder</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s">&#39;.zip&#39;</span><span class="p">)</span>
+</span><span id="line-10">    <span class="n">os</span><span class="o">.</span><span class="n">renames</span><span class="p">(</span><span class="n">folder</span> <span class="o">+</span> <span class="s">&#39;/data&#39;</span><span class="p">,</span> <span class="s">&#39;data&#39;</span><span class="p">)</span>
+</span><span id="line-11">    <span class="n">os</span><span class="o">.</span><span class="n">renames</span><span class="p">(</span><span class="n">folder</span> <span class="o">+</span> <span class="s">&#39;/exports&#39;</span><span class="p">,</span> <span class="s">&#39;exports&#39;</span><span class="p">)</span>
+</span><span id="line-12">
+</span><span id="line-13">    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span><span id="line-14">    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="n">uri</span> <span class="o">=</span> <span class="s">&quot;http://unatainc.github.io/pycon2015/data/pycon2015_tutorial322.zip&quot;</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s">&#39;data/ml-1m&#39;</span><span class="p">):</span>
+</span><span id="line-4">    <span class="n">get_dataset</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+</span></pre></div>
 </div>
 </div>
 <div class="section" id="the-movielens-dataset-loading-and-first-look">
@@ -302,22 +298,22 @@ having to switch to a more domain specific language like&nbsp;R.</em></p>
 &#8216;Python for Data&nbsp;Analysis&quot;.</p>
 <p>The MovieLens data is spread across three files. We&#8217;ll load each file
 using the <tt class="docutils literal">pd.read_table</tt> function:</p>
-<pre class="code python literal-block">
-<span class="n">users</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s">'data/ml-1m/users.dat'</span><span class="p">,</span>
-                      <span class="n">sep</span><span class="o">=</span><span class="s">'::'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-                      <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">'user_id'</span><span class="p">,</span> <span class="s">'gender'</span><span class="p">,</span> <span class="s">'age'</span><span class="p">,</span> <span class="s">'occupation'</span><span class="p">,</span> <span class="s">'zip'</span><span class="p">])</span>
-
-<span class="n">ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s">'data/ml-1m/ratings.dat'</span><span class="p">,</span>
-                        <span class="n">sep</span><span class="o">=</span><span class="s">'::'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-                        <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">'user_id'</span><span class="p">,</span> <span class="s">'movie_id'</span><span class="p">,</span> <span class="s">'rating'</span><span class="p">,</span> <span class="s">'timestamp'</span><span class="p">])</span>
-
-<span class="n">movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s">'data/ml-1m/movies.dat'</span><span class="p">,</span>
-                       <span class="n">sep</span><span class="o">=</span><span class="s">'::'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-                       <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">'movie_id'</span><span class="p">,</span> <span class="s">'title'</span><span class="p">,</span> <span class="s">'genres'</span><span class="p">])</span>
-
-<span class="c"># show how one of them looks</span>
-<span class="n">ratings</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="n">users</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s">&#39;data/ml-1m/users.dat&#39;</span><span class="p">,</span>
+</span><span id="line-2">                      <span class="n">sep</span><span class="o">=</span><span class="s">&#39;::&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+</span><span id="line-3">                      <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;user_id&#39;</span><span class="p">,</span> <span class="s">&#39;gender&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">,</span> <span class="s">&#39;occupation&#39;</span><span class="p">,</span> <span class="s">&#39;zip&#39;</span><span class="p">])</span>
+</span><span id="line-4">
+</span><span id="line-5"><span class="n">ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s">&#39;data/ml-1m/ratings.dat&#39;</span><span class="p">,</span>
+</span><span id="line-6">                        <span class="n">sep</span><span class="o">=</span><span class="s">&#39;::&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+</span><span id="line-7">                        <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;user_id&#39;</span><span class="p">,</span> <span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;rating&#39;</span><span class="p">,</span> <span class="s">&#39;timestamp&#39;</span><span class="p">])</span>
+</span><span id="line-8">
+</span><span id="line-9"><span class="n">movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s">&#39;data/ml-1m/movies.dat&#39;</span><span class="p">,</span>
+</span><span id="line-10">                       <span class="n">sep</span><span class="o">=</span><span class="s">&#39;::&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+</span><span id="line-11">                       <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="s">&#39;genres&#39;</span><span class="p">])</span>
+</span><span id="line-12">
+</span><span id="line-13"><span class="c"># show how one of them looks</span>
+</span><span id="line-14">
+</span><span id="line-15"><span class="n">ratings</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span></pre></div>
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
 <table border="1" class="dataframe">
   <thead>
@@ -369,10 +365,9 @@ using the <tt class="docutils literal">pd.read_table</tt> function:</p>
 </table>
 <p>5 rows × 4&nbsp;columns</p>
 </div><p>Using <tt class="docutils literal">pd.merge</tt> we get it all into one big&nbsp;DataFrame.</p>
-<pre class="code python literal-block">
-<span class="n">movielens</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">ratings</span><span class="p">,</span> <span class="n">users</span><span class="p">),</span> <span class="n">movies</span><span class="p">)</span>
-<span class="n">movielens</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="n">movielens</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">ratings</span><span class="p">,</span> <span class="n">users</span><span class="p">),</span> <span class="n">movies</span><span class="p">)</span>
+</span><span id="line-2"><span class="n">movielens</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</span></pre></div>
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
 <table border="1" class="dataframe">
   <thead>
@@ -479,58 +474,54 @@ general&nbsp;gist:</p>
 <li>make sure that we have at least 2 ratings per user in that&nbsp;subset;</li>
 <li>split the result into training and testing&nbsp;sets.</li>
 </ul>
-<pre class="code python literal-block">
-<span class="c"># let's work with a smaller subset for speed reasons</span>
-<span class="n">movielens</span> <span class="o">=</span> <span class="n">movielens</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">movielens</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">False</span><span class="p">)]</span>
-<span class="k">print</span> <span class="n">movielens</span><span class="o">.</span><span class="n">shape</span>
-<span class="k">print</span> <span class="n">movielens</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
-<span class="k">print</span> <span class="n">movielens</span><span class="o">.</span><span class="n">movie_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="c"># let&#39;s work with a smaller subset for speed reasons</span>
+</span><span id="line-2"><span class="n">movielens</span> <span class="o">=</span> <span class="n">movielens</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">movielens</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">False</span><span class="p">)]</span>
+</span><span id="line-3"><span class="k">print</span> <span class="n">movielens</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="line-4"><span class="k">print</span> <span class="n">movielens</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</span><span id="line-5"><span class="k">print</span> <span class="n">movielens</span><span class="o">.</span><span class="n">movie_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</span></pre></div>
 <pre class="literal-block">
 (10000, 10)
 3698
 2275
 </pre>
-<pre class="code python literal-block">
-<span class="n">user_ids_larger_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">movielens</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
-<span class="n">user_ids_larger_1</span> <span class="o">=</span> <span class="n">user_ids_larger_1</span><span class="p">[</span><span class="n">user_ids_larger_1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
-
-<span class="n">movielens</span> <span class="o">=</span> <span class="n">movielens</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">movielens</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">l</span><span class="p">,</span> <span class="s">'user_id'</span><span class="p">]</span> <span class="ow">in</span> <span class="n">user_ids_larger_1</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">movielens</span><span class="o">.</span><span class="n">shape</span>
-<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">movielens</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="n">user_ids_larger_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">movielens</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
+</span><span id="line-2"><span class="n">user_ids_larger_1</span> <span class="o">=</span> <span class="n">user_ids_larger_1</span><span class="p">[</span><span class="n">user_ids_larger_1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="n">movielens</span> <span class="o">=</span> <span class="n">movielens</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">movielens</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">l</span><span class="p">,</span> <span class="s">&#39;user_id&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">user_ids_larger_1</span><span class="p">)</span>
+</span><span id="line-5"><span class="k">print</span> <span class="n">movielens</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="line-6"><span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">movielens</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+</span></pre></div>
 <pre class="literal-block">
 (8442, 10)
 </pre>
 <p>We now generate train and test subsets by marking 20% of each users&#8217;s
 ratings, using groupby and&nbsp;apply.</p>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">assign_to_set</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="n">sampled_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
-                                   <span class="n">size</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">)),</span>
-                                   <span class="n">replace</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">sampled_ids</span><span class="p">,</span> <span class="s">'for_testing'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="k">return</span> <span class="n">df</span>
-
-<span class="n">movielens</span><span class="p">[</span><span class="s">'for_testing'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="n">grouped</span> <span class="o">=</span> <span class="n">movielens</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'user_id'</span><span class="p">,</span> <span class="n">group_keys</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">assign_to_set</span><span class="p">)</span>
-<span class="n">movielens_train</span> <span class="o">=</span> <span class="n">movielens</span><span class="p">[</span><span class="n">grouped</span><span class="o">.</span><span class="n">for_testing</span> <span class="o">==</span> <span class="bp">False</span><span class="p">]</span>
-<span class="n">movielens_test</span> <span class="o">=</span> <span class="n">movielens</span><span class="p">[</span><span class="n">grouped</span><span class="o">.</span><span class="n">for_testing</span> <span class="o">==</span> <span class="bp">True</span><span class="p">]</span>
-<span class="k">print</span> <span class="n">movielens</span><span class="o">.</span><span class="n">shape</span>
-<span class="k">print</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">shape</span>
-<span class="k">print</span> <span class="n">movielens_test</span><span class="o">.</span><span class="n">shape</span>
-<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">movielens_train</span><span class="o">.</span><span class="n">index</span> <span class="o">&amp;</span> <span class="n">movielens_test</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">assign_to_set</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+</span><span id="line-2">    <span class="n">sampled_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+</span><span id="line-3">                                   <span class="n">size</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">)),</span>
+</span><span id="line-4">                                   <span class="n">replace</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</span><span id="line-5">    <span class="n">df</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">sampled_ids</span><span class="p">,</span> <span class="s">&#39;for_testing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+</span><span id="line-6">    <span class="k">return</span> <span class="n">df</span>
+</span><span id="line-7">
+</span><span id="line-8"><span class="n">movielens</span><span class="p">[</span><span class="s">&#39;for_testing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+</span><span id="line-9"><span class="n">grouped</span> <span class="o">=</span> <span class="n">movielens</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">&#39;user_id&#39;</span><span class="p">,</span> <span class="n">group_keys</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">assign_to_set</span><span class="p">)</span>
+</span><span id="line-10"><span class="n">movielens_train</span> <span class="o">=</span> <span class="n">movielens</span><span class="p">[</span><span class="n">grouped</span><span class="o">.</span><span class="n">for_testing</span> <span class="o">==</span> <span class="bp">False</span><span class="p">]</span>
+</span><span id="line-11"><span class="n">movielens_test</span> <span class="o">=</span> <span class="n">movielens</span><span class="p">[</span><span class="n">grouped</span><span class="o">.</span><span class="n">for_testing</span> <span class="o">==</span> <span class="bp">True</span><span class="p">]</span>
+</span><span id="line-12"><span class="k">print</span> <span class="n">movielens</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="line-13"><span class="k">print</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="line-14"><span class="k">print</span> <span class="n">movielens_test</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="line-15"><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">movielens_train</span><span class="o">.</span><span class="n">index</span> <span class="o">&amp;</span> <span class="n">movielens_test</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</span></pre></div>
 <pre class="literal-block">
 (8442, 11)
 (5801, 11)
 (2641, 11)
 </pre>
 <p>Store these two sets in text&nbsp;files:</p>
-<pre class="code python literal-block">
-<span class="n">movielens_train</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">'data/my_generated_movielens_train.csv'</span><span class="p">)</span>
-<span class="n">movielens_test</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">'data/my_generated_movielens_test.csv'</span><span class="p">)</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="n">movielens_train</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">&#39;data/my_generated_movielens_train.csv&#39;</span><span class="p">)</span>
+</span><span id="line-2"><span class="n">movielens_test</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">&#39;data/my_generated_movielens_test.csv&#39;</span><span class="p">)</span>
+</span></pre></div>
 </div>
 <div class="section" id="evaluation-performance-criterion">
 <h3>Evaluation: performance&nbsp;criterion</h3>
@@ -542,31 +533,27 @@ in itself. Some of the options&nbsp;include:</p>
 <li><span class="caps">ROC</span>&nbsp;curves</li>
 <li>Cost&nbsp;curves</li>
 </ul>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">compute_rmse</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Compute Root Mean Squared Error. &quot;&quot;&quot;</span>
-
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y_true</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">compute_rmse</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">):</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot; Compute Root Mean Squared Error. &quot;&quot;&quot;</span>
+</span><span id="line-3">
+</span><span id="line-4">    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y_true</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+</span></pre></div>
 </div>
 <div class="section" id="evaluation-the-evaluate-method">
 <h3>Evaluation: the &#8216;evaluate&#8217;&nbsp;method</h3>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">estimate_f</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; RMSE-based predictive performance evaluation with pandas. &quot;&quot;&quot;</span>
-
-    <span class="n">ids_to_estimate</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">movielens_test</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="n">movielens_test</span><span class="o">.</span><span class="n">movie_id</span><span class="p">)</span>
-    <span class="n">estimated</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">estimate_f</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">ids_to_estimate</span><span class="p">])</span>
-    <span class="n">real</span> <span class="o">=</span> <span class="n">movielens_test</span><span class="o">.</span><span class="n">rating</span><span class="o">.</span><span class="n">values</span>
-    <span class="k">return</span> <span class="n">compute_rmse</span><span class="p">(</span><span class="n">estimated</span><span class="p">,</span> <span class="n">real</span><span class="p">)</span>
-</pre>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">my_estimate_function</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">movie_id</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">3</span>
-</pre>
-<pre class="code python literal-block">
-<span class="k">print</span> <span class="s">'RMSE for my estimate function: </span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">my_estimate_function</span><span class="p">)</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">estimate_f</span><span class="p">):</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot; RMSE-based predictive performance evaluation with pandas. &quot;&quot;&quot;</span>
+</span><span id="line-3">
+</span><span id="line-4">    <span class="n">ids_to_estimate</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">movielens_test</span><span class="o">.</span><span class="n">user_id</span><span class="p">,</span> <span class="n">movielens_test</span><span class="o">.</span><span class="n">movie_id</span><span class="p">)</span>
+</span><span id="line-5">    <span class="n">estimated</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">estimate_f</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="ow">in</span> <span class="n">ids_to_estimate</span><span class="p">])</span>
+</span><span id="line-6">    <span class="n">real</span> <span class="o">=</span> <span class="n">movielens_test</span><span class="o">.</span><span class="n">rating</span><span class="o">.</span><span class="n">values</span>
+</span><span id="line-7">    <span class="k">return</span> <span class="n">compute_rmse</span><span class="p">(</span><span class="n">estimated</span><span class="p">,</span> <span class="n">real</span><span class="p">)</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">my_estimate_function</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">movie_id</span><span class="p">):</span>
+</span><span id="line-2">    <span class="k">return</span> <span class="mi">3</span>
+</span></pre></div>
+<div class="highlight"><pre><span id="line-1"><span class="k">print</span> <span class="s">&#39;RMSE for my estimate function: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">my_estimate_function</span><span class="p">)</span>
+</span></pre></div>
 <pre class="literal-block">
 RMSE for my estimate function: 1.25716424791
 </pre>
@@ -670,15 +657,14 @@ particularly similar, leading to poor&nbsp;recommendations.</p>
 <h3>Content-based filtering using mean&nbsp;ratings</h3>
 <p>With this table-like representation of the ratings data, a basic
 content-based filter becomes a one-liner&nbsp;function.</p>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">content_mean</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">movie_id</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Simple content-filtering based on mean ratings. &quot;&quot;&quot;</span>
-
-    <span class="n">user_condition</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">user_id</span> <span class="o">==</span> <span class="n">user_id</span>
-    <span class="k">return</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user_condition</span><span class="p">,</span> <span class="s">'rating'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-
-<span class="k">print</span> <span class="s">'RMSE for estimate1: </span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">content_mean</span><span class="p">)</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">content_mean</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">movie_id</span><span class="p">):</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot; Simple content-filtering based on mean ratings. &quot;&quot;&quot;</span>
+</span><span id="line-3">
+</span><span id="line-4">    <span class="n">user_condition</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">user_id</span> <span class="o">==</span> <span class="n">user_id</span>
+</span><span id="line-5">    <span class="k">return</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user_condition</span><span class="p">,</span> <span class="s">&#39;rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</span><span id="line-6">
+</span><span id="line-7"><span class="k">print</span> <span class="s">&#39;RMSE for estimate1: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">content_mean</span><span class="p">)</span>
+</span></pre></div>
 <pre class="literal-block">
 RMSE for estimate1: 1.26844670375
 </pre>
@@ -753,18 +739,16 @@ k = \frac{1}{\sum_{u' \in U(i)} |sim(u,u')|}
 <li>apply a function to each&nbsp;subset;</li>
 <li>combine results into a new&nbsp;object.</li>
 </ul>
-<pre class="code python literal-block">
-<span class="n">movielens_train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'gender'</span><span class="p">)[</span><span class="s">'rating'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="n">movielens_train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">&#39;gender&#39;</span><span class="p">)[</span><span class="s">&#39;rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</span></pre></div>
 <pre class="literal-block">
 gender
 F         3.59
 M         3.51
 Name: rating, dtype: float64
 </pre>
-<pre class="code python literal-block">
-<span class="n">movielens_train</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s">'gender'</span><span class="p">,</span> <span class="s">'age'</span><span class="p">])[</span><span class="s">'rating'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="n">movielens_train</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s">&#39;gender&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">])[</span><span class="s">&#39;rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</span></pre></div>
 <pre class="literal-block">
 gender  age
 F       1      3.61
@@ -788,13 +772,12 @@ Name: rating, dtype: float64
 <h3>Pivoting</h3>
 <p>Let&#8217;s start with a simple pivoting example that does not involve any
 aggregation. We can extract a ratings matrix as&nbsp;follows:</p>
-<pre class="code python literal-block">
-<span class="c"># transform the ratings frame into a ratings matrix</span>
-<span class="n">ratings_mtx_df</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s">'rating'</span><span class="p">,</span>
-                                             <span class="n">index</span><span class="o">=</span><span class="s">'user_id'</span><span class="p">,</span>
-                                             <span class="n">columns</span><span class="o">=</span><span class="s">'movie_id'</span><span class="p">)</span>
-<span class="n">ratings_mtx_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="c"># transform the ratings frame into a ratings matrix</span>
+</span><span id="line-2"><span class="n">ratings_mtx_df</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s">&#39;rating&#39;</span><span class="p">,</span>
+</span><span id="line-3">                                             <span class="n">index</span><span class="o">=</span><span class="s">&#39;user_id&#39;</span><span class="p">,</span>
+</span><span id="line-4">                                             <span class="n">columns</span><span class="o">=</span><span class="s">&#39;movie_id&#39;</span><span class="p">)</span>
+</span><span id="line-5"><span class="n">ratings_mtx_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></pre></div>
 <pre class="literal-block">
 ---------------------------------------------------------------------------
 
@@ -809,20 +792,17 @@ TypeError                                 Traceback (most recent call last)
 
 TypeError: pivot_table() got an unexpected keyword argument 'index'
 </pre>
-<pre class="code python literal-block">
-<span class="c"># grab another subsquare of the ratings matrix to actually diplay some real entries!</span>
-<span class="n">ratings_mtx_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">11</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span> <span class="mi">1196</span><span class="p">:</span><span class="mi">1200</span><span class="p">]</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="c"># grab another subsquare of the ratings matrix to actually diplay some real entries!</span>
+</span><span id="line-2"><span class="n">ratings_mtx_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">11</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span> <span class="mi">1196</span><span class="p">:</span><span class="mi">1200</span><span class="p">]</span>
+</span></pre></div>
 <p>The more interesting case with <tt class="docutils literal">pivot_table</tt> is as an interface to
 <tt class="docutils literal">groupby</tt>:</p>
-<pre class="code python literal-block">
-<span class="n">movielens_train</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s">'rating'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s">'age'</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s">'gender'</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s">'mean'</span><span class="p">)</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="n">movielens_train</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s">&#39;rating&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s">&#39;age&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s">&#39;gender&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s">&#39;mean&#39;</span><span class="p">)</span>
+</span></pre></div>
 <p>You can pass in a list of functions, such as <tt class="docutils literal">[np.mean, np.std]</tt>, to
 compute mean ratings and a measure of&nbsp;disagreement.</p>
-<pre class="code python literal-block">
-<span class="n">movielens_train</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s">'rating'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s">'age'</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s">'gender'</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">])</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="n">movielens_train</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s">&#39;rating&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s">&#39;age&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s">&#39;gender&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">])</span>
+</span></pre></div>
 </div>
 </div>
 <div class="section" id="minimal-reco-engine-v1-1-implicit-sim-functions">
@@ -830,67 +810,63 @@ compute mean ratings and a measure of&nbsp;disagreement.</p>
 <p>We&#8217;re going to need a user index from the users portion of the dataset.
 This will allow us to retrieve information given a specific user_id in
 a more convenient&nbsp;way:</p>
-<pre class="code python literal-block">
-<span class="n">user_info</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'user_id'</span><span class="p">)</span>
-<span class="n">user_info</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="n">user_info</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">&#39;user_id&#39;</span><span class="p">)</span>
+</span><span id="line-2"><span class="n">user_info</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span></pre></div>
 <p>With this in hand, we can now ask what the gender of a particular
 user_id is like&nbsp;so:</p>
-<pre class="code python literal-block">
-<span class="n">user_id</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">user_info</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user_id</span><span class="p">,</span> <span class="s">'gender'</span><span class="p">]</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="n">user_id</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="line-2"><span class="n">user_info</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user_id</span><span class="p">,</span> <span class="s">&#39;gender&#39;</span><span class="p">]</span>
+</span></pre></div>
 <div class="section" id="collaborative-based-filtering-using-implicit-sim-functions">
 <h3>Collaborative-based filtering using implicit sim&nbsp;functions</h3>
 <p>Using the pandas aggregation framework we will build a collaborative
 filter that estimates ratings using an implicit <tt class="docutils literal">sim(u,u')</tt> function
 to compare different&nbsp;users.</p>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">collab_gender</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">movie_id</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Collaborative filtering using an implicit sim(u,u') based on gender. &quot;&quot;&quot;</span>
-
-    <span class="n">user_condition</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">user_id</span> <span class="o">!=</span> <span class="n">user_id</span>
-    <span class="n">movie_condition</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">movie_id</span> <span class="o">==</span> <span class="n">movie_id</span>
-    <span class="n">ratings_by_others</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user_condition</span> <span class="o">&amp;</span> <span class="n">movie_condition</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">ratings_by_others</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mf">3.0</span>
-
-    <span class="n">means_by_gender</span> <span class="o">=</span> <span class="n">ratings_by_others</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s">'rating'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s">'movie_id'</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s">'gender'</span><span class="p">)</span>
-    <span class="n">user_gender</span> <span class="o">=</span> <span class="n">user_info</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">user_id</span><span class="p">,</span> <span class="s">'gender'</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">user_gender</span> <span class="ow">in</span> <span class="n">means_by_gender</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">means_by_gender</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">movie_id</span><span class="p">,</span> <span class="n">user_gender</span><span class="p">]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">means_by_gender</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">movie_id</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-
-<span class="k">print</span> <span class="s">'RMSE for collab_gender: </span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">collab_gender</span><span class="p">)</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">collab_gender</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">movie_id</span><span class="p">):</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot; Collaborative filtering using an implicit sim(u,u&#39;) based on gender. &quot;&quot;&quot;</span>
+</span><span id="line-3">
+</span><span id="line-4">    <span class="n">user_condition</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">user_id</span> <span class="o">!=</span> <span class="n">user_id</span>
+</span><span id="line-5">    <span class="n">movie_condition</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">movie_id</span> <span class="o">==</span> <span class="n">movie_id</span>
+</span><span id="line-6">    <span class="n">ratings_by_others</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user_condition</span> <span class="o">&amp;</span> <span class="n">movie_condition</span><span class="p">]</span>
+</span><span id="line-7">    <span class="k">if</span> <span class="n">ratings_by_others</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+</span><span id="line-8">        <span class="k">return</span> <span class="mf">3.0</span>
+</span><span id="line-9">
+</span><span id="line-10">    <span class="n">means_by_gender</span> <span class="o">=</span> <span class="n">ratings_by_others</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s">&#39;rating&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s">&#39;gender&#39;</span><span class="p">)</span>
+</span><span id="line-11">    <span class="n">user_gender</span> <span class="o">=</span> <span class="n">user_info</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">user_id</span><span class="p">,</span> <span class="s">&#39;gender&#39;</span><span class="p">]</span>
+</span><span id="line-12">    <span class="k">if</span> <span class="n">user_gender</span> <span class="ow">in</span> <span class="n">means_by_gender</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+</span><span id="line-13">        <span class="k">return</span> <span class="n">means_by_gender</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">movie_id</span><span class="p">,</span> <span class="n">user_gender</span><span class="p">]</span>
+</span><span id="line-14">    <span class="k">else</span><span class="p">:</span>
+</span><span id="line-15">        <span class="k">return</span> <span class="n">means_by_gender</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">movie_id</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</span><span id="line-16">
+</span><span id="line-17"><span class="k">print</span> <span class="s">&#39;RMSE for collab_gender: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">collab_gender</span><span class="p">)</span>
+</span></pre></div>
 <p>At this point it seems worthwhile to write a <tt class="docutils literal">learn</tt> function to
 pre-compute whatever datastructures we need at estimation&nbsp;time.</p>
-<pre class="code python literal-block">
-<span class="k">class</span> <span class="nc">CollabGenderReco</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot; Collaborative filtering using an implicit sim(u,u'). &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">learn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Prepare datastructures for estimation. &quot;&quot;&quot;</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">means_by_gender</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s">'rating'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s">'movie_id'</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s">'gender'</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">estimate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">movie_id</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Mean ratings by other users of the same gender. &quot;&quot;&quot;</span>
-
-        <span class="k">if</span> <span class="n">movie_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">means_by_gender</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
-            <span class="k">return</span> <span class="mf">3.0</span>
-
-        <span class="n">user_gender</span> <span class="o">=</span> <span class="n">user_info</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">user_id</span><span class="p">,</span> <span class="s">'gender'</span><span class="p">]</span>
-        <span class="k">if</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">means_by_gender</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">movie_id</span><span class="p">,</span> <span class="n">user_gender</span><span class="p">]):</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">means_by_gender</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">movie_id</span><span class="p">,</span> <span class="n">user_gender</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">means_by_gender</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">movie_id</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-
-<span class="n">reco</span> <span class="o">=</span> <span class="n">CollabGenderReco</span><span class="p">()</span>
-<span class="n">reco</span><span class="o">.</span><span class="n">learn</span><span class="p">()</span>
-<span class="k">print</span> <span class="s">'RMSE for CollabGenderReco: </span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">reco</span><span class="o">.</span><span class="n">estimate</span><span class="p">)</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="k">class</span> <span class="nc">CollabGenderReco</span><span class="p">:</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot; Collaborative filtering using an implicit sim(u,u&#39;). &quot;&quot;&quot;</span>
+</span><span id="line-3">
+</span><span id="line-4">    <span class="k">def</span> <span class="nf">learn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-5">        <span class="sd">&quot;&quot;&quot; Prepare datastructures for estimation. &quot;&quot;&quot;</span>
+</span><span id="line-6">
+</span><span id="line-7">        <span class="bp">self</span><span class="o">.</span><span class="n">means_by_gender</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s">&#39;rating&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s">&#39;gender&#39;</span><span class="p">)</span>
+</span><span id="line-8">
+</span><span id="line-9">    <span class="k">def</span> <span class="nf">estimate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">movie_id</span><span class="p">):</span>
+</span><span id="line-10">        <span class="sd">&quot;&quot;&quot; Mean ratings by other users of the same gender. &quot;&quot;&quot;</span>
+</span><span id="line-11">
+</span><span id="line-12">        <span class="k">if</span> <span class="n">movie_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">means_by_gender</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+</span><span id="line-13">            <span class="k">return</span> <span class="mf">3.0</span>
+</span><span id="line-14">
+</span><span id="line-15">        <span class="n">user_gender</span> <span class="o">=</span> <span class="n">user_info</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">user_id</span><span class="p">,</span> <span class="s">&#39;gender&#39;</span><span class="p">]</span>
+</span><span id="line-16">        <span class="k">if</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">means_by_gender</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">movie_id</span><span class="p">,</span> <span class="n">user_gender</span><span class="p">]):</span>
+</span><span id="line-17">            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">means_by_gender</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">movie_id</span><span class="p">,</span> <span class="n">user_gender</span><span class="p">]</span>
+</span><span id="line-18">        <span class="k">else</span><span class="p">:</span>
+</span><span id="line-19">            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">means_by_gender</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">movie_id</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</span><span id="line-20">
+</span><span id="line-21"><span class="n">reco</span> <span class="o">=</span> <span class="n">CollabGenderReco</span><span class="p">()</span>
+</span><span id="line-22"><span class="n">reco</span><span class="o">.</span><span class="n">learn</span><span class="p">()</span>
+</span><span id="line-23"><span class="k">print</span> <span class="s">&#39;RMSE for CollabGenderReco: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">reco</span><span class="o">.</span><span class="n">estimate</span><span class="p">)</span>
+</span></pre></div>
 <p>Break!!</p>
 </div>
 </div>
@@ -932,12 +908,11 @@ You might need to add checks for edge cases, such as divisions by zero,&nbsp;etc
 sim(x,y) = \frac{1}{1 + \sqrt{\sum (x - y)^2}}
 \end{equation*}
 </div>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">euclidean</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Take two pd.Series objects and return their euclidean 'similarity'.&quot;&quot;&quot;</span>
-    <span class="n">diff</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">-</span> <span class="n">s2</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">diff</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)))</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">euclidean</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;Take two pd.Series objects and return their euclidean &#39;similarity&#39;.&quot;&quot;&quot;</span>
+</span><span id="line-3">    <span class="n">diff</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">-</span> <span class="n">s2</span>
+</span><span id="line-4">    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">diff</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)))</span>
+</span></pre></div>
 <ul class="simple">
 <li>Cosine&nbsp;similarity</li>
 </ul>
@@ -946,11 +921,10 @@ sim(x,y) = \frac{1}{1 + \sqrt{\sum (x - y)^2}}
 sim(x,y) = \frac{(x . y)}{\sqrt{(x . x) (y . y)}}
 \end{equation*}
 </div>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">cosine</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Take two pd.Series objects and return their cosine similarity.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1</span> <span class="o">*</span> <span class="n">s2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">cosine</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;Take two pd.Series objects and return their cosine similarity.&quot;&quot;&quot;</span>
+</span><span id="line-3">    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1</span> <span class="o">*</span> <span class="n">s2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+</span></pre></div>
 <ul class="simple">
 <li>Pearson&nbsp;correlation</li>
 </ul>
@@ -959,13 +933,12 @@ sim(x,y) = \frac{(x . y)}{\sqrt{(x . x) (y . y)}}
 sim(x,y) = \frac{(x - \bar x).(y - \bar y)}{\sqrt{(x - \bar x).(x - \bar x) * (y - \bar y)(y - \bar y)}}
 \end{equation*}
 </div>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">pearson</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Take two pd.Series objects and return a pearson correlation.&quot;&quot;&quot;</span>
-    <span class="n">s1_c</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">-</span> <span class="n">s1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-    <span class="n">s2_c</span> <span class="o">=</span> <span class="n">s2</span> <span class="o">-</span> <span class="n">s2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1_c</span> <span class="o">*</span> <span class="n">s2_c</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1_c</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s2_c</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">pearson</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;Take two pd.Series objects and return a pearson correlation.&quot;&quot;&quot;</span>
+</span><span id="line-3">    <span class="n">s1_c</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">-</span> <span class="n">s1</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</span><span id="line-4">    <span class="n">s2_c</span> <span class="o">=</span> <span class="n">s2</span> <span class="o">-</span> <span class="n">s2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</span><span id="line-5">    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1_c</span> <span class="o">*</span> <span class="n">s2_c</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1_c</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s2_c</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+</span></pre></div>
 <ul class="simple">
 <li>Jaccard&nbsp;similarity</li>
 </ul>
@@ -974,53 +947,51 @@ sim(x,y) = \frac{(x - \bar x).(y - \bar y)}{\sqrt{(x - \bar x).(x - \bar x) * (y
 sim(x,y) = \frac{(x . y)}{(x . x) + (y . y) - (x . y)}
 \end{equation*}
 </div>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">jaccard</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
-    <span class="n">dotp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1</span> <span class="o">*</span> <span class="n">s2</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">dotp</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">dotp</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">binjaccard</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
-    <span class="n">dotp</span> <span class="o">=</span> <span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">index</span> <span class="o">&amp;</span> <span class="n">s2</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">size</span>
-    <span class="k">return</span> <span class="n">dotp</span> <span class="o">/</span> <span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="n">s2</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">-</span> <span class="n">dotp</span><span class="p">)</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">jaccard</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+</span><span id="line-2">    <span class="n">dotp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1</span> <span class="o">*</span> <span class="n">s2</span><span class="p">)</span>
+</span><span id="line-3">    <span class="k">return</span> <span class="n">dotp</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s1</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">dotp</span><span class="p">)</span>
+</span><span id="line-4">
+</span><span id="line-5"><span class="k">def</span> <span class="nf">binjaccard</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+</span><span id="line-6">    <span class="n">dotp</span> <span class="o">=</span> <span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">index</span> <span class="o">&amp;</span> <span class="n">s2</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">size</span>
+</span><span id="line-7">    <span class="k">return</span> <span class="n">dotp</span> <span class="o">/</span> <span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="n">s2</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">-</span> <span class="n">dotp</span><span class="p">)</span>
+</span></pre></div>
 </div>
 <div class="section" id="collaborative-based-filtering-using-custom-sim-functions">
 <h3>Collaborative-based filtering using custom sim&nbsp;functions</h3>
-<pre class="code python literal-block">
-<span class="k">class</span> <span class="nc">CollabPearsonReco</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot; Collaborative filtering using a custom sim(u,u'). &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">learn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Prepare datastructures for estimation. &quot;&quot;&quot;</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">all_user_profiles</span> <span class="o">=</span> <span class="n">movielens</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s">'rating'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s">'movie_id'</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s">'user_id'</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">estimate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">movie_id</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; Ratings weighted by correlation similarity. &quot;&quot;&quot;</span>
-
-        <span class="n">user_condition</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">user_id</span> <span class="o">!=</span> <span class="n">user_id</span>
-        <span class="n">movie_condition</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">movie_id</span> <span class="o">==</span> <span class="n">movie_id</span>
-        <span class="n">ratings_by_others</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user_condition</span> <span class="o">&amp;</span> <span class="n">movie_condition</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">ratings_by_others</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-            <span class="k">return</span> <span class="mf">3.0</span>
-
-        <span class="n">ratings_by_others</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'user_id'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-        <span class="n">their_ids</span> <span class="o">=</span> <span class="n">ratings_by_others</span><span class="o">.</span><span class="n">index</span>
-        <span class="n">their_ratings</span> <span class="o">=</span> <span class="n">ratings_by_others</span><span class="o">.</span><span class="n">rating</span>
-        <span class="n">their_profiles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_user_profiles</span><span class="p">[</span><span class="n">their_ids</span><span class="p">]</span>
-        <span class="n">user_profile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_user_profiles</span><span class="p">[</span><span class="n">user_id</span><span class="p">]</span>
-        <span class="n">sims</span> <span class="o">=</span> <span class="n">their_profiles</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">profile</span><span class="p">:</span> <span class="n">pearson</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="n">user_profile</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">ratings_sims</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'sim'</span><span class="p">:</span> <span class="n">sims</span><span class="p">,</span> <span class="s">'rating'</span><span class="p">:</span> <span class="n">their_ratings</span><span class="p">})</span>
-        <span class="n">ratings_sims</span> <span class="o">=</span> <span class="n">ratings_sims</span><span class="p">[</span><span class="n">ratings_sims</span><span class="o">.</span><span class="n">sim</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">ratings_sims</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">their_ratings</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">ratings_sims</span><span class="o">.</span><span class="n">rating</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">ratings_sims</span><span class="o">.</span><span class="n">sim</span><span class="p">)</span>
-
-<span class="n">reco</span> <span class="o">=</span> <span class="n">CollabPearsonReco</span><span class="p">()</span>
-<span class="n">reco</span><span class="o">.</span><span class="n">learn</span><span class="p">()</span>
-<span class="k">print</span> <span class="s">'RMSE for CollabPearsonReco: </span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">reco</span><span class="o">.</span><span class="n">estimate</span><span class="p">)</span>
-</pre>
+<div class="highlight"><pre><span id="line-1"><span class="k">class</span> <span class="nc">CollabPearsonReco</span><span class="p">:</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot; Collaborative filtering using a custom sim(u,u&#39;). &quot;&quot;&quot;</span>
+</span><span id="line-3">
+</span><span id="line-4">    <span class="k">def</span> <span class="nf">learn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-5">        <span class="sd">&quot;&quot;&quot; Prepare datastructures for estimation. &quot;&quot;&quot;</span>
+</span><span id="line-6">
+</span><span id="line-7">        <span class="bp">self</span><span class="o">.</span><span class="n">all_user_profiles</span> <span class="o">=</span> <span class="n">movielens</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s">&#39;rating&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s">&#39;user_id&#39;</span><span class="p">)</span>
+</span><span id="line-8">
+</span><span id="line-9">    <span class="k">def</span> <span class="nf">estimate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">movie_id</span><span class="p">):</span>
+</span><span id="line-10">        <span class="sd">&quot;&quot;&quot; Ratings weighted by correlation similarity. &quot;&quot;&quot;</span>
+</span><span id="line-11">
+</span><span id="line-12">        <span class="n">user_condition</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">user_id</span> <span class="o">!=</span> <span class="n">user_id</span>
+</span><span id="line-13">        <span class="n">movie_condition</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">movie_id</span> <span class="o">==</span> <span class="n">movie_id</span>
+</span><span id="line-14">        <span class="n">ratings_by_others</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user_condition</span> <span class="o">&amp;</span> <span class="n">movie_condition</span><span class="p">]</span>
+</span><span id="line-15">        <span class="k">if</span> <span class="n">ratings_by_others</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+</span><span id="line-16">            <span class="k">return</span> <span class="mf">3.0</span>
+</span><span id="line-17">
+</span><span id="line-18">        <span class="n">ratings_by_others</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">&#39;user_id&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</span><span id="line-19">        <span class="n">their_ids</span> <span class="o">=</span> <span class="n">ratings_by_others</span><span class="o">.</span><span class="n">index</span>
+</span><span id="line-20">        <span class="n">their_ratings</span> <span class="o">=</span> <span class="n">ratings_by_others</span><span class="o">.</span><span class="n">rating</span>
+</span><span id="line-21">        <span class="n">their_profiles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_user_profiles</span><span class="p">[</span><span class="n">their_ids</span><span class="p">]</span>
+</span><span id="line-22">        <span class="n">user_profile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_user_profiles</span><span class="p">[</span><span class="n">user_id</span><span class="p">]</span>
+</span><span id="line-23">        <span class="n">sims</span> <span class="o">=</span> <span class="n">their_profiles</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">profile</span><span class="p">:</span> <span class="n">pearson</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="n">user_profile</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="line-24">        <span class="n">ratings_sims</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">&#39;sim&#39;</span><span class="p">:</span> <span class="n">sims</span><span class="p">,</span> <span class="s">&#39;rating&#39;</span><span class="p">:</span> <span class="n">their_ratings</span><span class="p">})</span>
+</span><span id="line-25">        <span class="n">ratings_sims</span> <span class="o">=</span> <span class="n">ratings_sims</span><span class="p">[</span><span class="n">ratings_sims</span><span class="o">.</span><span class="n">sim</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+</span><span id="line-26">        <span class="k">if</span> <span class="n">ratings_sims</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+</span><span id="line-27">            <span class="k">return</span> <span class="n">their_ratings</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</span><span id="line-28">        <span class="k">else</span><span class="p">:</span>
+</span><span id="line-29">            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">ratings_sims</span><span class="o">.</span><span class="n">rating</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">ratings_sims</span><span class="o">.</span><span class="n">sim</span><span class="p">)</span>
+</span><span id="line-30">
+</span><span id="line-31"><span class="n">reco</span> <span class="o">=</span> <span class="n">CollabPearsonReco</span><span class="p">()</span>
+</span><span id="line-32"><span class="n">reco</span><span class="o">.</span><span class="n">learn</span><span class="p">()</span>
+</span><span id="line-33"><span class="k">print</span> <span class="s">&#39;RMSE for CollabPearsonReco: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">reco</span><span class="o">.</span><span class="n">estimate</span><span class="p">)</span>
+</span></pre></div>
 </div>
 <div class="section" id="mini-challenge-second-round">
 <h3>Mini-Challenge: second&nbsp;round</h3>
