@@ -1,5 +1,953 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/sang-han.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2015-03-25T00:00:00-07:00</updated><entry><title>Machine Learning Notes</title><link href="http://sanghan.me/blog/2015/03/machine_learning_notes/" rel="alternate"></link><updated>2015-03-25T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-03-25:blog/2015/03/machine_learning_notes/</id><summary type="html">&lt;p&gt;2013 Sang&amp;nbsp;Han&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/sang-han.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2015-05-27T00:00:00-07:00</updated><entry><title>Simple Python Recommendation Engine</title><link href="http://sanghan.me/blog/2015/05/simple_recommendation_engine/" rel="alternate"></link><updated>2015-05-27T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-05-27:blog/2015/05/simple_recommendation_engine/</id><summary type="html">&lt;div class="section" id="the-recommendation-problem"&gt;
+&lt;h2&gt;The Recommendation&amp;nbsp;Problem&lt;/h2&gt;
+&lt;p&gt;Recommenders have been around since at least 1992. Today we see
+different flavours of recommenders, deployed across different&amp;nbsp;verticals:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Amazon&lt;/li&gt;
+&lt;li&gt;Netflix&lt;/li&gt;
+&lt;li&gt;Facebook&lt;/li&gt;
+&lt;li&gt;Last.fm.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What exactly do they&amp;nbsp;do?&lt;/p&gt;
+&lt;div class="section" id="definitions-from-the-literature"&gt;
+&lt;h3&gt;Definitions from the&amp;nbsp;literature&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;em&gt;In a typical recommender system people provide recommendations as
+inputs, which the system then aggregates and directs to appropriate
+recipients.&lt;/em&gt; &amp;#8212; Resnick and Varian,&amp;nbsp;1997&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Collaborative filtering simply means that people collaborate to help
+one another perform filtering by recording their reactions to
+documents they read.&lt;/em&gt; &amp;#8212; Goldberg et al,&amp;nbsp;1992&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;In its most common formulation, the recommendation problem is
+reduced to the problem of estimating ratings for the items that have
+not been seen by a user. Intuitively, this estimation is usually
+based on the ratings given by this user to other items and on some
+other information [&amp;#8230;] Once we can estimate ratings for the yet
+unrated items, we can recommend to the user the item(s) with the
+highest estimated rating(s).&lt;/em&gt; &amp;#8212; Adomavicius and Tuzhilin,&amp;nbsp;2005&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Driven by computer algorithms, recommenders help consumers by
+selecting products they will probably like and might buy based on
+their browsing, searches, purchases, and preferences.&lt;/em&gt; &amp;#8212; Konstan and
+Riedl,&amp;nbsp;2012&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="notation"&gt;
+&lt;h3&gt;Notation&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(U\)&lt;/span&gt; is the set of users in our domain. Its size is &lt;span class="math"&gt;\(|U|\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(I\)&lt;/span&gt; is the set of items in our domain. Its size is &lt;span class="math"&gt;\(|I|\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(I(u)\)&lt;/span&gt; is the set of items that user &lt;span class="math"&gt;\(u\)&lt;/span&gt; has&amp;nbsp;rated.&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(-I(u)\)&lt;/span&gt; is the complement of &lt;span class="math"&gt;\(I(u)\)&lt;/span&gt; i.e., the set of
+items not yet seen by user &lt;span class="math"&gt;\(u\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(U(i)\)&lt;/span&gt; is the set of users that have rated item &lt;span class="math"&gt;\(i\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(-U(i)\)&lt;/span&gt; is the complement of &lt;span class="math"&gt;\(U(i)\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(S(u,i)\)&lt;/span&gt; is a function that measures the utility of item
+&lt;span class="math"&gt;\(i\)&lt;/span&gt; for user &lt;span class="math"&gt;\(u\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="goal-of-a-recommendation-system"&gt;
+&lt;h3&gt;Goal of a recommendation&amp;nbsp;system&lt;/h3&gt;
+&lt;p&gt;$ i^{*} = argmax_{i -I(u)} S(u,i),&amp;nbsp;$&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="problem-statement"&gt;
+&lt;h3&gt;Problem&amp;nbsp;statement&lt;/h3&gt;
+&lt;p&gt;The recommendation problem in its most basic form is quite simple to&amp;nbsp;define:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+|-------------------+-----+-----+-----+-----+-----|
+| user_id, movie_id | m_1 | m_2 | m_3 | m_4 | m_5 |
+|-------------------+-----+-----+-----+-----+-----|
+| u_1               | ?   | ?   | 4   | ?   | 1   |
+|-------------------+-----+-----+-----+-----+-----|
+| u_2               | 3   | ?   | ?   | 2   | 2   |
+|-------------------+-----+-----+-----+-----+-----|
+| u_3               | 3   | ?   | ?   | ?   | ?   |
+|-------------------+-----+-----+-----+-----+-----|
+| u_4               | ?   | 1   | 2   | 1   | 1   |
+|-------------------+-----+-----+-----+-----+-----|
+| u_5               | ?   | ?   | ?   | ?   | ?   |
+|-------------------+-----+-----+-----+-----+-----|
+| u_6               | 2   | ?   | 2   | ?   | ?   |
+|-------------------+-----+-----+-----+-----+-----|
+| u_7               | ?   | ?   | ?   | ?   | ?   |
+|-------------------+-----+-----+-----+-----+-----|
+| u_8               | 3   | 1   | 5   | ?   | ?   |
+|-------------------+-----+-----+-----+-----+-----|
+| u_9               | ?   | ?   | ?   | ?   | 2   |
+|-------------------+-----+-----+-----+-----+-----|
+&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;Given a partially filled matrix of ratings (:math:`|U|x|I|`), estimate
+the missing&amp;nbsp;values.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pandas-python-data-analysis-library"&gt;
+&lt;h2&gt;pandas: Python Data Analysis&amp;nbsp;Library&lt;/h2&gt;
+&lt;div class="section" id="what-is-it"&gt;
+&lt;h3&gt;What is&amp;nbsp;it?&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Python has long been great for data munging and preparation, but less
+so for data analysis and modeling. pandas helps fill this gap, enabling
+you to carry out your entire data analysis workflow in Python without
+having to switch to a more domain specific language like&amp;nbsp;R.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The heart of pandas is the DataFrame object for data manipulation. It&amp;nbsp;features:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;a powerful index&amp;nbsp;object&lt;/li&gt;
+&lt;li&gt;data&amp;nbsp;alignment&lt;/li&gt;
+&lt;li&gt;handling of missing&amp;nbsp;data&lt;/li&gt;
+&lt;li&gt;aggregation with&amp;nbsp;groupby&lt;/li&gt;
+&lt;li&gt;data manipuation via reshape, pivot, slice, merge,&amp;nbsp;join&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+&lt;span class="c"&gt;# set some print options&lt;/span&gt;
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_printoptions&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;precision&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_printoptions&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;threshold&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_printoptions&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;suppress&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'precision'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'notebook_repr_html'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c"&gt;# init random gen&lt;/span&gt;
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;shutil&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;zipfile&lt;/span&gt;
+
+&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;urllib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;urlretrieve&lt;/span&gt;
+&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;ImportError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;urllib.parse&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;urlretrieve&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_dataset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;filename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rsplit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;urlretrieve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;compressed&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;zipfile&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ZipFile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;compressed&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;extractall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'.'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;members&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;compressed&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;infolist&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;startswith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'__'&lt;/span&gt;&lt;span class="p"&gt;)])&lt;/span&gt;
+    &lt;span class="n"&gt;compressed&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+    &lt;span class="n"&gt;folder&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rstrip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'.zip'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;renames&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;folder&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;'/data'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'data'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;renames&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;folder&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;'/exports'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'exports'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;shutil&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rmtree&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;folder&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;uri&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;http://unatainc.github.io/pycon2015/data/pycon2015_tutorial322.zip&amp;quot;&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'data/ml-1m'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;get_dataset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;uri&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-movielens-dataset-loading-and-first-look"&gt;
+&lt;h2&gt;The MovieLens dataset: loading and first&amp;nbsp;look&lt;/h2&gt;
+&lt;p&gt;Loading of the MovieLens dataset is based on the intro chapter of
+&amp;#8216;Python for Data&amp;nbsp;Analysis&amp;quot;.&lt;/p&gt;
+&lt;p&gt;The MovieLens data is spread across three files. We&amp;#8217;ll load each file
+using the &lt;tt class="docutils literal"&gt;pd.read_table&lt;/tt&gt; function:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;users&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'data/ml-1m/users.dat'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                      &lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'::'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                      &lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'user_id'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'gender'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'age'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'occupation'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'zip'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="n"&gt;ratings&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'data/ml-1m/ratings.dat'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                        &lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'::'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                        &lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'user_id'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'movie_id'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'rating'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'timestamp'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="n"&gt;movies&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'data/ml-1m/movies.dat'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                       &lt;span class="n"&gt;sep&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'::'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;header&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                       &lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'movie_id'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'title'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'genres'&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="c"&gt;# show how one of them looks&lt;/span&gt;
+&lt;span class="n"&gt;ratings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;div style="max-height:1000px;max-width:1500px;overflow:auto;"&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;user_id&lt;/th&gt;
+      &lt;th&gt;movie_id&lt;/th&gt;
+      &lt;th&gt;rating&lt;/th&gt;
+      &lt;th&gt;timestamp&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt; 1&lt;/td&gt;
+      &lt;td&gt; 1193&lt;/td&gt;
+      &lt;td&gt; 5&lt;/td&gt;
+      &lt;td&gt; 978300760&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt; 1&lt;/td&gt;
+      &lt;td&gt;  661&lt;/td&gt;
+      &lt;td&gt; 3&lt;/td&gt;
+      &lt;td&gt; 978302109&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt; 1&lt;/td&gt;
+      &lt;td&gt;  914&lt;/td&gt;
+      &lt;td&gt; 3&lt;/td&gt;
+      &lt;td&gt; 978301968&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt; 1&lt;/td&gt;
+      &lt;td&gt; 3408&lt;/td&gt;
+      &lt;td&gt; 4&lt;/td&gt;
+      &lt;td&gt; 978300275&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt; 1&lt;/td&gt;
+      &lt;td&gt; 2355&lt;/td&gt;
+      &lt;td&gt; 5&lt;/td&gt;
+      &lt;td&gt; 978824291&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;5 rows × 4&amp;nbsp;columns&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Using &lt;tt class="docutils literal"&gt;pd.merge&lt;/tt&gt; we get it all into one big&amp;nbsp;DataFrame.&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;movielens&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ratings&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;users&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;movies&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;
+&lt;div style="max-height:1000px;max-width:1500px;overflow:auto;"&gt;
+&lt;table border="1" class="dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;user_id&lt;/th&gt;
+      &lt;th&gt;movie_id&lt;/th&gt;
+      &lt;th&gt;rating&lt;/th&gt;
+      &lt;th&gt;timestamp&lt;/th&gt;
+      &lt;th&gt;gender&lt;/th&gt;
+      &lt;th&gt;age&lt;/th&gt;
+      &lt;th&gt;occupation&lt;/th&gt;
+      &lt;th&gt;zip&lt;/th&gt;
+      &lt;th&gt;title&lt;/th&gt;
+      &lt;th&gt;genres&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;  1&lt;/td&gt;
+      &lt;td&gt; 1193&lt;/td&gt;
+      &lt;td&gt; 5&lt;/td&gt;
+      &lt;td&gt; 978300760&lt;/td&gt;
+      &lt;td&gt; F&lt;/td&gt;
+      &lt;td&gt;  1&lt;/td&gt;
+      &lt;td&gt; 10&lt;/td&gt;
+      &lt;td&gt; 48067&lt;/td&gt;
+      &lt;td&gt; One Flew Over the Cuckoo&amp;#8217;s Nest (1975)&lt;/td&gt;
+      &lt;td&gt; Drama&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;  2&lt;/td&gt;
+      &lt;td&gt; 1193&lt;/td&gt;
+      &lt;td&gt; 5&lt;/td&gt;
+      &lt;td&gt; 978298413&lt;/td&gt;
+      &lt;td&gt; M&lt;/td&gt;
+      &lt;td&gt; 56&lt;/td&gt;
+      &lt;td&gt; 16&lt;/td&gt;
+      &lt;td&gt; 70072&lt;/td&gt;
+      &lt;td&gt; One Flew Over the Cuckoo&amp;#8217;s Nest (1975)&lt;/td&gt;
+      &lt;td&gt; Drama&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt; 12&lt;/td&gt;
+      &lt;td&gt; 1193&lt;/td&gt;
+      &lt;td&gt; 4&lt;/td&gt;
+      &lt;td&gt; 978220179&lt;/td&gt;
+      &lt;td&gt; M&lt;/td&gt;
+      &lt;td&gt; 25&lt;/td&gt;
+      &lt;td&gt; 12&lt;/td&gt;
+      &lt;td&gt; 32793&lt;/td&gt;
+      &lt;td&gt; One Flew Over the Cuckoo&amp;#8217;s Nest (1975)&lt;/td&gt;
+      &lt;td&gt; Drama&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt; 15&lt;/td&gt;
+      &lt;td&gt; 1193&lt;/td&gt;
+      &lt;td&gt; 4&lt;/td&gt;
+      &lt;td&gt; 978199279&lt;/td&gt;
+      &lt;td&gt; M&lt;/td&gt;
+      &lt;td&gt; 25&lt;/td&gt;
+      &lt;td&gt;  7&lt;/td&gt;
+      &lt;td&gt; 22903&lt;/td&gt;
+      &lt;td&gt; One Flew Over the Cuckoo&amp;#8217;s Nest (1975)&lt;/td&gt;
+      &lt;td&gt; Drama&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt; 17&lt;/td&gt;
+      &lt;td&gt; 1193&lt;/td&gt;
+      &lt;td&gt; 5&lt;/td&gt;
+      &lt;td&gt; 978158471&lt;/td&gt;
+      &lt;td&gt; M&lt;/td&gt;
+      &lt;td&gt; 50&lt;/td&gt;
+      &lt;td&gt;  1&lt;/td&gt;
+      &lt;td&gt; 95350&lt;/td&gt;
+      &lt;td&gt; One Flew Over the Cuckoo&amp;#8217;s Nest (1975)&lt;/td&gt;
+      &lt;td&gt; Drama&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;5 rows × 10&amp;nbsp;columns&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div class="section" id="challenge-prep-evaluation-mechanism"&gt;
+&lt;h2&gt;Challenge prep: evaluation&amp;nbsp;mechanism&lt;/h2&gt;
+&lt;p&gt;Before we start building our minimal reco engine we need a basic
+mechanism to evaluate the performance of our engine. For that we&amp;nbsp;will:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;split the data into train and test&amp;nbsp;sets&lt;/li&gt;
+&lt;li&gt;introduce a performance&amp;nbsp;criterion&lt;/li&gt;
+&lt;li&gt;write an &lt;tt class="docutils literal"&gt;evaluate&lt;/tt&gt; function.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="evaluation-split-ratings-into-train-and-test-sets"&gt;
+&lt;h3&gt;Evaluation: split ratings into train and test&amp;nbsp;sets&lt;/h3&gt;
+&lt;p&gt;This subsection will generate training and testing sets for evaluation.
+You do not need to understand every single line of code, just the
+general&amp;nbsp;gist:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;take a smaller sample from the full 1M dataset for speed&amp;nbsp;reasons;&lt;/li&gt;
+&lt;li&gt;make sure that we have at least 2 ratings per user in that&amp;nbsp;subset;&lt;/li&gt;
+&lt;li&gt;split the result into training and testing&amp;nbsp;sets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="c"&gt;# let's work with a smaller subset for speed reasons&lt;/span&gt;
+&lt;span class="n"&gt;movielens&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nunique&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;movie_id&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nunique&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+(10000, 10)
+3698
+2275
+&lt;/pre&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;user_ids_larger_1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;value_counts&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="n"&gt;user_ids_larger_1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;user_ids_larger_1&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;user_ids_larger_1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;
+
+&lt;span class="n"&gt;movielens&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'user_id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;user_ids_larger_1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;
+&lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;value_counts&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+(8442, 10)
+&lt;/pre&gt;
+&lt;p&gt;We now generate train and test subsets by marking 20% of each users&amp;#8217;s
+ratings, using groupby and&amp;nbsp;apply.&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;assign_to_set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;sampled_ids&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                   &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;int64&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ceil&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+                                   &lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sampled_ids&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'for_testing'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;
+
+&lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'for_testing'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;span class="n"&gt;grouped&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupby&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'user_id'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;group_keys&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;assign_to_set&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;movielens_train&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;grouped&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;for_testing&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;movielens_test&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;grouped&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;for_testing&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;movielens_test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;
+&lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;movielens_test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+(8442, 11)
+(5801, 11)
+(2641, 11)
+&lt;/pre&gt;
+&lt;p&gt;Store these two sets in text&amp;nbsp;files:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'data/my_generated_movielens_train.csv'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;movielens_test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'data/my_generated_movielens_test.csv'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="evaluation-performance-criterion"&gt;
+&lt;h3&gt;Evaluation: performance&amp;nbsp;criterion&lt;/h3&gt;
+&lt;p&gt;Performance evaluation of recommendation systems is an entire topic all
+in itself. Some of the options&amp;nbsp;include:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;span class="caps"&gt;RMSE&lt;/span&gt;: &lt;span class="math"&gt;\(\sqrt{\frac{\sum(\hat y -&amp;nbsp;y)^2}{n}}\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Precision / Recall /&amp;nbsp;F-scores&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;ROC&lt;/span&gt;&amp;nbsp;curves&lt;/li&gt;
+&lt;li&gt;Cost&amp;nbsp;curves&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;compute_rmse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_pred&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_true&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Compute Root Mean Squared Error. &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sqrt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;power&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_pred&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;y_true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="evaluation-the-evaluate-method"&gt;
+&lt;h3&gt;Evaluation: the &amp;#8216;evaluate&amp;#8217;&amp;nbsp;method&lt;/h3&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;evaluate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;estimate_f&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; RMSE-based predictive performance evaluation with pandas. &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="n"&gt;ids_to_estimate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;zip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;movielens_test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;movielens_test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;movie_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;estimated&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;estimate_f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;ids_to_estimate&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="n"&gt;real&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens_test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rating&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;values&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;compute_rmse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;estimated&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;real&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;my_estimate_function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;movie_id&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'RMSE for my estimate function: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;evaluate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_estimate_function&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+RMSE for my estimate function: 1.25716424791
+&lt;/pre&gt;
+&lt;p&gt;&amp;#8212;&amp;gt; Go to &amp;quot;Mini Challenge prep: data loading &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; evaluation&amp;nbsp;functions&amp;quot;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="well-known-solutions-to-the-recommendation-problem"&gt;
+&lt;h2&gt;Well-known Solutions to the Recommendation&amp;nbsp;Problem&lt;/h2&gt;
+&lt;div class="section" id="content-based-filtering"&gt;
+&lt;h3&gt;Content-based&amp;nbsp;filtering&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Recommend based on the user&amp;#8217;s rating&amp;nbsp;history.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Generic expression (notice how this is kind of a &amp;#8216;row-based&amp;#8217;&amp;nbsp;approach):&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+\newcommand{\aggr}{\mathop{\rm aggr}\nolimits}
+r_{u,i} = \aggr_{i' \in I(u)} [r_{u,i'}]
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;A simple example using the mean as an aggregation&amp;nbsp;function:&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+r_{u,i} = \bar r_u = \frac{\sum_{i' \in I(u)} r_{u,i'}}{|I(u)|}
+\end{equation*}
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="collaborative-filtering"&gt;
+&lt;h3&gt;Collaborative&amp;nbsp;filtering&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Recommend based on other user&amp;#8217;s rating&amp;nbsp;histories.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Generic expression (notice how this is kind of a &amp;#8216;col-based&amp;#8217;&amp;nbsp;approach):&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+\newcommand{\aggr}{\mathop{\rm aggr}\nolimits}
+r_{u,i} = \aggr_{u' \in U(i)} [r_{u',i}]
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;A simple example using the mean as an aggregation&amp;nbsp;function:&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+r_{u,i} = \bar r_i = \frac{\sum_{u' \in U(i)} r_{u',i}}{|U(i)|}
+\end{equation*}
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hybrid-solutions"&gt;
+&lt;h3&gt;Hybrid&amp;nbsp;solutions&lt;/h3&gt;
+&lt;p&gt;The literature has lots of examples of systems that try to combine the
+strengths of the two main approaches. This can be done in a number of&amp;nbsp;ways:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Combine the predictions of a content-based system and a collaborative&amp;nbsp;system.&lt;/li&gt;
+&lt;li&gt;Incorporate content-based techniques into a collaborative&amp;nbsp;approach.&lt;/li&gt;
+&lt;li&gt;Incorporarte collaborative techniques into a content-based&amp;nbsp;approach.&lt;/li&gt;
+&lt;li&gt;Unifying&amp;nbsp;model.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="challenges"&gt;
+&lt;h3&gt;Challenges&lt;/h3&gt;
+&lt;div class="section" id="availability-of-item-metadata"&gt;
+&lt;h4&gt;Availability of item&amp;nbsp;metadata&lt;/h4&gt;
+&lt;p&gt;Content-based techniques are limited by the amount of metadata that is
+available to describe an item. There are domains in which feature
+extraction methods are expensive or time consuming, e.g., processing
+multimedia data such as graphics, audio/video streams. In the context of
+grocery items for example, it&amp;#8217;s often the case that item information is
+only partial or completely missing. Examples&amp;nbsp;include:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Ingredients&lt;/li&gt;
+&lt;li&gt;Nutrition&amp;nbsp;facts&lt;/li&gt;
+&lt;li&gt;Brand&lt;/li&gt;
+&lt;li&gt;Description&lt;/li&gt;
+&lt;li&gt;County of&amp;nbsp;origin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="new-user-problem"&gt;
+&lt;h4&gt;New user&amp;nbsp;problem&lt;/h4&gt;
+&lt;p&gt;A user has to have rated a sufficient number of items before a
+recommender system can have a good idea of what their preferences are.
+In a content-based system, the aggregation function needs ratings to&amp;nbsp;aggregate.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="new-item-problem"&gt;
+&lt;h4&gt;New item&amp;nbsp;problem&lt;/h4&gt;
+&lt;p&gt;Collaborative filters rely on an item being rated by many users to
+compute aggregates of those ratings. Think of this as the exact
+counterpart of the new user problem for content-based&amp;nbsp;systems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="data-sparsity"&gt;
+&lt;h4&gt;Data&amp;nbsp;sparsity&lt;/h4&gt;
+&lt;p&gt;When looking at the more general versions of content-based and
+collaborative systems, the success of the recommender system depends on
+the availability of a critical mass of user/item iteractions. We get a
+first glance at the data sparsity problem by quantifying the ratio of
+existing ratings vs &lt;span class="math"&gt;\(|U|x|I|\)&lt;/span&gt;. A highly sparse matrix of
+interactions makes it difficult to compute similarities between users
+and items. As an example, for a user whose tastes are unusual compared
+to the rest of the population, there will not be any other users who are
+particularly similar, leading to poor&amp;nbsp;recommendations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="minimal-reco-engine-v1-0-simple-mean-ratings"&gt;
+&lt;h2&gt;Minimal reco engine v1.0: simple mean&amp;nbsp;ratings&lt;/h2&gt;
+&lt;div class="section" id="content-based-filtering-using-mean-ratings"&gt;
+&lt;h3&gt;Content-based filtering using mean&amp;nbsp;ratings&lt;/h3&gt;
+&lt;p&gt;With this table-like representation of the ratings data, a basic
+content-based filter becomes a one-liner&amp;nbsp;function.&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;content_mean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;movie_id&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Simple content-filtering based on mean ratings. &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="n"&gt;user_condition&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;user_id&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;user_condition&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'rating'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'RMSE for estimate1: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;evaluate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content_mean&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+RMSE for estimate1: 1.26844670375
+&lt;/pre&gt;
+&lt;p&gt;&amp;#8212;&amp;gt; Go to &amp;quot;Reco systems questions: Minimal reco engine&amp;nbsp;v1.0&amp;quot;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="more-formulas"&gt;
+&lt;h2&gt;More&amp;nbsp;formulas!&lt;/h2&gt;
+&lt;p&gt;Here are some basic ways in which we can generalize the simple
+mean-based algorithms we discussed&amp;nbsp;before.&lt;/p&gt;
+&lt;div class="section" id="generalizations-of-the-aggregation-function-for-content-based-filtering-incorporating-similarities"&gt;
+&lt;h3&gt;Generalizations of the aggregation function for content-based filtering: incorporating&amp;nbsp;similarities&lt;/h3&gt;
+&lt;p&gt;Possibly incorporating metadata about items, which makes the term
+&amp;#8216;content&amp;#8217; make more sense&amp;nbsp;now.&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+r_{u,i} = k \sum_{i' \in I(u)} sim(i, i') \; r_{u,i'}
+\end{equation*}
+&lt;/div&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+r_{u,i} = \bar r_u + k \sum_{i' \in I(u)} sim(i, i') \; (r_{u,i'} - \bar r_u)
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;Here &lt;span class="math"&gt;\(k\)&lt;/span&gt; is a normalizing&amp;nbsp;factor,&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+k = \frac{1}{\sum_{i' \in I(u)} |sim(i,i')|}
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;and &lt;span class="math"&gt;\(\bar r_u\)&lt;/span&gt; is the average rating of user&amp;nbsp;u:&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+\bar r_u = \frac{\sum_{i \in I(u)} r_{u,i}}{|I(u)|}
+\end{equation*}
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="generalizations-of-the-aggregation-function-for-collaborative-filtering-incorporating-similarities"&gt;
+&lt;h3&gt;Generalizations of the aggregation function for collaborative filtering: incorporating&amp;nbsp;similarities&lt;/h3&gt;
+&lt;p&gt;Possibly incorporating metadata about&amp;nbsp;users.&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+r_{u,i} = k \sum_{u' \in U(i)} sim(u, u') \; r_{u',i}
+\end{equation*}
+&lt;/div&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+r_{u,i} = \bar r_u + k \sum_{u' \in U(i)} sim(u, u') \; (r_{u',i} - \bar r_u)
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;Here &lt;span class="math"&gt;\(k\)&lt;/span&gt; is a normalizing&amp;nbsp;factor,&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+k = \frac{1}{\sum_{u' \in U(i)} |sim(u,u')|}
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;and &lt;span class="math"&gt;\(\bar r_u\)&lt;/span&gt; is the average rating of user&amp;nbsp;u:&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+\bar r_u = \frac{\sum_{i \in I(u)} r_{u,i}}{|I(u)|}
+\end{equation*}
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="aggregation-in-pandas"&gt;
+&lt;h2&gt;Aggregation in&amp;nbsp;pandas&lt;/h2&gt;
+&lt;div class="section" id="groupby"&gt;
+&lt;h3&gt;Groupby&lt;/h3&gt;
+&lt;p&gt;The idea of groupby is that of &lt;em&gt;split-apply-combine&lt;/em&gt;:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;split data in an object according to a given&amp;nbsp;key;&lt;/li&gt;
+&lt;li&gt;apply a function to each&amp;nbsp;subset;&lt;/li&gt;
+&lt;li&gt;combine results into a new&amp;nbsp;object.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupby&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'gender'&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="s"&gt;'rating'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+gender
+F         3.59
+M         3.51
+Name: rating, dtype: float64
+&lt;/pre&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupby&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;'gender'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'age'&lt;/span&gt;&lt;span class="p"&gt;])[&lt;/span&gt;&lt;span class="s"&gt;'rating'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+gender  age
+F       1      3.61
+        18     3.43
+        25     3.61
+        35     3.65
+        45     3.54
+        50     3.67
+        56     4.07
+M       1      3.38
+        18     3.44
+        25     3.43
+        35     3.61
+        45     3.55
+        50     3.76
+        56     3.70
+Name: rating, dtype: float64
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pivoting"&gt;
+&lt;h3&gt;Pivoting&lt;/h3&gt;
+&lt;p&gt;Let&amp;#8217;s start with a simple pivoting example that does not involve any
+aggregation. We can extract a ratings matrix as&amp;nbsp;follows:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="c"&gt;# transform the ratings frame into a ratings matrix&lt;/span&gt;
+&lt;span class="n"&gt;ratings_mtx_df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pivot_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'rating'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                             &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'user_id'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                             &lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'movie_id'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;ratings_mtx_df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-37-994c2713cd4e&amp;gt; in &amp;lt;module&amp;gt;()
+      2 ratings_mtx_df = movielens_train.pivot_table(values='rating',
+      3                                              index='user_id',
+----&amp;gt; 4                                              columns='movie_id')
+      5 ratings_mtx_df.head(3)
+
+
+TypeError: pivot_table() got an unexpected keyword argument 'index'
+&lt;/pre&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="c"&gt;# grab another subsquare of the ratings matrix to actually diplay some real entries!&lt;/span&gt;
+&lt;span class="n"&gt;ratings_mtx_df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1196&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1200&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;The more interesting case with &lt;tt class="docutils literal"&gt;pivot_table&lt;/tt&gt; is as an interface to
+&lt;tt class="docutils literal"&gt;groupby&lt;/tt&gt;:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pivot_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'rating'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'age'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'gender'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;aggfunc&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'mean'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;You can pass in a list of functions, such as &lt;tt class="docutils literal"&gt;[np.mean, np.std]&lt;/tt&gt;, to
+compute mean ratings and a measure of&amp;nbsp;disagreement.&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pivot_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'rating'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'age'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'gender'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;aggfunc&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="minimal-reco-engine-v1-1-implicit-sim-functions"&gt;
+&lt;h2&gt;Minimal reco engine v1.1: implicit sim&amp;nbsp;functions&lt;/h2&gt;
+&lt;p&gt;We&amp;#8217;re going to need a user index from the users portion of the dataset.
+This will allow us to retrieve information given a specific user_id in
+a more convenient&amp;nbsp;way:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;user_info&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;users&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'user_id'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;user_info&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;With this in hand, we can now ask what the gender of a particular
+user_id is like&amp;nbsp;so:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;user_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;span class="n"&gt;user_info&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'gender'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;
+&lt;div class="section" id="collaborative-based-filtering-using-implicit-sim-functions"&gt;
+&lt;h3&gt;Collaborative-based filtering using implicit sim&amp;nbsp;functions&lt;/h3&gt;
+&lt;p&gt;Using the pandas aggregation framework we will build a collaborative
+filter that estimates ratings using an implicit &lt;tt class="docutils literal"&gt;sim(u,u')&lt;/tt&gt; function
+to compare different&amp;nbsp;users.&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;collab_gender&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;movie_id&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Collaborative filtering using an implicit sim(u,u') based on gender. &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="n"&gt;user_condition&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;user_id&lt;/span&gt;
+    &lt;span class="n"&gt;movie_condition&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;movie_id&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;movie_id&lt;/span&gt;
+    &lt;span class="n"&gt;ratings_by_others&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;user_condition&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;movie_condition&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ratings_by_others&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;empty&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mf"&gt;3.0&lt;/span&gt;
+
+    &lt;span class="n"&gt;means_by_gender&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ratings_by_others&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pivot_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'rating'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'movie_id'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'gender'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;user_gender&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;user_info&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'gender'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;user_gender&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;means_by_gender&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;means_by_gender&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;movie_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;user_gender&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;means_by_gender&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;movie_id&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'RMSE for collab_gender: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;evaluate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;collab_gender&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;At this point it seems worthwhile to write a &lt;tt class="docutils literal"&gt;learn&lt;/tt&gt; function to
+pre-compute whatever datastructures we need at estimation&amp;nbsp;time.&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CollabGenderReco&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Collaborative filtering using an implicit sim(u,u'). &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;learn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Prepare datastructures for estimation. &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;means_by_gender&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pivot_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'rating'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'movie_id'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'gender'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;estimate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;movie_id&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Mean ratings by other users of the same gender. &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;movie_id&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;means_by_gender&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mf"&gt;3.0&lt;/span&gt;
+
+        &lt;span class="n"&gt;user_gender&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;user_info&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'gender'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isnan&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;means_by_gender&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;movie_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;user_gender&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;means_by_gender&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;movie_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;user_gender&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;means_by_gender&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ix&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;movie_id&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;reco&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CollabGenderReco&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;reco&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;learn&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'RMSE for CollabGenderReco: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;evaluate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;reco&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;estimate&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Break!!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mini-challenge"&gt;
+&lt;h2&gt;Mini-Challenge!&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Not a real&amp;nbsp;challenge&lt;/li&gt;
+&lt;li&gt;Focus on understanding the different versions of our minimal&amp;nbsp;reco&lt;/li&gt;
+&lt;li&gt;Try to mix and match some of the ideas presented to come up with a
+minimal reco of your&amp;nbsp;own&lt;/li&gt;
+&lt;li&gt;Evaluate&amp;nbsp;it!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="mini-challenge-first-round"&gt;
+&lt;h3&gt;Mini-Challenge: first&amp;nbsp;round&lt;/h3&gt;
+&lt;p&gt;Implement an &lt;tt class="docutils literal"&gt;estimate&lt;/tt&gt; function of your own using other similarity
+notions,&amp;nbsp;eg.:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;collaborative filter based on age&amp;nbsp;similarities&lt;/li&gt;
+&lt;li&gt;collaborative filter based on zip code&amp;nbsp;similarities&lt;/li&gt;
+&lt;li&gt;collaborative filter based on occupation&amp;nbsp;similarities&lt;/li&gt;
+&lt;li&gt;content filter based on movie&amp;nbsp;genre&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="minimal-reco-engine-v1-2-custom-similarity-functions"&gt;
+&lt;h2&gt;Minimal reco engine v1.2: custom similarity&amp;nbsp;functions&lt;/h2&gt;
+&lt;div class="section" id="a-few-similarity-functions"&gt;
+&lt;h3&gt;A few similarity&amp;nbsp;functions&lt;/h3&gt;
+&lt;p&gt;These were all written to operate on two pandas Series, each one
+representing the rating history of two different users. You can also
+apply them to any two feature vectors that describe users or items. In
+all cases, the higher the return value, the more similar two Series are.
+You might need to add checks for edge cases, such as divisions by zero,&amp;nbsp;etc.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Euclidean&amp;nbsp;&amp;#8216;similarity&amp;#8217;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+sim(x,y) = \frac{1}{1 + \sqrt{\sum (x - y)^2}}
+\end{equation*}
+&lt;/div&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;euclidean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Take two pd.Series objects and return their euclidean 'similarity'.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;diff&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sqrt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;diff&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/pre&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Cosine&amp;nbsp;similarity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+sim(x,y) = \frac{(x . y)}{\sqrt{(x . x) (y . y)}}
+\end{equation*}
+&lt;/div&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;cosine&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Take two pd.Series objects and return their cosine similarity.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sqrt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Pearson&amp;nbsp;correlation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+sim(x,y) = \frac{(x - \bar x).(y - \bar y)}{\sqrt{(x - \bar x).(x - \bar x) * (y - \bar y)(y - \bar y)}}
+\end{equation*}
+&lt;/div&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;pearson&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Take two pd.Series objects and return a pearson correlation.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;s1_c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;s2_c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1_c&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;s2_c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sqrt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1_c&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s2_c&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Jaccard&amp;nbsp;similarity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+sim(x,y) = \frac{(x . y)}{(x . x) + (y . y) - (x . y)}
+\end{equation*}
+&lt;/div&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;jaccard&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;dotp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;dotp&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s2&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;dotp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;binjaccard&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;dotp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;dotp&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;s2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;dotp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="collaborative-based-filtering-using-custom-sim-functions"&gt;
+&lt;h3&gt;Collaborative-based filtering using custom sim&amp;nbsp;functions&lt;/h3&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CollabPearsonReco&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Collaborative filtering using a custom sim(u,u'). &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;learn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Prepare datastructures for estimation. &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;all_user_profiles&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pivot_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'rating'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'movie_id'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'user_id'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;estimate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;movie_id&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Ratings weighted by correlation similarity. &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+        &lt;span class="n"&gt;user_condition&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;user_id&lt;/span&gt;
+        &lt;span class="n"&gt;movie_condition&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;movie_id&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;movie_id&lt;/span&gt;
+        &lt;span class="n"&gt;ratings_by_others&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;movielens_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;user_condition&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;movie_condition&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ratings_by_others&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;empty&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mf"&gt;3.0&lt;/span&gt;
+
+        &lt;span class="n"&gt;ratings_by_others&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'user_id'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;inplace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;their_ids&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ratings_by_others&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;
+        &lt;span class="n"&gt;their_ratings&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ratings_by_others&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rating&lt;/span&gt;
+        &lt;span class="n"&gt;their_profiles&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;all_user_profiles&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;their_ids&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;user_profile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;all_user_profiles&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;user_id&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;sims&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;their_profiles&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;profile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pearson&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;profile&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;user_profile&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;ratings_sims&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s"&gt;'sim'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;sims&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'rating'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;their_ratings&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+        &lt;span class="n"&gt;ratings_sims&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ratings_sims&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ratings_sims&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sim&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ratings_sims&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;empty&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;their_ratings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;average&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ratings_sims&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rating&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;weights&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ratings_sims&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sim&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;reco&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CollabPearsonReco&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;reco&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;learn&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;'RMSE for CollabPearsonReco: &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;evaluate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;reco&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;estimate&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="mini-challenge-second-round"&gt;
+&lt;h3&gt;Mini-Challenge: second&amp;nbsp;round&lt;/h3&gt;
+&lt;p&gt;Implement an &lt;tt class="docutils literal"&gt;estimate&lt;/tt&gt; function of your own using other custom
+similarity notions,&amp;nbsp;eg.:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;euclidean&lt;/li&gt;
+&lt;li&gt;cosine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="references-and-further-reading"&gt;
+&lt;h2&gt;References and further&amp;nbsp;reading&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Goldberg, D., D. Nichols, &lt;span class="caps"&gt;B. M.&lt;/span&gt; Oki, and D. Terry. “Using
+Collaborative Filtering to Weave an Information Tapestry.”
+Communications of the &lt;span class="caps"&gt;ACM&lt;/span&gt; 35, no. 12 (1992):&amp;nbsp;61–70.&lt;/li&gt;
+&lt;li&gt;Resnick, Paul, and Hal R. Varian. “Recommender Systems.” Commun. &lt;span class="caps"&gt;ACM&lt;/span&gt;
+40, no. 3 (March 1997): 56–58.&amp;nbsp;doi:10.1145/245108.245121.&lt;/li&gt;
+&lt;li&gt;Adomavicius, Gediminas, and Alexander Tuzhilin. “Toward the Next
+Generation of Recommender Systems: A Survey of the State-of-the-Art
+and Possible Extensions.” &lt;span class="caps"&gt;IEEE&lt;/span&gt; Transactions on Knowledge and Data
+Engineering 17, no. 6 (2005): 734–749.
+doi:http://doi.ieeecomputersociety.org/10.1109/&lt;span class="caps"&gt;TKDE&lt;/span&gt;.2005.99.&lt;/li&gt;
+&lt;li&gt;Adomavicius, Gediminas, Ramesh Sankaranarayanan, Shahana Sen, and
+Alexander Tuzhilin. “Incorporating Contextual Information in
+Recommender Systems Using a Multidimensional Approach.” &lt;span class="caps"&gt;ACM&lt;/span&gt; Trans.
+Inf. Syst. 23, no. 1 (2005): 103–145.&amp;nbsp;doi:10.1145/1055709.1055714.&lt;/li&gt;
+&lt;li&gt;Koren, Y., R. Bell, and C. Volinsky. “Matrix Factorization Techniques
+for Recommender Systems.” Computer 42, no. 8 (2009):&amp;nbsp;30–37.&lt;/li&gt;
+&lt;li&gt;William Wesley McKinney. Python for Data Analysis. O’Reilly,&amp;nbsp;2012.&lt;/li&gt;
+&lt;li&gt;Toby Segaran. Programming Collective Intelligence. O’Reilly,&amp;nbsp;2007.&lt;/li&gt;
+&lt;li&gt;Zhou, Tao, Zoltan Kuscsik, Jian-Guo Liu, Matus Medo, Joseph R
+Wakeling, and Yi-Cheng Zhang. “Solving the Apparent
+Diversity-accuracy Dilemma of Recommender Systems.” arXiv:0808.2670
+(August 19, 2008).&amp;nbsp;doi:10.1073/pnas.1000488107.&lt;/li&gt;
+&lt;li&gt;Shani, G., D. Heckerman, and R. I Brafman. “An &lt;span class="caps"&gt;MDP&lt;/span&gt;-based Recommender
+System.” Journal of Machine Learning Research 6, no. 2 (2006):&amp;nbsp;1265.&lt;/li&gt;
+&lt;li&gt;Joseph A. Konstan, John Riedl. &amp;quot;Deconstructing Recommender Systems.&amp;quot;
+&lt;span class="caps"&gt;IEEE&lt;/span&gt; Spectrum, October&amp;nbsp;2012.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+    
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: false," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><category term="Machine Learning"></category><category term="Python"></category><category term="Math"></category></entry><entry><title>Machine Learning Notes</title><link href="http://sanghan.me/blog/2015/03/machine_learning_notes/" rel="alternate"></link><updated>2015-03-25T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-03-25:blog/2015/03/machine_learning_notes/</id><summary type="html">&lt;p&gt;2013 Sang&amp;nbsp;Han&lt;/p&gt;
 &lt;p&gt;A collection of notes and useful articles on numerical&amp;nbsp;algorithms.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="ml" src="http://sanghan.me/img/ml.jpg" /&gt;&lt;/p&gt;
 &lt;h1&gt;Definitions&lt;/h1&gt;
@@ -128,7 +1076,14 @@ definition of a stochastic process is an ordered collection of random&amp;nbsp;v
 &lt;p&gt;&lt;a href="http://nbviewer.ipython.org/gist/zsylvester/6040d0015b9b907bc788"&gt;Variations in submarine channel sinuosity as a function of latitude and&amp;nbsp;slope&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.jneurosci.org/content/34/32/10743.short"&gt;Frontoparietal representations of task context support the flexible control of goal directed&amp;nbsp;cognition&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://openresearchsoftware.metajnl.com/article/view/jors.bh"&gt;pyparty: Intuitive Particle Processing in&amp;nbsp;Python&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://biorxiv.org/content/early/2014/12/16/012831"&gt;Indication of family-specific &lt;span class="caps"&gt;DNA&lt;/span&gt; methylation patterns in developing&amp;nbsp;oysters&lt;/a&gt;&lt;/p&gt;</summary><category term="Notes"></category></entry><entry><title>Useful Python Tricks</title><link href="http://sanghan.me/blog/2014/12/python_tricks/" rel="alternate"></link><updated>2014-12-09T00:00:00-08:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-12-09:blog/2014/12/python_tricks/</id><summary type="html">&lt;p&gt;Originally inspired from this
+&lt;p&gt;&lt;a href="http://biorxiv.org/content/early/2014/12/16/012831"&gt;Indication of family-specific &lt;span class="caps"&gt;DNA&lt;/span&gt; methylation patterns in developing&amp;nbsp;oysters&lt;/a&gt;&lt;/p&gt;</summary><category term="Notes"></category></entry><entry><title>At The Intersection of Two Worlds</title><link href="http://sanghan.me/blog/2015/03/transition/" rel="alternate"></link><updated>2015-03-12T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-03-12:blog/2015/03/transition/</id><summary type="html">&lt;div class="section" id="the-summit"&gt;
+&lt;h2&gt;# The&amp;nbsp;Summit&lt;/h2&gt;
+&lt;p&gt;So I&amp;#8217;m sitting here in my room in Oregon.x
+In this past month were what I think some of the most extraordinary
+moments. Moving up the hill we finally see the earth seperate and meet into the sky
+and realize that the end of this story is coming to a&amp;nbsp;near.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="transition-state"></category></entry><entry><title>Useful Python Tricks</title><link href="http://sanghan.me/blog/2014/12/python_tricks/" rel="alternate"></link><updated>2014-12-09T00:00:00-08:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2014-12-09:blog/2014/12/python_tricks/</id><summary type="html">&lt;p&gt;Originally inspired from this
 &lt;a class="reference external" href="http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html"&gt;blog&lt;/a&gt;
 post. But many have been customized and rewritten into an IPython&amp;nbsp;Notebook.&lt;/p&gt;
 &lt;p&gt;Note: Written for Python&amp;nbsp;3&lt;/p&gt;

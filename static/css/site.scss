@@ -160,7 +160,11 @@ div.well-sm, footer.post-info {
             transform:translate(0%);
 }
 
+
 .headroom--unpinned{
     -webkit-transform:translateY(-100%);
             transform:translateY(-100%);
+}
+h1 {
+    font-style: italic;
 }
