@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LightQuanta</title><link>http://sanghan.me/</link><description></description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 27 May 2015 00:00:00 -0700</lastBuildDate><item><title>The Anatomy of a Recommendation Engine</title><link>http://sanghan.me/blog/2015/05/recommendation_engine/</link><description>&lt;p&gt;Recommenders have been around since at least 1992. Today we see
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LightQuanta</title><link>http://sanghan.me/</link><description></description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 27 May 2015 00:00:00 -0700</lastBuildDate><item><title>The Anatomy of a Recommendation Engine</title><link>http://sanghan.me/blog/2015/05/recommendation_engine/</link><description>&lt;p&gt;&lt;img alt="Recommendation Graph" src="http://sanghan.me/img/recommendation.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Recommenders have been around since at least 1992. Today we see
 different flavours of recommenders, deployed across different&amp;nbsp;verticals:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Amazon&lt;/li&gt;
@@ -48,7 +49,7 @@ items not yet seen by user &lt;span class="math"&gt;\(u\)&lt;/span&gt;.&lt;/li&g
 &lt;h2&gt;Goal of a recommendation&amp;nbsp;system&lt;/h2&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
-$i^{\*} = argmax\_{i -I(u)} S(u,i)$
+i^{\*} = argmax\_{i -I(u)} S(u,i)
 \end{equation*}
 &lt;/div&gt;
 &lt;/div&gt;
