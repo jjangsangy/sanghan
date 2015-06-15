@@ -1,5 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/sang-han.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2015-05-27T00:00:00-07:00</updated><entry><title>The Anatomy of a Recommendation Engine</title><link href="http://sanghan.me/blog/2015/05/recommendation_engine/" rel="alternate"></link><updated>2015-05-27T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-05-27:blog/2015/05/recommendation_engine/</id><summary type="html">&lt;p&gt;&lt;img alt="Recommendation Graph" src="http://sanghan.me/img/recommendation.png" /&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/sang-han.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2015-06-15T00:00:00-07:00</updated><entry><title>The State Sexy in Data Visualization</title><link href="http://sanghan.me/blog/2015/06/sexyviz/" rel="alternate"></link><updated>2015-06-15T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-06-15:blog/2015/06/sexyviz/</id><summary type="html">
+&lt;div class="section" id="plots-from-san-francisco-crime-classification"&gt;
+&lt;h2&gt;Plots from San Francisco Crime&amp;nbsp;Classification&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://www.kaggle.com/sanghan/sf-crime/top-crimes-zones"&gt;Link to Original Kaggle&amp;nbsp;Script&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="data_viz" src="http://i.imgur.com/zA9QfJv.png" /&gt;&lt;/p&gt;
+
+&lt;div class="section" id="but-first"&gt;
+&lt;h3&gt;But&amp;nbsp;First!&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="javascript-charts"&gt;
+&lt;h2&gt;1. JavaScript&amp;nbsp;Charts&lt;/h2&gt;
+&lt;p&gt;JavaScript has so many great timeless visualization eye candy, leading
+to a plethora of classic&amp;nbsp;looks.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="j1" src="http://i.imgur.com/ymt3JxA.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="j2" src="http://mag.splashnology.com/uploads/2010/01/chart.jpg" /&gt;&lt;/p&gt;
+&lt;div class="section" id="javascript-the-denise-richards-of-viz"&gt;
+&lt;h3&gt;Javascript: The Denise Richards of&amp;nbsp;Viz&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Classic Beautiful&amp;nbsp;Design&lt;/li&gt;
+&lt;li&gt;Still beautiful after all those&amp;nbsp;ears&lt;/li&gt;
+&lt;li&gt;That feeling when watching &lt;tt class="docutils literal"&gt;Wild Things&lt;/tt&gt; as a&amp;nbsp;kid&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="denise" src="http://images.static-bluray.com/reviews/19_5.jpg" /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="r-charts"&gt;
+&lt;h2&gt;2. R&amp;nbsp;Charts&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Although maybe not the best general purpose&amp;nbsp;language.&lt;/li&gt;
+&lt;li&gt;R just does so many things right on the&amp;nbsp;visualization.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="r1" src="http://media.tumblr.com/tumblr_mdgohwzxzR1rwydv6.png" /&gt;&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Simple &lt;span class="caps"&gt;API&lt;/span&gt; Design that continues to be the standard&amp;nbsp;reference&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="r2" src="http://weblab.com.cityu.edu.hk/blog/chengjun/files/2011/09/Fixed-telephone-use.png" /&gt;&lt;/p&gt;
+&lt;div class="section" id="r-the-mila-kunis-of-viz"&gt;
+&lt;h3&gt;R: The Mila Kunis of&amp;nbsp;Viz&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="mila" src="http://41.media.tumblr.com/tumblr_m6pmn7jD6z1qm9flro1_500.jpg" /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="julia"&gt;
+&lt;h2&gt;3.&amp;nbsp;Julia&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="julia1" src="http://julialang.org/images/gadfly-demo.png" /&gt;&lt;/p&gt;
+&lt;div class="section" id="the-new-hottness"&gt;
+&lt;h3&gt;The New&amp;nbsp;Hottness&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="julia2" src="https://plot.ly/~PlotBot/32/kale-radishes-carrots.png" /&gt;&lt;/p&gt;
+&lt;blockquote class="imgur-embed-pub" lang="en" data-id="a/T0ZAe"&gt;Getting to be this guy&lt;/blockquote&gt;
+&lt;script async src="//s.imgur.com/min/embed.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="let-s-do-python-sexy"&gt;
+&lt;h2&gt;Let&amp;#8217;s Do Python&amp;nbsp;Sexy&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;io&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;codecs&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-6"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;string&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-7"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;operator&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-8"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;zipfile&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ZipFile&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;is_zipfile&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-9"&gt;
+&lt;/span&gt;&lt;span id="line-10"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-11"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-12"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;contextlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;contextmanager&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-13"&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;string&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;capwords&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-14"&gt;
+&lt;/span&gt;&lt;span id="line-15"&gt;&lt;span class="c"&gt;# Plotting Options&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-16"&gt;&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_style&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;whitegrid&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-17"&gt;&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;despine&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-18"&gt;
+&lt;/span&gt;&lt;span id="line-19"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;plot_bar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-20"&gt;    &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-21"&gt;        &lt;span class="s"&gt;&amp;#39;Set2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Paired&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;colorblind&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;husl&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-22"&gt;        &lt;span class="s"&gt;&amp;#39;Set1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;coolwarm&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;RdYlGn&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;spectral&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-23"&gt;    &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-24"&gt;    &lt;span class="n"&gt;bar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kind&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;barh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-25"&gt;                  &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-26"&gt;                  &lt;span class="n"&gt;fontsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-27"&gt;                  &lt;span class="n"&gt;figsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-28"&gt;                  &lt;span class="n"&gt;stacked&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-29"&gt;                  &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=.&lt;/span&gt;&lt;span class="mi"&gt;85&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-30"&gt;                  &lt;span class="n"&gt;colors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;color_palette&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-31"&gt;    &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-32"&gt;    &lt;span class="n"&gt;bar&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;savefig&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-33"&gt;    &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-34"&gt;
+&lt;/span&gt;&lt;span id="line-35"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;plot_top_crimes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;column&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fname&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-36"&gt;    &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;operator&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;methodcaller&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;lower&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-37"&gt;
+&lt;/span&gt;&lt;span id="line-38"&gt;    &lt;span class="n"&gt;by_col&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groupby&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;column&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-39"&gt;    &lt;span class="n"&gt;col_freq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;by_col&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-40"&gt;    &lt;span class="n"&gt;col_freq&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;col_freq&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;capwords&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-41"&gt;
+&lt;/span&gt;&lt;span id="line-42"&gt;    &lt;span class="n"&gt;col_freq&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ascending&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;inplace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-43"&gt;
+&lt;/span&gt;&lt;span id="line-44"&gt;    &lt;span class="n"&gt;plot_bar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;col_freq&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;slice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)],&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fname&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-45"&gt;
+&lt;/span&gt;&lt;span id="line-46"&gt;
+&lt;/span&gt;&lt;span id="line-47"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;extract_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-48"&gt;    &lt;span class="n"&gt;zp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ZipFile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-49"&gt;    &lt;span class="n"&gt;csv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;zp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;namelist&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;splitext&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-50"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;zp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;csv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-51"&gt;
+&lt;/span&gt;&lt;span id="line-52"&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-53"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;zip_csv_opener&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-54"&gt;    &lt;span class="n"&gt;fp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;extract_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;is_zipfile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;rb&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-55"&gt;    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-56"&gt;        &lt;span class="k"&gt;yield&lt;/span&gt; &lt;span class="n"&gt;fp&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-57"&gt;    &lt;span class="k"&gt;finally&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-58"&gt;        &lt;span class="n"&gt;fp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-59"&gt;
+&lt;/span&gt;&lt;span id="line-60"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;input_transformer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-61"&gt;    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;zip_csv_opener&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;fp&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-62"&gt;        &lt;span class="n"&gt;raw&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-63"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;parse_dates&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index_col&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;na_values&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;NONE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-64"&gt;
+&lt;/span&gt;&lt;span id="line-65"&gt;&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;input_transformer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;../input/train.csv.zip&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-66"&gt;
+&lt;/span&gt;&lt;span id="line-67"&gt;&lt;span class="n"&gt;plot_top_crimes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;category&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;   &lt;span class="s"&gt;&amp;#39;Top Crime Categories&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;        &lt;span class="s"&gt;&amp;#39;category.png&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-68"&gt;&lt;span class="n"&gt;plot_top_crimes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;resolution&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Top Crime Resolutions&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;       &lt;span class="s"&gt;&amp;#39;resolution.png&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-69"&gt;&lt;span class="n"&gt;plot_top_crimes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;pddistrict&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;Police Department Activity&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="s"&gt;&amp;#39;police.png&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-70"&gt;&lt;span class="n"&gt;plot_top_crimes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;dayofweek&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="s"&gt;&amp;#39;Days of the Week&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;            &lt;span class="s"&gt;&amp;#39;weekly.png&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-71"&gt;&lt;span class="n"&gt;plot_top_crimes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;address&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;    &lt;span class="s"&gt;&amp;#39;Top Crime Locations&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;         &lt;span class="s"&gt;&amp;#39;location.png&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-72"&gt;&lt;span class="n"&gt;plot_top_crimes&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;descript&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;   &lt;span class="s"&gt;&amp;#39;Descriptions&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;                &lt;span class="s"&gt;&amp;#39;descript.png&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="1" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/category.png" /&gt; &lt;img alt="2" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/descript.png" /&gt; &lt;img alt="3" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/location.png" /&gt; &lt;img alt="4" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/police.png" /&gt; &lt;img alt="5" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/resolution.png" /&gt; &lt;img alt="6" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/weekly.png" /&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Python"></category><category term="Data"></category></entry><entry><title>The Anatomy of a Recommendation Engine</title><link href="http://sanghan.me/blog/2015/05/recommendation_engine/" rel="alternate"></link><updated>2015-05-27T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-05-27:blog/2015/05/recommendation_engine/</id><summary type="html">&lt;p&gt;&lt;img alt="Recommendation Graph" src="http://sanghan.me/img/recommendation.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Recommenders have been around since at least 1992. Today we see
 different flavours of recommenders, deployed across different&amp;nbsp;verticals:&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -56,29 +184,27 @@ i^{\*} = argmax\_{i -I(u)} S(u,i)
 &lt;div class="section" id="problem-statement"&gt;
 &lt;h2&gt;Problem&amp;nbsp;statement&lt;/h2&gt;
 &lt;p&gt;The recommendation problem in its most basic form is quite simple to&amp;nbsp;define:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-|-------------------+-----+-----+-----+-----+-----|
+&lt;p&gt;&lt;tt class="docutils literal"&gt;`
 | user_id, movie_id | m_1 | m_2 | m_3 | m_4 | m_5 |
-|-------------------+-----+-----+-----+-----+-----|
-| u_1               | ?   | ?   | 4   | ?   | 1   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_2               | 3   | ?   | ?   | 2   | 2   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_3               | 3   | ?   | ?   | ?   | ?   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_4               | ?   | 1   | 2   | 1   | 1   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_5               | ?   | ?   | ?   | ?   | ?   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_6               | 2   | ?   | 2   | ?   | ?   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_7               | ?   | ?   | ?   | ?   | ?   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_8               | 3   | 1   | 5   | ?   | ?   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_9               | ?   | ?   | ?   | ?   | 2   |
-|-------------------+-----+-----+-----+-----+-----|
-&lt;/pre&gt;
+&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
+| u_1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | 4&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | 1&amp;nbsp;&amp;nbsp; |
+&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
+| u_2&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | 3&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | 2&amp;nbsp;&amp;nbsp; | 2&amp;nbsp;&amp;nbsp; |
+&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
+| u_3&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | 3&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; |
+&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
+| u_4&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | 1&amp;nbsp;&amp;nbsp; | 2&amp;nbsp;&amp;nbsp; | 1&amp;nbsp;&amp;nbsp; | 1&amp;nbsp;&amp;nbsp; |
+&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
+| u_5&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; |
+&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
+| u_6&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | 2&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | 2&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; |
+&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
+| u_7&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; |
+&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
+| u_8&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | 3&amp;nbsp;&amp;nbsp; | 1&amp;nbsp;&amp;nbsp; | 5&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; |
+&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
+| u_9&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | 2&amp;nbsp;&amp;nbsp; |
+`&lt;/tt&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Given a partially filled matrix of ratings (:math:`|U|x|I|`), estimate
 the missing&amp;nbsp;values.&lt;/em&gt;&lt;/p&gt;
 &lt;div class="section" id="pandas-a-python-data-analysis-library"&gt;

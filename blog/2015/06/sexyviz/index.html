@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>The State Sexy in Data Visualization - LightQuanta</title>
+
+    <!-- Pinterest Verification Tag -->
+    <meta name="p:domain_verify" content="78649e3c96104d254c14a2009100fcaf" />
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="http://sanghan.me/img/hv.png" rel="icon">
+
+<link rel="canonical" href="http://sanghan.me/blog/2015/06/sexyviz/">
+
+        <meta name="author" content="Sang Han" />
+        <meta name="keywords" content="Python,Data" />
+        <meta name="description" content="Plots from San Francisco Crime Classification Link to Original Kaggle Script" />
+
+        <meta property="og:site_name" content="LightQuanta" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="The State Sexy in Data Visualization"/>
+        <meta property="og:url" content="http://sanghan.me/blog/2015/06/sexyviz/"/>
+        <meta property="og:description" content="Plots from San Francisco Crime Classification Link to Original Kaggle Script"/>
+        <meta property="article:published_time" content="2015-06-15" />
+            <meta property="article:section" content="Articles" />
+            <meta property="article:tag" content="Python" />
+            <meta property="article:tag" content="Data" />
+            <meta property="article:author" content="Sang Han" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.paper.min.css" type="text/css"/>
+    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+        <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
+        <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
+
+        <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="LightQuanta ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top headroom" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://sanghan.me/" class="navbar-brand">
+
+                <span class="fa-stack fa-large">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-flask pull-center fa-stack-1x"></i>
+                </span>
+                LightQuanta
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li><a href="http://sanghan.me/pages/about.html">
+                        <i class="fa fa-beer"></i>
+                        <span class="icon-label">About&nbsp;Me</span></a></li>
+                        <li><a href="http://sanghan.me/pages/projects.html">
+                        <i class="fa fa-code"></i>
+                        <span class="icon-label">Projects</span></a></li>
+                        <li><a href="http://sanghan.me/pages/skills.html">
+                        <i class="fa fa-graduation-cap"></i>
+                        <span class="icon-label">Skills</span></a></li>
+                        <li><a href="http://sanghan.me/pages/tools.html">
+                        <i class="fa fa-wrench"></i>
+                        <span class="icon-label">Tools</span></a></li>
+            <ul class="nav navbar-nav navbar-right">
+                <!--Dropdown Categories-->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li  class="active" >
+                        <a href="http://sanghan.me/category/articles.html">Articles</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/programming.html">Programming</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/quotes.html">Quotes</a></li>
+                        <li >
+                        <a href="http://sanghan.me/category/tumblr.html">Tumblr</a></li>
+                    </ul>
+                    </li>
+
+<!-- Disabled
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+</ul>
+-->
+
+
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+
+
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <ol class="breadcrumb">
+                <li><a href="http://sanghan.me" title="LightQuanta"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="http://sanghan.me/category/articles.html" title="Articles">Articles</a></li>
+                <li class="active">The State Sexy in Data&nbsp;Visualization</li>
+            </ol>
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://sanghan.me/blog/2015/06/sexyviz/"
+                       rel="bookmark"
+                       title="Permalink to The State Sexy in Data Visualization">
+                        The State Sexy in Data&nbsp;Visualization
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-primary">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-06-15T00:00:00-07:00"> Mon, 15 Jun 2015</time>
+    </span>
+
+        <span class="label label-success">Category</span>
+        <a href="http://sanghan.me/category/articles.html">Articles</a>
+
+
+<span class="label label-info">Tags</span>
+	<a href="http://sanghan.me/tag/python.html">Python</a>
+        /
+	<a href="http://sanghan.me/tag/data.html">Data</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                
+<div class="section" id="plots-from-san-francisco-crime-classification">
+<h2>Plots from San Francisco Crime&nbsp;Classification</h2>
+<p><a class="reference external" href="https://www.kaggle.com/sanghan/sf-crime/top-crimes-zones">Link to Original Kaggle&nbsp;Script</a></p>
+<p><img alt="data_viz" src="http://i.imgur.com/zA9QfJv.png" /></p>
+
+<div class="section" id="but-first">
+<h3>But&nbsp;First!</h3>
+</div>
+</div>
+<div class="section" id="javascript-charts">
+<h2>1. JavaScript&nbsp;Charts</h2>
+<p>JavaScript has so many great timeless visualization eye candy, leading
+to a plethora of classic&nbsp;looks.</p>
+<p><img alt="j1" src="http://i.imgur.com/ymt3JxA.png" /></p>
+<p><img alt="j2" src="http://mag.splashnology.com/uploads/2010/01/chart.jpg" /></p>
+<div class="section" id="javascript-the-denise-richards-of-viz">
+<h3>Javascript: The Denise Richards of&nbsp;Viz</h3>
+<ul class="simple">
+<li>Classic Beautiful&nbsp;Design</li>
+<li>Still beautiful after all those&nbsp;ears</li>
+<li>That feeling when watching <tt class="docutils literal">Wild Things</tt> as a&nbsp;kid</li>
+</ul>
+<p><img alt="denise" src="http://images.static-bluray.com/reviews/19_5.jpg" /></p>
+</div>
+</div>
+<div class="section" id="r-charts">
+<h2>2. R&nbsp;Charts</h2>
+<ul class="simple">
+<li>Although maybe not the best general purpose&nbsp;language.</li>
+<li>R just does so many things right on the&nbsp;visualization.</li>
+</ul>
+<p><img alt="r1" src="http://media.tumblr.com/tumblr_mdgohwzxzR1rwydv6.png" /></p>
+<ul class="simple">
+<li>Simple <span class="caps">API</span> Design that continues to be the standard&nbsp;reference</li>
+</ul>
+<p><img alt="r2" src="http://weblab.com.cityu.edu.hk/blog/chengjun/files/2011/09/Fixed-telephone-use.png" /></p>
+<div class="section" id="r-the-mila-kunis-of-viz">
+<h3>R: The Mila Kunis of&nbsp;Viz</h3>
+<p><img alt="mila" src="http://41.media.tumblr.com/tumblr_m6pmn7jD6z1qm9flro1_500.jpg" /></p>
+</div>
+</div>
+<div class="section" id="julia">
+<h2>3.&nbsp;Julia</h2>
+<p><img alt="julia1" src="http://julialang.org/images/gadfly-demo.png" /></p>
+<div class="section" id="the-new-hottness">
+<h3>The New&nbsp;Hottness</h3>
+<p><img alt="julia2" src="https://plot.ly/~PlotBot/32/kale-radishes-carrots.png" /></p>
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/T0ZAe">Getting to be this guy</blockquote>
+<script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script></div>
+</div>
+<div class="section" id="let-s-do-python-sexy">
+<h2>Let&#8217;s Do Python&nbsp;Sexy</h2>
+<div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">os</span>
+</span><span id="line-2"><span class="kn">import</span> <span class="nn">io</span>
+</span><span id="line-3"><span class="kn">import</span> <span class="nn">codecs</span>
+</span><span id="line-4"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</span><span id="line-5"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+</span><span id="line-6"><span class="kn">import</span> <span class="nn">string</span>
+</span><span id="line-7"><span class="kn">import</span> <span class="nn">operator</span>
+</span><span id="line-8"><span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span><span class="p">,</span> <span class="n">is_zipfile</span>
+</span><span id="line-9">
+</span><span id="line-10"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+</span><span id="line-11"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+</span><span id="line-12"><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+</span><span id="line-13"><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">capwords</span>
+</span><span id="line-14">
+</span><span id="line-15"><span class="c"># Plotting Options</span>
+</span><span id="line-16"><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s">&quot;whitegrid&quot;</span><span class="p">)</span>
+</span><span id="line-17"><span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
+</span><span id="line-18">
+</span><span id="line-19"><span class="k">def</span> <span class="nf">plot_bar</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+</span><span id="line-20">    <span class="n">p</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="line-21">        <span class="s">&#39;Set2&#39;</span><span class="p">,</span> <span class="s">&#39;Paired&#39;</span><span class="p">,</span> <span class="s">&#39;colorblind&#39;</span><span class="p">,</span> <span class="s">&#39;husl&#39;</span><span class="p">,</span>
+</span><span id="line-22">        <span class="s">&#39;Set1&#39;</span><span class="p">,</span> <span class="s">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="s">&#39;RdYlGn&#39;</span><span class="p">,</span> <span class="s">&#39;spectral&#39;</span>
+</span><span id="line-23">    <span class="p">]</span>
+</span><span id="line-24">    <span class="n">bar</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">&#39;barh&#39;</span><span class="p">,</span>
+</span><span id="line-25">                  <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+</span><span id="line-26">                  <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+</span><span id="line-27">                  <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span>
+</span><span id="line-28">                  <span class="n">stacked</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+</span><span id="line-29">                  <span class="n">width</span><span class="o">=.</span><span class="mi">85</span><span class="p">,</span>
+</span><span id="line-30">                  <span class="n">colors</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)),</span>
+</span><span id="line-31">    <span class="p">)</span>
+</span><span id="line-32">    <span class="n">bar</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span><span id="line-33">    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span><span id="line-34">
+</span><span id="line-35"><span class="k">def</span> <span class="nf">plot_top_crimes</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+</span><span id="line-36">    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">methodcaller</span><span class="p">(</span><span class="s">&#39;lower&#39;</span><span class="p">))</span>
+</span><span id="line-37">
+</span><span id="line-38">    <span class="n">by_col</span>   <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">column</span><span class="p">)</span>
+</span><span id="line-39">    <span class="n">col_freq</span> <span class="o">=</span> <span class="n">by_col</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</span><span id="line-40">    <span class="n">col_freq</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">col_freq</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">capwords</span><span class="p">)</span>
+</span><span id="line-41">
+</span><span id="line-42">    <span class="n">col_freq</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</span><span id="line-43">
+</span><span id="line-44">    <span class="n">plot_bar</span><span class="p">(</span><span class="n">col_freq</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span> <span class="n">items</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)],</span> <span class="n">title</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+</span><span id="line-45">
+</span><span id="line-46">
+</span><span id="line-47"><span class="k">def</span> <span class="nf">extract_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+</span><span id="line-48">    <span class="n">zp</span> <span class="o">=</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</span><span id="line-49">    <span class="n">csv</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">zp</span><span class="o">.</span><span class="n">namelist</span><span class="p">()</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">f</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;.csv&#39;</span><span class="p">]</span>
+</span><span id="line-50">    <span class="k">return</span> <span class="n">zp</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">csv</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+</span><span id="line-51">
+</span><span id="line-52"><span class="nd">@contextmanager</span>
+</span><span id="line-53"><span class="k">def</span> <span class="nf">zip_csv_opener</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+</span><span id="line-54">    <span class="n">fp</span> <span class="o">=</span> <span class="n">extract_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_zipfile</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span> <span class="k">else</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span>
+</span><span id="line-55">    <span class="k">try</span><span class="p">:</span>
+</span><span id="line-56">        <span class="k">yield</span> <span class="n">fp</span>
+</span><span id="line-57">    <span class="k">finally</span><span class="p">:</span>
+</span><span id="line-58">        <span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span id="line-59">
+</span><span id="line-60"><span class="k">def</span> <span class="nf">input_transformer</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+</span><span id="line-61">    <span class="k">with</span> <span class="n">zip_csv_opener</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+</span><span id="line-62">        <span class="n">raw</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+</span><span id="line-63">    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">raw</span><span class="p">),</span> <span class="n">parse_dates</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s">&#39;NONE&#39;</span><span class="p">)</span>
+</span><span id="line-64">
+</span><span id="line-65"><span class="n">df</span> <span class="o">=</span> <span class="n">input_transformer</span><span class="p">(</span><span class="s">&#39;../input/train.csv.zip&#39;</span><span class="p">)</span>
+</span><span id="line-66">
+</span><span id="line-67"><span class="n">plot_top_crimes</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s">&#39;category&#39;</span><span class="p">,</span>   <span class="s">&#39;Top Crime Categories&#39;</span><span class="p">,</span>        <span class="s">&#39;category.png&#39;</span><span class="p">)</span>
+</span><span id="line-68"><span class="n">plot_top_crimes</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s">&#39;resolution&#39;</span><span class="p">,</span> <span class="s">&#39;Top Crime Resolutions&#39;</span><span class="p">,</span>       <span class="s">&#39;resolution.png&#39;</span><span class="p">)</span>
+</span><span id="line-69"><span class="n">plot_top_crimes</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s">&#39;pddistrict&#39;</span><span class="p">,</span> <span class="s">&#39;Police Department Activity&#39;</span><span class="p">,</span>  <span class="s">&#39;police.png&#39;</span><span class="p">)</span>
+</span><span id="line-70"><span class="n">plot_top_crimes</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s">&#39;dayofweek&#39;</span><span class="p">,</span>  <span class="s">&#39;Days of the Week&#39;</span><span class="p">,</span>            <span class="s">&#39;weekly.png&#39;</span><span class="p">)</span>
+</span><span id="line-71"><span class="n">plot_top_crimes</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s">&#39;address&#39;</span><span class="p">,</span>    <span class="s">&#39;Top Crime Locations&#39;</span><span class="p">,</span>         <span class="s">&#39;location.png&#39;</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</span><span id="line-72"><span class="n">plot_top_crimes</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s">&#39;descript&#39;</span><span class="p">,</span>   <span class="s">&#39;Descriptions&#39;</span><span class="p">,</span>                <span class="s">&#39;descript.png&#39;</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</span></pre></div>
+<p><img alt="1" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/category.png" /> <img alt="2" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/descript.png" /> <img alt="3" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/location.png" /> <img alt="4" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/police.png" /> <img alt="5" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/resolution.png" /> <img alt="6" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/weekly.png" /></p>
+</div>
+
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'sanghan'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'sexyviz';
+                var disqus_url = 'http://sanghan.me/blog/2015/06/sexyviz/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="http://github.com/jjangsangy"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+                <li class="list-group-item"><a href="http://facebook.com/jjangsangy"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+                <li class="list-group-item"><a href="https://twitter.com/jjangsangy"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+                <li class="list-group-item"><a href="https://www.linkedin.com/pub/sang-han/40/9a8/323"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+                <li class="list-group-item"><a href="http://jjangsangy.tumblr.com"><i class="fa fa-tumblr-square fa-lg"></i> Tumblr</a></li>
+                <li class="list-group-item"><a href="http://pinterest.com/jjangsangy"><i class="fa fa-pinterest-square fa-lg"></i> Pinterest</a></li>
+              </ul>
+            </li>
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="http://sanghan.me/blog/2015/06/sexyviz/">
+                            The State Sexy in Data&nbsp;Visualization
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://sanghan.me/blog/2015/05/recommendation_engine/">
+                            The Anatomy of a Recommendation&nbsp;Engine
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://sanghan.me/blog/2015/03/machine_learning_notes/">
+                            Machine Learning&nbsp;Notes
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://sanghan.me/blog/2014/12/python_tricks/">
+                            Useful Python&nbsp;Tricks
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://sanghan.me/blog/2014/09/sieve/">
+                            Prime Sieves and Python Data&nbsp;Structures
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+        <div id="gh_repos">
+            <p class="list-group-item">Status updating...</p>
+        </div>
+            <a href="https://github.com/jjangsangy">@jjangsangy</a> on GitHub
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 LightQuanta
+            &middot; Sang Han         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://sanghan.me/theme/js/respond.min.js"></script>
+<script src="http://sanghan.me/static/js/headroom.min.js"></script>
+<script src="http://sanghan.me/static/js/site.js"></script>
+
+    <!-- GitHub JS -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (!window.jXHR) {
+                var jxhr = document.createElement('script');
+                jxhr.type = 'text/javascript';
+                jxhr.src = 'http://sanghan.me/theme/js/jXHR.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(jxhr, s);
+            }
+
+            github.showRepos({
+                user: 'jjangsangy',
+                count: 10,
+                skip_forks: true,
+                target: '#gh_repos'
+            });
+        });
+    </script>
+    <script src="http://sanghan.me/theme/js/github.js" type="text/javascript"></script>
+    <!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'sanghan'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-51412306-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+</body>
+</html>

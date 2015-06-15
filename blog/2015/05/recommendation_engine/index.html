@@ -210,29 +210,27 @@ i^{\*} = argmax\_{i -I(u)} S(u,i)
 <div class="section" id="problem-statement">
 <h2>Problem&nbsp;statement</h2>
 <p>The recommendation problem in its most basic form is quite simple to&nbsp;define:</p>
-<pre class="literal-block">
-|-------------------+-----+-----+-----+-----+-----|
+<p><tt class="docutils literal">`
 | user_id, movie_id | m_1 | m_2 | m_3 | m_4 | m_5 |
-|-------------------+-----+-----+-----+-----+-----|
-| u_1               | ?   | ?   | 4   | ?   | 1   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_2               | 3   | ?   | ?   | 2   | 2   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_3               | 3   | ?   | ?   | ?   | ?   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_4               | ?   | 1   | 2   | 1   | 1   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_5               | ?   | ?   | ?   | ?   | ?   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_6               | 2   | ?   | 2   | ?   | ?   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_7               | ?   | ?   | ?   | ?   | ?   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_8               | 3   | 1   | 5   | ?   | ?   |
-|-------------------+-----+-----+-----+-----+-----|
-| u_9               | ?   | ?   | ?   | ?   | 2   |
-|-------------------+-----+-----+-----+-----+-----|
-</pre>
+<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
+| u_1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | 4&nbsp;&nbsp; | ?&nbsp;&nbsp; | 1&nbsp;&nbsp; |
+<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
+| u_2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 3&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | 2&nbsp;&nbsp; | 2&nbsp;&nbsp; |
+<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
+| u_3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 3&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; |
+<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
+| u_4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ?&nbsp;&nbsp; | 1&nbsp;&nbsp; | 2&nbsp;&nbsp; | 1&nbsp;&nbsp; | 1&nbsp;&nbsp; |
+<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
+| u_5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; |
+<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
+| u_6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 2&nbsp;&nbsp; | ?&nbsp;&nbsp; | 2&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; |
+<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
+| u_7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; |
+<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
+| u_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 3&nbsp;&nbsp; | 1&nbsp;&nbsp; | 5&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; |
+<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
+| u_9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | 2&nbsp;&nbsp; |
+`</tt></p>
 <p><em>Given a partially filled matrix of ratings (:math:`|U|x|I|`), estimate
 the missing&nbsp;values.</em></p>
 <div class="section" id="pandas-a-python-data-analysis-library">
@@ -1119,6 +1117,11 @@ System.” Journal of Machine Learning Research 6, no. 2 (2006):&nbsp;1265.</li>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://sanghan.me/blog/2015/06/sexyviz/">
+                            The State Sexy in Data&nbsp;Visualization
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://sanghan.me/blog/2015/05/recommendation_engine/">
                             The Anatomy of a Recommendation&nbsp;Engine
                         </a>
@@ -1136,11 +1139,6 @@ System.” Journal of Machine Learning Research 6, no. 2 (2006):&nbsp;1265.</li>
                     <li class="list-group-item">
                         <a href="http://sanghan.me/blog/2014/09/sieve/">
                             Prime Sieves and Python Data&nbsp;Structures
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
-                            Swift Program is Swift, Except When it&#8217;s&nbsp;Not
                         </a>
                     </li>
                 </ul>
