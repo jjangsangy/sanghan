@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LightQuanta</title><link>http://sanghan.me/</link><description></description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 15 Jun 2015 00:00:00 -0700</lastBuildDate><item><title>The State Sexy in Data Visualization</title><link>http://sanghan.me/blog/2015/06/sexyviz/</link><description>
-&lt;div class="section" id="plots-from-san-francisco-crime-classification"&gt;
-&lt;h2&gt;Plots from San Francisco Crime&amp;nbsp;Classification&lt;/h2&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LightQuanta</title><link>http://sanghan.me/</link><description></description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 15 Jun 2015 00:00:00 -0700</lastBuildDate><item><title>Data Visualization by Programming Language</title><link>http://sanghan.me/blog/2015/06/visualizaitions/</link><description>
+&lt;div class="section" id="san-francisco-crime-classification"&gt;
+&lt;h2&gt;San Francisco Crime&amp;nbsp;Classification&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://www.kaggle.com/sanghan/sf-crime/top-crimes-zones"&gt;Link to Original Kaggle&amp;nbsp;Script&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="data_viz" src="http://i.imgur.com/zA9QfJv.png" /&gt;&lt;/p&gt;
 
-&lt;div class="section" id="but-first"&gt;
-&lt;h3&gt;But&amp;nbsp;First!&lt;/h3&gt;
-&lt;/div&gt;
+&lt;p&gt;So Lately I&amp;#8217;ve been playing around with visualizations on&amp;nbsp;Kaggle.&lt;/p&gt;
+&lt;p&gt;Here is one for &lt;span class="caps"&gt;SF&lt;/span&gt; Crime classifications which has been getting some&amp;nbsp;attention.&lt;/p&gt;
+&lt;p&gt;For fun, I thought I&amp;#8217;d do a comparison of the types of visualization
+platforms available from multiple programming&amp;nbsp;languages.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="javascript-charts"&gt;
 &lt;h2&gt;1. JavaScript&amp;nbsp;Charts&lt;/h2&gt;
@@ -15,14 +16,13 @@
 to a plethora of classic&amp;nbsp;looks.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="j1" src="http://i.imgur.com/ymt3JxA.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="j2" src="http://mag.splashnology.com/uploads/2010/01/chart.jpg" /&gt;&lt;/p&gt;
-&lt;div class="section" id="javascript-the-denise-richards-of-viz"&gt;
-&lt;h3&gt;Javascript: The Denise Richards of&amp;nbsp;Viz&lt;/h3&gt;
+&lt;div class="section" id="javascript"&gt;
+&lt;h3&gt;Javascript&lt;/h3&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Classic Beautiful&amp;nbsp;Design&lt;/li&gt;
 &lt;li&gt;Still beautiful after all those&amp;nbsp;ears&lt;/li&gt;
 &lt;li&gt;That feeling when watching &lt;tt class="docutils literal"&gt;Wild Things&lt;/tt&gt; as a&amp;nbsp;kid&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img alt="denise" src="http://images.static-bluray.com/reviews/19_5.jpg" /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="r-charts"&gt;
@@ -36,22 +36,14 @@ to a plethora of classic&amp;nbsp;looks.&lt;/p&gt;
 &lt;li&gt;Simple &lt;span class="caps"&gt;API&lt;/span&gt; Design that continues to be the standard&amp;nbsp;reference&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img alt="r2" src="http://weblab.com.cityu.edu.hk/blog/chengjun/files/2011/09/Fixed-telephone-use.png" /&gt;&lt;/p&gt;
-&lt;div class="section" id="r-the-mila-kunis-of-viz"&gt;
-&lt;h3&gt;R: The Mila Kunis of&amp;nbsp;Viz&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="mila" src="http://41.media.tumblr.com/tumblr_m6pmn7jD6z1qm9flro1_500.jpg" /&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="julia"&gt;
 &lt;h2&gt;3.&amp;nbsp;Julia&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="julia1" src="http://julialang.org/images/gadfly-demo.png" /&gt;&lt;/p&gt;
-&lt;div class="section" id="the-new-hottness"&gt;
-&lt;h3&gt;The New&amp;nbsp;Hottness&lt;/h3&gt;
 &lt;p&gt;&lt;img alt="julia2" src="https://plot.ly/~PlotBot/32/kale-radishes-carrots.png" /&gt;&lt;/p&gt;
-&lt;blockquote class="imgur-embed-pub" lang="en" data-id="a/T0ZAe"&gt;Getting to be this guy&lt;/blockquote&gt;
-&lt;script async src="//s.imgur.com/min/embed.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="section" id="let-s-do-python-sexy"&gt;
-&lt;h2&gt;Let&amp;#8217;s Do Python&amp;nbsp;Sexy&lt;/h2&gt;
+&lt;div class="section" id="python"&gt;
+&lt;h2&gt;4.&amp;nbsp;Python&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;io&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;codecs&lt;/span&gt;
@@ -127,7 +119,7 @@ to a plethora of classic&amp;nbsp;looks.&lt;/p&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img alt="1" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/category.png" /&gt; &lt;img alt="2" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/descript.png" /&gt; &lt;img alt="3" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/location.png" /&gt; &lt;img alt="4" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/police.png" /&gt; &lt;img alt="5" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/resolution.png" /&gt; &lt;img alt="6" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/weekly.png" /&gt;&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Mon, 15 Jun 2015 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2015-06-15:blog/2015/06/sexyviz/</guid><category>Python</category><category>Data</category></item><item><title>The Anatomy of a Recommendation Engine</title><link>http://sanghan.me/blog/2015/05/recommendation_engine/</link><description>&lt;p&gt;&lt;img alt="Recommendation Graph" src="http://sanghan.me/img/recommendation.png" /&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Mon, 15 Jun 2015 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2015-06-15:blog/2015/06/visualizaitions/</guid><category>Python</category><category>Data</category></item><item><title>The Anatomy of a Recommendation Engine</title><link>http://sanghan.me/blog/2015/05/recommendation_engine/</link><description>&lt;p&gt;&lt;img alt="Recommendation Graph" src="http://sanghan.me/img/recommendation.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Recommenders have been around since at least 1992. Today we see
 different flavours of recommenders, deployed across different&amp;nbsp;verticals:&lt;/p&gt;
 &lt;ul class="simple"&gt;
