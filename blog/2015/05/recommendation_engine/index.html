@@ -844,22 +844,7 @@ aggregation. We can extract a ratings matrix as&nbsp;follows:</p>
 </span><span id="line-2"><span class="n">ratings_mtx_df</span> <span class="o">=</span> <span class="n">movielens_train</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s">&#39;rating&#39;</span><span class="p">,</span>
 </span><span id="line-3">                                             <span class="n">index</span><span class="o">=</span><span class="s">&#39;user_id&#39;</span><span class="p">,</span>
 </span><span id="line-4">                                             <span class="n">columns</span><span class="o">=</span><span class="s">&#39;movie_id&#39;</span><span class="p">)</span>
-</span><span id="line-5"><span class="n">ratings_mtx_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </span></pre></div>
-<pre class="literal-block">
----------------------------------------------------------------------------
-
-TypeError                                 Traceback (most recent call last)
-
-&lt;ipython-input-37-994c2713cd4e&gt; in &lt;module&gt;()
-      2 ratings_mtx_df = movielens_train.pivot_table(values='rating',
-      3                                              index='user_id',
-----&gt; 4                                              columns='movie_id')
-      5 ratings_mtx_df.head(3)
-
-
-TypeError: pivot_table() got an unexpected keyword argument 'index'
-</pre>
 <div class="highlight"><pre><span id="line-1"><span class="c"># grab another subsquare of the ratings matrix to actually diplay some real entries!</span>
 </span><span id="line-2"><span class="n">ratings_mtx_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">11</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span> <span class="mi">1196</span><span class="p">:</span><span class="mi">1200</span><span class="p">]</span>
 </span></pre></div>
