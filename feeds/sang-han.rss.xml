@@ -111,7 +111,14 @@ to a plethora of classic&amp;nbsp;looks.&lt;/p&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img alt="1" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/category.png" /&gt; &lt;img alt="2" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/descript.png" /&gt; &lt;img alt="3" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/location.png" /&gt; &lt;img alt="4" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/police.png" /&gt; &lt;img alt="5" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/resolution.png" /&gt; &lt;img alt="6" src="https://www.kaggle.io/svf/14948/cacaffdaa90045329ba36cb79bcc17d0/weekly.png" /&gt;&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Mon, 15 Jun 2015 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2015-06-15:blog/2015/06/visualizaitions/</guid><category>Python</category><category>Data</category></item><item><title>The Anatomy of a Recommendation Engine</title><link>http://sanghan.me/blog/2015/05/recommendation_engine/</link><description>&lt;p&gt;&lt;img alt="Recommendation Graph" src="http://sanghan.me/img/recommendation.png" /&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Mon, 15 Jun 2015 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2015-06-15:blog/2015/06/visualizaitions/</guid><category>Python</category><category>Data</category></item><item><title>The Anatomy of a Recommendation Engine</title><link>http://sanghan.me/blog/2015/05/recommendation_engine/</link><description>&lt;p&gt;A recommendation engine is a software system that analyzes large amounts of
+transactional data and distills personal profiles to present its users with
+relevant&amp;nbsp;products/information/content.&lt;/p&gt;
+&lt;p&gt;We see them in a wide variety of domains and applications and
+they help us navigate the overwhelming choice that we face&amp;nbsp;everyday.&lt;/p&gt;
+&lt;p&gt;This tutorial will formally introduce the concepts and definitions of the
+recommendation systems literature and will quickly move on to an iterative process for building a minimal reco&amp;nbsp;engine.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Recommendation Graph" src="http://sanghan.me/img/recommendation.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Recommenders have been around since at least 1992. Today we see
 different flavours of recommenders, deployed across different&amp;nbsp;verticals:&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -161,36 +168,104 @@ items not yet seen by user &lt;span class="math"&gt;\(u\)&lt;/span&gt;.&lt;/li&g
 &lt;h2&gt;Goal of a recommendation&amp;nbsp;system&lt;/h2&gt;
 &lt;div class="math"&gt;
 \begin{equation*}
-i^{\*} = argmax\_{i -I(u)} S(u,i)
+i^{*} = argmax_{i \in -I(u)} S(u,i), \forall{u \in U}
 \end{equation*}
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="problem-statement"&gt;
 &lt;h2&gt;Problem&amp;nbsp;statement&lt;/h2&gt;
 &lt;p&gt;The recommendation problem in its most basic form is quite simple to&amp;nbsp;define:&lt;/p&gt;
-&lt;p&gt;&lt;tt class="docutils literal"&gt;`
-| user_id, movie_id | m_1 | m_2 | m_3 | m_4 | m_5 |
-&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
-| u_1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | 4&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | 1&amp;nbsp;&amp;nbsp; |
-&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
-| u_2&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | 3&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | 2&amp;nbsp;&amp;nbsp; | 2&amp;nbsp;&amp;nbsp; |
-&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
-| u_3&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | 3&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; |
-&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
-| u_4&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | 1&amp;nbsp;&amp;nbsp; | 2&amp;nbsp;&amp;nbsp; | 1&amp;nbsp;&amp;nbsp; | 1&amp;nbsp;&amp;nbsp; |
-&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
-| u_5&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; |
-&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
-| u_6&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | 2&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | 2&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; |
-&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
-| u_7&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; |
-&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
-| u_8&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | 3&amp;nbsp;&amp;nbsp; | 1&amp;nbsp;&amp;nbsp; | 5&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; |
-&lt;span class="pre"&gt;|-------------------|-----|-----|-----|-----|-----|&lt;/span&gt;
-| u_9&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | ?&amp;nbsp;&amp;nbsp; | 2&amp;nbsp;&amp;nbsp; |
-`&lt;/tt&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Given a partially filled matrix of ratings (:math:`|U|x|I|`), estimate
-the missing&amp;nbsp;values.&lt;/em&gt;&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="37%" /&gt;
+&lt;col width="13%" /&gt;
+&lt;col width="13%" /&gt;
+&lt;col width="13%" /&gt;
+&lt;col width="13%" /&gt;
+&lt;col width="13%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;user_id, movie_id&lt;/th&gt;
+&lt;th class="head"&gt;m_1&lt;/th&gt;
+&lt;th class="head"&gt;m_2&lt;/th&gt;
+&lt;th class="head"&gt;m_3&lt;/th&gt;
+&lt;th class="head"&gt;m_4&lt;/th&gt;
+&lt;th class="head"&gt;m_5&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;u_1&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;u_2&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;u_3&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;u_4&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;u_5&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;u_6&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;u_7&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;u_8&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;u_9&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;?&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Given a partially filled matrix of&amp;nbsp;ratings&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{equation*}
+|U|x|I|
+\end{equation*}
+&lt;/div&gt;
+&lt;p&gt;Estimate the missing&amp;nbsp;values.&lt;/p&gt;
 &lt;div class="section" id="pandas-a-python-data-analysis-library"&gt;
 &lt;h3&gt;pandas: A Python Data Analysis&amp;nbsp;Library&lt;/h3&gt;
 &lt;/div&gt;
@@ -252,8 +327,9 @@ having to switch to a more domain specific language like&amp;nbsp;R.&lt;/em&gt;&
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="section" id="the-movielens-dataset-loading-and-first-look"&gt;
 &lt;h3&gt;The MovieLens dataset: loading and first&amp;nbsp;look&lt;/h3&gt;
-&lt;p&gt;Loading of the MovieLens dataset is based on the intro chapter of
-&amp;#8216;Python for Data&amp;nbsp;Analysis&amp;quot;.&lt;/p&gt;
+&lt;p&gt;MovieLens from GroupLens Research: [grouplens.org](&lt;a class="reference external" href="http://www.grouplens.org/"&gt;http://www.grouplens.org/&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;The MovieLens 1M data set contains 1 million ratings collected from 6000 users
+on 4000&amp;nbsp;movies.&lt;/p&gt;
 &lt;p&gt;The MovieLens data is spread across three files. We&amp;#8217;ll load each file
 using the &lt;tt class="docutils literal"&gt;pd.read_table&lt;/tt&gt; function:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="n"&gt;users&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;data/ml-1m/users.dat&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;

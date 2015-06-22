@@ -18,13 +18,13 @@
 
         <meta name="author" content="Sang Han" />
         <meta name="keywords" content="Machine Learning,Python,Math" />
-        <meta name="description" content="Recommenders have been around since at least 1992. Today we see different flavours of recommenders, deployed across different verticals: Amazon Netflix Facebook Last.fm. What exactly do they do? Definitions from the literature In a typical recommender system people provide recommendations as inputs, which the system then aggregates and directs to appropriate recipients. — Resnick and Varian, 1997 Collaborative filtering simply means that people collaborate to help one another perform filtering by recording their reactions to documents they read. — Goldberg et al, 1992 In its most common formulation, the recommendation problem is reduced to the problem of estimating ratings for the ..." />
+        <meta name="description" content="A recommendation engine is a software system that analyzes large amounts of transactional data and distills personal profiles to present its users with relevant products/information/content. We see them in a wide variety of domains and applications and they help us navigate the overwhelming choice that we face everyday. This tutorial will formally introduce the concepts and definitions of the recommendation systems literature and will quickly move on to an iterative process for building a minimal reco engine. Recommenders have been around since at least 1992. Today we see different flavours of recommenders, deployed across different verticals: Amazon Netflix ..." />
 
         <meta property="og:site_name" content="LightQuanta" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="The Anatomy of a Recommendation Engine"/>
         <meta property="og:url" content="http://sanghan.me/blog/2015/05/recommendation_engine/"/>
-        <meta property="og:description" content="Recommenders have been around since at least 1992. Today we see different flavours of recommenders, deployed across different verticals: Amazon Netflix Facebook Last.fm. What exactly do they do? Definitions from the literature In a typical recommender system people provide recommendations as inputs, which the system then aggregates and directs to appropriate recipients. — Resnick and Varian, 1997 Collaborative filtering simply means that people collaborate to help one another perform filtering by recording their reactions to documents they read. — Goldberg et al, 1992 In its most common formulation, the recommendation problem is reduced to the problem of estimating ratings for the ..."/>
+        <meta property="og:description" content="A recommendation engine is a software system that analyzes large amounts of transactional data and distills personal profiles to present its users with relevant products/information/content. We see them in a wide variety of domains and applications and they help us navigate the overwhelming choice that we face everyday. This tutorial will formally introduce the concepts and definitions of the recommendation systems literature and will quickly move on to an iterative process for building a minimal reco engine. Recommenders have been around since at least 1992. Today we see different flavours of recommenders, deployed across different verticals: Amazon Netflix ..."/>
         <meta property="article:published_time" content="2015-05-27" />
             <meta property="article:section" content="Articles" />
             <meta property="article:tag" content="Machine Learning" />
@@ -153,7 +153,14 @@
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p><img alt="Recommendation Graph" src="http://sanghan.me/img/recommendation.png" /></p>
+                <p>A recommendation engine is a software system that analyzes large amounts of
+transactional data and distills personal profiles to present its users with
+relevant&nbsp;products/information/content.</p>
+<p>We see them in a wide variety of domains and applications and
+they help us navigate the overwhelming choice that we face&nbsp;everyday.</p>
+<p>This tutorial will formally introduce the concepts and definitions of the
+recommendation systems literature and will quickly move on to an iterative process for building a minimal reco&nbsp;engine.</p>
+<p><img alt="Recommendation Graph" src="http://sanghan.me/img/recommendation.png" /></p>
 <p>Recommenders have been around since at least 1992. Today we see
 different flavours of recommenders, deployed across different&nbsp;verticals:</p>
 <ul class="simple">
@@ -203,36 +210,104 @@ items not yet seen by user <span class="math">\(u\)</span>.</li>
 <h2>Goal of a recommendation&nbsp;system</h2>
 <div class="math">
 \begin{equation*}
-i^{\*} = argmax\_{i -I(u)} S(u,i)
+i^{*} = argmax_{i \in -I(u)} S(u,i), \forall{u \in U}
 \end{equation*}
 </div>
 </div>
 <div class="section" id="problem-statement">
 <h2>Problem&nbsp;statement</h2>
 <p>The recommendation problem in its most basic form is quite simple to&nbsp;define:</p>
-<p><tt class="docutils literal">`
-| user_id, movie_id | m_1 | m_2 | m_3 | m_4 | m_5 |
-<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
-| u_1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | 4&nbsp;&nbsp; | ?&nbsp;&nbsp; | 1&nbsp;&nbsp; |
-<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
-| u_2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 3&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | 2&nbsp;&nbsp; | 2&nbsp;&nbsp; |
-<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
-| u_3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 3&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; |
-<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
-| u_4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ?&nbsp;&nbsp; | 1&nbsp;&nbsp; | 2&nbsp;&nbsp; | 1&nbsp;&nbsp; | 1&nbsp;&nbsp; |
-<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
-| u_5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; |
-<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
-| u_6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 2&nbsp;&nbsp; | ?&nbsp;&nbsp; | 2&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; |
-<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
-| u_7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; |
-<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
-| u_8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 3&nbsp;&nbsp; | 1&nbsp;&nbsp; | 5&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; |
-<span class="pre">|-------------------|-----|-----|-----|-----|-----|</span>
-| u_9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | ?&nbsp;&nbsp; | 2&nbsp;&nbsp; |
-`</tt></p>
-<p><em>Given a partially filled matrix of ratings (:math:`|U|x|I|`), estimate
-the missing&nbsp;values.</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">user_id, movie_id</th>
+<th class="head">m_1</th>
+<th class="head">m_2</th>
+<th class="head">m_3</th>
+<th class="head">m_4</th>
+<th class="head">m_5</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>u_1</td>
+<td>?</td>
+<td>?</td>
+<td>4</td>
+<td>?</td>
+<td>1</td>
+</tr>
+<tr><td>u_2</td>
+<td>3</td>
+<td>?</td>
+<td>?</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr><td>u_3</td>
+<td>3</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr><td>u_4</td>
+<td>?</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr><td>u_5</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr><td>u_6</td>
+<td>2</td>
+<td>?</td>
+<td>2</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr><td>u_7</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr><td>u_8</td>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr><td>u_9</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>Given a partially filled matrix of&nbsp;ratings</p>
+<div class="math">
+\begin{equation*}
+|U|x|I|
+\end{equation*}
+</div>
+<p>Estimate the missing&nbsp;values.</p>
 <div class="section" id="pandas-a-python-data-analysis-library">
 <h3>pandas: A Python Data Analysis&nbsp;Library</h3>
 </div>
@@ -294,8 +369,9 @@ having to switch to a more domain specific language like&nbsp;R.</em></p>
 </span></pre></div>
 <div class="section" id="the-movielens-dataset-loading-and-first-look">
 <h3>The MovieLens dataset: loading and first&nbsp;look</h3>
-<p>Loading of the MovieLens dataset is based on the intro chapter of
-&#8216;Python for Data&nbsp;Analysis&quot;.</p>
+<p>MovieLens from GroupLens Research: [grouplens.org](<a class="reference external" href="http://www.grouplens.org/">http://www.grouplens.org/</a>)</p>
+<p>The MovieLens 1M data set contains 1 million ratings collected from 6000 users
+on 4000&nbsp;movies.</p>
 <p>The MovieLens data is spread across three files. We&#8217;ll load each file
 using the <tt class="docutils literal">pd.read_table</tt> function:</p>
 <div class="highlight"><pre><span id="line-1"><span class="n">users</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s">&#39;data/ml-1m/users.dat&#39;</span><span class="p">,</span>
