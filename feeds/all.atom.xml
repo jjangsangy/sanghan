@@ -72,6 +72,8 @@ birthday, I felt that it is refreshing to share something simple and&amp;nbsp;ar
 &lt;/span&gt;&lt;span id="line-25"&gt;
 &lt;/span&gt;&lt;span id="line-26"&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Be sure that you have the &lt;a class="reference external" href="http://stackoverflow.com/questions/19663986/getting-xkcd-plots-using-matplotlib"&gt;Humor Sans&lt;/a&gt; fontface and to clear your fontcache to get it to
+render correctly&amp;nbsp;:)&lt;/p&gt;
 &lt;/div&gt;
 </summary><category term="Programming"></category><category term="Birthday"></category><category term="Python"></category></entry><entry><title>Data Visualization by Programming Language</title><link href="http://sanghan.me/blog/2015/06/visualizaitions/" rel="alternate"></link><updated>2015-06-15T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-06-15:blog/2015/06/visualizaitions/</id><summary type="html">
 &lt;div class="section" id="san-francisco-crime-classification"&gt;
