@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/personal.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2015-07-05T00:00:00-07:00</updated><entry><title>Point Class</title><link href="http://sanghan.me/blog/2015/07/point_class/" rel="alternate"></link><updated>2015-07-05T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-07-05:blog/2015/07/point_class/</id><summary type="html">
+&lt;div class="section" id="constructing-my-first-point-class"&gt;
+&lt;h2&gt;Constructing my first Point&amp;nbsp;Class&lt;/h2&gt;
 &lt;p&gt;So I was showing someone how to build a &lt;cite&gt;Point Class&lt;/cite&gt; today, and
 realized that this is actually the first time I&amp;#8217;ve ever built&amp;nbsp;one.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="points" src="http://sanghan.me/img/point_classes.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Cheers!&lt;/p&gt;
 
-&lt;p&gt;So I was showing someone how to build a &lt;cite&gt;Point Class&lt;/cite&gt; today, and
-realized that this is actually the first time I&amp;#8217;ve ever built&amp;nbsp;one.&lt;/p&gt;
+&lt;!--  --&gt;
 &lt;blockquote&gt;
 As a quick sidenote, in programming, the Point Class is
 the quintiseential example class representing a single point in cartesian space.
@@ -42,8 +42,6 @@ birthday, I felt that it is refreshing to share something simple and&amp;nbsp;ar
 &lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-5"&gt;&lt;span class="mf"&gt;2.23606797749979&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Representing..&lt;/p&gt;
-&lt;p&gt;&lt;img alt="points" src="http://sanghan.me/img/point_classes.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Cheers!&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;span class="caps"&gt;P.S.&lt;/span&gt; Here&amp;#8217;s the code to generate the plot in a Jupyter/IPython notebook.&lt;/blockquote&gt;
@@ -74,4 +72,5 @@ birthday, I felt that it is refreshing to share something simple and&amp;nbsp;ar
 &lt;/span&gt;&lt;span id="line-25"&gt;
 &lt;/span&gt;&lt;span id="line-26"&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
 </summary><category term="Programming"></category><category term="Birthday"></category><category term="Python"></category></entry></feed>
