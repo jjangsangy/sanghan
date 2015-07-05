@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/sang-han.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2015-07-05T00:00:00-07:00</updated><entry><title>Point Class</title><link href="http://sanghan.me/blog/2015/07/point_class/" rel="alternate"></link><updated>2015-07-05T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-07-05:blog/2015/07/point_class/</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>LightQuanta</title><link href="http://sanghan.me/" rel="alternate"></link><link href="http://sanghan.me/feeds/sang-han.atom.xml" rel="self"></link><id>http://sanghan.me/</id><updated>2015-07-05T00:00:00-07:00</updated><entry><title>The Point Class</title><link href="http://sanghan.me/blog/2015/07/point_class/" rel="alternate"></link><updated>2015-07-05T00:00:00-07:00</updated><author><name>Sang Han</name></author><id>tag:sanghan.me,2015-07-05:blog/2015/07/point_class/</id><summary type="html">
 &lt;div class="section" id="constructing-my-first-point-class"&gt;
 &lt;h2&gt;Constructing my first Point&amp;nbsp;Class&lt;/h2&gt;
 &lt;p&gt;So I was showing someone how to build a &lt;cite&gt;Point Class&lt;/cite&gt; today, and
