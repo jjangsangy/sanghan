@@ -193,12 +193,37 @@ birthday, I felt that it is refreshing to share something simple and&nbsp;archet
 </span><span id="line-5"><span class="mf">2.23606797749979</span>
 </span></pre></div>
 <p>Representing..</p>
-<div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-</span><span id="line-2">
-</span><span id="line-3"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
-</span></pre></div>
-<p><img alt="points" src="http://sanghan.me/img/point_classes.png" /></p>
+<p><img alt="points" src="{filename}/img/point_classes.png" /></p>
 <p>Cheers!</p>
+<blockquote>
+<span class="caps">P.S.</span> Here&#8217;s the code to generate the plot in a Jupyter/IPython notebook.</blockquote>
+<div class="highlight"><pre><span id="line-1"><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+</span><span id="line-4"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+</span><span id="line-5">
+</span><span id="line-6"><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s">&quot;whitegrid&quot;</span><span class="p">)</span>
+</span><span id="line-7"><span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;lines.linewidth&quot;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">})</span>
+</span><span id="line-8">
+</span><span id="line-9"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="s">&#39;ro-&#39;</span><span class="p">)</span>
+</span><span id="line-10">
+</span><span id="line-11"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Point Classes&#39;</span><span class="p">)</span>
+</span><span id="line-12"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;X Axis&#39;</span><span class="p">)</span>
+</span><span id="line-13"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Y Axis&#39;</span><span class="p">)</span>
+</span><span id="line-14"><span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+</span><span id="line-15">
+</span><span id="line-16"><span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+</span><span id="line-17">    <span class="s">&#39;Point.distance(p1, p2)&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+</span><span id="line-18">    <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</span><span id="line-19"><span class="p">)</span>
+</span><span id="line-20"><span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">r&#39;p1&#39;</span><span class="p">)</span>
+</span><span id="line-21"><span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s">r&#39;p2&#39;</span><span class="p">)</span>
+</span><span id="line-22">
+</span><span id="line-23"><span class="n">plt</span><span class="o">.</span><span class="n">xkcd</span><span class="p">()</span>
+</span><span id="line-24"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span><span id="line-25">
+</span><span id="line-26"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></pre></div>
 
             </div>
             <!-- /.entry-content -->
