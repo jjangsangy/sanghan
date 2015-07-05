@@ -7,7 +7,7 @@ the quintiseential example class representing a single point in cartesian space.
 The &lt;cite&gt;Point Class&lt;/cite&gt; is usually used to teach &lt;cite&gt;Objects&lt;/cite&gt;  and &lt;cite&gt;Classes&lt;/cite&gt; in
 an introductory &lt;cite&gt;Object Oriented Programming&lt;/cite&gt; course in computer science.&lt;/blockquote&gt;
 &lt;p&gt;However, not ever having taken a computer science course, and this also being my
-birthday, I felt that it is refreshing to share something so archetypal on my&amp;nbsp;today!&lt;/p&gt;
+birthday, I felt that it is refreshing to share something simple and&amp;nbsp;archetypal.&lt;/p&gt;
 &lt;p&gt;So here it&amp;nbsp;is!&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;math&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;
