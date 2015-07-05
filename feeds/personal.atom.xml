@@ -44,7 +44,10 @@ birthday, I felt that it is refreshing to share something simple and&amp;nbsp;ar
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Cheers!&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;span class="caps"&gt;P.S.&lt;/span&gt; Here&amp;#8217;s the code to generate the plot in a Jupyter/IPython notebook.&lt;/blockquote&gt;
+&lt;cite&gt;&lt;span class="caps"&gt;P.S.&lt;/span&gt;&lt;/cite&gt;
+Here&amp;#8217;s the code to generate the plot in a &lt;cite&gt;Jupyter/IPython notebook&lt;/cite&gt;.
+Be sure that you have the &lt;a class="reference external" href="http://stackoverflow.com/questions/19663986/getting-xkcd-plots-using-matplotlib"&gt;Humor Sans&lt;/a&gt; fontface and to clear your fontcache to get it to
+render correctly :)&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
@@ -72,7 +75,5 @@ birthday, I felt that it is refreshing to share something simple and&amp;nbsp;ar
 &lt;/span&gt;&lt;span id="line-25"&gt;
 &lt;/span&gt;&lt;span id="line-26"&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Be sure that you have the &lt;a class="reference external" href="http://stackoverflow.com/questions/19663986/getting-xkcd-plots-using-matplotlib"&gt;Humor Sans&lt;/a&gt; fontface and to clear your fontcache to get it to
-render correctly&amp;nbsp;:)&lt;/p&gt;
 &lt;/div&gt;
 </summary><category term="Programming"></category><category term="Birthday"></category><category term="Python"></category></entry></feed>
