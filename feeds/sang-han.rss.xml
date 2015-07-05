@@ -42,6 +42,7 @@ birthday, I felt that it is refreshing to share something simple and&amp;nbsp;ar
 &lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img alt="points" src="http://sanghan.me/img/point_classes.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Sun, 05 Jul 2015 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2015-07-05:blog/2015/07/point_class/</guid><category>Programming</category><category>Birthday</category><category>Python</category></item><item><title>Data Visualization by Programming Language</title><link>http://sanghan.me/blog/2015/06/visualizaitions/</link><description>
 &lt;div class="section" id="san-francisco-crime-classification"&gt;
 &lt;h2&gt;San Francisco Crime&amp;nbsp;Classification&lt;/h2&gt;
