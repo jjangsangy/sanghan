@@ -41,12 +41,13 @@ birthday, I felt that it is refreshing to share something simple and&amp;nbsp;ar
 &lt;/span&gt;&lt;span id="line-3"&gt;
 &lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Point&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;distance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-5"&gt;&lt;span class="mf"&gt;2.23606797749979&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-6"&gt;
-&lt;/span&gt;&lt;span id="line-7"&gt; &lt;span class="sb"&gt;`P.S.`&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-8"&gt; &lt;span class="n"&gt;Here&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;s the code to generate the plot in a `Jupyter/IPython notebook`.&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-9"&gt; &lt;span class="n"&gt;Be&lt;/span&gt; &lt;span class="n"&gt;sure&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;have&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="sb"&gt;`Humor Sans`&lt;/span&gt;&lt;span class="n"&gt;_&lt;/span&gt; &lt;span class="n"&gt;fontface&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;clear&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;fontcache&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt;
-&lt;/span&gt;&lt;span id="line-10"&gt; &lt;span class="n"&gt;render&lt;/span&gt; &lt;span class="n"&gt;correctly&lt;/span&gt; &lt;span class="p"&gt;:)&lt;/span&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;!--  --&gt;
+&lt;blockquote&gt;
+&lt;cite&gt;&lt;span class="caps"&gt;P.S.&lt;/span&gt;&lt;/cite&gt;
+Here&amp;#8217;s the code to generate the plot in a &lt;cite&gt;Jupyter/IPython notebook&lt;/cite&gt;.
+Be sure that you have the &lt;a class="reference external" href="http://stackoverflow.com/questions/19663986/getting-xkcd-plots-using-matplotlib"&gt;Humor Sans&lt;/a&gt; fontface and to clear your fontcache to get it to
+render correctly :)&lt;/blockquote&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="c"&gt;# Set Output Type&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-2"&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
 &lt;/span&gt;&lt;span id="line-3"&gt;
