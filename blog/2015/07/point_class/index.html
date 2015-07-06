@@ -171,10 +171,10 @@ an introductory <cite>Object Oriented Programming</cite> course in computer scie
 <p>However, not ever having taken a computer science course, and this also being my
 birthday, I felt that it is refreshing to share something simple and&nbsp;archetypal.</p>
 <p>So here it&nbsp;is!</p>
-<div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight"><pre><span id="line-1"> <span class="kn">import</span> <span class="nn">math</span>
 </span><span id="line-2">
-</span><span id="line-3"><span class="k">class</span> <span class="nc">PointError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-</span><span id="line-4">    <span class="k">pass</span>
+</span><span id="line-3"> <span class="k">class</span> <span class="nc">PointError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+</span><span id="line-4">     <span class="k">pass</span>
 </span><span id="line-5">
 </span><span id="line-6"><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
 </span><span id="line-7">
@@ -187,9 +187,11 @@ birthday, I felt that it is refreshing to share something simple and&nbsp;archet
 </span><span id="line-14">
 </span><span id="line-15">    <span class="nd">@classmethod</span>
 </span><span id="line-16">    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
-</span><span id="line-17">        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">cls</span><span class="p">):</span>
-</span><span id="line-18">            <span class="k">raise</span> <span class="n">PointError</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%s</span><span class="s"> or </span><span class="si">%s</span><span class="s"> are not of class </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">cls</span><span class="p">))</span>
-</span><span id="line-19">        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">p1</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">p2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">p2</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="line-17">        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">cls</span><span class="p">):</span>
+</span><span id="line-18">            <span class="k">raise</span> <span class="n">PointError</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%s</span><span class="s"> is not of class </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">cls</span><span class="p">))</span>
+</span><span id="line-19">        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">cls</span><span class="p">):</span>
+</span><span id="line-20">            <span class="k">raise</span> <span class="n">PointError</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%s</span><span class="s"> is not of class </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">cls</span><span class="p">))</span>
+</span><span id="line-21">        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">p1</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">p2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">p2</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </span></pre></div>
 <p>Using the point class should be pretty&nbsp;trivial.</p>
 <div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
@@ -198,9 +200,34 @@ birthday, I felt that it is refreshing to share something simple and&nbsp;archet
 </span><span id="line-4"><span class="o">&gt;&gt;&gt;</span> <span class="n">Point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span>
 </span><span id="line-5"><span class="mf">2.23606797749979</span>
 </span></pre></div>
-<!--  -->
+<p>We also utilize inheritence in order to build a simple <tt class="docutils literal">PointError</tt> class.
+This means that passing anything other than an instance of our <tt class="docutils literal">Point</tt> class
+into the <tt class="docutils literal">distance()</tt> function will raise the following&nbsp;error.</p>
+<div class="highlight"><pre><span id="line-1"><span class="o">&gt;&gt;&gt;</span> <span class="n">Point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span><span id="line-2"><span class="o">---------------------------------------------------------------------------</span>
+</span><span id="line-3"><span class="n">PointError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+</span><span id="line-4"><span class="o">----&gt;</span><span class="mo">01</span> <span class="n">Point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span><span id="line-5">     <span class="mi">19</span>         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">cls</span><span class="p">):</span>
+</span><span id="line-6"><span class="o">----&gt;</span><span class="mi">20</span>             <span class="k">raise</span> <span class="n">PointError</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%s</span><span class="s"> is not of class </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">cls</span><span class="p">))</span>
+</span><span id="line-7">     <span class="mi">21</span>         <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">p1</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">p2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">p2</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="line-8"><span class="n">PointError</span><span class="p">:</span> <span class="mi">10</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">of</span> <span class="k">class</span> <span class="nc">Point</span>
+</span></pre></div>
+<p>As well we also build a method bound to the <tt class="docutils literal">Point</tt> <cite>Big P</cite> class rather than
+a normal method bound to an instance <cite>little p</cite>. This may seem slightly esoteric
+but it makes sense, because it allows us to use the <tt class="docutils literal">isinstance()</tt> function to
+properly check if a <cite>point is an instance of the class</cite> without needing us to
+awkwardly pass in the name of the class like&nbsp;so.</p>
+<div class="highlight"><pre><span id="line-1"><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+</span><span id="line-2"><span class="o">..</span>
+</span><span id="line-3">    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+</span><span id="line-4">        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">Point</span><span class="p">):</span>
+</span><span id="line-5"><span class="o">..</span>
+</span></pre></div>
+<p>And there you have&nbsp;it!</p>
+<p>Pretty simpel&nbsp;right?</p>
+<hr class="docutils" />
 <blockquote>
-<cite><span class="caps">P.S.</span></cite>
+P.S
 Here&#8217;s the code to generate the plot in a <cite>Jupyter/IPython notebook</cite>.
 Be sure that you have the <a class="reference external" href="http://stackoverflow.com/questions/19663986/getting-xkcd-plots-using-matplotlib">Humor Sans</a> fontface and to clear your fontcache to get it to
 render correctly :)</blockquote>
