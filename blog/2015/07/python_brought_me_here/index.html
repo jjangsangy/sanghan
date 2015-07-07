@@ -18,13 +18,13 @@
 
         <meta name="author" content="Sang Han" />
         <meta name="keywords" content="Code" />
-        <meta name="description" content="This was originally a post made in r/python. So a bit of history Recently the thought of learning to program went from something I only wished I was capable in order to automate my life, into becoming a very remarkable and enjoyable part of my every day life. For maybe the past 2 years, mostly speeding up in the last year year it’s become one of the most remarkable learning experiences. I can definitely say though, Python was the reason for my breakthrough. Python was the language that taught me what it means to write good, maintainable, and ..." />
+        <meta name="description" content="This was originally a post made in r/python. So a bit of history Recently the thought of learning to program went from something I only wished I was capable in order to automate my life, into becoming a very remarkable and enjoyable part of my every day life. For maybe the past 2 years, mostly speeding up in the last year it’s become one of the most remarkable learning experiences. I can definitely say though, Python was the reason for my breakthrough. Python was the language that taught me what it means to write good, maintainable, and beautiful ..." />
 
         <meta property="og:site_name" content="LightQuanta" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="How Python Brought Me Here"/>
         <meta property="og:url" content="http://sanghan.me/blog/2015/07/python_brought_me_here/"/>
-        <meta property="og:description" content="This was originally a post made in r/python. So a bit of history Recently the thought of learning to program went from something I only wished I was capable in order to automate my life, into becoming a very remarkable and enjoyable part of my every day life. For maybe the past 2 years, mostly speeding up in the last year year it’s become one of the most remarkable learning experiences. I can definitely say though, Python was the reason for my breakthrough. Python was the language that taught me what it means to write good, maintainable, and ..."/>
+        <meta property="og:description" content="This was originally a post made in r/python. So a bit of history Recently the thought of learning to program went from something I only wished I was capable in order to automate my life, into becoming a very remarkable and enjoyable part of my every day life. For maybe the past 2 years, mostly speeding up in the last year it’s become one of the most remarkable learning experiences. I can definitely say though, Python was the reason for my breakthrough. Python was the language that taught me what it means to write good, maintainable, and beautiful ..."/>
         <meta property="article:published_time" content="2015-07-06" />
             <meta property="article:section" content="Python, Programming" />
             <meta property="article:tag" content="Code" />
@@ -158,10 +158,11 @@
 <p>Recently the thought of learning to program went from something I only
 wished I was capable in order to automate my life, into becoming a very
 remarkable and enjoyable part of my every day life. For maybe the past 2
-years, mostly speeding up in the last year year it&#8217;s become one of the
-most remarkable learning&nbsp;experiences.</p>
-<blockquote class="pull-quote">
-I can definitely say though, Python was the reason for my breakthrough.</blockquote>
+years, mostly speeding up in the last year it&#8217;s become one of the most
+remarkable learning&nbsp;experiences.</p>
+</div>
+<div class="section" id="i-can-definitely-say-though-python-was-the-reason-for-my-breakthrough">
+<h2>I can definitely say though, Python was the reason for my&nbsp;breakthrough.</h2>
 <p>Python was the language that taught me what it means to write good,
 maintainable, and beautiful code. I&#8217;ve fiddled a little bit with bash
 and shell programs, as well as C, <span class="caps">JS</span> and Matlab on and off for a&nbsp;while.</p>
@@ -181,20 +182,29 @@ people who through their words taught me many amazing&nbsp;things.</p>
 <h2>So finally, just wanted to say thank everyone in this remarkable&nbsp;community!</h2>
 <p>I&#8217;ve finally started to putting in my resume, and a remarkable thing is
 I&#8217;ve heard back from some. I&#8217;m pretty excited to say I&#8217;ve just submitted
-one of my first serious programming&nbsp;challenges.</p>
-<p><a class="reference external" href="https://gist.github.com/jjangsangy/246c9f956f745dec555b">So Heres the full code and the&nbsp;prompt!</a></p>
+one of my first serious programming challenges and probably won&#8217;t hear
+back till Monday. But super anxious since being fairly new to showing my
+code to others, and want to get some feedback on how I can improve and
+what steps I can take to be competitive people with more conventional&nbsp;education.</p>
+<p>Won&#8217;t say what company it is I&#8217;m submitting this for since I don&#8217;t know
+if that&#8217;s okay to disclose. But since my code is submitted, just thought
+it would be alright to share it&nbsp;here!</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="so-heres-the-full-code-and-the-prompt">
+<h2><a class="reference external" href="https://gist.github.com/jjangsangy/246c9f956f745dec555b">So Heres the full code and the&nbsp;prompt!</a></h2>
 <p>Mostly I&#8217;m writing a spellchecker, it&#8217;s not based on the frequency of
 words in english, I just need to check membership which makes life much
-easier and is different from the famous <a class="reference external" href="http://norvig.com/spell-correct.html">norvig spellchecker</a>.</p>
+easier and is different from the famous <tt class="docutils literal">norvig spellchecker</tt>.</p>
 <div class="section" id="data-structures">
 <h3>Data&nbsp;Structures</h3>
-<p>I just use a hash table based data structure like a <cite>set</cite>, so we&#8217;re
-already <cite>O(1)</cite> for membership test where <cite>n</cite> is the size of the
-<cite>set</cite>.</p>
+<p>I just use a hash table based data structure like a <tt class="docutils literal">set</tt>, so we&#8217;re
+already <tt class="docutils literal">O(1)</tt> for membership test where <tt class="docutils literal">n</tt> is the size of the
+<tt class="docutils literal">set</tt>.</p>
 <blockquote>
 I could have easily just used an actual dictionary, and honestly
 it&#8217;s probably going to be just as fast, or even faster. However, I
-chose a set over a dict because of the <cite>set</cite> mathematical
+chose a set over a dict because of the <tt class="docutils literal">set</tt> mathematical
 operators that have a feeling of elegance much like they do in
 mathematics.</blockquote>
 <div class="highlight"><pre><span id="line-1"><span class="k">class</span> <span class="nc">Dictionary</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -222,11 +232,22 @@ mathematics.</blockquote>
 </span><span id="line-23">        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filepath</span><span class="p">,</span> <span class="s">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">corpus</span><span class="p">:</span>
 </span><span id="line-24">            <span class="n">raw_text</span> <span class="o">=</span> <span class="n">corpus</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </span><span id="line-25">        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">raw_text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
+</span><span id="line-26">
+</span><span id="line-27"><span class="n">The</span> <span class="n">important</span> <span class="n">part</span> <span class="n">here</span> <span class="ow">is</span> <span class="n">the</span> <span class="sb">``</span><span class="nd">@property</span><span class="sb">``</span> <span class="n">decorator</span> <span class="n">means</span> <span class="n">that</span> <span class="n">IO</span>
+</span><span id="line-28"><span class="ow">is</span> <span class="n">computed</span> <span class="sb">``</span><span class="n">lazily</span><span class="sb">``</span> <span class="ow">and</span> <span class="n">only</span> <span class="n">performed</span> <span class="n">once</span><span class="o">.</span> <span class="n">Otherwise</span> <span class="n">we</span> <span class="n">would</span>
+</span><span id="line-29"><span class="n">be</span> <span class="n">creating</span> <span class="n">the</span> <span class="n">entire</span> <span class="n">corpus</span> <span class="n">of</span> <span class="n">words</span> <span class="n">every</span> <span class="n">time</span> <span class="n">the</span> <span class="n">method</span> <span class="ow">is</span>
+</span><span id="line-30"><span class="n">called</span> <span class="n">without</span> <span class="n">the</span> <span class="n">decorator</span><span class="o">.</span>
+</span><span id="line-31">
+</span><span id="line-32">    <span class="o">**</span><span class="n">Edit</span><span class="o">**</span> <span class="o">*</span><span class="n">Thanks</span> <span class="n">to</span> <span class="o">/</span><span class="n">u</span><span class="o">/</span><span class="n">bnorick</span> <span class="n">pointing</span> <span class="n">out</span> <span class="n">that</span> <span class="n">this</span> <span class="n">isn</span><span class="s">&#39;t</span>
+</span><span id="line-33">    <span class="n">actually</span> <span class="n">true</span><span class="err">!</span><span class="o">*</span> <span class="o">*</span><span class="n">Interesting</span> <span class="n">Discussion</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">comments</span>
+</span><span id="line-34">    <span class="n">regarding</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">purpose</span> <span class="n">of</span> <span class="n">the</span> <span class="sb">``</span><span class="nd">@property</span><span class="sb">``</span> <span class="n">decorator</span><span class="err">!</span><span class="o">*</span>
 </span></pre></div>
-</div>
+<p>I know I could just have used a&nbsp;function.</p>
+<p><strong>I can be honest and say I don&#8217;t normally do this, but here I built a
+class mostly for show&nbsp;;)</strong></p>
 </div>
 <div class="section" id="spellchecker">
-<h2>SpellChecker</h2>
+<h3>SpellChecker</h3>
 <p>Then now I need to build the actual&nbsp;spellchecker.</p>
 <p>My train of thought here&nbsp;is.</p>
 <ol class="arabic simple">
@@ -307,22 +328,24 @@ recursion to show that I understand how to work with recursive&nbsp;programs.</p
 </span></pre></div>
 </div>
 <div class="section" id="edit-distance">
-<h2>Edit&nbsp;Distance</h2>
+<h3>Edit&nbsp;Distance</h3>
 <p>Now that I have an object that will build all the possible corrections
 possible, I need to choose the best&nbsp;one.</p>
 <p>Meaning I need to calculate the minimum <strong>leveinstein distance</strong> to find
 the shortest edit&nbsp;distance.</p>
 <p>I originally tried doing hamming, but it got me weird results. My
 implementation is recursive so it&#8217;s not very efficient, out of the box.
-But that&#8217;s okay, because I can <cite>memoize</cite> using a cache either through
-the <cite>&#64;lru_cache()</cite> decorator in Python 3, but since I wanted to
+But that&#8217;s okay, because I can <tt class="docutils literal">memoize</tt> using a cache either through
+the <tt class="docutils literal">&#64;lru_cache()</tt> decorator in Python 3, but since I wanted to
 support both Python 2 as well, I built my own memoization&nbsp;decorator.</p>
 <p><strong>It also runs on PyPy! And the tracing <span class="caps">JIT</span> is pretty good optimizing
 for these slow regions if you really need the&nbsp;speed</strong></p>
-<p>Also decorators are awesome! They&#8217;re very versatile, and plug and play.
-It took me a while to really understand closures, but once you get to
-learn them it&#8217;s a great feeling. Unfortunately I don&#8217;t find many places
-where I use decorators, so it was a real pleasure using this&nbsp;one.</p>
+<blockquote>
+Also decorators are awesome! They&#8217;re very versatile, and plug and
+play. It took me a while to really understand closures, but once you
+get to learn them it&#8217;s a great feeling. Unfortunately I don&#8217;t find
+many places where I use decorators, so it was a real pleasure using
+this one.</blockquote>
 <div class="highlight"><pre><span id="line-1"><span class="k">def</span> <span class="nf">memoize</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
 </span><span id="line-2">    <span class="sd">&quot;&quot;&quot;</span>
 </span><span id="line-3"><span class="sd">    Memoizing decorator for functions, methods, or classes, exposing</span>
@@ -356,65 +379,66 @@ where I use decorators, so it was a real pleasure using this&nbsp;one.</p>
 </span><span id="line-31">    <span class="n">tras</span> <span class="o">=</span> <span class="n">leveinstein_distance</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="c"># Transposes</span>
 </span><span id="line-32">
 </span><span id="line-33">    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">min</span><span class="p">(</span><span class="n">splt</span><span class="p">,</span> <span class="n">dels</span><span class="p">,</span> <span class="n">tras</span><span class="p">)</span>
-</span><span id="line-34">
-</span><span id="line-35">
-</span><span id="line-36"><span class="c">## `if __name__ == &#39;__main__&#39;:`</span>
-</span><span id="line-37">
-</span><span id="line-38"><span class="n">And</span> <span class="k">finally</span><span class="p">,</span> <span class="n">I</span> <span class="n">built</span> <span class="n">a</span> <span class="k">class</span> <span class="nc">that</span> <span class="n">encapsulates</span> <span class="n">the</span> <span class="n">state</span> <span class="n">of</span> <span class="n">the</span> <span class="n">program</span> <span class="ow">and</span> <span class="n">just</span> <span class="n">ran</span> <span class="n">it</span><span class="err">!</span>
-</span><span id="line-39">
-</span><span id="line-40"><span class="k">class</span> <span class="nc">SpellingBee</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-</span><span id="line-41">    <span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-42"><span class="sd">    Manages the state the spelling bee application.</span>
-</span><span id="line-43">
-</span><span id="line-44"><span class="sd">    Read from stdin:</span>
-</span><span id="line-45"><span class="sd">        If spelling is incorrect, returns correction</span>
-</span><span id="line-46"><span class="sd">        If no suggestion can be returns &quot;NO SUGGESTION&quot;</span>
-</span><span id="line-47"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-48">    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">):</span>
-</span><span id="line-49">        <span class="bp">self</span><span class="o">.</span><span class="n">words</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">words</span>
-</span><span id="line-50">
-</span><span id="line-51">    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-52">        <span class="k">try</span><span class="p">:</span>
-</span><span id="line-53">            <span class="bp">self</span><span class="p">()</span>
-</span><span id="line-54">        <span class="k">except</span> <span class="p">(</span><span class="ne">EOFError</span><span class="p">,</span> <span class="ne">KeyboardInterrupt</span><span class="p">):</span>
-</span><span id="line-55">            <span class="k">print</span><span class="p">(</span><span class="s">&#39;Thanks for Playing!&#39;</span><span class="p">)</span>
-</span><span id="line-56">            <span class="k">return</span>
-</span><span id="line-57">
-</span><span id="line-58">    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-59">        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-</span><span id="line-60">            <span class="n">spelling</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;&gt; &#39;</span><span class="p">)</span>
-</span><span id="line-61">            <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">test</span><span class="p">:</span>
-</span><span id="line-62">                <span class="k">print</span><span class="p">(</span><span class="s">&#39;Input: &#39;</span> <span class="o">+</span> <span class="n">spelling</span><span class="p">)</span>
-</span><span id="line-63">                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="line-64">                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-</span><span id="line-65">
-</span><span id="line-66">            <span class="k">if</span> <span class="n">spelling</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">:</span>
-</span><span id="line-67">                <span class="k">print</span><span class="p">(</span><span class="n">spelling</span><span class="p">)</span>
-</span><span id="line-68">                <span class="k">continue</span>
-</span><span id="line-69">
-</span><span id="line-70">            <span class="n">distance</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">leveinstein_distance</span><span class="p">,</span> <span class="n">spelling</span><span class="p">)</span>
-</span><span id="line-71">            <span class="n">correction</span> <span class="o">=</span> <span class="n">Correct</span><span class="p">(</span><span class="n">spelling</span><span class="p">)</span>
-</span><span id="line-72">            <span class="n">candidates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">correction</span><span class="o">.</span><span class="n">edits</span><span class="p">()</span> <span class="o">&amp;</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">)</span>
-</span><span id="line-73">
-</span><span id="line-74">            <span class="k">if</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>
-</span><span id="line-75">                <span class="k">print</span><span class="p">(</span><span class="s">&#39;NO SUGGESTION&#39;</span><span class="p">)</span>
-</span><span id="line-76">                <span class="k">continue</span>
-</span><span id="line-77">
-</span><span id="line-78">            <span class="k">print</span><span class="p">(</span><span class="nb">min</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">distance</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
-</span><span id="line-79">
-</span><span id="line-80">
-</span><span id="line-81"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-</span><span id="line-82">    <span class="n">words</span>  <span class="o">=</span> <span class="n">Dictionary</span><span class="p">(</span><span class="s">&#39;/usr/share/dict/words&#39;</span><span class="p">)</span>
-</span><span id="line-83">
-</span><span id="line-84">    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">test</span><span class="p">:</span>
-</span><span id="line-85">        <span class="n">dictionary</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">words</span><span class="o">.</span><span class="n">words</span><span class="p">)</span>
-</span><span id="line-86">        <span class="n">incorrect</span> <span class="o">=</span> <span class="p">[</span><span class="n">Incorrect</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">dictionary</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-</span><span id="line-87">        <span class="n">mispelled</span> <span class="o">=</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">split</span><span class="o">.</span><span class="n">edits</span><span class="p">()</span> <span class="k">for</span> <span class="n">split</span> <span class="ow">in</span> <span class="n">incorrect</span><span class="p">])</span>
-</span><span id="line-88">        <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">mispelled</span><span class="p">)</span>
-</span><span id="line-89">
-</span><span id="line-90">    <span class="n">spelling_bee</span> <span class="o">=</span> <span class="n">SpellingBee</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
-</span><span id="line-91">    <span class="n">spelling_bee</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </span></pre></div>
+</div>
+<div class="section" id="if-name-main">
+<h3><tt class="docutils literal">if __name__ == '__main__':</tt></h3>
+<p>And finally, I built a class that encapsulates the state of the program
+and just ran&nbsp;it!</p>
+<div class="highlight"><pre><span id="line-1"><span class="k">class</span> <span class="nc">SpellingBee</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</span><span id="line-2">    <span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-3"><span class="sd">    Manages the state the spelling bee application.</span>
+</span><span id="line-4">
+</span><span id="line-5"><span class="sd">    Read from stdin:</span>
+</span><span id="line-6"><span class="sd">        If spelling is incorrect, returns correction</span>
+</span><span id="line-7"><span class="sd">        If no suggestion can be returns &quot;NO SUGGESTION&quot;</span>
+</span><span id="line-8"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-9">    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">):</span>
+</span><span id="line-10">        <span class="bp">self</span><span class="o">.</span><span class="n">words</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">words</span>
+</span><span id="line-11">
+</span><span id="line-12">    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-13">        <span class="k">try</span><span class="p">:</span>
+</span><span id="line-14">            <span class="bp">self</span><span class="p">()</span>
+</span><span id="line-15">        <span class="k">except</span> <span class="p">(</span><span class="ne">EOFError</span><span class="p">,</span> <span class="ne">KeyboardInterrupt</span><span class="p">):</span>
+</span><span id="line-16">            <span class="k">print</span><span class="p">(</span><span class="s">&#39;Thanks for Playing!&#39;</span><span class="p">)</span>
+</span><span id="line-17">            <span class="k">return</span>
+</span><span id="line-18">
+</span><span id="line-19">    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-20">        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+</span><span id="line-21">            <span class="n">spelling</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;&gt; &#39;</span><span class="p">)</span>
+</span><span id="line-22">            <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">test</span><span class="p">:</span>
+</span><span id="line-23">                <span class="k">print</span><span class="p">(</span><span class="s">&#39;Input: &#39;</span> <span class="o">+</span> <span class="n">spelling</span><span class="p">)</span>
+</span><span id="line-24">                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="line-25">                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+</span><span id="line-26">
+</span><span id="line-27">            <span class="k">if</span> <span class="n">spelling</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">:</span>
+</span><span id="line-28">                <span class="k">print</span><span class="p">(</span><span class="n">spelling</span><span class="p">)</span>
+</span><span id="line-29">                <span class="k">continue</span>
+</span><span id="line-30">
+</span><span id="line-31">            <span class="n">distance</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">leveinstein_distance</span><span class="p">,</span> <span class="n">spelling</span><span class="p">)</span>
+</span><span id="line-32">            <span class="n">correction</span> <span class="o">=</span> <span class="n">Correct</span><span class="p">(</span><span class="n">spelling</span><span class="p">)</span>
+</span><span id="line-33">            <span class="n">candidates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">correction</span><span class="o">.</span><span class="n">edits</span><span class="p">()</span> <span class="o">&amp;</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span><span class="p">)</span>
+</span><span id="line-34">
+</span><span id="line-35">            <span class="k">if</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>
+</span><span id="line-36">                <span class="k">print</span><span class="p">(</span><span class="s">&#39;NO SUGGESTION&#39;</span><span class="p">)</span>
+</span><span id="line-37">                <span class="k">continue</span>
+</span><span id="line-38">
+</span><span id="line-39">            <span class="k">print</span><span class="p">(</span><span class="nb">min</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">distance</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+</span><span id="line-40">
+</span><span id="line-41">
+</span><span id="line-42"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span><span id="line-43">    <span class="n">words</span>  <span class="o">=</span> <span class="n">Dictionary</span><span class="p">(</span><span class="s">&#39;/usr/share/dict/words&#39;</span><span class="p">)</span>
+</span><span id="line-44">
+</span><span id="line-45">    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">test</span><span class="p">:</span>
+</span><span id="line-46">        <span class="n">dictionary</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">words</span><span class="o">.</span><span class="n">words</span><span class="p">)</span>
+</span><span id="line-47">        <span class="n">incorrect</span> <span class="o">=</span> <span class="p">[</span><span class="n">Incorrect</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">dictionary</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</span><span id="line-48">        <span class="n">mispelled</span> <span class="o">=</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">split</span><span class="o">.</span><span class="n">edits</span><span class="p">()</span> <span class="k">for</span> <span class="n">split</span> <span class="ow">in</span> <span class="n">incorrect</span><span class="p">])</span>
+</span><span id="line-49">        <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">mispelled</span><span class="p">)</span>
+</span><span id="line-50">
+</span><span id="line-51">    <span class="n">spelling_bee</span> <span class="o">=</span> <span class="n">SpellingBee</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+</span><span id="line-52">    <span class="n">spelling_bee</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</span></pre></div>
+</div>
 </div>
 
             </div>
