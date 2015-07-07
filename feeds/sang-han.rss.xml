@@ -1,5 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LightQuanta</title><link>http://sanghan.me/</link><description></description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 05 Jul 2015 00:00:00 -0700</lastBuildDate><item><title>The Point Class</title><link>http://sanghan.me/blog/2015/07/point_class/</link><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LightQuanta</title><link>http://sanghan.me/</link><description></description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 06 Jul 2015 00:00:00 -0700</lastBuildDate><item><title>How Python Brought Me Here</title><link>http://sanghan.me/blog/2015/07/python_brought_me_here/</link><description>&lt;p&gt;This was originally a post made in
+&lt;a class="reference external" href="http://www.reddit.com/r/Python/comments/2z7bf7/how_python_brought_me_here/"&gt;r/python&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="so-a-bit-of-history"&gt;
+&lt;h2&gt;So a bit of&amp;nbsp;history&lt;/h2&gt;
+&lt;p&gt;Recently the thought of learning to program went from something I only
+wished I was capable in order to automate my life, into becoming a very
+remarkable and enjoyable part of my every day life. For maybe the past 2
+years, mostly speeding up in the last year year it&amp;#8217;s become one of the
+most remarkable learning&amp;nbsp;experiences.&lt;/p&gt;
+&lt;blockquote class="pull-quote"&gt;
+I can definitely say though, Python was the reason for my breakthrough.&lt;/blockquote&gt;
+&lt;p&gt;Python was the language that taught me what it means to write good,
+maintainable, and beautiful code. I&amp;#8217;ve fiddled a little bit with bash
+and shell programs, as well as C, &lt;span class="caps"&gt;JS&lt;/span&gt; and Matlab on and off for a&amp;nbsp;while.&lt;/p&gt;
+&lt;p&gt;But what really accelerated my journey was the amazing community that
+was very active and passionate about teaching and refining each other as
+fellow programmers, hackers no matter what background. For someone like
+me whose learning model isn&amp;#8217;t very compatible with a spoon-fed style
+lectures online, or drilling codeacademy programs that were
+instructional but still quite unremarkable, it was really the perfect
+place for me to grow and&amp;nbsp;thrive.&lt;/p&gt;
+&lt;p&gt;I learned by building things, failing, trying new things, wading through
+blogs and technical articles. I slowly started to understand them, and
+eventually what came to fruition was finding some quite remarkable
+people who through their words taught me many amazing&amp;nbsp;things.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="so-finally-just-wanted-to-say-thank-everyone-in-this-remarkable-community"&gt;
+&lt;h2&gt;So finally, just wanted to say thank everyone in this remarkable&amp;nbsp;community!&lt;/h2&gt;
+&lt;p&gt;I&amp;#8217;ve finally started to putting in my resume, and a remarkable thing is
+I&amp;#8217;ve heard back from some. I&amp;#8217;m pretty excited to say I&amp;#8217;ve just submitted
+one of my first serious programming&amp;nbsp;challenges.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://gist.github.com/jjangsangy/246c9f956f745dec555b"&gt;So Heres the full code and the&amp;nbsp;prompt!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Mostly I&amp;#8217;m writing a spellchecker, it&amp;#8217;s not based on the frequency of
+words in english, I just need to check membership which makes life much
+easier and is different from the famous &lt;a class="reference external" href="http://norvig.com/spell-correct.html"&gt;norvig spellchecker&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="data-structures"&gt;
+&lt;h3&gt;Data&amp;nbsp;Structures&lt;/h3&gt;
+&lt;p&gt;I just use a hash table based data structure like a &lt;cite&gt;set&lt;/cite&gt;, so we&amp;#8217;re
+already &lt;cite&gt;O(1)&lt;/cite&gt; for membership test where &lt;cite&gt;n&lt;/cite&gt; is the size of the
+&lt;cite&gt;set&lt;/cite&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+I could have easily just used an actual dictionary, and honestly
+it&amp;#8217;s probably going to be just as fast, or even faster. However, I
+chose a set over a dict because of the &lt;cite&gt;set&lt;/cite&gt; mathematical
+operators that have a feeling of elegance much like they do in
+mathematics.&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Dictionary&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="sd"&gt;    Dictionary class used as a delegate for the expensive IO operation&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="sd"&gt;    of generating the dictionary.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;
+&lt;/span&gt;&lt;span id="line-6"&gt;&lt;span class="sd"&gt;    Returns a mutible `set` container type and so membership testing&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-7"&gt;&lt;span class="sd"&gt;    against it is an O(1) operation in terms of the amount of values stored in&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-8"&gt;&lt;span class="sd"&gt;    the hash table, and a O(n) operation in terms of the size hash function.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-9"&gt;&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-10"&gt;
+&lt;/span&gt;&lt;span id="line-11"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-12"&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;filepath&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-13"&gt;
+&lt;/span&gt;&lt;span id="line-14"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__repr__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-15"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;(&lt;/span&gt;&lt;span class="si"&gt;%r&lt;/span&gt;&lt;span class="s"&gt;)&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__class__&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-16"&gt;
+&lt;/span&gt;&lt;span id="line-17"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__getattr__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-18"&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;getattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-19"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-20"&gt;
+&lt;/span&gt;&lt;span id="line-21"&gt;    &lt;span class="nd"&gt;@property&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-22"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-23"&gt;        &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filepath&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;rt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-24"&gt;            &lt;span class="n"&gt;raw_text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-25"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;raw_text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;splitlines&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="spellchecker"&gt;
+&lt;h2&gt;SpellChecker&lt;/h2&gt;
+&lt;p&gt;Then now I need to build the actual&amp;nbsp;spellchecker.&lt;/p&gt;
+&lt;p&gt;My train of thought here&amp;nbsp;is.&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Membership test against the&amp;nbsp;dictionary.&lt;/li&gt;
+&lt;li&gt;If word is in the set, return the&amp;nbsp;word&lt;/li&gt;
+&lt;li&gt;If word is not in the set, calculate all the possible permutations of
+edits within a certain&amp;nbsp;criteria.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Eventually what I chose was a really naive implementation, but using
+recursion to show that I understand how to work with recursive&amp;nbsp;programs.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Correct&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="sd"&gt;    Tries to correct for an misspelled word by accounting for the&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="sd"&gt;    types of corrections.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;
+&lt;/span&gt;&lt;span id="line-6"&gt;&lt;span class="sd"&gt;    Accounts for.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-7"&gt;&lt;span class="sd"&gt;        * Case errors&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-8"&gt;&lt;span class="sd"&gt;        * Repeat letters&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-9"&gt;&lt;span class="sd"&gt;        * Incorrect vowels&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-10"&gt;&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-11"&gt;
+&lt;/span&gt;&lt;span id="line-12"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-13"&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-14"&gt;
+&lt;/span&gt;&lt;span id="line-15"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__repr__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-16"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;(&lt;/span&gt;&lt;span class="si"&gt;%r&lt;/span&gt;&lt;span class="s"&gt;)&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__class__&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-17"&gt;
+&lt;/span&gt;&lt;span id="line-18"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;edit_repeats&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-19"&gt;        &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-20"&gt;&lt;span class="sd"&gt;        Reduces any sequentially repeating words and their permutations.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-21"&gt;&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-22"&gt;        &lt;span class="c"&gt;# a == b offset by 1&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-23"&gt;        &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-24"&gt;        &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-25"&gt;
+&lt;/span&gt;&lt;span id="line-26"&gt;        &lt;span class="c"&gt;# ord(x) - ord(y) == 0 for repeats&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-27"&gt;        &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Counter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;zip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="nb"&gt;ord&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nb"&gt;ord&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-28"&gt;
+&lt;/span&gt;&lt;span id="line-29"&gt;        &lt;span class="n"&gt;reductions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-30"&gt;        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rep&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-31"&gt;
+&lt;/span&gt;&lt;span id="line-32"&gt;            &lt;span class="c"&gt;# expand and contract string each time remove one repeat&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-33"&gt;            &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;trampoline&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rep&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-34"&gt;                &lt;span class="n"&gt;expand&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-35"&gt;                &lt;span class="n"&gt;expand&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-36"&gt;                &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;expand&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-37"&gt;                &lt;span class="n"&gt;reductions&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-38"&gt;
+&lt;/span&gt;&lt;span id="line-39"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;reductions&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-40"&gt;
+&lt;/span&gt;&lt;span id="line-41"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;edit_vowels&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-42"&gt;        &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-43"&gt;&lt;span class="sd"&gt;        Generates all vowel substitutions.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-44"&gt;
+&lt;/span&gt;&lt;span id="line-45"&gt;&lt;span class="sd"&gt;        Algorithm&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-46"&gt;&lt;span class="sd"&gt;        =========&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-47"&gt;&lt;span class="sd"&gt;        - Find all vowel in initial text&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-48"&gt;&lt;span class="sd"&gt;        - Generate every permutation of vowel substitutions&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-49"&gt;&lt;span class="sd"&gt;        - Create a translation table for all possible vowel sets.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-50"&gt;&lt;span class="sd"&gt;        = Map translation tables back to initial text&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-51"&gt;&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-52"&gt;        &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;aeiou&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-53"&gt;        &lt;span class="n"&gt;edits&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;enumerate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-54"&gt;        &lt;span class="n"&gt;perms&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;permutations&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;edits&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-55"&gt;        &lt;span class="n"&gt;maps&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;maketrans&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;edits&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;perm&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;perm&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;perms&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-56"&gt;        &lt;span class="n"&gt;trans&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;translate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;maps&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-57"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trans&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-58"&gt;
+&lt;/span&gt;&lt;span id="line-59"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;edits&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-60"&gt;        &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-61"&gt;&lt;span class="sd"&gt;        Recursively finds all edits possible within set parameters.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-62"&gt;&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-63"&gt;        &lt;span class="n"&gt;edit&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;repeats&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;edit_vowels&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;edit_repeats&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-64"&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;repeats&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-65"&gt;            &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;repeating&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;repeats&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-66"&gt;                &lt;span class="n"&gt;edit&lt;/span&gt; &lt;span class="o"&gt;|=&lt;/span&gt; &lt;span class="n"&gt;Correct&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;repeating&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;edit_vowels&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-67"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;edit&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="edit-distance"&gt;
+&lt;h2&gt;Edit&amp;nbsp;Distance&lt;/h2&gt;
+&lt;p&gt;Now that I have an object that will build all the possible corrections
+possible, I need to choose the best&amp;nbsp;one.&lt;/p&gt;
+&lt;p&gt;Meaning I need to calculate the minimum &lt;strong&gt;leveinstein distance&lt;/strong&gt; to find
+the shortest edit&amp;nbsp;distance.&lt;/p&gt;
+&lt;p&gt;I originally tried doing hamming, but it got me weird results. My
+implementation is recursive so it&amp;#8217;s not very efficient, out of the box.
+But that&amp;#8217;s okay, because I can &lt;cite&gt;memoize&lt;/cite&gt; using a cache either through
+the &lt;cite&gt;&amp;#64;lru_cache()&lt;/cite&gt; decorator in Python 3, but since I wanted to
+support both Python 2 as well, I built my own memoization&amp;nbsp;decorator.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;It also runs on PyPy! And the tracing &lt;span class="caps"&gt;JIT&lt;/span&gt; is pretty good optimizing
+for these slow regions if you really need the&amp;nbsp;speed&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Also decorators are awesome! They&amp;#8217;re very versatile, and plug and play.
+It took me a while to really understand closures, but once you get to
+learn them it&amp;#8217;s a great feeling. Unfortunately I don&amp;#8217;t find many places
+where I use decorators, so it was a real pleasure using this&amp;nbsp;one.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span id="line-1"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;memoize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-2"&gt;    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-3"&gt;&lt;span class="sd"&gt;    Memoizing decorator for functions, methods, or classes, exposing&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-4"&gt;&lt;span class="sd"&gt;    the cache publicly.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-5"&gt;&lt;span class="sd"&gt;    Currently only works on positional arguments.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-6"&gt;&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-7"&gt;    &lt;span class="n"&gt;cache&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cache&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-8"&gt;
+&lt;/span&gt;&lt;span id="line-9"&gt;    &lt;span class="nd"&gt;@functools.wraps&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-10"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;wrapper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-11"&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;cache&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-12"&gt;            &lt;span class="n"&gt;cache&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-13"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;cache&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-14"&gt;
+&lt;/span&gt;&lt;span id="line-15"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;wrapper&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-16"&gt;
+&lt;/span&gt;&lt;span id="line-17"&gt;&lt;span class="nd"&gt;@memoize&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-18"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;leveinstein_distance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-19"&gt;    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-20"&gt;&lt;span class="sd"&gt;    Memoized Recursive Implementation of Leveinstein Distance&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-21"&gt;&lt;span class="sd"&gt;    For Calculating Edit Distances&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-22"&gt;&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-23"&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-24"&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-25"&gt;
+&lt;/span&gt;&lt;span id="line-26"&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-27"&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;leveinstein_distance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:],&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:])&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-28"&gt;
+&lt;/span&gt;&lt;span id="line-29"&gt;    &lt;span class="n"&gt;splt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;leveinstein_distance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;     &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:])&lt;/span&gt; &lt;span class="c"&gt;# Splits&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-30"&gt;    &lt;span class="n"&gt;dels&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;leveinstein_distance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:],&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;    &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# Deletes&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-31"&gt;    &lt;span class="n"&gt;tras&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;leveinstein_distance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:],&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:])&lt;/span&gt; &lt;span class="c"&gt;# Transposes&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-32"&gt;
+&lt;/span&gt;&lt;span id="line-33"&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;splt&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dels&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tras&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-34"&gt;
+&lt;/span&gt;&lt;span id="line-35"&gt;
+&lt;/span&gt;&lt;span id="line-36"&gt;&lt;span class="c"&gt;## `if __name__ == &amp;#39;__main__&amp;#39;:`&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-37"&gt;
+&lt;/span&gt;&lt;span id="line-38"&gt;&lt;span class="n"&gt;And&lt;/span&gt; &lt;span class="k"&gt;finally&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;I&lt;/span&gt; &lt;span class="n"&gt;built&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;that&lt;/span&gt; &lt;span class="n"&gt;encapsulates&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;state&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;program&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;just&lt;/span&gt; &lt;span class="n"&gt;ran&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt;&lt;span class="err"&gt;!&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-39"&gt;
+&lt;/span&gt;&lt;span id="line-40"&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;SpellingBee&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-41"&gt;    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-42"&gt;&lt;span class="sd"&gt;    Manages the state the spelling bee application.&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-43"&gt;
+&lt;/span&gt;&lt;span id="line-44"&gt;&lt;span class="sd"&gt;    Read from stdin:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-45"&gt;&lt;span class="sd"&gt;        If spelling is incorrect, returns correction&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-46"&gt;&lt;span class="sd"&gt;        If no suggestion can be returns &amp;quot;NO SUGGESTION&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-47"&gt;&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-48"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-49"&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-50"&gt;
+&lt;/span&gt;&lt;span id="line-51"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-52"&gt;        &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-53"&gt;            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-54"&gt;        &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ne"&gt;EOFError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ne"&gt;KeyboardInterrupt&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-55"&gt;            &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Thanks for Playing!&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-56"&gt;            &lt;span class="k"&gt;return&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-57"&gt;
+&lt;/span&gt;&lt;span id="line-58"&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__call__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-59"&gt;        &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-60"&gt;            &lt;span class="n"&gt;spelling&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&amp;gt; &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-61"&gt;            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-62"&gt;                &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Input: &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;spelling&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-63"&gt;                &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-64"&gt;                &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-65"&gt;
+&lt;/span&gt;&lt;span id="line-66"&gt;            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;spelling&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-67"&gt;                &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;spelling&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-68"&gt;                &lt;span class="k"&gt;continue&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-69"&gt;
+&lt;/span&gt;&lt;span id="line-70"&gt;            &lt;span class="n"&gt;distance&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;functools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;partial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;leveinstein_distance&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;spelling&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-71"&gt;            &lt;span class="n"&gt;correction&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Correct&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;spelling&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-72"&gt;            &lt;span class="n"&gt;candidates&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;correction&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;edits&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-73"&gt;
+&lt;/span&gt;&lt;span id="line-74"&gt;            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;candidates&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-75"&gt;                &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;NO SUGGESTION&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-76"&gt;                &lt;span class="k"&gt;continue&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-77"&gt;
+&lt;/span&gt;&lt;span id="line-78"&gt;            &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;candidates&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;distance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-79"&gt;
+&lt;/span&gt;&lt;span id="line-80"&gt;
+&lt;/span&gt;&lt;span id="line-81"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-82"&gt;    &lt;span class="n"&gt;words&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Dictionary&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;/usr/share/dict/words&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-83"&gt;
+&lt;/span&gt;&lt;span id="line-84"&gt;    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-85"&gt;        &lt;span class="n"&gt;dictionary&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-86"&gt;        &lt;span class="n"&gt;incorrect&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Incorrect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dictionary&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-87"&gt;        &lt;span class="n"&gt;mispelled&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;edits&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;split&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;incorrect&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-88"&gt;        &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mispelled&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-89"&gt;
+&lt;/span&gt;&lt;span id="line-90"&gt;    &lt;span class="n"&gt;spelling_bee&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SpellingBee&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;span id="line-91"&gt;    &lt;span class="n"&gt;spelling_bee&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sang Han</dc:creator><pubDate>Mon, 06 Jul 2015 00:00:00 -0700</pubDate><guid>tag:sanghan.me,2015-07-06:blog/2015/07/python_brought_me_here/</guid><category>Code</category></item><item><title>The Point Class</title><link>http://sanghan.me/blog/2015/07/point_class/</link><description>
 &lt;div class="section" id="constructing-my-first-point-class"&gt;
 &lt;h2&gt;Constructing my first Point&amp;nbsp;Class&lt;/h2&gt;
 &lt;p&gt;So I was showing someone how to build a &lt;cite&gt;Point Class&lt;/cite&gt; today, and
