@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LightQuanta</title><link>http://sanghan.me/</link><description></description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 06 Jul 2015 00:00:00 -0700</lastBuildDate><item><title>How Python Brought Me Here</title><link>http://sanghan.me/blog/2015/07/python_brought_me_here/</link><description>&lt;p&gt;This was originally a post made in
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LightQuanta</title><link>http://sanghan.me/</link><description></description><atom:link href="http://sanghan.me/feeds/sang-han.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 06 Jul 2015 00:00:00 -0700</lastBuildDate><item><title>How Python Brought Me Here</title><link>http://sanghan.me/blog/2015/07/python_brought_me_here/</link><description>
+&lt;p&gt;This was originally a post made in
 &lt;a class="reference external" href="http://www.reddit.com/r/Python/comments/2z7bf7/how_python_brought_me_here/"&gt;r/python&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="so-a-bit-of-history"&gt;
 &lt;h2&gt;So a bit of&amp;nbsp;history&lt;/h2&gt;
@@ -8,6 +9,7 @@ wished I was capable in order to automate my life, into becoming a very
 remarkable and enjoyable part of my every day life. For maybe the past 2
 years, mostly speeding up in the last year it&amp;#8217;s become one of the most
 remarkable learning&amp;nbsp;experiences.&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;div class="section" id="i-can-definitely-say-though-python-was-the-reason-for-my-breakthrough"&gt;
 &lt;h2&gt;I can definitely say though, Python was the reason for my&amp;nbsp;breakthrough.&lt;/h2&gt;
