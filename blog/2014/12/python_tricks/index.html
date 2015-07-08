@@ -458,50 +458,7 @@ post. But many have been customized and rewritten into an IPython&nbsp;Notebook.
 </div>
 <div class="section" id="simple-dictionary-trees-autovivification">
 <h2>Simple Dictionary Trees (<a class="reference external" href="http://en.wikipedia.org/wiki/Autovivification">Autovivification</a>)</h2>
-<div class="highlight"><pre><span id="line-1"><span class="kn">import</span> <span class="nn">json</span>
-</span><span id="line-2">
-</span><span id="line-3"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
-</span><span id="line-4">
-</span><span id="line-5"><span class="c"># Recursive Definition</span>
-</span><span id="line-6"><span class="n">Tree</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="n">Tree</span><span class="p">)</span>
-</span><span id="line-7">
-</span><span id="line-8"><span class="n">root</span> <span class="o">=</span> <span class="n">Tree</span><span class="p">()</span>
-</span><span id="line-9">
-</span><span id="line-10"><span class="c"># Instantiation</span>
-</span><span id="line-11"><span class="n">root</span><span class="p">[</span><span class="s">&#39;menu&#39;</span><span class="p">][</span><span class="s">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;file&#39;</span>
-</span><span id="line-12"><span class="n">root</span><span class="p">[</span><span class="s">&#39;menu&#39;</span><span class="p">][</span><span class="s">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;File&#39;</span>
-</span><span id="line-13"><span class="n">root</span><span class="p">[</span><span class="s">&#39;menu&#39;</span><span class="p">][</span><span class="s">&#39;menuitems&#39;</span><span class="p">][</span><span class="s">&#39;new&#39;</span><span class="p">][</span><span class="s">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;New&#39;</span>
-</span><span id="line-14"><span class="n">root</span><span class="p">[</span><span class="s">&#39;menu&#39;</span><span class="p">][</span><span class="s">&#39;menuitems&#39;</span><span class="p">][</span><span class="s">&#39;new&#39;</span><span class="p">][</span><span class="s">&#39;onclick&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;new();&#39;</span>
-</span><span id="line-15"><span class="n">root</span><span class="p">[</span><span class="s">&#39;menu&#39;</span><span class="p">][</span><span class="s">&#39;menuitems&#39;</span><span class="p">][</span><span class="s">&#39;open&#39;</span><span class="p">][</span><span class="s">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Open&#39;</span>
-</span><span id="line-16"><span class="n">root</span><span class="p">[</span><span class="s">&#39;menu&#39;</span><span class="p">][</span><span class="s">&#39;menuitems&#39;</span><span class="p">][</span><span class="s">&#39;open&#39;</span><span class="p">][</span><span class="s">&#39;onclick&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;open();&#39;</span>
-</span><span id="line-17"><span class="n">root</span><span class="p">[</span><span class="s">&#39;menu&#39;</span><span class="p">][</span><span class="s">&#39;menuitems&#39;</span><span class="p">][</span><span class="s">&#39;close&#39;</span><span class="p">][</span><span class="s">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;Close&#39;</span>
-</span><span id="line-18"><span class="n">root</span><span class="p">[</span><span class="s">&#39;menu&#39;</span><span class="p">][</span><span class="s">&#39;menuitems&#39;</span><span class="p">][</span><span class="s">&#39;close&#39;</span><span class="p">][</span><span class="s">&#39;onclick&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;close();&#39;</span>
-</span><span id="line-19">
-</span><span id="line-20"><span class="k">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">separators</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">)))</span>
-</span></pre></div>
-<hr class="docutils" />
-<div class="highlight"><pre><span id="line-1"><span class="p">{</span>
-</span><span id="line-2">  <span class="s">&quot;menu&quot;</span><span class="p">:</span> <span class="p">{</span>
-</span><span id="line-3">    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;file&quot;</span><span class="p">,</span>
-</span><span id="line-4">    <span class="s">&quot;menuitems&quot;</span><span class="p">:</span> <span class="p">{</span>
-</span><span id="line-5">      <span class="s">&quot;close&quot;</span><span class="p">:</span> <span class="p">{</span>
-</span><span id="line-6">        <span class="s">&quot;onclick&quot;</span><span class="p">:</span> <span class="s">&quot;close();&quot;</span><span class="p">,</span>
-</span><span id="line-7">        <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;Close&quot;</span>
-</span><span id="line-8">      <span class="p">},</span>
-</span><span id="line-9">      <span class="s">&quot;new&quot;</span><span class="p">:</span> <span class="p">{</span>
-</span><span id="line-10">        <span class="s">&quot;onclick&quot;</span><span class="p">:</span> <span class="s">&quot;new();&quot;</span><span class="p">,</span>
-</span><span id="line-11">        <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;New&quot;</span>
-</span><span id="line-12">      <span class="p">},</span>
-</span><span id="line-13">      <span class="s">&quot;open&quot;</span><span class="p">:</span> <span class="p">{</span>
-</span><span id="line-14">        <span class="s">&quot;onclick&quot;</span><span class="p">:</span> <span class="s">&quot;open();&quot;</span><span class="p">,</span>
-</span><span id="line-15">        <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;Open&quot;</span>
-</span><span id="line-16">      <span class="p">}</span>
-</span><span id="line-17">    <span class="p">},</span>
-</span><span id="line-18">    <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="s">&quot;File&quot;</span>
-</span><span id="line-19">  <span class="p">}</span>
-</span><span id="line-20"><span class="p">}</span>
-</span></pre></div>
-<p>(See <a class="reference external" href="https://gist.github.com/hrldcpr/2012250">https://gist.github.com/hrldcpr/2012250</a> for more on&nbsp;this.)</p>
+<iframe src="https://trinket.io/embed/python/a3f6491c1d?start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe><p>(See <a class="reference external" href="https://gist.github.com/hrldcpr/2012250">https://gist.github.com/hrldcpr/2012250</a> for more on&nbsp;this.)</p>
 <div class="highlight"><pre><span id="line-1"><span class="c"># Using `__missing__`</span>
 </span><span id="line-2"><span class="k">class</span> <span class="nc">Tree</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
 </span><span id="line-3">    <span class="k">def</span> <span class="nf">__missing__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
