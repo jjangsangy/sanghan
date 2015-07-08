@@ -49,8 +49,7 @@ easier and is different from the famous &lt;tt class="docutils literal"&gt;norvi
 &lt;div class="section" id="data-structures"&gt;
 &lt;h3&gt;Data&amp;nbsp;Structures&lt;/h3&gt;
 &lt;p&gt;I just use a hash table based data structure like a &lt;tt class="docutils literal"&gt;set&lt;/tt&gt;, so we&amp;#8217;re
-already &lt;tt class="docutils literal"&gt;O(1)&lt;/tt&gt; for membership test where &lt;tt class="docutils literal"&gt;n&lt;/tt&gt; is the size of the
-&lt;tt class="docutils literal"&gt;set&lt;/tt&gt;.&lt;/p&gt;
+already &lt;tt class="docutils literal"&gt;O(1)&lt;/tt&gt; for membership test where &lt;tt class="docutils literal"&gt;n&lt;/tt&gt; is the size of the&amp;nbsp;hash.&lt;/p&gt;
 &lt;blockquote&gt;
 I could have easily just used an actual dictionary, and honestly
 it&amp;#8217;s probably going to be just as fast, or even faster. However, I
