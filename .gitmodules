@@ -1,7 +1,7 @@
 [submodule "themes/bootstrap"]
 	path = themes/bootstrap
-    url = https://github.com/DandyDev/pelican-bootstrap3.git
+	url = https://github.com/DandyDev/pelican-bootstrap3.git
 
 [submodule "plugins"]
 	path = plugins
-    url = https://github.com/getpelican/pelican-plugins
+	url = https://github.com/getpelican/pelican-plugins
