@@ -4,9 +4,8 @@ from __future__ import unicode_literals
 
 import sys
 import os
+import logging
 from os.path import abspath
-
-import disqusapi
 
 sys.path.append(abspath(os.curdir))
 
@@ -60,13 +59,25 @@ MARKUP = ('rst', 'md', 'ipynb')
 CUSTOM_CSS = ('static/css/site.css')
 READERS = {'html': None}
 
-PLUGIN_PATHS = ['plugins']
+PLUGIN_PATHS = [
+    'pelican-plugins',
+    'pelican-plugins/pelican_youtube',
+    'pelican-plugins/pelican-gist'
+]
 
 PLUGINS = [
     'representative_image',
     'pelican_youtube.youtube',
     'pelican_gist',
+    'gist_directive',
+    'disqus_static',
     'render_math',
+]
+
+MD_EXTENSIONS = [
+    'toc',
+    'codehilite',
+    'extra'
 ]
 
 HEADER_IMAGE = "bird.jpg"
@@ -88,10 +99,8 @@ GITHUB_REPO_COUNT = 10
 GITHUB_SHOW_USER_LINK = True
 
 MATH_JAX = {
-    'color':'inherit',
     'process_escapes': False,
 }
-
 # MENUITEMS = (('Photography', 'http://sanghanphotography.com'),)
 
 # Blogroll
