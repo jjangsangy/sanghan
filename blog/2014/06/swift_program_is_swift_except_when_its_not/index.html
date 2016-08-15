@@ -12,9 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link href="http://sanghan.me/img/hv.png" rel="icon">
+    <link href="http://sanghan.xyz/img/hv.png" rel="icon">
 
-<link rel="canonical" href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/">
+<link rel="canonical" href="http://sanghan.xyz/blog/2014/06/swift_program_is_swift_except_when_its_not/">
 
         <meta name="author" content="Sang Han" />
         <meta name="keywords" content="Apple,Programming Language,Benchmarks,Bubble Sort" />
@@ -23,7 +23,7 @@
         <meta property="og:site_name" content="LightQuanta" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Swift Program is Swift, Except When it’s Not"/>
-        <meta property="og:url" content="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/"/>
+        <meta property="og:url" content="http://sanghan.xyz/blog/2014/06/swift_program_is_swift_except_when_its_not/"/>
         <meta property="og:description" content="This past WWDC Apple revealed a brand new programming language called Swift to the masses and passed it out to Apple Developers packaged in the XCode 6 Beta. Language Features Type Inferencing and Automatic Reference Counting (ARC) Optional Bindings and Generic Functions Integration with Objective-C First-Class Functions and Closures My initial impressions were pretty high. However, after some quick benchmarking examples, those feelings later matured to an understanding of it’s &#34;beta&#34; characteristics. Many of the underlying optimization still have some kinks to work through. And by kinks, I mean some big fixes Benchmarks Here are a couple examples of ..."/>
         <meta property="article:published_time" content="2014-06-11" />
             <meta property="article:section" content="Programming" />
@@ -35,15 +35,15 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://sanghan.me/theme/css/bootstrap.paper.min.css" type="text/css"/>
-    <link href="http://sanghan.me/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://sanghan.xyz/theme/css/bootstrap.paper.min.css" type="text/css"/>
+    <link href="http://sanghan.xyz/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="http://sanghan.me/theme/css/pygments/solarizedlight.css" rel="stylesheet">
-        <link href="http://sanghan.me/theme/css/typogrify.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://sanghan.me/theme/css/style.css" type="text/css"/>
-        <link href="http://sanghan.me/static/css/site.css" rel="stylesheet">
+    <link href="http://sanghan.xyz/theme/css/pygments/solarizedlight.css" rel="stylesheet">
+        <link href="http://sanghan.xyz/theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://sanghan.xyz/theme/css/style.css" type="text/css"/>
+        <link href="http://sanghan.xyz/static/css/site.css" rel="stylesheet">
 
-        <link href="http://sanghan.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="http://sanghan.xyz/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="LightQuanta ATOM Feed"/>
 
 </head>
@@ -58,7 +58,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="http://sanghan.me/" class="navbar-brand">
+            <a href="http://sanghan.xyz/" class="navbar-brand">
 
                 <span class="fa-stack fa-large">
                     <i class="fa fa-square-o fa-stack-2x"></i>
@@ -69,16 +69,16 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li><a href="http://sanghan.me/pages/about.html">
+                        <li><a href="http://sanghan.xyz/pages/about.html">
                         <i class="fa fa-beer"></i>
                         <span class="icon-label">About&nbsp;Me</span></a></li>
-                        <li><a href="http://sanghan.me/pages/projects.html">
+                        <li><a href="http://sanghan.xyz/pages/projects.html">
                         <i class="fa fa-code"></i>
                         <span class="icon-label">Projects</span></a></li>
-                        <li><a href="http://sanghan.me/pages/skills.html">
+                        <li><a href="http://sanghan.xyz/pages/skills.html">
                         <i class="fa fa-graduation-cap"></i>
                         <span class="icon-label">Skills</span></a></li>
-                        <li><a href="http://sanghan.me/pages/tools.html">
+                        <li><a href="http://sanghan.xyz/pages/tools.html">
                         <i class="fa fa-wrench"></i>
                         <span class="icon-label">Tools</span></a></li>
             <ul class="nav navbar-nav navbar-right">
@@ -86,23 +86,23 @@
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu">
                         <li >
-                        <a href="http://sanghan.me/category/articles.html">Articles</a></li>
+                        <a href="http://sanghan.xyz/category/articles.html">Articles</a></li>
                         <li >
-                        <a href="http://sanghan.me/category/personal.html">Personal</a></li>
+                        <a href="http://sanghan.xyz/category/personal.html">Personal</a></li>
                         <li  class="active" >
-                        <a href="http://sanghan.me/category/programming.html">Programming</a></li>
+                        <a href="http://sanghan.xyz/category/programming.html">Programming</a></li>
                         <li >
-                        <a href="http://sanghan.me/category/python-programming.html">Python, programming</a></li>
+                        <a href="http://sanghan.xyz/category/python-programming.html">Python, programming</a></li>
                         <li >
-                        <a href="http://sanghan.me/category/quotes.html">Quotes</a></li>
+                        <a href="http://sanghan.xyz/category/quotes.html">Quotes</a></li>
                         <li >
-                        <a href="http://sanghan.me/category/tumblr.html">Tumblr</a></li>
+                        <a href="http://sanghan.xyz/category/tumblr.html">Tumblr</a></li>
                     </ul>
                     </li>
 
 <!-- Disabled
 <ul class="nav navbar-nav navbar-right">
-    <li><a href="http://sanghan.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+    <li><a href="http://sanghan.xyz/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
 </ul>
 -->
 
@@ -120,8 +120,8 @@
     <div class="row">
         <div class="col-sm-9">
             <ol class="breadcrumb">
-                <li><a href="http://sanghan.me" title="LightQuanta"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a href="http://sanghan.me/category/programming.html" title="Programming">Programming</a></li>
+                <li><a href="http://sanghan.xyz" title="LightQuanta"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="http://sanghan.xyz/category/programming.html" title="Programming">Programming</a></li>
                 <li class="active">Swift Program is Swift, Except When it&#8217;s&nbsp;Not</li>
             </ol>
 
@@ -129,7 +129,7 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/"
+                    <a href="http://sanghan.xyz/blog/2014/06/swift_program_is_swift_except_when_its_not/"
                        rel="bookmark"
                        title="Permalink to Swift Program is Swift, Except When it’s Not">
                         Swift Program is Swift, Except When it&#8217;s&nbsp;Not
@@ -146,21 +146,21 @@
     </span>
 
         <span class="label label-success">Category</span>
-        <a href="http://sanghan.me/category/programming.html">Programming</a>
+        <a href="http://sanghan.xyz/category/programming.html">Programming</a>
 
 
 <span class="label label-info">Tags</span>
-	<a href="http://sanghan.me/tag/apple.html">Apple</a>
+	<a href="http://sanghan.xyz/tag/apple.html">Apple</a>
         /
-	<a href="http://sanghan.me/tag/programming-language.html">Programming Language</a>
+	<a href="http://sanghan.xyz/tag/programming-language.html">Programming Language</a>
         /
-	<a href="http://sanghan.me/tag/benchmarks.html">Benchmarks</a>
+	<a href="http://sanghan.xyz/tag/benchmarks.html">Benchmarks</a>
         /
-	<a href="http://sanghan.me/tag/bubble-sort.html">Bubble Sort</a>
+	<a href="http://sanghan.xyz/tag/bubble-sort.html">Bubble Sort</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p><img alt="swift" src="http://sanghan.me/img/swift.jpg" /></p>
+                <p><img alt="swift" src="http://sanghan.xyz/img/swift.jpg" /></p>
 <p>This past <span class="caps">WWDC</span> Apple revealed a brand new programming language called <a class="reference external" href="https://developer.apple.com/swift/">Swift</a>
 to the masses and passed it out to Apple Developers packaged in the XCode 6&nbsp;Beta.</p>
 <div class="section" id="language-features">
@@ -326,7 +326,7 @@ finish reasonibly quick. Other than that nothing has&nbsp;changed.</p>
 </div></div>
 <div class="section" id="modern-safe-and-powerful-choose-2">
 <h2>Modern, Safe and Powerful: Choose&nbsp;2</h2>
-<p><img alt="swift_principles" src="http://sanghan.me/img/swift_principles.jpg" /></p>
+<p><img alt="swift_principles" src="http://sanghan.xyz/img/swift_principles.jpg" /></p>
 <p>According to a post on <a class="reference external" href="http://stackoverflow.com/questions/24101718/swift-performance-sorting-arrays">Stacked&nbsp;Overflow</a></p>
 <blockquote class="pull-quote">
 However, -Ofast changes the semantics of the language a lot — in my testing,
@@ -362,7 +362,7 @@ That is, 26 subroutine calls in the inner&nbsp;loop!</li>
             var disqus_shortname = 'sanghan'; // required: replace example with your forum shortname
 
                     var disqus_identifier = 'swift_program_is_swift_except_when_its_not';
-                var disqus_url = 'http://sanghan.me/blog/2014/06/swift_program_is_swift_except_when_its_not/';
+                var disqus_url = 'http://sanghan.xyz/blog/2014/06/swift_program_is_swift_except_when_its_not/';
 
             var disqus_config = function () {
                 this.language = "en";
@@ -405,27 +405,27 @@ That is, 26 subroutine calls in the inner&nbsp;loop!</li>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://sanghan.me/blog/2015/07/python_brought_me_here/">
+                        <a href="http://sanghan.xyz/blog/2015/07/python_brought_me_here/">
                             How Python Brought Me&nbsp;Here
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://sanghan.me/blog/2015/07/point_class/">
+                        <a href="http://sanghan.xyz/blog/2015/07/point_class/">
                             The Point&nbsp;Class
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://sanghan.me/blog/2015/06/visualizaitions/">
+                        <a href="http://sanghan.xyz/blog/2015/06/visualizaitions/">
                             Data Visualization by Programming&nbsp;Language
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://sanghan.me/blog/2015/05/recommendation_engine/">
+                        <a href="http://sanghan.xyz/blog/2015/05/recommendation_engine/">
                             The Anatomy of a Recommendation&nbsp;Engine
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://sanghan.me/blog/2015/03/machine_learning_notes/">
+                        <a href="http://sanghan.xyz/blog/2015/03/machine_learning_notes/">
                             Machine Learning&nbsp;Notes
                         </a>
                     </li>
@@ -456,15 +456,15 @@ That is, 26 subroutine calls in the inner&nbsp;loop!</li>
       </div>
    </div>
 </footer>
-<script src="http://sanghan.me/theme/js/jquery.min.js"></script>
+<script src="http://sanghan.xyz/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://sanghan.me/theme/js/bootstrap.min.js"></script>
+<script src="http://sanghan.xyz/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://sanghan.me/theme/js/respond.min.js"></script>
-<script src="http://sanghan.me/static/js/headroom.min.js"></script>
-<script src="http://sanghan.me/static/js/site.js"></script>
+<script src="http://sanghan.xyz/theme/js/respond.min.js"></script>
+<script src="http://sanghan.xyz/static/js/headroom.min.js"></script>
+<script src="http://sanghan.xyz/static/js/site.js"></script>
 
     <!-- GitHub JS -->
     <script type="text/javascript">
@@ -472,7 +472,7 @@ That is, 26 subroutine calls in the inner&nbsp;loop!</li>
             if (!window.jXHR) {
                 var jxhr = document.createElement('script');
                 jxhr.type = 'text/javascript';
-                jxhr.src = 'http://sanghan.me/theme/js/jXHR.js';
+                jxhr.src = 'http://sanghan.xyz/theme/js/jXHR.js';
                 var s = document.getElementsByTagName('script')[0];
                 s.parentNode.insertBefore(jxhr, s);
             }
@@ -485,7 +485,7 @@ That is, 26 subroutine calls in the inner&nbsp;loop!</li>
             });
         });
     </script>
-    <script src="http://sanghan.me/theme/js/github.js" type="text/javascript"></script>
+    <script src="http://sanghan.xyz/theme/js/github.js" type="text/javascript"></script>
     <!-- End GitHub JS Code -->
     <!-- Disqus -->
     <script type="text/javascript">
