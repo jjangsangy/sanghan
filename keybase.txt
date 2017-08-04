@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/sanghan
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://sanghan.xyz
+  * I am sanghan (https://keybase.io/sanghan) on keybase.
+  * I have a public key with fingerprint D393 5743 CCAA 6C00 E3F4  A189 C8AF CD17 2B89 121A
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01208d3705abc3dbef1c0038bae02f1d589f31db9bceb3d6b8d160ef2664348dd8470a",
+      "fingerprint": "d3935743ccaa6c00e3f4a189c8afcd172b89121a",
+      "host": "keybase.io",
+      "key_id": "c8afcd172b89121a",
+      "kid": "01019852215876aa8bdcbe080b7e70cc57d10b74013a878b2c98ac988d94eaedbee80a",
+      "uid": "f58611ae0f5d70ad508fe81bc4b89319",
+      "username": "sanghan"
+    },
+    "service": {
+      "hostname": "sanghan.xyz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1501847067,
+  "expire_in": 157680000,
+  "prev": "49b7f4b582f72399594a03025247e55c5ab899907124ece37b9efe27195b5fd9",
+  "seqno": 36,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.73
+Comment: https://keybase.io/crypto
+
+yMNqAnicbVJ7UFRVHN4FY4isHMoBDFDvlI8guuc+9p67UY5FM6uWOhS4kst67r3n
+shdwd7m7i4CAGBYoYYMhZlEwq0JlQEw0QWCIorY8ZzJm0lnTHNFS5A+gd2D3MvlH
+M52ZM+f1fd/5vt85/Q+GGiKM37QNRyXsi1xiHOyr8xm27s18bBchuKRCwryLyMHz
+A86VsMdrz1EkwkyQgCKhRHMkiwSRlgQsA5EkaSggTFIykFjIyzSQBF4QsUBLJgFK
+wERimTKZGJqBkgQZjkREIiErziysulXF6dVkJZqnWY6hRREhkyaIaZlBAPIiRLIo
+AY4SIA8ooBMdLo/O0MwJyIOTFJe2py3s8/b+B3/PNwl4yFIUYCFnQggKkihgEpIC
+hzlSFFlOAtqcIQGNIAcFSuQh0jqUeAYjrAXFcN63b15OZqEJAC2zzEpaHokloYwh
+EERGu5gGvA70YNWJdmAN7UHOLAdyEiWJhLaZr4hYr6se5L+ApILCIo3pVl1el+jK
+1Q4cXq/bY9aJ3kK3jtyJBfu/GnZBcUpaFTVGPlY9istJmIGGFL2KLgpYEujFNnGJ
+BC5wKyq2KzqC5UyQ1Jp+D87XJBle4GRGYCElcxTN8yzPIJImKZZiOMyyovbSkOd5
+kgMUg0VMcwKPZUxxgGcFVpb0rB6c53QRZtqk+URZeiAly4m8PhUTJaf7ti0wGCMM
+YfeF6N/LEHH/onufjn7q4buWyJTYM2UN67odv1W/+O0MaG1ZKvmGRirqXyspXHfZ
+Pxto2bRs7vnAr42rpnJCPOKAX93YUfV2punPyB3dtptxwV4yLfXK0EE44FmYVmVN
+7koNm51c6rTMZPS4ay3ljHHZmrBXm7/f+65lsHGAMW6YGLIZqn5W4zNqL67uNb6n
+Lvkw8dzKlIpYerctWGdsvBhTPcVVQmtIHoMyL2wFpV/V/ZW/PSF2/PzKqwmJnzf1
+t9RUPVQt9dZJn+asuXWgPa/C30sdv3ns3I3s02XJ9cbisqH2Le839QRDHj9Zn3QY
+E+TC9Yca2mMso5aj1QfifrlW8t2UN5B3pbjos/FATOTyjw4mK5Vrvzzzo+3viLPG
+iJEfslPuFExGdSDbTPgHAxc6t4/caTJMDA+mOZpbx0+WH7EGXi9tI/+AqX1V5vR9
+zwRvB7F6rKOh+BJrPVze0Nx1KPqNtEA8nF3rbyxZEHxgJm9ilUNIPW+Xfwr3/l44
+uXnP/lnuxPIn58ZCN6MtIzX1YOBppM75+103NkSP4jfvhqY/m+q1Oq5bUWN1Tdzw
+9J5QH5jOPXI8/CXzptpXWj5uS3irsyx6LDf8uv3UtsU7R7MbnphNf/TlRe8kZXSu
+dmzc/cIjt6ZtyV9feq7V90X8imu3T/Wc8PeUxnXFsJ+As+tX9FQuLi/qPpoSN3a5
+Pbo+IeRqVP4/m2y/zg==
+=Xv1d
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/sanghan
+
+==================================================================
